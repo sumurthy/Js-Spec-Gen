@@ -25,13 +25,13 @@ require 'json'
 @json_files_created = 0
 
 settings = {}
-settings = JSON.parse(File.read('settings.json'), {:symbolize_names => true})
+settings = JSON.parse(File.read('../config/settings.json'), {:symbolize_names => true})
 
 EXCELAPI_FILE_SOURCE = settings[:metadataFilePath]
 ENUMS = se[:enumFile]
 JSONOUTPUT_FOLDER = '../jsonFiles/'
-OBJECTKEYS = '../jsonFiles/settings/objectkeys.json'
-LOADMETHOD = '../jsonFiles/settings/loadMethod.json'
+OBJECTKEYS = 'jsonFiles/settings/objectkeys.json'
+LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
 
 #JSON_OUT = 'c:/ruby/excel_json.txt'
 

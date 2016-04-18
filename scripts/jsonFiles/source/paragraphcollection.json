@@ -1,0 +1,76 @@
+{
+  "name": "ParagraphCollection",
+  "description": "Represents a collection of Paragraph objects.",
+  "isCollection": true,
+  "collectionOf": "Paragraph",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "OneNote"
+    ],
+    "nameSpace": "OneNote",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "Paragraph[]",
+      "description": "A collection of paragraph objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "Paragraph",
+      "description": "Gets a Paragraph object by ID or by its index in the collection. Read-only.",
+      "syntax": "paragraphCollectionObject.getItem(index);",
+      "signature": "getItem(index: number or string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number or string",
+          "isCollection": false,
+          "description": "The ID of the Paragraph object, or the index location of the Paragraph object in the collection.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

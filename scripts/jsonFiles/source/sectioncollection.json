@@ -1,0 +1,97 @@
+{
+  "name": "SectionCollection",
+  "description": "Represents a collection of sections.",
+  "isCollection": true,
+  "collectionOf": "Section",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "OneNote"
+    ],
+    "nameSpace": "OneNote",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "Section[]",
+      "description": "A collection of section objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "Section",
+      "description": "Gets a section by ID or by its index in the collection. Read-only.",
+      "syntax": "sectionCollectionObject.getItem(index);",
+      "signature": "getItem(index: number or string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number or string",
+          "isCollection": false,
+          "description": "The ID of the section, or the index location of the section in the collection.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "getByName",
+      "returnType": "SectionCollection",
+      "description": "Gets the collection of sections with the specified name.",
+      "syntax": "sectionCollectionObject.getByName(name);",
+      "signature": "getByName(name: string)",
+      "restfulName": "ByName",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The name of the section.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

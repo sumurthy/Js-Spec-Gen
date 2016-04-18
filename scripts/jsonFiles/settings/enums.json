@@ -1,0 +1,46 @@
+{
+	"OneNote.ParagraphType": {
+	"RichText": "",
+	"Image": "",
+	"Table":"",
+	"InkDrawing": "",
+	"InsertedFile": "",
+	"MediaFile": "",
+	"InkParagraph": "",
+	"Other": ""
+	},
+
+	"OneNote.PageContentType": {
+	"Outline": "",
+	"Image": "",
+	"Ink": "",
+	"InsertedFile": "",
+	"MediaFile": "",
+	"Other": ""
+	},
+
+	"OneNote.Selected": {
+	"NotSelected": "",
+	"PartialSelected": "",
+	"Selected": ""
+	},
+
+	"OneNote.Alignment": {
+	"Unknown": "",
+	"Left": "",
+	"Centered": "",
+	"Right": "",
+	"Justified": ""
+	},
+
+	"OneNote.AppendLocation": {
+	"Begin": "",
+	"End": ""
+	},
+
+	"OneNote.InsertLocation": {
+	"Before": "",
+	"After": ""
+	}
+	
+}

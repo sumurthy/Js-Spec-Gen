@@ -1,9 +1,0 @@
-{
-  "app" : "",
-  "isGa": true,
-  "metadataFilePath": "../../data/ExcelApi.cs",
-  "enumFile": "../jsonFiles/settings/enums.json",
-  "platforms" ""
-
-
-}

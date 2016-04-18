@@ -1,0 +1,150 @@
+{
+  "name": "Section",
+  "description": "Represents a OneNote section. Sections can contain pages.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "OneNote"
+    ],
+    "nameSpace": "OneNote",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "id",
+      "dataType": "string",
+      "description": "Gets the ID of the section.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "Gets the name of the section.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "notebook",
+      "dataType": "Notebook",
+      "description": "Gets the notebook that contains the section.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "sectionGroup",
+      "dataType": "SectionGroup",
+      "description": "Gets the section group that contains the section. Returns null if the section is a direct child of the notebook.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getPages",
+      "returnType": "PageCollection",
+      "description": "Gets the collection of pages in the section.",
+      "syntax": "sectionObject.getPages();",
+      "signature": "getPages()",
+      "restfulName": "Pages",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "addPage",
+      "returnType": "Page",
+      "description": "Adds a new page to the end of the section.",
+      "syntax": "sectionObject.addPage(title);",
+      "signature": "addPage(title: string)",
+      "restfulName": "addPage",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "title",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The title of the new page.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "insertSectionAsSibling",
+      "returnType": "Section",
+      "description": "Inserts a new section before or after the current section.",
+      "syntax": "sectionObject.insertSectionAsSibling(location, title);",
+      "signature": "insertSectionAsSibling(location: string, title: string)",
+      "restfulName": "insertSectionAsSibling",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "location",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The location of the new section relative to the current section.",
+          "isRequired": true,
+          "enumNameJs": "OneNote.InsertLocation",
+          "notes": null
+        },
+        {
+          "name": "title",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The name of the new section.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

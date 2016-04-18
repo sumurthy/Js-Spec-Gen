@@ -1,0 +1,119 @@
+{
+  "name": "Outline",
+  "description": "Represents a container for Paragraph objects.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "OneNote"
+    ],
+    "nameSpace": "OneNote",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "id",
+      "dataType": "string",
+      "description": "Gets the ID of the Outline object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "pageContent",
+      "dataType": "PageContent",
+      "description": "Gets the PageContent object that contains the Outline. This object defines the position of the Outline on the page.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "paragraphs",
+      "dataType": "ParagraphCollection",
+      "description": "Gets the collection of Paragraph objects in the Outline.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "append",
+      "returnType": "void",
+      "description": "Adds the specified HTML to the bottom of the Outline.",
+      "syntax": "outlineObject.append(html);",
+      "signature": "append(html: string)",
+      "restfulName": "append",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "html",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "HTML string to append.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "prepend",
+      "returnType": "void",
+      "description": "Adds the specified HTML to the top of the Outline.",
+      "syntax": "outlineObject.prepend(html);",
+      "signature": "prepend(html: string)",
+      "restfulName": "prepend",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "html",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "HTML string to prepend.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+	"names": ["name"],
+	"tables": ["id", "name"],
+	"worksheets": ["id", "name"],
+	"columns": ["id", "name"],
+	"rows" : ["index"],
+	"charts": ["name"],
+	"bindings" : ["id"],
+	"borders" : ["sideIndex"],
+	"series": ["undefined"],
+	"points" : ["undefined"],
+	"sessions" : ["id"]
+}

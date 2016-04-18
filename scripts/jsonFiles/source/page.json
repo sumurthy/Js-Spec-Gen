@@ -1,0 +1,207 @@
+{
+  "name": "Page",
+  "description": "Represents a OneNote page.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "OneNote"
+    ],
+    "nameSpace": "OneNote",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "id",
+      "dataType": "string",
+      "description": "Gets the ID of the page.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "title",
+      "dataType": "string",
+      "description": "Gets or sets the title of the page.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "section",
+      "dataType": "Section",
+      "description": "Gets the section that contains the page.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "pageLevel",
+      "dataType": "int",
+      "description": "Gets or sets the indentation level of the page.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getContents",
+      "returnType": "PageContentCollection",
+      "description": "Gets the collection of PageContent objects on the page.",
+      "syntax": "pageObject.getContents();",
+      "signature": "getContents()",
+      "restfulName": "Contents",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "addOutline",
+      "returnType": "Outline",
+      "description": "Adds an Outline to the page at the specified position.",
+      "syntax": "pageObject.addOutline(left, top, html);",
+      "signature": "addOutline(left: double, top: double, html: String)",
+      "restfulName": "addOutline",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "left",
+          "dataType": "double",
+          "isCollection": false,
+          "description": "The left position of the top, left corner of the Outline.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "top",
+          "dataType": "double",
+          "isCollection": false,
+          "description": "The top position of the top, left corner of the Outline.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "html",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "An HTML string that describes the visual presentation of the Outline.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "addImageFromBase64",
+      "returnType": "Image",
+      "description": "Adds an Image to the page at the specified position.",
+      "syntax": "pageObject.addImageFromBase64(left, top, base64EncodedImage);",
+      "signature": "addImageFromBase64(left: double, top: double, base64EncodedImage: String)",
+      "restfulName": "addImageFromBase64",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "left",
+          "dataType": "double",
+          "isCollection": false,
+          "description": "The left position of the top, left corner of the Image.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "top",
+          "dataType": "double",
+          "isCollection": false,
+          "description": "The top position of the top, left corner of the Image.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "base64EncodedImage",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "A base64-encoded image, e.g. data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIA...",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "insertPageAsSibling",
+      "returnType": "Page",
+      "description": "Inserts a new page before or after the current page.",
+      "syntax": "pageObject.insertPageAsSibling(location, title);",
+      "signature": "insertPageAsSibling(location: string, title: string)",
+      "restfulName": "insertPageAsSibling",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "location",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The location of the new page relative to the current page.",
+          "isRequired": true,
+          "enumNameJs": "OneNote.InsertLocation",
+          "notes": null
+        },
+        {
+          "name": "title",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The title of the new page.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

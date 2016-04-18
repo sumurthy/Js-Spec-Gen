@@ -1,0 +1,97 @@
+{
+  "name": "PageCollection",
+  "description": "Represents a collection of pages.",
+  "isCollection": true,
+  "collectionOf": "Page",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "OneNote"
+    ],
+    "nameSpace": "OneNote",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "Page[]",
+      "description": "A collection of page objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "Page",
+      "description": "Gets a page by ID or by its index in the collection. Read-only.",
+      "syntax": "pageCollectionObject.getItem(index);",
+      "signature": "getItem(index: number or string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number or string",
+          "isCollection": false,
+          "description": "The ID of the page, or the index location of the page in the collection.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "getByTitle",
+      "returnType": "PageCollection",
+      "description": "Gets the collection of pages with the specified title.",
+      "syntax": "pageCollectionObject.getByTitle(title);",
+      "signature": "getByTitle(title: string)",
+      "restfulName": "ByTitle",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "title",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The title of the page.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
