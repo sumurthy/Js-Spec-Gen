@@ -50,9 +50,6 @@ Example:
 The location of this file is at `Js-Spec-Gen/scripts/jsonFiles/settings/enums.json`
 
 
-
-
-
 ### loadMethod file 
 
 This is a constant file used to auto generate load() method in each of the resource. No additional effort is needed other than keeping this file in the below location.
@@ -107,6 +104,7 @@ The location of final spec files are at `Js-Spec-Gen/markdown`. It includes one 
 ## Run steps
 
 1. Setup the input data 
+2. change directory to `Js-Spec-Gen/scripts` folder
 2. Run Json intermediary file creation step: `ruby genJsonFromMetadata.rb`
 3. Once the above step completes, run the markdown creation step. `ruby genMarkdownFromJSON.rb`
 4. Find your markdown files in the output folder. 

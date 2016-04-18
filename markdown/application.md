@@ -90,7 +90,6 @@ applicationObject.navigateToPage(page);
 
 #### Returns
 void
-
 ### Property access examples
 ```js
 Excel.run(function (ctx) { 
