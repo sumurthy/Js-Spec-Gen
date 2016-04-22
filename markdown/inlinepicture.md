@@ -14,8 +14,6 @@ Represents an inline picture.
 |imageFormat|string|Gets the format of the inline image. Read-only.|
 |lockAspectRatio|bool|Gets or sets a value that indicates whether the inline image retains its original proportions when you resize it.|
 
-_See property access [examples.](#property-access-examples)_
-
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
