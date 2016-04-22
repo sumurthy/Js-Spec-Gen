@@ -1,0 +1,353 @@
+{
+  "name": "TableRow",
+  "description": "Represents a row in a Word document.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "Word"
+    ],
+    "nameSpace": "Word",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "cells",
+      "dataType": "TableCellCollection",
+      "description": "Gets cells.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "cellCount",
+      "dataType": "int",
+      "description": "Gets the number of cells in the row.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentTable",
+      "dataType": "Table",
+      "description": "Gets parent table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rowIndex",
+      "dataType": "int",
+      "description": "Gets the index of the row in its parent table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "values",
+      "dataType": "string",
+      "description": "Gets and sets the text values in the row, as a 1D Javascript array.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "shadingColor",
+      "dataType": "string",
+      "description": "Gets and sets the shading color.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "cellPaddingTop",
+      "dataType": "float",
+      "description": "Gets and sets the default top cell padding for the row in points.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "cellPaddingLeft",
+      "dataType": "float",
+      "description": "Gets and sets the default left cell padding for the row in points.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "cellPaddingBottom",
+      "dataType": "float",
+      "description": "Gets and sets the default bottom cell padding for the row in points.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "cellPaddingRight",
+      "dataType": "float",
+      "description": "Gets and sets the default right cell padding for the row in points.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "verticalAlignment",
+      "dataType": "string",
+      "description": "Gets and sets the vertical alignment of the cells in the row.",
+      "isReadOnly": false,
+      "enumNameJs": "Word.VerticalAlignment",
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "font",
+      "dataType": "Font",
+      "description": "Gets the font. Use this to get and set font name, size, color, and other properties.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "isHeader",
+      "dataType": "bool",
+      "description": "Gets a value that indicates whether the row is a header row. Read-only. To set the number of header rows, use HeaderRowCount on the Table object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "preferredHeight",
+      "dataType": "float",
+      "description": "Gets and sets the preferred height of the row in points.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "next",
+      "dataType": "TableRow",
+      "description": "Gets the next row.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "insertRows",
+      "returnType": "void",
+      "description": "Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.",
+      "syntax": "tableRowObject.insertRows(insertLocation, rowCount, values);",
+      "signature": "insertRows(insertLocation: string, rowCount: number, values: string[][])",
+      "restfulName": "insertRows",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "insertLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Where the new rows should be inserted, relative to the current row. It can be 'Before' or 'After'. Required.",
+          "isRequired": true,
+          "enumNameJs": "Word.InsertLocation",
+          "notes": null
+        },
+        {
+          "name": "rowCount",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. Number of rows to add",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "values",
+          "dataType": "string[][]",
+          "isCollection": true,
+          "description": "Strings to insert in the new rows, specified as a 2D array. The number of cells in each row must not exceed the number of cells in the existing row. Optional.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "merge",
+      "returnType": "TableCell",
+      "description": "Merges the row into one cell.",
+      "syntax": "tableRowObject.merge();",
+      "signature": "merge()",
+      "restfulName": "merge",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the entire row.",
+      "syntax": "tableRowObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "clear",
+      "returnType": "void",
+      "description": "Clears the contents of the row.",
+      "syntax": "tableRowObject.clear();",
+      "signature": "clear()",
+      "restfulName": "clear",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "getBorderStyle",
+      "returnType": "TableBorderStyle",
+      "description": "Gets the border style of the cells in the row.",
+      "syntax": "tableRowObject.getBorderStyle(borderLocation);",
+      "signature": "getBorderStyle(borderLocation: string)",
+      "restfulName": "BorderStyle",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "borderLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The border location.",
+          "isRequired": true,
+          "enumNameJs": "Word.BorderLocation",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "returnType": "void",
+      "description": "Selects the row and navigates the Word UI to it.",
+      "syntax": "tableRowObject.select(selectionMode);",
+      "signature": "select(selectionMode: string)",
+      "restfulName": "select",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "selectionMode",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.",
+          "isRequired": false,
+          "enumNameJs": "Word.SelectionMode",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "search",
+      "returnType": "SearchResultCollection",
+      "description": "Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects.",
+      "syntax": "tableRowObject.search(searchText, searchOptions);",
+      "signature": "search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)",
+      "restfulName": "search",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "searchText",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The search text.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "searchOptions",
+          "dataType": "ParamTypeStrings.SearchOptions",
+          "isCollection": false,
+          "description": "Optional. Options for the search.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

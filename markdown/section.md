@@ -1,83 +1,61 @@
-# Section Object (JavaScript API for OneNote)
+# Section Object (JavaScript API for Word)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Word 2016, Word for iPad, Word for Mac_
 
-Represents a OneNote section. Sections can contain pages.
+Represents a section in a Word document.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|id|string|Gets the ID of the section. Read-only.|
-|name|string|Gets the name of the section. Read-only.|
-
-_See property access [examples.](#property-access-examples)_
+None
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.|
-|sectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|
+|body|[Body](body.md)|Gets the body object of the section. This does not include the headerfooter and other section metadata. Read-only.|
+|next|[Section](section.md)|Gets the next section. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|Adds a new page to the end of the section.|
-|[getPages()](#getpages)|[PageCollection](pagecollection.md)|Gets the collection of pages in the section.|
-|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Inserts a new section before or after the current section.|
+|[getFooter(type: string)](#getfootertype-string)|[Body](body.md)|Gets one of the section's footers.|
+|[getHeader(type: string)](#getheadertype-string)|[Body](body.md)|Gets one of the section's headers.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
-### addPage(title: string)
-Adds a new page to the end of the section.
+### getFooter(type: string)
+Gets one of the section's footers.
 
 #### Syntax
 ```js
-sectionObject.addPage(title);
+sectionObject.getFooter(type);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|title|string|The title of the new page.|
+|type|string|Required. The type of footer to return. This value can be: 'primary', 'firstPage' or 'evenPages'. Possible values are: `Primary` Returns the header or footer on all pages of a section, with the first page or odd pages excluded if they are different.,`FirstPage` Returns the header or footer on the first page of a section.,`EvenPages` Returns all headers or footers on even-numbered pages of a section.|
 
 #### Returns
-[Page](page.md)
+[Body](body.md)
 
-### getPages()
-Gets the collection of pages in the section.
+### getHeader(type: string)
+Gets one of the section's headers.
 
 #### Syntax
 ```js
-sectionObject.getPages();
-```
-
-#### Parameters
-None
-
-#### Returns
-[PageCollection](pagecollection.md)
-
-### insertSectionAsSibling(location: string, title: string)
-Inserts a new section before or after the current section.
-
-#### Syntax
-```js
-sectionObject.insertSectionAsSibling(location, title);
+sectionObject.getHeader(type);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|location|string|The location of the new section relative to the current section.  Possible values are: Before, After|
-|title|string|The name of the new section.|
+|type|string|Required. The type of header to return. This value can be: 'primary', 'firstPage' or 'evenPages'. Possible values are: `Primary` Returns the header or footer on all pages of a section, with the first page or odd pages excluded if they are different.,`FirstPage` Returns the header or footer on the first page of a section.,`EvenPages` Returns all headers or footers on even-numbered pages of a section.|
 
 #### Returns
-[Section](section.md)
+[Body](body.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

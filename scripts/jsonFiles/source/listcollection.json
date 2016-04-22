@@ -1,8 +1,8 @@
 {
-  "name": "SectionCollection",
-  "description": "Contains the collection of the document's [section](section.md) objects.",
+  "name": "ListCollection",
+  "description": "Contains a collection of [list](list.md) objects.",
   "isCollection": true,
-  "collectionOf": "Section",
+  "collectionOf": "List",
   "restPath": null,
   "info": {
     "version": "1.1",
@@ -20,8 +20,8 @@
   "properties": [
     {
       "name": "first",
-      "dataType": "Section",
-      "description": "Gets the first section in this collection.",
+      "dataType": "List",
+      "description": "Gets the first list in this collection.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -31,8 +31,8 @@
     },
     {
       "name": "items",
-      "dataType": "Section[]",
-      "description": "A collection of section objects.",
+      "dataType": "List[]",
+      "description": "A collection of list objects.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": true,
@@ -44,9 +44,9 @@
   "methods": [
     {
       "name": "getItem",
-      "returnType": "Section",
-      "description": "Gets a section object by its index in the collection.",
-      "syntax": "sectionCollectionObject.getItem(index);",
+      "returnType": "List",
+      "description": "Gets a list object by its index in the collection.",
+      "syntax": "listCollectionObject.getItem(index);",
       "signature": "getItem(index: number)",
       "restfulName": "Item",
       "notes": null,
@@ -56,7 +56,28 @@
           "name": "index",
           "dataType": "number",
           "isCollection": false,
-          "description": "A number that identifies the index location of a section object.",
+          "description": "A number that identifies the index location of a list object.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "getById",
+      "returnType": "List",
+      "description": "Gets a list by its identifier.",
+      "syntax": "listCollectionObject.getById(id);",
+      "signature": "getById(id: number)",
+      "restfulName": "ById",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "id",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. A list identifier.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null

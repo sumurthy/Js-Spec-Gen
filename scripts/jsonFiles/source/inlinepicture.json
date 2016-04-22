@@ -1,0 +1,461 @@
+{
+  "name": "InlinePicture",
+  "description": "Represents an inline picture.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "Word"
+    ],
+    "nameSpace": "Word",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "altTextDescription",
+      "dataType": "string",
+      "description": "Gets or sets a string that represents the alternative text associated with the inline image",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "altTextTitle",
+      "dataType": "string",
+      "description": "Gets or sets a string that contains the title for the inline image.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "height",
+      "dataType": "float",
+      "description": "Gets or sets a number that describes the height of the inline image.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "hyperlink",
+      "dataType": "string",
+      "description": "Gets or sets the hyperlink associated with the inline image.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "lockAspectRatio",
+      "dataType": "bool",
+      "description": "Gets or sets a value that indicates whether the inline image retains its original proportions when you resize it.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "width",
+      "dataType": "float",
+      "description": "Gets or sets a number that describes the width of the inline image.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentContentControl",
+      "dataType": "ContentControl",
+      "description": "Gets the content control that contains the inline image. Returns null if there isn't a parent content control.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "paragraph",
+      "dataType": "Paragraph",
+      "description": "Gets the paragraph that contains the inline image.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "imageFormat",
+      "dataType": "string",
+      "description": "Gets the format of the inline image.",
+      "isReadOnly": true,
+      "enumNameJs": "Word.ImageFormat",
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "next",
+      "dataType": "InlinePicture",
+      "description": "Gets the next inline image.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentTableCell",
+      "dataType": "TableCell",
+      "description": "Gets the table cell that contains the inline image. Returns null if it is not contained in a table cell.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentTable",
+      "dataType": "Table",
+      "description": "Gets the table that contains the inline image. Returns null if it is not contained in a table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getBase64ImageSrc",
+      "returnType": "string",
+      "description": "Gets the base64 encoded string representation of the inline image.",
+      "syntax": "inlinePictureObject.getBase64ImageSrc();",
+      "signature": "getBase64ImageSrc()",
+      "restfulName": "Base64ImageSrc",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "insertContentControl",
+      "returnType": "ContentControl",
+      "description": "Wraps the inline picture with a rich text content control.",
+      "syntax": "inlinePictureObject.insertContentControl();",
+      "signature": "insertContentControl()",
+      "restfulName": "insertContentControl",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "insertInlinePictureFromBase64",
+      "returnType": "InlinePicture",
+      "description": "Inserts an inline picture at the specified location. The insertLocation value can be 'Replace', 'Before' or 'After'.",
+      "syntax": "inlinePictureObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);",
+      "signature": "insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)",
+      "restfulName": "insertInlinePictureFromBase64",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "base64EncodedImage",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The base64 encoded image to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The value can be 'Replace', 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": "Word.InsertLocation",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "insertBreak",
+      "returnType": "void",
+      "description": "Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.",
+      "syntax": "inlinePictureObject.insertBreak(breakType, insertLocation);",
+      "signature": "insertBreak(breakType: string, insertLocation: string)",
+      "restfulName": "insertBreak",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "breakType",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The break type to add.",
+          "isRequired": true,
+          "enumNameJs": "Word.BreakType",
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The value can be 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": "Word.InsertLocation",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "insertText",
+      "returnType": "Range",
+      "description": "Inserts text at the specified location. The insertLocation value can be 'Before' or 'After'.",
+      "syntax": "inlinePictureObject.insertText(text, insertLocation);",
+      "signature": "insertText(text: string, insertLocation: string)",
+      "restfulName": "insertText",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "text",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. Text to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The value can be 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": "Word.InsertLocation",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "insertHtml",
+      "returnType": "Range",
+      "description": "Inserts HTML at the specified location. The insertLocation value can be 'Before' or 'After'.",
+      "syntax": "inlinePictureObject.insertHtml(html, insertLocation);",
+      "signature": "insertHtml(html: string, insertLocation: string)",
+      "restfulName": "insertHtml",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "html",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The HTML to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The value can be 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": "Word.InsertLocation",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "insertOoxml",
+      "returnType": "Range",
+      "description": "Inserts OOXML at the specified location.  The insertLocation value can be 'Before' or 'After'.",
+      "syntax": "inlinePictureObject.insertOoxml(ooxml, insertLocation);",
+      "signature": "insertOoxml(ooxml: string, insertLocation: string)",
+      "restfulName": "insertOoxml",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "ooxml",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The OOXML to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The value can be 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": "Word.InsertLocation",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "insertFileFromBase64",
+      "returnType": "Range",
+      "description": "Inserts a document at the specified location. The insertLocation value can be 'Before' or 'After'.",
+      "syntax": "inlinePictureObject.insertFileFromBase64(base64File, insertLocation);",
+      "signature": "insertFileFromBase64(base64File: string, insertLocation: string)",
+      "restfulName": "insertFileFromBase64",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "base64File",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The base64 encoded content of a .docx file.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The value can be 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": "Word.InsertLocation",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "insertParagraph",
+      "returnType": "Paragraph",
+      "description": "Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.",
+      "syntax": "inlinePictureObject.insertParagraph(paragraphText, insertLocation);",
+      "signature": "insertParagraph(paragraphText: string, insertLocation: string)",
+      "restfulName": "insertParagraph",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "paragraphText",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The paragraph text to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The value can be 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": "Word.InsertLocation",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the inline picture from the document.",
+      "syntax": "inlinePictureObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "select",
+      "returnType": "void",
+      "description": "Selects the inline picture. This causes Word to scroll to the selection.",
+      "syntax": "inlinePictureObject.select(selectionMode);",
+      "signature": "select(selectionMode: string)",
+      "restfulName": "select",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "selectionMode",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.",
+          "isRequired": false,
+          "enumNameJs": "Word.SelectionMode",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "getRange",
+      "returnType": "Range",
+      "description": "Gets the picture, or the starting or ending point of the picture, as a range.",
+      "syntax": "inlinePictureObject.getRange(rangeLocation);",
+      "signature": "getRange(rangeLocation: string)",
+      "restfulName": "Range",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "rangeLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Optional. The range location can be 'Whole', 'Start' or 'End'.",
+          "isRequired": false,
+          "enumNameJs": "Word.RangeLocation",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

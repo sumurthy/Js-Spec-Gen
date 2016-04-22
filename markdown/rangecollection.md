@@ -1,48 +1,47 @@
-# ParagraphCollection Object (JavaScript API for Word)
+# RangeCollection Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
-Contains a collection of [paragraph](paragraph.md) objects.
+Contains a collection of [range](range.md) objects.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|
+|items|[Range[]](range.md)|A collection of range objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|first|[Paragraph](paragraph.md)|Gets the first paragraph in this collection. Read-only.|
-|last|[Paragraph](paragraph.md)|Gets the last paragraph in this collection. Read-only.|
+|first|[Range](range.md)|Gets the first range in this collection. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|
+|[getItem(index: number)](#getitemindex-number)|[Range](range.md)|Gets a range object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
 ### getItem(index: number)
-Gets a paragraph object by its index in the collection.
+Gets a range object by its index in the collection.
 
 #### Syntax
 ```js
-paragraphCollectionObject.getItem(index);
+rangeCollectionObject.getItem(index);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of a paragraph object.|
+|index|number|A number that identifies the index location of a range object.|
 
 #### Returns
-[Paragraph](paragraph.md)
+[Range](range.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

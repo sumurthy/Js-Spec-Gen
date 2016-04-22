@@ -1,9 +1,8 @@
-# SectionCollection Object (JavaScript API for OneNote)
+# SectionCollection Object (JavaScript API for Word)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Word 2016, Word for iPad, Word for Mac_
 
-Represents a collection of sections.
+Contains the collection of the document's [section](section.md) objects.
 
 ## Properties
 
@@ -14,38 +13,22 @@ Represents a collection of sections.
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|first|[Section](section.md)|Gets the first section in this collection. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getByName(name: string)](#getbynamename-string)|[SectionCollection](sectioncollection.md)|Gets the collection of sections with the specified name.|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[Section](section.md)|Gets a section by ID or by its index in the collection. Read-only.|
+|[getItem(index: number)](#getitemindex-number)|[Section](section.md)|Gets a section object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
-### getByName(name: string)
-Gets the collection of sections with the specified name.
-
-#### Syntax
-```js
-sectionCollectionObject.getByName(name);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|name|string|The name of the section.|
-
-#### Returns
-[SectionCollection](sectioncollection.md)
-
-### getItem(index: number or string)
-Gets a section by ID or by its index in the collection. Read-only.
+### getItem(index: number)
+Gets a section object by its index in the collection.
 
 #### Syntax
 ```js
@@ -55,7 +38,7 @@ sectionCollectionObject.getItem(index);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number or string|The ID of the section, or the index location of the section in the collection.|
+|index|number|A number that identifies the index location of a section object.|
 
 #### Returns
 [Section](section.md)

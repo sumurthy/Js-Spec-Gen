@@ -1,4 +1,4 @@
-# ParagraphCollection Object (JavaScript API for Word)
+# List Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
@@ -8,38 +8,38 @@ Contains a collection of [paragraph](paragraph.md) objects.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|
+|id|int|Gets the list's id. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|first|[Paragraph](paragraph.md)|Gets the first paragraph in this collection. Read-only.|
-|last|[Paragraph](paragraph.md)|Gets the last paragraph in this collection. Read-only.|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|A collection containing the paragraphs in this list. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|
+|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
-### getItem(index: number)
-Gets a paragraph object by its index in the collection.
+### insertParagraph(paragraphText: string, insertLocation: string)
+Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.
 
 #### Syntax
 ```js
-paragraphCollectionObject.getItem(index);
+listObject.insertParagraph(paragraphText, insertLocation);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of a paragraph object.|
+|paragraphText|string|Required. The paragraph text to be inserted.|
+|insertLocation|string|Required. The value can be 'Start', 'End', 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Paragraph](paragraph.md)

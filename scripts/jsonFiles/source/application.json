@@ -1,6 +1,6 @@
 {
   "name": "Application",
-  "description": "Represents the top-level object that contains all globally addressable OneNote objects such as notebooks, the active notebook, and the active section.",
+  "description": "The Application object.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
@@ -8,120 +8,34 @@
     "version": "1.1",
     "addedIn": "1.1",
     "addinTypes": [
-      "OneNote"
+      "Word"
     ],
-    "nameSpace": "OneNote",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
     "title": "Office JavaScript Add-in API",
     "description": "Office JavaScript Add-in API"
   },
-  "properties": [
-    {
-      "name": "notebooks",
-      "dataType": "NotebookCollection",
-      "description": "Gets the collection of notebooks that are open in the OneNote application instance.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": true,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "activeNotebook",
-      "dataType": "Notebook",
-      "description": "Gets the active notebook.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "activeSection",
-      "dataType": "Section",
-      "description": "Gets the active section.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "activePage",
-      "dataType": "Page",
-      "description": "Gets the active page.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    }
-  ],
+  "properties": null,
   "methods": [
     {
-      "name": "getNotebookById",
-      "returnType": "Notebook",
-      "description": "Gets a notebook by ID.",
-      "syntax": "applicationObject.getNotebookById(id);",
-      "signature": "getNotebookById(id: string)",
-      "restfulName": "NotebookById",
+      "name": "createDocument",
+      "returnType": "Document",
+      "description": "Creates a new document by using a base64 encoded .docx file.",
+      "syntax": "applicationObject.createDocument(base64File);",
+      "signature": "createDocument(base64File: string)",
+      "restfulName": "createDocument",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
-          "name": "id",
+          "name": "base64File",
           "dataType": "string",
           "isCollection": false,
-          "description": "The ID of the notebook.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ]
-    },
-    {
-      "name": "navigateToPage",
-      "returnType": "void",
-      "description": "Opens the specified page in the application instance.",
-      "syntax": "applicationObject.navigateToPage(page);",
-      "signature": "navigateToPage(page: Page)",
-      "restfulName": "navigateToPage",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "page",
-          "dataType": "Page",
-          "isCollection": false,
-          "description": "The page to open.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ]
-    },
-    {
-      "name": "load",
-      "returnType": "void",
-      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
-      "syntax": "object.load(param);",
-      "signature": "load(param: object)",
-      "restfulName": null,
-      "notes": null,
-      "parameters": [
-        {
-          "name": "param",
-          "dataType": "object",
-          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "description": "Optional. The base64 encoded .docx file. The default value is null.",
           "isRequired": false,
           "enumNameJs": null,
-          "possibleValues": null,
           "notes": null
         }
       ]

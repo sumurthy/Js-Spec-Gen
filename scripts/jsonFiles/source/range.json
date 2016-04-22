@@ -1,6 +1,6 @@
 {
-  "name": "Paragraph",
-  "description": "Represents a single paragraph in a selection, range, content control, or document body.",
+  "name": "Range",
+  "description": "Represents a contiguous area in a document.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
@@ -21,7 +21,7 @@
     {
       "name": "font",
       "dataType": "Font",
-      "description": "Gets the text format of the paragraph. Use this to get and set font name, size, color, and other properties.",
+      "description": "Gets the text format of the range. Use this to get and set font name, size, color, and other properties.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -32,7 +32,7 @@
     {
       "name": "style",
       "dataType": "string",
-      "description": "Gets or sets the style used for the paragraph. This is the name of the pre-installed or custom style.",
+      "description": "Gets or sets the style used for the range. This is the name of the pre-installed or custom style.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
@@ -41,9 +41,20 @@
       "notes": null
     },
     {
+      "name": "paragraphs",
+      "dataType": "ParagraphCollection",
+      "description": "Gets the collection of paragraph objects in the range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
       "name": "contentControls",
       "dataType": "ContentControlCollection",
-      "description": "Gets the collection of content control objects in the paragraph.",
+      "description": "Gets the collection of content control objects in the range.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": true,
@@ -54,118 +65,8 @@
     {
       "name": "parentContentControl",
       "dataType": "ContentControl",
-      "description": "Gets the content control that contains the paragraph. Returns null if there isn't a parent content control.",
+      "description": "Gets the content control that contains the range. Returns null if there isn't a parent content control.",
       "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "firstLineIndent",
-      "dataType": "float",
-      "description": "Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "leftIndent",
-      "dataType": "float",
-      "description": "Gets or sets the left indent value, in points, for the paragraph.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "rightIndent",
-      "dataType": "float",
-      "description": "Gets or sets the right indent value, in points, for the paragraph.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "alignment",
-      "dataType": "string",
-      "description": "Gets or sets the alignment for a paragraph. The value can  be 'left', 'centered', 'right', or 'justified'.",
-      "isReadOnly": false,
-      "enumNameJs": "Word.Alignment",
-      "isCollection": false,
-      "isRelationship": false,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "lineSpacing",
-      "dataType": "float",
-      "description": "Gets or sets the line spacing, in points, for the specified paragraph. In the Word UI, this value is divided by 12.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "outlineLevel",
-      "dataType": "int",
-      "description": "Gets or sets the outline level for the paragraph.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "spaceBefore",
-      "dataType": "float",
-      "description": "Gets or sets the spacing, in points, before the paragraph.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "spaceAfter",
-      "dataType": "float",
-      "description": "Gets or sets the spacing, in points, after the paragraph.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "lineUnitBefore",
-      "dataType": "float",
-      "description": "Gets or sets the amount of spacing, in grid lines, before the paragraph.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "lineUnitAfter",
-      "dataType": "float",
-      "description": "Gets or sets the amount of spacing, in grid lines. after the paragraph.",
-      "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
@@ -175,7 +76,7 @@
     {
       "name": "inlinePictures",
       "dataType": "InlinePictureCollection",
-      "description": "Gets the collection of inlinePicture objects in the paragraph. The collection does not include floating images.",
+      "description": "Gets the collection of inline picture objects in the range.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": true,
@@ -186,7 +87,7 @@
     {
       "name": "text",
       "dataType": "string",
-      "description": "Gets the text of the paragraph.",
+      "description": "Gets the text of the range.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -195,43 +96,21 @@
       "notes": null
     },
     {
-      "name": "listLevel",
-      "dataType": "int",
-      "description": "Gets or sets the list level of the paragraph.",
+      "name": "isEmpty",
+      "dataType": "bool",
+      "description": "Checks whether the range length is zero.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "hyperlink",
+      "dataType": "string",
+      "description": "Gets the first hyperlink in the range, or sets a hyperlink on the range. Existing hyperlinks in this range are deleted when you set a new hyperlink.",
       "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "next",
-      "dataType": "Paragraph",
-      "description": "Gets the next paragraph.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "previous",
-      "dataType": "Paragraph",
-      "description": "Gets the previous paragraph.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "tableNestingLevel",
-      "dataType": "int",
-      "description": "Gets the level of the paragraph's table. It returns 0 if the paragraph is not in a table.",
-      "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
@@ -241,7 +120,7 @@
     {
       "name": "parentBody",
       "dataType": "Body",
-      "description": "Gets the parent body of the paragraph.",
+      "description": "Gets the parent body of the range.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -250,12 +129,23 @@
       "notes": null
     },
     {
-      "name": "list",
-      "dataType": "List",
-      "description": "Gets the List to which this paragraph belongs. Returns null if the paragraph is not in a list.",
+      "name": "lists",
+      "dataType": "ListCollection",
+      "description": "Gets the collection of list objects in the range.",
       "isReadOnly": true,
       "enumNameJs": null,
-      "isCollection": false,
+      "isCollection": true,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "tables",
+      "dataType": "TableCollection",
+      "description": "Gets the collection of table objects in the range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
       "isRelationship": true,
       "isKey": null,
       "notes": null
@@ -263,7 +153,7 @@
     {
       "name": "parentTableCell",
       "dataType": "TableCell",
-      "description": "Gets the table cell that contains the paragraph. Returns null if it is not contained in a table cell.",
+      "description": "Gets the table cell that contains the range. Returns null if it is not contained in a table cell.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -274,7 +164,7 @@
     {
       "name": "parentTable",
       "dataType": "Table",
-      "description": "Gets the table that contains the paragraph. Returns null if it is not contained in a table.",
+      "description": "Gets the table that contains the range. Returns null if it is not contained in a table.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -285,40 +175,32 @@
   ],
   "methods": [
     {
-      "name": "insertInlinePictureFromBase64",
-      "returnType": "InlinePicture",
-      "description": "Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
-      "syntax": "paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);",
-      "signature": "insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)",
-      "restfulName": "insertInlinePictureFromBase64",
+      "name": "clear",
+      "returnType": "void",
+      "description": "Clears the contents of the range object. The user can perform the undo operation on the cleared content.",
+      "syntax": "rangeObject.clear();",
+      "signature": "clear()",
+      "restfulName": "clear",
       "notes": null,
       "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "base64EncodedImage",
-          "dataType": "string",
-          "isCollection": false,
-          "description": "Required. The base64 encoded image to be inserted.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        },
-        {
-          "name": "insertLocation",
-          "dataType": "string",
-          "isCollection": false,
-          "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
-          "isRequired": true,
-          "enumNameJs": "Word.InsertLocation",
-          "notes": null
-        }
-      ]
+      "parameters": null
+    },
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the range and its content from the document.",
+      "syntax": "rangeObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
     },
     {
       "name": "insertContentControl",
       "returnType": "ContentControl",
-      "description": "Wraps the paragraph object with a rich text content control.",
-      "syntax": "paragraphObject.insertContentControl();",
+      "description": "Wraps the range object with a rich text content control.",
+      "syntax": "rangeObject.insertContentControl();",
       "signature": "insertContentControl()",
       "restfulName": "insertContentControl",
       "notes": null,
@@ -328,8 +210,8 @@
     {
       "name": "insertText",
       "returnType": "Range",
-      "description": "Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
-      "syntax": "paragraphObject.insertText(text, insertLocation);",
+      "description": "Inserts text at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+      "syntax": "rangeObject.insertText(text, insertLocation);",
       "signature": "insertText(text: string, insertLocation: string)",
       "restfulName": "insertText",
       "notes": null,
@@ -348,7 +230,7 @@
           "name": "insertLocation",
           "dataType": "string",
           "isCollection": false,
-          "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
+          "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
           "isRequired": true,
           "enumNameJs": "Word.InsertLocation",
           "notes": null
@@ -358,8 +240,8 @@
     {
       "name": "insertHtml",
       "returnType": "Range",
-      "description": "Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
-      "syntax": "paragraphObject.insertHtml(html, insertLocation);",
+      "description": "Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+      "syntax": "rangeObject.insertHtml(html, insertLocation);",
       "signature": "insertHtml(html: string, insertLocation: string)",
       "restfulName": "insertHtml",
       "notes": null,
@@ -369,7 +251,7 @@
           "name": "html",
           "dataType": "string",
           "isCollection": false,
-          "description": "Required. The HTML to be inserted in the paragraph.",
+          "description": "Required. The HTML to be inserted.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null
@@ -378,7 +260,7 @@
           "name": "insertLocation",
           "dataType": "string",
           "isCollection": false,
-          "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
+          "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
           "isRequired": true,
           "enumNameJs": "Word.InsertLocation",
           "notes": null
@@ -388,8 +270,8 @@
     {
       "name": "insertOoxml",
       "returnType": "Range",
-      "description": "Inserts OOXML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
-      "syntax": "paragraphObject.insertOoxml(ooxml, insertLocation);",
+      "description": "Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+      "syntax": "rangeObject.insertOoxml(ooxml, insertLocation);",
       "signature": "insertOoxml(ooxml: string, insertLocation: string)",
       "restfulName": "insertOoxml",
       "notes": null,
@@ -399,7 +281,7 @@
           "name": "ooxml",
           "dataType": "string",
           "isCollection": false,
-          "description": "Required. The OOXML to be inserted in the paragraph.",
+          "description": "Required. The OOXML to be inserted.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null
@@ -408,7 +290,7 @@
           "name": "insertLocation",
           "dataType": "string",
           "isCollection": false,
-          "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
+          "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
           "isRequired": true,
           "enumNameJs": "Word.InsertLocation",
           "notes": null
@@ -418,8 +300,8 @@
     {
       "name": "insertFileFromBase64",
       "returnType": "Range",
-      "description": "Inserts a document into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
-      "syntax": "paragraphObject.insertFileFromBase64(base64File, insertLocation);",
+      "description": "Inserts a document at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+      "syntax": "rangeObject.insertFileFromBase64(base64File, insertLocation);",
       "signature": "insertFileFromBase64(base64File: string, insertLocation: string)",
       "restfulName": "insertFileFromBase64",
       "notes": null,
@@ -438,7 +320,7 @@
           "name": "insertLocation",
           "dataType": "string",
           "isCollection": false,
-          "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
+          "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
           "isRequired": true,
           "enumNameJs": "Word.InsertLocation",
           "notes": null
@@ -449,7 +331,7 @@
       "name": "insertParagraph",
       "returnType": "Paragraph",
       "description": "Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.",
-      "syntax": "paragraphObject.insertParagraph(paragraphText, insertLocation);",
+      "syntax": "rangeObject.insertParagraph(paragraphText, insertLocation);",
       "signature": "insertParagraph(paragraphText: string, insertLocation: string)",
       "restfulName": "insertParagraph",
       "notes": null,
@@ -478,8 +360,8 @@
     {
       "name": "insertBreak",
       "returnType": "void",
-      "description": "Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.",
-      "syntax": "paragraphObject.insertBreak(breakType, insertLocation);",
+      "description": "Inserts a break at the specified location in the main document. The insertLocation value can be 'Replace', 'Before' or 'After'.",
+      "syntax": "rangeObject.insertBreak(breakType, insertLocation);",
       "signature": "insertBreak(breakType: string, insertLocation: string)",
       "restfulName": "insertBreak",
       "notes": null,
@@ -489,7 +371,7 @@
           "name": "breakType",
           "dataType": "string",
           "isCollection": false,
-          "description": "Required. The break type to add to the document.",
+          "description": "Required. The break type to add.",
           "isRequired": true,
           "enumNameJs": "Word.BreakType",
           "notes": null
@@ -498,7 +380,7 @@
           "name": "insertLocation",
           "dataType": "string",
           "isCollection": false,
-          "description": "Required. The value can be 'Before' or 'After'.",
+          "description": "Required. The value can be 'Replace', 'Before' or 'After'.",
           "isRequired": true,
           "enumNameJs": "Word.InsertLocation",
           "notes": null
@@ -506,32 +388,40 @@
       ]
     },
     {
-      "name": "clear",
-      "returnType": "void",
-      "description": "Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.",
-      "syntax": "paragraphObject.clear();",
-      "signature": "clear()",
-      "restfulName": "clear",
+      "name": "insertInlinePictureFromBase64",
+      "returnType": "InlinePicture",
+      "description": "Inserts a picture at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+      "syntax": "rangeObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);",
+      "signature": "insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)",
+      "restfulName": "insertInlinePictureFromBase64",
       "notes": null,
       "httpSuccessResponse": null,
-      "parameters": null
-    },
-    {
-      "name": "delete",
-      "returnType": "void",
-      "description": "Deletes the paragraph and its content from the document.",
-      "syntax": "paragraphObject.delete();",
-      "signature": "delete()",
-      "restfulName": "delete",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null
+      "parameters": [
+        {
+          "name": "base64EncodedImage",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The base64 encoded image to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": "Word.InsertLocation",
+          "notes": null
+        }
+      ]
     },
     {
       "name": "select",
       "returnType": "void",
-      "description": "Selects and navigates the Word UI to the paragraph.",
-      "syntax": "paragraphObject.select(selectionMode);",
+      "description": "Selects and navigates the Word UI to the range.",
+      "syntax": "rangeObject.select(selectionMode);",
       "signature": "select(selectionMode: string)",
       "restfulName": "select",
       "notes": null,
@@ -551,8 +441,8 @@
     {
       "name": "getHtml",
       "returnType": "string",
-      "description": "Gets the HTML representation of the paragraph object.",
-      "syntax": "paragraphObject.getHtml();",
+      "description": "Gets the HTML representation of the range object.",
+      "syntax": "rangeObject.getHtml();",
       "signature": "getHtml()",
       "restfulName": "Html",
       "notes": null,
@@ -562,8 +452,8 @@
     {
       "name": "getOoxml",
       "returnType": "string",
-      "description": "Gets the Office Open XML (OOXML) representation of the paragraph object.",
-      "syntax": "paragraphObject.getOoxml();",
+      "description": "Gets the OOXML representation of the range object.",
+      "syntax": "rangeObject.getOoxml();",
       "signature": "getOoxml()",
       "restfulName": "Ooxml",
       "notes": null,
@@ -573,8 +463,8 @@
     {
       "name": "search",
       "returnType": "SearchResultCollection",
-      "description": "Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.",
-      "syntax": "paragraphObject.search(searchText, searchOptions);",
+      "description": "Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.",
+      "syntax": "rangeObject.search(searchText, searchOptions);",
       "signature": "search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)",
       "restfulName": "search",
       "notes": null,
@@ -603,8 +493,8 @@
     {
       "name": "getRange",
       "returnType": "Range",
-      "description": "Gets the whole paragraph, or the starting or ending point of the paragraph, as a range.",
-      "syntax": "paragraphObject.getRange(rangeLocation);",
+      "description": "Clones the range, or gets the starting or ending point of the range as a new range.",
+      "syntax": "rangeObject.getRange(rangeLocation);",
       "signature": "getRange(rangeLocation: string)",
       "restfulName": "Range",
       "notes": null,
@@ -624,9 +514,9 @@
     {
       "name": "split",
       "returnType": "RangeCollection",
-      "description": "Splits the paragraph into child ranges by using delimiters.",
-      "syntax": "paragraphObject.split(delimiters, trimDelimiters, trimSpacing);",
-      "signature": "split(delimiters: string[], trimDelimiters: bool, trimSpacing: bool)",
+      "description": "Splits the range into child ranges by using delimiters.",
+      "syntax": "rangeObject.split(delimiters, multiParagraphs, trimDelimiters, trimSpacing);",
+      "signature": "split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)",
       "restfulName": "split",
       "notes": null,
       "httpSuccessResponse": null,
@@ -637,6 +527,15 @@
           "isCollection": true,
           "description": "Required. The delimiters as an array of strings.",
           "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "multiParagraphs",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Indicates whether a returned child range can cover multiple paragraphs. Default is false which indicates that the paragraph boundaries are also used as delimiters.",
+          "isRequired": false,
           "enumNameJs": null,
           "notes": null
         },
@@ -661,10 +560,114 @@
       ]
     },
     {
+      "name": "compareLocationWith",
+      "returnType": "LocationRelation",
+      "description": "Compares this range's location with another range's location.",
+      "syntax": "rangeObject.compareLocationWith(range);",
+      "signature": "compareLocationWith(range: Range)",
+      "restfulName": "compareLocationWith",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "range",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "Required. The range to compare with this range.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "expandTo",
+      "returnType": "void",
+      "description": "Expands the range in either direction to cover another range.",
+      "syntax": "rangeObject.expandTo(range);",
+      "signature": "expandTo(range: Range)",
+      "restfulName": "expandTo",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "range",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "Required. Another range.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "intersectWith",
+      "returnType": "void",
+      "description": "Shrinks the range to the intersection of the range with another range.",
+      "syntax": "rangeObject.intersectWith(range);",
+      "signature": "intersectWith(range: Range)",
+      "restfulName": "intersectWith",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "range",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "Required. Another range.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "getNextTextRange",
+      "returnType": "Range",
+      "description": "Gets the next text range by using punctuation marks andor space character.",
+      "syntax": "rangeObject.getNextTextRange(punctuationMarks, trimSpacing);",
+      "signature": "getNextTextRange(punctuationMarks: string[], trimSpacing: bool)",
+      "restfulName": "NextTextRange",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "punctuationMarks",
+          "dataType": "string[]",
+          "isCollection": true,
+          "description": "Required. The punctuation marks and/or space character as an array of strings.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "trimSpacing",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the returned range. Default is false which indicates that spacing characters at the start and end of the range are included.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "getHyperlinkRanges",
+      "returnType": "RangeCollection",
+      "description": "Gets hyperlink child ranges within the range.",
+      "syntax": "rangeObject.getHyperlinkRanges();",
+      "signature": "getHyperlinkRanges()",
+      "restfulName": "HyperlinkRanges",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
       "name": "insertTable",
       "returnType": "Table",
       "description": "Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.",
-      "syntax": "paragraphObject.insertTable(rowCount, columnCount, insertLocation, values);",
+      "syntax": "rangeObject.insertTable(rowCount, columnCount, insertLocation, values);",
       "signature": "insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])",
       "restfulName": "insertTable",
       "notes": null,
@@ -711,8 +714,8 @@
     {
       "name": "getTextRanges",
       "returnType": "RangeCollection",
-      "description": "Gets the text ranges in the paragraph by using punctuation marks andor space character.",
-      "syntax": "paragraphObject.getTextRanges(punctuationMarks, trimSpacing);",
+      "description": "Gets the text child ranges in the range by using punctuation marks andor space character.",
+      "syntax": "rangeObject.getTextRanges(punctuationMarks, trimSpacing);",
       "signature": "getTextRanges(punctuationMarks: string[], trimSpacing: bool)",
       "restfulName": "TextRanges",
       "notes": null,

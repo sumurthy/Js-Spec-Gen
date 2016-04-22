@@ -1,8 +1,8 @@
 {
-  "name": "SectionCollection",
-  "description": "Contains the collection of the document's [section](section.md) objects.",
+  "name": "SearchResultCollection",
+  "description": "Contains a collection of [range](range.md) objects as a result of a search operation.",
   "isCollection": true,
-  "collectionOf": "Section",
+  "collectionOf": "Range",
   "restPath": null,
   "info": {
     "version": "1.1",
@@ -20,8 +20,8 @@
   "properties": [
     {
       "name": "first",
-      "dataType": "Section",
-      "description": "Gets the first section in this collection.",
+      "dataType": "Range",
+      "description": "Gets the first searched result in this collection.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -31,8 +31,8 @@
     },
     {
       "name": "items",
-      "dataType": "Section[]",
-      "description": "A collection of section objects.",
+      "dataType": "SearchResult[]",
+      "description": "A collection of searchResult objects.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": true,
@@ -44,9 +44,9 @@
   "methods": [
     {
       "name": "getItem",
-      "returnType": "Section",
-      "description": "Gets a section object by its index in the collection.",
-      "syntax": "sectionCollectionObject.getItem(index);",
+      "returnType": "Range",
+      "description": "Gets a range object by its index in the collection.",
+      "syntax": "searchResultCollectionObject.getItem(index);",
       "signature": "getItem(index: number)",
       "restfulName": "Item",
       "notes": null,
@@ -56,7 +56,7 @@
           "name": "index",
           "dataType": "number",
           "isCollection": false,
-          "description": "A number that identifies the index location of a section object.",
+          "description": " A number that identifies the index location of a range object. ",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null

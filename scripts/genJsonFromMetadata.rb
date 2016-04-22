@@ -22,7 +22,7 @@ require 'json'
 
 @processed_files = 0
 @json_files_created = 0
-METADATA_FILE_SOURCE = '../../data/OneNote.cs'
+METADATA_FILE_SOURCE = '../../data/WdJscomapi.cs'
 ENUMS = 'jsonFiles/settings/enums.json'
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
 JSONOUTPUT_FOLDER = 'jsonFiles/source/'
@@ -46,8 +46,8 @@ OBJECTKEYS = 'jsonFiles/settings/objectkeys.json'
 @json_object[:info] = {}
 @json_object[:info][:version] = '1.1'
 @json_object[:info][:addedIn] = '1.1'
-@json_object[:info][:addinTypes] = ["OneNote"]
-@json_object[:info][:nameSpace] = "OneNote"
+@json_object[:info][:addinTypes] = ["Word"]
+@json_object[:info][:nameSpace] = "Word"
 @json_object[:info][:addinHosts] = ["Task pane"]
 @json_object[:info][:title] = 'Office JavaScript Add-in API'
 @json_object[:info][:description] = 'Office JavaScript Add-in API'
@@ -68,11 +68,11 @@ def csarray_write (line=nil)
 end
 
 ### 
-# Load up all the known existing enums. Remove leading OneNote.
+# Load up all the known existing enums. Remove leading Word.
 ##
 @enumHash = {}
 tempEnumHash = JSON.parse File.read(ENUMS)
-@enumHash = Hash[tempEnumHash.map {|k, v| [k.gsub('OneNote.',''), v] }]
+@enumHash = Hash[tempEnumHash.map {|k, v| [k.gsub('Word.',''), v] }]
 
 ### 
 # Load the "load()" method to be added to all items that have at least one property. 
@@ -240,13 +240,13 @@ restfulName = nil
 		else
 			member_summary = @csarray[i+1].delete!('///').strip
 
-			if member_summary.index('See OneNote.') != nil
-				enumName = member_summary[member_summary.index('See OneNote.')..-1].split[1]
-				member_summary = member_summary[0,member_summary.index('See OneNote.')-1]
+			if member_summary.index('See Word.') != nil
+				enumName = member_summary[member_summary.index('See Word.')..-1].split[1]
+				member_summary = member_summary[0,member_summary.index('See Word.')-1]
 				enumName = enumName.chomp('.')
-			elsif member_summary.index('Refer to OneNote.') != nil
-				enumName = member_summary[member_summary.index('Refer to OneNote.')..-1].split[2]			
-				member_summary = member_summary[0,member_summary.index('Refer to OneNote.')-1]				
+			elsif member_summary.index('Refer to Word.') != nil
+				enumName = member_summary[member_summary.index('Refer to Word.')..-1].split[2]			
+				member_summary = member_summary[0,member_summary.index('Refer to Word.')-1]				
 				enumName = enumName.chomp('.')				
 			else
 				enumName = nil
@@ -266,13 +266,13 @@ restfulName = nil
 	if line.include?('/// <param name=')
 		param_summary = line.split('>')[1].gsub('</param', '')
 
-		if param_summary.index('See OneNote.') != nil
-			enumName = param_summary[param_summary.index('See OneNote.')..-1].split[1]
-			param_summary = param_summary[0,param_summary.index('See OneNote.')-1]
+		if param_summary.index('See Word.') != nil
+			enumName = param_summary[param_summary.index('See Word.')..-1].split[1]
+			param_summary = param_summary[0,param_summary.index('See Word.')-1]
 			enumName = enumName.chomp('.')
-		elsif param_summary.index('Refer to OneNote.') != nil
-			enumName = param_summary[param_summary.index('Refer to OneNote.')..-1].split[2]			
-			param_summary = param_summary[0,param_summary.index('Refer to OneNote.')-1]				
+		elsif param_summary.index('Refer to Word.') != nil
+			enumName = param_summary[param_summary.index('Refer to Word.')..-1].split[2]			
+			param_summary = param_summary[0,param_summary.index('Refer to Word.')-1]				
 			enumName = enumName.chomp('.')
 		else
 			enumName = nil
@@ -324,7 +324,7 @@ restfulName = nil
 		end
 
 		if @enumHash.has_key? proDataType
-			enumName = 'OneNote.' + proDataType
+			enumName = 'Word.' + proDataType
 			proDataType = 'string'
 		end
 
@@ -377,7 +377,7 @@ restfulName = nil
 						typeScriptData = typeScriptData[typeScriptData.index('>')+2..-1]
 					end
 				end
-				typeScriptDataArray = typeScriptData.gsub('"','').gsub(')','').gsub('OneNote.','').split('|').join(' or ')
+				typeScriptDataArray = typeScriptData.gsub('"','').gsub(')','').gsub('Word.','').split('|').join(' or ')
 				if suffix != ''
 					parm_array[j][:dataType] = "(" + typeScriptDataArray +")" + suffix
 				else
@@ -398,7 +398,7 @@ restfulName = nil
 
 			# If the enum still slips through to the data type, then overwrite and set the enum correctly. 
 			if @enumHash.has_key? parm_array[j][:dataType] 
-				parm_array[j][:enumNameJs] = 'OneNote.' + parm_array[j][:dataType] 
+				parm_array[j][:enumNameJs] = 'Word.' + parm_array[j][:dataType] 
 				parm_array[j][:dataType]  = 'string'
 			end
 

@@ -1,0 +1,121 @@
+{
+  "name": "Document",
+  "description": "The Document object is the top level object. A Document object contains one or more sections, content controls, and the body that contains the contents of the document.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "Word"
+    ],
+    "nameSpace": "Word",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "saved",
+      "dataType": "bool",
+      "description": "Indicates whether the changes in the document have been saved. A value of true indicates that the document hasn't changed since it was saved.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "sections",
+      "dataType": "SectionCollection",
+      "description": "Gets the collection of section objects in the document.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "body",
+      "dataType": "Body",
+      "description": "Gets the body object of the document. The body is the text that excludes headers, footers, footnotes, textboxes, etc..",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "contentControls",
+      "dataType": "ContentControlCollection",
+      "description": "Gets the collection of content control objects in the current document. This includes content controls in the body of the document, headers, footers, textboxes, etc..",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "save",
+      "returnType": "void",
+      "description": "Saves the document. This will use the Word default file naming convention if the document has not been saved before.",
+      "syntax": "documentObject.save();",
+      "signature": "save()",
+      "restfulName": "save",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "getSelection",
+      "returnType": "Range",
+      "description": "Gets the current selection of the document. Multiple selections are not supported.",
+      "syntax": "documentObject.getSelection();",
+      "signature": "getSelection()",
+      "restfulName": "Selection",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "open",
+      "returnType": "void",
+      "description": "Open the document.",
+      "syntax": "documentObject.open();",
+      "signature": "open()",
+      "restfulName": "open",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
