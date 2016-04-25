@@ -1,42 +1,42 @@
-@+header
+<header>
 # %name% resource type
 %description%
+</header>
 
-@-header
-@+methods
-### Methods
-
-| Method	   | Return Type    | Description |
-|:-------------|:---------------|:------------|
->r| [%name%](../api/%file%)     | %type%         | %description% |
-
-%methodnotes%
-@-methods
-@+properties
+<properties>
 ### Properties
 
-| Property	   | Type	| Description|
-|:-------------|:-------|:-----------|
->r|%name%      | %type% | %description% |
+| Property	   | Type	| Description| Requirement Set|
+|:-------------|:-------|:-----------|:---|
+>r|%name%      | %type% | %description% | %req% |
 
+%propertygetset%
 %propertynotes%
-@-properties
-@+relationships
+<properties>
+<relationships>
+
 ### Relationships
 
-| Property	   | Type	| Description|
-|:-------------|:-------|:-----------|
->r|%name%      | %type% | %description% |
+| Relationship | Type	| Description| Requirement Set|
+|:-------------|:-------|:-----------|:---|
+>r|%name%      | %type% | %description% | %req% |
 
 %relationshipnotes%
-@-relationships
-@+jsonr
-### JSON Representation
-Here is a JSON representation of the resource
-%mdsjsonr%
-```json
-%json%
+</relationships>
+<methods>
 
-```
+## Methods
 
-@-jsonr
+| Method	   | Return Type    | Description | Requirement Set|
+|:-------------|:---------------|:------------|:----|
+>r| [%name%](%link%)     | %type%         | %description% | %req%|
+
+%methodnotes%
+
+## Method Details
+<method>
+### %name%
+
+</method>
+
+</methods>

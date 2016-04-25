@@ -2,10 +2,6 @@
 %displayname%
 %description%
 @-header
-@+prerequisites
-### Prerequisites
-One of the following scopes are required to execute this API:
-@-prerequisites
 @+httprequest
 ### HTTP Request
 %httprequest%
