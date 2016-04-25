@@ -6,7 +6,7 @@
   "restPath": null,
   "info": {
     "version": "1.1",
-    "addedIn": "1.1",
+    "reqSet": "1.4",
     "addinTypes": [
       "Word"
     ],

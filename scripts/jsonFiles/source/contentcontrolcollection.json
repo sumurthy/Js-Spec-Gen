@@ -6,7 +6,7 @@
   "restPath": null,
   "info": {
     "version": "1.1",
-    "addedIn": "1.1",
+    "reqSet": "1.1",
     "addinTypes": [
       "Word"
     ],
@@ -26,6 +26,7 @@
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": false,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     }
@@ -50,7 +51,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "getById",
@@ -71,7 +73,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "getByTitle",
@@ -92,7 +95,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "getByTag",
@@ -113,7 +117,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "getByTypes",
@@ -134,7 +139,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "load",
@@ -154,7 +160,8 @@
           "possibleValues": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     }
   ]
 }

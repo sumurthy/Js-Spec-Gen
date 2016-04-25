@@ -5,6 +5,7 @@
 require 'pathname'
 require 'logger'
 require 'json'
+require 'FileUtils'
 
 module SpecMaker
 
@@ -29,18 +30,21 @@ module SpecMaker
 	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
 	PIPE = '|'
 	TWONEWLINES = "\n\n"
-	PROPERTY_HEADER = "| Property	   | Type	|Description" + NEWLINE
-	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|" + NEWLINE
+	PROPERTY_HEADER = "| Property	   | Type	|Description| Req. Set|" + NEWLINE
+	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|:----|" + NEWLINE
 	PARAM_HEADER = "| Parameter	   | Type	|Description|" + NEWLINE
-	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|" + NEWLINE
+	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|:---|" + NEWLINE
 
-	RELATIONSHIP_HEADER = "| Relationship | Type	|Description|" + NEWLINE
-	METHOD_HEADER = "| Method		   | Return Type	|Description|" + NEWLINE
+	RELATIONSHIP_HEADER = "| Relationship | Type	|Description| Req. Set|" + NEWLINE
+	METHOD_HEADER = "| Method		   | Return Type	|Description| Req. Set|" + NEWLINE
 	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
 
 	# Log file
 	LOG_FOLDER = '../../logs'
 	Dir.mkdir(LOG_FOLDER) unless File.exists?(LOG_FOLDER)
+
+	FileUtils.rm Dir.glob(MARKDOWN_OUTPUT_FOLDER + '/*')
+
 
 	if File.exists?("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
 		File.delete("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
@@ -108,7 +112,14 @@ module SpecMaker
 			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].chomp('[]').downcase + ".md)"
 		end
 			
-		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE) + NEWLINE
+		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + "WordApi#{prop[:reqSet]}") + PIPE + PIPE + NEWLINE
+		if prop[:reqSet] > "1.2"
+			whatType = 'Property'
+			if prop[:isRelationship]
+				whatType = 'Relationship'
+			end
+			puts (PIPE + "[#{@resource}](#{@resource.downcase}.md)" + PIPE +  whatType + PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + "WordApi #{prop[:reqSet]}" + PIPE)
+		end		
 	end
 
 	# Write methods to the final array.
@@ -125,7 +136,14 @@ module SpecMaker
 		replacements = [ [" ", "-"], ["[", ""], ["]", ""],["(", ""], [")", ""], [",", ""], [":", ""] ]				
 		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
 		methodPlusLink = "[" + method[:signature].strip + "](#" + str.downcase + ")"
-		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE) + NEWLINE
+
+		methodPlusLinkFull = "[" + method[:signature].strip + "](" + "#{@resource.downcase}.md#" + str.downcase + ")"
+		
+		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "WordApi#{method[:reqSet]}") + PIPE + NEWLINE
+
+		if method[:reqSet] > "1.2"
+			puts (PIPE + "[#{@resource}](#{@resource.downcase}.md)" + PIPE + "Method" + PIPE + methodPlusLinkFull + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "WordApi #{method[:reqSet]}" + PIPE)
+		end
 	end
 
 	# Write methods details and parameters to the final array.	
@@ -244,7 +262,9 @@ module SpecMaker
 		@jsonHash = JSON.parse(item, {:symbolize_names => true})
 		# Obtain the resource name. Read the examples file, if it exists. 
 		@resource = uncapitalize(@jsonHash[:name])
-		@log#ger.debug("")	
+		
+		#puts ".... Processing #{@resource} ...."
+
 		@logger.debug("...............Report for: #{@resource}...........")	
 
 		example_lines = ''
@@ -256,7 +276,7 @@ module SpecMaker
 			@gsType = determine_getter_setter_type example_lines
 			@exampleFileFound = true
 		rescue => err
-			puts "....Example File does not exist for: #{@resource}"
+			#puts "....Example File does not exist for: #{@resource}"
 		end
 
 		propreties = @jsonHash[:properties]

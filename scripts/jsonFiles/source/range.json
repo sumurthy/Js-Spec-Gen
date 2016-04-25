@@ -6,7 +6,7 @@
   "restPath": null,
   "info": {
     "version": "1.1",
-    "addedIn": "1.1",
+    "reqSet": "1.1",
     "addinTypes": [
       "Word"
     ],
@@ -26,6 +26,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -37,6 +38,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -48,6 +50,7 @@
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": true,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -59,6 +62,7 @@
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": true,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -70,6 +74,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -81,6 +86,7 @@
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": true,
+      "reqSet": "1.2",
       "isKey": null,
       "notes": null
     },
@@ -92,6 +98,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -103,6 +110,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -114,6 +122,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -125,6 +134,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -136,6 +146,7 @@
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -147,6 +158,7 @@
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -158,6 +170,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -169,6 +182,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     }
@@ -183,7 +197,8 @@
       "restfulName": "clear",
       "notes": null,
       "httpSuccessResponse": null,
-      "parameters": null
+      "parameters": null,
+      "reqSet": "1.1"
     },
     {
       "name": "delete",
@@ -194,7 +209,8 @@
       "restfulName": "delete",
       "notes": null,
       "httpSuccessResponse": null,
-      "parameters": null
+      "parameters": null,
+      "reqSet": "1.1"
     },
     {
       "name": "insertContentControl",
@@ -205,7 +221,8 @@
       "restfulName": "insertContentControl",
       "notes": null,
       "httpSuccessResponse": null,
-      "parameters": null
+      "parameters": null,
+      "reqSet": "1.1"
     },
     {
       "name": "insertText",
@@ -235,7 +252,8 @@
           "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "insertHtml",
@@ -265,7 +283,8 @@
           "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "insertOoxml",
@@ -295,7 +314,8 @@
           "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "insertFileFromBase64",
@@ -325,7 +345,8 @@
           "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "insertParagraph",
@@ -355,7 +376,8 @@
           "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "insertBreak",
@@ -385,7 +407,8 @@
           "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "insertInlinePictureFromBase64",
@@ -415,7 +438,8 @@
           "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.2"
     },
     {
       "name": "select",
@@ -436,7 +460,8 @@
           "enumNameJs": "Word.SelectionMode",
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "getHtml",
@@ -447,7 +472,8 @@
       "restfulName": "Html",
       "notes": null,
       "httpSuccessResponse": null,
-      "parameters": null
+      "parameters": null,
+      "reqSet": "1.1"
     },
     {
       "name": "getOoxml",
@@ -458,7 +484,8 @@
       "restfulName": "Ooxml",
       "notes": null,
       "httpSuccessResponse": null,
-      "parameters": null
+      "parameters": null,
+      "reqSet": "1.1"
     },
     {
       "name": "search",
@@ -488,7 +515,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "getRange",
@@ -509,7 +537,8 @@
           "enumNameJs": "Word.RangeLocation",
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "split",
@@ -557,7 +586,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "compareLocationWith",
@@ -578,7 +608,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "expandTo",
@@ -599,7 +630,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "intersectWith",
@@ -620,7 +652,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "getNextTextRange",
@@ -650,7 +683,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "getHyperlinkRanges",
@@ -661,7 +695,8 @@
       "restfulName": "HyperlinkRanges",
       "notes": null,
       "httpSuccessResponse": null,
-      "parameters": null
+      "parameters": null,
+      "reqSet": "1.3"
     },
     {
       "name": "insertTable",
@@ -709,7 +744,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "getTextRanges",
@@ -739,7 +775,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "load",
@@ -759,7 +796,8 @@
           "possibleValues": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     }
   ]
 }

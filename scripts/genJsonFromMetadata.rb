@@ -7,6 +7,7 @@ module SpecMaker
 
 require 'logger'
 require 'json'
+require 'FileUtils'
 
 # Log file
 	LOG_FOLDER = '../../../logs'
@@ -22,7 +23,7 @@ require 'json'
 
 @processed_files = 0
 @json_files_created = 0
-METADATA_FILE_SOURCE = '../../data/WdJscomapi.cs'
+METADATA_FILE_SOURCE = '../../data/WdJscomApi.cs'
 ENUMS = 'jsonFiles/settings/enums.json'
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
 JSONOUTPUT_FOLDER = 'jsonFiles/source/'
@@ -45,7 +46,7 @@ OBJECTKEYS = 'jsonFiles/settings/objectkeys.json'
 @json_object[:restPath] = []
 @json_object[:info] = {}
 @json_object[:info][:version] = '1.1'
-@json_object[:info][:addedIn] = '1.1'
+@json_object[:info][:reqSet] = '1.1'
 @json_object[:info][:addinTypes] = ["Word"]
 @json_object[:info][:nameSpace] = "Word"
 @json_object[:info][:addinHosts] = ["Task pane"]
@@ -57,8 +58,8 @@ OBJECTKEYS = 'jsonFiles/settings/objectkeys.json'
 # Sub json containers
 # Method = Struct.new(:name, :returnType, :description, :parameters, :syntax, :vbaInfo, :signature)
 # Property = Struct.new(:name, :dataType, :description, :isReadOnly, :enumNameJs, :isCollection, :vbaInfo, :possibleValues, :isRelationship)
-Method = Struct.new(:name, :returnType, :description, :syntax, :signature, :restfulName, :notes, :httpSuccessResponse, :parameters)
-Property = Struct.new(:name, :dataType, :description, :isReadOnly, :enumNameJs, :isCollection, :isRelationship, :isKey, :notes)
+Method = Struct.new(:name, :returnType, :description, :syntax, :signature, :restfulName, :notes, :httpSuccessResponse, :parameters, :reqSet)
+Property = Struct.new(:name, :dataType, :description, :isReadOnly, :enumNameJs, :isCollection, :isRelationship, :reqSet, :isKey, :notes)
 ParamStr = Struct.new(:name, :dataType, :isCollection, :description, :isRequired, :enumNameJs, :notes)
 
 SIMPLETYPES = %w[int string object object[][] object[] double bool number void]
@@ -93,6 +94,8 @@ tempEnumHash = JSON.parse File.read(ENUMS)
 ##
 @csarray_pure = File.readlines(METADATA_FILE_SOURCE) 
 handle_getItem = ''
+
+FileUtils.rm Dir.glob(JSONOUTPUT_FOLDER + '/*')
 
 @csarray_pure.each do |line|
 	if line.include?('this[')
@@ -131,14 +134,21 @@ parm_array_metadata = []
 enumName = ''
 parm_hash_array = []
 restfulName = nil
+req_set = '1.1'
+object_req_set = ''
 
 @csarray.each_with_index do |line, i|
+
+	if line.strip.start_with?('[ApiSet(Version') 
+		req_set = line.split('=')[1].gsub(']','').gsub(')','').strip
+	end
 
 	## For new object, load its resource and fill the description
 	if line.include?('public interface') || line.include?('public struct')
 		# Get the third word
 		@json_object[:name] = line.split.first(3).join(' ').split.last(1).join(' ').gsub(':','')
-
+		@json_object[:info][:reqSet] = req_set
+		object_req_set = req_set
 		puts "*-> #{@json_object[:name]}"
 		if @json_object[:name].include?('Collection')
 			@json_object[:isCollection] = true
@@ -165,6 +175,8 @@ restfulName = nil
 		end
 	end
 
+
+
 	# This signals end of an object. Time to write stuff to file.
 	if in_region && line.start_with?("\t}")		
 
@@ -185,7 +197,7 @@ restfulName = nil
 				itemReturnType = 'ChartPoint[]'
 			end
 
-			property = Property.new(prop_name, itemReturnType, makeDesc, readOnly, enumName, isItCollection, isRel, nil)	
+			property = Property.new(prop_name, itemReturnType, makeDesc, readOnly, enumName, isItCollection, isRel, object_req_set, nil )	
 			property_array.push property.to_h
 			property = nil		
 		end		
@@ -328,9 +340,11 @@ restfulName = nil
 			proDataType = 'string'
 		end
 
-		property = Property.new(prop_name, proDataType, member_summary, readOnly, enumName, isItCollection, isRel, nil)	
+		property = Property.new(prop_name, proDataType, member_summary, readOnly, enumName, isItCollection, isRel, req_set, nil)
+
 		property_array.push property.to_h
 		property = nil
+		req_set = '1.1'
 	end
 
 	# If member is a method and has param, capture its optional param and data type.
@@ -459,11 +473,12 @@ restfulName = nil
 		restfulName.slice(0,1).capitalize + restfulName.slice(1..-1)
 
 		# Create method hash and push the values. 
-		method = Method.new(mthd_name, line.split[0], member_summary, syntax, signature, restfulName, nil, nil, parm_hash_array)
+		method = Method.new(mthd_name, line.split[0], member_summary, syntax, signature, restfulName, nil, nil, parm_hash_array, req_set)
 		method_array.push method.to_h
 
 		# Reset the variables. 
 		method = nil
+		req_set = '1.1'
 		parm_array = []
 		parm_hash_array = []
 	end

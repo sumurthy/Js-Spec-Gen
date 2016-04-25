@@ -6,7 +6,7 @@
   "restPath": null,
   "info": {
     "version": "1.1",
-    "addedIn": "1.1",
+    "reqSet": "1.1",
     "addinTypes": [
       "Word"
     ],
@@ -26,6 +26,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -37,6 +38,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -48,6 +50,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -59,6 +62,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -70,6 +74,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -81,6 +86,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -92,6 +98,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -103,6 +110,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     }
@@ -126,7 +134,8 @@
           "possibleValues": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     }
   ]
 }

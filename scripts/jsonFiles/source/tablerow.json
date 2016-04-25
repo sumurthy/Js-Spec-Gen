@@ -6,7 +6,7 @@
   "restPath": null,
   "info": {
     "version": "1.1",
-    "addedIn": "1.1",
+    "reqSet": "1.3",
     "addinTypes": [
       "Word"
     ],
@@ -26,6 +26,7 @@
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -37,6 +38,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -48,6 +50,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -59,6 +62,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -70,6 +74,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -81,6 +86,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -92,6 +98,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -103,6 +110,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -114,6 +122,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -125,6 +134,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -136,6 +146,7 @@
       "enumNameJs": "Word.VerticalAlignment",
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -147,6 +158,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -158,6 +170,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -169,6 +182,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -180,6 +194,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     }
@@ -222,7 +237,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "merge",
@@ -233,7 +249,8 @@
       "restfulName": "merge",
       "notes": null,
       "httpSuccessResponse": null,
-      "parameters": null
+      "parameters": null,
+      "reqSet": "1.1"
     },
     {
       "name": "delete",
@@ -244,7 +261,8 @@
       "restfulName": "delete",
       "notes": null,
       "httpSuccessResponse": null,
-      "parameters": null
+      "parameters": null,
+      "reqSet": "1.3"
     },
     {
       "name": "clear",
@@ -255,7 +273,8 @@
       "restfulName": "clear",
       "notes": null,
       "httpSuccessResponse": null,
-      "parameters": null
+      "parameters": null,
+      "reqSet": "1.3"
     },
     {
       "name": "getBorderStyle",
@@ -276,7 +295,8 @@
           "enumNameJs": "Word.BorderLocation",
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "select",
@@ -297,7 +317,8 @@
           "enumNameJs": "Word.SelectionMode",
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "search",
@@ -327,7 +348,8 @@
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.3"
     },
     {
       "name": "load",
@@ -347,7 +369,8 @@
           "possibleValues": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     }
   ]
 }
