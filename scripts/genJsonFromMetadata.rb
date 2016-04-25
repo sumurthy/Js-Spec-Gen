@@ -7,6 +7,7 @@ module SpecMaker
 
 require 'logger'
 require 'json'
+require 'FileUtils'
 
 # Log file
 	LOG_FOLDER = '../../../logs'
@@ -22,7 +23,7 @@ require 'json'
 
 @processed_files = 0
 @json_files_created = 0
-METADATA_FILE_SOURCE = '../../data/OneNote.cs'
+METADATA_FILE_SOURCE = '../../data/WdJscomApi.cs'
 ENUMS = 'jsonFiles/settings/enums.json'
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
 JSONOUTPUT_FOLDER = 'jsonFiles/source/'
@@ -45,9 +46,9 @@ OBJECTKEYS = 'jsonFiles/settings/objectkeys.json'
 @json_object[:restPath] = []
 @json_object[:info] = {}
 @json_object[:info][:version] = '1.1'
-@json_object[:info][:addedIn] = '1.1'
-@json_object[:info][:addinTypes] = ["OneNote"]
-@json_object[:info][:nameSpace] = "OneNote"
+@json_object[:info][:reqSet] = '1.1'
+@json_object[:info][:addinTypes] = ["Word"]
+@json_object[:info][:nameSpace] = "Word"
 @json_object[:info][:addinHosts] = ["Task pane"]
 @json_object[:info][:title] = 'Office JavaScript Add-in API'
 @json_object[:info][:description] = 'Office JavaScript Add-in API'
@@ -57,8 +58,8 @@ OBJECTKEYS = 'jsonFiles/settings/objectkeys.json'
 # Sub json containers
 # Method = Struct.new(:name, :returnType, :description, :parameters, :syntax, :vbaInfo, :signature)
 # Property = Struct.new(:name, :dataType, :description, :isReadOnly, :enumNameJs, :isCollection, :vbaInfo, :possibleValues, :isRelationship)
-Method = Struct.new(:name, :returnType, :description, :syntax, :signature, :restfulName, :notes, :httpSuccessResponse, :parameters)
-Property = Struct.new(:name, :dataType, :description, :isReadOnly, :enumNameJs, :isCollection, :isRelationship, :isKey, :notes)
+Method = Struct.new(:name, :returnType, :description, :syntax, :signature, :restfulName, :notes, :httpSuccessResponse, :parameters, :reqSet)
+Property = Struct.new(:name, :dataType, :description, :isReadOnly, :enumNameJs, :isCollection, :isRelationship, :reqSet, :isKey, :notes)
 ParamStr = Struct.new(:name, :dataType, :isCollection, :description, :isRequired, :enumNameJs, :notes)
 
 SIMPLETYPES = %w[int string object object[][] object[] double bool number void]
@@ -68,11 +69,11 @@ def csarray_write (line=nil)
 end
 
 ### 
-# Load up all the known existing enums. Remove leading OneNote.
+# Load up all the known existing enums. Remove leading Word.
 ##
 @enumHash = {}
 tempEnumHash = JSON.parse File.read(ENUMS)
-@enumHash = Hash[tempEnumHash.map {|k, v| [k.gsub('OneNote.',''), v] }]
+@enumHash = Hash[tempEnumHash.map {|k, v| [k.gsub('Word.',''), v] }]
 
 ### 
 # Load the "load()" method to be added to all items that have at least one property. 
@@ -93,6 +94,8 @@ tempEnumHash = JSON.parse File.read(ENUMS)
 ##
 @csarray_pure = File.readlines(METADATA_FILE_SOURCE) 
 handle_getItem = ''
+
+FileUtils.rm Dir.glob(JSONOUTPUT_FOLDER + '/*')
 
 @csarray_pure.each do |line|
 	if line.include?('this[')
@@ -131,14 +134,21 @@ parm_array_metadata = []
 enumName = ''
 parm_hash_array = []
 restfulName = nil
+req_set = '1.1'
+object_req_set = ''
 
 @csarray.each_with_index do |line, i|
+
+	if line.strip.start_with?('[ApiSet(Version') 
+		req_set = line.split('=')[1].gsub(']','').gsub(')','').strip
+	end
 
 	## For new object, load its resource and fill the description
 	if line.include?('public interface') || line.include?('public struct')
 		# Get the third word
 		@json_object[:name] = line.split.first(3).join(' ').split.last(1).join(' ').gsub(':','')
-
+		@json_object[:info][:reqSet] = req_set
+		object_req_set = req_set
 		puts "*-> #{@json_object[:name]}"
 		if @json_object[:name].include?('Collection')
 			@json_object[:isCollection] = true
@@ -165,6 +175,8 @@ restfulName = nil
 		end
 	end
 
+
+
 	# This signals end of an object. Time to write stuff to file.
 	if in_region && line.start_with?("\t}")		
 
@@ -185,7 +197,7 @@ restfulName = nil
 				itemReturnType = 'ChartPoint[]'
 			end
 
-			property = Property.new(prop_name, itemReturnType, makeDesc, readOnly, enumName, isItCollection, isRel, nil)	
+			property = Property.new(prop_name, itemReturnType, makeDesc, readOnly, enumName, isItCollection, isRel, object_req_set, nil )	
 			property_array.push property.to_h
 			property = nil		
 		end		
@@ -240,13 +252,13 @@ restfulName = nil
 		else
 			member_summary = @csarray[i+1].delete!('///').strip
 
-			if member_summary.index('See OneNote.') != nil
-				enumName = member_summary[member_summary.index('See OneNote.')..-1].split[1]
-				member_summary = member_summary[0,member_summary.index('See OneNote.')-1]
+			if member_summary.index('See Word.') != nil
+				enumName = member_summary[member_summary.index('See Word.')..-1].split[1]
+				member_summary = member_summary[0,member_summary.index('See Word.')-1]
 				enumName = enumName.chomp('.')
-			elsif member_summary.index('Refer to OneNote.') != nil
-				enumName = member_summary[member_summary.index('Refer to OneNote.')..-1].split[2]			
-				member_summary = member_summary[0,member_summary.index('Refer to OneNote.')-1]				
+			elsif member_summary.index('Refer to Word.') != nil
+				enumName = member_summary[member_summary.index('Refer to Word.')..-1].split[2]			
+				member_summary = member_summary[0,member_summary.index('Refer to Word.')-1]				
 				enumName = enumName.chomp('.')				
 			else
 				enumName = nil
@@ -266,13 +278,13 @@ restfulName = nil
 	if line.include?('/// <param name=')
 		param_summary = line.split('>')[1].gsub('</param', '')
 
-		if param_summary.index('See OneNote.') != nil
-			enumName = param_summary[param_summary.index('See OneNote.')..-1].split[1]
-			param_summary = param_summary[0,param_summary.index('See OneNote.')-1]
+		if param_summary.index('See Word.') != nil
+			enumName = param_summary[param_summary.index('See Word.')..-1].split[1]
+			param_summary = param_summary[0,param_summary.index('See Word.')-1]
 			enumName = enumName.chomp('.')
-		elsif param_summary.index('Refer to OneNote.') != nil
-			enumName = param_summary[param_summary.index('Refer to OneNote.')..-1].split[2]			
-			param_summary = param_summary[0,param_summary.index('Refer to OneNote.')-1]				
+		elsif param_summary.index('Refer to Word.') != nil
+			enumName = param_summary[param_summary.index('Refer to Word.')..-1].split[2]			
+			param_summary = param_summary[0,param_summary.index('Refer to Word.')-1]				
 			enumName = enumName.chomp('.')
 		else
 			enumName = nil
@@ -324,13 +336,15 @@ restfulName = nil
 		end
 
 		if @enumHash.has_key? proDataType
-			enumName = 'OneNote.' + proDataType
+			enumName = 'Word.' + proDataType
 			proDataType = 'string'
 		end
 
-		property = Property.new(prop_name, proDataType, member_summary, readOnly, enumName, isItCollection, isRel, nil)	
+		property = Property.new(prop_name, proDataType, member_summary, readOnly, enumName, isItCollection, isRel, req_set, nil)
+
 		property_array.push property.to_h
 		property = nil
+		req_set = '1.1'
 	end
 
 	# If member is a method and has param, capture its optional param and data type.
@@ -377,7 +391,7 @@ restfulName = nil
 						typeScriptData = typeScriptData[typeScriptData.index('>')+2..-1]
 					end
 				end
-				typeScriptDataArray = typeScriptData.gsub('"','').gsub(')','').gsub('OneNote.','').split('|').join(' or ')
+				typeScriptDataArray = typeScriptData.gsub('"','').gsub(')','').gsub('Word.','').split('|').join(' or ')
 				if suffix != ''
 					parm_array[j][:dataType] = "(" + typeScriptDataArray +")" + suffix
 				else
@@ -398,7 +412,7 @@ restfulName = nil
 
 			# If the enum still slips through to the data type, then overwrite and set the enum correctly. 
 			if @enumHash.has_key? parm_array[j][:dataType] 
-				parm_array[j][:enumNameJs] = 'OneNote.' + parm_array[j][:dataType] 
+				parm_array[j][:enumNameJs] = 'Word.' + parm_array[j][:dataType] 
 				parm_array[j][:dataType]  = 'string'
 			end
 
@@ -459,11 +473,12 @@ restfulName = nil
 		restfulName.slice(0,1).capitalize + restfulName.slice(1..-1)
 
 		# Create method hash and push the values. 
-		method = Method.new(mthd_name, line.split[0], member_summary, syntax, signature, restfulName, nil, nil, parm_hash_array)
+		method = Method.new(mthd_name, line.split[0], member_summary, syntax, signature, restfulName, nil, nil, parm_hash_array, req_set)
 		method_array.push method.to_h
 
 		# Reset the variables. 
 		method = nil
+		req_set = '1.1'
 		parm_array = []
 		parm_hash_array = []
 	end

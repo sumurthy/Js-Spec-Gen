@@ -1,12 +1,12 @@
 {
-  "name": "SectionCollection",
-  "description": "Contains the collection of the document's [section](section.md) objects.",
-  "isCollection": true,
-  "collectionOf": "Section",
+  "name": "TableBorderStyle",
+  "description": "Specifies the border style",
+  "isCollection": false,
+  "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.1",
+    "reqSet": "1.3",
     "addinTypes": [
       "Word"
     ],
@@ -19,10 +19,22 @@
   },
   "properties": [
     {
-      "name": "first",
-      "dataType": "Section",
-      "description": "Gets the first section in this collection.",
-      "isReadOnly": true,
+      "name": "color",
+      "dataType": "string",
+      "description": "Gets or sets the table border color, as a hex value or name.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "type",
+      "dataType": "BorderType",
+      "description": "Gets or sets the type of the table border style.",
+      "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
@@ -31,41 +43,19 @@
       "notes": null
     },
     {
-      "name": "items",
-      "dataType": "Section[]",
-      "description": "A collection of section objects.",
-      "isReadOnly": true,
+      "name": "width",
+      "dataType": "float",
+      "description": "Gets or sets the width, in points, of the table border style.",
+      "isReadOnly": false,
       "enumNameJs": null,
-      "isCollection": true,
-      "isRelationship": false,
-      "reqSet": "1.1",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
-    {
-      "name": "getItem",
-      "returnType": "Section",
-      "description": "Gets a section object by its index in the collection.",
-      "syntax": "sectionCollectionObject.getItem(index);",
-      "signature": "getItem(index: number)",
-      "restfulName": "Item",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "index",
-          "dataType": "number",
-          "isCollection": false,
-          "description": "A number that identifies the index location of a section object.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.1"
-    },
     {
       "name": "load",
       "returnType": "void",

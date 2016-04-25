@@ -1,16 +1,16 @@
 {
   "name": "Section",
-  "description": "Represents a OneNote section. Sections can contain pages.",
+  "description": "Represents a section in a Word document.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "addedIn": "1.1",
+    "reqSet": "1.1",
     "addinTypes": [
-      "OneNote"
+      "Word"
     ],
-    "nameSpace": "OneNote",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -19,112 +19,74 @@
   },
   "properties": [
     {
-      "name": "id",
-      "dataType": "string",
-      "description": "Gets the ID of the section.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "name",
-      "dataType": "string",
-      "description": "Gets the name of the section.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "notebook",
-      "dataType": "Notebook",
-      "description": "Gets the notebook that contains the section.",
+      "name": "body",
+      "dataType": "Body",
+      "description": "Gets the body object of the section. This does not include the headerfooter and other section metadata.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "sectionGroup",
-      "dataType": "SectionGroup",
-      "description": "Gets the section group that contains the section. Returns null if the section is a direct child of the notebook.",
+      "name": "next",
+      "dataType": "Section",
+      "description": "Gets the next section.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
     {
-      "name": "getPages",
-      "returnType": "PageCollection",
-      "description": "Gets the collection of pages in the section.",
-      "syntax": "sectionObject.getPages();",
-      "signature": "getPages()",
-      "restfulName": "Pages",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null
-    },
-    {
-      "name": "addPage",
-      "returnType": "Page",
-      "description": "Adds a new page to the end of the section.",
-      "syntax": "sectionObject.addPage(title);",
-      "signature": "addPage(title: string)",
-      "restfulName": "addPage",
+      "name": "getHeader",
+      "returnType": "Body",
+      "description": "Gets one of the section's headers.",
+      "syntax": "sectionObject.getHeader(type);",
+      "signature": "getHeader(type: HeaderFooterType)",
+      "restfulName": "Header",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
-          "name": "title",
-          "dataType": "string",
+          "name": "type",
+          "dataType": "HeaderFooterType",
           "isCollection": false,
-          "description": "The title of the new page.",
+          "description": "Required. The type of header to return. This value can be: 'primary', 'firstPage' or 'evenPages'.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
-      "name": "insertSectionAsSibling",
-      "returnType": "Section",
-      "description": "Inserts a new section before or after the current section.",
-      "syntax": "sectionObject.insertSectionAsSibling(location, title);",
-      "signature": "insertSectionAsSibling(location: string, title: string)",
-      "restfulName": "insertSectionAsSibling",
+      "name": "getFooter",
+      "returnType": "Body",
+      "description": "Gets one of the section's footers.",
+      "syntax": "sectionObject.getFooter(type);",
+      "signature": "getFooter(type: HeaderFooterType)",
+      "restfulName": "Footer",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
-          "name": "location",
-          "dataType": "string",
+          "name": "type",
+          "dataType": "HeaderFooterType",
           "isCollection": false,
-          "description": "The location of the new section relative to the current section.",
-          "isRequired": true,
-          "enumNameJs": "OneNote.InsertLocation",
-          "notes": null
-        },
-        {
-          "name": "title",
-          "dataType": "string",
-          "isCollection": false,
-          "description": "The name of the new section.",
+          "description": "Required. The type of footer to return. This value can be: 'primary', 'firstPage' or 'evenPages'.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     },
     {
       "name": "load",
@@ -144,7 +106,8 @@
           "possibleValues": null,
           "notes": null
         }
-      ]
+      ],
+      "reqSet": "1.1"
     }
   ]
 }

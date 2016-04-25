@@ -1,48 +1,47 @@
-# ParagraphCollection Object (JavaScript API for Word)
+# InlinePictureCollection Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
-Contains a collection of [paragraph](paragraph.md) objects.
+Contains a collection of [inlinePicture](inlinePicture.md) objects.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|WordApi1.1||
+|items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|WordApi1.1||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|first|[Paragraph](paragraph.md)|Gets the first paragraph in this collection. Read-only.|WordApi1.3||
-|last|[Paragraph](paragraph.md)|Gets the last paragraph in this collection. Read-only.|WordApi1.3||
+|first|[InlinePicture](inlinepicture.md)|Gets the first inline image in this collection. Read-only.|WordApi1.3||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|WordApi1.1|
+|[getItem(index: number)](#getitemindex-number)|[InlinePicture](inlinepicture.md)|Gets an inline picture object by its index in the collection.|WordApi1.1|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|WordApi1.1|
 
 ## Method Details
 
 
 ### getItem(index: number)
-Gets a paragraph object by its index in the collection.
+Gets an inline picture object by its index in the collection.
 
 #### Syntax
 ```js
-paragraphCollectionObject.getItem(index);
+inlinePictureCollectionObject.getItem(index);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|index|number|A number that identifies the index location of a paragraph object.|
+|index|number|A number that identifies the index location of an inline picture object.|
 
 #### Returns
-[Paragraph](paragraph.md)
+[InlinePicture](inlinepicture.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
