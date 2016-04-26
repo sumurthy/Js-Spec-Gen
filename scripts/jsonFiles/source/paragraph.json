@@ -134,7 +134,7 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.1",
+      "reqSet": "WordApiDesktop, 1.3",
       "isKey": null,
       "notes": null
     },

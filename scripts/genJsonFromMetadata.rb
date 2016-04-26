@@ -137,10 +137,20 @@ restfulName = nil
 req_set = '1.1'
 object_req_set = ''
 
+
+def self.parser input
+
+  input.split(',').each_with_object({}) do |s,output|  	
+          k,v = s.split('=')
+          output[v.chomp(')').gsub('"','').strip]=k
+  end
+end
+
 @csarray.each_with_index do |line, i|
 
-	if line.strip.start_with?('[ApiSet(Version') 
-		req_set = line.split('=')[1].gsub(']','').gsub(')','').strip
+	if line.strip.start_with?('[ApiSet(') 
+		#req_set = line.split('=')[1].gsub(']','').gsub(')','').strip
+		req_set = (parser line[/\(.*?\)/]).keys.join(', ')
 	end
 
 	## For new object, load its resource and fill the description
