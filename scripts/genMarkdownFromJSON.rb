@@ -24,7 +24,7 @@ module SpecMaker
 	HEADER5 = '##### '
 	GETTERSETTERLINK = '_See property access [examples.](#property-access-examples)_'
 	GETTERSETTER = 'Property access examples'
-
+	PROD_REQUIREMENTS = ['1.1', '1.2']
 	BACKTOMETHOD = '[Back](#methods)'
 
 	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
@@ -78,6 +78,7 @@ module SpecMaker
 	@mdlines = []
 	@resource = ''
 	@gsType = ''
+	@changes = []
 
 	def self.uncapitalize (str="")
 		if str.length > 0
@@ -104,21 +105,32 @@ module SpecMaker
 		# If the type is of	an object, then provide markdown link.
 		if SIMPLETYPES.include? prop[:dataType] 	
 			dataTypePlusLink = prop[:dataType] 	
+			dataTypePlusLinkFull = prop[:dataType] 	
 		else			
 			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].downcase + ".md)"
+			dataTypePlusLinkFull = "[" + prop[:dataType] + "](resources/" + prop[:dataType].downcase + ".md)"
 		end
 
 		if prop[:isCollection] 
 			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].chomp('[]').downcase + ".md)"
 		end
 			
-		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + "WordApi#{prop[:reqSet]}") + PIPE + PIPE + NEWLINE
-		if prop[:reqSet] > "1.2"
+		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + "#{prop[:reqSet]}") + PIPE + PIPE + NEWLINE
+		if !(PROD_REQUIREMENTS.include? prop[:reqSet])
 			whatType = 'Property'
 			if prop[:isRelationship]
 				whatType = 'Relationship'
 			end
-			puts (PIPE + "[#{@resource}](#{@resource.downcase}.md)" + PIPE +  whatType + PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + "WordApi #{prop[:reqSet]}" + PIPE)
+			#@changes.push  (PIPE + "[#{@resource}](#{@resource.downcase}.md)" + PIPE +  whatType + PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + "#{prop[:reqSet]}" + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=#{@resource}-#{prop[:name]})" + PIPE +  NEWLINE)
+
+			@changes.push "**Resource name:** [#{@resource}](resources/#{@resource.downcase}.md) </br>" + NEWLINE
+			@changes.push "**What's new:** #{whatType} **#{prop[:name]}** of type **#{dataTypePlusLinkFull}** </br>" + NEWLINE
+			@changes.push "**Description:** #{finalDesc} </br>" + NEWLINE
+			@changes.push "**Available in requirement set:** #{prop[:reqSet]} </br>" + NEWLINE
+			@changes.push "_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{prop[:name]})_ </br>" + NEWLINE 
+			@changes.push NEWLINE
+
+
 		end		
 	end
 
@@ -128,8 +140,10 @@ module SpecMaker
 		# If the type is of	an object, then provide markdown link.
 		if SIMPLETYPES.include? method[:returnType]
 			dataTypePlusLink = method[:returnType]
+			dataTypePlusLinkFull = method[:returnType]
 		else			
 			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
+			dataTypePlusLinkFull = "[" + method[:returnType] + "](resources/" + method[:returnType].downcase + ".md)"
 		end
 		# Add anchor links to method. 
 		str = method[:signature].strip
@@ -137,12 +151,20 @@ module SpecMaker
 		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
 		methodPlusLink = "[" + method[:signature].strip + "](#" + str.downcase + ")"
 
-		methodPlusLinkFull = "[" + method[:signature].strip + "](" + "#{@resource.downcase}.md#" + str.downcase + ")"
+		methodPlusLinkFull = "[" + method[:signature].strip + "](" + "resources/#{@resource.downcase}.md#" + str.downcase + ")"
 		
-		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "WordApi#{method[:reqSet]}") + PIPE + NEWLINE
+		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "#{method[:reqSet]}") + PIPE + NEWLINE
 
-		if method[:reqSet] > "1.2"
-			puts (PIPE + "[#{@resource}](#{@resource.downcase}.md)" + PIPE + "Method" + PIPE + methodPlusLinkFull + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "WordApi #{method[:reqSet]}" + PIPE)
+		if !(PROD_REQUIREMENTS.include? method[:reqSet])
+			#@changes.push (PIPE + "[#{@resource}](#{@resource.downcase}.md)" + PIPE + "Method" + PIPE + methodPlusLinkFull + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "#{method[:reqSet]}" + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})" + PIPE + NEWLINE)
+
+			@changes.push "**Resource name:** [#{@resource}](resources/#{@resource.downcase}.md) </br>" + NEWLINE
+			@changes.push "**What's new:** Method **#{methodPlusLinkFull}** returning **#{dataTypePlusLinkFull}** </br>" + NEWLINE
+			@changes.push "**Description:** #{method[:description]} </br>" + NEWLINE
+			@changes.push "**Available in requirement set:** #{method[:reqSet]} </br>" + NEWLINE
+			@changes.push "_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})_ </br>" + NEWLINE 
+			@changes.push NEWLINE
+
 		end
 	end
 
@@ -402,6 +424,13 @@ module SpecMaker
 			processed_files = processed_files + 1
 		end
 	end
+	
+	# Write the README output file. 
+	outfile = MARKDOWN_OUTPUT_FOLDER + '$changes.md'
+	file=File.new(outfile,'w')
+	@changes.each do |line|
+		file.write line
+	end	
 	puts ""
 	puts "*** OK. Processed #{processed_files} input files. Check #{File.expand_path(LOG_FOLDER)} folder for results. ***"
 end
