@@ -19,6 +19,17 @@
   },
   "properties": [
     {
+      "name": "count",
+      "dataType": "int",
+      "description": "Returns the number of sections in the collection.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
       "name": "items",
       "dataType": "Section[]",
       "description": "A collection of section objects.",
@@ -67,6 +78,27 @@
           "dataType": "string",
           "isCollection": false,
           "description": "The name of the section.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "getItemAt",
+      "returnType": "Section",
+      "description": "Gets a section on its position in the collection.",
+      "syntax": "sectionCollectionObject.getItemAt(index);",
+      "signature": "getItemAt(index: number)",
+      "restfulName": "ItemAt",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Index value of the object to be retrieved. Zero-indexed.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null

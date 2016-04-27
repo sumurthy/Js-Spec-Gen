@@ -67,7 +67,7 @@
           "name": "html",
           "dataType": "string",
           "isCollection": false,
-          "description": "HTML string to append.",
+          "description": "The HTML string to insert.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null
@@ -88,7 +88,7 @@
           "name": "html",
           "dataType": "string",
           "isCollection": false,
-          "description": "HTML string to prepend.",
+          "description": "The HTML string to insert.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null

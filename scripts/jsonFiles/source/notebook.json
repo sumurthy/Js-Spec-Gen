@@ -78,14 +78,14 @@
       "name": "addSection",
       "returnType": "Section",
       "description": "Adds a new section to the end of the notebook.",
-      "syntax": "notebookObject.addSection(title);",
-      "signature": "addSection(title: String)",
+      "syntax": "notebookObject.addSection(name);",
+      "signature": "addSection(name: String)",
       "restfulName": "addSection",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
-          "name": "title",
+          "name": "name",
           "dataType": "String",
           "isCollection": false,
           "description": "The name of the new section.",

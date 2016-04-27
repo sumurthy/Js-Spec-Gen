@@ -1,6 +1,5 @@
 ### Getter
-
-**activeNotebook**
+**id**
 ```js
 OneNote.run(function (context) {
         
@@ -9,14 +8,11 @@ OneNote.run(function (context) {
             
     // Queue a command to load the notebook. 
     // For best performance, request specific properties.           
-    notebook.load('id,name');
+    notebook.load('id');
             
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
         .then(function () {
-                    
-            // Show some properties.
-            console.log("Notebook name: " + notebook.name);
             console.log("Notebook ID: " + notebook.id);
             
         });
@@ -28,25 +24,21 @@ OneNote.run(function (context) {
         }
     });
 ```
-
-**activePage**
+**name**
 ```js
 OneNote.run(function (context) {
         
     // Get the current notebook.
-    var page = context.application.activePage;
+    var notebook = context.application.activeNotebook;
             
     // Queue a command to load the notebook. 
     // For best performance, request specific properties.           
-    page.load('id,title');
+    notebook.load('name');
             
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
         .then(function () {
-                    
-            // Show some properties.
-            console.log("Page title: " + page.title);
-            console.log("Page ID: " + page.id);
+            console.log("Notebook name: " + notebook.name);
             
         });
     })
@@ -58,25 +50,23 @@ OneNote.run(function (context) {
     });
 ```
 
-**activeSection**
-```js
+### addSection(title: String)
+```js          
 OneNote.run(function (context) {
-        
-    // Get the current section.
-    var section = context.application.activeSection;
-            
-    // Queue a command to load the section. 
-    // For best performance, request specific properties.           
-    section.load('id,name');
-            
+
+    // Gets the active notebook.
+    var notebook = context.application.activeNotebook;
+
+    // Queue a command to add a new section. 
+    var section = notebook.addSection("Sample section");
+    
+    // Queue a command to load the new section. This example reads the name property later.
+    section.load("name");
+
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
-        .then(function () {
-                    
-            // Show some properties.
-            console.log("Section name: " + section.name);
-            console.log("Section ID: " + section.id);
-            
+        .then(function() {
+            console.log("New section name is " + section.name);
         });
     })
     .catch(function(error) {
@@ -84,31 +74,24 @@ OneNote.run(function (context) {
         if (error instanceof OfficeExtension.Error) {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
-    });
+    }); 
 ```
 
-**notebooks**
-
-```js
+### getSectionGroups()
+```js          
 OneNote.run(function (context) {
-        
-    // Get the current notebook.
-    var notebooks = context.application.notebooks;
-            
-    // Queue a command to load the notebook. 
-    // For best performance, request specific properties.           
-    notebooks.load('id,name');
-            
+
+    // Get the section groups in the notebook. 
+    var sectionGroups = context.application.activeNotebook.getSectionGroups();
+
+    // Queue a command to load the sectionGroups. 
+    sectionGroups.load("name");
+
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
-        .then(function () {
-                        
-            $.each(notebooks.items, function(index, notebook) {
-                
-                // Show some properties.
-                console.log("Notebook name: " + notebook.name);
-                console.log("Notebook ID: " + notebook.id);
-                
+        .then(function() {
+            $.each(sectionGroups.items, function(index, sectionGroup) {
+                console.log("Section group name: " + sectionGroup.name);
             });
         });
     })
@@ -120,29 +103,35 @@ OneNote.run(function (context) {
     });
 ```
 
-### navigateToPage(page: page)
-```js        
+### getSections(recursive: bool)
+```js
 OneNote.run(function (context) {
-        
-    // Get the pages in the current section.
-    var pages = context.application.activeSection.getPages();
-            
-    // Queue a command to load the pages. 
-    // For best performance, request specific properties.           
-    pages.load('id');
-            
+
+    // Gets the active notebook.
+    var notebook = context.application.activeNotebook;
+    
+    // Queue a command to get immediate child sections of the notebook. 
+    var childSections = notebook.getSections(false);
+
+    // Queue a command to get all sections in the notebook, including sections in section groups.
+    var allChildSections = notebook.getSections(true);
+
+    // Queue a command to load the childSections. 
+    context.load(childSections);
+
+    // Queue a command to load the allChildSections. 
+    context.load(allChildSections);
+
     // Run the queued commands, and return a promise to indicate task completion.
     return context.sync()
-        .then(function () {
-                    
-            // This example loads the first page in the section.
-            var page = pages.items[0];
-                        
-            // Open the page in the application.                    
-            context.application.navigateToPage(page);
-                    
-            // Run the queued command.
-            return context.sync();
+        .then(function() {
+            $.each(childSections.items, function(index, childSection) {
+                console.log("Immediate child section name: " + childSection.name);
+            });
+
+            $.each(allChildSections.items, function(index, childSection) {
+                console.log("Child section name: " + childSection.name);
+            });            
         });
     })
     .catch(function(error) {
@@ -150,5 +139,5 @@ OneNote.run(function (context) {
         if (error instanceof OfficeExtension.Error) {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
-    });
+    });   
 ```

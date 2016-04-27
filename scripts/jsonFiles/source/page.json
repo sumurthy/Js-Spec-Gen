@@ -61,6 +61,17 @@
       "isRelationship": false,
       "isKey": null,
       "notes": null
+    },
+    {
+      "name": "absolutePath",
+      "dataType": "string",
+      "description": "The absolute path of the page. Read only",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
     }
   ],
   "methods": [
@@ -108,45 +119,6 @@
           "dataType": "String",
           "isCollection": false,
           "description": "An HTML string that describes the visual presentation of the Outline.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ]
-    },
-    {
-      "name": "addImageFromBase64",
-      "returnType": "Image",
-      "description": "Adds an Image to the page at the specified position.",
-      "syntax": "pageObject.addImageFromBase64(left, top, base64EncodedImage);",
-      "signature": "addImageFromBase64(left: double, top: double, base64EncodedImage: String)",
-      "restfulName": "addImageFromBase64",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "left",
-          "dataType": "double",
-          "isCollection": false,
-          "description": "The left position of the top, left corner of the Image.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        },
-        {
-          "name": "top",
-          "dataType": "double",
-          "isCollection": false,
-          "description": "The top position of the top, left corner of the Image.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        },
-        {
-          "name": "base64EncodedImage",
-          "dataType": "String",
-          "isCollection": false,
-          "description": "A base64-encoded image, e.g. data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIA...",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null

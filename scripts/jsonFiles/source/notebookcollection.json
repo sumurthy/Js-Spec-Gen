@@ -19,6 +19,17 @@
   },
   "properties": [
     {
+      "name": "count",
+      "dataType": "int",
+      "description": "Returns the number of notebooks in the collection.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
       "name": "items",
       "dataType": "Notebook[]",
       "description": "A collection of notebook objects.",
@@ -67,6 +78,27 @@
           "dataType": "string",
           "isCollection": false,
           "description": "The name of the notebook.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "getItemAt",
+      "returnType": "Notebook",
+      "description": "Gets a notebook on its position in the collection.",
+      "syntax": "notebookCollectionObject.getItemAt(index);",
+      "signature": "getItemAt(index: number)",
+      "restfulName": "ItemAt",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Index value of the object to be retrieved. Zero-indexed.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null

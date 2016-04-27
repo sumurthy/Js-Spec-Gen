@@ -19,6 +19,17 @@
   },
   "properties": [
     {
+      "name": "count",
+      "dataType": "int",
+      "description": "Returns the number of page contents in the collection.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
       "name": "items",
       "dataType": "PageContent[]",
       "description": "A collection of pageContent objects.",
@@ -46,6 +57,27 @@
           "dataType": "number or string",
           "isCollection": false,
           "description": "The ID of the PageContent object, or the index location of the PageContent object in the collection.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "getItemAt",
+      "returnType": "PageContent",
+      "description": "Gets a page content on its position in the collection.",
+      "syntax": "pageContentCollectionObject.getItemAt(index);",
+      "signature": "getItemAt(index: number)",
+      "restfulName": "ItemAt",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Index value of the object to be retrieved. Zero-indexed.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null

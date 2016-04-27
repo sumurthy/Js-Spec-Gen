@@ -9,7 +9,7 @@ require 'logger'
 require 'json'
 
 # Log file
-	LOG_FOLDER = '../../../logs'
+	LOG_FOLDER = 'logs'
 	Dir.mkdir(LOG_FOLDER) unless File.exists?(LOG_FOLDER)
 
 	if File.exists?("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
