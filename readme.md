@@ -84,6 +84,7 @@ For each of the resources in your object model, create a new file in the specifi
 * For each method, begin with three `#` symbols and include method signature. Example `### getNotebookById(id: string)` 
 * Under this line, define the example you wish to include. 
 * For getter and setter: begin with three `#` symbols and follow with the text `getter` and `setter` or `getter or setter` depending on what the object supports.
+* Between code blocks or within a code snippets - DO NOT INCLUDE # symbol for formatting purpose. This will throw off the script.
 
 When the final markdown spec file is created for the resource, these code snippets get included underneath method definition. Getter and setter code snippets are added at the end of the spec file. 
 
