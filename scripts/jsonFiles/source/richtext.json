@@ -54,36 +54,6 @@
   ],
   "methods": [
     {
-      "name": "insertHtml",
-      "returnType": "void",
-      "description": "Inserts HTML at the specified location in the RichText object.",
-      "syntax": "richTextObject.insertHtml(html, insertLocation);",
-      "signature": "insertHtml(html: string, insertLocation: string)",
-      "restfulName": "insertHtml",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "html",
-          "dataType": "string",
-          "isCollection": false,
-          "description": "The HTML to insert.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        },
-        {
-          "name": "insertLocation",
-          "dataType": "string",
-          "isCollection": false,
-          "description": "The location to insert the HTML.",
-          "isRequired": true,
-          "enumNameJs": "OneNote.InsertLocation",
-          "notes": null
-        }
-      ]
-    },
-    {
       "name": "load",
       "returnType": "void",
       "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",

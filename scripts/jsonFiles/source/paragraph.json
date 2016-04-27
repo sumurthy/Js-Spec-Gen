@@ -1,6 +1,6 @@
 {
   "name": "Paragraph",
-  "description": "A container for the visible content on a page. A Paragraph can contain any one ParagraphType type of content, such as RichText, Image, or Table.",
+  "description": "A container for the visible content on a page. A Paragraph can contain any one ParagraphType type of content.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
@@ -41,17 +41,6 @@
       "notes": null
     },
     {
-      "name": "parentParagraph",
-      "dataType": "Paragraph",
-      "description": "Gets the Paragraph object that contains the Paragraph. Returns null if the Paragraph is a direct child of an Outline.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
-    },
-    {
       "name": "type",
       "dataType": "string",
       "description": "Gets the type of the Paragraph object.",
@@ -59,17 +48,6 @@
       "enumNameJs": "OneNote.ParagraphType",
       "isCollection": false,
       "isRelationship": false,
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "subParagraphs",
-      "dataType": "ParagraphCollection",
-      "description": "Gets the child Paragraph objects of the Paragraph. Applies only if ParagraphType is Table.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": true,
-      "isRelationship": true,
       "isKey": null,
       "notes": null
     },
@@ -97,6 +75,47 @@
     }
   ],
   "methods": [
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the paragraph",
+      "syntax": "paragraphObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null
+    },
+    {
+      "name": "insertAsSibling",
+      "returnType": "void",
+      "description": "Inserts the specified HTML content",
+      "syntax": "paragraphObject.insertAsSibling(html, insertLocation);",
+      "signature": "insertAsSibling(html: string, insertLocation: string)",
+      "restfulName": "insertAsSibling",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "html",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "An HTML string that describes the visual presentation of the content.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The location of new contents relative to the current Paragraph.",
+          "isRequired": true,
+          "enumNameJs": "OneNote.InsertLocation",
+          "notes": null
+        }
+      ]
+    },
     {
       "name": "load",
       "returnType": "void",

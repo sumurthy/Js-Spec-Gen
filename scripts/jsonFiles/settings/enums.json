@@ -2,20 +2,12 @@
 	"OneNote.ParagraphType": {
 	"RichText": "",
 	"Image": "",
-	"Table":"",
-	"InkDrawing": "",
-	"InsertedFile": "",
-	"MediaFile": "",
-	"InkParagraph": "",
 	"Other": ""
 	},
 
 	"OneNote.PageContentType": {
 	"Outline": "",
 	"Image": "",
-	"Ink": "",
-	"InsertedFile": "",
-	"MediaFile": "",
 	"Other": ""
 	},
 

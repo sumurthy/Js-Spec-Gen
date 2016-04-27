@@ -19,6 +19,17 @@
   },
   "properties": [
     {
+      "name": "count",
+      "dataType": "int",
+      "description": "Returns the number of pages in the collection.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
       "name": "items",
       "dataType": "Page[]",
       "description": "A collection of page objects.",
@@ -67,6 +78,27 @@
           "dataType": "string",
           "isCollection": false,
           "description": "The title of the page.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "getItemAt",
+      "returnType": "Page",
+      "description": "Gets a page on its position in the collection.",
+      "syntax": "pageCollectionObject.getItemAt(index);",
+      "signature": "getItemAt(index: number)",
+      "restfulName": "ItemAt",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Index value of the object to be retrieved. Zero-indexed.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null
