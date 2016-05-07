@@ -7,6 +7,14 @@
 %remarks%
 </extendedremarks> 
 
+<outlookrequirements>
+### Usage details 
+* [Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md): **%req%**
+* [Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md): **%permission%**
+* Applicable Outlook mode: **%mode%**
+
+</outlookrequirements> 
+
 <requirements>
 ## Requirement set and supported hosts
 
@@ -19,7 +27,7 @@
 <properties>
 ### Properties
 
-| Property	   | Type	| Description| Req. Set Ver#| 
+| Property	   | Type	| Description| Requirement Set|
 |:-------------|:-------|:-----------|:---|
 >r|%name%      | %type% | %description% | %req% |
 

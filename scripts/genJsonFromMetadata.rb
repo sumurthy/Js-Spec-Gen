@@ -9,27 +9,46 @@ require 'logger'
 require 'json'
 require 'FileUtils'
 
-# Log file
-	LOG_FOLDER = '../../../logs'
-	Dir.mkdir(LOG_FOLDER) unless File.exists?(LOG_FOLDER)
+# Setup
+CONFIG = "../config/config.json"
+@config = JSON.parse(File.read(CONFIG, :encoding => 'UTF-8'), {:symbolize_names => true})
 
-	if File.exists?("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
-		File.delete("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
-	end
-	@logger = Logger.new("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
-	@logger.level = Logger::DEBUG
+JSTRUCT = "../config/json_structure.json"
+@jstruct = JSON.parse(File.read(JSTRUCT, :encoding => 'UTF-8'), {:symbolize_names => true})
+
+puts "....Starting run for the app #{@config}"
+puts
+
+# 
+
+# Log file
+LOG_FOLDER = @config[:logFile]
+Dir.mkdir(LOG_FOLDER) unless File.exists?(LOG_FOLDER)
+
+if File.exists?("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
+	File.delete("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
+end	
+
+@logger = Logger.new("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
+@logger.level = Logger::DEBUG
+
+@logger.debug("....Starting run for the app #{@config[:app]}")	
+
+
 # End log file
 
 
 @processed_files = 0
 @json_files_created = 0
-METADATA_FILE_SOURCE = '../../data/WdJscomApi.cs'
-ENUMS = 'jsonFiles/settings/enums.json'
+
+
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
 JSONOUTPUT_FOLDER = 'jsonFiles/source/'
 OBJECTKEYS = 'jsonFiles/settings/objectkeys.json'
 
-@csarray = []
+
+exit 0
+
 @csarray_pure = []
 @csarray_out = []
 @current_object = ''
@@ -39,41 +58,41 @@ OBJECTKEYS = 'jsonFiles/settings/objectkeys.json'
 @json_hash = {}
 @json_array = []
 @json_object = {}
-@json_object[:name] = ''
-@json_object[:description] = ''
-@json_object[:isCollection] = false
-@json_object[:collectionOf] = nil
-@json_object[:restPath] = []
-@json_object[:info] = {}
-@json_object[:info][:version] = '1.1'
-@json_object[:info][:reqSet] = '1.1'
-@json_object[:info][:addinTypes] = ["Word"]
-@json_object[:info][:nameSpace] = "Word"
-@json_object[:info][:addinHosts] = ["Task pane"]
-@json_object[:info][:title] = 'Office JavaScript Add-in API'
-@json_object[:info][:description] = 'Office JavaScript Add-in API'
-@json_object[:properties] = []
-@json_object[:methods] = []
+
 
 # Sub json containers
 # Method = Struct.new(:name, :returnType, :description, :parameters, :syntax, :vbaInfo, :signature)
 # Property = Struct.new(:name, :dataType, :description, :isReadOnly, :enumNameJs, :isCollection, :vbaInfo, :possibleValues, :isRelationship)
+
 Method = Struct.new(:name, :returnType, :description, :syntax, :signature, :restfulName, :notes, :httpSuccessResponse, :parameters, :reqSet)
 Property = Struct.new(:name, :dataType, :description, :isReadOnly, :enumNameJs, :isCollection, :isRelationship, :reqSet, :isKey, :notes)
 ParamStr = Struct.new(:name, :dataType, :isCollection, :description, :isRequired, :enumNameJs, :notes)
 
 SIMPLETYPES = %w[int string object object[][] object[] double bool number void]
 
-def csarray_write (line=nil) 
-	@csarray_out.push line
+def self.deep_copy(o)
+	Marshal.load(Marshal.dump(o))
 end
 
+def self.uncapitalize (str="")
+	if str.length > 0
+		str[0, 1].downcase + str[1..-1]
+	else
+		str
+	end
+end
+
+# def csarray_write (line=nil) 
+# 	@csarray_out.push line
+# end
+
 ### 
-# Load up all the known existing enums. Remove leading Word.
+# Load up all the known existing enums. Remove leading App name
 ##
+
 @enumHash = {}
-tempEnumHash = JSON.parse File.read(ENUMS)
-@enumHash = Hash[tempEnumHash.map {|k, v| [k.gsub('Word.',''), v] }]
+tempEnumHash = JSON.parse File.read(@config[:enumFilePath])
+@enumHash = Hash[tempEnumHash.map {|k, v| [k.gsub("#{@config[:app]}.",""), v] }]
 
 ### 
 # Load the "load()" method to be added to all items that have at least one property. 
@@ -92,16 +111,23 @@ tempEnumHash = JSON.parse File.read(ENUMS)
 ### 
 # Read the file & create a transit file by removing existing comments from the .CS File.
 ##
-@csarray_pure = File.readlines(METADATA_FILE_SOURCE) 
+@csarray_pure = File.readlines(@config[:metadataFilePath]) 
 handle_getItem = ''
 
+### 
+# Remove previous run's files.
+##
+
 FileUtils.rm Dir.glob(JSONOUTPUT_FOLDER + '/*')
+
+
+### 
+# Replace this[] entry with getItem before starting.
+##
 
 @csarray_pure.each do |line|
 	if line.include?('this[')
 		handle_getItem = line
-		#handle_getItem = handle_getItem[0,handle_getItem.index('{')]
-		#handle_getItem = handle_getItem.gsub('this[','getItem(').gsub(']',');')
 		handle_getItem = handle_getItem.gsub('this[','getItem(')
 		handle_getItem = handle_getItem.rpartition(']').first + ')' + ';'
 		line = handle_getItem + "\n"
@@ -109,20 +135,10 @@ FileUtils.rm Dir.glob(JSONOUTPUT_FOLDER + '/*')
 	@csarray.push line	
 end
 
-def self.uncapitalize (str="")
-	if str.length > 0
-		str[0, 1].downcase + str[1..-1]
-	else
-		str
-	end
-end
-
-
 ### 
 # Forward Pass: Write to the output array
 ##
 
-@json_objects = nil
 in_region = false
 member_summary = ''
 member_ahead = false
@@ -138,6 +154,9 @@ req_set = '1.1'
 object_req_set = ''
 
 
+##
+# A method to extract the requirement set names.
+###
 def self.parser input
 
   input.split(',').each_with_object({}) do |s,output|  	
@@ -146,52 +165,39 @@ def self.parser input
   end
 end
 
+##
+# MAIN LOOP -- READ EACH LINE 
+###
+
 @csarray.each_with_index do |line, i|
 
 	if line.strip.start_with?('[ApiSet(') 
-		#req_set = line.split('=')[1].gsub(']','').gsub(')','').strip
 		req_set = (parser line[/\(.*?\)/]).keys.join(', ')
 	end
 
 	## For new object, load its resource and fill the description
 	if line.include?('public interface') || line.include?('public struct')
+
+		@json_object = deep_copy(@jstruct[:object])
 		# Get the third word
 		@json_object[:name] = line.split.first(3).join(' ').split.last(1).join(' ').gsub(':','')
-		@json_object[:info][:reqSet] = req_set
+		@json_object[:reqSet] = req_set
 		object_req_set = req_set
 		puts "*-> #{@json_object[:name]}"
 		if @json_object[:name].include?('Collection')
-			@json_object[:isCollection] = true
 			# Define what it is a collection of. Extract object name between < >
 			# public interface ChartSeriesCollection : IEnumerable<ChartSeries>
 			@json_object[:collectionOf] = line.split('<')[1].chomp("\n").chomp(">")
-		else
-			@json_object[:isCollection] = false
-			@json_object[:collectionOf] = nil
 		end
 		in_region = true
 		@member_summary = ''
 	end
 	
-	if line.strip.start_with?('[ClientCallableComMember', '[ClientCallableOperation') 
-		member_ahead = true
-		restfulName = nil
-		# Extract the Restfull name, which usually strips off get prefix from method names.
-		if line.include?('RESTfulName')
-			lineSplitArray = line.split(',')
-			restNameIndex = lineSplitArray.index {|w| w.include?('RESTfulName')}
-			restfulName = lineSplitArray[restNameIndex].split('=')[1].gsub('"','').gsub(')','').gsub(']','').strip
-
-		end
-	end
-
-
-
 	# This signals end of an object. Time to write stuff to file.
 	if in_region && line.start_with?("\t}")		
 
 		# If this is a collection, add the 'items' property as that is not listed in the .CS file for some reason! 
-		if 	@json_object[:isCollection] == true
+		if 	@json_object[:collectionOf] != nil
 			prop_name = 'items'
 			isRel = false
 
@@ -202,10 +208,13 @@ end
 			isItCollection = true
 			itemReturnType = @json_object[:name][0,@json_object[:name].index('Collection')] + '[]'
 
-			#Because chartpoints is not named correctly, it needs an override. 
+			## Bug fix -- 
+			# Because chartpoints is not named correctly, it needs an override. 
+
 			if itemReturnType == 'ChartPoints[]'
 				itemReturnType = 'ChartPoint[]'
 			end
+			# End fix 
 
 			property = Property.new(prop_name, itemReturnType, makeDesc, readOnly, enumName, isItCollection, isRel, object_req_set, nil )	
 			property_array.push property.to_h
@@ -214,37 +223,23 @@ end
 
 
 		# Write the buffer
-		if property_array.length == 0
-			@json_object[:properties] = nil
-		else
-			@json_object[:properties] = property_array
-		end
-
+		@json_object[:properties] = property_array
+		
 		# Add the .load method to the method array. 		
-		if property_array.length == 0
-			if method_array.length == 0
-				@json_object[:methods] = nil
-			else
-				@json_object[:methods] = method_array				
-			end
-		else
-			method_array.push @loadMethodHash		
-			@json_object[:methods] = method_array				
+		if property_array.length > 0
+			method_array.push @loadMethodHash						
 		end	
-
-		# Seed the restPath if its the parent object (workbook)
-		if @json_object[:name] == 'Workbook' 
-			@json_object[:restPath] = ['/workbook']
-		else
-			@json_object[:restPath] = nil
-		end
-
+		@json_object[:methods] = method_array
 
 		File.open("#{JSONOUTPUT_FOLDER}#{(@json_object[:name]).downcase}.json", "w") do |f|
 			f.write(JSON.pretty_generate @json_object)
 		end
 		@json_files_created = @json_files_created + 1
-		# Reset the variables.
+
+		##
+		# Reset the variables. 
+		###
+
 		in_region = false
 		# Bug fix. Caused issue with Word API. 
 		member_ahead = false
@@ -262,25 +257,17 @@ end
 		else
 			member_summary = @csarray[i+1].delete!('///').strip
 
-			if member_summary.index('See Word.') != nil
-				enumName = member_summary[member_summary.index('See Word.')..-1].split[1]
-				member_summary = member_summary[0,member_summary.index('See Word.')-1]
+			if member_summary.index("See #{@config[:app]}.") != nil
+				enumName = member_summary[member_summary.index("See #{@config[:app]}.")..-1].split[1]
+				member_summary = member_summary[0,member_summary.index("See #{@config[:app]}.")-1]
 				enumName = enumName.chomp('.')
-			elsif member_summary.index('Refer to Word.') != nil
-				enumName = member_summary[member_summary.index('Refer to Word.')..-1].split[2]			
-				member_summary = member_summary[0,member_summary.index('Refer to Word.')-1]				
+			elsif member_summary.index("Refer to #{@config[:app]}.") != nil
+				enumName = member_summary[member_summary.index("Refer to #{@config[:app]}.")..-1].split[2]			
+				member_summary = member_summary[0,member_summary.index("Refer to #{@config[:app]}.")-1]				
 				enumName = enumName.chomp('.')				
 			else
 				enumName = nil
 			end
-
-			# if member_summary.include?('Read-only')
-			# 	readOnly = true
-			# 	member_summary = member_summary.gsub('. Read-only.', '.')
-			# 	member_summary = member_summary.gsub(' Read-only.', '.')
-			# else
-			# 	readOnly = false
-			# end
 		end
 	end
 
@@ -288,13 +275,13 @@ end
 	if line.include?('/// <param name=')
 		param_summary = line.split('>')[1].gsub('</param', '')
 
-		if param_summary.index('See Word.') != nil
-			enumName = param_summary[param_summary.index('See Word.')..-1].split[1]
-			param_summary = param_summary[0,param_summary.index('See Word.')-1]
+		if param_summary.index("See #{@config[:app]}.") != nil
+			enumName = param_summary[param_summary.index("See #{@config[:app]}.")..-1].split[1]
+			param_summary = param_summary[0,param_summary.index("See #{@config[:app]}.")-1]
 			enumName = enumName.chomp('.')
-		elsif param_summary.index('Refer to Word.') != nil
-			enumName = param_summary[param_summary.index('Refer to Word.')..-1].split[2]			
-			param_summary = param_summary[0,param_summary.index('Refer to Word.')-1]				
+		elsif param_summary.index("Refer to #{@config[:app]}.") != nil
+			enumName = param_summary[param_summary.index("Refer to #{@config[:app]}.")..-1].split[2]			
+			param_summary = param_summary[0,param_summary.index("Refer to #{@config[:app]}.")-1]				
 			enumName = enumName.chomp('.')
 		else
 			enumName = nil
@@ -306,7 +293,7 @@ end
 
 	end
 
-	# Presence of { would indicate that it is a property or a relation	
+	# Presence of { would indicate that it is a property or a relation. Ignore internal _members.	
 	if member_ahead && !line.include?('_') && line.include?('{')  
 
 		prop_name = line.split[1]
@@ -346,7 +333,7 @@ end
 		end
 
 		if @enumHash.has_key? proDataType
-			enumName = 'Word.' + proDataType
+			enumName = "#{@config[:app]}." + proDataType
 			proDataType = 'string'
 		end
 
@@ -401,7 +388,7 @@ end
 						typeScriptData = typeScriptData[typeScriptData.index('>')+2..-1]
 					end
 				end
-				typeScriptDataArray = typeScriptData.gsub('"','').gsub(')','').gsub('Word.','').split('|').join(' or ')
+				typeScriptDataArray = typeScriptData.gsub('"','').gsub(')','').gsub("#{@config[:app]}.","").split('|').join(' or ')
 				if suffix != ''
 					parm_array[j][:dataType] = "(" + typeScriptDataArray +")" + suffix
 				else
@@ -422,7 +409,7 @@ end
 
 			# If the enum still slips through to the data type, then overwrite and set the enum correctly. 
 			if @enumHash.has_key? parm_array[j][:dataType] 
-				parm_array[j][:enumNameJs] = 'Word.' + parm_array[j][:dataType] 
+				parm_array[j][:enumNameJs] = "#{@config[:app]}." + parm_array[j][:dataType] 
 				parm_array[j][:dataType]  = 'string'
 			end
 

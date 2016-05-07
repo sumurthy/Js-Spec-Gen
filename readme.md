@@ -84,8 +84,11 @@ For each of the resources in your object model, create a new file in the specifi
 * For each method, begin with three `#` symbols and include method signature. Example `### getNotebookById(id: string)` 
 * Under this line, define the example you wish to include. 
 * For getter and setter: begin with three `#` symbols and follow with the text `getter` and `setter` or `getter or setter` depending on what the object supports.
+* Apart from above mentioned places, do not include any other '#' symbaols
 
 When the final markdown spec file is created for the resource, these code snippets get included underneath method definition. Getter and setter code snippets are added at the end of the spec file. 
+
+
 
 **Note: Code snippet is an optional information; though highly recommended. If you don't include a code snippet file, the script shows a warning when you run it.**
 
@@ -112,3 +115,17 @@ The location of final spec files are at `Js-Spec-Gen/markdown`. It includes one 
 ## Next version of this tool.
 
 This tool is being enhanced to combine all steps into one sript and provider better support for changing output format through settings. For the time being, please ignore the `v2` folder under scripts and also ignore the `config` folder. 
+
+## Pending tasks
+
+1. Generate Enums Hash
+1. Generate Keys 
+1. Use templates
+1. No hardcoding
+1. Make logs useful 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 

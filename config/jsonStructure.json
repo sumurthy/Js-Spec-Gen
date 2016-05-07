@@ -1,0 +1,43 @@
+{
+	"object" : { 
+	"name": "",
+	"description": "",
+	"collectionOf": null,
+	"reqSet" : [],
+	"properties": [],
+	"methods": []
+ 	},
+	"property": {
+	  "name": null,
+	  "description": "",
+	  "isKey": false,
+	  "dataType": null,
+	  "isReadOnly": false,
+	  "enumName": null,
+	  "isCollection": false,
+	  "isRelationship": false,
+	  "reqSet": [],
+	  "restfulName": null
+	},
+	"method":
+	{
+      "name": "",
+      "returnType": "",
+      "description": "",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [],
+      "restfulName": null,
+	  "parameters" : []
+	},
+ "parameter":	
+  	{
+      "name": "",
+      "dataType": "",
+      "isCollection": false,
+      "description": "",
+      "isRequired": false,
+      "enumName": null
+	}
+}

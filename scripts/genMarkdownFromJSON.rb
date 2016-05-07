@@ -9,6 +9,18 @@ require 'FileUtils'
 
 module SpecMaker
 
+# Setup 
+
+RESOURCE_STRUCT = "../config/resource_template.json"
+@struct = JSON.parse(File.read(RESOURCE_STRUCT, :encoding => 'UTF-8'), {:symbolize_names => true})
+@object = @struct[:object]
+@property = @struct[:property]
+@parameter = @struct[:parameter]
+@method = @struct[:method]
+
+# 
+
+
 	# Initialize 
 	NEWLINE = "\n"
 	JSON_SOURCE_FOLDER = "jsonFiles/source"		

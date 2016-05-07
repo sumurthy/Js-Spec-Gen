@@ -1,0 +1,2 @@
+# Logfile created on 2016-04-30 17:28:21 -0700 by logger.rb/41954
+D, [2016-04-30T17:28:21.580412 #1753] DEBUG -- : ....Starting run for the app Excel
