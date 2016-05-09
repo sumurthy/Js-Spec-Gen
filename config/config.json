@@ -1,0 +1,11 @@
+{
+  "app" : "Excel",
+  "customResourceNote" : "",
+  "isGa": true,
+  "openSpecRun": false,  
+  "metadataFilePath": "../../data/ExcelApi.cs",
+  "enumFilePath": "../../data/ExcelApi.cs", 
+  "logFile": "../logs",
+  "platforms":"",
+  "supportedRequirementSets" : ["1.1", "1.2"]
+}
