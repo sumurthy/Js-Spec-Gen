@@ -1,0 +1,143 @@
+{
+  "name": "RoamingSettings",
+  "description": "Provides",
+  "longDesc": "VGhlfHNldHRpbmdzfGNyZWF0ZWR8Ynl8dXNpbmd8dGhlfG1ldGhvZHN8b2Z8\ndGhlfGBSb2FtaW5nU2V0dGluZ3NgfG9iamVjdHxhcmV8c2F2ZWR8cGVyfGFk\nZC1pbnxhbmR8cGVyfHVzZXIufFRoYXR8aXMsfHRoZXl8YXJlfGF2YWlsYWJs\nZXxvbmx5fHRvfHRoZXxhZGQtaW58dGhhdHxjcmVhdGVkfHRoZW0sfGFuZHxv\nbmx5fGZyb218dGhlfHVzZXInc3xtYWlsfGJveHxpbnx3aGljaHx0aGV5fGFy\nZXxzYXZlZC58KiANCnwqID4gV2hpbGUgdGhlIE91dGxvb2sgQWRkLWluIEFQ\nSSBsaW1pdHMgYWNjZXNzIHRvIHRoZXNlIHNldHRpbmdzIHRvIG9ubHkgdGhl\nIGFkZC1pbiB0aGF0IGNyZWF0ZWQgdGhlbSwgdGhlc2Ugc2V0dGluZ3Mgc2hv\ndWxkIG5vdCBiZSBjb25zaWRlcmVkIHNlY3VyZSBzdG9yYWdlLiBUaGV5IGNh\nbiBiZSBhY2Nlc3NlZCBieSBFeGNoYW5nZSBXZWIgU2VydmljZXMgb3IgRXh0\nZW5kZWQgTUFQSS4gVGhleSBzaG91bGQgbm90IGJlIHVzZWQgdG8gc3RvcmUg\nc2Vuc2l0aXZlIGluZm9ybWF0aW9uIHN1Y2ggYXMgdXNlciBjcmVkZW50aWFs\ncyBvciBzZWN1cml0eSB0b2tlbnMuDQp8KiANCnwqIFRoZSBuYW1lIG9mIGEg\nc2V0dGluZyBpcyBhIFN0cmluZywgd2hpbGUgdGhlIHZhbHVlIGNhbiBiZSBh\nIFN0cmluZywgTnVtYmVyLCBCb29sZWFuLCBudWxsLCBPYmplY3QsIG9yIEFy\ncmF5Lg0KfCogDQp8KiBUaGUgYFJvYW1pbmdTZXR0aW5nc2Agb2JqZWN0IGlz\nIGFjY2Vzc2libGUgdmlhIHRoZSBbcm9hbWluZ1NldHRpbmdzXXtAbGlua2Nv\nZGUgT2ZmaWNlLmNvbnRleHQjcm9hbWluZ1NldHRpbmdzfSBwcm9wZXJ0eSBp\nbiB0aGUgYE9mZmljZS5jb250ZXh0YCBuYW1lc3BhY2UuDQp8Ly98R2V0fHRo\nZXxjdXJyZW50fHZhbHVlfG9mfHRoZXwnbXlLZXknfHNldHRpbmd8CmBgYGpz\nfCogdmFyIHZhbHVlID0gT2ZmaWNlLmNvbnRleHQucm9hbWluZ1NldHRpbmdz\nLmdldCgnbXlLZXknKTsNCnwqIC8vIFVwZGF0ZSB0aGUgdmFsdWUgb2YgdGhl\nICdteUtleScgc2V0dGluZw0KfCogT2ZmaWNlLmNvbnRleHQucm9hbWluZ1Nl\ndHRpbmdzLnNldCgnbXlLZXknLCAnSGVsbG8gV29ybGQhJyk7DQp8KiAvLyBQ\nZXJzaXN0IHRoZSBjaGFuZ2UNCnwqIE9mZmljZS5jb250ZXh0LnJvYW1pbmdT\nZXR0aW5ncy5zYXZlQXN5bmMoKTsNCnxgYGAK\n",
+  "collectionOf": null,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "Restricted",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "get",
+      "returnType": "",
+      "description": "Retrieves",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "Restricted"
+    },
+    {
+      "name": "remove",
+      "returnType": "",
+      "description": "Removes",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "Restricted"
+    },
+    {
+      "name": "saveAsync",
+      "returnType": "",
+      "description": "Saves",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "QW55fHNldHRpbmdzfHByZXZpb3VzbHl8c2F2ZWR8Ynl8YW58YWRkLWlufGFy\nZXxsb2FkZWR8d2hlbnxpdHxpc3xpbml0aWFsaXplZCx8c298ZHVyaW5nfHRo\nZXxsaWZldGltZXxvZnx0aGV8c2Vzc2lvbnx5b3V8Y2FufGp1c3R8dXNlfHRo\nZXxbc2V0XXtAbGlua2NvZGV8Um9hbWluZ1NldHRpbmdzI3NldH18YW5kfFtn\nZXRde0BsaW5rY29kZXxSb2FtaW5nU2V0dGluZ3MjZ2V0fXxtZXRob2RzfHRv\nfHdvcmt8d2l0aHx0aGV8aW4tbWVtb3J5fGNvcHl8b2Z8dGhlfHNldHRpbmdz\nfHByb3BlcnR5fGJhZy58V2hlbnx5b3V8d2FudHx0b3xwZXJzaXN0fHRoZXxz\nZXR0aW5nc3xzb3x0aGF0fHRoZXl8YXJlfGF2YWlsYWJsZXx0aGV8bmV4dHx0\naW1lfHRoZXxhZGQtaW58aXN8dXNlZCx8dXNlfHRoZXxgc2F2ZUFzeW5jYHxt\nZXRob2Qu\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "Restricted"
+    },
+    {
+      "name": "set",
+      "returnType": "",
+      "description": "Sets",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "VGhlfHNldHxtZXRob2R8Y3JlYXRlc3xhfG5ld3xzZXR0aW5nfG9mfHRoZXxz\ncGVjaWZpZWR8bmFtZXxpZnxpdHxkb2VzfG5vdHxhbHJlYWR5fGV4aXN0LHxv\ncnxzZXRzfGFufGV4aXN0aW5nfHNldHRpbmd8b2Z8dGhlfHNwZWNpZmllZHxu\nYW1lLnxUaGV8dmFsdWV8aXN8c3RvcmVkfGlufHRoZXxkb2N1bWVudHxhc3x0\naGV8c2VyaWFsaXplZHxKU09OfHJlcHJlc2VudGF0aW9ufG9mfGl0c3xkYXRh\nfHR5cGUufCogDQp8KiBBIG1heGltdW0gb2YgMk1CIGlzIGF2YWlsYWJsZSBm\nb3IgdGhlIHNldHRpbmdzIG9mIGVhY2ggYWRkLWluLCBhbmQgZWFjaCBpbmRp\ndmlkdWFsIHNldHRpbmcgaXMgbGltaXRlZCB0byAzMktCLg0KfCogDQp8KiBB\nbnkgY2hhbmdlcyBtYWRlIHRvIHNldHRpbmdzIHVzaW5nIHRoZSBgc2V0YCBm\ndW5jdGlvbiB3aWxsIG5vdCBiZSBzYXZlZCB0byB0aGUgc2VydmVyIHVudGls\nIHRoZSBbc2F2ZUFzeW5jXXtAbGlua2NvZGUgUm9hbWluZ1NldHRpbmdzI3Nh\ndmVBc3luY30gZnVuY3Rpb24gaXMgY2FsbGVkLg0K\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "value",
+          "dataType": "{String|Number|Boolean|Object|Array}",
+          "isCollection": false,
+          "description": "{String|Number|Boolean|Object|Array}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "Restricted"
+    }
+  ]
+}

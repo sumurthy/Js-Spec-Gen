@@ -8,34 +8,35 @@ require 'json'
 require 'FileUtils'
 require 'base64'
 
+
 module SpecMaker
 
 	# Initialize 
 	NEWLINE = "\n"
-	JS_SOURCE_FILES = "jsonFiles/source"		
+	JS_SOURCE_FILES = "../../data/outlook"		
+	JSON_OUTPUT_FOLDER = "jsonFiles/source/"
 	SEGMENT_END = '*/'
 	FIRST_LINE = 0
 	SECOND_LINE = 1
 	NAMESPACE = 'Office.context.'
-	OBJ_FLAGS = w[@interface, @namespace, @typedef]
-	IGNORE_KEYS = w[@memberof, @alias, ]
+	OBJ_FLAGS = %w[@interface @namespace @typedef]
+	IGNORE_KEYS = %w[@memberof @alias]
+	ITEM_TYPES = %w[appointment.js message.js]
 	REQ_FLAG = '@since'
 	PERMISSION_FLAG = '@permission'
 	READMODE = '@readmode'
 	COMPOSEMODE = '@composemode'
 	SUMMARY_FLAG = '@summary'
-	DESCRIPTION = '@desc'
+	DESCRIPTION_FLAG = '@desc'
 	METHOD_FLAG = '@method'
 	PROPERTY_FLAG = '@member'
 	EXAMPLE_FLAG = '@example'
 	MEMBEROF_FLAG = '@memberof'
+	CALLBACK_FLAG = '@standardcallback'
 	PARAM_FLAG = '@param'
 	RETURNTYPE = '@return'
+	STD_TEXT = "When the method completes, the function passed in the callback parameter is called with a single parameter, asyncResult, which is an AsyncResult object. For more information, see Using asynchronous methods. "
 	@json_object = nil
-
-	in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false, false
-	key, comment, val, req_ver, permission, example_caption, non_comment, return_type = '', '', '', '', '', '', '', ''
-	eg_arr, desc_arr = [], []
 
 	# Read config and json_struct files 
 
@@ -59,7 +60,7 @@ module SpecMaker
 		return Base64.encode64(arr.join('|'))
 	end
 
-	def self.get_type(type="")
+	def self.get_type(val="", type="")
 
 		return type
 	end
@@ -74,15 +75,22 @@ module SpecMaker
 		return desc
 	end
 
+
 	# Conversion to specification 
 	def self.convert_to_json (js_lines=[])
+		in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false, false
+		s_callback_tag = false
+		key, comment, val, req_ver, permission, example_caption, non_comment, return_type = '', '', '', '', '', '', '', ''
+		summary = ""
+		eg_arr = []
+		desc_arr = []				
+		prop_copy, method_copy, param_copy = nil, nil, nil
 		js_lines.each_with_index do |line, i|
 			# Skip first line
 			if i == FIRST_LINE
 				@json_object = deep_copy(@jstruct[:object])
 				next
 			end
-			next if IGNORE_KEYS.include? key  
 
 			# Overrides
 			line.gsub!('<code>','`')
@@ -94,22 +102,21 @@ module SpecMaker
 			key = line_parts[1]
 			val = line_parts[2]
 			type = line_parts[3]
-			rest = line_parts[2..-1].join(' ')
+			rest = line_parts[2..-1]
 			param_desc = line_parts[4..-1]
+
+			next if IGNORE_KEYS.include? key  
+
 
 			## 
 			# End of the segment.
 			###
-			if comment == SEGMENT_END
-				eg_arr.push "```\n" if in_example		
-
-	
-			in_object ? (assign to object = req_ver) : (assign to member = req_ver)
-
+			if comment == SEGMENT_END	
+				eg_arr.push "```\n" if in_example == true
 				if in_object
 					@json_object[:description] =  summary 
 					@json_object[:longDesc] = encode (desc_arr + eg_arr)
-					@json_object[:reqSet].push req_set
+					@json_object[:reqSet].push req_ver
 					(@json_object[:modes].push "Read") if read_mode
 					(@json_object[:modes].push "Compose") if compose_mode
 					@json_object[:minPermission] = permission
@@ -117,29 +124,33 @@ module SpecMaker
 				end
 
 				if in_method
-					@method_copy[:description] = summary 
-					@method_copy[:longDesc] = encode desc_arr
-					@method_copy[:reqSet].push req_set
-					(@method_copy[:modes].push "Read") if read_mode
-					(@method_copy[:modes].push "Compose") if compose_mode
-					@method_copy[:codeSnippet] = encode eg_arr
-					@method_copy[:minPermission] = permission
+					method_copy[:description] = summary 
+					method_copy[:longDesc] = encode desc_arr
+					method_copy[:reqSet].push req_ver
+					(method_copy[:modes].push "Read") if read_mode
+					(method_copy[:modes].push "Compose") if compose_mode
+					method_copy[:codeSnippet] = encode eg_arr
+					method_copy[:minPermission] = permission
+					@json_object[:methods].push method_copy
 					in_method = false
 				end
 
 				if in_prop
-					@prop_copy[:description] = summary 
-					@prop_copy[:longDesc] = encode desc_arr
-					@prop_copy[:reqSet].push req_set
-					(@prop_copy[:modes].push "Read") if read_mode
-					(@prop_copy[:modes].push "Compose") if compose_mode
-					@prop_copy[:minPermission] = permission
+					prop_copy[:description] = summary 
+					prop_copy[:longDesc] = encode desc_arr
+					prop_copy[:reqSet].push req_ver
+					(prop_copy[:modes].push "Read") if read_mode
+					(prop_copy[:modes].push "Compose") if compose_mode
+					prop_copy[:minPermission] = permission
+					@json_object[:properties].push prop_copy
 					in_prop = false
 				end
 
 				# End of segment resets
 				in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false, false
+				s_callback_tag = false				
 				key, comment, val, req_ver, permission, example_caption, non_comment, return_type = '', '', '', '', '', '', '', ''
+				summary = ""
 				eg_arr, desc_arr = [], []
 				# End of segment
 			end
@@ -153,35 +164,49 @@ module SpecMaker
 				end
 			end
 
+			# Method 
 			if key == METHOD_FLAG
 				method_copy = deep_copy(@jstruct[:method])
 				method_copy[:name] = val
 				in_method = true
 			end
 
+			# Parameter of method
 			if key == PARAM_FLAG
 				param_copy = deep_copy(@jstruct[:parameter])
 				param_copy[:name] = get_name val
+				param_copy[:description] = 
 				param_copy[:dataType] = get_type val, type 
-				in_method = true
+				method_copy[:parameters].push param_copy
 			end
 
+			# Property 
 			if key == PROPERTY_FLAG
 				prop_copy = deep_copy(@jstruct[:property])
 				prop_copy[:name] = val
 				prop_copy[:description] = clean_desc param_desc
+				if s_callback_tag
+					prop_copy[:description] = STD_TEXT + prop_copy[:description]
+				end
 				# handle data type
 				in_prop = true 
 			end
 
-			if key == DESCRIPTION
+
+			if key == DESCRIPTION_FLAG
 				in_desc = true
-				desc_arr.push clean_desc rest # add the description line
+				desc_arr.push(clean_desc rest) # add the description line
+				next
+			end
+
+			if key == CALLBACK_FLAG
+				s_callback_tag = true
 				next
 			end
 
 			if key == EXAMPLE_FLAG 
 				in_example = true
+				eg_arr = []
 				in_desc = false
 				if rest.include? '<caption>'
 					rest.gsub!('<caption>','')
@@ -201,7 +226,7 @@ module SpecMaker
 			end
 
 			if key == RETURNTYPE
-				return_type = get_type val
+				return_type = get_type val, type
 			end
 
 			if in_example
@@ -210,7 +235,7 @@ module SpecMaker
 			end
 
 			req_ver = val if key == REQ_FLAG 
-			permission = val key == PERMISSION_FLAG
+			permission = val if key == PERMISSION_FLAG
 			read_mode = true if key == READMODE
 			compose_mode = true if key == COMPOSEMODE
 			(summary = clean_desc val) if key == SUMMARY_FLAG
@@ -220,30 +245,45 @@ module SpecMaker
 
 	# Main loop. 
 	processed_files = 0
+	lines = []
+	
+	FileUtils.rm Dir.glob(JSON_OUTPUT_FOLDER + '/*')
+
 	Dir.foreach(JS_SOURCE_FILES) do |item|
-		next if item == '.' or item == '..'
+		next if item == '.' or item == '..' or item == '.DS_Store'
+		# Skip types
+		next if ITEM_TYPES.include? item
+
+		puts "** Processing #{item}"
 		fullpath = JS_SOURCE_FILES + '/' + item.downcase
 
 		if File.file?(fullpath)
-			convert_to_json File.readlines(fullpath)
-			# Write the README output file. 
-			outfile = JSON_OUTPUT_FOLDER + item.tstrip('.js')
-			file=File.new(outfile,'w')
-			@changes.each do |line|
-				file.write line
-			end				
+
+			lines = File.readlines(fullpath)
+
+			# Append sub-types of "item" at the end.
+			if item == 'item.js'
+				ITEM_TYPES.each do |subtype|
+					fullpath = JS_SOURCE_FILES + '/' + subtype
+					lines = lines + File.readlines(fullpath)
+				end
+			end
+			# Converty to JSON
+			convert_to_json lines
+
+			# Write JSON Output Files
+
+			File.open("#{JSON_OUTPUT_FOLDER}#{(@json_object[:name]).downcase}.json", "w") do |f|
+				f.write(JSON.pretty_generate @json_object)
+			end
+
+
 			processed_files = processed_files + 1
 		end
 	end
-	
-	# Write the README output file. 
-	outfile = MARKDOWN_OUTPUT_FOLDER + '$changes.md'
-	file=File.new(outfile,'w')
-	@changes.each do |line|
-		file.write line
-	end	
+
 	puts ""
-	puts "*** OK. Processed #{processed_files} input files. Check #{File.expand_path(LOG_FOLDER)} folder for results. ***"
+	puts "*** OK. Processed #{processed_files} input files. ***"
 end
 
 #####

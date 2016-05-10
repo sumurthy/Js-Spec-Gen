@@ -1,0 +1,19 @@
+{
+  "name": "PhoneNumber",
+  "description": "Represents",
+  "longDesc": "QW58YXJyYXl8b2Z8YFBob25lTnVtYmVyYHxvYmplY3RzfGNvbnRhaW5pbmd8\ndGhlfHBob25lfG51bWJlcnN8Zm91bmR8aW58YW58ZW1haWx8bWVzc2FnZXxp\nc3xyZXR1cm5lZHxpbnx0aGV8YHBob25lTnVtYmVyc2B8cHJvcGVydHl8b2Z8\ndGhlfFtFbnRpdGllc117QGxpbmtjb2RlfEVudGl0aWVzfXxvYmplY3R8dGhh\ndHxpc3xyZXR1cm5lZHx3aGVufHlvdXxjYWxsfHRoZXxbZ2V0RW50aXRpZXNd\ne0BsaW5rY29kZXxPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0jZ2V0RW50\naXRpZXN9fG1ldGhvZHxvbnx0aGV8c2VsZWN0ZWR8aXRlbS4=\n",
+  "collectionOf": null,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ]
+}

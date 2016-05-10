@@ -20,6 +20,7 @@
 	  "isCollection": false,
 	  "isRelationship": false,
 	  "reqSet": [],
+	  "modes": [],
 	  "restfulName": null
 	},
 	"method":
@@ -34,7 +35,8 @@
       "restfulName": null,
       "example": null,
       "longDesc": null,
-      "codeSnippet": [],
+      "modes": [],
+      "codeSnippet": null,
 	  "parameters" : []
 	},
  "parameter":	

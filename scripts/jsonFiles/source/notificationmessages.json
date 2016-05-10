@@ -1,0 +1,303 @@
+{
+  "name": "NotificationMessages",
+  "description": "Provides",
+  "longDesc": "VGhlfGBOb3RpZmljYXRpb25NZXNzYWdlc2B8b2JqZWN0fGlzfHJldHVybmVk\nfGFzfHRoZXxbbm90aWZpY2F0aW9uTWVzc2FnZXNde0BsaW5rY29kZXxPZmZp\nY2UuY29udGV4dC5tYWlsYm94Lml0ZW0jbm90aWZpY2F0aW9uTWVzc2FnZXN9\nfHByb3BlcnR5fG9mfGFufGl0ZW0u\n",
+  "collectionOf": null,
+  "reqSet": [
+    "1.3"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "addAsync",
+      "returnType": "",
+      "description": "Adds",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.3"
+      ],
+      "example": null,
+      "longDesc": "VGhlcmV8YXJlfGF8bWF4aW11bXxvZnw1fG5vdGlmaWNhdGlvbnN8cGVyfG1l\nc3NhZ2UufFNldHRpbmd8bW9yZXx3aWxsfHJldHVybnxhfGBOdW1iZXJPZk5v\ndGlmaWNhdGlvbk1lc3NhZ2VzRXhjZWVkZWRgfGVycm9yLg==\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "Ly98Q3JlYXRlfHRocmVlfG5vdGlmaWNhdGlvbnMsfGVhY2h8d2l0aHxhfGRp\nZmZlcmVudHxrZXl8CmBgYGpzfCogT2ZmaWNlLmNvbnRleHQubWFpbGJveC5p\ndGVtLm5vdGlmaWNhdGlvbk1lc3NhZ2VzLmFkZEFzeW5jKCJwcm9ncmVzcyIs\nIHsgDQp8KiAgIHR5cGU6ICJwcm9ncmVzc0luZGljYXRvciIsIA0KfCogICBt\nZXNzYWdlIDogIkFuIGFkZC1pbiBpcyBwcm9jZXNzaW5nIHRoaXMgbWVzc2Fn\nZS4iIA0KfCogfSk7DQp8KiBPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0u\nbm90aWZpY2F0aW9uTWVzc2FnZXMuYWRkQXN5bmMoImluZm9ybWF0aW9uIiwg\neyANCnwqICAgdHlwZTogImluZm9ybWF0aW9uYWxNZXNzYWdlIiwgDQp8KiAg\nIG1lc3NhZ2UgOiAiVGhlIGFkZC1pbiBwcm9jZXNzZWQgdGhpcyBtZXNzYWdl\nLiIsIA0KfCogICBpY29uIDogImljb25pZCIsIA0KfCogICBwZXJzaXN0ZW50\nOiBmYWxzZSANCnwqIH0pOw0KfCogT2ZmaWNlLmNvbnRleHQubWFpbGJveC5p\ndGVtLm5vdGlmaWNhdGlvbk1lc3NhZ2VzLmFkZEFzeW5jKCJlcnJvciIsIHsg\nDQp8KiAgIHR5cGU6ICJlcnJvck1lc3NhZ2UiLCANCnwqICAgbWVzc2FnZSA6\nICJUaGUgYWRkLWluIGZhaWxlZCB0byBwcm9jZXNzIHRoaXMgbWVzc2FnZS4i\nIA0KfCogfSk7DQp8YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "JSONmessage",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "JSONmessage.type",
+          "dataType": "{Office.MailboxEnums.ItemNotificationMessageType}",
+          "isCollection": false,
+          "description": "{Office.MailboxEnums.ItemNotificationMessageType}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "JSONmessage.icon",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "JSONmessage.message",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "JSONmessage.persistent",
+          "dataType": "{Boolean}",
+          "isCollection": false,
+          "description": "{Boolean}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "getAllAsync",
+      "returnType": "",
+      "description": "Returns",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.3"
+      ],
+      "example": null,
+      "longDesc": "",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "Ly98R2V0fGFsbHxub3RpZmljYXRpb25zfApgYGBqc3wqIE9mZmljZS5jb250\nZXh0Lm1haWxib3guaXRlbS5ub3RpZmljYXRpb25NZXNzYWdlcy5nZXRBbGxB\nc3luYyhmdW5jdGlvbiAoYXN5bmNSZXN1bHQpIHsNCnwqICAgaWYgKGFzeW5j\nUmVzdWx0LnN0YXR1cyAhPSAiZmFpbGVkIikgew0KfCogICAgIE9mZmljZS5j\nb250ZXh0Lm1haWxib3guaXRlbS5ub3RpZmljYXRpb25NZXNzYWdlcy5yZXBs\nYWNlQXN5bmMoICJub3RpZmljYXRpb25zIiwgeyANCnwqICAgICAgIHR5cGU6\nICJpbmZvcm1hdGlvbmFsTWVzc2FnZSIsIA0KfCogICAgICAgbWVzc2FnZSA6\nICJGb3VuZCAiICsgYXN5bmNSZXN1bHQudmFsdWUubGVuZ3RoICsgIiBub3Rp\nZmljYXRpb25zLiIsIA0KfCogICAgICAgaWNvbiA6ICJpY29uaWQiLCANCnwq\nICAgICAgIHBlcnNpc3RlbnQ6IGZhbHNlIA0KfCogICAgIH0pOw0KfCogICB9\nDQp8YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "removeAsync",
+      "returnType": "",
+      "description": "Removes",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.3"
+      ],
+      "example": null,
+      "longDesc": "",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "Ly98UmVtb3ZlfGF8bm90aWZpY2F0aW9ufApgYGBqc3wqIE9mZmljZS5jb250\nZXh0Lm1haWxib3guaXRlbS5ub3RpZmljYXRpb25NZXNzYWdlcy5yZW1vdmVB\nc3luYygicHJvZ3Jlc3MiKTsNCnxgYGAK\n",
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "replaceAsync",
+      "returnType": "",
+      "description": "Replaces",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.3"
+      ],
+      "example": null,
+      "longDesc": "SWZ8YXxub3RpZmljYXRpb258bWVzc2FnZXx3aXRofHRoZXxzcGVjaWZpZWR8\na2V5fGRvZXNuJ3R8ZXhpc3QsfGByZXBsYWNlQXN5bmNgfHdpbGx8YWRkfHRo\nZXxub3RpZmljYXRpb24u\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "Ly98UmVwbGFjZXxhfG5vdGlmaWNhdGlvbnx3aXRofGFufGluZm9ybWF0aW9u\nYWx8bm90aWZpY2F0aW9ufApgYGBqc3wqIE9mZmljZS5jb250ZXh0Lm1haWxi\nb3guaXRlbS5ub3RpZmljYXRpb25NZXNzYWdlcy5yZXBsYWNlQXN5bmMoInBy\nb2dyZXNzIiwgeyANCnwqICAgdHlwZTogImluZm9ybWF0aW9uYWxNZXNzYWdl\nIiwgDQp8KiAgIG1lc3NhZ2UgOiAiVGhlIG1lc3NhZ2Ugd2FzIHByb2Nlc3Nl\nZCBzdWNjZXNzZnVsbHkuIiwgDQp8KiAgIGljb24gOiAiaWNvbmlkIiwgDQp8\nKiAgIHBlcnNpc3RlbnQ6IGZhbHNlIA0KfCogfSk7DQp8YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "JSONmessage",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "JSONmessage.type",
+          "dataType": "{Office.MailboxEnums.ItemNotificationMessageType}",
+          "isCollection": false,
+          "description": "{Office.MailboxEnums.ItemNotificationMessageType}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "JSONmessage.icon",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "JSONmessage.message",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "JSONmessage.persistent",
+          "dataType": "{Boolean}",
+          "isCollection": false,
+          "description": "{Boolean}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    }
+  ]
+}

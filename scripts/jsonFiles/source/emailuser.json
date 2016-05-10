@@ -1,0 +1,19 @@
+{
+  "name": "EmailUser",
+  "description": "",
+  "longDesc": "UmVwcmVzZW50c3xhbnxlbWFpbHxhY2NvdW50fG9ufGFufEV4Y2hhbmdlfFNl\ncnZlci4=\n",
+  "collectionOf": null,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ]
+}

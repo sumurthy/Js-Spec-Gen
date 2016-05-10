@@ -1,0 +1,79 @@
+{
+  "name": "diagnostics",
+  "description": "Provides",
+  "longDesc": "UHJvdmlkZXN8ZGlhZ25vc3RpY3xpbmZvcm1hdGlvbnx0b3xhbnxPdXRsb29r\nfGFkZC1pbi4=\n",
+  "collectionOf": null,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+    {
+      "name": "hostName",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "QXxzdHJpbmd8dGhhdHxjYW58YmV8b25lfG9mfHRoZXxmb2xsb3dpbmd8dmFs\ndWVzOnxgT3V0bG9va2AsfGBNYWN8T3V0bG9va2B8b3J8YE91dGxvb2tXZWJB\ncHBgLg==\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "hostVersion",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "SWZ8dGhlfG1haWx8YWRkLWlufGlzfHJ1bm5pbmd8b258dGhlfE91dGxvb2t8\nZGVza3RvcHxjbGllbnQsfHRoZXxgaG9zdFZlcnNpb25gfHByb3BlcnR5fHJl\ndHVybnN8dGhlfHZlcnNpb258b2Z8dGhlfGhvc3R8YXBwbGljYXRpb24sfE91\ndGxvb2sufElufE91dGxvb2t8V2VifEFwcCx8dGhlfHByb3BlcnR5fHJldHVy\nbnN8dGhlfHZlcnNpb258b2Z8dGhlfEV4Y2hhbmdlfFNlcnZlci58QW58ZXhh\nbXBsZXxpc3x0aGV8c3RyaW5nfGAxNS4wLjQ2OC4wYC4=\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "OWAView",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "VGhlfHJldHVybmVkfHN0cmluZ3xjYW58YmV8b25lfG9mfHRoZXxmb2xsb3dp\nbmd8dmFsdWVzOnxgT25lQ29sdW1uYCx8YFR3b0NvbHVtbnNgLHxvcnxgVGhy\nZWVDb2x1bW5zYC58KiANCnwqIElmIHRoZSBob3N0IGFwcGxpY2F0aW9uIGlz\nIG5vdCBPdXRsb29rIFdlYiBBcHAsIHRoZW4gYWNjZXNzaW5nIHRoaXMgcHJv\ncGVydHkgcmVzdWx0cyBpbiBgdW5kZWZpbmVkYC4NCnwqIA0KfCogT3V0bG9v\nayBXZWIgQXBwIGhhcyB0aHJlZSB2aWV3cyB0aGF0IGNvcnJlc3BvbmQgdG8g\ndGhlIHdpZHRoIG9mIHRoZSBzY3JlZW4gYW5kIHRoZSB3aW5kb3csIGFuZCB0\naGUgbnVtYmVyIG9mIGNvbHVtbnMgdGhhdCBjYW4gYmUgZGlzcGxheWVkOg0K\nfCogDQp8KiAtIGBPbmVDb2x1bW5gLCB3aGljaCBpcyBkaXNwbGF5ZWQgd2hl\nbiB0aGUgc2NyZWVuIGlzIG5hcnJvdy4gT3V0bG9vayBXZWIgQXBwIHVzZXMg\ndGhpcyBzaW5nbGUtY29sdW1uIGxheW91dCBvbiB0aGUgZW50aXJlIHNjcmVl\nbiBvZiBhIHNtYXJ0cGhvbmUuDQp8KiAtIGBUd29Db2x1bW5zYCwgd2hpY2gg\naXMgZGlzcGxheWVkIHdoZW4gdGhlIHNjcmVlbiBpcyB3aWRlci4gT3V0bG9v\nayBXZWIgQXBwIHVzZXMgdGhpcyB2aWV3IG9uIG1vc3QgdGFibGV0cy4NCnwq\nIC0gYFRocmVlQ29sdW1uc2AsIHdoaWNoIGlzIGRpc3BsYXllZCB3aGVuIHRo\nZSBzY3JlZW4gaXMgd2lkZS4gRm9yIGV4YW1wbGUsIE91dGxvb2sgV2ViIEFw\ncCB1c2VzIHRoaXMgdmlldyBpbiBhIGZ1bGwgc2NyZWVuIHdpbmRvdyBvbiBh\nIGRlc2t0b3AgY29tcHV0ZXIuDQo=\n",
+      "minPermission": "ReadItem"
+    }
+  ],
+  "methods": [
+
+  ]
+}

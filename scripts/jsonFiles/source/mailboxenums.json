@@ -1,0 +1,19 @@
+{
+  "name": "MailboxEnums",
+  "description": "Includes",
+  "longDesc": "",
+  "collectionOf": null,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+
+  ],
+  "minPermission": "",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ]
+}

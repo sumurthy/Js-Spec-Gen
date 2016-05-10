@@ -1,0 +1,19 @@
+{
+  "name": "LocalClientTime",
+  "description": "Represents",
+  "longDesc": "",
+  "collectionOf": null,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ]
+}

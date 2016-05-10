@@ -1,0 +1,19 @@
+{
+  "name": "MeetingSuggestion",
+  "description": "Represents",
+  "longDesc": "VGhlfGxpc3R8b2Z8bWVldGluZ3N8c3VnZ2VzdGVkfGlufGFufGVtYWlsfG1l\nc3NhZ2V8aXN8cmV0dXJuZWR8aW58dGhlfGBtZWV0aW5nU3VnZ2VzdGlvbnNg\nfHByb3BlcnR5fG9mfHRoZXxbYEVudGl0aWVzYF17QGxpbmt8RW50aXRpZXN9\nfG9iamVjdHx0aGF0fGlzfHJldHVybmVkfHdoZW58dGhlfFtnZXRFbnRpdGll\nc117QGxpbmtjb2RlfE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbSNnZXRF\nbnRpdGllc318b3J8W2dldEVudGl0aWVzQnlUeXBlXXtAbGlua2NvZGV8T2Zm\naWNlLmNvbnRleHQubWFpbGJveC5pdGVtI2dldEVudGl0aWVzQnlUeXBlfXxt\nZXRob2R8aXN8Y2FsbGVkfG9ufHRoZXxhY3RpdmV8aXRlbS58KiANCnwqIFRo\nZSBgc3RhcnRgIGFuZCBgZW5kYCB2YWx1ZXMgYXJlIHN0cmluZyByZXByZXNl\nbnRhdGlvbnMgb2YgYSBEYXRlIG9iamVjdCB0aGF0IGNvbnRhaW5zIHRoZSBk\nYXRlIGFuZCB0aW1lIGF0IHdoaWNoIHRoZSBzdWdnZXN0ZWQgbWVldGluZyBp\ncyB0byBiZWdpbiBhbmQgZW5kLiBUaGUgdmFsdWVzIGFyZSBpbiB0aGUgZGVm\nYXVsdCB0aW1lIHpvbmUgc3BlY2lmaWVkIGZvciB0aGUgY3VycmVudCB1c2Vy\nLg0K\n",
+  "collectionOf": null,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ]
+}

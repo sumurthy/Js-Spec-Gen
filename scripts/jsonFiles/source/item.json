@@ -1,0 +1,1166 @@
+{
+  "name": "item",
+  "description": "Provides",
+  "longDesc": "VGhlfGBpdGVtYHxuYW1lc3BhY2V8aXN8dXNlZHx0b3xhY2Nlc3N8dGhlfGN1\ncnJlbnRseXxzZWxlY3RlZHxtZXNzYWdlLHxtZWV0aW5nfHJlcXVlc3QsfG9y\nfGFwcG9pbnRtZW50LnxZb3V8Y2FufGRldGVybWluZXx0aGV8dHlwZXxvZnx0\naGV8YGl0ZW1gfGJ5fHVzaW5nfHRoZXxbaXRlbVR5cGVde0BsaW5rfE9mZmlj\nZS5jb250ZXh0Lm1haWxib3guaXRlbSNpdGVtVHlwZX18cHJvcGVydHkufDxj\nYXB0aW9uPlRoZXxmb2xsb3dpbmd8SmF2YVNjcmlwdHxjb2RlfGV4YW1wbGV8\nc2hvd3N8aG93fHRvfGFjY2Vzc3x0aGV8YHN1YmplY3RgfHByb3BlcnR5fG9m\nfHRoZXxjdXJyZW50fGl0ZW18aW58T3V0bG9vay48L2NhcHRpb24+fApgYGBq\nc3wqIC8vIFRoZSBpbml0aWFsaXplIGZ1bmN0aW9uIGlzIHJlcXVpcmVkIGZv\nciBhbGwgYXBwcy4NCnwqIE9mZmljZS5pbml0aWFsaXplID0gZnVuY3Rpb24g\nKCkgew0KfCogICAgIC8vIENoZWNrcyBmb3IgdGhlIERPTSB0byBsb2FkIHVz\naW5nIHRoZSBqUXVlcnkgcmVhZHkgZnVuY3Rpb24uDQp8KiAgICAgJChkb2N1\nbWVudCkucmVhZHkoZnVuY3Rpb24gKCkgew0KfCogICAgIC8vIEFmdGVyIHRo\nZSBET00gaXMgbG9hZGVkLCBhcHAtc3BlY2lmaWMgY29kZSBjYW4gcnVuLg0K\nfCogICAgIHZhciBpdGVtID0gT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVt\nOw0KfCogICAgIHZhciBzdWJqZWN0ID0gaXRlbS5zdWJqZWN0Ow0KfCogICAg\nIC8vIENvbnRpbnVlIHdpdGggcHJvY2Vzc2luZyB0aGUgc3ViamVjdCBvZiB0\naGUgY3VycmVudCBpdGVtLCANCnwqICAgICAvLyB3aGljaCBjYW4gYmUgYSBt\nZXNzYWdlIG9yIGFwcG9pbnRtZW50Lg0KfCogICAgIH0pOw0KfCogfQ0KfGBg\nYAo=\n",
+  "collectionOf": null,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "Restricted",
+  "properties": [
+    {
+      "name": "dateTimeCreated",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "dateTimeModified",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "itemClass",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "longDesc": "VGhlfGBpdGVtQ2xhc3NgfHByb3BlcnR5fHNwZWNpZmllc3x0aGV8bWVzc2Fn\nZXxjbGFzc3xvZnx0aGV8c2VsZWN0ZWR8aXRlbS58VGhlfGZvbGxvd2luZ3xh\ncmV8dGhlfGRlZmF1bHR8bWVzc2FnZXxjbGFzc2VzfGZvcnx0aGV8bWVzc2Fn\nZXxvcnxhcHBvaW50bWVudHxpdGVtLnwqIA0KfCogfCBUeXBlIHwgRGVzY3Jp\ncHRpb24gfCBpdGVtIGNsYXNzIHwNCnwqIHwgLSB8IC0gfCAtIHwNCnwqIHwg\nQXBwb2ludG1lbnQgaXRlbXMgfCBUaGVzZSBhcmUgY2FsZW5kYXIgaXRlbXMg\nb2YgdGhlIGl0ZW0gY2xhc3MgYElQTS5BcHBvaW50bWVudGAgb3IgYElQTS5B\ncHBvaW50bWVudC5PY2N1cmVuY2VgLiB8IDxzcGFuPmBJUE0uQXBwb2ludG1l\nbnRgPGJyLz5gSVBNLkFwcG9pbnRtZW50Lk9jY3VyZW5jZWA8L3NwYW4+IHwN\nCnwqIHwgTWVzc2FnZSBpdGVtcyB8IFRoZXNlIGluY2x1ZGUgZW1haWwgbWVz\nc2FnZXMgdGhhdCBoYXZlIHRoZSBkZWZhdWx0IG1lc3NhZ2UgY2xhc3MgYElQ\nTS5Ob3RlYCwgYW5kIG1lZXRpbmcgcmVxdWVzdHMsIHJlc3BvbnNlcywgYW5k\nIGNhbmNlbGxhdGlvbnMsIHRoYXQgdXNlIGBJUE0uU2NoZWR1bGUuTWVldGlu\nZ2AgYXMgdGhlIGJhc2UgbWVzc2FnZSBjbGFzcy4gfCA8c3Bhbj5gSVBNLk5v\ndGVgPGJyLz5gSVBNLlNjaGVkdWxlLk1lZXRpbmcuUmVxdWVzdGA8YnIvPmBJ\nUE0uU2NoZWR1bGUuTWVldGluZy5OZWdgPGJyLz5gSVBNLlNjaGVkdWxlLk1l\nZXRpbmcuUG9zYDxici8+YElQTS5TY2hlZHVsZS5NZWV0aW5nLlRlbnRgPGJy\nLz5gSVBNLlNjaGVkdWxlLk1lZXRpbmcuQ2FuY2VsZWRgPC9zcGFuPiB8DQp8\nKiANCnwqIFlvdSBjYW4gY3JlYXRlIGN1c3RvbSBtZXNzYWdlIGNsYXNzZXMg\ndGhhdCBleHRlbmRzIGEgZGVmYXVsdCBtZXNzYWdlIGNsYXNzLCBmb3IgZXhh\nbXBsZSwgYSBjdXN0b20gYXBwb2ludG1lbnQgbWVzc2FnZSBjbGFzcyBgSVBN\nLkFwcG9pbnRtZW50LkNvbnRvc29gLg0K\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "itemId",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "longDesc": "VGhlfGlkZW50aWZpZXJ8cmV0dXJuZWR8Ynl8dGhlfGBpdGVtSWRgfHByb3Bl\ncnR5fGlzfHRoZXxzYW1lfGFzfHRoZXxFeGNoYW5nZXxXZWJ8U2VydmljZXN8\naXRlbXxpZGVudGlmaWVyLnxUaGV8YGl0ZW1JZGB8cHJvcGVydHl8aXN8bm90\nfGlkZW50aWNhbHx0b3x0aGV8T3V0bG9va3xFbnRyeXxJRC58KiANCnwqIFRo\nZSBgaXRlbUlkYCBwcm9wZXJ0eSByZXR1cm5zIGBudWxsYCBpbiBjb21wb3Nl\nIG1vZGUgZm9yIGl0ZW1zIHRoYXQgaGF2ZSBub3QgYmVlbiBzYXZlZCB0byB0\naGUgc2VydmVyLiBJZiBhbiBpdGVtIGlkZW50aWZpZXIgaXMgcmVxdWlyZWQs\nIHRoZSBbc2F2ZUFzeW5jXXtAbGlua2NvZGUgT2ZmaWNlLmNvbnRleHQubWFp\nbGJveC5pdGVtI3NhdmVBc3luY30gbWV0aG9kIGNhbiBiZSB1c2VkIHRvIHNh\ndmUgdGhlIGl0ZW0gdG8gdGhlIHNlcnZlciwgd2hpY2ggd2lsbCByZXR1cm4g\ndGhlIGl0ZW0gaWRlbnRpZmllciBpbiB0aGUgW0FzeW5jUmVzdWx0LnZhbHVl\nXXtAbGlua2NvZGUgQXN5bmNSZXN1bHR9IHBhcmFtZXRlciBpbiB0aGUgY2Fs\nbGJhY2sgZnVuY3Rpb24uDQo=\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "itemType",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "VGhlfGBpdGVtVHlwZWB8cHJvcGVydHl8cmV0dXJuc3xvbmV8b2Z8dGhlfGBJ\ndGVtVHlwZWB8ZW51bWVyYXRpb258dmFsdWVzLHxpbmRpY2F0aW5nfHdoZXRo\nZXJ8dGhlfGBpdGVtYHxvYmplY3R8aW5zdGFuY2V8aXN8YXxtZXNzYWdlfG9y\nfGFufGFwcG9pbnRtZW50Lg==\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "attachments",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "body",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.1"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "normalizedSubject",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "longDesc": "VGhlfG5vcm1hbGl6ZWRTdWJqZWN0fHByb3BlcnR5fGdldHN8dGhlfHN1Ympl\nY3R8b2Z8dGhlfGl0ZW0sfHdpdGh8YW55fHN0YW5kYXJkfHByZWZpeGVzfChz\ndWNofGFzfGBSRTpgfGFuZHxgRlc6YCl8dGhhdHxhcmV8YWRkZWR8Ynl8ZW1h\naWx8cHJvZ3JhbXMufFRvfGdldHx0aGV8c3ViamVjdHxvZnx0aGV8aXRlbXx3\naXRofHRoZXxwcmVmaXhlc3xpbnRhY3QsfHVzZXx0aGV8W2BzdWJqZWN0YF17\nQGxpbmt8T2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtI3N1YmplY3R9fHBy\nb3BlcnR5Lg==\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "notificationMessages",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.3"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "subject",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "VGhlfGBzdWJqZWN0YHxwcm9wZXJ0eXxnZXRzfG9yfHNldHN8dGhlfGVudGly\nZXxzdWJqZWN0fG9mfHRoZXxpdGVtLHxhc3xzZW50fGJ5fHRoZXxlbWFpbHxz\nZXJ2ZXIu\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "end",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "VGhlfGBlbmRgfHByb3BlcnR5fGlzfGV4cHJlc3NlZHxhc3xhfENvb3JkaW5h\ndGVkfFVuaXZlcnNhbHxUaW1lfChVVEMpfGRhdGV8YW5kfHRpbWV8dmFsdWUu\nfFlvdXxjYW58dXNlfHRoZXxbYGNvbnZlcnRUb0xvY2FsQ2xpZW50VGltZWBd\ne0BsaW5rfE9mZmljZS5jb250ZXh0Lm1haWxib3gjY29udmVydFRvTG9jYWxD\nbGllbnRUaW1lfXxtZXRob2R8dG98Y29udmVydHx0aGV8ZW5kfHByb3BlcnR5\nfHZhbHVlfHRvfHRoZXxjbGllbnTigJlzfGxvY2FsfGRhdGV8YW5kfHRpbWUu\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "location",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "optionalAttendees",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "organizer",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "requiredAttendees",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "resources",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "start",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "VGhlfGBzdGFydGB8cHJvcGVydHl8aXN8ZXhwcmVzc2VkfGFzfGF8Q29vcmRp\nbmF0ZWR8VW5pdmVyc2FsfFRpbWV8KFVUQyl8ZGF0ZXxhbmR8dGltZXx2YWx1\nZS58WW91fGNhbnx1c2V8dGhlfFtgY29udmVydFRvTG9jYWxDbGllbnRUaW1l\nYF17QGxpbmt8T2ZmaWNlLmNvbnRleHQubWFpbGJveCNjb252ZXJ0VG9Mb2Nh\nbENsaWVudFRpbWV9fG1ldGhvZHx0b3xjb252ZXJ0fHRoZXx2YWx1ZXx0b3x0\naGV8Y2xpZW504oCZc3xsb2NhbHxkYXRlfGFuZHx0aW1lLg==\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "bcc",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.1"
+      ],
+      "modes": [
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "cc",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "conversationId",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "WW91fGNhbnxnZXR8YW58aW50ZWdlcnxmb3J8dGhpc3xwcm9wZXJ0eXxpZnx5\nb3VyfG1haWx8YXBwfGlzfGFjdGl2YXRlZHxpbnxyZWFkfGZvcm1zfG9yfHJl\nc3BvbnNlc3xpbnxjb21wb3NlfGZvcm1zLnxJZnxzdWJzZXF1ZW50bHl8dGhl\nfHVzZXJ8Y2hhbmdlc3x0aGV8c3ViamVjdHxvZnx0aGV8cmVwbHl8bWVzc2Fn\nZSx8dXBvbnxzZW5kaW5nfHRoZXxyZXBseSx8dGhlfGNvbnZlcnNhdGlvbnxJ\nRHxmb3J8dGhhdHxtZXNzYWdlfHdpbGx8Y2hhbmdlfGFuZHx0aGF0fHZhbHVl\nfHlvdXxvYnRhaW5lZHxlYXJsaWVyfHdpbGx8bm98bG9uZ2VyfGFwcGx5Lnwq\nDQp8KiBZb3UgZ2V0IG51bGwgZm9yIHRoaXMgcHJvcGVydHkgZm9yIGEgbmV3\nIGl0ZW0gaW4gYSBjb21wb3NlIGZvcm0uIElmIHRoZSB1c2VyIHNldHMgYSBz\ndWJqZWN0IGFuZCBzYXZlcyB0aGUgaXRlbSwgdGhlIGBjb252ZXJzYXRpb25J\nZGAgcHJvcGVydHkgd2lsbCByZXR1cm4gYSB2YWx1ZS4NCg==\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "from",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "longDesc": "VGhlfGBmcm9tYHxhbmR8W2BzZW5kZXJgXXtAbGlua3xPZmZpY2UuY29udGV4\ndC5tYWlsYm94Lml0ZW0jc2VuZGVyfXxwcm9wZXJ0aWVzfHJlcHJlc2VudHx0\naGV8c2FtZXxwZXJzb258dW5sZXNzfHRoZXxtZXNzYWdlfGlzfHNlbnR8Ynl8\nYXxkZWxlZ2F0ZS58SW58dGhhdHxjYXNlLHx0aGV8YGZyb21gfHByb3BlcnR5\nfHJlcHJlc2VudHN8dGhlfGRlbGVnYXRvcix8YW5kfHRoZXxzZW5kZXJ8cHJv\ncGVydHl8cmVwcmVzZW50c3x0aGV8ZGVsZWdhdGUu\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "internetMessageId",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "sender",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "longDesc": "VGhlfFtgZnJvbWBde0BsaW5rfE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRl\nbSNmcm9tfXxhbmR8YHNlbmRlcmB8cHJvcGVydGllc3xyZXByZXNlbnR8dGhl\nfHNhbWV8cGVyc29ufHVubGVzc3x0aGV8bWVzc2FnZXxpc3xzZW50fGJ5fGF8\nZGVsZWdhdGUufElufHRoYXR8Y2FzZSx8dGhlfGBmcm9tYHxwcm9wZXJ0eXxy\nZXByZXNlbnRzfHRoZXxkZWxlZ2F0b3IsfGFuZHx0aGV8c2VuZGVyfHByb3Bl\ncnR5fHJlcHJlc2VudHN8dGhlfGRlbGVnYXRlLg==\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "to",
+      "description": "Gets",
+      "isKey": false,
+      "dataType": null,
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    }
+  ],
+  "methods": [
+    {
+      "name": null,
+      "returnType": "",
+      "description": "Asynchronously",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "Q3VzdG9tfHByb3BlcnRpZXN8YXJlfHN0b3JlZHxhc3xrZXkvdmFsdWV8cGFp\ncnN8b258YXxwZXItYXBwLHxwZXItaXRlbXxiYXNpcy58VGhpc3xtZXRob2R8\ncmV0dXJuc3xhfGBDdXN0b21Qcm9wZXJ0aWVzYHxvYmplY3R8aW58dGhlfGNh\nbGxiYWNrLHx3aGljaHxwcm92aWRlc3xtZXRob2RzfHRvfGFjY2Vzc3x0aGV8\nY3VzdG9tfHByb3BlcnRpZXN8c3BlY2lmaWN8dG98dGhlfGN1cnJlbnR8aXRl\nbXxhbmR8dGhlfGN1cnJlbnR8YWRkLWluLnxDdXN0b218cHJvcGVydGllc3xh\ncmV8bm90fGVuY3J5cHRlZHxvbnx0aGV8aXRlbSx8c298dGhpc3xzaG91bGR8\nbm90fGJlfHVzZWR8YXN8c2VjdXJlfHN0b3JhZ2Uu\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xjb2RlfGV4YW1wbGV8c2hvd3N8aG93\nfHRvfHVzZXx0aGV8YGxvYWRDdXN0b21Qcm9wZXJ0aWVzQXN5bmNgfG1ldGhv\nZHx0b3xhc3luY2hyb25vdXNseXxsb2FkfGN1c3RvbXxwcm9wZXJ0aWVzfHRo\nYXR8YXJlfHNwZWNpZmljfHRvfHRoZXxjdXJyZW50fGl0ZW0ufFRoZXxleGFt\ncGxlfGFsc298c2hvd3N8aG93fHRvfHVzZXx0aGV8YEN1c3RvbVByb3BlcnRp\nZXMuc2F2ZUFzeW5jYHxtZXRob2R8dG98c2F2ZXx0aGVzZXxwcm9wZXJ0aWVz\nfGJhY2t8dG98dGhlfHNlcnZlci58QWZ0ZXJ8bG9hZGluZ3x0aGV8Y3VzdG9t\nfHByb3BlcnRpZXMsfHRoZXxjb2RlfHNhbXBsZXx1c2VzfHRoZXxgQ3VzdG9t\nUHJvcGVydGllcy5nZXRgfG1ldGhvZHx0b3xyZWFkfHRoZXxjdXN0b218cHJv\ncGVydHl8YG15UHJvcGAsfHRoZXxgQ3VzdG9tUHJvcGVydGllcy5zZXRgfG1l\ndGhvZHx0b3x3cml0ZXx0aGV8Y3VzdG9tfHByb3BlcnR5fGBvdGhlclByb3Bg\nLHxhbmR8dGhlbnxmaW5hbGx5fGNhbGxzfHRoZXxgc2F2ZUFzeW5jYHxtZXRo\nb2R8dG98c2F2ZXx0aGV8Y3VzdG9tfHByb3BlcnRpZXMuPC9jYXB0aW9uPnwK\nYGBganN8KiAvLyBUaGUgaW5pdGlhbGl6ZSBmdW5jdGlvbiBpcyByZXF1aXJl\nZCBmb3IgYWxsIGFkZC1pbnMuDQp8KiBPZmZpY2UuaW5pdGlhbGl6ZSA9IGZ1\nbmN0aW9uICgpIHsNCnwqICAgLy8gQ2hlY2tzIGZvciB0aGUgRE9NIHRvIGxv\nYWQgdXNpbmcgdGhlIGpRdWVyeSByZWFkeSBmdW5jdGlvbi4NCnwqICAgJChk\nb2N1bWVudCkucmVhZHkoZnVuY3Rpb24gKCkgew0KfCogICAvLyBBZnRlciB0\naGUgRE9NIGlzIGxvYWRlZCwgYWRkLWluLXNwZWNpZmljIGNvZGUgY2FuIHJ1\nbi4NCnwqICAgdmFyIGl0ZW0gPSBPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0\nZW07DQp8KiAgIGl0ZW0ubG9hZEN1c3RvbVByb3BlcnRpZXNBc3luYyhjdXN0\nb21Qcm9wc0NhbGxiYWNrKTsNCnwqICAgfSk7DQp8KiB9DQp8KiANCnwqIGZ1\nbmN0aW9uIGN1c3RvbVByb3BzQ2FsbGJhY2soYXN5bmNSZXN1bHQpIHsNCnwq\nICAgdmFyIGN1c3RvbVByb3BzID0gYXN5bmNSZXN1bHQudmFsdWU7DQp8KiAg\nIHZhciBteVByb3AgPSBjdXN0b21Qcm9wcy5nZXQoIm15UHJvcCIpOw0KfCog\nDQp8KiAgIGN1c3RvbVByb3BzLnNldCgib3RoZXJQcm9wIiwgInZhbHVlIik7\nDQp8KiAgIGN1c3RvbVByb3BzLnNhdmVBc3luYyhzYXZlQ2FsbGJhY2spOw0K\nfCogfQ0KfCogDQp8KiBmdW5jdGlvbiBzYXZlQ2FsbGJhY2soYXN5bmNSZXN1\nbHQpIHsNCnwqIH0NCnxgYGAK\n",
+      "parameters": [
+        {
+          "name": "callback",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[userContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "getSelectedDataAsync",
+      "returnType": "",
+      "description": "Asynchronously",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "SWZ8dGhlcmV8aXN8bm98c2VsZWN0aW9ufGJ1dHx0aGV8Y3Vyc29yfGlzfGlu\nfHRoZXxib2R5fG9yfHN1YmplY3QsfHRoZXxtZXRob2R8cmV0dXJuc3xudWxs\nfGZvcnx0aGV8c2VsZWN0ZWR8ZGF0YS58SWZ8YXxmaWVsZHxvdGhlcnx0aGFu\nfHRoZXxib2R5fG9yfHN1YmplY3R8aXN8c2VsZWN0ZWQsfHRoZXxtZXRob2R8\ncmV0dXJuc3x0aGV8YEludmFsaWRTZWxlY3Rpb25gfGVycm9yLg==\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "fApgYGBqc3wqIC8vIGdldHRpbmcgc2VsZWN0ZWQgZGF0YQ0KfCogT2ZmaWNl\nLmluaXRpYWxpemUgPSBmdW5jdGlvbiAoKSB7DQp8KiAgICAgT2ZmaWNlLmNv\nbnRleHQubWFpbGJveC5pdGVtLmdldFNlbGVjdGVkRGF0YUFzeW5jKE9mZmlj\nZS5Db2VyY2lvblR5cGUuVGV4dCwge30sIGdldENhbGxiYWNrKTsNCnwqIH0N\nCnwqIA0KfCogZnVuY3Rpb24gZ2V0Q2FsbGJhY2soYXN5bmNSZXN1bHQpIHsN\nCnwqICAgICB2YXIgdGV4dCA9IGFzeW5jUmVzdWx0LnZhbHVlLmRhdGE7DQp8\nKiAgICAgdmFyIHByb3AgPSBhc3luY1Jlc3VsdC52YWx1ZS5zb3VyY2VQcm9w\nZXJ0eTsNCnwqIA0KfCogICAgIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRl\nbS5zZXRTZWxlY3RlZERhdGFBc3luYygnU2V0dGluZyAnICsgcHJvcCArICc6\nICcgKyB0ZXh0LCB7fSwgc2V0Q2FsbGJhY2spOw0KfCogfQ0KfCogDQp8KiBm\ndW5jdGlvbiBzZXRDYWxsYmFjayhhc3luY1Jlc3VsdCkgew0KfCogICAgIC8v\nIGNoZWNrIGZvciBlcnJvcnMNCnwqIH0NCnxgYGAK\n",
+      "parameters": [
+        {
+          "name": "coercionType",
+          "dataType": "{Office.CoercionType}",
+          "isCollection": false,
+          "description": "{Office.CoercionType}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "callback",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    },
+    {
+      "name": "setSelectedDataAsync",
+      "returnType": "",
+      "description": "Asynchronously",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.2"
+      ],
+      "example": null,
+      "longDesc": "",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "T2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLnNldFNlbGVjdGVkRGF0YUFz\neW5jKOKAnEhlbGxvfFdvcmxkIeKAnSk7fApgYGBqc3wqIE9mZmljZS5jb250\nZXh0Lm1haWxib3guaXRlbS5zZXRTZWxlY3RlZERhdGFBc3luYyjigJw8Yj5I\nZWxsbyBXb3JsZCE8L2I+4oCdLCB7IGNvZXJjaW9uVHlwZSA6IOKAnGh0bWzi\ngJ0gfSk7IA0KfGBgYAo=\n",
+      "parameters": [
+        {
+          "name": "data",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.coercionType]",
+          "dataType": "{Office.CoercionType}",
+          "isCollection": false,
+          "description": "{Office.CoercionType}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "callback",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    },
+    {
+      "name": "close",
+      "returnType": "",
+      "description": "Closes",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.3"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGJlaGF2aW9yfG9mfHRoZXxgY2xvc2VgfG1ldGhvZHxkZXBlbmRzfG9u\nfHRoZXxjdXJyZW50fHN0YXRlfG9mfHRoZXxpdGVtfGJlaW5nfGNvbXBvc2Vk\nLnxJZnx0aGV8aXRlbXxoYXN8dW5zYXZlZHxjaGFuZ2VzLHx0aGV8Y2xpZW50\nfHByb21wdHN8dGhlfHVzZXJ8dG98c2F2ZSx8ZGlzY2FyZCx8b3J8Y2FuY2Vs\nfHRoZXxjbG9zZXxhY3Rpb24ufCogDQp8KiBJbiB0aGUgT3V0bG9vayBkZXNr\ndG9wIGNsaWVudCwgaWYgdGhlIG1lc3NhZ2UgaXMgYW4gaW5saW5lIHJlcGx5\nLCB0aGUgYGNsb3NlYCBtZXRob2QgaGFzIG5vIGVmZmVjdC4NCg==\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+
+      ],
+      "minPermission": "Restricted"
+    },
+    {
+      "name": "saveAsync",
+      "returnType": "",
+      "description": "Asynchronously",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.3"
+      ],
+      "example": null,
+      "longDesc": "V2hlbnxpbnZva2VkLHx0aGlzfG1ldGhvZHxzYXZlc3x0aGV8Y3VycmVudHxt\nZXNzYWdlfGFzfGF8ZHJhZnR8YW5kfHJldHVybnN8dGhlfGl0ZW18aWR8dmlh\nfHRoZXxjYWxsYmFja3xtZXRob2Qu\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xpc3xhbnxleGFtcGxlfG9mfHRoZXxg\ncmVzdWx0YHxwYXJhbWV0ZXJ8cGFzc2VkfHRvfHRoZXxjYWxsYmFja3xmdW5j\ndGlvbi58VGhlfGB2YWx1ZWB8cHJvcGVydHl8Y29udGFpbnN8dGhlfGl0ZW18\nSUR8b2Z8dGhlfGl0ZW0uPC9jYXB0aW9uPnwKYGBganN8KiB7DQp8KiAgICJ2\nYWx1ZSI6IkFBTWtBREk1Li4uQUFBPSIsDQp8KiAgICJzdGF0dXMiOiJzdWNj\nZWVkZWQiDQp8KiB9DQp8YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "callback",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    },
+    {
+      "name": "addFileAttachmentAsync",
+      "returnType": "",
+      "description": "Adds",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.1"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGBhZGRGaWxlQXR0YWNobWVudEFzeW5jYHxtZXRob2R8dXBsb2Fkc3x0\naGV8ZmlsZXxhdHx0aGV8c3BlY2lmaWVkfFVSSXxhbmR8YXR0YWNoZXN8aXR8\ndG98dGhlfGl0ZW18aW58dGhlfGNvbXBvc2V8Zm9ybS58KiANCnwqIFlvdSBj\nYW4gc3Vic2VxdWVudGx5IHVzZSB0aGUgaWRlbnRpZmllciB3aXRoIHRoZSBb\nYHJlbW92ZUF0dGFjaG1lbnRBc3luY2Bde0BsaW5rIE9mZmljZS5jb250ZXh0\nLm1haWxib3guaXRlbSNyZW1vdmVBdHRhY2htZW50QXN5bmN9IG1ldGhvZCB0\nbyByZW1vdmUgdGhlIGF0dGFjaG1lbnQgaW4gdGhlIHNhbWUgc2Vzc2lvbi4N\nCg==\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "ZnVuY3Rpb258Y2FsbGJhY2socmVzdWx0KXx7fApgYGBqc3wqICAgaWYgKHJl\nc3VsdC5lcnJvcikgew0KfCogICAgIHNob3dNZXNzYWdlKHJlc3VsdC5lcnJv\ncik7DQp8KiAgIH0gZWxzZSB7DQp8KiAgICAgc2hvd01lc3NhZ2UoIkF0dGFj\naG1lbnQgYWRkZWQiKTsNCnwqICAgfQ0KfCogfQ0KfCogDQp8KiBmdW5jdGlv\nbiBhZGRBdHRhY2htZW50KCkgew0KfCogICAvLyBUaGUgdmFsdWVzIGluIGFz\neW5jQ29udGV4dCBjYW4gYmUgYWNjZXNzZWQgaW4gdGhlIGNhbGxiYWNrDQp8\nKiAgIHZhciBvcHRpb25zID0geyAnYXN5bmNDb250ZXh0JzogeyB2YXIxOiAx\nLCB2YXIyOiAyIH0gfTsNCnwqICAgDQp8KiAgIHZhciBhdHRhY2htZW50VVJM\nID0gImh0dHBzOi8vY29udG9zby5jb20vcnRtL2ljb24ucG5nIjsNCnwqICAg\nT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLmFkZEZpbGVBdHRhY2htZW50\nQXN5bmMoYXR0YWNobWVudFVSTCwgYXR0YWNobWVudFVSTCwgb3B0aW9ucywg\nY2FsbGJhY2spOw0KfCogfQ0KfGBgYAo=\n",
+      "parameters": [
+        {
+          "name": "uri",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "attachmentName",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    },
+    {
+      "name": "addItemAttachmentAsync",
+      "returnType": "",
+      "description": "Adds",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.1"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGBhZGRJdGVtQXR0YWNobWVudEFzeW5jYHxtZXRob2R8YXR0YWNoZXN8\ndGhlfGl0ZW18d2l0aHx0aGV8c3BlY2lmaWVkfEV4Y2hhbmdlfGlkZW50aWZp\nZXJ8dG98dGhlfGl0ZW18aW58dGhlfGNvbXBvc2V8Zm9ybS58SWZ8eW91fHNw\nZWNpZnl8YXxjYWxsYmFja3xtZXRob2QsfHRoZXxtZXRob2R8aXN8Y2FsbGVk\nfHdpdGh8b25lfHBhcmFtZXRlcix8YGFzeW5jUmVzdWx0YCx8d2hpY2h8Y29u\ndGFpbnN8ZWl0aGVyfHRoZXxhdHRhY2htZW50fGlkZW50aWZpZXJ8b3J8YXxj\nb2RlfHRoYXR8aW5kaWNhdGVzfGFueXxlcnJvcnx0aGF0fG9jY3VycmVkfHdo\naWxlfGF0dGFjaGluZ3x0aGV8aXRlbS58WW91fGNhbnx1c2V8dGhlfGBvcHRp\nb25zYHxwYXJhbWV0ZXJ8dG98cGFzc3xzdGF0ZXxpbmZvcm1hdGlvbnx0b3x0\naGV8Y2FsbGJhY2t8bWV0aG9kLHxpZnxuZWVkZWQufCogDQp8KiBZb3UgY2Fu\nIHN1YnNlcXVlbnRseSB1c2UgdGhlIGlkZW50aWZpZXIgd2l0aCB0aGUgW2By\nZW1vdmVBdHRhY2htZW50QXN5bmNgXXtAbGluayBPZmZpY2UuY29udGV4dC5t\nYWlsYm94Lml0ZW0jcmVtb3ZlQXR0YWNobWVudEFzeW5jfSBtZXRob2QgdG8g\ncmVtb3ZlIHRoZSBhdHRhY2htZW50IGluIHRoZSBzYW1lIHNlc3Npb24uDQp8\nKiANCnwqIElmIHlvdXIgT2ZmaWNlIGFkZC1pbiBpcyBydW5uaW5nIGluIE91\ndGxvb2sgV2ViIEFwcCwgdGhlIGBhZGRJdGVtQXR0YWNobWVudEFzeW5jYCBt\nZXRob2QgY2FuIGF0dGFjaCBpdGVtcyB0byBpdGVtcyBvdGhlciB0aGFuIHRo\nZSBpdGVtIHRoYXQgeW91IGFyZSBlZGl0aW5nOyBob3dldmVyLCB0aGlzIGlz\nIG5vdCBzdXBwb3J0ZWQgYW5kIGlzIG5vdCByZWNvbW1lbmRlZC4NCg==\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfGFkZHN8YW58ZXhpc3Rp\nbmd8T3V0bG9va3xpdGVtfGFzfGFufGF0dGFjaG1lbnR8d2l0aHx0aGV8bmFt\nZXxgTXl8QXR0YWNobWVudGAuPC9jYXB0aW9uPnwKYGBganN8KiBmdW5jdGlv\nbiBjYWxsYmFjayhyZXN1bHQpIHsNCnwqICAgaWYgKHJlc3VsdC5lcnJvcikg\new0KfCogICAgIHNob3dNZXNzYWdlKHJlc3VsdC5lcnJvcik7DQp8KiAgIH0g\nZWxzZSB7DQp8KiAgICAgc2hvd01lc3NhZ2UoIkF0dGFjaG1lbnQgYWRkZWQi\nKTsNCnwqICAgfQ0KfCogfQ0KfCogDQp8KiBmdW5jdGlvbiBhZGRBdHRhY2ht\nZW50KCkgew0KfCogICAvLyBFV1MgSUQgb2YgaXRlbSB0byBhdHRhY2gNCnwq\nICAgLy8gKFNob3J0ZW5lZCBmb3IgcmVhZGFiaWxpdHkpDQp8KiAgIHZhciBp\ndGVtSWQgPSAiQUFNa0FESTEuLi5BQUE9IjsNCnwqICAgDQp8KiAgIC8vIFRo\nZSB2YWx1ZXMgaW4gYXN5bmNDb250ZXh0IGNhbiBiZSBhY2Nlc3NlZCBpbiB0\naGUgY2FsbGJhY2sNCnwqICAgdmFyIG9wdGlvbnMgPSB7ICdhc3luY0NvbnRl\neHQnOiB7IHZhcjE6IDEsIHZhcjI6IDIgfSB9Ow0KfCogICANCnwqICAgT2Zm\naWNlLmNvbnRleHQubWFpbGJveC5pdGVtLmFkZEl0ZW1BdHRhY2htZW50QXN5\nbmMoaXRlbUlkLCAiTXkgQXR0YWNobWVudCIsIG9wdGlvbnMsIGNhbGxiYWNr\nKTsNCnwqIH0NCnxgYGAK\n",
+      "parameters": [
+        {
+          "name": "itemId",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "attachmentName",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    },
+    {
+      "name": "displayReplyAllForm",
+      "returnType": "",
+      "description": "Displays",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "SW58T3V0bG9va3xXZWJ8QXBwLHx0aGV8cmVwbHl8Zm9ybXxpc3xkaXNwbGF5\nZWR8YXN8YXxwb3Atb3V0fGZvcm18aW58dGhlfDMtY29sdW1ufHZpZXd8YW5k\nfGF8cG9wLXVwfGZvcm18aW58dGhlfDItfG9yfDEtY29sdW1ufHZpZXcufCog\nDQp8KiBJZiBhbnkgb2YgdGhlIHN0cmluZyBwYXJhbWV0ZXJzIGV4Y2VlZCB0\naGVpciBsaW1pdHMsIGBkaXNwbGF5UmVwbHlBbGxGb3JtYCB0aHJvd3MgYW4g\nZXhjZXB0aW9uLg0KfCogDQp8KiBXaGVuIGF0dGFjaG1lbnRzIGFyZSBzcGVj\naWZpZWQgaW4gdGhlIGBmb3JtRGF0YS5hdHRhY2htZW50c2AgcGFyYW1ldGVy\nLCBPdXRsb29rIGFuZCBPdXRsb29rIFdlYiBBcHAgYXR0ZW1wdCB0byBkb3du\nbG9hZCBhbGwgYXR0YWNobWVudHMgYW5kIGF0dGFjaCB0aGVtIHRvIHRoZSBy\nZXBseSBmb3JtLiBJZiBhbnkgYXR0YWNobWVudHMgZmFpbCB0byBiZSBhZGRl\nZCwgYW4gZXJyb3IgaXMgc2hvd24gaW4gdGhlIGZvcm0gVUkuIElmIHRoaXMg\naXNuJ3QgcG9zc2libGUsIHRoZW4gbm8gZXJyb3IgbWVzc2FnZSBpcyB0aHJv\nd24uDQo=\n",
+      "modes": [
+        "Read"
+      ],
+      "codeSnippet": "PGNhcHRpb24+UmVwbHl8d2l0aHxhfGJvZHksfGZpbGV8YXR0YWNobWVudCx8\naXRlbXxhdHRhY2htZW50LHxhbmR8YXxjYWxsYmFjay48L2NhcHRpb24+fApg\nYGBqc3wqIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5kaXNwbGF5UmVw\nbHlBbGxGb3JtKA0KfCogew0KfCogICAnaHRtbEJvZHknIDogJ2hpJywNCnwq\nICAgJ2F0dGFjaG1lbnRzJyA6DQp8KiAgIFsNCnwqICAgICB7DQp8KiAgICAg\nICAndHlwZScgOiBPZmZpY2UuTWFpbGJveEVudW1zLkF0dGFjaG1lbnRUeXBl\nLkZpbGUsDQp8KiAgICAgICAnbmFtZScgOiAnc3F1aXJyZWwucG5nJywNCnwq\nICAgICAgICd1cmwnIDogJ2h0dHA6Ly9pLmltZ3VyLmNvbS9zUmdUbEdSLmpw\nZycNCnwqICAgICB9LA0KfCogICAgIHsNCnwqICAgICAgICd0eXBlJyA6ICdp\ndGVtJywNCnwqICAgICAgICduYW1lJyA6ICdyYW5kJywNCnwqICAgICAgICdp\ndGVtSWQnIDogT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLml0ZW1JZA0K\nfCogICAgIH0NCnwqICAgXSwNCnwqICAgJ2NhbGxiYWNrJyA6IGZ1bmN0aW9u\nKGFzeW5jUmVzdWx0KQ0KfCogICB7DQp8KiAgICAgY29uc29sZS5sb2coYXN5\nbmNSZXN1bHQudmFsdWUpOw0KfCogICB9DQp8KiB9KTsNCnxgYGAK\n",
+      "parameters": [
+        {
+          "name": "formData",
+          "dataType": "{String",
+          "isCollection": false,
+          "description": "{String",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[formData.htmlBody]",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[formData.attachments]",
+          "dataType": "{Object[]}",
+          "isCollection": false,
+          "description": "{Object[]}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "formData.attachments.type",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "formData.attachments.name",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "formData.attachments.url",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "formData.attachments.itemId",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[formData.callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "displayReplyForm",
+      "returnType": "",
+      "description": "Displays",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "SW58T3V0bG9va3xXZWJ8QXBwLHx0aGV8cmVwbHl8Zm9ybXxpc3xkaXNwbGF5\nZWR8YXN8YXxwb3Atb3V0fGZvcm18aW58dGhlfDMtY29sdW1ufHZpZXd8YW5k\nfGF8cG9wLXVwfGZvcm18aW58dGhlfDItfG9yfDEtY29sdW1ufHZpZXcufCog\nDQp8KiBJZiBhbnkgb2YgdGhlIHN0cmluZyBwYXJhbWV0ZXJzIGV4Y2VlZCB0\naGVpciBsaW1pdHMsIGBkaXNwbGF5UmVwbHlGb3JtYCB0aHJvd3MgYW4gZXhj\nZXB0aW9uLg0KfCogDQp8KiBXaGVuIGF0dGFjaG1lbnRzIGFyZSBzcGVjaWZp\nZWQgaW4gdGhlIGBmb3JtRGF0YS5hdHRhY2htZW50c2AgcGFyYW1ldGVyLCBP\ndXRsb29rIGFuZCBPdXRsb29rIFdlYiBBcHAgYXR0ZW1wdCB0byBkb3dubG9h\nZCBhbGwgYXR0YWNobWVudHMgYW5kIGF0dGFjaCB0aGVtIHRvIHRoZSByZXBs\neSBmb3JtLiBJZiBhbnkgYXR0YWNobWVudHMgZmFpbCB0byBiZSBhZGRlZCwg\nYW4gZXJyb3IgaXMgc2hvd24gaW4gdGhlIGZvcm0gVUkuIElmIHRoaXMgaXNu\nJ3QgcG9zc2libGUsIHRoZW4gbm8gZXJyb3IgbWVzc2FnZSBpcyB0aHJvd24u\nDQo=\n",
+      "modes": [
+        "Read"
+      ],
+      "codeSnippet": "PGNhcHRpb24+UmVwbHl8d2l0aHxhfGJvZHksfGZpbGV8YXR0YWNobWVudCx8\naXRlbXxhdHRhY2htZW50LHxhbmR8YXxjYWxsYmFjay48L2NhcHRpb24+fApg\nYGBqc3wqIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5kaXNwbGF5UmVw\nbHlGb3JtKA0KfCogew0KfCogICAnaHRtbEJvZHknIDogJ2hpJywNCnwqICAg\nJ2F0dGFjaG1lbnRzJyA6DQp8KiAgIFsNCnwqICAgICB7DQp8KiAgICAgICAn\ndHlwZScgOiBPZmZpY2UuTWFpbGJveEVudW1zLkF0dGFjaG1lbnRUeXBlLkZp\nbGUsDQp8KiAgICAgICAnbmFtZScgOiAnc3F1aXJyZWwucG5nJywNCnwqICAg\nICAgICd1cmwnIDogJ2h0dHA6Ly9pLmltZ3VyLmNvbS9zUmdUbEdSLmpwZycN\nCnwqICAgICB9LA0KfCogICAgIHsNCnwqICAgICAgICd0eXBlJyA6ICdpdGVt\nJywNCnwqICAgICAgICduYW1lJyA6ICdyYW5kJywNCnwqICAgICAgICdpdGVt\nSWQnIDogT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLml0ZW1JZA0KfCog\nICAgIH0NCnwqICAgXSwNCnwqICAgJ2NhbGxiYWNrJyA6IGZ1bmN0aW9uKGFz\neW5jUmVzdWx0KQ0KfCogICB7DQp8KiAgICAgY29uc29sZS5sb2coYXN5bmNS\nZXN1bHQudmFsdWUpOw0KfCogICB9DQp8KiB9KTsNCnxgYGAK\n",
+      "parameters": [
+        {
+          "name": "formData",
+          "dataType": "{String",
+          "isCollection": false,
+          "description": "{String",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[formData.htmlBody]",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[formData.attachments]",
+          "dataType": "{Object[]}",
+          "isCollection": false,
+          "description": "{Object[]}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "formData.attachments.type",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "formData.attachments.name",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "formData.attachments.url",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "formData.attachments.itemId",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[formData.callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "getEntities",
+      "returnType": "",
+      "description": "",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "R2V0c3x0aGV8ZW50aXRpZXN8Zm91bmR8aW58dGhlfHNlbGVjdGVkfGl0ZW0u\n",
+      "modes": [
+        "Read"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfGFjY2Vzc2VzfHRoZXxj\nb250YWN0c3xlbnRpdGllc3xvbnx0aGV8Y3VycmVudHxpdGVtLjwvY2FwdGlv\nbj58CmBgYGpzfCogdmFyIGNvbnRhY3RzID0gT2ZmaWNlLmNvbnRleHQubWFp\nbGJveC5pdGVtLmdldEVudGl0aWVzKCkuY29udGFjdHM7DQp8YGBgCg==\n",
+      "parameters": [
+
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "getEntitiesByType",
+      "returnType": "",
+      "description": "Gets",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "",
+      "modes": [
+        "Read"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfHNob3dzfGhvd3x0b3xh\nY2Nlc3N8YW58YXJyYXl8b2Z8c3RyaW5nc3x0aGF0fHJlcHJlc2VudHxwb3N0\nYWx8YWRkcmVzc2VzfGlufHRoZXxzdWJqZWN0fG9yfGJvZHl8b2Z8dGhlfGN1\ncnJlbnR8aXRlbS48L2NhcHRpb24+fApgYGBqc3wqIC8vIFRoZSBpbml0aWFs\naXplIGZ1bmN0aW9uIGlzIHJlcXVpcmVkIGZvciBhbGwgYXBwcy4NCnwqIE9m\nZmljZS5pbml0aWFsaXplID0gZnVuY3Rpb24gKCkgew0KfCogICAvLyBDaGVj\na3MgZm9yIHRoZSBET00gdG8gbG9hZCB1c2luZyB0aGUgalF1ZXJ5IHJlYWR5\nIGZ1bmN0aW9uLg0KfCogICAkKGRvY3VtZW50KS5yZWFkeShmdW5jdGlvbiAo\nKSB7DQp8KiAgICAgLy8gQWZ0ZXIgdGhlIERPTSBpcyBsb2FkZWQsIGFwcC1z\ncGVjaWZpYyBjb2RlIGNhbiBydW4uDQp8KiAgICAgdmFyIGl0ZW0gPSBPZmZp\nY2UuY29udGV4dC5tYWlsYm94Lml0ZW07DQp8KiAgICAgLy8gR2V0IGFuIGFy\ncmF5IG9mIHN0cmluZ3MgdGhhdCByZXByZXNlbnQgcG9zdGFsIGFkZHJlc3Nl\ncyBpbiB0aGUgY3VycmVudCBpdGVtLg0KfCogICAgIHZhciBhZGRyZXNzZXMg\nPSBpdGVtLmdldEVudGl0aWVzQnlUeXBlKE9mZmljZS5NYWlsYm94RW51bXMu\nRW50aXR5VHlwZS5BZGRyZXNzKTsNCnwqICAgICAvLyBDb250aW51ZSBwcm9j\nZXNzaW5nIHRoZSBhcnJheSBvZiBhZGRyZXNzZXMuDQp8KiAgIH0pOw0KfCog\nfQ0KfGBgYAo=\n",
+      "parameters": [
+        {
+          "name": "entityType",
+          "dataType": "{Office.MailboxEnums.EntityType}",
+          "isCollection": false,
+          "description": "{Office.MailboxEnums.EntityType}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "Restricted"
+    },
+    {
+      "name": "getFilteredEntitiesByName",
+      "returnType": "",
+      "description": "Returns",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGBnZXRGaWx0ZXJlZEVudGl0aWVzQnlOYW1lYHxtZXRob2R8cmV0dXJu\nc3x0aGV8ZW50aXRpZXN8dGhhdHxtYXRjaHx0aGV8cmVndWxhcnxleHByZXNz\naW9ufGRlZmluZWR8aW58dGhlfFtJdGVtSGFzS25vd25FbnRpdHlde0BsaW5r\nY29kZXxodHRwczovL21zZG4ubWljcm9zb2Z0LmNvbS9lbi11cy9saWJyYXJ5\nL29mZmljZS9mcDE2MTE2Ni5hc3B4fXxydWxlfGVsZW1lbnR8aW58dGhlfG1h\nbmlmZXN0fFhNTHxmaWxlfHdpdGh8dGhlfHNwZWNpZmllZHxgRmlsdGVyTmFt\nZWB8ZWxlbWVudHx2YWx1ZS4=\n",
+      "modes": [
+        "Read"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "getRegExMatches",
+      "returnType": "",
+      "description": "Returns",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGBnZXRSZWdFeE1hdGNoZXNgfG1ldGhvZHxyZXR1cm5zfHRoZXxzdHJp\nbmdzfHRoYXR8bWF0Y2h8dGhlfHJlZ3VsYXJ8ZXhwcmVzc2lvbnxkZWZpbmVk\nfGlufGVhY2h8YEl0ZW1IYXNSZWd1bGFyRXhwcmVzc2lvbk1hdGNoYHxvcnxg\nSXRlbUhhc0tub3duRW50aXR5YHxydWxlfGVsZW1lbnR8aW58dGhlfG1hbmlm\nZXN0fFhNTHxmaWxlLnxGb3J8YW58YEl0ZW1IYXNSZWd1bGFyRXhwcmVzc2lv\nbk1hdGNoYHxydWxlLHxhfG1hdGNoaW5nfHN0cmluZ3xoYXN8dG98b2NjdXJ8\naW58dGhlfHByb3BlcnR5fG9mfHRoZXxpdGVtfHRoYXR8aXN8c3BlY2lmaWVk\nfGJ5fHRoYXR8cnVsZS58VGhlfGBQcm9wZXJ0eU5hbWVgfHNpbXBsZXx0eXBl\nfGRlZmluZXN8dGhlfHN1cHBvcnRlZHxwcm9wZXJ0aWVzLnwqIA0KfCogRm9y\nIGV4YW1wbGUsIGNvbnNpZGVyIGFuIGFkZC1pbiBtYW5pZmVzdCBoYXMgdGhl\nIGZvbGxvd2luZyBgUnVsZWAgZWxlbWVudDoNCnwqIA0KfCogICAgIDxSdWxl\nIHhzaTp0eXBlPSJSdWxlQ29sbGVjdGlvbiIgTW9kZT0iQW5kIj4NCnwqICAg\nICAgIDxSdWxlIHhzaTp0eXBlPSJJdGVtSXMiIEZvcm1UeXBlPSJSZWFkIiBJ\ndGVtVHlwZT0iTWVzc2FnZSIgLz4NCnwqICAgICAgIDxSdWxlIHhzaTp0eXBl\nPSJSdWxlQ29sbGVjdGlvbiIgTW9kZT0iT3IiPg0KfCogICAgICAgICA8UnVs\nZSB4c2k6dHlwZT0iSXRlbUhhc1JlZ3VsYXJFeHByZXNzaW9uTWF0Y2giIFJl\nZ0V4TmFtZT0iZnJ1aXRzIiBSZWdFeFZhbHVlPSJhcHBsZXxiYW5hbmF8Y29j\nb251dCIgUHJvcGVydHlOYW1lPSJCb2R5QXNQbGFpbnRleHQiIElnbm9yZUNh\nc2U9InRydWUiIC8+DQp8KiAgICAgICAgIDxSdWxlIHhzaTp0eXBlPSJJdGVt\nSGFzUmVndWxhckV4cHJlc3Npb25NYXRjaCIgUmVnRXhOYW1lPSJ2ZWdnaWVz\nIiBSZWdFeFZhbHVlPSJ0b21hdG98b25pb258c3BpbmFjaHxicm9jY29saSIg\nUHJvcGVydHlOYW1lPSJCb2R5QXNQbGFpbnRleHQiIElnbm9yZUNhc2U9InRy\ndWUiIC8+DQp8KiAgICAgICA8L1J1bGU+DQp8KiAgICAgPC9SdWxlPg0KfCog\nDQp8KiBUaGUgb2JqZWN0IHJldHVybmVkIGZyb20gYGdldFJlZ0V4TWF0Y2hl\nc2Agd291bGQgaGF2ZSB0d28gcHJvcGVydGllczogYGZydWl0c2AgYW5kIGB2\nZWdnaWVzYC4NCnwqIA0KfCogICAgIHsNCnwqICAgICAgICdmcnVpdHMnOiBb\nJ2FwcGxlJywnYmFuYW5hJywnQmFuYW5hJywnY29jb251dCddLA0KfCogICAg\nICAgJ3ZlZ2dpZXMnOiBbJ3RvbWF0bycsJ29uaW9uJywnc3BpbmFjaCcsJ2Jy\nb2Njb2xpJ10NCnwqICAgICB9DQp8Kg0KfCogSWYgeW91IHNwZWNpZnkgYW4g\nYEl0ZW1IYXNSZWd1bGFyRXhwcmVzc2lvbk1hdGNoYCBydWxlIG9uIHRoZSBi\nb2R5IHByb3BlcnR5IG9mIGFuIGl0ZW0sIHRoZSByZWd1bGFyIGV4cHJlc3Np\nb24gc2hvdWxkIGZ1cnRoZXIgZmlsdGVyIHRoZSBib2R5IGFuZCBzaG91bGQg\nbm90IGF0dGVtcHQgdG8gcmV0dXJuIHRoZSBlbnRpcmUgYm9keSBvZiB0aGUg\naXRlbS4gVXNpbmcgYSByZWd1bGFyIGV4cHJlc3Npb24gc3VjaCBhcyBgLipg\nIHRvIG9idGFpbiB0aGUgZW50aXJlIGJvZHkgb2YgYW4gaXRlbSBkb2VzIG5v\ndCBhbHdheXMgcmV0dXJuIHRoZSBleHBlY3RlZCByZXN1bHRzLiBJbnN0ZWFk\nLCB1c2UgdGhlIFtCb2R5LmdldEFzeW5jXXtAbGlua2NvZGUgQm9keSNnZXRB\nc3luY30gbWV0aG9kIHRvIHJldHJpZXZlIHRoZSBlbnRpcmUgYm9keS4NCg==\n",
+      "modes": [
+        "Read"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfHNob3dzfGhvd3x0b3xh\nY2Nlc3N8dGhlfGFycmF5fG9mfG1hdGNoZXN8Zm9yfHRoZXxyZWd1bGFyfGV4\ncHJlc3Npb258PFJ1bGU+fGVsZW1lbnRzfGBmcnVpdHNgfGFuZHxgdmVnZ2ll\nc2AsfHdoaWNofGFyZXxzcGVjaWZpZWR8aW58dGhlfG1hbmlmZXN0LjwvY2Fw\ndGlvbj58CmBgYGpzfCogdmFyIGFsbE1hdGNoZXMgPSBPZmZpY2UuY29udGV4\ndC5tYWlsYm94Lml0ZW0uZ2V0UmVnRXhNYXRjaGVzKCk7DQp8KiB2YXIgZnJ1\naXRzID0gYWxsTWF0Y2hlcy5mcnVpdHM7DQp8KiB2YXIgdmVnZXMgPSBhbGxN\nYXRjaGVzLnZlZ2dpZXM7DQp8YGBgCg==\n",
+      "parameters": [
+
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "getRegExMatchesByName",
+      "returnType": "",
+      "description": "Returns",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGBnZXRSZWdFeE1hdGNoZXNCeU5hbWVgfG1ldGhvZHxyZXR1cm5zfHRo\nZXxzdHJpbmdzfHRoYXR8bWF0Y2h8dGhlfHJlZ3VsYXJ8ZXhwcmVzc2lvbnxk\nZWZpbmVkfGlufHRoZXxgSXRlbUhhc1JlZ3VsYXJFeHByZXNzaW9uTWF0Y2hg\nfHJ1bGV8ZWxlbWVudHxpbnx0aGV8bWFuaWZlc3R8WE1MfGZpbGV8d2l0aHx0\naGV8c3BlY2lmaWVkfGBSZWdFeE5hbWVgfGVsZW1lbnR8dmFsdWUufCoNCnwq\nIElmIHlvdSBzcGVjaWZ5IGFuIGBJdGVtSGFzUmVndWxhckV4cHJlc3Npb25N\nYXRjaGAgcnVsZSBvbiB0aGUgYm9keSBwcm9wZXJ0eSBvZiBhbiBpdGVtLCB0\naGUgcmVndWxhciBleHByZXNzaW9uIHNob3VsZCBmdXJ0aGVyIGZpbHRlciB0\naGUgYm9keSBhbmQgc2hvdWxkIG5vdCBhdHRlbXB0IHRvIHJldHVybiB0aGUg\nZW50aXJlIGJvZHkgb2YgdGhlIGl0ZW0uIFVzaW5nIGEgcmVndWxhciBleHBy\nZXNzaW9uIHN1Y2ggYXMgYC4qYCB0byBvYnRhaW4gdGhlIGVudGlyZSBib2R5\nIG9mIGFuIGl0ZW0gZG9lcyBub3QgYWx3YXlzIHJldHVybiB0aGUgZXhwZWN0\nZWQgcmVzdWx0cy4NCg==\n",
+      "modes": [
+        "Read"
+      ],
+      "codeSnippet": "dmFyfGZydWl0c3w9fE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5nZXRS\nZWdFeE1hdGNoZXNCeU5hbWUoImZydWl0cyIpO3wKYGBganN8KiB2YXIgdmVn\nZ2llcyA9IE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5nZXRSZWdFeE1h\ndGNoZXNCeU5hbWUoInZlZ2dpZXMiKTsNCnxgYGAK\n",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "removeAttachmentAsync",
+      "returnType": "",
+      "description": "Removes",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.1"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGByZW1vdmVBdHRhY2htZW50QXN5bmNgfG1ldGhvZHxyZW1vdmVzfHRo\nZXxhdHRhY2htZW50fHdpdGh8dGhlfHNwZWNpZmllZHxpZGVudGlmaWVyfGZy\nb218dGhlfGl0ZW0ufEFzfGF8YmVzdHxwcmFjdGljZSx8eW91fHNob3VsZHx1\nc2V8dGhlfGF0dGFjaG1lbnR8aWRlbnRpZmllcnx0b3xyZW1vdmV8YW58YXR0\nYWNobWVudHxvbmx5fGlmfHRoZXxzYW1lfG1haWx8YXBwfGhhc3xhZGRlZHx0\naGF0fGF0dGFjaG1lbnR8aW58dGhlfHNhbWV8c2Vzc2lvbi58SW58T3V0bG9v\na3xXZWJ8QXBwfGFuZHxPV0F8Zm9yfERldmljZXMsfHRoZXxhdHRhY2htZW50\nfGlkZW50aWZpZXJ8aXN8dmFsaWR8b25seXx3aXRoaW58dGhlfHNhbWV8c2Vz\nc2lvbi58QXxzZXNzaW9ufGlzfG92ZXJ8d2hlbnx0aGV8dXNlcnxjbG9zZXN8\ndGhlfGFwcCx8b3J8aWZ8dGhlfHVzZXJ8c3RhcnRzfGNvbXBvc2luZ3xpbnxh\nbnxpbmxpbmV8Zm9ybXxhbmR8c3Vic2VxdWVudGx5fHBvcHN8b3V0fHRoZXxp\nbmxpbmV8Zm9ybXx0b3xjb250aW51ZXxpbnxhfHNlcGFyYXRlfHdpbmRvdy4=\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xjb2RlfHJlbW92ZXN8YW58YXR0YWNo\nbWVudHx3aXRofGFufGlkZW50aWZpZXJ8b2Z8JzAnLjwvY2FwdGlvbj58CmBg\nYGpzfCogT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLnJlbW92ZUF0dGFj\naG1lbnRBc3luYygNCnwqICAgJzAnLA0KfCogICB7IGFzeW5jQ29udGV4dCA6\nIG51bGwgfSwNCnwqICAgZnVuY3Rpb24gKGFzeW5jUmVzdWx0KQ0KfCogICB7\nDQp8KiAgICAgY29uc29sZS5sb2coYXN5bmNSZXN1bHQuc3RhdHVzKTsNCnwq\nICAgfQ0KfCogKTsNCnxgYGAK\n",
+      "parameters": [
+        {
+          "name": "attachmentId",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    }
+  ]
+}

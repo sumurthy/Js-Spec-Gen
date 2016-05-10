@@ -1,0 +1,114 @@
+{
+  "name": "Location",
+  "description": "Provides",
+  "longDesc": "UHJvdmlkZXN8bWV0aG9kc3x0b3xnZXR8YW5kfHNldHx0aGV8bG9jYXRpb258\nb2Z8YXxtZWV0aW5nfGlufGFufE91dGxvb2t8YWRkLWluLg==\n",
+  "collectionOf": null,
+  "reqSet": [
+    "1.1"
+  ],
+  "modes": [
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "getAsync",
+      "returnType": "",
+      "description": "Gets",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.1"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGBnZXRBc3luY2B8bWV0aG9kfHN0YXJ0c3xhbnxhc3luY2hyb25vdXN8\nY2FsbHx0b3x0aGV8RXhjaGFuZ2V8c2VydmVyfHRvfGdldHx0aGV8bG9jYXRp\nb258b2Z8YW58YXBwb2ludG1lbnQu\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "callback",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "setAsync",
+      "returnType": "",
+      "description": "Sets",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.1"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGBzZXRBc3luY2B8bWV0aG9kfHN0YXJ0c3xhbnxhc3luY2hyb25vdXN8\nY2FsbHx0b3x0aGV8RXhjaGFuZ2V8c2VydmVyfHRvfHNldHx0aGV8bG9jYXRp\nb258b2Z8YW58YXBwb2ludG1lbnQufFNldHRpbmd8dGhlfGxvY2F0aW9ufG9m\nfGFufGFwcG9pbnRtZW50fG92ZXJ3cml0ZXN8dGhlfGN1cnJlbnR8bG9jYXRp\nb24u\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "location",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    }
+  ]
+}

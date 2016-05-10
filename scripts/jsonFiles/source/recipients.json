@@ -1,0 +1,166 @@
+{
+  "name": "Recipients",
+  "description": "Provides",
+  "longDesc": "",
+  "collectionOf": null,
+  "reqSet": [
+    "1.1"
+  ],
+  "modes": [
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "addAsync",
+      "returnType": "",
+      "description": "Adds",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.1"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGByZWNpcGllbnRzYHxwYXJhbWV0ZXJ8Y2FufGJlfGFufGFycmF5fG9m\nfG9uZXxvZnx0aGV8Zm9sbG93aW5nOnwqIA0KfCogLSBTdHJpbmdzIGNvbnRh\naW5pbmcgU01UUCBlbWFpbCBhZGRyZXNzZXMNCnwqIC0gYEVtYWlsVXNlcmAg\nb2JqZWN0cw0KfCogLSBgRW1haWxBZGRyZXNzRGV0YWlsc2Agb2JqZWN0cw0K\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfGNyZWF0ZXN8YW58YXJy\nYXl8b2Z8YEVtYWlsVXNlcmB8b2JqZWN0c3xhbmR8YWRkc3x0aGVtfHRvfHRo\nZXxUb3xyZWNpcGllbnRzfG9mfHRoZXxtZXNzYWdlLjwvY2FwdGlvbj58CmBg\nYGpzfCogdmFyIG5ld1JlY2lwaWVudHMgPSBbDQp8KiAgIHsNCnwqICAgICAi\nZGlzcGxheU5hbWUiOiAiQWxsaWUgQmVsbGV3IiwNCnwqICAgICAiZW1haWxB\nZGRyZXNzIjogImFsbGllYkBjb250b3NvLmNvbSINCnwqICAgfSwNCnwqICAg\new0KfCogICAgICJkaXNwbGF5TmFtZSI6ICJBbGV4IERhcnJvdyIsDQp8KiAg\nICAgImVtYWlsQWRkcmVzcyI6ICJhbGV4ZEBjb250b3NvLmNvbSINCnwqICAg\nfQ0KfCogXTsNCnwqIA0KfCogT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVt\nLnRvLmFkZEFzeW5jKG5ld1JlY2lwaWVudHMsIGZ1bmN0aW9uKHJlc3VsdCkg\new0KfCogICBpZiAocmVzdWx0LmVycm9yKSB7DQp8KiAgICAgc2hvd01lc3Nh\nZ2UocmVzdWx0LmVycm9yKTsNCnwqICAgfSBlbHNlIHsNCnwqICAgICBzaG93\nTWVzc2FnZSgiUmVjaXBpZW50cyBhZGRlZCIpOw0KfCogICB9DQp8KiB9KTsN\nCnxgYGAK\n",
+      "parameters": [
+        {
+          "name": "recipients",
+          "dataType": "{Array.<(String|EmailUser|EmailAddressDetails)>}",
+          "isCollection": false,
+          "description": "{Array.<(String|EmailUser|EmailAddressDetails)>}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    },
+    {
+      "name": "getAsync",
+      "returnType": "",
+      "description": "Gets",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.1"
+      ],
+      "example": null,
+      "longDesc": "",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfGdldHN8dGhlfG9wdGlv\nbmFsfGF0dGVuZGVlc3xvZnxhfG1lZXRpbmcuPC9jYXB0aW9uPnwKYGBganN8\nKiBPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0ub3B0aW9uYWxBdHRlbmRl\nZXMuZ2V0QXN5bmMoZnVuY3Rpb24ocmVzdWx0KSB7DQp8KiAgIGlmIChyZXN1\nbHQuZXJyb3IpIHsNCnwqICAgICBzaG93TWVzc2FnZShyZXN1bHQuZXJyb3Ip\nOw0KfCogICB9IGVsc2Ugew0KfCogICAgIHZhciBtc2cgPSAiIjsNCnwqICAg\nICByZXN1bHQudmFsdWUuZm9yRWFjaChmdW5jdGlvbihyZWNpcCwgaW5kZXgp\nIHsNCnwqICAgICAgIG1zZyA9IG1zZyArIHJlY2lwLmRpc3BsYXlOYW1lICsg\nIiAoIiArIHJlY2lwLmVtYWlsQWRkcmVzcyArICIpOyI7DQp8KiAgICAgfSk7\nDQp8KiAgICAgc2hvd01lc3NhZ2UobXNnKTsNCnwqICAgfQ0KfCogfSk7DQp8\nYGBgCg==\n",
+      "parameters": [
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "callback",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "setAsync",
+      "returnType": "",
+      "description": "Sets",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.1"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGBzZXRBc3luY2B8bWV0aG9kfG92ZXJ3cml0ZXN8dGhlfGN1cnJlbnR8\ncmVjaXBpZW50fGxpc3QufCogDQp8KiBUaGUgYHJlY2lwaWVudHNgIHBhcmFt\nZXRlciBjYW4gYmUgYW4gYXJyYXkgb2Ygb25lIG9mIHRoZSBmb2xsb3dpbmc6\nDQp8KiANCnwqIC0gU3RyaW5ncyBjb250YWluaW5nIFNNVFAgZW1haWwgYWRk\ncmVzc2VzDQp8KiAtIGBFbWFpbFVzZXJgIG9iamVjdHMNCnwqIC0gYEVtYWls\nQWRkcmVzc0RldGFpbHNgIG9iamVjdHMNCg==\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfGNyZWF0ZXN8YW58YXJy\nYXl8b2Z8YEVtYWlsVXNlcmB8b2JqZWN0c3xhbmR8cmVwbGFjZXN8dGhlfEND\nfHJlY2lwaWVudHN8b2Z8dGhlfG1lc3NhZ2V8d2l0aHx0aGV8YXJyYXkuPC9j\nYXB0aW9uPnwKYGBganN8KiB2YXIgbmV3UmVjaXBpZW50cyA9IFsNCnwqICAg\new0KfCogICAgICJkaXNwbGF5TmFtZSI6ICJBbGxpZSBCZWxsZXciLA0KfCog\nICAgICJlbWFpbEFkZHJlc3MiOiAiYWxsaWViQGNvbnRvc28uY29tIg0KfCog\nICB9LA0KfCogICB7DQp8KiAgICAgImRpc3BsYXlOYW1lIjogIkFsZXggRGFy\ncm93IiwNCnwqICAgICAiZW1haWxBZGRyZXNzIjogImFsZXhkQGNvbnRvc28u\nY29tIg0KfCogICB9DQp8KiBdOw0KfCogDQp8KiBPZmZpY2UuY29udGV4dC5t\nYWlsYm94Lml0ZW0uY2Muc2V0QXN5bmMobmV3UmVjaXBpZW50cywgZnVuY3Rp\nb24ocmVzdWx0KSB7DQp8KiAgIGlmIChyZXN1bHQuZXJyb3IpIHsNCnwqICAg\nICBzaG93TWVzc2FnZShyZXN1bHQuZXJyb3IpOw0KfCogICB9IGVsc2Ugew0K\nfCogICAgIHNob3dNZXNzYWdlKCJSZWNpcGllbnRzIG92ZXJ3cml0dGVuIik7\nDQp8KiAgIH0NCnwqIH0pOw0KfGBgYAo=\n",
+      "parameters": [
+        {
+          "name": "recipients",
+          "dataType": "{Array.<(String|EmailUser|EmailAddressDetails)>}",
+          "isCollection": false,
+          "description": "{Array.<(String|EmailUser|EmailAddressDetails)>}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "callback",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    }
+  ]
+}

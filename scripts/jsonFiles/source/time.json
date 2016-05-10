@@ -1,0 +1,114 @@
+{
+  "name": "Time",
+  "description": "Provides",
+  "longDesc": "VGhlfGBUaW1lYHxvYmplY3R8aXN8cmV0dXJuZWR8YXN8dGhlfFtzdGFydF17\nQGxpbmtjb2RlfE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbSNzdGFydH18\nb3J8W2VuZF17QGxpbmtjb2RlfE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRl\nbSNlbmR9fHByb3BlcnR5fG9mfGFufGFwcG9pbnRtZW50fGlufGNvbXBvc2V8\nbW9kZS4=\n",
+  "collectionOf": null,
+  "reqSet": [
+    "1.1"
+  ],
+  "modes": [
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "getAsync",
+      "returnType": "",
+      "description": "Gets",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.1"
+      ],
+      "example": null,
+      "longDesc": "",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "callback",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "setAsync",
+      "returnType": "",
+      "description": "Sets",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.1"
+      ],
+      "example": null,
+      "longDesc": "SWZ8dGhlfGBzZXRBc3luY2B8bWV0aG9kfGlzfGNhbGxlZHxvbnx0aGV8W3N0\nYXJ0XXtAbGlua2NvZGV8T2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtI3N0\nYXJ0fXxwcm9wZXJ0eSx8dGhlfFtlbmRde0BsaW5rY29kZXxPZmZpY2UuY29u\ndGV4dC5tYWlsYm94Lml0ZW0jZW5kfXxwcm9wZXJ0eXx3aWxsfGJlfGFkanVz\ndGVkfHRvfG1haW50YWlufHRoZXxkdXJhdGlvbnxvZnx0aGV8YXBwb2ludG1l\nbnR8YXN8cHJldmlvdXNseXxzZXQufElmfHRoZXxgc2V0QXN5bmNgfG1ldGhv\nZHxpc3xjYWxsZWR8b258dGhlfGBlbmRgfHByb3BlcnR5LHx0aGV8ZHVyYXRp\nb258b2Z8dGhlfGFwcG9pbnRtZW50fHdpbGx8YmV8ZXh0ZW5kZWR8dG98dGhl\nfG5ld3xlbmR8dGltZS58KiANCnwqIFRoZSB0aW1lIG11c3QgYmUgaW4gVVRD\nOyB5b3UgY2FuIGdldCB0aGUgY29ycmVjdCBVVEMgdGltZSBieSB1c2luZyB0\naGUgW2NvbnZlcnRUb1V0Y0NsaWVudFRpbWVde0BsaW5rY29kZSBPZmZpY2Uu\nY29udGV4dC5tYWlsYm94I2NvbnZlcnRUb1V0Y0NsaWVudFRpbWV9IG1ldGhv\nZC4NCg==\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfHNldHN8dGhlfHN0YXJ0\nfHRpbWV8b2Z8YW58YXBwb2ludG1lbnQuPC9jYXB0aW9uPnwKYGBganN8KiB2\nYXIgc3RhcnRUaW1lID0gbmV3IERhdGUoIjMvMTQvMjAxNSIpOw0KfCogdmFy\nIG9wdGlvbnMgPSB7DQp8KiAgIC8vIFBhc3MgaW5mb3JtYXRpb24gdGhhdCBj\nYW4gYmUgdXNlZA0KfCogICAvLyBpbiB0aGUgY2FsbGJhY2sNCnwqIAkgYXN5\nbmNDb250ZXh0OiB7dmVyYjoiU2V0In0NCnwqIH0NCnwqIE9mZmljZS5jb250\nZXh0Lm1haWxib3guaXRlbS5zdGFydC5zZXRBc3luYyhzdGFydFRpbWUsIG9w\ndGlvbnMsIGZ1bmN0aW9uKHJlc3VsdCkgeyANCnwqICAgaWYgKHJlc3VsdC5l\ncnJvcikgew0KfCogICAgIGNvbnNvbGUuZGVidWcocmVzdWx0LmVycm9yKTsN\nCnwqICAgfSBlbHNlIHsNCnwqICAgICAvLyBBY2Nlc3MgdGhlIGFzeW5jQ29u\ndGV4dCB0aGF0IHdhcyBwYXNzZWQgdG8gdGhlIHNldEFzeW5jIGZ1bmN0aW9u\nDQp8KiAgICAgY29uc29sZS5kZWJ1ZygiU3RhcnQgVGltZSAiICsgcmVzdWx0\nLmFzeW5jQ29udGV4dC52ZXJiKTsNCnwqICAgfQ0KfCogfSk7DQp8YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "dateTime",
+          "dataType": "{Date}",
+          "isCollection": false,
+          "description": "{Date}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[options.asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    }
+  ]
+}

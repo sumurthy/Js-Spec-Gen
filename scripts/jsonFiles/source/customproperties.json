@@ -1,0 +1,151 @@
+{
+  "name": "CustomProperties",
+  "description": "Provides",
+  "longDesc": "VGhlfGBDdXN0b21Qcm9wZXJ0aWVzYHxvYmplY3R8cmVwcmVzZW50c3xjdXN0\nb218cHJvcGVydGllc3x0aGF0fGFyZXxzcGVjaWZpY3x0b3xhfHBhcnRpY3Vs\nYXJ8aXRlbXxhbmR8c3BlY2lmaWN8dG98YXxtYWlsfGFkZC1pbnxmb3J8T3V0\nbG9vay58Rm9yfGV4YW1wbGUsfHRoZXJlfG1pZ2h0fGJlfGF8bmVlZHxmb3J8\nYXxtYWlsfGFkZC1pbnx0b3xzYXZlfHNvbWV8ZGF0YXx0aGF0fGlzfHNwZWNp\nZmljfHRvfHRoZXxjdXJyZW50fGVtYWlsfG1lc3NhZ2V8dGhhdHxhY3RpdmF0\nZWR8dGhlfGFkZC1pbi58SWZ8dGhlfHVzZXJ8cmV2aXNpdHN8dGhlfHNhbWV8\nbWVzc2FnZXxpbnx0aGV8ZnV0dXJlfGFuZHxhY3RpdmF0ZXN8dGhlfG1haWx8\nYWRkLWlufGFnYWluLHx0aGV8YWRkLWlufHdpbGx8YmV8YWJsZXx0b3xyZXRy\naWV2ZXx0aGV8ZGF0YXx0aGF0fGhhZHxiZWVufHNhdmVkfGFzfGN1c3RvbXxw\ncm9wZXJ0aWVzLnwqIA0KfCogQmVjYXVzZSBPdXRsb29rIGZvciBNYWMgZG9l\nc27igJl0IGNhY2hlIGN1c3RvbSBwcm9wZXJ0aWVzLCBpZiB0aGUgdXNlcuKA\nmXMgbmV0d29yayBnb2VzIGRvd24sIG1haWwgYWRkLWlucyBjYW5ub3QgYWNj\nZXNzIHRoZWlyIGN1c3RvbSBwcm9wZXJ0aWVzLg0KfDxjYXB0aW9uPlRoZXxm\nb2xsb3dpbmd8ZXhhbXBsZXxzaG93c3xob3d8dG98dXNlfHRoZXxbYGxvYWRD\ndXN0b21Qcm9wZXJ0aWVzQXN5bmNgXXtAbGlua3xPZmZpY2UuY29udGV4dC5t\nYWlsYm94Lkl0ZW0jbG9hZEN1c3RvbVByb3BlcnRpZXNBc3luY318bWV0aG9k\nfHRvfGFzeW5jaHJvbm91c2x5fGxvYWR8Y3VzdG9tfHByb3BlcnRpZXN8dGhh\ndHxhcmV8c3BlY2lmaWN8dG98dGhlfGN1cnJlbnR8aXRlbS58VGhlfGV4YW1w\nbGV8YWxzb3xzaG93c3xob3d8dG98dXNlfHRoZXxbYHNhdmVBc3luY2Bde0Bs\naW5rfEN1c3RvbVByb3BlcnRpZXMjc2F2ZUFzeW5jfXxtZXRob2R8dG98c2F2\nZXx0aGVzZXxwcm9wZXJ0aWVzfGJhY2t8dG98dGhlfHNlcnZlci58QWZ0ZXJ8\nbG9hZGluZ3x0aGV8Y3VzdG9tfHByb3BlcnRpZXMsfHRoZXxleGFtcGxlfHVz\nZXN8dGhlfFtgZ2V0YF17QGxpbmt8Q3VzdG9tUHJvcGVydGllcyNnZXR9fG1l\ndGhvZHx0b3xyZWFkfHRoZXxjdXN0b218cHJvcGVydHl8YG15UHJvcGAsfHRo\nZXxbYHNldGBde0BsaW5rfEN1c3RvbVByb3BlcnRpZXMjc2V0fXxtZXRob2R8\ndG98d3JpdGV8dGhlfGN1c3RvbXxwcm9wZXJ0eXxgb3RoZXJQcm9wYCx8YW5k\nfHRoZW58ZmluYWxseXxjYWxsc3x0aGV8YHNhdmVBc3luY2B8bWV0aG9kfHRv\nfHNhdmV8dGhlfGN1c3RvbXxwcm9wZXJ0aWVzLjwvY2FwdGlvbj58CmBgYGpz\nfCogT2ZmaWNlLmluaXRpYWxpemUgPSBmdW5jdGlvbiAoKSB7DQp8KiAgIC8v\nIENoZWNrcyBmb3IgdGhlIERPTSB0byBsb2FkIHVzaW5nIHRoZSBqUXVlcnkg\ncmVhZHkgZnVuY3Rpb24uDQp8KiAgICQoZG9jdW1lbnQpLnJlYWR5KGZ1bmN0\naW9uICgpIHsNCnwqICAgICAvLyBBZnRlciB0aGUgRE9NIGlzIGxvYWRlZCwg\nYWRkLWluLXNwZWNpZmljIGNvZGUgY2FuIHJ1bi4NCnwqICAgICB2YXIgbWFp\nbGJveCA9IE9mZmljZS5jb250ZXh0Lm1haWxib3g7DQp8KiAgICAgbWFpbGJv\neC5pdGVtLmxvYWRDdXN0b21Qcm9wZXJ0aWVzQXN5bmMoY3VzdG9tUHJvcHND\nYWxsYmFjayk7DQp8KiAgIH0pOw0KfCogfQ0KfCogZnVuY3Rpb24gY3VzdG9t\nUHJvcHNDYWxsYmFjayhhc3luY1Jlc3VsdCkgew0KfCogICB2YXIgY3VzdG9t\nUHJvcHMgPSBhc3luY1Jlc3VsdC52YWx1ZTsNCnwqICAgdmFyIG15UHJvcCA9\nIGN1c3RvbVByb3BzLmdldCgibXlQcm9wIik7DQp8KiANCnwqICAgY3VzdG9t\nUHJvcHMuc2V0KCJvdGhlclByb3AiLCAidmFsdWUiKTsNCnwqICAgY3VzdG9t\nUHJvcHMuc2F2ZUFzeW5jKHNhdmVDYWxsYmFjayk7DQp8KiB9DQp8KiANCnwq\nIGZ1bmN0aW9uIHNhdmVDYWxsYmFjayhhc3luY1Jlc3VsdCkgew0KfCogfQ0K\nfGBgYAo=\n",
+  "collectionOf": null,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "get",
+      "returnType": "",
+      "description": "Returns",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "remove",
+      "returnType": "",
+      "description": "Removes",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "VG98bWFrZXx0aGV8cmVtb3ZhbHxvZnx0aGV8cHJvcGVydHl8cGVybWFuZW50\nLHx5b3V8bXVzdHxjYWxsfHRoZXxbYHNhdmVBc3luY2Bde0BsaW5rfEN1c3Rv\nbVByb3BlcnRpZXMjc2F2ZUFzeW5jfXxtZXRob2R8b2Z8dGhlfGBDdXN0b21Q\ncm9wZXJ0aWVzYHxvYmplY3Qu\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "saveAsync",
+      "returnType": "",
+      "description": "Saves",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "WW91fG11c3R8Y2FsbHx0aGV8YHNhdmVBc3luY2B8bWV0aG9kfHRvfHBlcnNp\nc3R8YW55fGNoYW5nZXN8bWFkZXx3aXRofHRoZXxbYHNldGBde0BsaW5rfEN1\nc3RvbVByb3BlcnRpZXMjc2V0fXxtZXRob2R8b3J8dGhlfFtgcmVtb3ZlYF17\nQGxpbmt8Q3VzdG9tUHJvcGVydGllcyNyZW1vdmV9fG1ldGhvZHxvZnx0aGV8\nYEN1c3RvbVByb3BlcnRpZXNgfG9iamVjdC58VGhlfHNhdmluZ3xhY3Rpb258\naXN8YXN5bmNocm9ub3VzLnwqIA0KfCogSXTigJlzIGEgZ29vZCBwcmFjdGlj\nZSB0byBoYXZlIHlvdXIgY2FsbGJhY2sgZnVuY3Rpb24gY2hlY2sgZm9yIGFu\nZCBoYW5kbGUgZXJyb3JzIGZyb20gYHNhdmVBc3luY2AuIEluIHBhcnRpY3Vs\nYXIsIGEgcmVhZCBhZGQtaW4gY2FuIGJlIGFjdGl2YXRlZCB3aGlsZSB0aGUg\ndXNlciBpcyBpbiBhIGNvbm5lY3RlZCBzdGF0ZSBpbiBhIHJlYWQgZm9ybSwg\nYW5kIHN1YnNlcXVlbnRseSB0aGUgdXNlciBiZWNvbWVzIGRpc2Nvbm5lY3Rl\nZC4gSWYgdGhlIGFkZC1pbiBjYWxscyBgc2F2ZUFzeW5jYCB3aGlsZSBpbiB0\naGUgZGlzY29ubmVjdGVkIHN0YXRlLCBgc2F2ZUFzeW5jYCB3b3VsZCByZXR1\ncm4gYW4gZXJyb3IuIFlvdXIgY2FsbGJhY2sgbWV0aG9kIHNob3VsZCBoYW5k\nbGUgdGhpcyBlcnJvciBhY2NvcmRpbmdseS4NCg==\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xKYXZhU2NyaXB0fGNvZGV8c2FtcGxl\nfHNob3dzfGhvd3x0b3xhc3luY2hyb25vdXNseXx1c2V8dGhlfFtgbG9hZEN1\nc3RvbVByb3BlcnRpZXNBc3luY2Bde0BsaW5rfE9mZmljZS5jb250ZXh0Lm1h\naWxib3guSXRlbSNsb2FkQ3VzdG9tUHJvcGVydGllc0FzeW5jfXxtZXRob2R8\ndG98bG9hZHxjdXN0b218cHJvcGVydGllc3x0aGF0fGFyZXxzcGVjaWZpY3x0\nb3x0aGV8Y3VycmVudHxpdGVtLHxhbmR8dGhlfFtgc2F2ZUFzeW5jYF17QGxp\nbmt8Q3VzdG9tUHJvcGVydGllcyNzYXZlQXN5bmN9fG1ldGhvZHx0b3xzYXZl\nfHRoZXNlfHByb3BlcnRpZXN8YmFja3x0b3x0aGV8c2VydmVyLnxBZnRlcnxs\nb2FkaW5nfHRoZXxjdXN0b218cHJvcGVydGllcyx8dGhlfGNvZGV8c2FtcGxl\nfHVzZXN8dGhlfFtgZ2V0YF17QGxpbmt8Q3VzdG9tUHJvcGVydGllcyNnZXR9\nfG1ldGhvZHx0b3xyZWFkfHRoZXxjdXN0b218cHJvcGVydHl8YG15UHJvcGAs\nfHRoZXxbYHNldGBde0BsaW5rfEN1c3RvbVByb3BlcnRpZXMjc2V0fXxtZXRo\nb2R8dG98d3JpdGV8dGhlfGN1c3RvbXxwcm9wZXJ0eXxgb3RoZXJQcm9wYCx8\nYW5kfHRoZW58ZmluYWxseXxjYWxsc3x0aGV8YHNhdmVBc3luY2B8bWV0aG9k\nfHRvfHNhdmV8dGhlfGN1c3RvbXxwcm9wZXJ0aWVzLjwvY2FwdGlvbj58CmBg\nYGpzfCogLy8gVGhlIGluaXRpYWxpemUgZnVuY3Rpb24gaXMgcmVxdWlyZWQg\nZm9yIGFsbCBhZGQtaW5zLg0KfCogT2ZmaWNlLmluaXRpYWxpemUgPSBmdW5j\ndGlvbiAoKSB7DQp8KiAgIC8vIENoZWNrcyBmb3IgdGhlIERPTSB0byBsb2Fk\nIHVzaW5nIHRoZSBqUXVlcnkgcmVhZHkgZnVuY3Rpb24uDQp8KiAgICQoZG9j\ndW1lbnQpLnJlYWR5KGZ1bmN0aW9uICgpIHsNCnwqICAgICAvLyBBZnRlciB0\naGUgRE9NIGlzIGxvYWRlZCwgYWRkLWluLXNwZWNpZmljIGNvZGUgY2FuIHJ1\nbi4NCnwqICAgICB2YXIgaXRlbSA9IE9mZmljZS5jb250ZXh0Lm1haWxib3gu\naXRlbTsNCnwqICAgICBpdGVtLmxvYWRDdXN0b21Qcm9wZXJ0aWVzQXN5bmMo\nY3VzdG9tUHJvcHNDYWxsYmFjayk7DQp8KiAgIH0pOw0KfCogfQ0KfCogZnVu\nY3Rpb24gY3VzdG9tUHJvcHNDYWxsYmFjayhhc3luY1Jlc3VsdCkgew0KfCog\nICB2YXIgY3VzdG9tUHJvcHMgPSBhc3luY1Jlc3VsdC52YWx1ZTsNCnwqICAg\ndmFyIG15UHJvcCA9IGN1c3RvbVByb3BzLmdldCgibXlQcm9wIik7DQp8KiAN\nCnwqICAgY3VzdG9tUHJvcHMuc2V0KCJvdGhlclByb3AiLCAidmFsdWUiKTsN\nCnwqICAgY3VzdG9tUHJvcHMuc2F2ZUFzeW5jKHNhdmVDYWxsYmFjayk7DQp8\nKiB9DQp8KiANCnwqIGZ1bmN0aW9uIHNhdmVDYWxsYmFjayhhc3luY1Jlc3Vs\ndCkgew0KfCogICBpZiAoYXN5bmNSZXN1bHQuc3RhdHVzID09IE9mZmljZS5B\nc3luY1Jlc3VsdFN0YXR1cy5GYWlsZWQpew0KfCogICAgIHdyaXRlKGFzeW5j\nUmVzdWx0LmVycm9yLm1lc3NhZ2UpOw0KfCogICB9DQp8KiAgIGVsc2Ugew0K\nfCogICAgIC8vIEFzeW5jIGNhbGwgdG8gc2F2ZSBjdXN0b20gcHJvcGVydGll\ncyBjb21wbGV0ZWQuDQp8KiAgICAgLy8gUHJvY2VlZCB0byBkbyB0aGUgYXBw\ncm9wcmlhdGUgZm9yIHlvdXIgYWRkLWluLg0KfCogICB9DQp8KiB9DQp8KiAN\nCnwqIC8vIFdyaXRlcyB0byBhIGRpdiB3aXRoIGlkPSdtZXNzYWdlJyBvbiB0\naGUgcGFnZS4NCnwqIGZ1bmN0aW9uIHdyaXRlKG1lc3NhZ2Upew0KfCogICBk\nb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbWVzc2FnZScpLmlubmVyVGV4dCAr\nPSBtZXNzYWdlOyANCnwqIH0NCnxgYGAK\n",
+      "parameters": [
+        {
+          "name": "[callback]",
+          "dataType": "{function}",
+          "isCollection": false,
+          "description": "{function}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "[asyncContext]",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "set",
+      "returnType": "",
+      "description": "Sets",
+      "syntax": "",
+      "signature": "",
+      "restfulName": null,
+      "reqSet": [
+        "1.0"
+      ],
+      "example": null,
+      "longDesc": "VGhlfGBzZXRgfG1ldGhvZHxzZXRzfHRoZXxzcGVjaWZpZWR8cHJvcGVydHl8\ndG98dGhlfHNwZWNpZmllZHx2YWx1ZS58WW91fG11c3R8dXNlfHRoZXxbYHNh\ndmVBc3luY2Bde0BsaW5rfEN1c3RvbVByb3BlcnRpZXMjc2F2ZUFzeW5jfXxt\nZXRob2R8dG98c2F2ZXx0aGV8cHJvcGVydHl8dG98dGhlfHNlcnZlci58KiAN\nCnwqIFRoZSBgc2V0YCBtZXRob2QgY3JlYXRlcyBhIG5ldyBwcm9wZXJ0eSBp\nZiB0aGUgc3BlY2lmaWVkIHByb3BlcnR5IGRvZXMgbm90IGFscmVhZHkgZXhp\nc3Q7IG90aGVyd2lzZSwgdGhlIGV4aXN0aW5nIHZhbHVlIGlzIHJlcGxhY2Vk\nIHdpdGggdGhlIG5ldyB2YWx1ZS4gVGhlIGB2YWx1ZWAgcGFyYW1ldGVyIGNh\nbiBiZSBvZiBhbnkgdHlwZTsgaG93ZXZlciwgaXQgaXMgYWx3YXlzIHBhc3Nl\nZCB0byB0aGUgc2VydmVyIGFzIGEgc3RyaW5nLg0K\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "{String}",
+          "isCollection": false,
+          "description": "{String}",
+          "isRequired": false,
+          "enumName": null
+        },
+        {
+          "name": "value",
+          "dataType": "{Object}",
+          "isCollection": false,
+          "description": "{Object}",
+          "isRequired": false,
+          "enumName": null
+        }
+      ],
+      "minPermission": "ReadItem"
+    }
+  ]
+}
