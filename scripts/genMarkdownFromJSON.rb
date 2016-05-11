@@ -24,8 +24,8 @@ module SpecMaker
 	ITEM_TYPES = %w[appointment.js message.js]
 	REQ_FLAG = '@since'
 	PERMISSION_FLAG = '@permission'
-	READMODE = '@readmode'
-	COMPOSEMODE = '@composemode'
+	READMODE_FLAG = '@readmode'
+	COMPOSEMODE_FLAG = '@composemode'
 	SUMMARY_FLAG = '@summary'
 	DESCRIPTION_FLAG = '@desc'
 	METHOD_FLAG = '@method'
@@ -37,6 +37,7 @@ module SpecMaker
 	RETURNTYPE = '@return'
 	STD_TEXT = "When the method completes, the function passed in the callback parameter is called with a single parameter, asyncResult, which is an AsyncResult object. For more information, see Using asynchronous methods. "
 	@json_object = nil
+	SIMPLETYPES = %w[int string object object[][] object[] Date double float bool number void]
 
 	# Read config and json_struct files 
 
@@ -46,7 +47,7 @@ module SpecMaker
 	JSTRUCT = "../config/json_structure.json"
 	@jstruct = JSON.parse(File.read(JSTRUCT, :encoding => 'UTF-8'), {:symbolize_names => true})
 
-	puts "....Starting run for the app #{@config}"
+	puts "....Starting run for the app #{@config[:app]}"
 	puts
 
 	#
@@ -60,9 +61,12 @@ module SpecMaker
 		return Base64.encode64(arr.join('|'))
 	end
 
-	def self.get_type(val="", type="")
-
-		return type
+	def self.get_type(text="")
+		if text.include?('{')
+			return text.scan(/{(.*?)}/)[0].join
+		else
+			return nil
+		end
 	end
 
 	def self.get_name(name="")
@@ -71,7 +75,7 @@ module SpecMaker
 	end
 
 	def self.clean_desc(desc="")
-
+		
 		return desc
 	end
 
@@ -79,8 +83,8 @@ module SpecMaker
 	# Conversion to specification 
 	def self.convert_to_json (js_lines=[])
 		in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false, false
-		s_callback_tag = false
-		key, comment, val, req_ver, permission, example_caption, non_comment, return_type = '', '', '', '', '', '', '', ''
+		s_callback_tag, is_blank, in_xmode = false, false, false
+		key, comment, val, req_ver, permission, example_caption, after_comment_text, return_type = '', '', '', '', '', '', '', ''
 		summary = ""
 		eg_arr = []
 		desc_arr = []				
@@ -97,24 +101,30 @@ module SpecMaker
 			line.gsub!('</code>','`')
 			#
 			line_parts = line.strip.split(" ")
+			n = line_parts.length
 			comment = line_parts[0]
-			non_comment = line[1..-1]
+
+			after_comment_text = line_parts[1..-1].join(' ') if n > 0
 			key = line_parts[1]
 			val = line_parts[2]
-			type = line_parts[3]
-			rest = line_parts[2..-1]
-			param_desc = line_parts[4..-1]
+			datatype = line_parts[3..-1].join(' ') if n > 2
+			rest_text = line_parts[2..-1].join(' ') if n > 1
+			param_desc = line_parts[4..-1].join(' ') if n > 3
 
+			next if n == 0
 			next if IGNORE_KEYS.include? key  
-
+			is_blank = (comment == '*') ? true : false
 
 			## 
 			# End of the segment.
 			###
+
 			if comment == SEGMENT_END	
+
+			
 				eg_arr.push "```\n" if in_example == true
 				if in_object
-					@json_object[:description] =  summary 
+					@json_object[:description] =  summary
 					@json_object[:longDesc] = encode (desc_arr + eg_arr)
 					@json_object[:reqSet].push req_ver
 					(@json_object[:modes].push "Read") if read_mode
@@ -136,6 +146,7 @@ module SpecMaker
 				end
 
 				if in_prop
+
 					prop_copy[:description] = summary 
 					prop_copy[:longDesc] = encode desc_arr
 					prop_copy[:reqSet].push req_ver
@@ -149,10 +160,11 @@ module SpecMaker
 				# End of segment resets
 				in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false, false
 				s_callback_tag = false				
-				key, comment, val, req_ver, permission, example_caption, non_comment, return_type = '', '', '', '', '', '', '', ''
+				key, comment, val, req_ver, permission, example_caption, after_comment_text, return_type = '', '', '', '', '', '', '', ''
 				summary = ""
 				eg_arr, desc_arr = [], []
 				# End of segment
+				next
 			end
 
 			# Check if this is an object/type
@@ -162,6 +174,7 @@ module SpecMaker
 					# Get the name without the namespace
 					@json_object[:name] = val.split('.')[-1]
 				end
+				next
 			end
 
 			# Method 
@@ -169,33 +182,36 @@ module SpecMaker
 				method_copy = deep_copy(@jstruct[:method])
 				method_copy[:name] = val
 				in_method = true
+				next
 			end
 
 			# Parameter of method
 			if key == PARAM_FLAG
 				param_copy = deep_copy(@jstruct[:parameter])
 				param_copy[:name] = get_name val
-				param_copy[:description] = 
-				param_copy[:dataType] = get_type val, type 
+				param_copy[:description] = clean_desc param_desc
+				param_copy[:dataType] = get_type rest_text
 				method_copy[:parameters].push param_copy
+				next
 			end
 
 			# Property 
 			if key == PROPERTY_FLAG
 				prop_copy = deep_copy(@jstruct[:property])
 				prop_copy[:name] = val
-				prop_copy[:description] = clean_desc param_desc
+				prop_copy[:dataType] = get_type rest_text
 				if s_callback_tag
 					prop_copy[:description] = STD_TEXT + prop_copy[:description]
 				end
 				# handle data type
 				in_prop = true 
+				next
 			end
 
 
 			if key == DESCRIPTION_FLAG
 				in_desc = true
-				desc_arr.push(clean_desc rest) # add the description line
+				desc_arr.push(clean_desc rest_text) # add the description line
 				next
 			end
 
@@ -208,38 +224,53 @@ module SpecMaker
 				in_example = true
 				eg_arr = []
 				in_desc = false
-				if rest.include? '<caption>'
-					rest.gsub!('<caption>','')
-					rest.gsub!('</caption>','')
+				if rest_text.include? '<caption>'
+					rest_text.gsub!('<caption>','')
+					rest_text.gsub!('</caption>','')
 					eg_arr.push "\n```js"
-					eg_arr.push rest
+					eg_arr.push rest_text
 				else
-					eg_arr.push rest # Caption of example
+					eg_arr.push rest_text # Caption of example
 					eg_arr.push "\n```js"
 				end
 				next
 			end
 
-			if in_desc
-				desc_arr.push clean_desc non_comment
+			if key == READMODE_FLAG 
+				read_mode, in_xmode = true, true
+				# Add to desc array if there is any comment for compose, read modes.
+				desc_arr.push clean_desc rest_text if n > 2
 				next
 			end
 
+			if key == COMPOSEMODE_FLAG 
+				compose_mode, in_xmode = true, true
+				# Add to desc array if there is any comment for compose, read modes.
+				desc_arr.push clean_desc rest_text if n > 2
+				next
+			end
+			if key.to_s.length > 0 && key.start_with?('@')
+				in_xmode = false 
+			end
+			if in_desc or in_xmode
+				desc_arr.push clean_desc after_comment_text
+			end
+
 			if key == RETURNTYPE
-				return_type = get_type val, type
+				return_type = get_type rest_text
+				next
 			end
 
 			if in_example
-				eg_arr.push non_comment
+				eg_arr.push after_comment_text
 				next
 			end
 
 			req_ver = val if key == REQ_FLAG 
 			permission = val if key == PERMISSION_FLAG
-			read_mode = true if key == READMODE
-			compose_mode = true if key == COMPOSEMODE
-			(summary = clean_desc val) if key == SUMMARY_FLAG
-
+			if key == SUMMARY_FLAG
+				(summary = clean_desc rest_text) 			
+			end
 		end
 	end
 
@@ -254,6 +285,7 @@ module SpecMaker
 		# Skip types
 		next if ITEM_TYPES.include? item
 
+		next if item != 'item.js'
 		puts "** Processing #{item}"
 		fullpath = JS_SOURCE_FILES + '/' + item.downcase
 
@@ -291,6 +323,30 @@ end
 # 1. Handle @link; [Body.getAsync]{@linkcode Body#getAsync}
 # 2. There is no indicator to arrays -- we should add that? 
 # 3. Objects that have known structure should be of their own type; example event.js > @member source {Object} 
+# 4. Code snippets in the @readmode and @composemode don't have ``` block and there is no way to know that
+ # * @readmode The `subject` property returns a string. Use the [`normalizedSubject`]{@link Office.context.mailbox.item#normalizedSubject} property to get the subject minus any leading prefixes such as `RE:` and `FW:`.
+ # * 
+ # *     var subject = Office.context.mailbox.item.subject;
+ # * 
+ # * @composemode The `subject` property returns a `Subject` object that provides methods to get and set the subject. 
+ # * 
+ # *     Office.context.mailbox.item.subject.getAsync(callback);
+ # * 
+ # *     function callback(asyncResult) {
+ # *       var subject = asyncResult.value;
+ # *     }
+ # *
+# 5. 
+# 6. 
+#
+#
+#
+#
+#
+#
+#
+#
+#
 #
 #
 #####

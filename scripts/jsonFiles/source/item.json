@@ -1,7 +1,7 @@
 {
   "name": "item",
-  "description": "Provides",
-  "longDesc": "VGhlfGBpdGVtYHxuYW1lc3BhY2V8aXN8dXNlZHx0b3xhY2Nlc3N8dGhlfGN1\ncnJlbnRseXxzZWxlY3RlZHxtZXNzYWdlLHxtZWV0aW5nfHJlcXVlc3QsfG9y\nfGFwcG9pbnRtZW50LnxZb3V8Y2FufGRldGVybWluZXx0aGV8dHlwZXxvZnx0\naGV8YGl0ZW1gfGJ5fHVzaW5nfHRoZXxbaXRlbVR5cGVde0BsaW5rfE9mZmlj\nZS5jb250ZXh0Lm1haWxib3guaXRlbSNpdGVtVHlwZX18cHJvcGVydHkufDxj\nYXB0aW9uPlRoZXxmb2xsb3dpbmd8SmF2YVNjcmlwdHxjb2RlfGV4YW1wbGV8\nc2hvd3N8aG93fHRvfGFjY2Vzc3x0aGV8YHN1YmplY3RgfHByb3BlcnR5fG9m\nfHRoZXxjdXJyZW50fGl0ZW18aW58T3V0bG9vay48L2NhcHRpb24+fApgYGBq\nc3wqIC8vIFRoZSBpbml0aWFsaXplIGZ1bmN0aW9uIGlzIHJlcXVpcmVkIGZv\nciBhbGwgYXBwcy4NCnwqIE9mZmljZS5pbml0aWFsaXplID0gZnVuY3Rpb24g\nKCkgew0KfCogICAgIC8vIENoZWNrcyBmb3IgdGhlIERPTSB0byBsb2FkIHVz\naW5nIHRoZSBqUXVlcnkgcmVhZHkgZnVuY3Rpb24uDQp8KiAgICAgJChkb2N1\nbWVudCkucmVhZHkoZnVuY3Rpb24gKCkgew0KfCogICAgIC8vIEFmdGVyIHRo\nZSBET00gaXMgbG9hZGVkLCBhcHAtc3BlY2lmaWMgY29kZSBjYW4gcnVuLg0K\nfCogICAgIHZhciBpdGVtID0gT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVt\nOw0KfCogICAgIHZhciBzdWJqZWN0ID0gaXRlbS5zdWJqZWN0Ow0KfCogICAg\nIC8vIENvbnRpbnVlIHdpdGggcHJvY2Vzc2luZyB0aGUgc3ViamVjdCBvZiB0\naGUgY3VycmVudCBpdGVtLCANCnwqICAgICAvLyB3aGljaCBjYW4gYmUgYSBt\nZXNzYWdlIG9yIGFwcG9pbnRtZW50Lg0KfCogICAgIH0pOw0KfCogfQ0KfGBg\nYAo=\n",
+  "description": "Provides methods and properties for accessing a message or appointment in an Outlook add-in.",
+  "longDesc": "VGhlIGBpdGVtYCBuYW1lc3BhY2UgaXMgdXNlZCB0byBhY2Nlc3MgdGhlIGN1\ncnJlbnRseSBzZWxlY3RlZCBtZXNzYWdlLCBtZWV0aW5nIHJlcXVlc3QsIG9y\nIGFwcG9pbnRtZW50LiBZb3UgY2FuIGRldGVybWluZSB0aGUgdHlwZSBvZiB0\naGUgYGl0ZW1gIGJ5IHVzaW5nIHRoZSBbaXRlbVR5cGVde0BsaW5rIE9mZmlj\nZS5jb250ZXh0Lm1haWxib3guaXRlbSNpdGVtVHlwZX0gcHJvcGVydHkufC8v\nIFRoZSBpbml0aWFsaXplIGZ1bmN0aW9uIGlzIHJlcXVpcmVkIGZvciBhbGwg\nYXBwcy58T2ZmaWNlLmluaXRpYWxpemUgPSBmdW5jdGlvbiAoKSB7fC8vIENo\nZWNrcyBmb3IgdGhlIERPTSB0byBsb2FkIHVzaW5nIHRoZSBqUXVlcnkgcmVh\nZHkgZnVuY3Rpb24ufCQoZG9jdW1lbnQpLnJlYWR5KGZ1bmN0aW9uICgpIHt8\nLy8gQWZ0ZXIgdGhlIERPTSBpcyBsb2FkZWQsIGFwcC1zcGVjaWZpYyBjb2Rl\nIGNhbiBydW4ufHZhciBpdGVtID0gT2ZmaWNlLmNvbnRleHQubWFpbGJveC5p\ndGVtO3x2YXIgc3ViamVjdCA9IGl0ZW0uc3ViamVjdDt8Ly8gQ29udGludWUg\nd2l0aCBwcm9jZXNzaW5nIHRoZSBzdWJqZWN0IG9mIHRoZSBjdXJyZW50IGl0\nZW0sfC8vIHdoaWNoIGNhbiBiZSBhIG1lc3NhZ2Ugb3IgYXBwb2ludG1lbnQu\nfH0pO3x9fApgYGBqc3xUaGUgZm9sbG93aW5nIEphdmFTY3JpcHQgY29kZSBl\neGFtcGxlIHNob3dzIGhvdyB0byBhY2Nlc3MgdGhlIGBzdWJqZWN0YCBwcm9w\nZXJ0eSBvZiB0aGUgY3VycmVudCBpdGVtIGluIE91dGxvb2sufC8vIFRoZSBp\nbml0aWFsaXplIGZ1bmN0aW9uIGlzIHJlcXVpcmVkIGZvciBhbGwgYXBwcy58\nT2ZmaWNlLmluaXRpYWxpemUgPSBmdW5jdGlvbiAoKSB7fC8vIENoZWNrcyBm\nb3IgdGhlIERPTSB0byBsb2FkIHVzaW5nIHRoZSBqUXVlcnkgcmVhZHkgZnVu\nY3Rpb24ufCQoZG9jdW1lbnQpLnJlYWR5KGZ1bmN0aW9uICgpIHt8Ly8gQWZ0\nZXIgdGhlIERPTSBpcyBsb2FkZWQsIGFwcC1zcGVjaWZpYyBjb2RlIGNhbiBy\ndW4ufHZhciBpdGVtID0gT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtO3x2\nYXIgc3ViamVjdCA9IGl0ZW0uc3ViamVjdDt8Ly8gQ29udGludWUgd2l0aCBw\ncm9jZXNzaW5nIHRoZSBzdWJqZWN0IG9mIHRoZSBjdXJyZW50IGl0ZW0sfC8v\nIHdoaWNoIGNhbiBiZSBhIG1lc3NhZ2Ugb3IgYXBwb2ludG1lbnQufH0pO3x9\nfGBgYAo=\n",
   "collectionOf": null,
   "reqSet": [
     "1.0"
@@ -14,9 +14,9 @@
   "properties": [
     {
       "name": "dateTimeCreated",
-      "description": "Gets",
+      "description": "Gets the date and time that an item was created.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "Date",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -33,9 +33,9 @@
     },
     {
       "name": "dateTimeModified",
-      "description": "Gets",
+      "description": "Gets the date and time that an item was last modified.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "Date",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -52,9 +52,9 @@
     },
     {
       "name": "itemClass",
-      "description": "Gets",
+      "description": "Gets the Exchange Web Services item class of the selected item.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "String",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -66,14 +66,14 @@
         "Read"
       ],
       "restfulName": null,
-      "longDesc": "VGhlfGBpdGVtQ2xhc3NgfHByb3BlcnR5fHNwZWNpZmllc3x0aGV8bWVzc2Fn\nZXxjbGFzc3xvZnx0aGV8c2VsZWN0ZWR8aXRlbS58VGhlfGZvbGxvd2luZ3xh\ncmV8dGhlfGRlZmF1bHR8bWVzc2FnZXxjbGFzc2VzfGZvcnx0aGV8bWVzc2Fn\nZXxvcnxhcHBvaW50bWVudHxpdGVtLnwqIA0KfCogfCBUeXBlIHwgRGVzY3Jp\ncHRpb24gfCBpdGVtIGNsYXNzIHwNCnwqIHwgLSB8IC0gfCAtIHwNCnwqIHwg\nQXBwb2ludG1lbnQgaXRlbXMgfCBUaGVzZSBhcmUgY2FsZW5kYXIgaXRlbXMg\nb2YgdGhlIGl0ZW0gY2xhc3MgYElQTS5BcHBvaW50bWVudGAgb3IgYElQTS5B\ncHBvaW50bWVudC5PY2N1cmVuY2VgLiB8IDxzcGFuPmBJUE0uQXBwb2ludG1l\nbnRgPGJyLz5gSVBNLkFwcG9pbnRtZW50Lk9jY3VyZW5jZWA8L3NwYW4+IHwN\nCnwqIHwgTWVzc2FnZSBpdGVtcyB8IFRoZXNlIGluY2x1ZGUgZW1haWwgbWVz\nc2FnZXMgdGhhdCBoYXZlIHRoZSBkZWZhdWx0IG1lc3NhZ2UgY2xhc3MgYElQ\nTS5Ob3RlYCwgYW5kIG1lZXRpbmcgcmVxdWVzdHMsIHJlc3BvbnNlcywgYW5k\nIGNhbmNlbGxhdGlvbnMsIHRoYXQgdXNlIGBJUE0uU2NoZWR1bGUuTWVldGlu\nZ2AgYXMgdGhlIGJhc2UgbWVzc2FnZSBjbGFzcy4gfCA8c3Bhbj5gSVBNLk5v\ndGVgPGJyLz5gSVBNLlNjaGVkdWxlLk1lZXRpbmcuUmVxdWVzdGA8YnIvPmBJ\nUE0uU2NoZWR1bGUuTWVldGluZy5OZWdgPGJyLz5gSVBNLlNjaGVkdWxlLk1l\nZXRpbmcuUG9zYDxici8+YElQTS5TY2hlZHVsZS5NZWV0aW5nLlRlbnRgPGJy\nLz5gSVBNLlNjaGVkdWxlLk1lZXRpbmcuQ2FuY2VsZWRgPC9zcGFuPiB8DQp8\nKiANCnwqIFlvdSBjYW4gY3JlYXRlIGN1c3RvbSBtZXNzYWdlIGNsYXNzZXMg\ndGhhdCBleHRlbmRzIGEgZGVmYXVsdCBtZXNzYWdlIGNsYXNzLCBmb3IgZXhh\nbXBsZSwgYSBjdXN0b20gYXBwb2ludG1lbnQgbWVzc2FnZSBjbGFzcyBgSVBN\nLkFwcG9pbnRtZW50LkNvbnRvc29gLg0K\n",
+      "longDesc": "fFRoZSBgaXRlbUNsYXNzYCBwcm9wZXJ0eSBzcGVjaWZpZXMgdGhlIG1lc3Nh\nZ2UgY2xhc3Mgb2YgdGhlIHNlbGVjdGVkIGl0ZW0uIFRoZSBmb2xsb3dpbmcg\nYXJlIHRoZSBkZWZhdWx0IG1lc3NhZ2UgY2xhc3NlcyBmb3IgdGhlIG1lc3Nh\nZ2Ugb3IgYXBwb2ludG1lbnQgaXRlbS58fHwgVHlwZSB8IERlc2NyaXB0aW9u\nIHwgaXRlbSBjbGFzcyB8fHwgLSB8IC0gfCAtIHx8fCBBcHBvaW50bWVudCBp\ndGVtcyB8IFRoZXNlIGFyZSBjYWxlbmRhciBpdGVtcyBvZiB0aGUgaXRlbSBj\nbGFzcyBgSVBNLkFwcG9pbnRtZW50YCBvciBgSVBNLkFwcG9pbnRtZW50Lk9j\nY3VyZW5jZWAuIHwgPHNwYW4+YElQTS5BcHBvaW50bWVudGA8YnIvPmBJUE0u\nQXBwb2ludG1lbnQuT2NjdXJlbmNlYDwvc3Bhbj4gfHx8IE1lc3NhZ2UgaXRl\nbXMgfCBUaGVzZSBpbmNsdWRlIGVtYWlsIG1lc3NhZ2VzIHRoYXQgaGF2ZSB0\naGUgZGVmYXVsdCBtZXNzYWdlIGNsYXNzIGBJUE0uTm90ZWAsIGFuZCBtZWV0\naW5nIHJlcXVlc3RzLCByZXNwb25zZXMsIGFuZCBjYW5jZWxsYXRpb25zLCB0\naGF0IHVzZSBgSVBNLlNjaGVkdWxlLk1lZXRpbmdgIGFzIHRoZSBiYXNlIG1l\nc3NhZ2UgY2xhc3MuIHwgPHNwYW4+YElQTS5Ob3RlYDxici8+YElQTS5TY2hl\nZHVsZS5NZWV0aW5nLlJlcXVlc3RgPGJyLz5gSVBNLlNjaGVkdWxlLk1lZXRp\nbmcuTmVnYDxici8+YElQTS5TY2hlZHVsZS5NZWV0aW5nLlBvc2A8YnIvPmBJ\nUE0uU2NoZWR1bGUuTWVldGluZy5UZW50YDxici8+YElQTS5TY2hlZHVsZS5N\nZWV0aW5nLkNhbmNlbGVkYDwvc3Bhbj4gfHx8WW91IGNhbiBjcmVhdGUgY3Vz\ndG9tIG1lc3NhZ2UgY2xhc3NlcyB0aGF0IGV4dGVuZHMgYSBkZWZhdWx0IG1l\nc3NhZ2UgY2xhc3MsIGZvciBleGFtcGxlLCBhIGN1c3RvbSBhcHBvaW50bWVu\ndCBtZXNzYWdlIGNsYXNzIGBJUE0uQXBwb2ludG1lbnQuQ29udG9zb2Au\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "itemId",
-      "description": "Gets",
+      "description": "Gets the Exchange Web Services item identifier for the current item.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "?String",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -85,14 +85,14 @@
         "Read"
       ],
       "restfulName": null,
-      "longDesc": "VGhlfGlkZW50aWZpZXJ8cmV0dXJuZWR8Ynl8dGhlfGBpdGVtSWRgfHByb3Bl\ncnR5fGlzfHRoZXxzYW1lfGFzfHRoZXxFeGNoYW5nZXxXZWJ8U2VydmljZXN8\naXRlbXxpZGVudGlmaWVyLnxUaGV8YGl0ZW1JZGB8cHJvcGVydHl8aXN8bm90\nfGlkZW50aWNhbHx0b3x0aGV8T3V0bG9va3xFbnRyeXxJRC58KiANCnwqIFRo\nZSBgaXRlbUlkYCBwcm9wZXJ0eSByZXR1cm5zIGBudWxsYCBpbiBjb21wb3Nl\nIG1vZGUgZm9yIGl0ZW1zIHRoYXQgaGF2ZSBub3QgYmVlbiBzYXZlZCB0byB0\naGUgc2VydmVyLiBJZiBhbiBpdGVtIGlkZW50aWZpZXIgaXMgcmVxdWlyZWQs\nIHRoZSBbc2F2ZUFzeW5jXXtAbGlua2NvZGUgT2ZmaWNlLmNvbnRleHQubWFp\nbGJveC5pdGVtI3NhdmVBc3luY30gbWV0aG9kIGNhbiBiZSB1c2VkIHRvIHNh\ndmUgdGhlIGl0ZW0gdG8gdGhlIHNlcnZlciwgd2hpY2ggd2lsbCByZXR1cm4g\ndGhlIGl0ZW0gaWRlbnRpZmllciBpbiB0aGUgW0FzeW5jUmVzdWx0LnZhbHVl\nXXtAbGlua2NvZGUgQXN5bmNSZXN1bHR9IHBhcmFtZXRlciBpbiB0aGUgY2Fs\nbGJhY2sgZnVuY3Rpb24uDQo=\n",
+      "longDesc": "fFRoZSBpZGVudGlmaWVyIHJldHVybmVkIGJ5IHRoZSBgaXRlbUlkYCBwcm9w\nZXJ0eSBpcyB0aGUgc2FtZSBhcyB0aGUgRXhjaGFuZ2UgV2ViIFNlcnZpY2Vz\nIGl0ZW0gaWRlbnRpZmllci4gVGhlIGBpdGVtSWRgIHByb3BlcnR5IGlzIG5v\ndCBpZGVudGljYWwgdG8gdGhlIE91dGxvb2sgRW50cnkgSUQufHxUaGUgYGl0\nZW1JZGAgcHJvcGVydHkgcmV0dXJucyBgbnVsbGAgaW4gY29tcG9zZSBtb2Rl\nIGZvciBpdGVtcyB0aGF0IGhhdmUgbm90IGJlZW4gc2F2ZWQgdG8gdGhlIHNl\ncnZlci4gSWYgYW4gaXRlbSBpZGVudGlmaWVyIGlzIHJlcXVpcmVkLCB0aGUg\nW3NhdmVBc3luY117QGxpbmtjb2RlIE9mZmljZS5jb250ZXh0Lm1haWxib3gu\naXRlbSNzYXZlQXN5bmN9IG1ldGhvZCBjYW4gYmUgdXNlZCB0byBzYXZlIHRo\nZSBpdGVtIHRvIHRoZSBzZXJ2ZXIsIHdoaWNoIHdpbGwgcmV0dXJuIHRoZSBp\ndGVtIGlkZW50aWZpZXIgaW4gdGhlIFtBc3luY1Jlc3VsdC52YWx1ZV17QGxp\nbmtjb2RlIEFzeW5jUmVzdWx0fSBwYXJhbWV0ZXIgaW4gdGhlIGNhbGxiYWNr\nIGZ1bmN0aW9uLnx2YXIgaXRlbUlkID0gT2ZmaWNlLmNvbnRleHQubWFpbGJv\neC5pdGVtLml0ZW1JZDt8aWYgKGl0ZW1JZCA9PT0gbnVsbCB8fCBpdGVtSWQg\nPT0gdW5kZWZpbmVkKSB7fE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5z\nYXZlQXN5bmMoZnVuY3Rpb24ocmVzdWx0KXt8aXRlbUlkID0gcmVzdWx0LnZh\nbHVlO3x9KTt8fQ==\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "itemType",
-      "description": "Gets",
+      "description": "Gets the type of item that an instance represents.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "Office.MailboxEnums.ItemType",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -105,14 +105,14 @@
         "Compose"
       ],
       "restfulName": null,
-      "longDesc": "VGhlfGBpdGVtVHlwZWB8cHJvcGVydHl8cmV0dXJuc3xvbmV8b2Z8dGhlfGBJ\ndGVtVHlwZWB8ZW51bWVyYXRpb258dmFsdWVzLHxpbmRpY2F0aW5nfHdoZXRo\nZXJ8dGhlfGBpdGVtYHxvYmplY3R8aW5zdGFuY2V8aXN8YXxtZXNzYWdlfG9y\nfGFufGFwcG9pbnRtZW50Lg==\n",
+      "longDesc": "fFRoZSBgaXRlbVR5cGVgIHByb3BlcnR5IHJldHVybnMgb25lIG9mIHRoZSBg\nSXRlbVR5cGVgIGVudW1lcmF0aW9uIHZhbHVlcywgaW5kaWNhdGluZyB3aGV0\naGVyIHRoZSBgaXRlbWAgb2JqZWN0IGluc3RhbmNlIGlzIGEgbWVzc2FnZSBv\nciBhbiBhcHBvaW50bWVudC58Ly8gZG8gc29tZXRoaW5nfGVsc2V8Ly8gZG8g\nc29tZXRoaW5nIGVsc2U=\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "attachments",
-      "description": "Gets",
+      "description": "Gets an array of attachments for the item.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "AttachmentDetails[]",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -124,14 +124,14 @@
         "Read"
       ],
       "restfulName": null,
-      "longDesc": "",
+      "longDesc": "fHZhciBfSXRlbSA9IE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbTt8dmFy\nIG91dHB1dFN0cmluZyA9ICIiO3x8aWYgKF9JdGVtLmF0dGFjaG1lbnRzLmxl\nbmd0aCA+IDApIHt8Zm9yIChpID0gMCA7IGkgPCBfSXRlbS5hdHRhY2htZW50\ncy5sZW5ndGggOyBpKyspIHt8dmFyIF9hdHQgPSBfSXRlbS5hdHRhY2htZW50\nc1tpXTt8b3V0cHV0U3RyaW5nICs9ICI8QlI+IiArIGkgKyAiLiBOYW1lOiAi\nO3xvdXRwdXRTdHJpbmcgKz0gX2F0dC5uYW1lO3xvdXRwdXRTdHJpbmcgKz0g\nIjxCUj5JRDogIiArIF9hdHQuaWQ7fG91dHB1dFN0cmluZyArPSAiPEJSPmNv\nbnRlbnRUeXBlOiAiICsgX2F0dC5jb250ZW50VHlwZTt8b3V0cHV0U3RyaW5n\nICs9ICI8QlI+c2l6ZTogIiArIF9hdHQuc2l6ZTt8b3V0cHV0U3RyaW5nICs9\nICI8QlI+YXR0YWNobWVudFR5cGU6ICIgKyBfYXR0LmF0dGFjaG1lbnRUeXBl\nO3xvdXRwdXRTdHJpbmcgKz0gIjxCUj5pc0lubGluZTogIiArIF9hdHQuaXNJ\nbmxpbmU7fH18fXx8Ly8gRG8gc29tZXRoaW5nIHdpdGggb3V0cHV0U3RyaW5n\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "body",
-      "description": "Gets",
+      "description": "Gets an object that provides methods for manipulating the body of an item.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "Body",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -149,9 +149,9 @@
     },
     {
       "name": "normalizedSubject",
-      "description": "Gets",
+      "description": "Gets the subject of an item, with all prefixes removed (including `RE:` and `FWD:`).",
       "isKey": false,
-      "dataType": null,
+      "dataType": "String",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -163,14 +163,14 @@
         "Read"
       ],
       "restfulName": null,
-      "longDesc": "VGhlfG5vcm1hbGl6ZWRTdWJqZWN0fHByb3BlcnR5fGdldHN8dGhlfHN1Ympl\nY3R8b2Z8dGhlfGl0ZW0sfHdpdGh8YW55fHN0YW5kYXJkfHByZWZpeGVzfChz\ndWNofGFzfGBSRTpgfGFuZHxgRlc6YCl8dGhhdHxhcmV8YWRkZWR8Ynl8ZW1h\naWx8cHJvZ3JhbXMufFRvfGdldHx0aGV8c3ViamVjdHxvZnx0aGV8aXRlbXx3\naXRofHRoZXxwcmVmaXhlc3xpbnRhY3QsfHVzZXx0aGV8W2BzdWJqZWN0YF17\nQGxpbmt8T2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtI3N1YmplY3R9fHBy\nb3BlcnR5Lg==\n",
+      "longDesc": "fFRoZSBub3JtYWxpemVkU3ViamVjdCBwcm9wZXJ0eSBnZXRzIHRoZSBzdWJq\nZWN0IG9mIHRoZSBpdGVtLCB3aXRoIGFueSBzdGFuZGFyZCBwcmVmaXhlcyAo\nc3VjaCBhcyBgUkU6YCBhbmQgYEZXOmApIHRoYXQgYXJlIGFkZGVkIGJ5IGVt\nYWlsIHByb2dyYW1zLiBUbyBnZXQgdGhlIHN1YmplY3Qgb2YgdGhlIGl0ZW0g\nd2l0aCB0aGUgcHJlZml4ZXMgaW50YWN0LCB1c2UgdGhlIFtgc3ViamVjdGBd\ne0BsaW5rIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbSNzdWJqZWN0fSBw\ncm9wZXJ0eS4=\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "notificationMessages",
-      "description": "Gets",
+      "description": "Gets the notification messages for an item.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "NotificationMessages",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -188,9 +188,9 @@
     },
     {
       "name": "subject",
-      "description": "Gets",
+      "description": "Gets or sets the description that appears in the subject field of an item.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "String | Subject",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -203,14 +203,14 @@
         "Compose"
       ],
       "restfulName": null,
-      "longDesc": "VGhlfGBzdWJqZWN0YHxwcm9wZXJ0eXxnZXRzfG9yfHNldHN8dGhlfGVudGly\nZXxzdWJqZWN0fG9mfHRoZXxpdGVtLHxhc3xzZW50fGJ5fHRoZXxlbWFpbHxz\nZXJ2ZXIu\n",
+      "longDesc": "fFRoZSBgc3ViamVjdGAgcHJvcGVydHkgcmV0dXJucyBhIHN0cmluZy4gVXNl\nIHRoZSBbYG5vcm1hbGl6ZWRTdWJqZWN0YF17QGxpbmsgT2ZmaWNlLmNvbnRl\neHQubWFpbGJveC5pdGVtI25vcm1hbGl6ZWRTdWJqZWN0fSBwcm9wZXJ0eSB0\nbyBnZXQgdGhlIHN1YmplY3QgbWludXMgYW55IGxlYWRpbmcgcHJlZml4ZXMg\nc3VjaCBhcyBgUkU6YCBhbmQgYEZXOmAufHx2YXIgc3ViamVjdCA9IE9mZmlj\nZS5jb250ZXh0Lm1haWxib3guaXRlbS5zdWJqZWN0O3x8VGhlIGBzdWJqZWN0\nYCBwcm9wZXJ0eSByZXR1cm5zIGEgYFN1YmplY3RgIG9iamVjdCB0aGF0IHBy\nb3ZpZGVzIG1ldGhvZHMgdG8gZ2V0IGFuZCBzZXQgdGhlIHN1YmplY3QufHxP\nZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0uc3ViamVjdC5nZXRBc3luYyhj\nYWxsYmFjayk7fHxmdW5jdGlvbiBjYWxsYmFjayhhc3luY1Jlc3VsdCkge3x2\nYXIgc3ViamVjdCA9IGFzeW5jUmVzdWx0LnZhbHVlO3x9fHxUaGUgYHN1Ympl\nY3RgIHByb3BlcnR5IGdldHMgb3Igc2V0cyB0aGUgZW50aXJlIHN1YmplY3Qg\nb2YgdGhlIGl0ZW0sIGFzIHNlbnQgYnkgdGhlIGVtYWlsIHNlcnZlci4=\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "end",
-      "description": "Gets",
+      "description": "Gets or sets the date and time that the appointment is to end.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "Date | Time",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -223,14 +223,14 @@
         "Compose"
       ],
       "restfulName": null,
-      "longDesc": "VGhlfGBlbmRgfHByb3BlcnR5fGlzfGV4cHJlc3NlZHxhc3xhfENvb3JkaW5h\ndGVkfFVuaXZlcnNhbHxUaW1lfChVVEMpfGRhdGV8YW5kfHRpbWV8dmFsdWUu\nfFlvdXxjYW58dXNlfHRoZXxbYGNvbnZlcnRUb0xvY2FsQ2xpZW50VGltZWBd\ne0BsaW5rfE9mZmljZS5jb250ZXh0Lm1haWxib3gjY29udmVydFRvTG9jYWxD\nbGllbnRUaW1lfXxtZXRob2R8dG98Y29udmVydHx0aGV8ZW5kfHByb3BlcnR5\nfHZhbHVlfHRvfHRoZXxjbGllbnTigJlzfGxvY2FsfGRhdGV8YW5kfHRpbWUu\n",
+      "longDesc": "fFRoZSBgZW5kYCBwcm9wZXJ0eSByZXR1cm5zIGEgYERhdGVgIG9iamVjdC58\nVGhlIGBlbmRgIHByb3BlcnR5IHJldHVybnMgYSBgVGltZWAgb2JqZWN0Lnx8\nV2hlbiB5b3UgdXNlIHRoZSBbYFRpbWUuc2V0QXN5bmNgXXtAbGluayBUaW1l\nI3NldEFzeW5jfSBtZXRob2QgdG8gc2V0IHRoZSBlbmQgdGltZSwgeW91IHNo\nb3VsZCB1c2UgdGhlIFtgY29udmVydFRvVXRjQ2xpZW50VGltZWBde0BsaW5r\nIE9mZmljZS5jb250ZXh0Lm1haWxib3gjY29udmVydFRvVXRjQ2xpZW50VGlt\nZX0gbWV0aG9kIHRvIGNvbnZlcnQgdGhlIGxvY2FsIHRpbWUgb24gdGhlIGNs\naWVudCB0byBVVEMgZm9yIHRoZSBzZXJ2ZXIufFRoZSBgZW5kYCBwcm9wZXJ0\neSBpcyBleHByZXNzZWQgYXMgYSBDb29yZGluYXRlZCBVbml2ZXJzYWwgVGlt\nZSAoVVRDKSBkYXRlIGFuZCB0aW1lIHZhbHVlLiBZb3UgY2FuIHVzZSB0aGUg\nW2Bjb252ZXJ0VG9Mb2NhbENsaWVudFRpbWVgXXtAbGluayBPZmZpY2UuY29u\ndGV4dC5tYWlsYm94I2NvbnZlcnRUb0xvY2FsQ2xpZW50VGltZX0gbWV0aG9k\nIHRvIGNvbnZlcnQgdGhlIGVuZCBwcm9wZXJ0eSB2YWx1ZSB0byB0aGUgY2xp\nZW504oCZcyBsb2NhbCBkYXRlIGFuZCB0aW1lLg==\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "location",
-      "description": "Gets",
+      "description": "Gets or sets the location of an appointment.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "String | Location",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -243,14 +243,14 @@
         "Compose"
       ],
       "restfulName": null,
-      "longDesc": "",
+      "longDesc": "VGhlIGBsb2NhdGlvbmAgcHJvcGVydHkgcmV0dXJucyBhIHN0cmluZyB0aGF0\nIGNvbnRhaW5zIHRoZSBsb2NhdGlvbiBvZiB0aGUgYXBwb2ludG1lbnQufFRo\nZSBgbG9jYXRpb25gIHByb3BlcnR5IHJldHVybnMgYSBgTG9jYXRpb25gIG9i\namVjdCB0aGF0IHByb3ZpZGVzIG1ldGhvZHMgdGhhdCBhcmUgdXNlZCB0byBn\nZXQgYW5kIHNldCB0aGUgbG9jYXRpb24gb2YgdGhlIGFwcG9pbnRtZW50Lg==\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "optionalAttendees",
-      "description": "Gets",
+      "description": "Gets or sets a list of email addresses for optional attendees.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "EmailAddressDetails[]|Recipients",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -263,14 +263,14 @@
         "Compose"
       ],
       "restfulName": null,
-      "longDesc": "",
+      "longDesc": "VGhlIGBvcHRpb25hbEF0dGVuZGVlc2AgcHJvcGVydHkgcmV0dXJucyBhbiBh\ncnJheSB0aGF0IGNvbnRhaW5zIGFuIGBFbWFpbEFkZHJlc3NEZXRhaWxzYCBv\nYmplY3QgZm9yIGVhY2ggb3B0aW9uYWwgYXR0ZW5kZWUgdG8gdGhlIG1lZXRp\nbmcufFRoZSBgb3B0aW9uYWxBdHRlbmRlZXNgIHByb3BlcnR5IHJldHVybnMg\nYSBgUmVjaXBpZW50c2Agb2JqZWN0IHRoYXQgcHJvdmlkZXMgbWV0aG9kcyB0\nbyBnZXQgYW5kIHNldCB0aGUgb3B0aW9uYWwgYXR0ZW5kZWVzIGZvciBhIG1l\nZXRpbmcu\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "organizer",
-      "description": "Gets",
+      "description": "Gets the email address of the meeting organizer for a specified meeting.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "EmailAddressDetails",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -287,9 +287,9 @@
     },
     {
       "name": "requiredAttendees",
-      "description": "Gets",
+      "description": "Gets or sets a list of email addresses for required attendees.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "EmailAddressDetails[]|Recipients",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -302,14 +302,14 @@
         "Compose"
       ],
       "restfulName": null,
-      "longDesc": "",
+      "longDesc": "VGhlIGByZXF1aXJlZEF0dGVuZGVlc2AgcHJvcGVydHkgcmV0dXJucyBhbiBh\ncnJheSB0aGF0IGNvbnRhaW5zIGFuIGBFbWFpbEFkZHJlc3NEZXRhaWxzYCBv\nYmplY3QgZm9yIGVhY2ggcmVxdWlyZWQgYXR0ZW5kZWUgdG8gdGhlIG1lZXRp\nbmcufFRoZSBgcmVxdWlyZWRBdHRlbmRlZXNgIHByb3BlcnR5IHJldHVybnMg\nYSBgUmVjaXBpZW50c2Agb2JqZWN0IHRoYXQgcHJvdmlkZXMgbWV0aG9kcyB0\nbyBnZXQgYW5kIHNldCB0aGUgcmVxdWlyZWQgYXR0ZW5kZWVzIGZvciBhIG1l\nZXRpbmcu\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "resources",
-      "description": "Gets",
+      "description": "Gets the resources required for an appointment.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "EmailAddressDetails",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -326,9 +326,9 @@
     },
     {
       "name": "start",
-      "description": "Gets",
+      "description": "Gets or sets the date and time that the appointment is to begin.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "Date | Time",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -341,14 +341,14 @@
         "Compose"
       ],
       "restfulName": null,
-      "longDesc": "VGhlfGBzdGFydGB8cHJvcGVydHl8aXN8ZXhwcmVzc2VkfGFzfGF8Q29vcmRp\nbmF0ZWR8VW5pdmVyc2FsfFRpbWV8KFVUQyl8ZGF0ZXxhbmR8dGltZXx2YWx1\nZS58WW91fGNhbnx1c2V8dGhlfFtgY29udmVydFRvTG9jYWxDbGllbnRUaW1l\nYF17QGxpbmt8T2ZmaWNlLmNvbnRleHQubWFpbGJveCNjb252ZXJ0VG9Mb2Nh\nbENsaWVudFRpbWV9fG1ldGhvZHx0b3xjb252ZXJ0fHRoZXx2YWx1ZXx0b3x0\naGV8Y2xpZW504oCZc3xsb2NhbHxkYXRlfGFuZHx0aW1lLg==\n",
+      "longDesc": "VGhlIGBzdGFydGAgcHJvcGVydHkgcmV0dXJucyBhIGBEYXRlYCBvYmplY3Qu\nfFRoZSBgc3RhcnRgIHByb3BlcnR5IHJldHVybnMgYSBgVGltZWAgb2JqZWN0\nLnx8V2hlbiB5b3UgdXNlIHRoZSBbYFRpbWUuc2V0QXN5bmNgXXtAbGluayBU\naW1lI3NldEFzeW5jfSBtZXRob2QgdG8gc2V0IHRoZSBzdGFydCB0aW1lLCB5\nb3Ugc2hvdWxkIHVzZSB0aGUgW2Bjb252ZXJ0VG9VdGNDbGllbnRUaW1lYF17\nQGxpbmsgT2ZmaWNlLmNvbnRleHQubWFpbGJveCNjb252ZXJ0VG9VdGNDbGll\nbnRUaW1lfSBtZXRob2QgdG8gY29udmVydCB0aGUgbG9jYWwgdGltZSBvbiB0\naGUgY2xpZW50IHRvIFVUQyBmb3IgdGhlIHNlcnZlci58VGhlIGBzdGFydGAg\ncHJvcGVydHkgaXMgZXhwcmVzc2VkIGFzIGEgQ29vcmRpbmF0ZWQgVW5pdmVy\nc2FsIFRpbWUgKFVUQykgZGF0ZSBhbmQgdGltZSB2YWx1ZS4gWW91IGNhbiB1\nc2UgdGhlIFtgY29udmVydFRvTG9jYWxDbGllbnRUaW1lYF17QGxpbmsgT2Zm\naWNlLmNvbnRleHQubWFpbGJveCNjb252ZXJ0VG9Mb2NhbENsaWVudFRpbWV9\nIG1ldGhvZCB0byBjb252ZXJ0IHRoZSB2YWx1ZSB0byB0aGUgY2xpZW504oCZ\ncyBsb2NhbCBkYXRlIGFuZCB0aW1lLg==\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "bcc",
-      "description": "Gets",
+      "description": "Gets or sets the recipients on the Bcc (blind carbon copy) line of a message.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "Recipients",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -365,9 +365,9 @@
     },
     {
       "name": "cc",
-      "description": "Gets",
+      "description": "Gets or sets the Cc (carbon copy) recipients of a message.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "EmailAddressDetails[]|Recipients",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -380,14 +380,14 @@
         "Compose"
       ],
       "restfulName": null,
-      "longDesc": "",
+      "longDesc": "VGhlIGBjY2AgcHJvcGVydHkgcmV0dXJucyBhbiBhcnJheSB0aGF0IGNvbnRh\naW5zIGFuIGBFbWFpbEFkZHJlc3NEZXRhaWxzYCBvYmplY3QgZm9yIGVhY2gg\ncmVjaXBpZW50IGxpc3RlZCBvbiB0aGUgKipDYyoqIGxpbmUgb2YgdGhlIG1l\nc3NhZ2UuIFRoZSBjb2xsZWN0aW9uIGlzIGxpbWl0ZWQgdG8gYSBtYXhpbXVt\nIG9mIDEwMCBtZW1iZXJzLnxUaGUgYGNjYCBwcm9wZXJ0eSByZXR1cm5zIGEg\nYFJlY2lwaWVudHNgIG9iamVjdCB0aGF0IHByb3ZpZGVzIG1ldGhvZHMgZm9y\nIG1hbmlwdWxhdGluZyB0aGUgcmVjaXBpZW50cyBvbiB0aGUgKipDYyoqIGxp\nbmUgb2YgdGhlIG1lc3NhZ2Uu\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "conversationId",
-      "description": "Gets",
+      "description": "Gets an identifier for the email conversation that contains a particular message.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "?String",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -400,14 +400,14 @@
         "Compose"
       ],
       "restfulName": null,
-      "longDesc": "WW91fGNhbnxnZXR8YW58aW50ZWdlcnxmb3J8dGhpc3xwcm9wZXJ0eXxpZnx5\nb3VyfG1haWx8YXBwfGlzfGFjdGl2YXRlZHxpbnxyZWFkfGZvcm1zfG9yfHJl\nc3BvbnNlc3xpbnxjb21wb3NlfGZvcm1zLnxJZnxzdWJzZXF1ZW50bHl8dGhl\nfHVzZXJ8Y2hhbmdlc3x0aGV8c3ViamVjdHxvZnx0aGV8cmVwbHl8bWVzc2Fn\nZSx8dXBvbnxzZW5kaW5nfHRoZXxyZXBseSx8dGhlfGNvbnZlcnNhdGlvbnxJ\nRHxmb3J8dGhhdHxtZXNzYWdlfHdpbGx8Y2hhbmdlfGFuZHx0aGF0fHZhbHVl\nfHlvdXxvYnRhaW5lZHxlYXJsaWVyfHdpbGx8bm98bG9uZ2VyfGFwcGx5Lnwq\nDQp8KiBZb3UgZ2V0IG51bGwgZm9yIHRoaXMgcHJvcGVydHkgZm9yIGEgbmV3\nIGl0ZW0gaW4gYSBjb21wb3NlIGZvcm0uIElmIHRoZSB1c2VyIHNldHMgYSBz\ndWJqZWN0IGFuZCBzYXZlcyB0aGUgaXRlbSwgdGhlIGBjb252ZXJzYXRpb25J\nZGAgcHJvcGVydHkgd2lsbCByZXR1cm4gYSB2YWx1ZS4NCg==\n",
+      "longDesc": "WW91IGNhbiBnZXQgYW4gaW50ZWdlciBmb3IgdGhpcyBwcm9wZXJ0eSBpZiB5\nb3VyIG1haWwgYXBwIGlzIGFjdGl2YXRlZCBpbiByZWFkIGZvcm1zIG9yIHJl\nc3BvbnNlcyBpbiBjb21wb3NlIGZvcm1zLiBJZiBzdWJzZXF1ZW50bHkgdGhl\nIHVzZXIgY2hhbmdlcyB0aGUgc3ViamVjdCBvZiB0aGUgcmVwbHkgbWVzc2Fn\nZSwgdXBvbiBzZW5kaW5nIHRoZSByZXBseSwgdGhlIGNvbnZlcnNhdGlvbiBJ\nRCBmb3IgdGhhdCBtZXNzYWdlIHdpbGwgY2hhbmdlIGFuZCB0aGF0IHZhbHVl\nIHlvdSBvYnRhaW5lZCBlYXJsaWVyIHdpbGwgbm8gbG9uZ2VyIGFwcGx5Lnx8\nWW91IGdldCBudWxsIGZvciB0aGlzIHByb3BlcnR5IGZvciBhIG5ldyBpdGVt\nIGluIGEgY29tcG9zZSBmb3JtLiBJZiB0aGUgdXNlciBzZXRzIGEgc3ViamVj\ndCBhbmQgc2F2ZXMgdGhlIGl0ZW0sIHRoZSBgY29udmVyc2F0aW9uSWRgIHBy\nb3BlcnR5IHdpbGwgcmV0dXJuIGEgdmFsdWUu\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "from",
-      "description": "Gets",
+      "description": "Gets the email address of the sender of a message.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "EmailAddressDetails",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -419,14 +419,14 @@
         "Read"
       ],
       "restfulName": null,
-      "longDesc": "VGhlfGBmcm9tYHxhbmR8W2BzZW5kZXJgXXtAbGlua3xPZmZpY2UuY29udGV4\ndC5tYWlsYm94Lml0ZW0jc2VuZGVyfXxwcm9wZXJ0aWVzfHJlcHJlc2VudHx0\naGV8c2FtZXxwZXJzb258dW5sZXNzfHRoZXxtZXNzYWdlfGlzfHNlbnR8Ynl8\nYXxkZWxlZ2F0ZS58SW58dGhhdHxjYXNlLHx0aGV8YGZyb21gfHByb3BlcnR5\nfHJlcHJlc2VudHN8dGhlfGRlbGVnYXRvcix8YW5kfHRoZXxzZW5kZXJ8cHJv\ncGVydHl8cmVwcmVzZW50c3x0aGV8ZGVsZWdhdGUu\n",
+      "longDesc": "VGhlIGBmcm9tYCBhbmQgW2BzZW5kZXJgXXtAbGluayBPZmZpY2UuY29udGV4\ndC5tYWlsYm94Lml0ZW0jc2VuZGVyfSBwcm9wZXJ0aWVzIHJlcHJlc2VudCB0\naGUgc2FtZSBwZXJzb24gdW5sZXNzIHRoZSBtZXNzYWdlIGlzIHNlbnQgYnkg\nYSBkZWxlZ2F0ZS4gSW4gdGhhdCBjYXNlLCB0aGUgYGZyb21gIHByb3BlcnR5\nIHJlcHJlc2VudHMgdGhlIGRlbGVnYXRvciwgYW5kIHRoZSBzZW5kZXIgcHJv\ncGVydHkgcmVwcmVzZW50cyB0aGUgZGVsZWdhdGUu\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "internetMessageId",
-      "description": "Gets",
+      "description": "Gets the Internet message identifier for an email message.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "String",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -443,9 +443,9 @@
     },
     {
       "name": "sender",
-      "description": "Gets",
+      "description": "Gets the email address of the sender of an email message.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "EmailAddressDetails",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -457,14 +457,14 @@
         "Read"
       ],
       "restfulName": null,
-      "longDesc": "VGhlfFtgZnJvbWBde0BsaW5rfE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRl\nbSNmcm9tfXxhbmR8YHNlbmRlcmB8cHJvcGVydGllc3xyZXByZXNlbnR8dGhl\nfHNhbWV8cGVyc29ufHVubGVzc3x0aGV8bWVzc2FnZXxpc3xzZW50fGJ5fGF8\nZGVsZWdhdGUufElufHRoYXR8Y2FzZSx8dGhlfGBmcm9tYHxwcm9wZXJ0eXxy\nZXByZXNlbnRzfHRoZXxkZWxlZ2F0b3IsfGFuZHx0aGV8c2VuZGVyfHByb3Bl\ncnR5fHJlcHJlc2VudHN8dGhlfGRlbGVnYXRlLg==\n",
+      "longDesc": "VGhlIFtgZnJvbWBde0BsaW5rIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRl\nbSNmcm9tfSBhbmQgYHNlbmRlcmAgcHJvcGVydGllcyByZXByZXNlbnQgdGhl\nIHNhbWUgcGVyc29uIHVubGVzcyB0aGUgbWVzc2FnZSBpcyBzZW50IGJ5IGEg\nZGVsZWdhdGUuIEluIHRoYXQgY2FzZSwgdGhlIGBmcm9tYCBwcm9wZXJ0eSBy\nZXByZXNlbnRzIHRoZSBkZWxlZ2F0b3IsIGFuZCB0aGUgc2VuZGVyIHByb3Bl\ncnR5IHJlcHJlc2VudHMgdGhlIGRlbGVnYXRlLg==\n",
       "minPermission": "ReadItem"
     },
     {
       "name": "to",
-      "description": "Gets",
+      "description": "Gets or sets the recipients of an email message.",
       "isKey": false,
-      "dataType": null,
+      "dataType": "EmailAddressDetails[]|Recipients",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -477,7 +477,7 @@
         "Compose"
       ],
       "restfulName": null,
-      "longDesc": "",
+      "longDesc": "VGhlIGB0b2AgcHJvcGVydHkgcmV0dXJucyBhbiBhcnJheSB0aGF0IGNvbnRh\naW5zIGFuIGBFbWFpbEFkZHJlc3NEZXRhaWxzYCBvYmplY3QgZm9yIGVhY2gg\ncmVjaXBpZW50IGxpc3RlZCBvbiB0aGUgKipUbyoqIGxpbmUgb2YgdGhlIG1l\nc3NhZ2UuIFRoZSBjb2xsZWN0aW9uIGlzIGxpbWl0ZWQgdG8gYSBtYXhpbXVt\nIG9mIDEwMCBtZW1iZXJzLnxUaGUgYHRvYCBwcm9wZXJ0eSByZXR1cm5zIGEg\nYFJlY2lwaWVudHNgIG9iamVjdCB0aGF0IHByb3ZpZGVzIG1ldGhvZHMgZm9y\nIG1hbmlwdWxhdGluZyB0aGUgcmVjaXBpZW50cyBvbiB0aGUgKipUbyoqIGxp\nbmUgb2YgdGhlIG1lc3NhZ2Uu\n",
       "minPermission": "ReadItem"
     }
   ],
@@ -485,7 +485,7 @@
     {
       "name": null,
       "returnType": "",
-      "description": "Asynchronously",
+      "description": "Asynchronously loads custom properties for this add-in on the selected item.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -493,26 +493,26 @@
         "1.0"
       ],
       "example": null,
-      "longDesc": "Q3VzdG9tfHByb3BlcnRpZXN8YXJlfHN0b3JlZHxhc3xrZXkvdmFsdWV8cGFp\ncnN8b258YXxwZXItYXBwLHxwZXItaXRlbXxiYXNpcy58VGhpc3xtZXRob2R8\ncmV0dXJuc3xhfGBDdXN0b21Qcm9wZXJ0aWVzYHxvYmplY3R8aW58dGhlfGNh\nbGxiYWNrLHx3aGljaHxwcm92aWRlc3xtZXRob2RzfHRvfGFjY2Vzc3x0aGV8\nY3VzdG9tfHByb3BlcnRpZXN8c3BlY2lmaWN8dG98dGhlfGN1cnJlbnR8aXRl\nbXxhbmR8dGhlfGN1cnJlbnR8YWRkLWluLnxDdXN0b218cHJvcGVydGllc3xh\ncmV8bm90fGVuY3J5cHRlZHxvbnx0aGV8aXRlbSx8c298dGhpc3xzaG91bGR8\nbm90fGJlfHVzZWR8YXN8c2VjdXJlfHN0b3JhZ2Uu\n",
+      "longDesc": "fEN1c3RvbSBwcm9wZXJ0aWVzIGFyZSBzdG9yZWQgYXMga2V5L3ZhbHVlIHBh\naXJzIG9uIGEgcGVyLWFwcCwgcGVyLWl0ZW0gYmFzaXMuIFRoaXMgbWV0aG9k\nIHJldHVybnMgYSBgQ3VzdG9tUHJvcGVydGllc2Agb2JqZWN0IGluIHRoZSBj\nYWxsYmFjaywgd2hpY2ggcHJvdmlkZXMgbWV0aG9kcyB0byBhY2Nlc3MgdGhl\nIGN1c3RvbSBwcm9wZXJ0aWVzIHNwZWNpZmljIHRvIHRoZSBjdXJyZW50IGl0\nZW0gYW5kIHRoZSBjdXJyZW50IGFkZC1pbi4gQ3VzdG9tIHByb3BlcnRpZXMg\nYXJlIG5vdCBlbmNyeXB0ZWQgb24gdGhlIGl0ZW0sIHNvIHRoaXMgc2hvdWxk\nIG5vdCBiZSB1c2VkIGFzIHNlY3VyZSBzdG9yYWdlLnwvLyBUaGUgaW5pdGlh\nbGl6ZSBmdW5jdGlvbiBpcyByZXF1aXJlZCBmb3IgYWxsIGFkZC1pbnMufE9m\nZmljZS5pbml0aWFsaXplID0gZnVuY3Rpb24gKCkge3wvLyBDaGVja3MgZm9y\nIHRoZSBET00gdG8gbG9hZCB1c2luZyB0aGUgalF1ZXJ5IHJlYWR5IGZ1bmN0\naW9uLnwkKGRvY3VtZW50KS5yZWFkeShmdW5jdGlvbiAoKSB7fC8vIEFmdGVy\nIHRoZSBET00gaXMgbG9hZGVkLCBhZGQtaW4tc3BlY2lmaWMgY29kZSBjYW4g\ncnVuLnx2YXIgaXRlbSA9IE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbTt8\naXRlbS5sb2FkQ3VzdG9tUHJvcGVydGllc0FzeW5jKGN1c3RvbVByb3BzQ2Fs\nbGJhY2spO3x9KTt8fXx8ZnVuY3Rpb24gY3VzdG9tUHJvcHNDYWxsYmFjayhh\nc3luY1Jlc3VsdCkge3x2YXIgY3VzdG9tUHJvcHMgPSBhc3luY1Jlc3VsdC52\nYWx1ZTt8dmFyIG15UHJvcCA9IGN1c3RvbVByb3BzLmdldCgibXlQcm9wIik7\nfHxjdXN0b21Qcm9wcy5zZXQoIm90aGVyUHJvcCIsICJ2YWx1ZSIpO3xjdXN0\nb21Qcm9wcy5zYXZlQXN5bmMoc2F2ZUNhbGxiYWNrKTt8fXx8ZnVuY3Rpb24g\nc2F2ZUNhbGxiYWNrKGFzeW5jUmVzdWx0KSB7fH0=\n",
       "modes": [
         "Read",
         "Compose"
       ],
-      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xjb2RlfGV4YW1wbGV8c2hvd3N8aG93\nfHRvfHVzZXx0aGV8YGxvYWRDdXN0b21Qcm9wZXJ0aWVzQXN5bmNgfG1ldGhv\nZHx0b3xhc3luY2hyb25vdXNseXxsb2FkfGN1c3RvbXxwcm9wZXJ0aWVzfHRo\nYXR8YXJlfHNwZWNpZmljfHRvfHRoZXxjdXJyZW50fGl0ZW0ufFRoZXxleGFt\ncGxlfGFsc298c2hvd3N8aG93fHRvfHVzZXx0aGV8YEN1c3RvbVByb3BlcnRp\nZXMuc2F2ZUFzeW5jYHxtZXRob2R8dG98c2F2ZXx0aGVzZXxwcm9wZXJ0aWVz\nfGJhY2t8dG98dGhlfHNlcnZlci58QWZ0ZXJ8bG9hZGluZ3x0aGV8Y3VzdG9t\nfHByb3BlcnRpZXMsfHRoZXxjb2RlfHNhbXBsZXx1c2VzfHRoZXxgQ3VzdG9t\nUHJvcGVydGllcy5nZXRgfG1ldGhvZHx0b3xyZWFkfHRoZXxjdXN0b218cHJv\ncGVydHl8YG15UHJvcGAsfHRoZXxgQ3VzdG9tUHJvcGVydGllcy5zZXRgfG1l\ndGhvZHx0b3x3cml0ZXx0aGV8Y3VzdG9tfHByb3BlcnR5fGBvdGhlclByb3Bg\nLHxhbmR8dGhlbnxmaW5hbGx5fGNhbGxzfHRoZXxgc2F2ZUFzeW5jYHxtZXRo\nb2R8dG98c2F2ZXx0aGV8Y3VzdG9tfHByb3BlcnRpZXMuPC9jYXB0aW9uPnwK\nYGBganN8KiAvLyBUaGUgaW5pdGlhbGl6ZSBmdW5jdGlvbiBpcyByZXF1aXJl\nZCBmb3IgYWxsIGFkZC1pbnMuDQp8KiBPZmZpY2UuaW5pdGlhbGl6ZSA9IGZ1\nbmN0aW9uICgpIHsNCnwqICAgLy8gQ2hlY2tzIGZvciB0aGUgRE9NIHRvIGxv\nYWQgdXNpbmcgdGhlIGpRdWVyeSByZWFkeSBmdW5jdGlvbi4NCnwqICAgJChk\nb2N1bWVudCkucmVhZHkoZnVuY3Rpb24gKCkgew0KfCogICAvLyBBZnRlciB0\naGUgRE9NIGlzIGxvYWRlZCwgYWRkLWluLXNwZWNpZmljIGNvZGUgY2FuIHJ1\nbi4NCnwqICAgdmFyIGl0ZW0gPSBPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0\nZW07DQp8KiAgIGl0ZW0ubG9hZEN1c3RvbVByb3BlcnRpZXNBc3luYyhjdXN0\nb21Qcm9wc0NhbGxiYWNrKTsNCnwqICAgfSk7DQp8KiB9DQp8KiANCnwqIGZ1\nbmN0aW9uIGN1c3RvbVByb3BzQ2FsbGJhY2soYXN5bmNSZXN1bHQpIHsNCnwq\nICAgdmFyIGN1c3RvbVByb3BzID0gYXN5bmNSZXN1bHQudmFsdWU7DQp8KiAg\nIHZhciBteVByb3AgPSBjdXN0b21Qcm9wcy5nZXQoIm15UHJvcCIpOw0KfCog\nDQp8KiAgIGN1c3RvbVByb3BzLnNldCgib3RoZXJQcm9wIiwgInZhbHVlIik7\nDQp8KiAgIGN1c3RvbVByb3BzLnNhdmVBc3luYyhzYXZlQ2FsbGJhY2spOw0K\nfCogfQ0KfCogDQp8KiBmdW5jdGlvbiBzYXZlQ2FsbGJhY2soYXN5bmNSZXN1\nbHQpIHsNCnwqIH0NCnxgYGAK\n",
+      "codeSnippet": "CmBgYGpzfFRoZSBmb2xsb3dpbmcgY29kZSBleGFtcGxlIHNob3dzIGhvdyB0\nbyB1c2UgdGhlIGBsb2FkQ3VzdG9tUHJvcGVydGllc0FzeW5jYCBtZXRob2Qg\ndG8gYXN5bmNocm9ub3VzbHkgbG9hZCBjdXN0b20gcHJvcGVydGllcyB0aGF0\nIGFyZSBzcGVjaWZpYyB0byB0aGUgY3VycmVudCBpdGVtLiBUaGUgZXhhbXBs\nZSBhbHNvIHNob3dzIGhvdyB0byB1c2UgdGhlIGBDdXN0b21Qcm9wZXJ0aWVz\nLnNhdmVBc3luY2AgbWV0aG9kIHRvIHNhdmUgdGhlc2UgcHJvcGVydGllcyBi\nYWNrIHRvIHRoZSBzZXJ2ZXIuIEFmdGVyIGxvYWRpbmcgdGhlIGN1c3RvbSBw\ncm9wZXJ0aWVzLCB0aGUgY29kZSBzYW1wbGUgdXNlcyB0aGUgYEN1c3RvbVBy\nb3BlcnRpZXMuZ2V0YCBtZXRob2QgdG8gcmVhZCB0aGUgY3VzdG9tIHByb3Bl\ncnR5IGBteVByb3BgLCB0aGUgYEN1c3RvbVByb3BlcnRpZXMuc2V0YCBtZXRo\nb2QgdG8gd3JpdGUgdGhlIGN1c3RvbSBwcm9wZXJ0eSBgb3RoZXJQcm9wYCwg\nYW5kIHRoZW4gZmluYWxseSBjYWxscyB0aGUgYHNhdmVBc3luY2AgbWV0aG9k\nIHRvIHNhdmUgdGhlIGN1c3RvbSBwcm9wZXJ0aWVzLnwvLyBUaGUgaW5pdGlh\nbGl6ZSBmdW5jdGlvbiBpcyByZXF1aXJlZCBmb3IgYWxsIGFkZC1pbnMufE9m\nZmljZS5pbml0aWFsaXplID0gZnVuY3Rpb24gKCkge3wvLyBDaGVja3MgZm9y\nIHRoZSBET00gdG8gbG9hZCB1c2luZyB0aGUgalF1ZXJ5IHJlYWR5IGZ1bmN0\naW9uLnwkKGRvY3VtZW50KS5yZWFkeShmdW5jdGlvbiAoKSB7fC8vIEFmdGVy\nIHRoZSBET00gaXMgbG9hZGVkLCBhZGQtaW4tc3BlY2lmaWMgY29kZSBjYW4g\ncnVuLnx2YXIgaXRlbSA9IE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbTt8\naXRlbS5sb2FkQ3VzdG9tUHJvcGVydGllc0FzeW5jKGN1c3RvbVByb3BzQ2Fs\nbGJhY2spO3x9KTt8fXx8ZnVuY3Rpb24gY3VzdG9tUHJvcHNDYWxsYmFjayhh\nc3luY1Jlc3VsdCkge3x2YXIgY3VzdG9tUHJvcHMgPSBhc3luY1Jlc3VsdC52\nYWx1ZTt8dmFyIG15UHJvcCA9IGN1c3RvbVByb3BzLmdldCgibXlQcm9wIik7\nfHxjdXN0b21Qcm9wcy5zZXQoIm90aGVyUHJvcCIsICJ2YWx1ZSIpO3xjdXN0\nb21Qcm9wcy5zYXZlQXN5bmMoc2F2ZUNhbGxiYWNrKTt8fXx8ZnVuY3Rpb24g\nc2F2ZUNhbGxiYWNrKGFzeW5jUmVzdWx0KSB7fH18YGBgCg==\n",
       "parameters": [
         {
           "name": "callback",
-          "dataType": "{function}",
+          "dataType": "function",
           "isCollection": false,
-          "description": "{function}",
+          "description": "The custom properties are provided as a [CustomProperties]{@linkcode CustomProperties} object in the `asyncResult.value` property. This object can be used to get, set, and remove custom properties from the item and save changes to the custom property set back to the server.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[userContext]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "Developers can provide any object they wish to access in the callback function. This object can be accessed by the `asyncResult.asyncContext` property in the callback function.",
           "isRequired": false,
           "enumName": null
         }
@@ -522,7 +522,7 @@
     {
       "name": "getSelectedDataAsync",
       "returnType": "",
-      "description": "Asynchronously",
+      "description": "Asynchronously returns selected data from the subject or body of a message.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -530,41 +530,41 @@
         "1.0"
       ],
       "example": null,
-      "longDesc": "SWZ8dGhlcmV8aXN8bm98c2VsZWN0aW9ufGJ1dHx0aGV8Y3Vyc29yfGlzfGlu\nfHRoZXxib2R5fG9yfHN1YmplY3QsfHRoZXxtZXRob2R8cmV0dXJuc3xudWxs\nfGZvcnx0aGV8c2VsZWN0ZWR8ZGF0YS58SWZ8YXxmaWVsZHxvdGhlcnx0aGFu\nfHRoZXxib2R5fG9yfHN1YmplY3R8aXN8c2VsZWN0ZWQsfHRoZXxtZXRob2R8\ncmV0dXJuc3x0aGV8YEludmFsaWRTZWxlY3Rpb25gfGVycm9yLg==\n",
+      "longDesc": "fElmIHRoZXJlIGlzIG5vIHNlbGVjdGlvbiBidXQgdGhlIGN1cnNvciBpcyBp\nbiB0aGUgYm9keSBvciBzdWJqZWN0LCB0aGUgbWV0aG9kIHJldHVybnMgbnVs\nbCBmb3IgdGhlIHNlbGVjdGVkIGRhdGEuIElmIGEgZmllbGQgb3RoZXIgdGhh\nbiB0aGUgYm9keSBvciBzdWJqZWN0IGlzIHNlbGVjdGVkLCB0aGUgbWV0aG9k\nIHJldHVybnMgdGhlIGBJbnZhbGlkU2VsZWN0aW9uYCBlcnJvci4=\n",
       "modes": [
         "Compose"
       ],
-      "codeSnippet": "fApgYGBqc3wqIC8vIGdldHRpbmcgc2VsZWN0ZWQgZGF0YQ0KfCogT2ZmaWNl\nLmluaXRpYWxpemUgPSBmdW5jdGlvbiAoKSB7DQp8KiAgICAgT2ZmaWNlLmNv\nbnRleHQubWFpbGJveC5pdGVtLmdldFNlbGVjdGVkRGF0YUFzeW5jKE9mZmlj\nZS5Db2VyY2lvblR5cGUuVGV4dCwge30sIGdldENhbGxiYWNrKTsNCnwqIH0N\nCnwqIA0KfCogZnVuY3Rpb24gZ2V0Q2FsbGJhY2soYXN5bmNSZXN1bHQpIHsN\nCnwqICAgICB2YXIgdGV4dCA9IGFzeW5jUmVzdWx0LnZhbHVlLmRhdGE7DQp8\nKiAgICAgdmFyIHByb3AgPSBhc3luY1Jlc3VsdC52YWx1ZS5zb3VyY2VQcm9w\nZXJ0eTsNCnwqIA0KfCogICAgIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRl\nbS5zZXRTZWxlY3RlZERhdGFBc3luYygnU2V0dGluZyAnICsgcHJvcCArICc6\nICcgKyB0ZXh0LCB7fSwgc2V0Q2FsbGJhY2spOw0KfCogfQ0KfCogDQp8KiBm\ndW5jdGlvbiBzZXRDYWxsYmFjayhhc3luY1Jlc3VsdCkgew0KfCogICAgIC8v\nIGNoZWNrIGZvciBlcnJvcnMNCnwqIH0NCnxgYGAK\n",
+      "codeSnippet": "fApgYGBqc3wvLyBnZXR0aW5nIHNlbGVjdGVkIGRhdGF8T2ZmaWNlLmluaXRp\nYWxpemUgPSBmdW5jdGlvbiAoKSB7fE9mZmljZS5jb250ZXh0Lm1haWxib3gu\naXRlbS5nZXRTZWxlY3RlZERhdGFBc3luYyhPZmZpY2UuQ29lcmNpb25UeXBl\nLlRleHQsIHt9LCBnZXRDYWxsYmFjayk7fH18fGZ1bmN0aW9uIGdldENhbGxi\nYWNrKGFzeW5jUmVzdWx0KSB7fHZhciB0ZXh0ID0gYXN5bmNSZXN1bHQudmFs\ndWUuZGF0YTt8dmFyIHByb3AgPSBhc3luY1Jlc3VsdC52YWx1ZS5zb3VyY2VQ\ncm9wZXJ0eTt8fE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5zZXRTZWxl\nY3RlZERhdGFBc3luYygnU2V0dGluZyAnICsgcHJvcCArICc6ICcgKyB0ZXh0\nLCB7fSwgc2V0Q2FsbGJhY2spO3x9fHxmdW5jdGlvbiBzZXRDYWxsYmFjayhh\nc3luY1Jlc3VsdCkge3wvLyBjaGVjayBmb3IgZXJyb3JzfH18YGBgCg==\n",
       "parameters": [
         {
           "name": "coercionType",
-          "dataType": "{Office.CoercionType}",
+          "dataType": "Office.CoercionType",
           "isCollection": false,
-          "description": "{Office.CoercionType}",
+          "description": "Requests a format for the data. If Text, the method returns the plain text as a string , removing any HTML tags present. If HTML, the method returns the selected text, whether it is plaintext or HTML.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options.asyncContext]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "Developers can provide any object they wish to access in the callback method.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "callback",
-          "dataType": "{function}",
+          "dataType": "function",
           "isCollection": false,
-          "description": "{function}",
+          "description": "To access the selected data from the callback method, call `asyncResult.value.data`. To access the source property that the selection comes from, call `asyncResult.value.sourceProperty`, which will be either `body` or `subject`.",
           "isRequired": false,
           "enumName": null
         }
@@ -574,7 +574,7 @@
     {
       "name": "setSelectedDataAsync",
       "returnType": "",
-      "description": "Asynchronously",
+      "description": "Asynchronously inserts data into the body or subject of a message.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -582,49 +582,49 @@
         "1.2"
       ],
       "example": null,
-      "longDesc": "",
+      "longDesc": "fElmIGBodG1sYCBhbmQgdGhlIGZpZWxkIHN1cHBvcnRzIEhUTUwgKHRoZSBz\ndWJqZWN0IGRvZXNuJ3QpLCB0aGUgY3VycmVudCBzdHlsZSBpcyBhcHBsaWVk\nIGluIE91dGxvb2sgV2ViIEFwcCBhbmQgdGhlIGRlZmF1bHQgc3R5bGUgaXMg\nYXBwbGllZCBpbiBPdXRsb29rLiBJZiB0aGUgZmllbGQgaXMgYSB0ZXh0IGZp\nZWxkLCBhbiBgSW52YWxpZERhdGFGb3JtYXRgIGVycm9yIGlzIHJldHVybmVk\nLnx8SWYgYGNvZXJjaW9uVHlwZWAgaXMgbm90IHNldCwgdGhlIHJlc3VsdCBk\nZXBlbmRzIG9uIHRoZSBmaWVsZDogaWYgdGhlIGZpZWxkIGlzIEhUTUwgdGhl\nbiBIVE1MIGlzIHVzZWQ7IGlmIHRoZSBmaWVsZCBpcyB0ZXh0LCB0aGVuIHBs\nYWluIHRleHQgaXMgdXNlZC58T2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVt\nLnNldFNlbGVjdGVkRGF0YUFzeW5jKOKAnDxiPkhlbGxvIFdvcmxkITwvYj7i\ngJ0sIHsgY29lcmNpb25UeXBlIDog4oCcaHRtbOKAnSB9KTs=\n",
       "modes": [
         "Compose"
       ],
-      "codeSnippet": "T2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLnNldFNlbGVjdGVkRGF0YUFz\neW5jKOKAnEhlbGxvfFdvcmxkIeKAnSk7fApgYGBqc3wqIE9mZmljZS5jb250\nZXh0Lm1haWxib3guaXRlbS5zZXRTZWxlY3RlZERhdGFBc3luYyjigJw8Yj5I\nZWxsbyBXb3JsZCE8L2I+4oCdLCB7IGNvZXJjaW9uVHlwZSA6IOKAnGh0bWzi\ngJ0gfSk7IA0KfGBgYAo=\n",
+      "codeSnippet": "T2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLnNldFNlbGVjdGVkRGF0YUFz\neW5jKOKAnEhlbGxvIFdvcmxkIeKAnSk7fApgYGBqc3xPZmZpY2UuY29udGV4\ndC5tYWlsYm94Lml0ZW0uc2V0U2VsZWN0ZWREYXRhQXN5bmMo4oCcPGI+SGVs\nbG8gV29ybGQhPC9iPuKAnSwgeyBjb2VyY2lvblR5cGUgOiDigJxodG1s4oCd\nIH0pO3xgYGAK\n",
       "parameters": [
         {
           "name": "data",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "The data to be inserted. Data is not to exceed 1,000,000 characters. If more than 1,000,000 characters are passed in, an `ArgumentOutOfRange` exception is thrown.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options.asyncContext]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "Developers can provide any object they wish to access in the callback method.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options.coercionType]",
-          "dataType": "{Office.CoercionType}",
+          "dataType": "Office.CoercionType",
           "isCollection": false,
-          "description": "{Office.CoercionType}",
+          "description": "If `text`, the current style is applied in Outlook Web App and Outlook. If the field is an HTML editor, only the text data is inserted, even if the data is HTML.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "callback",
-          "dataType": "{function}",
+          "dataType": "function",
           "isCollection": false,
-          "description": "{function}",
+          "description": "",
           "isRequired": false,
           "enumName": null
         }
@@ -634,7 +634,7 @@
     {
       "name": "close",
       "returnType": "",
-      "description": "Closes",
+      "description": "Closes the current item that is being composed.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -642,7 +642,7 @@
         "1.3"
       ],
       "example": null,
-      "longDesc": "VGhlfGJlaGF2aW9yfG9mfHRoZXxgY2xvc2VgfG1ldGhvZHxkZXBlbmRzfG9u\nfHRoZXxjdXJyZW50fHN0YXRlfG9mfHRoZXxpdGVtfGJlaW5nfGNvbXBvc2Vk\nLnxJZnx0aGV8aXRlbXxoYXN8dW5zYXZlZHxjaGFuZ2VzLHx0aGV8Y2xpZW50\nfHByb21wdHN8dGhlfHVzZXJ8dG98c2F2ZSx8ZGlzY2FyZCx8b3J8Y2FuY2Vs\nfHRoZXxjbG9zZXxhY3Rpb24ufCogDQp8KiBJbiB0aGUgT3V0bG9vayBkZXNr\ndG9wIGNsaWVudCwgaWYgdGhlIG1lc3NhZ2UgaXMgYW4gaW5saW5lIHJlcGx5\nLCB0aGUgYGNsb3NlYCBtZXRob2QgaGFzIG5vIGVmZmVjdC4NCg==\n",
+      "longDesc": "fFRoZSBiZWhhdmlvciBvZiB0aGUgYGNsb3NlYCBtZXRob2QgZGVwZW5kcyBv\nbiB0aGUgY3VycmVudCBzdGF0ZSBvZiB0aGUgaXRlbSBiZWluZyBjb21wb3Nl\nZC4gSWYgdGhlIGl0ZW0gaGFzIHVuc2F2ZWQgY2hhbmdlcywgdGhlIGNsaWVu\ndCBwcm9tcHRzIHRoZSB1c2VyIHRvIHNhdmUsIGRpc2NhcmQsIG9yIGNhbmNl\nbCB0aGUgY2xvc2UgYWN0aW9uLnx8SW4gdGhlIE91dGxvb2sgZGVza3RvcCBj\nbGllbnQsIGlmIHRoZSBtZXNzYWdlIGlzIGFuIGlubGluZSByZXBseSwgdGhl\nIGBjbG9zZWAgbWV0aG9kIGhhcyBubyBlZmZlY3Qu\n",
       "modes": [
         "Compose"
       ],
@@ -655,7 +655,7 @@
     {
       "name": "saveAsync",
       "returnType": "",
-      "description": "Asynchronously",
+      "description": "Asynchronously saves an item.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -663,33 +663,33 @@
         "1.3"
       ],
       "example": null,
-      "longDesc": "V2hlbnxpbnZva2VkLHx0aGlzfG1ldGhvZHxzYXZlc3x0aGV8Y3VycmVudHxt\nZXNzYWdlfGFzfGF8ZHJhZnR8YW5kfHJldHVybnN8dGhlfGl0ZW18aWR8dmlh\nfHRoZXxjYWxsYmFja3xtZXRob2Qu\n",
+      "longDesc": "fFdoZW4gaW52b2tlZCwgdGhpcyBtZXRob2Qgc2F2ZXMgdGhlIGN1cnJlbnQg\nbWVzc2FnZSBhcyBhIGRyYWZ0IGFuZCByZXR1cm5zIHRoZSBpdGVtIGlkIHZp\nYSB0aGUgY2FsbGJhY2sgbWV0aG9kLnxmdW5jdGlvbiBjYWxsYmFjayhyZXN1\nbHQpIHt8Ly8gUHJvY2VzcyB0aGUgcmVzdWx0fH0pO3x7fCJ2YWx1ZSI6IkFB\nTWtBREk1Li4uQUFBPSIsfCJzdGF0dXMiOiJzdWNjZWVkZWQifH0=\n",
       "modes": [
         "Compose"
       ],
-      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xpc3xhbnxleGFtcGxlfG9mfHRoZXxg\ncmVzdWx0YHxwYXJhbWV0ZXJ8cGFzc2VkfHRvfHRoZXxjYWxsYmFja3xmdW5j\ndGlvbi58VGhlfGB2YWx1ZWB8cHJvcGVydHl8Y29udGFpbnN8dGhlfGl0ZW18\nSUR8b2Z8dGhlfGl0ZW0uPC9jYXB0aW9uPnwKYGBganN8KiB7DQp8KiAgICJ2\nYWx1ZSI6IkFBTWtBREk1Li4uQUFBPSIsDQp8KiAgICJzdGF0dXMiOiJzdWNj\nZWVkZWQiDQp8KiB9DQp8YGBgCg==\n",
+      "codeSnippet": "CmBgYGpzfFRoZSBmb2xsb3dpbmcgaXMgYW4gZXhhbXBsZSBvZiB0aGUgYHJl\nc3VsdGAgcGFyYW1ldGVyIHBhc3NlZCB0byB0aGUgY2FsbGJhY2sgZnVuY3Rp\nb24uIFRoZSBgdmFsdWVgIHByb3BlcnR5IGNvbnRhaW5zIHRoZSBpdGVtIElE\nIG9mIHRoZSBpdGVtLnx7fCJ2YWx1ZSI6IkFBTWtBREk1Li4uQUFBPSIsfCJz\ndGF0dXMiOiJzdWNjZWVkZWQifH18YGBgCg==\n",
       "parameters": [
         {
           "name": "[options]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options.asyncContext]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "Developers can provide any object they wish to access in the callback method.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "callback",
-          "dataType": "{function}",
+          "dataType": "function",
           "isCollection": false,
-          "description": "{function}",
+          "description": "On success, the item identifier is provided in the `asyncResult.value` property.",
           "isRequired": false,
           "enumName": null
         }
@@ -699,7 +699,7 @@
     {
       "name": "addFileAttachmentAsync",
       "returnType": "",
-      "description": "Adds",
+      "description": "Adds a file to a message or appointment as an attachment.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -707,49 +707,49 @@
         "1.1"
       ],
       "example": null,
-      "longDesc": "VGhlfGBhZGRGaWxlQXR0YWNobWVudEFzeW5jYHxtZXRob2R8dXBsb2Fkc3x0\naGV8ZmlsZXxhdHx0aGV8c3BlY2lmaWVkfFVSSXxhbmR8YXR0YWNoZXN8aXR8\ndG98dGhlfGl0ZW18aW58dGhlfGNvbXBvc2V8Zm9ybS58KiANCnwqIFlvdSBj\nYW4gc3Vic2VxdWVudGx5IHVzZSB0aGUgaWRlbnRpZmllciB3aXRoIHRoZSBb\nYHJlbW92ZUF0dGFjaG1lbnRBc3luY2Bde0BsaW5rIE9mZmljZS5jb250ZXh0\nLm1haWxib3guaXRlbSNyZW1vdmVBdHRhY2htZW50QXN5bmN9IG1ldGhvZCB0\nbyByZW1vdmUgdGhlIGF0dGFjaG1lbnQgaW4gdGhlIHNhbWUgc2Vzc2lvbi4N\nCg==\n",
+      "longDesc": "fHxJZiB1cGxvYWRpbmcgdGhlIGF0dGFjaG1lbnQgZmFpbHMsIHRoZSBgYXN5\nbmNSZXN1bHRgIG9iamVjdCB3aWxsIGNvbnRhaW4gYW4gYEVycm9yYCBvYmpl\nY3QgdGhhdCBwcm92aWRlcyBhIGRlc2NyaXB0aW9uIG9mIHRoZSBlcnJvci58\nfHwgRXJyb3IgY29kZSB8IERlc2NyaXB0aW9uIHx8fCAtIHwgLSB8fHwgYEF0\ndGFjaG1lbnRTaXplRXhjZWVkZWRgIHwgVGhlIGF0dGFjaG1lbnQgaXMgbGFy\nZ2VyIHRoYW4gYWxsb3dlZC4gfHx8IGBGaWxlVHlwZU5vdFN1cHBvcnRlZGAg\nfCBUaGUgYXR0YWNobWVudCBoYXMgYW4gZXh0ZW5zaW9uIHRoYXQgaXMgbm90\nIGFsbG93ZWQuIHx8fCBgTnVtYmVyT2ZBdHRhY2htZW50c0V4Y2VlZGVkYCB8\nIFRoZSBtZXNzYWdlIG9yIGFwcG9pbnRtZW50IGhhcyB0b28gbWFueSBhdHRh\nY2htZW50cy4gfHxUaGUgYGFkZEZpbGVBdHRhY2htZW50QXN5bmNgIG1ldGhv\nZCB1cGxvYWRzIHRoZSBmaWxlIGF0IHRoZSBzcGVjaWZpZWQgVVJJIGFuZCBh\ndHRhY2hlcyBpdCB0byB0aGUgaXRlbSBpbiB0aGUgY29tcG9zZSBmb3JtLnx8\nWW91IGNhbiBzdWJzZXF1ZW50bHkgdXNlIHRoZSBpZGVudGlmaWVyIHdpdGgg\ndGhlIFtgcmVtb3ZlQXR0YWNobWVudEFzeW5jYF17QGxpbmsgT2ZmaWNlLmNv\nbnRleHQubWFpbGJveC5pdGVtI3JlbW92ZUF0dGFjaG1lbnRBc3luY30gbWV0\naG9kIHRvIHJlbW92ZSB0aGUgYXR0YWNobWVudCBpbiB0aGUgc2FtZSBzZXNz\naW9uLnxpZiAocmVzdWx0LmVycm9yKSB7fHNob3dNZXNzYWdlKHJlc3VsdC5l\ncnJvcik7fH0gZWxzZSB7fHNob3dNZXNzYWdlKCJBdHRhY2htZW50IGFkZGVk\nIik7fH18fXx8ZnVuY3Rpb24gYWRkQXR0YWNobWVudCgpIHt8Ly8gVGhlIHZh\nbHVlcyBpbiBhc3luY0NvbnRleHQgY2FuIGJlIGFjY2Vzc2VkIGluIHRoZSBj\nYWxsYmFja3x2YXIgb3B0aW9ucyA9IHsgJ2FzeW5jQ29udGV4dCc6IHsgdmFy\nMTogMSwgdmFyMjogMiB9IH07fHx2YXIgYXR0YWNobWVudFVSTCA9ICJodHRw\nczovL2NvbnRvc28uY29tL3J0bS9pY29uLnBuZyI7fE9mZmljZS5jb250ZXh0\nLm1haWxib3guaXRlbS5hZGRGaWxlQXR0YWNobWVudEFzeW5jKGF0dGFjaG1l\nbnRVUkwsIGF0dGFjaG1lbnRVUkwsIG9wdGlvbnMsIGNhbGxiYWNrKTt8fQ==\n",
       "modes": [
         "Compose"
       ],
-      "codeSnippet": "ZnVuY3Rpb258Y2FsbGJhY2socmVzdWx0KXx7fApgYGBqc3wqICAgaWYgKHJl\nc3VsdC5lcnJvcikgew0KfCogICAgIHNob3dNZXNzYWdlKHJlc3VsdC5lcnJv\ncik7DQp8KiAgIH0gZWxzZSB7DQp8KiAgICAgc2hvd01lc3NhZ2UoIkF0dGFj\naG1lbnQgYWRkZWQiKTsNCnwqICAgfQ0KfCogfQ0KfCogDQp8KiBmdW5jdGlv\nbiBhZGRBdHRhY2htZW50KCkgew0KfCogICAvLyBUaGUgdmFsdWVzIGluIGFz\neW5jQ29udGV4dCBjYW4gYmUgYWNjZXNzZWQgaW4gdGhlIGNhbGxiYWNrDQp8\nKiAgIHZhciBvcHRpb25zID0geyAnYXN5bmNDb250ZXh0JzogeyB2YXIxOiAx\nLCB2YXIyOiAyIH0gfTsNCnwqICAgDQp8KiAgIHZhciBhdHRhY2htZW50VVJM\nID0gImh0dHBzOi8vY29udG9zby5jb20vcnRtL2ljb24ucG5nIjsNCnwqICAg\nT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLmFkZEZpbGVBdHRhY2htZW50\nQXN5bmMoYXR0YWNobWVudFVSTCwgYXR0YWNobWVudFVSTCwgb3B0aW9ucywg\nY2FsbGJhY2spOw0KfCogfQ0KfGBgYAo=\n",
+      "codeSnippet": "ZnVuY3Rpb24gY2FsbGJhY2socmVzdWx0KSB7fApgYGBqc3xpZiAocmVzdWx0\nLmVycm9yKSB7fHNob3dNZXNzYWdlKHJlc3VsdC5lcnJvcik7fH0gZWxzZSB7\nfHNob3dNZXNzYWdlKCJBdHRhY2htZW50IGFkZGVkIik7fH18fXx8ZnVuY3Rp\nb24gYWRkQXR0YWNobWVudCgpIHt8Ly8gVGhlIHZhbHVlcyBpbiBhc3luY0Nv\nbnRleHQgY2FuIGJlIGFjY2Vzc2VkIGluIHRoZSBjYWxsYmFja3x2YXIgb3B0\naW9ucyA9IHsgJ2FzeW5jQ29udGV4dCc6IHsgdmFyMTogMSwgdmFyMjogMiB9\nIH07fHx2YXIgYXR0YWNobWVudFVSTCA9ICJodHRwczovL2NvbnRvc28uY29t\nL3J0bS9pY29uLnBuZyI7fE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5h\nZGRGaWxlQXR0YWNobWVudEFzeW5jKGF0dGFjaG1lbnRVUkwsIGF0dGFjaG1l\nbnRVUkwsIG9wdGlvbnMsIGNhbGxiYWNrKTt8fXxgYGAK\n",
       "parameters": [
         {
           "name": "uri",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "The URI that provides the location of the file to attach to the message or appointment. The maximum length is 2048 characters.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "attachmentName",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "The name of the attachment that is shown while the attachment is uploading. The maximum length is 255 characters.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options.asyncContext]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "Developers can provide any object they wish to access in the callback method.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[callback]",
-          "dataType": "{function}",
+          "dataType": "function",
           "isCollection": false,
-          "description": "{function}",
+          "description": "On success, the attachment identifier will be provided in the `asyncResult.value` property.",
           "isRequired": false,
           "enumName": null
         }
@@ -759,7 +759,7 @@
     {
       "name": "addItemAttachmentAsync",
       "returnType": "",
-      "description": "Adds",
+      "description": "Adds an Exchange item, such as a message, as an attachment to the message or appointment.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -767,49 +767,49 @@
         "1.1"
       ],
       "example": null,
-      "longDesc": "VGhlfGBhZGRJdGVtQXR0YWNobWVudEFzeW5jYHxtZXRob2R8YXR0YWNoZXN8\ndGhlfGl0ZW18d2l0aHx0aGV8c3BlY2lmaWVkfEV4Y2hhbmdlfGlkZW50aWZp\nZXJ8dG98dGhlfGl0ZW18aW58dGhlfGNvbXBvc2V8Zm9ybS58SWZ8eW91fHNw\nZWNpZnl8YXxjYWxsYmFja3xtZXRob2QsfHRoZXxtZXRob2R8aXN8Y2FsbGVk\nfHdpdGh8b25lfHBhcmFtZXRlcix8YGFzeW5jUmVzdWx0YCx8d2hpY2h8Y29u\ndGFpbnN8ZWl0aGVyfHRoZXxhdHRhY2htZW50fGlkZW50aWZpZXJ8b3J8YXxj\nb2RlfHRoYXR8aW5kaWNhdGVzfGFueXxlcnJvcnx0aGF0fG9jY3VycmVkfHdo\naWxlfGF0dGFjaGluZ3x0aGV8aXRlbS58WW91fGNhbnx1c2V8dGhlfGBvcHRp\nb25zYHxwYXJhbWV0ZXJ8dG98cGFzc3xzdGF0ZXxpbmZvcm1hdGlvbnx0b3x0\naGV8Y2FsbGJhY2t8bWV0aG9kLHxpZnxuZWVkZWQufCogDQp8KiBZb3UgY2Fu\nIHN1YnNlcXVlbnRseSB1c2UgdGhlIGlkZW50aWZpZXIgd2l0aCB0aGUgW2By\nZW1vdmVBdHRhY2htZW50QXN5bmNgXXtAbGluayBPZmZpY2UuY29udGV4dC5t\nYWlsYm94Lml0ZW0jcmVtb3ZlQXR0YWNobWVudEFzeW5jfSBtZXRob2QgdG8g\ncmVtb3ZlIHRoZSBhdHRhY2htZW50IGluIHRoZSBzYW1lIHNlc3Npb24uDQp8\nKiANCnwqIElmIHlvdXIgT2ZmaWNlIGFkZC1pbiBpcyBydW5uaW5nIGluIE91\ndGxvb2sgV2ViIEFwcCwgdGhlIGBhZGRJdGVtQXR0YWNobWVudEFzeW5jYCBt\nZXRob2QgY2FuIGF0dGFjaCBpdGVtcyB0byBpdGVtcyBvdGhlciB0aGFuIHRo\nZSBpdGVtIHRoYXQgeW91IGFyZSBlZGl0aW5nOyBob3dldmVyLCB0aGlzIGlz\nIG5vdCBzdXBwb3J0ZWQgYW5kIGlzIG5vdCByZWNvbW1lbmRlZC4NCg==\n",
+      "longDesc": "fHxJZiBhZGRpbmcgdGhlIGF0dGFjaG1lbnQgZmFpbHMsIHRoZSBgYXN5bmNS\nZXN1bHRgIG9iamVjdCB3aWxsIGNvbnRhaW4gYW4gYEVycm9yYCBvYmplY3Qg\ndGhhdCBwcm92aWRlcyBhIGRlc2NyaXB0aW9uIG9mIHRoZSBlcnJvci58fHwg\nRXJyb3IgY29kZSB8IERlc2NyaXB0aW9uIHx8fCAtIHwgLSB8fHwgYE51bWJl\nck9mQXR0YWNobWVudHNFeGNlZWRlZGAgfCBUaGUgbWVzc2FnZSBvciBhcHBv\naW50bWVudCBoYXMgdG9vIG1hbnkgYXR0YWNobWVudHMuIHx8VGhlIGBhZGRJ\ndGVtQXR0YWNobWVudEFzeW5jYCBtZXRob2QgYXR0YWNoZXMgdGhlIGl0ZW0g\nd2l0aCB0aGUgc3BlY2lmaWVkIEV4Y2hhbmdlIGlkZW50aWZpZXIgdG8gdGhl\nIGl0ZW0gaW4gdGhlIGNvbXBvc2UgZm9ybS4gSWYgeW91IHNwZWNpZnkgYSBj\nYWxsYmFjayBtZXRob2QsIHRoZSBtZXRob2QgaXMgY2FsbGVkIHdpdGggb25l\nIHBhcmFtZXRlciwgYGFzeW5jUmVzdWx0YCwgd2hpY2ggY29udGFpbnMgZWl0\naGVyIHRoZSBhdHRhY2htZW50IGlkZW50aWZpZXIgb3IgYSBjb2RlIHRoYXQg\naW5kaWNhdGVzIGFueSBlcnJvciB0aGF0IG9jY3VycmVkIHdoaWxlIGF0dGFj\naGluZyB0aGUgaXRlbS4gWW91IGNhbiB1c2UgdGhlIGBvcHRpb25zYCBwYXJh\nbWV0ZXIgdG8gcGFzcyBzdGF0ZSBpbmZvcm1hdGlvbiB0byB0aGUgY2FsbGJh\nY2sgbWV0aG9kLCBpZiBuZWVkZWQufHxZb3UgY2FuIHN1YnNlcXVlbnRseSB1\nc2UgdGhlIGlkZW50aWZpZXIgd2l0aCB0aGUgW2ByZW1vdmVBdHRhY2htZW50\nQXN5bmNgXXtAbGluayBPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0jcmVt\nb3ZlQXR0YWNobWVudEFzeW5jfSBtZXRob2QgdG8gcmVtb3ZlIHRoZSBhdHRh\nY2htZW50IGluIHRoZSBzYW1lIHNlc3Npb24ufHxJZiB5b3VyIE9mZmljZSBh\nZGQtaW4gaXMgcnVubmluZyBpbiBPdXRsb29rIFdlYiBBcHAsIHRoZSBgYWRk\nSXRlbUF0dGFjaG1lbnRBc3luY2AgbWV0aG9kIGNhbiBhdHRhY2ggaXRlbXMg\ndG8gaXRlbXMgb3RoZXIgdGhhbiB0aGUgaXRlbSB0aGF0IHlvdSBhcmUgZWRp\ndGluZzsgaG93ZXZlciwgdGhpcyBpcyBub3Qgc3VwcG9ydGVkIGFuZCBpcyBu\nb3QgcmVjb21tZW5kZWQufGZ1bmN0aW9uIGNhbGxiYWNrKHJlc3VsdCkge3xp\nZiAocmVzdWx0LmVycm9yKSB7fHNob3dNZXNzYWdlKHJlc3VsdC5lcnJvcik7\nfH0gZWxzZSB7fHNob3dNZXNzYWdlKCJBdHRhY2htZW50IGFkZGVkIik7fH18\nfXx8ZnVuY3Rpb24gYWRkQXR0YWNobWVudCgpIHt8Ly8gRVdTIElEIG9mIGl0\nZW0gdG8gYXR0YWNofC8vIChTaG9ydGVuZWQgZm9yIHJlYWRhYmlsaXR5KXx2\nYXIgaXRlbUlkID0gIkFBTWtBREkxLi4uQUFBPSI7fHwvLyBUaGUgdmFsdWVz\nIGluIGFzeW5jQ29udGV4dCBjYW4gYmUgYWNjZXNzZWQgaW4gdGhlIGNhbGxi\nYWNrfHZhciBvcHRpb25zID0geyAnYXN5bmNDb250ZXh0JzogeyB2YXIxOiAx\nLCB2YXIyOiAyIH0gfTt8fE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5h\nZGRJdGVtQXR0YWNobWVudEFzeW5jKGl0ZW1JZCwgIk15IEF0dGFjaG1lbnQi\nLCBvcHRpb25zLCBjYWxsYmFjayk7fH0=\n",
       "modes": [
         "Compose"
       ],
-      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfGFkZHN8YW58ZXhpc3Rp\nbmd8T3V0bG9va3xpdGVtfGFzfGFufGF0dGFjaG1lbnR8d2l0aHx0aGV8bmFt\nZXxgTXl8QXR0YWNobWVudGAuPC9jYXB0aW9uPnwKYGBganN8KiBmdW5jdGlv\nbiBjYWxsYmFjayhyZXN1bHQpIHsNCnwqICAgaWYgKHJlc3VsdC5lcnJvcikg\new0KfCogICAgIHNob3dNZXNzYWdlKHJlc3VsdC5lcnJvcik7DQp8KiAgIH0g\nZWxzZSB7DQp8KiAgICAgc2hvd01lc3NhZ2UoIkF0dGFjaG1lbnQgYWRkZWQi\nKTsNCnwqICAgfQ0KfCogfQ0KfCogDQp8KiBmdW5jdGlvbiBhZGRBdHRhY2ht\nZW50KCkgew0KfCogICAvLyBFV1MgSUQgb2YgaXRlbSB0byBhdHRhY2gNCnwq\nICAgLy8gKFNob3J0ZW5lZCBmb3IgcmVhZGFiaWxpdHkpDQp8KiAgIHZhciBp\ndGVtSWQgPSAiQUFNa0FESTEuLi5BQUE9IjsNCnwqICAgDQp8KiAgIC8vIFRo\nZSB2YWx1ZXMgaW4gYXN5bmNDb250ZXh0IGNhbiBiZSBhY2Nlc3NlZCBpbiB0\naGUgY2FsbGJhY2sNCnwqICAgdmFyIG9wdGlvbnMgPSB7ICdhc3luY0NvbnRl\neHQnOiB7IHZhcjE6IDEsIHZhcjI6IDIgfSB9Ow0KfCogICANCnwqICAgT2Zm\naWNlLmNvbnRleHQubWFpbGJveC5pdGVtLmFkZEl0ZW1BdHRhY2htZW50QXN5\nbmMoaXRlbUlkLCAiTXkgQXR0YWNobWVudCIsIG9wdGlvbnMsIGNhbGxiYWNr\nKTsNCnwqIH0NCnxgYGAK\n",
+      "codeSnippet": "CmBgYGpzfFRoZSBmb2xsb3dpbmcgZXhhbXBsZSBhZGRzIGFuIGV4aXN0aW5n\nIE91dGxvb2sgaXRlbSBhcyBhbiBhdHRhY2htZW50IHdpdGggdGhlIG5hbWUg\nYE15IEF0dGFjaG1lbnRgLnxmdW5jdGlvbiBjYWxsYmFjayhyZXN1bHQpIHt8\naWYgKHJlc3VsdC5lcnJvcikge3xzaG93TWVzc2FnZShyZXN1bHQuZXJyb3Ip\nO3x9IGVsc2Uge3xzaG93TWVzc2FnZSgiQXR0YWNobWVudCBhZGRlZCIpO3x9\nfH18fGZ1bmN0aW9uIGFkZEF0dGFjaG1lbnQoKSB7fC8vIEVXUyBJRCBvZiBp\ndGVtIHRvIGF0dGFjaHwvLyAoU2hvcnRlbmVkIGZvciByZWFkYWJpbGl0eSl8\ndmFyIGl0ZW1JZCA9ICJBQU1rQURJMS4uLkFBQT0iO3x8Ly8gVGhlIHZhbHVl\ncyBpbiBhc3luY0NvbnRleHQgY2FuIGJlIGFjY2Vzc2VkIGluIHRoZSBjYWxs\nYmFja3x2YXIgb3B0aW9ucyA9IHsgJ2FzeW5jQ29udGV4dCc6IHsgdmFyMTog\nMSwgdmFyMjogMiB9IH07fHxPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0u\nYWRkSXRlbUF0dGFjaG1lbnRBc3luYyhpdGVtSWQsICJNeSBBdHRhY2htZW50\nIiwgb3B0aW9ucywgY2FsbGJhY2spO3x9fGBgYAo=\n",
       "parameters": [
         {
           "name": "itemId",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "The Exchange identifier of the item to attach. The maximum length is 100 characters.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "attachmentName",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "The subject of the item to be attached. The maximum length is 255 characters.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options.asyncContext]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "Developers can provide any object they wish to access in the callback method.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[callback]",
-          "dataType": "{function}",
+          "dataType": "function",
           "isCollection": false,
-          "description": "{function}",
+          "description": "On success, the attachment identifier will be provided in the `asyncResult.value` property.",
           "isRequired": false,
           "enumName": null
         }
@@ -819,7 +819,7 @@
     {
       "name": "displayReplyAllForm",
       "returnType": "",
-      "description": "Displays",
+      "description": "Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -827,73 +827,73 @@
         "1.0"
       ],
       "example": null,
-      "longDesc": "SW58T3V0bG9va3xXZWJ8QXBwLHx0aGV8cmVwbHl8Zm9ybXxpc3xkaXNwbGF5\nZWR8YXN8YXxwb3Atb3V0fGZvcm18aW58dGhlfDMtY29sdW1ufHZpZXd8YW5k\nfGF8cG9wLXVwfGZvcm18aW58dGhlfDItfG9yfDEtY29sdW1ufHZpZXcufCog\nDQp8KiBJZiBhbnkgb2YgdGhlIHN0cmluZyBwYXJhbWV0ZXJzIGV4Y2VlZCB0\naGVpciBsaW1pdHMsIGBkaXNwbGF5UmVwbHlBbGxGb3JtYCB0aHJvd3MgYW4g\nZXhjZXB0aW9uLg0KfCogDQp8KiBXaGVuIGF0dGFjaG1lbnRzIGFyZSBzcGVj\naWZpZWQgaW4gdGhlIGBmb3JtRGF0YS5hdHRhY2htZW50c2AgcGFyYW1ldGVy\nLCBPdXRsb29rIGFuZCBPdXRsb29rIFdlYiBBcHAgYXR0ZW1wdCB0byBkb3du\nbG9hZCBhbGwgYXR0YWNobWVudHMgYW5kIGF0dGFjaCB0aGVtIHRvIHRoZSBy\nZXBseSBmb3JtLiBJZiBhbnkgYXR0YWNobWVudHMgZmFpbCB0byBiZSBhZGRl\nZCwgYW4gZXJyb3IgaXMgc2hvd24gaW4gdGhlIGZvcm0gVUkuIElmIHRoaXMg\naXNuJ3QgcG9zc2libGUsIHRoZW4gbm8gZXJyb3IgbWVzc2FnZSBpcyB0aHJv\nd24uDQo=\n",
+      "longDesc": "fHwqKiBPUiAqKnx8QW4gb2JqZWN0IHRoYXQgY29udGFpbnMgYm9keSBvciBh\ndHRhY2htZW50IGRhdGEgYW5kIGEgY2FsbGJhY2sgZnVuY3Rpb24uIFRoZSBv\nYmplY3QgaXMgZGVmaW5lZCBhcyBmb2xsb3dzOnxJbiBPdXRsb29rIFdlYiBB\ncHAsIHRoZSByZXBseSBmb3JtIGlzIGRpc3BsYXllZCBhcyBhIHBvcC1vdXQg\nZm9ybSBpbiB0aGUgMy1jb2x1bW4gdmlldyBhbmQgYSBwb3AtdXAgZm9ybSBp\nbiB0aGUgMi0gb3IgMS1jb2x1bW4gdmlldy58fElmIGFueSBvZiB0aGUgc3Ry\naW5nIHBhcmFtZXRlcnMgZXhjZWVkIHRoZWlyIGxpbWl0cywgYGRpc3BsYXlS\nZXBseUFsbEZvcm1gIHRocm93cyBhbiBleGNlcHRpb24ufHxXaGVuIGF0dGFj\naG1lbnRzIGFyZSBzcGVjaWZpZWQgaW4gdGhlIGBmb3JtRGF0YS5hdHRhY2ht\nZW50c2AgcGFyYW1ldGVyLCBPdXRsb29rIGFuZCBPdXRsb29rIFdlYiBBcHAg\nYXR0ZW1wdCB0byBkb3dubG9hZCBhbGwgYXR0YWNobWVudHMgYW5kIGF0dGFj\naCB0aGVtIHRvIHRoZSByZXBseSBmb3JtLiBJZiBhbnkgYXR0YWNobWVudHMg\nZmFpbCB0byBiZSBhZGRlZCwgYW4gZXJyb3IgaXMgc2hvd24gaW4gdGhlIGZv\ncm0gVUkuIElmIHRoaXMgaXNuJ3QgcG9zc2libGUsIHRoZW4gbm8gZXJyb3Ig\nbWVzc2FnZSBpcyB0aHJvd24ufE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRl\nbS5kaXNwbGF5UmVwbHlBbGxGb3JtKCdoZWxsbyB0aGVyZScpO3xPZmZpY2Uu\nY29udGV4dC5tYWlsYm94Lml0ZW0uZGlzcGxheVJlcGx5QWxsRm9ybSgnPGI+\naGVsbG8gdGhlcmU8L2I+Jyk7fE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRl\nbS5kaXNwbGF5UmVwbHlBbGxGb3JtKHt9KTt8T2ZmaWNlLmNvbnRleHQubWFp\nbGJveC5pdGVtLmRpc3BsYXlSZXBseUFsbEZvcm0ofHt8J2h0bWxCb2R5JyA6\nICdoaSd8fSk7fE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5kaXNwbGF5\nUmVwbHlBbGxGb3JtKHx7fCdodG1sQm9keScgOiAnaGknLHwnYXR0YWNobWVu\ndHMnIDp8W3x7fCd0eXBlJyA6IE9mZmljZS5NYWlsYm94RW51bXMuQXR0YWNo\nbWVudFR5cGUuRmlsZSx8J25hbWUnIDogJ3NxdWlycmVsLnBuZycsfCd1cmwn\nIDogJ2h0dHA6Ly9pLmltZ3VyLmNvbS9zUmdUbEdSLmpwZyd8fXxdfH0pO3xP\nZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0uZGlzcGxheVJlcGx5QWxsRm9y\nbSh8e3wnaHRtbEJvZHknIDogJ2hpJyx8J2F0dGFjaG1lbnRzJyA6fFt8e3wn\ndHlwZScgOiAnaXRlbScsfCduYW1lJyA6ICdyYW5kJyx8J2l0ZW1JZCcgOiBP\nZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0uaXRlbUlkfH18XXx9KTt8T2Zm\naWNlLmNvbnRleHQubWFpbGJveC5pdGVtLmRpc3BsYXlSZXBseUFsbEZvcm0o\nfHt8J2h0bWxCb2R5JyA6ICdoaScsfCdhdHRhY2htZW50cycgOnxbfHt8J3R5\ncGUnIDogT2ZmaWNlLk1haWxib3hFbnVtcy5BdHRhY2htZW50VHlwZS5GaWxl\nLHwnbmFtZScgOiAnc3F1aXJyZWwucG5nJyx8J3VybCcgOiAnaHR0cDovL2ku\naW1ndXIuY29tL3NSZ1RsR1IuanBnJ3x9LHx7fCd0eXBlJyA6ICdpdGVtJyx8\nJ25hbWUnIDogJ3JhbmQnLHwnaXRlbUlkJyA6IE9mZmljZS5jb250ZXh0Lm1h\naWxib3guaXRlbS5pdGVtSWR8fXxdLHwnY2FsbGJhY2snIDogZnVuY3Rpb24o\nYXN5bmNSZXN1bHQpfHt8Y29uc29sZS5sb2coYXN5bmNSZXN1bHQudmFsdWUp\nO3x9fH0pOw==\n",
       "modes": [
         "Read"
       ],
-      "codeSnippet": "PGNhcHRpb24+UmVwbHl8d2l0aHxhfGJvZHksfGZpbGV8YXR0YWNobWVudCx8\naXRlbXxhdHRhY2htZW50LHxhbmR8YXxjYWxsYmFjay48L2NhcHRpb24+fApg\nYGBqc3wqIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5kaXNwbGF5UmVw\nbHlBbGxGb3JtKA0KfCogew0KfCogICAnaHRtbEJvZHknIDogJ2hpJywNCnwq\nICAgJ2F0dGFjaG1lbnRzJyA6DQp8KiAgIFsNCnwqICAgICB7DQp8KiAgICAg\nICAndHlwZScgOiBPZmZpY2UuTWFpbGJveEVudW1zLkF0dGFjaG1lbnRUeXBl\nLkZpbGUsDQp8KiAgICAgICAnbmFtZScgOiAnc3F1aXJyZWwucG5nJywNCnwq\nICAgICAgICd1cmwnIDogJ2h0dHA6Ly9pLmltZ3VyLmNvbS9zUmdUbEdSLmpw\nZycNCnwqICAgICB9LA0KfCogICAgIHsNCnwqICAgICAgICd0eXBlJyA6ICdp\ndGVtJywNCnwqICAgICAgICduYW1lJyA6ICdyYW5kJywNCnwqICAgICAgICdp\ndGVtSWQnIDogT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLml0ZW1JZA0K\nfCogICAgIH0NCnwqICAgXSwNCnwqICAgJ2NhbGxiYWNrJyA6IGZ1bmN0aW9u\nKGFzeW5jUmVzdWx0KQ0KfCogICB7DQp8KiAgICAgY29uc29sZS5sb2coYXN5\nbmNSZXN1bHQudmFsdWUpOw0KfCogICB9DQp8KiB9KTsNCnxgYGAK\n",
+      "codeSnippet": "CmBgYGpzfFJlcGx5IHdpdGggYSBib2R5LCBmaWxlIGF0dGFjaG1lbnQsIGl0\nZW0gYXR0YWNobWVudCwgYW5kIGEgY2FsbGJhY2sufE9mZmljZS5jb250ZXh0\nLm1haWxib3guaXRlbS5kaXNwbGF5UmVwbHlBbGxGb3JtKHx7fCdodG1sQm9k\neScgOiAnaGknLHwnYXR0YWNobWVudHMnIDp8W3x7fCd0eXBlJyA6IE9mZmlj\nZS5NYWlsYm94RW51bXMuQXR0YWNobWVudFR5cGUuRmlsZSx8J25hbWUnIDog\nJ3NxdWlycmVsLnBuZycsfCd1cmwnIDogJ2h0dHA6Ly9pLmltZ3VyLmNvbS9z\nUmdUbEdSLmpwZyd8fSx8e3wndHlwZScgOiAnaXRlbScsfCduYW1lJyA6ICdy\nYW5kJyx8J2l0ZW1JZCcgOiBPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0u\naXRlbUlkfH18XSx8J2NhbGxiYWNrJyA6IGZ1bmN0aW9uKGFzeW5jUmVzdWx0\nKXx7fGNvbnNvbGUubG9nKGFzeW5jUmVzdWx0LnZhbHVlKTt8fXx9KTt8YGBg\nCg==\n",
       "parameters": [
         {
           "name": "formData",
-          "dataType": "{String",
+          "dataType": "String | Object",
           "isCollection": false,
-          "description": "{String",
+          "description": "| Object} A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[formData.htmlBody]",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[formData.attachments]",
-          "dataType": "{Object[]}",
+          "dataType": "Object[]",
           "isCollection": false,
-          "description": "{Object[]}",
+          "description": "An array of JSON objects that are either file or item attachments.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "formData.attachments.type",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "formData.attachments.name",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "A string that contains the name of the attachment, up to 255 characters in length.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "formData.attachments.url",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "Only used if `type` is set to `file`. The URI of the location for the file.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "formData.attachments.itemId",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[formData.callback]",
-          "dataType": "{function}",
+          "dataType": "function",
           "isCollection": false,
-          "description": "{function}",
+          "description": "",
           "isRequired": false,
           "enumName": null
         }
@@ -903,7 +903,7 @@
     {
       "name": "displayReplyForm",
       "returnType": "",
-      "description": "Displays",
+      "description": "Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -911,73 +911,73 @@
         "1.0"
       ],
       "example": null,
-      "longDesc": "SW58T3V0bG9va3xXZWJ8QXBwLHx0aGV8cmVwbHl8Zm9ybXxpc3xkaXNwbGF5\nZWR8YXN8YXxwb3Atb3V0fGZvcm18aW58dGhlfDMtY29sdW1ufHZpZXd8YW5k\nfGF8cG9wLXVwfGZvcm18aW58dGhlfDItfG9yfDEtY29sdW1ufHZpZXcufCog\nDQp8KiBJZiBhbnkgb2YgdGhlIHN0cmluZyBwYXJhbWV0ZXJzIGV4Y2VlZCB0\naGVpciBsaW1pdHMsIGBkaXNwbGF5UmVwbHlGb3JtYCB0aHJvd3MgYW4gZXhj\nZXB0aW9uLg0KfCogDQp8KiBXaGVuIGF0dGFjaG1lbnRzIGFyZSBzcGVjaWZp\nZWQgaW4gdGhlIGBmb3JtRGF0YS5hdHRhY2htZW50c2AgcGFyYW1ldGVyLCBP\ndXRsb29rIGFuZCBPdXRsb29rIFdlYiBBcHAgYXR0ZW1wdCB0byBkb3dubG9h\nZCBhbGwgYXR0YWNobWVudHMgYW5kIGF0dGFjaCB0aGVtIHRvIHRoZSByZXBs\neSBmb3JtLiBJZiBhbnkgYXR0YWNobWVudHMgZmFpbCB0byBiZSBhZGRlZCwg\nYW4gZXJyb3IgaXMgc2hvd24gaW4gdGhlIGZvcm0gVUkuIElmIHRoaXMgaXNu\nJ3QgcG9zc2libGUsIHRoZW4gbm8gZXJyb3IgbWVzc2FnZSBpcyB0aHJvd24u\nDQo=\n",
+      "longDesc": "fHwqKiBPUiAqKnx8QW4gb2JqZWN0IHRoYXQgY29udGFpbnMgYm9keSBvciBh\ndHRhY2htZW50IGRhdGEgYW5kIGEgY2FsbGJhY2sgZnVuY3Rpb24uIFRoZSBv\nYmplY3QgaXMgZGVmaW5lZCBhcyBmb2xsb3dzOnxJbiBPdXRsb29rIFdlYiBB\ncHAsIHRoZSByZXBseSBmb3JtIGlzIGRpc3BsYXllZCBhcyBhIHBvcC1vdXQg\nZm9ybSBpbiB0aGUgMy1jb2x1bW4gdmlldyBhbmQgYSBwb3AtdXAgZm9ybSBp\nbiB0aGUgMi0gb3IgMS1jb2x1bW4gdmlldy58fElmIGFueSBvZiB0aGUgc3Ry\naW5nIHBhcmFtZXRlcnMgZXhjZWVkIHRoZWlyIGxpbWl0cywgYGRpc3BsYXlS\nZXBseUZvcm1gIHRocm93cyBhbiBleGNlcHRpb24ufHxXaGVuIGF0dGFjaG1l\nbnRzIGFyZSBzcGVjaWZpZWQgaW4gdGhlIGBmb3JtRGF0YS5hdHRhY2htZW50\nc2AgcGFyYW1ldGVyLCBPdXRsb29rIGFuZCBPdXRsb29rIFdlYiBBcHAgYXR0\nZW1wdCB0byBkb3dubG9hZCBhbGwgYXR0YWNobWVudHMgYW5kIGF0dGFjaCB0\naGVtIHRvIHRoZSByZXBseSBmb3JtLiBJZiBhbnkgYXR0YWNobWVudHMgZmFp\nbCB0byBiZSBhZGRlZCwgYW4gZXJyb3IgaXMgc2hvd24gaW4gdGhlIGZvcm0g\nVUkuIElmIHRoaXMgaXNuJ3QgcG9zc2libGUsIHRoZW4gbm8gZXJyb3IgbWVz\nc2FnZSBpcyB0aHJvd24ufE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5k\naXNwbGF5UmVwbHlGb3JtKCdoZWxsbyB0aGVyZScpO3xPZmZpY2UuY29udGV4\ndC5tYWlsYm94Lml0ZW0uZGlzcGxheVJlcGx5Rm9ybSgnPGI+aGVsbG8gdGhl\ncmU8L2I+Jyk7fE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5kaXNwbGF5\nUmVwbHlGb3JtKHt9KTt8T2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLmRp\nc3BsYXlSZXBseUZvcm0ofHt8J2h0bWxCb2R5JyA6ICdoaSd8fSk7fE9mZmlj\nZS5jb250ZXh0Lm1haWxib3guaXRlbS5kaXNwbGF5UmVwbHlGb3JtKHx7fCdo\ndG1sQm9keScgOiAnaGknLHwnYXR0YWNobWVudHMnIDp8W3x7fCd0eXBlJyA6\nIE9mZmljZS5NYWlsYm94RW51bXMuQXR0YWNobWVudFR5cGUuRmlsZSx8J25h\nbWUnIDogJ3NxdWlycmVsLnBuZycsfCd1cmwnIDogJ2h0dHA6Ly9pLmltZ3Vy\nLmNvbS9zUmdUbEdSLmpwZyd8fXxdfH0pO3xPZmZpY2UuY29udGV4dC5tYWls\nYm94Lml0ZW0uZGlzcGxheVJlcGx5Rm9ybSh8e3wnaHRtbEJvZHknIDogJ2hp\nJyx8J2F0dGFjaG1lbnRzJyA6fFt8e3wndHlwZScgOiAnaXRlbScsfCduYW1l\nJyA6ICdyYW5kJyx8J2l0ZW1JZCcgOiBPZmZpY2UuY29udGV4dC5tYWlsYm94\nLml0ZW0uaXRlbUlkfH18XXx9KTt8T2ZmaWNlLmNvbnRleHQubWFpbGJveC5p\ndGVtLmRpc3BsYXlSZXBseUZvcm0ofHt8J2h0bWxCb2R5JyA6ICdoaScsfCdh\ndHRhY2htZW50cycgOnxbfHt8J3R5cGUnIDogT2ZmaWNlLk1haWxib3hFbnVt\ncy5BdHRhY2htZW50VHlwZS5GaWxlLHwnbmFtZScgOiAnc3F1aXJyZWwucG5n\nJyx8J3VybCcgOiAnaHR0cDovL2kuaW1ndXIuY29tL3NSZ1RsR1IuanBnJ3x9\nLHx7fCd0eXBlJyA6ICdpdGVtJyx8J25hbWUnIDogJ3JhbmQnLHwnaXRlbUlk\nJyA6IE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5pdGVtSWR8fXxdLHwn\nY2FsbGJhY2snIDogZnVuY3Rpb24oYXN5bmNSZXN1bHQpfHt8Y29uc29sZS5s\nb2coYXN5bmNSZXN1bHQudmFsdWUpO3x9fH0pOw==\n",
       "modes": [
         "Read"
       ],
-      "codeSnippet": "PGNhcHRpb24+UmVwbHl8d2l0aHxhfGJvZHksfGZpbGV8YXR0YWNobWVudCx8\naXRlbXxhdHRhY2htZW50LHxhbmR8YXxjYWxsYmFjay48L2NhcHRpb24+fApg\nYGBqc3wqIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5kaXNwbGF5UmVw\nbHlGb3JtKA0KfCogew0KfCogICAnaHRtbEJvZHknIDogJ2hpJywNCnwqICAg\nJ2F0dGFjaG1lbnRzJyA6DQp8KiAgIFsNCnwqICAgICB7DQp8KiAgICAgICAn\ndHlwZScgOiBPZmZpY2UuTWFpbGJveEVudW1zLkF0dGFjaG1lbnRUeXBlLkZp\nbGUsDQp8KiAgICAgICAnbmFtZScgOiAnc3F1aXJyZWwucG5nJywNCnwqICAg\nICAgICd1cmwnIDogJ2h0dHA6Ly9pLmltZ3VyLmNvbS9zUmdUbEdSLmpwZycN\nCnwqICAgICB9LA0KfCogICAgIHsNCnwqICAgICAgICd0eXBlJyA6ICdpdGVt\nJywNCnwqICAgICAgICduYW1lJyA6ICdyYW5kJywNCnwqICAgICAgICdpdGVt\nSWQnIDogT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLml0ZW1JZA0KfCog\nICAgIH0NCnwqICAgXSwNCnwqICAgJ2NhbGxiYWNrJyA6IGZ1bmN0aW9uKGFz\neW5jUmVzdWx0KQ0KfCogICB7DQp8KiAgICAgY29uc29sZS5sb2coYXN5bmNS\nZXN1bHQudmFsdWUpOw0KfCogICB9DQp8KiB9KTsNCnxgYGAK\n",
+      "codeSnippet": "CmBgYGpzfFJlcGx5IHdpdGggYSBib2R5LCBmaWxlIGF0dGFjaG1lbnQsIGl0\nZW0gYXR0YWNobWVudCwgYW5kIGEgY2FsbGJhY2sufE9mZmljZS5jb250ZXh0\nLm1haWxib3guaXRlbS5kaXNwbGF5UmVwbHlGb3JtKHx7fCdodG1sQm9keScg\nOiAnaGknLHwnYXR0YWNobWVudHMnIDp8W3x7fCd0eXBlJyA6IE9mZmljZS5N\nYWlsYm94RW51bXMuQXR0YWNobWVudFR5cGUuRmlsZSx8J25hbWUnIDogJ3Nx\ndWlycmVsLnBuZycsfCd1cmwnIDogJ2h0dHA6Ly9pLmltZ3VyLmNvbS9zUmdU\nbEdSLmpwZyd8fSx8e3wndHlwZScgOiAnaXRlbScsfCduYW1lJyA6ICdyYW5k\nJyx8J2l0ZW1JZCcgOiBPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0uaXRl\nbUlkfH18XSx8J2NhbGxiYWNrJyA6IGZ1bmN0aW9uKGFzeW5jUmVzdWx0KXx7\nfGNvbnNvbGUubG9nKGFzeW5jUmVzdWx0LnZhbHVlKTt8fXx9KTt8YGBgCg==\n",
       "parameters": [
         {
           "name": "formData",
-          "dataType": "{String",
+          "dataType": "String | Object",
           "isCollection": false,
-          "description": "{String",
+          "description": "| Object} A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[formData.htmlBody]",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[formData.attachments]",
-          "dataType": "{Object[]}",
+          "dataType": "Object[]",
           "isCollection": false,
-          "description": "{Object[]}",
+          "description": "An array of JSON objects that are either file or item attachments.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "formData.attachments.type",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "Indicates the type of attachment. Must be `file` for a file attachment or `item` for an item attachment.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "formData.attachments.name",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "Only used if `type` is set to `file`. A string that contains the name of the attachment, up to 255 characters in length.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "formData.attachments.url",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "Only used if `type` is set to `file`. The URI of the location for the file.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "formData.attachments.itemId",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[formData.callback]",
-          "dataType": "{function}",
+          "dataType": "function",
           "isCollection": false,
-          "description": "{function}",
+          "description": "",
           "isRequired": false,
           "enumName": null
         }
@@ -995,11 +995,11 @@
         "1.0"
       ],
       "example": null,
-      "longDesc": "R2V0c3x0aGV8ZW50aXRpZXN8Zm91bmR8aW58dGhlfHNlbGVjdGVkfGl0ZW0u\n",
+      "longDesc": "fEdldHMgdGhlIGVudGl0aWVzIGZvdW5kIGluIHRoZSBzZWxlY3RlZCBpdGVt\nLg==\n",
       "modes": [
         "Read"
       ],
-      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfGFjY2Vzc2VzfHRoZXxj\nb250YWN0c3xlbnRpdGllc3xvbnx0aGV8Y3VycmVudHxpdGVtLjwvY2FwdGlv\nbj58CmBgYGpzfCogdmFyIGNvbnRhY3RzID0gT2ZmaWNlLmNvbnRleHQubWFp\nbGJveC5pdGVtLmdldEVudGl0aWVzKCkuY29udGFjdHM7DQp8YGBgCg==\n",
+      "codeSnippet": "CmBgYGpzfFRoZSBmb2xsb3dpbmcgZXhhbXBsZSBhY2Nlc3NlcyB0aGUgY29u\ndGFjdHMgZW50aXRpZXMgb24gdGhlIGN1cnJlbnQgaXRlbS58dmFyIGNvbnRh\nY3RzID0gT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLmdldEVudGl0aWVz\nKCkuY29udGFjdHM7fGBgYAo=\n",
       "parameters": [
 
       ],
@@ -1008,7 +1008,7 @@
     {
       "name": "getEntitiesByType",
       "returnType": "",
-      "description": "Gets",
+      "description": "Gets an array of all the entities of the specified entity type found in the selected item.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -1020,13 +1020,13 @@
       "modes": [
         "Read"
       ],
-      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfHNob3dzfGhvd3x0b3xh\nY2Nlc3N8YW58YXJyYXl8b2Z8c3RyaW5nc3x0aGF0fHJlcHJlc2VudHxwb3N0\nYWx8YWRkcmVzc2VzfGlufHRoZXxzdWJqZWN0fG9yfGJvZHl8b2Z8dGhlfGN1\ncnJlbnR8aXRlbS48L2NhcHRpb24+fApgYGBqc3wqIC8vIFRoZSBpbml0aWFs\naXplIGZ1bmN0aW9uIGlzIHJlcXVpcmVkIGZvciBhbGwgYXBwcy4NCnwqIE9m\nZmljZS5pbml0aWFsaXplID0gZnVuY3Rpb24gKCkgew0KfCogICAvLyBDaGVj\na3MgZm9yIHRoZSBET00gdG8gbG9hZCB1c2luZyB0aGUgalF1ZXJ5IHJlYWR5\nIGZ1bmN0aW9uLg0KfCogICAkKGRvY3VtZW50KS5yZWFkeShmdW5jdGlvbiAo\nKSB7DQp8KiAgICAgLy8gQWZ0ZXIgdGhlIERPTSBpcyBsb2FkZWQsIGFwcC1z\ncGVjaWZpYyBjb2RlIGNhbiBydW4uDQp8KiAgICAgdmFyIGl0ZW0gPSBPZmZp\nY2UuY29udGV4dC5tYWlsYm94Lml0ZW07DQp8KiAgICAgLy8gR2V0IGFuIGFy\ncmF5IG9mIHN0cmluZ3MgdGhhdCByZXByZXNlbnQgcG9zdGFsIGFkZHJlc3Nl\ncyBpbiB0aGUgY3VycmVudCBpdGVtLg0KfCogICAgIHZhciBhZGRyZXNzZXMg\nPSBpdGVtLmdldEVudGl0aWVzQnlUeXBlKE9mZmljZS5NYWlsYm94RW51bXMu\nRW50aXR5VHlwZS5BZGRyZXNzKTsNCnwqICAgICAvLyBDb250aW51ZSBwcm9j\nZXNzaW5nIHRoZSBhcnJheSBvZiBhZGRyZXNzZXMuDQp8KiAgIH0pOw0KfCog\nfQ0KfGBgYAo=\n",
+      "codeSnippet": "CmBgYGpzfFRoZSBmb2xsb3dpbmcgZXhhbXBsZSBzaG93cyBob3cgdG8gYWNj\nZXNzIGFuIGFycmF5IG9mIHN0cmluZ3MgdGhhdCByZXByZXNlbnQgcG9zdGFs\nIGFkZHJlc3NlcyBpbiB0aGUgc3ViamVjdCBvciBib2R5IG9mIHRoZSBjdXJy\nZW50IGl0ZW0ufC8vIFRoZSBpbml0aWFsaXplIGZ1bmN0aW9uIGlzIHJlcXVp\ncmVkIGZvciBhbGwgYXBwcy58T2ZmaWNlLmluaXRpYWxpemUgPSBmdW5jdGlv\nbiAoKSB7fC8vIENoZWNrcyBmb3IgdGhlIERPTSB0byBsb2FkIHVzaW5nIHRo\nZSBqUXVlcnkgcmVhZHkgZnVuY3Rpb24ufCQoZG9jdW1lbnQpLnJlYWR5KGZ1\nbmN0aW9uICgpIHt8Ly8gQWZ0ZXIgdGhlIERPTSBpcyBsb2FkZWQsIGFwcC1z\ncGVjaWZpYyBjb2RlIGNhbiBydW4ufHZhciBpdGVtID0gT2ZmaWNlLmNvbnRl\neHQubWFpbGJveC5pdGVtO3wvLyBHZXQgYW4gYXJyYXkgb2Ygc3RyaW5ncyB0\naGF0IHJlcHJlc2VudCBwb3N0YWwgYWRkcmVzc2VzIGluIHRoZSBjdXJyZW50\nIGl0ZW0ufHZhciBhZGRyZXNzZXMgPSBpdGVtLmdldEVudGl0aWVzQnlUeXBl\nKE9mZmljZS5NYWlsYm94RW51bXMuRW50aXR5VHlwZS5BZGRyZXNzKTt8Ly8g\nQ29udGludWUgcHJvY2Vzc2luZyB0aGUgYXJyYXkgb2YgYWRkcmVzc2VzLnx9\nKTt8fXxgYGAK\n",
       "parameters": [
         {
           "name": "entityType",
-          "dataType": "{Office.MailboxEnums.EntityType}",
+          "dataType": "Office.MailboxEnums.EntityType",
           "isCollection": false,
-          "description": "{Office.MailboxEnums.EntityType}",
+          "description": "One of the EntityType enumeration values.",
           "isRequired": false,
           "enumName": null
         }
@@ -1036,7 +1036,7 @@
     {
       "name": "getFilteredEntitiesByName",
       "returnType": "",
-      "description": "Returns",
+      "description": "Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -1044,7 +1044,7 @@
         "1.0"
       ],
       "example": null,
-      "longDesc": "VGhlfGBnZXRGaWx0ZXJlZEVudGl0aWVzQnlOYW1lYHxtZXRob2R8cmV0dXJu\nc3x0aGV8ZW50aXRpZXN8dGhhdHxtYXRjaHx0aGV8cmVndWxhcnxleHByZXNz\naW9ufGRlZmluZWR8aW58dGhlfFtJdGVtSGFzS25vd25FbnRpdHlde0BsaW5r\nY29kZXxodHRwczovL21zZG4ubWljcm9zb2Z0LmNvbS9lbi11cy9saWJyYXJ5\nL29mZmljZS9mcDE2MTE2Ni5hc3B4fXxydWxlfGVsZW1lbnR8aW58dGhlfG1h\nbmlmZXN0fFhNTHxmaWxlfHdpdGh8dGhlfHNwZWNpZmllZHxgRmlsdGVyTmFt\nZWB8ZWxlbWVudHx2YWx1ZS4=\n",
+      "longDesc": "VGhlIGBnZXRGaWx0ZXJlZEVudGl0aWVzQnlOYW1lYCBtZXRob2QgcmV0dXJu\ncyB0aGUgZW50aXRpZXMgdGhhdCBtYXRjaCB0aGUgcmVndWxhciBleHByZXNz\naW9uIGRlZmluZWQgaW4gdGhlIFtJdGVtSGFzS25vd25FbnRpdHlde0BsaW5r\nY29kZSBodHRwczovL21zZG4ubWljcm9zb2Z0LmNvbS9lbi11cy9saWJyYXJ5\nL29mZmljZS9mcDE2MTE2Ni5hc3B4fSBydWxlIGVsZW1lbnQgaW4gdGhlIG1h\nbmlmZXN0IFhNTCBmaWxlIHdpdGggdGhlIHNwZWNpZmllZCBgRmlsdGVyTmFt\nZWAgZWxlbWVudCB2YWx1ZS4=\n",
       "modes": [
         "Read"
       ],
@@ -1052,9 +1052,9 @@
       "parameters": [
         {
           "name": "name",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "The name of the `ItemHasKnownEntity` rule element that defines the filter to match.",
           "isRequired": false,
           "enumName": null
         }
@@ -1064,7 +1064,7 @@
     {
       "name": "getRegExMatches",
       "returnType": "",
-      "description": "Returns",
+      "description": "Returns string values in the selected item that match the regular expressions defined in the manifest XML file.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -1072,11 +1072,11 @@
         "1.0"
       ],
       "example": null,
-      "longDesc": "VGhlfGBnZXRSZWdFeE1hdGNoZXNgfG1ldGhvZHxyZXR1cm5zfHRoZXxzdHJp\nbmdzfHRoYXR8bWF0Y2h8dGhlfHJlZ3VsYXJ8ZXhwcmVzc2lvbnxkZWZpbmVk\nfGlufGVhY2h8YEl0ZW1IYXNSZWd1bGFyRXhwcmVzc2lvbk1hdGNoYHxvcnxg\nSXRlbUhhc0tub3duRW50aXR5YHxydWxlfGVsZW1lbnR8aW58dGhlfG1hbmlm\nZXN0fFhNTHxmaWxlLnxGb3J8YW58YEl0ZW1IYXNSZWd1bGFyRXhwcmVzc2lv\nbk1hdGNoYHxydWxlLHxhfG1hdGNoaW5nfHN0cmluZ3xoYXN8dG98b2NjdXJ8\naW58dGhlfHByb3BlcnR5fG9mfHRoZXxpdGVtfHRoYXR8aXN8c3BlY2lmaWVk\nfGJ5fHRoYXR8cnVsZS58VGhlfGBQcm9wZXJ0eU5hbWVgfHNpbXBsZXx0eXBl\nfGRlZmluZXN8dGhlfHN1cHBvcnRlZHxwcm9wZXJ0aWVzLnwqIA0KfCogRm9y\nIGV4YW1wbGUsIGNvbnNpZGVyIGFuIGFkZC1pbiBtYW5pZmVzdCBoYXMgdGhl\nIGZvbGxvd2luZyBgUnVsZWAgZWxlbWVudDoNCnwqIA0KfCogICAgIDxSdWxl\nIHhzaTp0eXBlPSJSdWxlQ29sbGVjdGlvbiIgTW9kZT0iQW5kIj4NCnwqICAg\nICAgIDxSdWxlIHhzaTp0eXBlPSJJdGVtSXMiIEZvcm1UeXBlPSJSZWFkIiBJ\ndGVtVHlwZT0iTWVzc2FnZSIgLz4NCnwqICAgICAgIDxSdWxlIHhzaTp0eXBl\nPSJSdWxlQ29sbGVjdGlvbiIgTW9kZT0iT3IiPg0KfCogICAgICAgICA8UnVs\nZSB4c2k6dHlwZT0iSXRlbUhhc1JlZ3VsYXJFeHByZXNzaW9uTWF0Y2giIFJl\nZ0V4TmFtZT0iZnJ1aXRzIiBSZWdFeFZhbHVlPSJhcHBsZXxiYW5hbmF8Y29j\nb251dCIgUHJvcGVydHlOYW1lPSJCb2R5QXNQbGFpbnRleHQiIElnbm9yZUNh\nc2U9InRydWUiIC8+DQp8KiAgICAgICAgIDxSdWxlIHhzaTp0eXBlPSJJdGVt\nSGFzUmVndWxhckV4cHJlc3Npb25NYXRjaCIgUmVnRXhOYW1lPSJ2ZWdnaWVz\nIiBSZWdFeFZhbHVlPSJ0b21hdG98b25pb258c3BpbmFjaHxicm9jY29saSIg\nUHJvcGVydHlOYW1lPSJCb2R5QXNQbGFpbnRleHQiIElnbm9yZUNhc2U9InRy\ndWUiIC8+DQp8KiAgICAgICA8L1J1bGU+DQp8KiAgICAgPC9SdWxlPg0KfCog\nDQp8KiBUaGUgb2JqZWN0IHJldHVybmVkIGZyb20gYGdldFJlZ0V4TWF0Y2hl\nc2Agd291bGQgaGF2ZSB0d28gcHJvcGVydGllczogYGZydWl0c2AgYW5kIGB2\nZWdnaWVzYC4NCnwqIA0KfCogICAgIHsNCnwqICAgICAgICdmcnVpdHMnOiBb\nJ2FwcGxlJywnYmFuYW5hJywnQmFuYW5hJywnY29jb251dCddLA0KfCogICAg\nICAgJ3ZlZ2dpZXMnOiBbJ3RvbWF0bycsJ29uaW9uJywnc3BpbmFjaCcsJ2Jy\nb2Njb2xpJ10NCnwqICAgICB9DQp8Kg0KfCogSWYgeW91IHNwZWNpZnkgYW4g\nYEl0ZW1IYXNSZWd1bGFyRXhwcmVzc2lvbk1hdGNoYCBydWxlIG9uIHRoZSBi\nb2R5IHByb3BlcnR5IG9mIGFuIGl0ZW0sIHRoZSByZWd1bGFyIGV4cHJlc3Np\nb24gc2hvdWxkIGZ1cnRoZXIgZmlsdGVyIHRoZSBib2R5IGFuZCBzaG91bGQg\nbm90IGF0dGVtcHQgdG8gcmV0dXJuIHRoZSBlbnRpcmUgYm9keSBvZiB0aGUg\naXRlbS4gVXNpbmcgYSByZWd1bGFyIGV4cHJlc3Npb24gc3VjaCBhcyBgLipg\nIHRvIG9idGFpbiB0aGUgZW50aXJlIGJvZHkgb2YgYW4gaXRlbSBkb2VzIG5v\ndCBhbHdheXMgcmV0dXJuIHRoZSBleHBlY3RlZCByZXN1bHRzLiBJbnN0ZWFk\nLCB1c2UgdGhlIFtCb2R5LmdldEFzeW5jXXtAbGlua2NvZGUgQm9keSNnZXRB\nc3luY30gbWV0aG9kIHRvIHJldHJpZXZlIHRoZSBlbnRpcmUgYm9keS4NCg==\n",
+      "longDesc": "VGhlIGBnZXRSZWdFeE1hdGNoZXNgIG1ldGhvZCByZXR1cm5zIHRoZSBzdHJp\nbmdzIHRoYXQgbWF0Y2ggdGhlIHJlZ3VsYXIgZXhwcmVzc2lvbiBkZWZpbmVk\nIGluIGVhY2ggYEl0ZW1IYXNSZWd1bGFyRXhwcmVzc2lvbk1hdGNoYCBvciBg\nSXRlbUhhc0tub3duRW50aXR5YCBydWxlIGVsZW1lbnQgaW4gdGhlIG1hbmlm\nZXN0IFhNTCBmaWxlLiBGb3IgYW4gYEl0ZW1IYXNSZWd1bGFyRXhwcmVzc2lv\nbk1hdGNoYCBydWxlLCBhIG1hdGNoaW5nIHN0cmluZyBoYXMgdG8gb2NjdXIg\naW4gdGhlIHByb3BlcnR5IG9mIHRoZSBpdGVtIHRoYXQgaXMgc3BlY2lmaWVk\nIGJ5IHRoYXQgcnVsZS4gVGhlIGBQcm9wZXJ0eU5hbWVgIHNpbXBsZSB0eXBl\nIGRlZmluZXMgdGhlIHN1cHBvcnRlZCBwcm9wZXJ0aWVzLnx8Rm9yIGV4YW1w\nbGUsIGNvbnNpZGVyIGFuIGFkZC1pbiBtYW5pZmVzdCBoYXMgdGhlIGZvbGxv\nd2luZyBgUnVsZWAgZWxlbWVudDp8fDxSdWxlIHhzaTp0eXBlPSJSdWxlQ29s\nbGVjdGlvbiIgTW9kZT0iQW5kIj58PFJ1bGUgeHNpOnR5cGU9Ikl0ZW1JcyIg\nRm9ybVR5cGU9IlJlYWQiIEl0ZW1UeXBlPSJNZXNzYWdlIiAvPnw8UnVsZSB4\nc2k6dHlwZT0iUnVsZUNvbGxlY3Rpb24iIE1vZGU9Ik9yIj58PFJ1bGUgeHNp\nOnR5cGU9Ikl0ZW1IYXNSZWd1bGFyRXhwcmVzc2lvbk1hdGNoIiBSZWdFeE5h\nbWU9ImZydWl0cyIgUmVnRXhWYWx1ZT0iYXBwbGV8YmFuYW5hfGNvY29udXQi\nIFByb3BlcnR5TmFtZT0iQm9keUFzUGxhaW50ZXh0IiBJZ25vcmVDYXNlPSJ0\ncnVlIiAvPnw8UnVsZSB4c2k6dHlwZT0iSXRlbUhhc1JlZ3VsYXJFeHByZXNz\naW9uTWF0Y2giIFJlZ0V4TmFtZT0idmVnZ2llcyIgUmVnRXhWYWx1ZT0idG9t\nYXRvfG9uaW9ufHNwaW5hY2h8YnJvY2NvbGkiIFByb3BlcnR5TmFtZT0iQm9k\neUFzUGxhaW50ZXh0IiBJZ25vcmVDYXNlPSJ0cnVlIiAvPnw8L1J1bGU+fDwv\nUnVsZT58fFRoZSBvYmplY3QgcmV0dXJuZWQgZnJvbSBgZ2V0UmVnRXhNYXRj\naGVzYCB3b3VsZCBoYXZlIHR3byBwcm9wZXJ0aWVzOiBgZnJ1aXRzYCBhbmQg\nYHZlZ2dpZXNgLnx8e3wnZnJ1aXRzJzogWydhcHBsZScsJ2JhbmFuYScsJ0Jh\nbmFuYScsJ2NvY29udXQnXSx8J3ZlZ2dpZXMnOiBbJ3RvbWF0bycsJ29uaW9u\nJywnc3BpbmFjaCcsJ2Jyb2Njb2xpJ118fXx8SWYgeW91IHNwZWNpZnkgYW4g\nYEl0ZW1IYXNSZWd1bGFyRXhwcmVzc2lvbk1hdGNoYCBydWxlIG9uIHRoZSBi\nb2R5IHByb3BlcnR5IG9mIGFuIGl0ZW0sIHRoZSByZWd1bGFyIGV4cHJlc3Np\nb24gc2hvdWxkIGZ1cnRoZXIgZmlsdGVyIHRoZSBib2R5IGFuZCBzaG91bGQg\nbm90IGF0dGVtcHQgdG8gcmV0dXJuIHRoZSBlbnRpcmUgYm9keSBvZiB0aGUg\naXRlbS4gVXNpbmcgYSByZWd1bGFyIGV4cHJlc3Npb24gc3VjaCBhcyBgLipg\nIHRvIG9idGFpbiB0aGUgZW50aXJlIGJvZHkgb2YgYW4gaXRlbSBkb2VzIG5v\ndCBhbHdheXMgcmV0dXJuIHRoZSBleHBlY3RlZCByZXN1bHRzLiBJbnN0ZWFk\nLCB1c2UgdGhlIFtCb2R5LmdldEFzeW5jXXtAbGlua2NvZGUgQm9keSNnZXRB\nc3luY30gbWV0aG9kIHRvIHJldHJpZXZlIHRoZSBlbnRpcmUgYm9keS4=\n",
       "modes": [
         "Read"
       ],
-      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xleGFtcGxlfHNob3dzfGhvd3x0b3xh\nY2Nlc3N8dGhlfGFycmF5fG9mfG1hdGNoZXN8Zm9yfHRoZXxyZWd1bGFyfGV4\ncHJlc3Npb258PFJ1bGU+fGVsZW1lbnRzfGBmcnVpdHNgfGFuZHxgdmVnZ2ll\nc2AsfHdoaWNofGFyZXxzcGVjaWZpZWR8aW58dGhlfG1hbmlmZXN0LjwvY2Fw\ndGlvbj58CmBgYGpzfCogdmFyIGFsbE1hdGNoZXMgPSBPZmZpY2UuY29udGV4\ndC5tYWlsYm94Lml0ZW0uZ2V0UmVnRXhNYXRjaGVzKCk7DQp8KiB2YXIgZnJ1\naXRzID0gYWxsTWF0Y2hlcy5mcnVpdHM7DQp8KiB2YXIgdmVnZXMgPSBhbGxN\nYXRjaGVzLnZlZ2dpZXM7DQp8YGBgCg==\n",
+      "codeSnippet": "CmBgYGpzfFRoZSBmb2xsb3dpbmcgZXhhbXBsZSBzaG93cyBob3cgdG8gYWNj\nZXNzIHRoZSBhcnJheSBvZiBtYXRjaGVzIGZvciB0aGUgcmVndWxhciBleHBy\nZXNzaW9uIDxSdWxlPiBlbGVtZW50cyBgZnJ1aXRzYCBhbmQgYHZlZ2dpZXNg\nLCB3aGljaCBhcmUgc3BlY2lmaWVkIGluIHRoZSBtYW5pZmVzdC58dmFyIGFs\nbE1hdGNoZXMgPSBPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0uZ2V0UmVn\nRXhNYXRjaGVzKCk7fHZhciBmcnVpdHMgPSBhbGxNYXRjaGVzLmZydWl0czt8\ndmFyIHZlZ2VzID0gYWxsTWF0Y2hlcy52ZWdnaWVzO3xgYGAK\n",
       "parameters": [
 
       ],
@@ -1085,7 +1085,7 @@
     {
       "name": "getRegExMatchesByName",
       "returnType": "",
-      "description": "Returns",
+      "description": "Returns string values in the selected item that match the named regular expression defined in the manifest XML file.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -1093,17 +1093,17 @@
         "1.0"
       ],
       "example": null,
-      "longDesc": "VGhlfGBnZXRSZWdFeE1hdGNoZXNCeU5hbWVgfG1ldGhvZHxyZXR1cm5zfHRo\nZXxzdHJpbmdzfHRoYXR8bWF0Y2h8dGhlfHJlZ3VsYXJ8ZXhwcmVzc2lvbnxk\nZWZpbmVkfGlufHRoZXxgSXRlbUhhc1JlZ3VsYXJFeHByZXNzaW9uTWF0Y2hg\nfHJ1bGV8ZWxlbWVudHxpbnx0aGV8bWFuaWZlc3R8WE1MfGZpbGV8d2l0aHx0\naGV8c3BlY2lmaWVkfGBSZWdFeE5hbWVgfGVsZW1lbnR8dmFsdWUufCoNCnwq\nIElmIHlvdSBzcGVjaWZ5IGFuIGBJdGVtSGFzUmVndWxhckV4cHJlc3Npb25N\nYXRjaGAgcnVsZSBvbiB0aGUgYm9keSBwcm9wZXJ0eSBvZiBhbiBpdGVtLCB0\naGUgcmVndWxhciBleHByZXNzaW9uIHNob3VsZCBmdXJ0aGVyIGZpbHRlciB0\naGUgYm9keSBhbmQgc2hvdWxkIG5vdCBhdHRlbXB0IHRvIHJldHVybiB0aGUg\nZW50aXJlIGJvZHkgb2YgdGhlIGl0ZW0uIFVzaW5nIGEgcmVndWxhciBleHBy\nZXNzaW9uIHN1Y2ggYXMgYC4qYCB0byBvYnRhaW4gdGhlIGVudGlyZSBib2R5\nIG9mIGFuIGl0ZW0gZG9lcyBub3QgYWx3YXlzIHJldHVybiB0aGUgZXhwZWN0\nZWQgcmVzdWx0cy4NCg==\n",
+      "longDesc": "VGhlIGBnZXRSZWdFeE1hdGNoZXNCeU5hbWVgIG1ldGhvZCByZXR1cm5zIHRo\nZSBzdHJpbmdzIHRoYXQgbWF0Y2ggdGhlIHJlZ3VsYXIgZXhwcmVzc2lvbiBk\nZWZpbmVkIGluIHRoZSBgSXRlbUhhc1JlZ3VsYXJFeHByZXNzaW9uTWF0Y2hg\nIHJ1bGUgZWxlbWVudCBpbiB0aGUgbWFuaWZlc3QgWE1MIGZpbGUgd2l0aCB0\naGUgc3BlY2lmaWVkIGBSZWdFeE5hbWVgIGVsZW1lbnQgdmFsdWUufHxJZiB5\nb3Ugc3BlY2lmeSBhbiBgSXRlbUhhc1JlZ3VsYXJFeHByZXNzaW9uTWF0Y2hg\nIHJ1bGUgb24gdGhlIGJvZHkgcHJvcGVydHkgb2YgYW4gaXRlbSwgdGhlIHJl\nZ3VsYXIgZXhwcmVzc2lvbiBzaG91bGQgZnVydGhlciBmaWx0ZXIgdGhlIGJv\nZHkgYW5kIHNob3VsZCBub3QgYXR0ZW1wdCB0byByZXR1cm4gdGhlIGVudGly\nZSBib2R5IG9mIHRoZSBpdGVtLiBVc2luZyBhIHJlZ3VsYXIgZXhwcmVzc2lv\nbiBzdWNoIGFzIGAuKmAgdG8gb2J0YWluIHRoZSBlbnRpcmUgYm9keSBvZiBh\nbiBpdGVtIGRvZXMgbm90IGFsd2F5cyByZXR1cm4gdGhlIGV4cGVjdGVkIHJl\nc3VsdHMu\n",
       "modes": [
         "Read"
       ],
-      "codeSnippet": "dmFyfGZydWl0c3w9fE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5nZXRS\nZWdFeE1hdGNoZXNCeU5hbWUoImZydWl0cyIpO3wKYGBganN8KiB2YXIgdmVn\nZ2llcyA9IE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5nZXRSZWdFeE1h\ndGNoZXNCeU5hbWUoInZlZ2dpZXMiKTsNCnxgYGAK\n",
+      "codeSnippet": "dmFyIGZydWl0cyA9IE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5nZXRS\nZWdFeE1hdGNoZXNCeU5hbWUoImZydWl0cyIpO3wKYGBganN8dmFyIHZlZ2dp\nZXMgPSBPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0uZ2V0UmVnRXhNYXRj\naGVzQnlOYW1lKCJ2ZWdnaWVzIik7fGBgYAo=\n",
       "parameters": [
         {
           "name": "name",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "The name of the `ItemHasRegularExpressionMatch` rule element that defines the filter to match.",
           "isRequired": false,
           "enumName": null
         }
@@ -1113,7 +1113,7 @@
     {
       "name": "removeAttachmentAsync",
       "returnType": "",
-      "description": "Removes",
+      "description": "Removes an attachment from a message or appointment.",
       "syntax": "",
       "signature": "",
       "restfulName": null,
@@ -1121,41 +1121,41 @@
         "1.1"
       ],
       "example": null,
-      "longDesc": "VGhlfGByZW1vdmVBdHRhY2htZW50QXN5bmNgfG1ldGhvZHxyZW1vdmVzfHRo\nZXxhdHRhY2htZW50fHdpdGh8dGhlfHNwZWNpZmllZHxpZGVudGlmaWVyfGZy\nb218dGhlfGl0ZW0ufEFzfGF8YmVzdHxwcmFjdGljZSx8eW91fHNob3VsZHx1\nc2V8dGhlfGF0dGFjaG1lbnR8aWRlbnRpZmllcnx0b3xyZW1vdmV8YW58YXR0\nYWNobWVudHxvbmx5fGlmfHRoZXxzYW1lfG1haWx8YXBwfGhhc3xhZGRlZHx0\naGF0fGF0dGFjaG1lbnR8aW58dGhlfHNhbWV8c2Vzc2lvbi58SW58T3V0bG9v\na3xXZWJ8QXBwfGFuZHxPV0F8Zm9yfERldmljZXMsfHRoZXxhdHRhY2htZW50\nfGlkZW50aWZpZXJ8aXN8dmFsaWR8b25seXx3aXRoaW58dGhlfHNhbWV8c2Vz\nc2lvbi58QXxzZXNzaW9ufGlzfG92ZXJ8d2hlbnx0aGV8dXNlcnxjbG9zZXN8\ndGhlfGFwcCx8b3J8aWZ8dGhlfHVzZXJ8c3RhcnRzfGNvbXBvc2luZ3xpbnxh\nbnxpbmxpbmV8Zm9ybXxhbmR8c3Vic2VxdWVudGx5fHBvcHN8b3V0fHRoZXxp\nbmxpbmV8Zm9ybXx0b3xjb250aW51ZXxpbnxhfHNlcGFyYXRlfHdpbmRvdy4=\n",
+      "longDesc": "fHwgRXJyb3IgY29kZSB8IERlc2NyaXB0aW9uIHx8fCAtIHwgLSB8fHwgYElu\ndmFsaWRBdHRhY2htZW50SWRgIHwgVGhlIGF0dGFjaG1lbnQgaWRlbnRpZmll\nciBkb2VzIG5vdCBleGlzdC4gfHxUaGUgYHJlbW92ZUF0dGFjaG1lbnRBc3lu\nY2AgbWV0aG9kIHJlbW92ZXMgdGhlIGF0dGFjaG1lbnQgd2l0aCB0aGUgc3Bl\nY2lmaWVkIGlkZW50aWZpZXIgZnJvbSB0aGUgaXRlbS4gQXMgYSBiZXN0IHBy\nYWN0aWNlLCB5b3Ugc2hvdWxkIHVzZSB0aGUgYXR0YWNobWVudCBpZGVudGlm\naWVyIHRvIHJlbW92ZSBhbiBhdHRhY2htZW50IG9ubHkgaWYgdGhlIHNhbWUg\nbWFpbCBhcHAgaGFzIGFkZGVkIHRoYXQgYXR0YWNobWVudCBpbiB0aGUgc2Ft\nZSBzZXNzaW9uLiBJbiBPdXRsb29rIFdlYiBBcHAgYW5kIE9XQSBmb3IgRGV2\naWNlcywgdGhlIGF0dGFjaG1lbnQgaWRlbnRpZmllciBpcyB2YWxpZCBvbmx5\nIHdpdGhpbiB0aGUgc2FtZSBzZXNzaW9uLiBBIHNlc3Npb24gaXMgb3ZlciB3\naGVuIHRoZSB1c2VyIGNsb3NlcyB0aGUgYXBwLCBvciBpZiB0aGUgdXNlciBz\ndGFydHMgY29tcG9zaW5nIGluIGFuIGlubGluZSBmb3JtIGFuZCBzdWJzZXF1\nZW50bHkgcG9wcyBvdXQgdGhlIGlubGluZSBmb3JtIHRvIGNvbnRpbnVlIGlu\nIGEgc2VwYXJhdGUgd2luZG93LnxPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0\nZW0ucmVtb3ZlQXR0YWNobWVudEFzeW5jKHwnMCcsfHsgYXN5bmNDb250ZXh0\nIDogbnVsbCB9LHxmdW5jdGlvbiAoYXN5bmNSZXN1bHQpfHt8Y29uc29sZS5s\nb2coYXN5bmNSZXN1bHQuc3RhdHVzKTt8fXwpOw==\n",
       "modes": [
         "Compose"
       ],
-      "codeSnippet": "PGNhcHRpb24+VGhlfGZvbGxvd2luZ3xjb2RlfHJlbW92ZXN8YW58YXR0YWNo\nbWVudHx3aXRofGFufGlkZW50aWZpZXJ8b2Z8JzAnLjwvY2FwdGlvbj58CmBg\nYGpzfCogT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLnJlbW92ZUF0dGFj\naG1lbnRBc3luYygNCnwqICAgJzAnLA0KfCogICB7IGFzeW5jQ29udGV4dCA6\nIG51bGwgfSwNCnwqICAgZnVuY3Rpb24gKGFzeW5jUmVzdWx0KQ0KfCogICB7\nDQp8KiAgICAgY29uc29sZS5sb2coYXN5bmNSZXN1bHQuc3RhdHVzKTsNCnwq\nICAgfQ0KfCogKTsNCnxgYGAK\n",
+      "codeSnippet": "CmBgYGpzfFRoZSBmb2xsb3dpbmcgY29kZSByZW1vdmVzIGFuIGF0dGFjaG1l\nbnQgd2l0aCBhbiBpZGVudGlmaWVyIG9mICcwJy58T2ZmaWNlLmNvbnRleHQu\nbWFpbGJveC5pdGVtLnJlbW92ZUF0dGFjaG1lbnRBc3luYyh8JzAnLHx7IGFz\neW5jQ29udGV4dCA6IG51bGwgfSx8ZnVuY3Rpb24gKGFzeW5jUmVzdWx0KXx7\nfGNvbnNvbGUubG9nKGFzeW5jUmVzdWx0LnN0YXR1cyk7fH18KTt8YGBgCg==\n",
       "parameters": [
         {
           "name": "attachmentId",
-          "dataType": "{String}",
+          "dataType": "String",
           "isCollection": false,
-          "description": "{String}",
+          "description": "The identifier of the attachment to remove. The maximum length of the string is 100 characters.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[options.asyncContext]",
-          "dataType": "{Object}",
+          "dataType": "Object",
           "isCollection": false,
-          "description": "{Object}",
+          "description": "Developers can provide any object they wish to access in the callback method.",
           "isRequired": false,
           "enumName": null
         },
         {
           "name": "[callback]",
-          "dataType": "{function}",
+          "dataType": "function",
           "isCollection": false,
-          "description": "{function}",
+          "description": "If removing the attachment fails, the `asyncResult.error` property will contain an error code with the reason for the failure.",
           "isRequired": false,
           "enumName": null
         }
