@@ -32,8 +32,11 @@ var subject = item.subject;
 }
 ```
 **Supports mode:** Read Compose
+
 **Minimum requirement ser version:** 1.0
+
 **Minimum permission level:** Restricted
+
 ## Properties
 
 | Property	   | Type	|Description
@@ -92,7 +95,7 @@ None
 ## Method Details
 
 
-### 
+### addFileAttachmentAsync
 Adds a file to a message or appointment as an attachment.
 
 #### Syntax
@@ -112,7 +115,7 @@ Adds a file to a message or appointment as an attachment.
 #### Returns
 [](.md)
 
-### 
+### addItemAttachmentAsync
 Adds an Exchange item, such as a message, as an attachment to the message or appointment.
 
 #### Syntax
@@ -132,7 +135,7 @@ Adds an Exchange item, such as a message, as an attachment to the message or app
 #### Returns
 [](.md)
 
-### 
+### close
 Closes the current item that is being composed.
 
 #### Syntax
@@ -147,7 +150,7 @@ Closes the current item that is being composed.
 #### Returns
 [](.md)
 
-### 
+### displayReplyAllForm
 Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.
 
 #### Syntax
@@ -170,7 +173,7 @@ Displays a reply form that includes the sender and all recipients of the selecte
 #### Returns
 [](.md)
 
-### 
+### displayReplyForm
 Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.
 
 #### Syntax
@@ -187,7 +190,7 @@ Displays a reply form that includes only the sender of the selected message or t
 #### Returns
 [](.md)
 
-### 
+### getEntities
 
 
 #### Syntax
@@ -202,7 +205,7 @@ Displays a reply form that includes only the sender of the selected message or t
 #### Returns
 [Entities](entities.md)
 
-### 
+### getEntitiesByType
 Gets an array of all the entities of the specified entity type found in the selected item.
 
 #### Syntax
@@ -218,7 +221,7 @@ Gets an array of all the entities of the specified entity type found in the sele
 #### Returns
 [Array<(String|Contact|MeetingSuggestion|PhoneNumber|TaskSuggestion)>](array<(string|contact|meetingsuggestion|phonenumber|tasksuggestion)>.md)
 
-### 
+### getFilteredEntitiesByName
 Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.
 
 #### Syntax
@@ -234,7 +237,7 @@ Returns well-known entities in the selected item that pass the named filter defi
 #### Returns
 [Array<(String|Contact|MeetingSuggestion|PhoneNumber|TaskSuggestion)>](array<(string|contact|meetingsuggestion|phonenumber|tasksuggestion)>.md)
 
-### 
+### getRegExMatches
 Returns string values in the selected item that match the regular expressions defined in the manifest XML file.
 
 #### Syntax
@@ -249,7 +252,7 @@ Returns string values in the selected item that match the regular expressions de
 #### Returns
 [Object](object.md)
 
-### 
+### getRegExMatchesByName
 Returns string values in the selected item that match the named regular expression defined in the manifest XML file.
 
 #### Syntax
@@ -265,7 +268,7 @@ Returns string values in the selected item that match the named regular expressi
 #### Returns
 [String[]](string[].md)
 
-### 
+### getSelectedDataAsync
 Asynchronously returns selected data from the subject or body of a message.
 
 #### Syntax
@@ -284,7 +287,7 @@ Asynchronously returns selected data from the subject or body of a message.
 #### Returns
 [String](string.md)
 
-### 
+### loadCustomPropertiesAsync
 Asynchronously loads custom properties for this add-in on the selected item.
 
 #### Syntax
@@ -301,7 +304,7 @@ Asynchronously loads custom properties for this add-in on the selected item.
 #### Returns
 [](.md)
 
-### 
+### removeAttachmentAsync
 Removes an attachment from a message or appointment.
 
 #### Syntax
@@ -320,7 +323,7 @@ Removes an attachment from a message or appointment.
 #### Returns
 [](.md)
 
-### 
+### saveAsync
 Asynchronously saves an item.
 
 #### Syntax
@@ -338,7 +341,7 @@ Asynchronously saves an item.
 #### Returns
 [](.md)
 
-### 
+### setSelectedDataAsync
 Asynchronously inserts data into the body or subject of a message.
 
 #### Syntax

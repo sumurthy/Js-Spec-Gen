@@ -128,7 +128,7 @@ module SpecMaker
 	# Write methods details and parameters to the final array.	
 	def self.push_method_details (method = {}, examples = [])
 
-		@mdlines.push NEWLINE + HEADER3 + method[:signature] + NEWLINE	
+		@mdlines.push NEWLINE + HEADER3 + method[:name] + NEWLINE	
 		@mdlines.push method[:description] + TWONEWLINES	
 		@mdlines.push HEADER4 + "Syntax" + NEWLINE + '```js' + NEWLINE
 		@mdlines.push method[:syntax] + NEWLINE + '```' + TWONEWLINES
@@ -273,9 +273,9 @@ module SpecMaker
 
 		@mdlines.push decode(@jsonHash[:longDesc]).join("\n")
 
-		@mdlines.push "**Supports mode:** " + @jsonHash[:modes].join(' ') + NEWLINE
-		@mdlines.push "**Minimum requirement ser version:** " + @jsonHash[:reqSet].join(' ') + NEWLINE
-		@mdlines.push "**Minimum permission level:** " + @jsonHash[:minPermission] + NEWLINE
+		@mdlines.push "**Supports mode:** " + @jsonHash[:modes].join(' ') + TWONEWLINES
+		@mdlines.push "**Minimum requirement ser version:** " + @jsonHash[:reqSet].join(' ') + TWONEWLINES
+		@mdlines.push "**Minimum permission level:** " + @jsonHash[:minPermission] + TWONEWLINES
 
 
 		isRelation, isProperty, isMethod = false, false, false 
