@@ -504,19 +504,3 @@ end
 #
 #
 #####
-
-
-
-
-    #             if method_copy[:parameters].length > 0
-    #             	prev_param_name = method_copy[:parameters][-1][:name].to_s
-	   #              puts "previous param name #{prev_param_name} == #{param_copy[:name].split('.')[0]}"
-	   #              if (prev_param_name.length > 0) && (prev_param_name == param_copy[:name].split('.')[0..-2].join('.'))
-	   #              	puts "#****attaching, #{method_copy[:name]}, #{prev_param_name} , #{param_copy[:name]}"
-				# 		method_copy[:parameters][-1][:subParms].push param_copy                	
-				# 	else
-				# 		method_copy[:parameters].push param_copy                	
-				# 	end
-				# else
-				# 	method_copy[:parameters].push param_copy                	
-				# end
