@@ -6,6 +6,7 @@ require 'pathname'
 require 'logger'
 require 'json'
 require 'FileUtils'
+require 'base64'
 
 module SpecMaker
 
@@ -40,6 +41,11 @@ module SpecMaker
 	RELATIONSHIP_HEADER = "| Relationship | Type	|Description|" + NEWLINE
 	METHOD_HEADER = "| Method		   | Return Type	|Description|" + NEWLINE
 	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
+
+	def self.decode(desc="")
+		puts Base64.decode64(desc).split("|")
+		return Base64.decode64(desc).split('|')
+	end	
 
 	# Log file
 	LOG_FOLDER = 'logs'
@@ -111,17 +117,13 @@ module SpecMaker
 	def self.push_method (method = {})
 
 		# If the type is of	an object, then provide markdown link.
-		if SIMPLETYPES.include? method[:returnType]
-			dataTypePlusLink = method[:returnType]
-		else			
-			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
-		end
+		dataTypePlusLink = method[:returnType]
 		# Add anchor links to method. 
 		str = method[:signature].strip
 		replacements = [ [" ", "-"], ["[", ""], ["]", ""],["(", ""], [")", ""], [",", ""], [":", ""] ]				
 		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
 		methodPlusLink = "[" + method[:signature].strip + "](#" + str.downcase + ")"
-		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE) + NEWLINE
+		@mdlines.push (PIPE + method[:name] + PIPE + method[:returnType] + PIPE + method[:description] + PIPE) + NEWLINE
 	end
 
 	# Write methods details and parameters to the final array.	
@@ -267,8 +269,15 @@ module SpecMaker
 
 		header_name = @jsonHash[:isCollection] ? "List #{@jsonHash[:collectionOf]}" : "Get #{@jsonHash[:name]}"
 		@mdlines.push HEADER1 + @jsonHash[:name] + HEADERQUALIFIER + TWONEWLINES
-		@mdlines.push  APPLIESTO + TWONEWLINES
+		#@mdlines.push  APPLIESTO + TWONEWLINES
 		@mdlines.push @jsonHash[:description] + TWONEWLINES
+
+		@mdlines.push decode(@jsonHash[:longDesc]).join("\n")
+
+		@mdlines.push "**Supports mode:** " + @jsonHash[:modes].join(' ') + NEWLINE
+		@mdlines.push "**Minimum requirement ser version:** " + @jsonHash[:reqSet].join(' ') + NEWLINE
+		@mdlines.push "**Minimum permission level:** " + @jsonHash[:minPermission] + NEWLINE
+
 
 		isRelation, isProperty, isMethod = false, false, false 
 

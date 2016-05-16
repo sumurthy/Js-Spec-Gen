@@ -361,6 +361,7 @@ module SpecMaker
 			if key == EXAMPLE_FLAG 
 				in_example = true
 				eg_arr = []
+				eg_arr.push "##### Example \n"
 				in_desc = false
 				if rest_text.include? '<caption>'
 					rest_text.gsub!('<caption>','')
@@ -377,17 +378,18 @@ module SpecMaker
 			if key == READMODE_FLAG 
 				read_mode, in_xmode = true, true
 				# Add to xmode array if there is any comment for compose, read modes.
-				xmode_arr.push '##### Read mode' + NEWLINE
-				xmode_arr.push clean_desc rest_text if n > 2
+				if n > 2
+					xmode_arr.push ("##### Read mode \n" + clean_desc(rest_text)) 
+				end
 				next
 			end
 
 			if key == COMPOSEMODE_FLAG 
 				compose_mode, in_xmode = true, true
 				# Add to xmode array if there is any comment for compose, read modes.
-				xmode_arr.push '##### Compose mode' + NEWLINE
-
-				xmode_arr.push clean_desc rest_text if n > 2
+				if n > 2
+					xmode_arr.push ("##### Compose mode \n" + clean_desc(rest_text))
+				end
 				next
 			end
 			if key.to_s.length > 0 && key.start_with?('@')

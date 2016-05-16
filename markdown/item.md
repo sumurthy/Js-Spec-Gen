@@ -1,10 +1,50 @@
 # item Object (JavaScript API for Outlook)
 
-_Applies to: Outlook Online_
-_Note: This API is in preview_
-
 Provides methods and properties for accessing a message or appointment in an Outlook add-in.
 
+The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType]{@link Office.context.mailbox.item#itemType} property.
+// The initialize function is required for all apps.
+Office.initialize = function () {
+// Checks for the DOM to load using the jQuery ready function.
+$(document).ready(function () {
+// After the DOM is loaded, app-specific code can run.
+var item = Office.context.mailbox.item;
+var subject = item.subject;
+// Continue with processing the subject of the current item,
+// which can be a message or appointment.
+});
+}
+// The initialize function is required for all apps.
+Office.initialize = function () {
+// Checks for the DOM to load using the jQuery ready function.
+$(document).ready(function () {
+// After the DOM is loaded, app-specific code can run.
+var item = Office.context.mailbox.item;
+var subject = item.subject;
+// Continue with processing the subject of the current item,
+// which can be a message or appointment.
+});
+}
+##### Example 
+
+
+```js
+The following JavaScript code example shows how to access the `subject` property of the current item in Outlook.
+// The initialize function is required for all apps.
+Office.initialize = function () {
+// Checks for the DOM to load using the jQuery ready function.
+$(document).ready(function () {
+// After the DOM is loaded, app-specific code can run.
+var item = Office.context.mailbox.item;
+var subject = item.subject;
+// Continue with processing the subject of the current item,
+// which can be a message or appointment.
+});
+}
+```
+**Supports mode:** Read Compose
+**Minimum requirement ser version:** 1.0
+**Minimum permission level:** Restricted
 ## Properties
 
 | Property	   | Type	|Description
@@ -44,21 +84,21 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[](#)|[](.md)|Adds a file to a message or appointment as an attachment.|
-|[](#)|[](.md)|Adds an Exchange item, such as a message, as an attachment to the message or appointment.|
-|[](#)|[](.md)|Closes the current item that is being composed.|
-|[](#)|[](.md)|Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.|
-|[](#)|[](.md)|Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.|
-|[](#)|[Entities](entities.md)||
-|[](#)|[Array<(String|Contact|MeetingSuggestion|PhoneNumber|TaskSuggestion)>](array<(string|contact|meetingsuggestion|phonenumber|tasksuggestion)>.md)|Gets an array of all the entities of the specified entity type found in the selected item.|
-|[](#)|[Array<(String|Contact|MeetingSuggestion|PhoneNumber|TaskSuggestion)>](array<(string|contact|meetingsuggestion|phonenumber|tasksuggestion)>.md)|Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.|
-|[](#)|[Object](object.md)|Returns string values in the selected item that match the regular expressions defined in the manifest XML file.|
-|[](#)|[String[]](string[].md)|Returns string values in the selected item that match the named regular expression defined in the manifest XML file.|
-|[](#)|[String](string.md)|Asynchronously returns selected data from the subject or body of a message.|
-|[](#)|[](.md)|Asynchronously loads custom properties for this add-in on the selected item.|
-|[](#)|[](.md)|Removes an attachment from a message or appointment.|
-|[](#)|[](.md)|Asynchronously saves an item.|
-|[](#)|[](.md)|Asynchronously inserts data into the body or subject of a message.|
+|addFileAttachmentAsync||Adds a file to a message or appointment as an attachment.|
+|addItemAttachmentAsync||Adds an Exchange item, such as a message, as an attachment to the message or appointment.|
+|close||Closes the current item that is being composed.|
+|displayReplyAllForm||Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.|
+|displayReplyForm||Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.|
+|getEntities|Entities||
+|getEntitiesByType|Array<(String|Contact|MeetingSuggestion|PhoneNumber|TaskSuggestion)>|Gets an array of all the entities of the specified entity type found in the selected item.|
+|getFilteredEntitiesByName|Array<(String|Contact|MeetingSuggestion|PhoneNumber|TaskSuggestion)>|Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.|
+|getRegExMatches|Object|Returns string values in the selected item that match the regular expressions defined in the manifest XML file.|
+|getRegExMatchesByName|String[]|Returns string values in the selected item that match the named regular expression defined in the manifest XML file.|
+|getSelectedDataAsync|String|Asynchronously returns selected data from the subject or body of a message.|
+|loadCustomPropertiesAsync||Asynchronously loads custom properties for this add-in on the selected item.|
+|removeAttachmentAsync||Removes an attachment from a message or appointment.|
+|saveAsync||Asynchronously saves an item.|
+|setSelectedDataAsync||Asynchronously inserts data into the body or subject of a message.|
 
 ## Method Details
 
