@@ -62,7 +62,7 @@ Method = Struct.new(:name, :returnType, :description, :syntax, :signature, :rest
 Property = Struct.new(:name, :dataType, :description, :isReadOnly, :enumNameJs, :isCollection, :isRelationship, :reqSet, :isKey, :notes)
 ParamStr = Struct.new(:name, :dataType, :isCollection, :description, :isRequired, :enumNameJs, :notes)
 
-SIMPLETYPES = %w[int string object object[][] object[] double bool number void]
+SIMPLETYPES = %w[int string object object[][] object[] double bool float number void]
 
 def csarray_write (line=nil) 
 	@csarray_out.push line

@@ -33,12 +33,36 @@
     {
       "name": "paragraphs",
       "dataType": "ParagraphCollection",
-      "description": "A collection containing the paragraphs in this list.",
+      "description": "Gets paragraphs in the list.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": true,
       "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "levelTypes",
+      "dataType": "ListLevelType",
+      "description": "Gets all 9 level types in the list. Each type can be 'Bullet', 'Number' or 'Picture'.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "WordApiDesktop, 1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "levelExistences",
+      "dataType": "bool",
+      "description": "Checks whether each of the 9 levels exists in the list. A true value indicates the level exists, which means there is at least one list item at that level.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "WordApiDesktop, 1.3",
       "isKey": null,
       "notes": null
     }
@@ -74,6 +98,347 @@
         }
       ],
       "reqSet": "1.3"
+    },
+    {
+      "name": "getLevelParagraphs",
+      "returnType": "ParagraphCollection",
+      "description": "Gets the paragraphs that occur at a specified level in the list.",
+      "syntax": "listObject.getLevelParagraphs(level);",
+      "signature": "getLevelParagraphs(level: number)",
+      "restfulName": "LevelParagraphs",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "level",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The level in the list.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "setLevelBullet",
+      "returnType": "void",
+      "description": "Sets the bullet format at the specified level in the list. If the bullet is 'Custom', the charCode is required.",
+      "syntax": "listObject.setLevelBullet(level, listBullet, charCode, fontName);",
+      "signature": "setLevelBullet(level: number, listBullet: ListBullet, charCode: number, fontName: string)",
+      "restfulName": "setLevelBullet",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "level",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The level in the list.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "listBullet",
+          "dataType": "ListBullet",
+          "isCollection": false,
+          "description": "Required. The bullet.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "charCode",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Optional. The bullet character's code value. Used only if the bullet is 'Custom'.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "fontName",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Optional. The bullet's font name. Used only if the bullet is 'Custom'.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "WordApiDesktop, 1.3"
+    },
+    {
+      "name": "setLevelNumbering",
+      "returnType": "void",
+      "description": "Sets the numbering format at the specified level in the list.",
+      "syntax": "listObject.setLevelNumbering(level, listNumbering, formatString);",
+      "signature": "setLevelNumbering(level: number, listNumbering: ListNumbering, formatString: object[])",
+      "restfulName": "setLevelNumbering",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "level",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The level in the list.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "listNumbering",
+          "dataType": "ListNumbering",
+          "isCollection": false,
+          "description": "Required. The ordinal format.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "formatString",
+          "dataType": "object[]",
+          "isCollection": true,
+          "description": "Optional. The numbering string format defined as an array of strings and/or integers. Each integer is a level of number type that is higher than or equal to this level. For example, an array of [\"(\", level - 1, \".\", level, \")\"] can define the format of \"(2.c)\", where 2 is the parent's item number and c is this level's item number.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "WordApiDesktop, 1.3"
+    },
+    {
+      "name": "getLevelString",
+      "returnType": "string",
+      "description": "Gets the bullet, number or picture at the specified level as a string.",
+      "syntax": "listObject.getLevelString(level);",
+      "signature": "getLevelString(level: number)",
+      "restfulName": "LevelString",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "level",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The level in the list.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "WordApiDesktop, 1.3"
+    },
+    {
+      "name": "setLevelPicture",
+      "returnType": "void",
+      "description": "Sets the picture at the specified level in the list.",
+      "syntax": "listObject.setLevelPicture(level, base64EncodedImage);",
+      "signature": "setLevelPicture(level: number, base64EncodedImage: string)",
+      "restfulName": "setLevelPicture",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "level",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The level in the list.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "base64EncodedImage",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Optional. The base64 encoded image to be set. If not given, the default picture is set.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "WordApiDesktop, 1.3"
+    },
+    {
+      "name": "getLevelPicture",
+      "returnType": "string",
+      "description": "Gets the base64 encoded string representation of the picture at the specified level in the list.",
+      "syntax": "listObject.getLevelPicture(level);",
+      "signature": "getLevelPicture(level: number)",
+      "restfulName": "LevelPicture",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "level",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The level in the list.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "WordApiDesktop, 1.3"
+    },
+    {
+      "name": "getLevelFont",
+      "returnType": "Font",
+      "description": "Gets the font of the bullet, number or picture at the specified level in the list.",
+      "syntax": "listObject.getLevelFont(level);",
+      "signature": "getLevelFont(level: number)",
+      "restfulName": "LevelFont",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "level",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The level in the list.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "WordApiDesktop, 1.3"
+    },
+    {
+      "name": "resetLevelFont",
+      "returnType": "void",
+      "description": "Resets the font of the bullet, number or picture at the specified level in the list.",
+      "syntax": "listObject.resetLevelFont(level, resetFontName);",
+      "signature": "resetLevelFont(level: number, resetFontName: bool)",
+      "restfulName": "resetLevelFont",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "level",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The level in the list.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "resetFontName",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Indicates whether to reset the font name. The default is false, which indicates the font name is kept unchanged.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "WordApiDesktop, 1.3"
+    },
+    {
+      "name": "setLevelAlignment",
+      "returnType": "void",
+      "description": "Sets the alignment of the bullet, number or picture at the specified level in the list.",
+      "syntax": "listObject.setLevelAlignment(level, alignment);",
+      "signature": "setLevelAlignment(level: number, alignment: string)",
+      "restfulName": "setLevelAlignment",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "level",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The level in the list.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "alignment",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The level alignment that can be 'left', 'centered' or 'right'.",
+          "isRequired": true,
+          "enumNameJs": "Word.Alignment",
+          "notes": null
+        }
+      ],
+      "reqSet": "WordApiDesktop, 1.3"
+    },
+    {
+      "name": "setLevelIndents",
+      "returnType": "void",
+      "description": "Sets the two indents of the specified level in the list.",
+      "syntax": "listObject.setLevelIndents(level, textIndent, textIndent);",
+      "signature": "setLevelIndents(level: number, textIndent: float, textIndent: float)",
+      "restfulName": "setLevelIndents",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "level",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The level in the list.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "textIndent",
+          "dataType": "float",
+          "isCollection": false,
+          "description": "Required. The text indent in points. It is the same as paragraph left indent.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "textIndent",
+          "dataType": "float",
+          "isCollection": false,
+          "description": "Required. The relative indent, in points, of the bullet, number or picture. It is the same as paragraph first line indent.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "WordApiDesktop, 1.3"
+    },
+    {
+      "name": "setLevelStartingNumber",
+      "returnType": "void",
+      "description": "Sets the starting number at the specified level in the list. Default value is 1.",
+      "syntax": "listObject.setLevelStartingNumber(level, startingNumber);",
+      "signature": "setLevelStartingNumber(level: number, startingNumber: number)",
+      "restfulName": "setLevelStartingNumber",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "level",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The level in the list.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "startingNumber",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The number to start with.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "WordApiDesktop, 1.3"
     },
     {
       "name": "load",

@@ -49,7 +49,7 @@
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null

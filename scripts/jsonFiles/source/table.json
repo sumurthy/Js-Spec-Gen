@@ -217,7 +217,7 @@
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -229,7 +229,7 @@
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -241,7 +241,7 @@
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -253,7 +253,7 @@
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -261,7 +261,7 @@
     {
       "name": "verticalAlignment",
       "dataType": "string",
-      "description": "Gets and sets the vertical alignment of every cell in the table.",
+      "description": "Gets and sets the vertical alignment of every cell in the table. The value can be 'top', 'center' or 'bottom'.",
       "isReadOnly": false,
       "enumNameJs": "Word.VerticalAlignment",
       "isCollection": false,
@@ -301,7 +301,7 @@
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -313,7 +313,7 @@
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null

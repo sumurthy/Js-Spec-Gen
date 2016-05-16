@@ -37,7 +37,7 @@ module SpecMaker
 
 	RELATIONSHIP_HEADER = "| Relationship | Type	|Description| Req. Set|" + NEWLINE
 	METHOD_HEADER = "| Method		   | Return Type	|Description| Req. Set|" + NEWLINE
-	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
+	SIMPLETYPES = %w[int string object object[][] double bool float number void object[]]
 
 	# Log file
 	LOG_FOLDER = '../../logs'
@@ -103,6 +103,7 @@ module SpecMaker
 			finalDesc = finalDesc + appendEnum
 		end
 		# If the type is of	an object, then provide markdown link.
+		
 		if SIMPLETYPES.include? prop[:dataType] 	
 			dataTypePlusLink = prop[:dataType] 	
 			dataTypePlusLinkFull = prop[:dataType] 	
@@ -121,14 +122,14 @@ module SpecMaker
 			if prop[:isRelationship]
 				whatType = 'Relationship'
 			end
-			#@changes.push  (PIPE + "[#{@resource}](#{@resource.downcase}.md)" + PIPE +  whatType + PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + "#{prop[:reqSet]}" + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=#{@resource}-#{prop[:name]})" + PIPE +  NEWLINE)
+			@changes.push  (PIPE + "[#{@resource}](#{@resource.downcase}.md)"  + PIPE + "_#{whatType}_ > " + prop[:name] + PIPE + finalDesc + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=#{@resource}-#{prop[:name]})" + PIPE +  NEWLINE)
 
-			@changes.push "**Resource name:** [#{@resource}](resources/#{@resource.downcase}.md) </br>" + NEWLINE
-			@changes.push "**What's new:** #{whatType} **#{prop[:name]}** of type **#{dataTypePlusLinkFull}** </br>" + NEWLINE
-			@changes.push "**Description:** #{finalDesc} </br>" + NEWLINE
-			@changes.push "**Available in requirement set:** #{prop[:reqSet]} </br>" + NEWLINE
-			@changes.push "_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{prop[:name]})_ </br>" + NEWLINE 
-			@changes.push NEWLINE
+			# @changes.push "**Resource name:** [#{@resource}](resources/#{@resource.downcase}.md) </br>" + NEWLINE
+			# @changes.push "**What's new:** #{whatType} **#{prop[:name]}** of type **#{dataTypePlusLinkFull}** </br>" + NEWLINE
+			# @changes.push "**Description:** #{finalDesc} </br>" + NEWLINE
+			# @changes.push "**Available in requirement set:** #{prop[:reqSet]} </br>" + NEWLINE
+			# @changes.push "_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{prop[:name]})_ </br>" + NEWLINE 
+			# @changes.push NEWLINE
 
 
 		end		
@@ -156,14 +157,14 @@ module SpecMaker
 		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "#{method[:reqSet]}") + PIPE + NEWLINE
 
 		if !(PROD_REQUIREMENTS.include? method[:reqSet])
-			#@changes.push (PIPE + "[#{@resource}](#{@resource.downcase}.md)" + PIPE + "Method" + PIPE + methodPlusLinkFull + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "#{method[:reqSet]}" + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})" + PIPE + NEWLINE)
+			@changes.push (PIPE + "[#{@resource}](#{@resource.downcase}.md)" + PIPE + "_Method_ > " + methodPlusLinkFull  + PIPE + method[:description]  + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})" + PIPE + NEWLINE)
 
-			@changes.push "**Resource name:** [#{@resource}](resources/#{@resource.downcase}.md) </br>" + NEWLINE
-			@changes.push "**What's new:** Method **#{methodPlusLinkFull}** returning **#{dataTypePlusLinkFull}** </br>" + NEWLINE
-			@changes.push "**Description:** #{method[:description]} </br>" + NEWLINE
-			@changes.push "**Available in requirement set:** #{method[:reqSet]} </br>" + NEWLINE
-			@changes.push "_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})_ </br>" + NEWLINE 
-			@changes.push NEWLINE
+			# @changes.push "**Resource name:** [#{@resource}](resources/#{@resource.downcase}.md) </br>" + NEWLINE
+			# @changes.push "**What's new:** Method **#{methodPlusLinkFull}** returning **#{dataTypePlusLinkFull}** </br>" + NEWLINE
+			# @changes.push "**Description:** #{method[:description]} </br>" + NEWLINE
+			# @changes.push "**Available in requirement set:** #{method[:reqSet]} </br>" + NEWLINE
+			# @changes.push "_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})_ </br>" + NEWLINE 
+			# @changes.push NEWLINE
 
 		end
 	end
