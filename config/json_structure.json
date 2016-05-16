@@ -1,21 +1,25 @@
 {
 	"object" : { 
 	"name": "",
+	"namespace": "",
 	"description": "",
 	"longDesc": null,
 	"collectionOf": null,
+	"isCollection": false,
 	"reqSet" : [],
 	"modes": [],
 	"minPermission": null,
 	"properties": [],
-	"methods": []
+	"methods": [],
+	"enums": []	
  	},
 	"property": {
 	  "name": null,
 	  "description": "",
 	  "isKey": false,
-	  "dataType": null,
+	  "dataType": [],
 	  "isReadOnly": false,
+	  "isNullable:" : false,
 	  "enumName": null,
 	  "isCollection": false,
 	  "isRelationship": false,
@@ -26,26 +30,40 @@
 	"method":
 	{
       "name": "",
-      "returnType": "",
+      "returnType": null,
+      "returnNullable" : false,
       "description": "",
       "syntax": "",
       "signature": "",
       "restfulName": "",
       "reqSet": [],
-      "restfulName": null,
-      "example": null,
       "longDesc": null,
       "modes": [],
       "codeSnippet": null,
 	  "parameters" : []
 	},
- "parameter":	
+    "parameter":	
   	{
       "name": "",
       "dataType": "",
       "isCollection": false,
       "description": "",
-      "isRequired": false,
-      "enumName": null
+      "isRequired": true,
+      "enumName": null,
+      "subParms": []
+	},
+	 "enums": {
+	  "name": null,
+	  "description": "",
+	  "dataType": [],
+	  "reqSet": [],
+	  "modes": [],
+	  "items": []
+	 },
+	"enumInstance" : {
+		"name": "",
+		"value": "",
+		"description": ""
 	}
+
 }

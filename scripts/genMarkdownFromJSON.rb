@@ -20,7 +20,8 @@ module SpecMaker
 	SECOND_LINE = 1
 	NAMESPACE = 'Office.context.'
 	OBJ_FLAGS = %w[@interface @namespace @typedef]
-	IGNORE_KEYS = %w[@memberof @alias]
+	IGNORE_KEYS = %w[@alias]
+	COLLECTION_FLAGS = %w[Array array []]
 	ITEM_TYPES = %w[appointment.js message.js]
 	REQ_FLAG = '@since'
 	PERMISSION_FLAG = '@permission'
@@ -30,11 +31,14 @@ module SpecMaker
 	DESCRIPTION_FLAG = '@desc'
 	METHOD_FLAG = '@method'
 	PROPERTY_FLAG = '@member'
+	ENUM_FLAG = '@enum'
 	EXAMPLE_FLAG = '@example'
 	MEMBEROF_FLAG = '@memberof'
 	CALLBACK_FLAG = '@standardcallback'
 	PARAM_FLAG = '@param'
-	RETURNTYPE = '@return'
+	PARAM2_LEVEL_FLAG = '@param2'
+	PARAM3_LEVEL_FLAG = '@param3'
+	RETURNTYPE_FLAG = '@return'
 	STD_TEXT = "When the method completes, the function passed in the callback parameter is called with a single parameter, asyncResult, which is an AsyncResult object. For more information, see Using asynchronous methods. "
 	@json_object = nil
 	SIMPLETYPES = %w[int string object object[][] object[] Date double float bool number void]
@@ -60,10 +64,22 @@ module SpecMaker
 	def self.encode(arr=[])
 		return Base64.encode64(arr.join('|'))
 	end
+    
+    def self.is_optional(text="")
+    	
+		if text.include?('{')
+		    text = text.scan(/{(.*?)}/)[0].join
+            (text[0] == '?') ? (return true) : (return false)
+		else
+			return false
+		end    
+    end 
 
 	def self.get_type(text="")
 		if text.include?('{')
-			return text.scan(/{(.*?)}/)[0].join
+		    text = text.scan(/{(.*?)}/)[0].join
+            text[0] = '' if text[0] == '?'
+            return text
 		else
 			return nil
 		end
@@ -71,6 +87,10 @@ module SpecMaker
 
 	def self.get_name(name="")
 
+		if name[0] == '['
+			name[0] = ''
+			name[-1] = ''
+		end
 		return name
 	end
 
@@ -83,12 +103,17 @@ module SpecMaker
 	# Conversion to specification 
 	def self.convert_to_json (js_lines=[])
 		in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false, false
-		s_callback_tag, is_blank, in_xmode = false, false, false
+		s_callback_tag, is_blank, in_xmode, return_nullable, in_enum  = false, false, false, false, false
 		key, comment, val, req_ver, permission, example_caption, after_comment_text, return_type = '', '', '', '', '', '', '', ''
 		summary = ""
+		member_of = nil
 		eg_arr = []
 		desc_arr = []				
-		prop_copy, method_copy, param_copy = nil, nil, nil
+		xmode_arr = []				
+		prop_copy, method_copy, param_copy, enums_copy, enum_copy = nil, nil, nil, nil, nil
+		enum_string = ""
+
+
 		js_lines.each_with_index do |line, i|
 			# Skip first line
 			if i == FIRST_LINE
@@ -110,9 +135,14 @@ module SpecMaker
 			datatype = line_parts[3..-1].join(' ') if n > 2
 			rest_text = line_parts[2..-1].join(' ') if n > 1
 			param_desc = line_parts[4..-1].join(' ') if n > 3
+			if (i+1) < js_lines.length
+				next_line = js_lines[i+1]
+			else
+				next_line = 'EOF'
+			end
 
 			next if n == 0
-			next if IGNORE_KEYS.include? key  
+			next if IGNORE_KEYS.include?(key)
 			is_blank = (comment == '*') ? true : false
 
 			## 
@@ -120,19 +150,20 @@ module SpecMaker
 			###
 
 			if comment == SEGMENT_END	
-
-			
-				eg_arr.push "```\n" if in_example == true
+				eg_arr.push "```\n" if in_example
+				# Object 
 				if in_object
 					@json_object[:description] =  summary
-					@json_object[:longDesc] = encode (desc_arr + eg_arr)
+					@json_object[:longDesc] = encode (desc_arr + xmode_arr + eg_arr)
 					@json_object[:reqSet].push req_ver
 					(@json_object[:modes].push "Read") if read_mode
 					(@json_object[:modes].push "Compose") if compose_mode
+					@json_object[:namespace] = member_of
 					@json_object[:minPermission] = permission
 					in_object = false
 				end
 
+				# Method
 				if in_method
 					method_copy[:description] = summary 
 					method_copy[:longDesc] = encode desc_arr
@@ -141,13 +172,22 @@ module SpecMaker
 					(method_copy[:modes].push "Compose") if compose_mode
 					method_copy[:codeSnippet] = encode eg_arr
 					method_copy[:minPermission] = permission
+					method_copy[:returnType] = return_type
+					
+					if COLLECTION_FLAGS.any? { |word| method_copy[:returnType].include?(word) }
+						method_copy[:isCollection] = true 
+					end
+					method_copy[:returnNullable] = return_nullable
 					@json_object[:methods].push method_copy
 					in_method = false
 				end
 
+				# Property
 				if in_prop
-
 					prop_copy[:description] = summary 
+					if s_callback_tag
+						prop_copy[:description] = STD_TEXT + prop_copy[:description]
+					end
 					prop_copy[:longDesc] = encode desc_arr
 					prop_copy[:reqSet].push req_ver
 					(prop_copy[:modes].push "Read") if read_mode
@@ -157,12 +197,60 @@ module SpecMaker
 					in_prop = false
 				end
 
+				# Enum 
+				if in_enum
+					enums_copy[:description] = summary 
+					enums_copy[:reqSet].push req_ver
+					(enums_copy[:modes].push "Read") if read_mode
+					(enums_copy[:modes].push "Compose") if compose_mode
+					###
+					# Since Ennums are defined outside of comments, we need a way to extract the enum + its comments
+					# Read ahead until all enum lines read
+					##
+					if next_line.include?('var') && next_line.include?('=') && next_line.include?('{')
+						k = i + 1
+						loop do 				
+						  # Until the Enum definition ends, concat and eat new lines. 
+						  # Replace /** with <start> and */ with <end> to help extract the comment.
+						  enum_string = enum_string + js_lines[k].chomp.gsub('/**','<start>').gsub('*/','<end>')
+						  break if ((k + 1) == js_lines.length || js_lines[k].strip == '};')
+						  k = k + 1
+						end								
+						###
+						# First get {<value>} (value between {})
+						# Then split based on <start> and <end> values; discard first [0] value which one has blanks
+						# Then get descriptions in one array (evens)
+						# Then get key: values in another array (odds)
+						# Yeah, this is crazy! 
+						##
+						e_arr = (get_type enum_string).split(/<start>(.*?)<end>/)[1..-1].map {|i| i.strip.gsub('"','').gsub(',','')}
+						e_desc_arr = e_arr.select.with_index { |_, i| i.even? }
+						e_value_arr = e_arr.select.with_index { |_, i| i.odd? }
+
+						e_value_arr.each_with_index do |e_kv, j| 
+							enum_copy = deep_copy(@jstruct[:enumInstance])
+							enum_copy[:name] = e_kv.split(':')[0]
+							enum_copy[:value] = e_kv.split(':')[1].strip
+							enum_copy[:description] = e_desc_arr[j]
+							
+							enums_copy[:items].push enum_copy
+						end
+					end
+
+					@json_object[:enums].push enums_copy
+					in_enum = false
+				end
+
 				# End of segment resets
-				in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false, false
-				s_callback_tag = false				
-				key, comment, val, req_ver, permission, example_caption, after_comment_text, return_type = '', '', '', '', '', '', '', ''
+				in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false
+                s_callback_tag, is_blank, in_xmode, return_nullable, in_enum  = false, false, false, false, false
+                key, comment, val, req_ver, permission, example_caption, after_comment_text, return_type = '', '', '', '', '', '', '', ''
 				summary = ""
-				eg_arr, desc_arr = [], []
+				member_of = nil
+				eg_arr, desc_arr, xmode_arr = [], [], []
+				prop_copy, method_copy, param_copy, enums_copy, enum_copy = nil, nil, nil, nil, nil
+				enum_string = ""
+				
 				# End of segment
 				next
 			end
@@ -173,6 +261,9 @@ module SpecMaker
 					in_object = true 
 					# Get the name without the namespace
 					@json_object[:name] = val.split('.')[-1]
+					if val.split('.').length > 0
+						member_of = val
+					end
 				end
 				next
 			end
@@ -191,7 +282,41 @@ module SpecMaker
 				param_copy[:name] = get_name val
 				param_copy[:description] = clean_desc param_desc
 				param_copy[:dataType] = get_type rest_text
-				method_copy[:parameters].push param_copy
+				if (is_optional rest_text)
+                	param_copy[:isRequired] = false 
+                end
+				method_copy[:parameters].push param_copy                					
+				next
+			end
+
+
+			# 2nd LEVEL Parameter of method
+			if key == PARAM2_LEVEL_FLAG
+				param_copy = deep_copy(@jstruct[:parameter])
+				param_copy[:name] = get_name val
+				param_copy[:description] = clean_desc param_desc
+				param_copy[:dataType] = get_type rest_text
+				if (is_optional rest_text)
+                	param_copy[:isRequired] = false 
+                end
+                # Group generic {object} details into subParams so we can make it part of the parameter's description 
+                # Check if the previous param is same as current param name. If so, attach it to subParams	
+				method_copy[:parameters][-1][:subParms].push param_copy                	
+				next
+			end
+
+			# 3RD LEVEL Parameter of method
+			if key == PARAM3_LEVEL_FLAG
+				param_copy = deep_copy(@jstruct[:parameter])
+				param_copy[:name] = get_name val
+				param_copy[:description] = clean_desc param_desc
+				param_copy[:dataType] = get_type rest_text
+				if (is_optional rest_text)
+                	param_copy[:isRequired] = false 
+                end
+                # Group generic {object} details into subParams so we can make it part of the parameter's description 
+                # Check if the previous param is same as current param name. If so, attach it to subParams	
+				method_copy[:parameters][-1][:subParms][-1][:subParms].push param_copy                	
 				next
 			end
 
@@ -199,12 +324,17 @@ module SpecMaker
 			if key == PROPERTY_FLAG
 				prop_copy = deep_copy(@jstruct[:property])
 				prop_copy[:name] = val
-				prop_copy[:dataType] = get_type rest_text
-				if s_callback_tag
-					prop_copy[:description] = STD_TEXT + prop_copy[:description]
-				end
-				# handle data type
+				prop_copy[:dataType] = (get_type rest_text).split('|').map {|s| s.strip}
+             	prop_copy[:isNullable] = is_optional rest_text
 				in_prop = true 
+				next
+			end
+
+			if key == ENUM_FLAG
+				enums_copy = deep_copy(@jstruct[:enums])
+				enums_copy[:name] = @json_object[:namespace] + '.' + val
+				enums_copy[:dataType] = 'string'
+				in_enum = true
 				next
 			end
 
@@ -218,6 +348,10 @@ module SpecMaker
 			if key == CALLBACK_FLAG
 				s_callback_tag = true
 				next
+			end
+
+			if key == MEMBEROF_FLAG
+				member_of = val.strip
 			end
 
 			if key == EXAMPLE_FLAG 
@@ -238,15 +372,18 @@ module SpecMaker
 
 			if key == READMODE_FLAG 
 				read_mode, in_xmode = true, true
-				# Add to desc array if there is any comment for compose, read modes.
-				desc_arr.push clean_desc rest_text if n > 2
+				# Add to xmode array if there is any comment for compose, read modes.
+				xmode_arr.push '##### Read mode' + NEWLINE
+				xmode_arr.push clean_desc rest_text if n > 2
 				next
 			end
 
 			if key == COMPOSEMODE_FLAG 
 				compose_mode, in_xmode = true, true
-				# Add to desc array if there is any comment for compose, read modes.
-				desc_arr.push clean_desc rest_text if n > 2
+				# Add to xmode array if there is any comment for compose, read modes.
+				xmode_arr.push '##### Compose mode' + NEWLINE
+
+				xmode_arr.push clean_desc rest_text if n > 2
 				next
 			end
 			if key.to_s.length > 0 && key.start_with?('@')
@@ -256,8 +393,15 @@ module SpecMaker
 				desc_arr.push clean_desc after_comment_text
 			end
 
-			if key == RETURNTYPE
+			if in_xmode
+				xmode_arr.push clean_desc after_comment_text
+			end
+
+			if key == RETURNTYPE_FLAG
 				return_type = get_type rest_text
+				if (rest_text.to_s.length > 2) &&  (rest_text[0] == '?' || rest_text[1] == '?')
+					return_nullable = true
+				end
 				next
 			end
 
@@ -286,6 +430,7 @@ module SpecMaker
 		next if ITEM_TYPES.include? item
 
 		next if item != 'item.js'
+
 		puts "** Processing #{item}"
 		fullpath = JS_SOURCE_FILES + '/' + item.downcase
 
@@ -336,8 +481,10 @@ end
  # *       var subject = asyncResult.value;
  # *     }
  # *
-# 5. 
-# 6. 
+# 5. JJ change Array.<( to Array<(
+# 6. Inconsistent casing all over the place
+# 7. displayReplyForm -- has optional parameters.. This is really hard to read.	
+# 8. 
 #
 #
 #
@@ -354,3 +501,15 @@ end
 
 
 
+    #             if method_copy[:parameters].length > 0
+    #             	prev_param_name = method_copy[:parameters][-1][:name].to_s
+	   #              puts "previous param name #{prev_param_name} == #{param_copy[:name].split('.')[0]}"
+	   #              if (prev_param_name.length > 0) && (prev_param_name == param_copy[:name].split('.')[0..-2].join('.'))
+	   #              	puts "#****attaching, #{method_copy[:name]}, #{prev_param_name} , #{param_copy[:name]}"
+				# 		method_copy[:parameters][-1][:subParms].push param_copy                	
+				# 	else
+				# 		method_copy[:parameters].push param_copy                	
+				# 	end
+				# else
+				# 	method_copy[:parameters].push param_copy                	
+				# end
