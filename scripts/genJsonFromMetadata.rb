@@ -155,6 +155,8 @@ module SpecMaker
 				if in_object
 					@json_object[:description] =  summary
 					@json_object[:longDesc] = encode (desc_arr + xmode_arr + eg_arr)
+
+					puts desc_arr
 					@json_object[:reqSet].push req_ver
 					(@json_object[:modes].push "Read") if read_mode
 					(@json_object[:modes].push "Compose") if compose_mode
@@ -329,7 +331,6 @@ module SpecMaker
 					prop_copy[:isCollection] = true 
 				end					
              	prop_copy[:isNullable] = is_optional rest_text
-             	puts prop_copy[:isNullable]
 				in_prop = true 
 				next
 			end
@@ -395,9 +396,9 @@ module SpecMaker
 			if key.to_s.length > 0 && key.start_with?('@')
 				in_xmode = false 
 			end
-			if in_desc or in_xmode
-				desc_arr.push clean_desc after_comment_text
-			end
+			# if in_desc or in_xmode
+			# 	desc_arr.push clean_desc after_comment_text
+			# end
 
 			if in_xmode
 				xmode_arr.push clean_desc after_comment_text

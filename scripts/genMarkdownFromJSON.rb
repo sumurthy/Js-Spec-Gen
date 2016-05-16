@@ -43,7 +43,6 @@ module SpecMaker
 	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
 
 	def self.decode(desc="")
-		puts Base64.decode64(desc).split("|")
 		return Base64.decode64(desc).split('|')
 	end	
 

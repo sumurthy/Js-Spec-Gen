@@ -14,17 +14,6 @@ var subject = item.subject;
 // which can be a message or appointment.
 });
 }
-// The initialize function is required for all apps.
-Office.initialize = function () {
-// Checks for the DOM to load using the jQuery ready function.
-$(document).ready(function () {
-// After the DOM is loaded, app-specific code can run.
-var item = Office.context.mailbox.item;
-var subject = item.subject;
-// Continue with processing the subject of the current item,
-// which can be a message or appointment.
-});
-}
 ##### Example 
 
 
