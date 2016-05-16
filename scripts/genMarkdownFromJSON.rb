@@ -6,510 +6,378 @@ require 'pathname'
 require 'logger'
 require 'json'
 require 'FileUtils'
-require 'base64'
-
 
 module SpecMaker
 
 	# Initialize 
 	NEWLINE = "\n"
-	JS_SOURCE_FILES = "../../data/outlook"		
-	JSON_OUTPUT_FOLDER = "jsonFiles/source/"
-	SEGMENT_END = '*/'
-	FIRST_LINE = 0
-	SECOND_LINE = 1
-	NAMESPACE = 'Office.context.'
-	OBJ_FLAGS = %w[@interface @namespace @typedef]
-	IGNORE_KEYS = %w[@alias]
-	COLLECTION_FLAGS = %w[Array array []]
-	ITEM_TYPES = %w[appointment.js message.js]
-	REQ_FLAG = '@since'
-	PERMISSION_FLAG = '@permission'
-	READMODE_FLAG = '@readmode'
-	COMPOSEMODE_FLAG = '@composemode'
-	SUMMARY_FLAG = '@summary'
-	DESCRIPTION_FLAG = '@desc'
-	METHOD_FLAG = '@method'
-	PROPERTY_FLAG = '@member'
-	ENUM_FLAG = '@enum'
-	EXAMPLE_FLAG = '@example'
-	MEMBEROF_FLAG = '@memberof'
-	CALLBACK_FLAG = '@standardcallback'
-	PARAM_FLAG = '@param'
-	PARAM2_LEVEL_FLAG = '@param2'
-	PARAM3_LEVEL_FLAG = '@param3'
-	RETURNTYPE_FLAG = '@return'
-	STD_TEXT = "When the method completes, the function passed in the callback parameter is called with a single parameter, asyncResult, which is an AsyncResult object. For more information, see Using asynchronous methods. "
-	@json_object = nil
-	SIMPLETYPES = %w[int string object object[][] object[] Date double float bool number void]
+	JSON_SOURCE_FOLDER = "jsonFiles/source"		
+	ENUMS = 'jsonFiles/settings/enums.json'
+	MARKDOWN_OUTPUT_FOLDER = "../markdown/"
+	FileUtils.rm Dir.glob(MARKDOWN_OUTPUT_FOLDER + '/*')
 
-	# Read config and json_struct files 
+	EXAMPLES_FOLDER = "../api-examples-to-merge/"
+	HEADERQUALIFIER = " Object (JavaScript API for Outlook)"
+	APPLIESTO = "_Applies to: Outlook Online_" + NEWLINE + "_Note: This API is in preview_"
+	HEADER1 = '# '
+	HEADER2 = '## '
+	HEADER3 = '### '
+	HEADER4 = '#### '
+	HEADER5 = '##### '
+	GETTERSETTERLINK = '_See property access [examples.](#property-access-examples)_'
+	GETTERSETTER = 'Property access examples'
 
-	CONFIG = "../config/config.json"
-	@config = JSON.parse(File.read(CONFIG, :encoding => 'UTF-8'), {:symbolize_names => true})
+	BACKTOMETHOD = '[Back](#methods)'
 
-	JSTRUCT = "../config/json_structure.json"
-	@jstruct = JSON.parse(File.read(JSTRUCT, :encoding => 'UTF-8'), {:symbolize_names => true})
+	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
+	PIPE = '|'
+	TWONEWLINES = "\n\n"
+	PROPERTY_HEADER = "| Property	   | Type	|Description" + NEWLINE
+	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|" + NEWLINE
+	PARAM_HEADER = "| Parameter	   | Type	|Description|" + NEWLINE
+	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|" + NEWLINE
 
-	puts "....Starting run for the app #{@config[:app]}"
-	puts
+	RELATIONSHIP_HEADER = "| Relationship | Type	|Description|" + NEWLINE
+	METHOD_HEADER = "| Method		   | Return Type	|Description|" + NEWLINE
+	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
 
-	#
+	# Log file
+	LOG_FOLDER = 'logs'
+	Dir.mkdir(LOG_FOLDER) unless File.exists?(LOG_FOLDER)
 
+	if File.exists?("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
+		File.delete("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
+	end
+	@logger = Logger.new("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
+	@logger.level = Logger::DEBUG
+	# End log file
 
-	def self.deep_copy(o)
-		Marshal.load(Marshal.dump(o))
+	# Create markdown folder if it doesn't already exist
+	Dir.mkdir(MARKDOWN_OUTPUT_FOLDER) unless File.exists?(MARKDOWN_OUTPUT_FOLDER)	
+
+	if !File.exists?(JSON_SOURCE_FOLDER)
+		@logger.fatal("JSON Resource File folder does not exist. Aborting")
+		abort("*** FATAL ERROR *** Input JSON resource folder: #{JSON_SOURCE_FOLDER} doesn't exist. Correct and re-run." )
 	end
 
-	def self.encode(arr=[])
-		return Base64.encode64(arr.join('|'))
-	end
-    
-    def self.is_optional(text="")
-    	
-		if text.include?('{')
-		    text = text.scan(/{(.*?)}/)[0].join
-            (text[0] == '?') ? (return true) : (return false)
-		else
-			return false
-		end    
-    end 
+	if !File.exists?(EXAMPLES_FOLDER)
+		puts "API examples folder does not exist"
+	end		
 
-	def self.get_type(text="")
-		if text.include?('{')
-		    text = text.scan(/{(.*?)}/)[0].join
-            text[0] = '' if text[0] == '?'
-            return text
+	## 
+	# Load up all the known existing enums.
+	###
+	@enumHash = {}
+	begin
+		@enumHash = JSON.parse File.read(ENUMS)
+	rescue => err
+		@logger.warn("JSON Enumeration input file doesn't exist: #{@current_object}")
+	end
+
+	@mdlines = []
+	@resource = ''
+	@gsType = ''
+
+	def self.uncapitalize (str="")
+		if str.length > 0
+			str[0, 1].downcase + str[1..-1]
 		else
-			return nil
+			str
 		end
 	end
 
-	def self.get_name(name="")
-
-		if name[0] == '['
-			name[0] = ''
-			name[-1] = ''
-		end
-		return name
-	end
-
-	def self.clean_desc(desc="")
+	# Write properties and methods to the final array.
+	def self.push_property  (prop = {})
+		# Add read-only and possible Enum values from the list. 
 		
-		return desc
+		finalDesc = prop[:isReadOnly] ? prop[:description]  + ' Read-only.' : prop[:description]
+		appendEnum = ''
+		if (prop[:enumNameJs] != nil) && (@enumHash.has_key? prop[:enumNameJs])
+			if @enumHash[prop[:enumNameJs]].values[0] == "" || @enumHash[prop[:enumNameJs]].values[0] == nil
+				appendEnum = " Possible values are: " + @enumHash[prop[:enumNameJs]].keys.join(', ') + "."
+			else
+				appendEnum = " Possible values are: " + @enumHash[prop[:enumNameJs]].map{|k,v| "`#{k}` #{v}"}.join(',') 
+			end
+			finalDesc = finalDesc + appendEnum
+		end
+		# If the type is of	an object, then provide markdown link.
+
+		dataTypePlusLink = prop[:dataType].join(' ')
+					
+		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE) + NEWLINE
 	end
 
+	# Write methods to the final array.
+	def self.push_method (method = {})
+
+		# If the type is of	an object, then provide markdown link.
+		if SIMPLETYPES.include? method[:returnType]
+			dataTypePlusLink = method[:returnType]
+		else			
+			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
+		end
+		# Add anchor links to method. 
+		str = method[:signature].strip
+		replacements = [ [" ", "-"], ["[", ""], ["]", ""],["(", ""], [")", ""], [",", ""], [":", ""] ]				
+		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
+		methodPlusLink = "[" + method[:signature].strip + "](#" + str.downcase + ")"
+		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE) + NEWLINE
+	end
+
+	# Write methods details and parameters to the final array.	
+	def self.push_method_details (method = {}, examples = [])
+
+		@mdlines.push NEWLINE + HEADER3 + method[:signature] + NEWLINE	
+		@mdlines.push method[:description] + TWONEWLINES	
+		@mdlines.push HEADER4 + "Syntax" + NEWLINE + '```js' + NEWLINE
+		@mdlines.push method[:syntax] + NEWLINE + '```' + TWONEWLINES
+		@mdlines.push HEADER4 + "Parameters" + NEWLINE
+
+		if method[:parameters] !=nil  			
+
+			@mdlines.push PARAM_HEADER + TABLE_2ND_LINE_PARAM 
+			method[:parameters].each do |param|
+				# Append optional and enum possible values (if applicable).
+				finalPDesc = param[:isRequired] ? param[:description] : 'Optional. ' + param[:description]
+				appendEnum = ''
+				if (param[:enumNameJs] != nil) && (@enumHash.has_key? param[:enumNameJs])
+
+					if @enumHash[param[:enumNameJs]].values[0] == "" || @enumHash[param[:enumNameJs]].values[0] == nil
+						appendEnum = " " + " Possible values are: " + @enumHash[param[:enumNameJs]].keys.join(', ')  
+					else
+						appendEnum = " Possible values are: " + @enumHash[param[:enumNameJs]].map{|k,v| "`#{k}` #{v}"}.join(',')
+					end
+					finalPDesc = finalPDesc + appendEnum
+				end
+				@mdlines.push (PIPE + param[:name] + PIPE + param[:dataType] + PIPE + finalPDesc + PIPE) + NEWLINE	
+			end
+		else
+			@mdlines.push "None"  + NEWLINE
+		end
+
+		@mdlines.push NEWLINE + HEADER4 + "Returns" + NEWLINE
+
+		if SIMPLETYPES.include? method[:returnType]
+			dataTypePlusLink = method[:returnType]
+		else			
+			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
+		end
+		@mdlines.push dataTypePlusLink + NEWLINE
+		
+
+		# loc:100
+		if	@exampleFileFound == true
+			exampleFound	 = false
+			examples.each_with_index do |exampleLine, i|
+				if (exampleLine.chomp.strip.include? method[:name]) && (exampleLine.chomp.strip.include?('###'))
+					exampleFound = true
+				# moving here from loc:100	
+					@mdlines.push NEWLINE + HEADER4 + 'Examples' + NEWLINE
+				# end move
+					next
+				end
+
+				if exampleFound && exampleLine.start_with?('##')
+					break
+				end
+				if exampleFound	 
+					@mdlines.push exampleLine
+				end
+			end
+			# comment below 5 lines to not print empty example block when the example is not found. 
+			# if !exampleFound
+			# 	@mdlines.push "```js" + TWONEWLINES
+			# 	@mdlines.push "```" + NEWLINE
+			# 	@logger.error("....Example not found for method: #{method[:signature]}, #{@resource}  ") 
+			# end
+		end
+		#@mdlines.push NEWLINE + BACKTOMETHOD + TWONEWLINES 
+		
+	end
+
+	# Add getter and setter examples
+	def self.push_getter_setters (examples = [] )
+		getterOrSetterFound	 = false
+
+		examples.each_with_index do |exampleLine, i|
+			if (exampleLine.chomp.strip.downcase.include? "getter") || (exampleLine.chomp.strip.downcase.include? "setter")
+				getterOrSetterFound = true
+					@mdlines.push HEADER3 + GETTERSETTER + NEWLINE 
+				next
+			end
+			if getterOrSetterFound && exampleLine.include?('##')
+				break
+			end
+			if getterOrSetterFound	 
+				@mdlines.push exampleLine
+			end
+		end
+		# if getterOrSetterFound 
+		# 	@mdlines.push BACKTOPROPERTY + NEWLINE
+		# end
+	end
+
+	# Determine the type getter and setter links to be used. 
+	def self.determine_getter_setter_type (examples = [])
+		gsType = 'none'
+		examples.each_with_index do |exampleLine, i|
+			if (exampleLine.chomp.strip.downcase.include? "getter") || (exampleLine.chomp.strip.downcase.include? "setter")
+				if (exampleLine.chomp.strip.downcase.include? "getter") && (exampleLine.chomp.strip.downcase.include? "setter")
+					gsType = 'getterandsetter'
+				elsif (exampleLine.chomp.strip.downcase.include? "getter") 
+					gsType = 'getter'	
+				else
+					gsType = 'setter'
+				end
+			end
+		end
+		gsType
+	end
 
 	# Conversion to specification 
-	def self.convert_to_json (js_lines=[])
-		in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false, false
-		s_callback_tag, is_blank, in_xmode, return_nullable, in_enum  = false, false, false, false, false
-		key, comment, val, req_ver, permission, example_caption, after_comment_text, return_type = '', '', '', '', '', '', '', ''
-		summary = ""
-		member_of = nil
-		eg_arr = []
-		desc_arr = []				
-		xmode_arr = []				
-		prop_copy, method_copy, param_copy, enums_copy, enum_copy = nil, nil, nil, nil, nil
-		enum_string = ""
+	def self.convert_to_spec (item=nil)
+		@mdlines = []
+		@jsonHash = JSON.parse(item, {:symbolize_names => true})
+		# Obtain the resource name. Read the examples file, if it exists. 
+		@resource = uncapitalize(@jsonHash[:name])
+		@log#ger.debug("")	
+		@logger.debug("...............Report for: #{@resource}...........")	
 
+		example_lines = ''
+		@gsType = ''
+		@exampleFileFound = false
+		begin
+			#example_lines = File.readlines(File.join(JSON_EXAMPLE_FOLDER + @resource.downcase + ".md"))
+			example_lines = File.readlines(EXAMPLES_FOLDER + @resource.downcase + ".md")
+			@gsType = determine_getter_setter_type example_lines
+			@exampleFileFound = true
+		rescue => err
+			puts "....Example File does not exist for: #{@resource}"
+		end
 
-		js_lines.each_with_index do |line, i|
-			# Skip first line
-			if i == FIRST_LINE
-				@json_object = deep_copy(@jstruct[:object])
-				next
-			end
+		propreties = @jsonHash[:properties]
+		if propreties 
+			propreties = propreties.sort_by { |v| v[:name] }
+		end
 
-			# Overrides
-			line.gsub!('<code>','`')
-			line.gsub!('</code>','`')
-			#
-			line_parts = line.strip.split(" ")
-			n = line_parts.length
-			comment = line_parts[0]
+		methods = @jsonHash[:methods]
+		if methods 
+			methods = methods.sort_by { |v| v[:name] }
+		end
 
-			after_comment_text = line_parts[1..-1].join(' ') if n > 0
-			key = line_parts[1]
-			val = line_parts[2]
-			datatype = line_parts[3..-1].join(' ') if n > 2
-			rest_text = line_parts[2..-1].join(' ') if n > 1
-			param_desc = line_parts[4..-1].join(' ') if n > 3
-			if (i+1) < js_lines.length
-				next_line = js_lines[i+1]
-			else
-				next_line = 'EOF'
-			end
+		header_name = @jsonHash[:isCollection] ? "List #{@jsonHash[:collectionOf]}" : "Get #{@jsonHash[:name]}"
+		@mdlines.push HEADER1 + @jsonHash[:name] + HEADERQUALIFIER + TWONEWLINES
+		@mdlines.push  APPLIESTO + TWONEWLINES
+		@mdlines.push @jsonHash[:description] + TWONEWLINES
 
-			next if n == 0
-			next if IGNORE_KEYS.include?(key)
-			is_blank = (comment == '*') ? true : false
+		isRelation, isProperty, isMethod = false, false, false 
 
-			## 
-			# End of the segment.
-			###
-
-			if comment == SEGMENT_END	
-				eg_arr.push "```\n" if in_example
-				# Object 
-				if in_object
-					@json_object[:description] =  summary
-					@json_object[:longDesc] = encode (desc_arr + xmode_arr + eg_arr)
-					@json_object[:reqSet].push req_ver
-					(@json_object[:modes].push "Read") if read_mode
-					(@json_object[:modes].push "Compose") if compose_mode
-					@json_object[:namespace] = member_of
-					@json_object[:minPermission] = permission
-					in_object = false
-				end
-
-				# Method
-				if in_method
-					method_copy[:description] = summary 
-					method_copy[:longDesc] = encode desc_arr
-					method_copy[:reqSet].push req_ver
-					(method_copy[:modes].push "Read") if read_mode
-					(method_copy[:modes].push "Compose") if compose_mode
-					method_copy[:codeSnippet] = encode eg_arr
-					method_copy[:minPermission] = permission
-					method_copy[:returnType] = return_type
-					
-					if COLLECTION_FLAGS.any? { |word| method_copy[:returnType].include?(word) }
-						method_copy[:isCollection] = true 
-					end
-					method_copy[:returnNullable] = return_nullable
-					@json_object[:methods].push method_copy
-					in_method = false
-				end
-
-				# Property
-				if in_prop
-					prop_copy[:description] = summary 
-					if s_callback_tag
-						prop_copy[:description] = STD_TEXT + prop_copy[:description]
-					end
-					prop_copy[:longDesc] = encode desc_arr
-					prop_copy[:reqSet].push req_ver
-					(prop_copy[:modes].push "Read") if read_mode
-					(prop_copy[:modes].push "Compose") if compose_mode
-					prop_copy[:minPermission] = permission
-					@json_object[:properties].push prop_copy
-					in_prop = false
-				end
-
-				# Enum 
-				if in_enum
-					enums_copy[:description] = summary 
-					enums_copy[:reqSet].push req_ver
-					(enums_copy[:modes].push "Read") if read_mode
-					(enums_copy[:modes].push "Compose") if compose_mode
-					###
-					# Since Ennums are defined outside of comments, we need a way to extract the enum + its comments
-					# Read ahead until all enum lines read
-					##
-					if next_line.include?('var') && next_line.include?('=') && next_line.include?('{')
-						k = i + 1
-						loop do 				
-						  # Until the Enum definition ends, concat and eat new lines. 
-						  # Replace /** with <start> and */ with <end> to help extract the comment.
-						  enum_string = enum_string + js_lines[k].chomp.gsub('/**','<start>').gsub('*/','<end>')
-						  break if ((k + 1) == js_lines.length || js_lines[k].strip == '};')
-						  k = k + 1
-						end								
-						###
-						# First get {<value>} (value between {})
-						# Then split based on <start> and <end> values; discard first [0] value which one has blanks
-						# Then get descriptions in one array (evens)
-						# Then get key: values in another array (odds)
-						# Yeah, this is crazy! 
-						##
-						e_arr = (get_type enum_string).split(/<start>(.*?)<end>/)[1..-1].map {|i| i.strip.gsub('"','').gsub(',','')}
-						e_desc_arr = e_arr.select.with_index { |_, i| i.even? }
-						e_value_arr = e_arr.select.with_index { |_, i| i.odd? }
-
-						e_value_arr.each_with_index do |e_kv, j| 
-							enum_copy = deep_copy(@jstruct[:enumInstance])
-							enum_copy[:name] = e_kv.split(':')[0]
-							enum_copy[:value] = e_kv.split(':')[1].strip
-							enum_copy[:description] = e_desc_arr[j]
-							
-							enums_copy[:items].push enum_copy
-						end
-					end
-
-					@json_object[:enums].push enums_copy
-					in_enum = false
-				end
-
-				# End of segment resets
-				in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false
-                s_callback_tag, is_blank, in_xmode, return_nullable, in_enum  = false, false, false, false, false
-                key, comment, val, req_ver, permission, example_caption, after_comment_text, return_type = '', '', '', '', '', '', '', ''
-				summary = ""
-				member_of = nil
-				eg_arr, desc_arr, xmode_arr = [], [], []
-				prop_copy, method_copy, param_copy, enums_copy, enum_copy = nil, nil, nil, nil, nil
-				enum_string = ""
+		if propreties != nil
+			propreties.each do |prop|
 				
-				# End of segment
-				next
-			end
-
-			# Check if this is an object/type
-			if i == SECOND_LINE
-				if OBJ_FLAGS.include? key 
-					in_object = true 
-					# Get the name without the namespace
-					@json_object[:name] = val.split('.')[-1]
-					if val.split('.').length > 0
-						member_of = val
-					end
+				if !prop[:isRelationship]
+				   isProperty = true
 				end
-				next
-			end
 
-			# Method 
-			if key == METHOD_FLAG
-				method_copy = deep_copy(@jstruct[:method])
-				method_copy[:name] = val
-				in_method = true
-				next
-			end
-
-			# Parameter of method
-			if key == PARAM_FLAG
-				param_copy = deep_copy(@jstruct[:parameter])
-				param_copy[:name] = get_name val
-				param_copy[:description] = clean_desc param_desc
-				param_copy[:dataType] = get_type rest_text
-				if (is_optional rest_text)
-                	param_copy[:isRequired] = false 
-                end
-				method_copy[:parameters].push param_copy                					
-				next
-			end
-
-
-			# 2nd LEVEL Parameter of method
-			if key == PARAM2_LEVEL_FLAG
-				param_copy = deep_copy(@jstruct[:parameter])
-				param_copy[:name] = get_name val
-				param_copy[:description] = clean_desc param_desc
-				param_copy[:dataType] = get_type rest_text
-				if (is_optional rest_text)
-                	param_copy[:isRequired] = false 
-                end
-                # Group generic {object} details into subParams so we can make it part of the parameter's description 
-                # Check if the previous param is same as current param name. If so, attach it to subParams	
-				method_copy[:parameters][-1][:subParms].push param_copy                	
-				next
-			end
-
-			# 3RD LEVEL Parameter of method
-			if key == PARAM3_LEVEL_FLAG
-				param_copy = deep_copy(@jstruct[:parameter])
-				param_copy[:name] = get_name val
-				param_copy[:description] = clean_desc param_desc
-				param_copy[:dataType] = get_type rest_text
-				if (is_optional rest_text)
-                	param_copy[:isRequired] = false 
-                end
-                # Group generic {object} details into subParams so we can make it part of the parameter's description 
-                # Check if the previous param is same as current param name. If so, attach it to subParams	
-				method_copy[:parameters][-1][:subParms][-1][:subParms].push param_copy                	
-				next
-			end
-
-			# Property 
-			if key == PROPERTY_FLAG
-				prop_copy = deep_copy(@jstruct[:property])
-				prop_copy[:name] = val
-				prop_copy[:dataType] = (get_type rest_text).split('|').map {|s| s.strip}
-             	prop_copy[:isNullable] = is_optional rest_text
-				in_prop = true 
-				next
-			end
-
-			if key == ENUM_FLAG
-				enums_copy = deep_copy(@jstruct[:enums])
-				enums_copy[:name] = @json_object[:namespace] + '.' + val
-				enums_copy[:dataType] = 'string'
-				in_enum = true
-				next
-			end
-
-
-			if key == DESCRIPTION_FLAG
-				in_desc = true
-				desc_arr.push(clean_desc rest_text) # add the description line
-				next
-			end
-
-			if key == CALLBACK_FLAG
-				s_callback_tag = true
-				next
-			end
-
-			if key == MEMBEROF_FLAG
-				member_of = val.strip
-			end
-
-			if key == EXAMPLE_FLAG 
-				in_example = true
-				eg_arr = []
-				in_desc = false
-				if rest_text.include? '<caption>'
-					rest_text.gsub!('<caption>','')
-					rest_text.gsub!('</caption>','')
-					eg_arr.push "\n```js"
-					eg_arr.push rest_text
-				else
-					eg_arr.push rest_text # Caption of example
-					eg_arr.push "\n```js"
+#				puts " #{@resource}..... #{prop[:name]} ..  #{prop["isrelationship"]}... #{prop[:isCollection]} .. #{prop[:description]}"
+				if prop[:isRelationship]			  
+				   isRelation = true
 				end
-				next
 			end
+		end
 
-			if key == READMODE_FLAG 
-				read_mode, in_xmode = true, true
-				# Add to xmode array if there is any comment for compose, read modes.
-				xmode_arr.push '##### Read mode' + NEWLINE
-				xmode_arr.push clean_desc rest_text if n > 2
-				next
-			end
+		if methods != nil
+			isMethod = true
+		end
 
-			if key == COMPOSEMODE_FLAG 
-				compose_mode, in_xmode = true, true
-				# Add to xmode array if there is any comment for compose, read modes.
-				xmode_arr.push '##### Compose mode' + NEWLINE
+		@logger.debug("....Is there: property?: #{isProperty}, relationship?: #{isRelation}, method?: #{isMethod} ..........")	
 
-				xmode_arr.push clean_desc rest_text if n > 2
-				next
-			end
-			if key.to_s.length > 0 && key.start_with?('@')
-				in_xmode = false 
-			end
-			if in_desc or in_xmode
-				desc_arr.push clean_desc after_comment_text
-			end
+		# Add property table. 	
 
-			if in_xmode
-				xmode_arr.push clean_desc after_comment_text
-			end
-
-			if key == RETURNTYPE_FLAG
-				return_type = get_type rest_text
-				if (rest_text.to_s.length > 2) &&  (rest_text[0] == '?' || rest_text[1] == '?')
-					return_nullable = true
+		# Add properties header
+		@mdlines.push HEADER2 + 'Properties' + TWONEWLINES
+		if isProperty
+			# add properties table
+			@mdlines.push PROPERTY_HEADER + TABLE_2ND_LINE 
+			propreties.each do |prop|
+				if !prop[:isRelationship]
+					@logger.debug("....Processing property: #{prop[:name]} ..........")	
+				   push_property prop
 				end
-				next
+			end
+			# Sep-20, Property read-write example addition
+			if @gsType != 'none'
+				@mdlines.push NEWLINE + GETTERSETTERLINK + NEWLINE
 			end
 
-			if in_example
-				eg_arr.push after_comment_text
-				next
-			end
+		else
+			@mdlines.push "None"  + NEWLINE
+		end		
 
-			req_ver = val if key == REQ_FLAG 
-			permission = val if key == PERMISSION_FLAG
-			if key == SUMMARY_FLAG
-				(summary = clean_desc rest_text) 			
+		# Add Relationship table. 
+		@mdlines.push NEWLINE
+		@mdlines.push HEADER2 + 'Relationships' + NEWLINE
+
+
+		if isRelation
+			@mdlines.push RELATIONSHIP_HEADER + TABLE_2ND_LINE 
+			propreties.each do |prop|
+				if prop[:isRelationship]
+					@logger.debug("....Processing relationship: #{prop[:name]} ..........")		
+				   push_property prop
+				end
 			end
+		else
+			@mdlines.push "None"  + TWONEWLINES
+		end		
+
+		# Add method table. 
+		@mdlines.push NEWLINE + HEADER2 + 'Methods' + NEWLINE
+
+		if isMethod
+			@mdlines.push NEWLINE + METHOD_HEADER + TABLE_2ND_LINE 
+			methods.each do |mtd|
+				@logger.debug("....Processing method: #{mtd[:name]} ..........")						
+				push_method mtd
+			end
+		else
+			@mdlines.push "None"  + TWONEWLINES
+		end	
+
+		# Add each API method details.	
+		if isMethod || (@gsType != 'none' && @gsType != '') 
+			@mdlines.push NEWLINE + HEADER2 + 'Method Details' + TWONEWLINES
+		end	
+
+		if isMethod
+			methods.each do |mtd|
+				push_method_details mtd, example_lines
+			end
+			
+		end
+		if @gsType != 'none' && @gsType != '' 
+			push_getter_setters example_lines
+		end
+
+		# Write the output file. 
+		outfile = MARKDOWN_OUTPUT_FOLDER + @resource.downcase + '.md'
+		file=File.new(outfile,'w')
+		@mdlines.each do |line|
+			file.write line
 		end
 	end
 
 	# Main loop. 
 	processed_files = 0
-	lines = []
-	
-	FileUtils.rm Dir.glob(JSON_OUTPUT_FOLDER + '/*')
-
-	Dir.foreach(JS_SOURCE_FILES) do |item|
-		next if item == '.' or item == '..' or item == '.DS_Store'
-		# Skip types
-		next if ITEM_TYPES.include? item
-
-		next if item != 'item.js'
-
-		puts "** Processing #{item}"
-		fullpath = JS_SOURCE_FILES + '/' + item.downcase
+	Dir.foreach(JSON_SOURCE_FOLDER) do |item|
+		next if item == '.' or item == '..'
+		fullpath = JSON_SOURCE_FOLDER + '/' + item.downcase
 
 		if File.file?(fullpath)
-
-			lines = File.readlines(fullpath)
-
-			# Append sub-types of "item" at the end.
-			if item == 'item.js'
-				ITEM_TYPES.each do |subtype|
-					fullpath = JS_SOURCE_FILES + '/' + subtype
-					lines = lines + File.readlines(fullpath)
-				end
-			end
-			# Converty to JSON
-			convert_to_json lines
-
-			# Write JSON Output Files
-
-			File.open("#{JSON_OUTPUT_FOLDER}#{(@json_object[:name]).downcase}.json", "w") do |f|
-				f.write(JSON.pretty_generate @json_object)
-			end
-
-
+			convert_to_spec File.read(fullpath)
 			processed_files = processed_files + 1
 		end
 	end
-
 	puts ""
-	puts "*** OK. Processed #{processed_files} input files. ***"
+	puts "*** OK. Processed #{processed_files} input files. Check #{File.expand_path(LOG_FOLDER)} folder for results. ***"
 end
-
-#####
-# todos
-# 1. Handle @link; [Body.getAsync]{@linkcode Body#getAsync}
-# 2. There is no indicator to arrays -- we should add that? 
-# 3. Objects that have known structure should be of their own type; example event.js > @member source {Object} 
-# 4. Code snippets in the @readmode and @composemode don't have ``` block and there is no way to know that
- # * @readmode The `subject` property returns a string. Use the [`normalizedSubject`]{@link Office.context.mailbox.item#normalizedSubject} property to get the subject minus any leading prefixes such as `RE:` and `FW:`.
- # * 
- # *     var subject = Office.context.mailbox.item.subject;
- # * 
- # * @composemode The `subject` property returns a `Subject` object that provides methods to get and set the subject. 
- # * 
- # *     Office.context.mailbox.item.subject.getAsync(callback);
- # * 
- # *     function callback(asyncResult) {
- # *       var subject = asyncResult.value;
- # *     }
- # *
-# 5. JJ change Array.<( to Array<(
-# 6. Inconsistent casing all over the place
-# 7. displayReplyForm -- has optional parameters.. This is really hard to read.	
-# 8. 
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#####
-
-
-
-
-    #             if method_copy[:parameters].length > 0
-    #             	prev_param_name = method_copy[:parameters][-1][:name].to_s
-	   #              puts "previous param name #{prev_param_name} == #{param_copy[:name].split('.')[0]}"
-	   #              if (prev_param_name.length > 0) && (prev_param_name == param_copy[:name].split('.')[0..-2].join('.'))
-	   #              	puts "#****attaching, #{method_copy[:name]}, #{prev_param_name} , #{param_copy[:name]}"
-				# 		method_copy[:parameters][-1][:subParms].push param_copy                	
-				# 	else
-				# 		method_copy[:parameters].push param_copy                	
-				# 	end
-				# else
-				# 	method_copy[:parameters].push param_copy                	
-				# end
