@@ -1,46 +1,253 @@
 {
-	"OneNote.ParagraphType": {
-	"RichText": "",
-	"Image": "",
-	"Table":"",
-	"InkDrawing": "",
-	"InsertedFile": "",
-	"MediaFile": "",
-	"InkParagraph": "",
-	"Other": ""
-	},
-
-	"OneNote.PageContentType": {
-	"Outline": "",
-	"Image": "",
-	"Ink": "",
-	"InsertedFile": "",
-	"MediaFile": "",
-	"Other": ""
-	},
-
-	"OneNote.Selected": {
-	"NotSelected": "",
-	"PartialSelected": "",
-	"Selected": ""
-	},
-
-	"OneNote.Alignment": {
-	"Unknown": "",
-	"Left": "",
-	"Centered": "",
-	"Right": "",
-	"Justified": ""
-	},
-
-	"OneNote.AppendLocation": {
-	"Begin": "",
-	"End": ""
-	},
-
-	"OneNote.InsertLocation": {
-	"Before": "",
-	"After": ""
-	}
-	
+                "Excel.BindingType": {
+                                "Range": "",
+                                "Table": "",
+                                "Text": ""
+                },
+                "Excel.BorderIndex": {
+                                "EdgeTop": "",
+                                "EdgeBottom": "",
+                                "EdgeLeft": "",
+                                "EdgeRight": "",
+                                "InsideVertical": "",
+                                "InsideHorizontal": "",
+                                "DiagonalDown": "",
+                                "DiagonalUp": ""
+                },
+                "Excel.BorderLineStyle": {
+                                "None": "",
+                                "Continuous": "",
+                                "Dash": "",
+                                "DashDot": "",
+                                "DashDotDot": "",
+                                "Dot": "",
+                                "Double": "",
+                                "SlantDashDot": ""
+                },
+                "Excel.BorderWeight": {
+                                "Hairline": "",
+                                "Thin": "",
+                                "Medium": "",
+                                "Thick": ""
+                },
+                "Excel.CalculationMode": {
+                                "Automatic": "Excel controls recalculation",
+                                "AutomaticExceptTables": "Excel controls recalculation but ignores changes in tables.",
+                                "Manual": "Calculation is done when the user requests it."
+                },
+                "Excel.CalculationType": {
+                                "Recalculate": "Default-option. Performs normal calculation by calculating all the formulas in the workbook",
+                                "Full": "Forces a full calculation of the data",
+                                "FullRebuild": " Forces a full calculation of the data and rebuilds the dependencies."
+                },
+                "Excel.ClearApplyTo": {
+                                "All": "Default-option",
+                                "Formats": "",
+                                "Contents": ""
+                },
+                "Excel.ChartDataLabelPosition": {
+                                "None": "",
+                                "Center": "",
+                                "InsideEnd": "",
+                                "InsideBase": "",
+                                "OutsideEnd": "",
+                                "Left": "",
+                                "Right": "",
+                                "Top": "",
+                                "Bottom": "",
+                                "BestFit": "",
+                                "Callout": ""
+                },
+                "Excel.ChartLegendPosition": {
+                                "Top": "",
+                                "Bottom": "",
+                                "Left": "",
+                                "Right": "",
+                                "Corner": "",
+                                "Custom": ""
+                },
+                "Excel.ChartSeriesBy": {
+                                "Auto": "",
+                                "Columns": "",
+                                "Rows": ""
+                },
+                "Excel.ChartType": {
+                                "ColumnClustered": "",
+                                "ColumnStacked": "",
+                                "ColumnStacked100": "",
+                                "BarClustered": "",
+                                "BarStacked": "",
+                                "BarStacked100": "",
+                                "LineStacked": "",
+                                "LineStacked100": "",
+                                "LineMarkers": "",
+                                "LineMarkersStacked": "",
+                                "LineMarkersStacked100": "",
+                                "PieOfPie": "",
+                                "etc.": ""
+                },
+                "Excel.ChartUnderlineStyle": {
+                                "None": "",
+                                "Single": ""
+                },
+                "Excel.DeleteShiftDirection": {
+                                "Up": "",
+                                "Left": ""
+                },
+                "Excel.HorizontalAlignment": {
+                                "General": "",
+                                "Left": "",
+                                "Center": "",
+                                "Right": "",
+                                "Fill": "",
+                                "Justify": "",
+                                "CenterAcrossSelection": "",
+                                "Distributed": ""
+                },
+                "Excel.InsertShiftDirection": {
+                                "Down": "",
+                                "Right": ""
+                },
+                "Excel.NamedItemType": {
+                                "String": "",
+                                "Integer": "",
+                                "Double": "",
+                                "Boolean": "",
+                                "Range": ""
+                },
+                "Excel.RangeUnderlineStyle": {
+                                "None": "",
+                                "Single": "",
+                                "Double": "",
+                                "SingleAccountant": "",
+                                "DoubleAccountant": ""
+                },
+                "Excel.SheetVisibility": {
+                                "Visible": "",
+                                "Hidden": "",
+                                "VeryHidden": ""
+                },             
+                "Excel.RangeValueType" : {
+                                "Unknown": "",
+                                "Empty": "",
+                                "String": "",
+                                "Integer" : "",
+                                "Double" : "",
+                                "Boolean" : "",
+                                "Error": ""
+                },
+                "Excel.VerticalAlignment": {
+                                "Top": "",
+                                "Center": "",
+                                "Bottom": "",
+                                "Justify": "",
+                                "Distributed": ""
+                },
+                "Excel.DynamicFilterCriteria": {
+                                "Unknown" : "",
+                                "AboveAverage" : "",
+                                "AllDatesInPeriodApril" : "",
+                                "AllDatesInPeriodAugust" : "",
+                                "AllDatesInPeriodDecember" : "",
+                                "AllDatesInPeriodFebruray" : "",
+                                "AllDatesInPeriodJanuary" : "",
+                                "AllDatesInPeriodJuly" : "",
+                                "AllDatesInPeriodJune" : "",
+                                "AllDatesInPeriodMarch" : "",
+                                "AllDatesInPeriodMay" : "",
+                                "AllDatesInPeriodNovember" : "",
+                                "AllDatesInPeriodOctober" : "",
+                                "AllDatesInPeriodQuarter1" : "",
+                                "AllDatesInPeriodQuarter2" : "",
+                                "AllDatesInPeriodQuarter3" : "",
+                                "AllDatesInPeriodQuarter4" : "",
+                                "AllDatesInPeriodSeptember" : "",
+                                "BelowAverage" : "",
+                                "LastMonth" : "",
+                                "LastQuarter" : "",
+                                "LastWeek" : "",
+                                "LastYear" : "",
+                                "NextMonth" : "",
+                                "NextQuarter" : "",
+                                "NextWeek" : "",
+                                "NextYear" : "",
+                                "ThisMonth" : "",
+                                "ThisQuarter" : "",
+                                "ThisWeek" : "",
+                                "ThisYear" : "",
+                                "Today" : "",
+                                "Tomorrow" : "",
+                                "YearToDate" : "",
+                                "Yesterday" : ""
+                },
+                "Excel.FilterDatetimeSpecificity": {
+                                "Year": "",
+                                "Monday": "",
+                                "Day": "",
+                                "Hour": "",
+                                "Minute": "",
+                                "Second": ""
+                },
+                "Excel.FilterOn": {
+                                "BottomItems": "",
+                                "BottomPercent": "",
+                                "CellColor": "",
+                                "Dynamic": "",
+                                "FontColor": "",
+                                "Values": "",
+                                "TopItems": "",
+                                "TopPercent": "",
+                                "Icon": "",
+                                "Custom": ""
+                },
+                "Excel.FilterOn": {
+                                "And": "",
+                                "Or": ""
+                },
+                "Excel.IconSet": {
+                                "Invalid": "",
+                                "ThreeArrows": "",
+                                "ThreeArrowsGray": "",
+                                "ThreeFlags": "",
+                                "ThreeTrafficLights1": "",
+                                "ThreeTrafficLights2": "",
+                                "ThreeSigns": "",
+                                "ThreeSymbols": "",
+                                "ThreeSymbols2": "",
+                                "FourArrows": "",
+                                "FourArrowsGray": "",
+                                "FourRedToBlack": "",
+                                "FourRating": "",
+                                "FourTrafficLights": "",
+                                "FiveArrows": "",
+                                "FiveArrowsGray": "",
+                                "FiveRating": "",
+                                "FiveQuarters": "",
+                                "ThreeStars": "",
+                                "ThreeTriangles": "",
+                                "FiveBoxes": ""
+                },
+                "Excel.ImageFittingMode": {
+                                "Fit": "",
+                                "FitAndCenter": "",
+                                "Fill": ""
+                },
+                "Excel.SortOrientation": {
+                                "Rows": "",
+                                "Columns": ""
+                },
+                "Excel.SortOn": {
+                                "Value": "",
+                                "CellColor": "",
+                                "FontColor": "",
+                                "Icon": ""
+                },
+                "Excel.SortDataOption": {
+                                "Normal": "",
+                                "TextAsNumber": ""
+                },
+                "Excel.SortMethod": {
+                                "PinYin": "",
+                                "StrokeCount": ""
+                }
 }
