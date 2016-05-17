@@ -157,7 +157,7 @@ module SpecMaker
 		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "#{method[:reqSet]}") + PIPE + NEWLINE
 
 		if !(PROD_REQUIREMENTS.include? method[:reqSet])
-			@changes.push (PIPE + "[#{@resource}](#{@resource.downcase}.md)" + PIPE + "_Method_ > " + methodPlusLinkFull  + PIPE + method[:description]  + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})" + PIPE + NEWLINE)
+			@changes.push (PIPE + "[#{@resource}](resources/#{@resource.downcase}.md)" + PIPE + "_Method_ > " + methodPlusLinkFull  + PIPE + method[:description]  + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})" + PIPE + NEWLINE)
 
 			# @changes.push "**Resource name:** [#{@resource}](resources/#{@resource.downcase}.md) </br>" + NEWLINE
 			# @changes.push "**What's new:** Method **#{methodPlusLinkFull}** returning **#{dataTypePlusLinkFull}** </br>" + NEWLINE
