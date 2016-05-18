@@ -239,7 +239,7 @@ module SpecMaker
 		fullpath = JSON_SOURCE_FOLDER + '/' + item.downcase
 
 		if File.file?(fullpath)
-			puts "** Processing #{item}"
+			puts "*-> Processing #{item}"
 			convert_to_spec File.read(fullpath)
 		end
 

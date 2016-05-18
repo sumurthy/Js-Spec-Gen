@@ -433,7 +433,7 @@ module SpecMaker
 
 		#next if item != 'item.js' && item != 'body.js'
 
-		puts "** Processing #{item}"
+		puts "*-> Processing #{item}"
 		fullpath = JS_SOURCE_FILES + '/' + item.downcase
 
 		if File.file?(fullpath)
