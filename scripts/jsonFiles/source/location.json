@@ -1,0 +1,140 @@
+{
+  "name": "Location",
+  "namespace": "Location",
+  "description": "Provides methods to get and set the location of a meeting in an Outlook add-in.",
+  "longDesc": "UHJvdmlkZXMgbWV0aG9kcyB0byBnZXQgYW5kIHNldCB0aGUgbG9jYXRpb24g\nb2YgYSBtZWV0aW5nIGluIGFuIE91dGxvb2sgYWRkLWluLg==\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.1"
+  ],
+  "modes": [
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "getAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Gets the location of an appointment.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "VGhlIGBnZXRBc3luY2AgbWV0aG9kIHN0YXJ0cyBhbiBhc3luY2hyb25vdXMg\nY2FsbCB0byB0aGUgRXhjaGFuZ2Ugc2VydmVyIHRvIGdldCB0aGUgbG9jYXRp\nb24gb2YgYW4gYXBwb2ludG1lbnQu\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "The location of the appointment is provided as a string in the `asyncResult.value` property.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "setAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Sets the location of an appointment.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "VGhlIGBzZXRBc3luY2AgbWV0aG9kIHN0YXJ0cyBhbiBhc3luY2hyb25vdXMg\nY2FsbCB0byB0aGUgRXhjaGFuZ2Ugc2VydmVyIHRvIHNldCB0aGUgbG9jYXRp\nb24gb2YgYW4gYXBwb2ludG1lbnQuIFNldHRpbmcgdGhlIGxvY2F0aW9uIG9m\nIGFuIGFwcG9pbnRtZW50IG92ZXJ3cml0ZXMgdGhlIGN1cnJlbnQgbG9jYXRp\nb24u\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "location",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The location of the appointment. The string is limited to 255 characters.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "If setting the location fails, the `asyncResult.error` property will contain an error code.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    }
+  ],
+  "enums": [
+
+  ]
+}

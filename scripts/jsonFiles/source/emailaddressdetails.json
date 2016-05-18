@@ -1,0 +1,25 @@
+{
+  "name": "EmailAddressDetails",
+  "namespace": "EmailAddressDetails",
+  "description": "",
+  "longDesc": "UHJvdmlkZXMgdGhlIGVtYWlsIHByb3BlcnRpZXMgb2YgdGhlIHNlbmRlciBv\nciBzcGVjaWZpZWQgcmVjaXBpZW50cyBvZiBhbiBlbWFpbCBtZXNzYWdlIG9y\nIGFwcG9pbnRtZW50Lg==\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

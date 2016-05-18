@@ -1,0 +1,140 @@
+{
+  "name": "Time",
+  "namespace": "Time",
+  "description": "Provides methods to get and set the start or end time of a meeting in an Outlook add-in.",
+  "longDesc": "VGhlIGBUaW1lYCBvYmplY3QgaXMgcmV0dXJuZWQgYXMgdGhlIFtzdGFydF17\nQGxpbmtjb2RlIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbSNzdGFydH0g\nb3IgW2VuZF17QGxpbmtjb2RlIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRl\nbSNlbmR9IHByb3BlcnR5IG9mIGFuIGFwcG9pbnRtZW50IGluIGNvbXBvc2Ug\nbW9kZS4=\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.1"
+  ],
+  "modes": [
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "getAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Gets the start or end time of an appointment.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "The date and time is provided as a Date object in the `asyncResult.value` property. The value is in Coordinated Universal Time (UTC). You can convert the UTC time to the local client time by using the [`convertToLocalClientTime`]{@link Office.context.mailbox#convertToLocalClientTime} method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "setAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Sets the start or end time of an appointment.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "SWYgdGhlIGBzZXRBc3luY2AgbWV0aG9kIGlzIGNhbGxlZCBvbiB0aGUgW3N0\nYXJ0XXtAbGlua2NvZGUgT2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtI3N0\nYXJ0fSBwcm9wZXJ0eSwgdGhlIFtlbmRde0BsaW5rY29kZSBPZmZpY2UuY29u\ndGV4dC5tYWlsYm94Lml0ZW0jZW5kfSBwcm9wZXJ0eSB3aWxsIGJlIGFkanVz\ndGVkIHRvIG1haW50YWluIHRoZSBkdXJhdGlvbiBvZiB0aGUgYXBwb2ludG1l\nbnQgYXMgcHJldmlvdXNseSBzZXQuIElmIHRoZSBgc2V0QXN5bmNgIG1ldGhv\nZCBpcyBjYWxsZWQgb24gdGhlIGBlbmRgIHByb3BlcnR5LCB0aGUgZHVyYXRp\nb24gb2YgdGhlIGFwcG9pbnRtZW50IHdpbGwgYmUgZXh0ZW5kZWQgdG8gdGhl\nIG5ldyBlbmQgdGltZS4=\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfApgYGBqc3xUaGUgZm9sbG93aW5nIGV4YW1wbGUg\nc2V0cyB0aGUgc3RhcnQgdGltZSBvZiBhbiBhcHBvaW50bWVudC58dmFyIHN0\nYXJ0VGltZSA9IG5ldyBEYXRlKCIzLzE0LzIwMTUiKTt8dmFyIG9wdGlvbnMg\nPSB7fC8vIFBhc3MgaW5mb3JtYXRpb24gdGhhdCBjYW4gYmUgdXNlZHwvLyBp\nbiB0aGUgY2FsbGJhY2t8YXN5bmNDb250ZXh0OiB7dmVyYjoiU2V0In18fXxP\nZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0uc3RhcnQuc2V0QXN5bmMoc3Rh\ncnRUaW1lLCBvcHRpb25zLCBmdW5jdGlvbihyZXN1bHQpIHt8aWYgKHJlc3Vs\ndC5lcnJvcikge3xjb25zb2xlLmRlYnVnKHJlc3VsdC5lcnJvcik7fH0gZWxz\nZSB7fC8vIEFjY2VzcyB0aGUgYXN5bmNDb250ZXh0IHRoYXQgd2FzIHBhc3Nl\nZCB0byB0aGUgc2V0QXN5bmMgZnVuY3Rpb258Y29uc29sZS5kZWJ1ZygiU3Rh\ncnQgVGltZSAiICsgcmVzdWx0LmFzeW5jQ29udGV4dC52ZXJiKTt8fXx9KTt8\nYGBgCg==\n",
+      "parameters": [
+        {
+          "name": "dateTime",
+          "dataType": "Date",
+          "isCollection": false,
+          "description": "A Date object in Coordinated Universal Time (UTC).",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "If setting the date and time fails, the `asyncResult.error` property will contain an error code.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    }
+  ],
+  "enums": [
+
+  ]
+}

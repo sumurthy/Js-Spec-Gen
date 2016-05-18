@@ -1,0 +1,140 @@
+{
+  "name": "Subject",
+  "namespace": "Subject",
+  "description": "Provides methods to get and set the subject of an appointment or message in an Outlook add-in.",
+  "longDesc": "UHJvdmlkZXMgbWV0aG9kcyB0byBnZXQgYW5kIHNldCB0aGUgc3ViamVjdCBv\nZiBhbiBhcHBvaW50bWVudCBvciBtZXNzYWdlIGluIGFuIE91dGxvb2sgYWRk\nLWluLg==\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.1"
+  ],
+  "modes": [
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "getAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Gets the subject of an appointment or message.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "VGhlIGBnZXRBc3luY2AgbWV0aG9kIHN0YXJ0cyBhbiBhc3luY2hyb25vdXMg\nY2FsbCB0byB0aGUgRXhjaGFuZ2Ugc2VydmVyIHRvIGdldCB0aGUgc3ViamVj\ndCBvZiBhbiBhcHBvaW50bWVudCBvciBtZXNzYWdlLg==\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "The subject of the item is provided as a string in the `asyncResult.value` property.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "setAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Sets the subject of an appointment or message.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "VGhlIGBzZXRBc3luY2AgbWV0aG9kIHN0YXJ0cyBhbiBhc3luY2hyb25vdXMg\nY2FsbCB0byB0aGUgRXhjaGFuZ2Ugc2VydmVyIHRvIHNldCB0aGUgc3ViamVj\ndCBvZiBhbiBhcHBvaW50bWVudCBvciBtZXNzYWdlLiBTZXR0aW5nIHRoZSBz\ndWJqZWN0IG92ZXJ3cml0ZXMgdGhlIGN1cnJlbnQgc3ViamVjdCwgYnV0IGxl\nYXZlcyBhbnkgcHJlZml4ZXMsIHN1Y2ggYXMgIkZ3ZDoiIG9yICJSZToiIGlu\nIHBsYWNlLg==\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "subject",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The subject of the appointment or message. The string is limited to 255 characters.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "If setting the subject fails, the `asyncResult.error` property will contain an error code.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    }
+  ],
+  "enums": [
+
+  ]
+}

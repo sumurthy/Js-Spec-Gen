@@ -1,0 +1,204 @@
+{
+  "name": "Recipients",
+  "namespace": "Recipients",
+  "description": "Provides methods to get and set the recipients of an appointment or message in an Outlook add-in.",
+  "longDesc": "",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.1"
+  ],
+  "modes": [
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "addAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Adds a recipient list to the existing recipients for an appointment or message.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "VGhlIGByZWNpcGllbnRzYCBwYXJhbWV0ZXIgY2FuIGJlIGFuIGFycmF5IG9m\nIG9uZSBvZiB0aGUgZm9sbG93aW5nOg==\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfApgYGBqc3xUaGUgZm9sbG93aW5nIGV4YW1wbGUg\nY3JlYXRlcyBhbiBhcnJheSBvZiBgRW1haWxVc2VyYCBvYmplY3RzIGFuZCBh\nZGRzIHRoZW0gdG8gdGhlIFRvIHJlY2lwaWVudHMgb2YgdGhlIG1lc3NhZ2Uu\nfHZhciBuZXdSZWNpcGllbnRzID0gW3x7fCJkaXNwbGF5TmFtZSI6ICJBbGxp\nZSBCZWxsZXciLHwiZW1haWxBZGRyZXNzIjogImFsbGllYkBjb250b3NvLmNv\nbSJ8fSx8e3wiZGlzcGxheU5hbWUiOiAiQWxleCBEYXJyb3ciLHwiZW1haWxB\nZGRyZXNzIjogImFsZXhkQGNvbnRvc28uY29tInx9fF07fHxPZmZpY2UuY29u\ndGV4dC5tYWlsYm94Lml0ZW0udG8uYWRkQXN5bmMobmV3UmVjaXBpZW50cywg\nZnVuY3Rpb24ocmVzdWx0KSB7fGlmIChyZXN1bHQuZXJyb3IpIHt8c2hvd01l\nc3NhZ2UocmVzdWx0LmVycm9yKTt8fSBlbHNlIHt8c2hvd01lc3NhZ2UoIlJl\nY2lwaWVudHMgYWRkZWQiKTt8fXx9KTt8YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "recipients",
+          "dataType": "Array.<(String|EmailUser|EmailAddressDetails)>",
+          "isCollection": false,
+          "description": "The recipients to add to the recipients list.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "If adding the recipients fails, the `asyncResult.error` property will contain an error code.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    },
+    {
+      "name": "getAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Gets a recipient list for an appointment or message.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfApgYGBqc3xUaGUgZm9sbG93aW5nIGV4YW1wbGUg\nZ2V0cyB0aGUgb3B0aW9uYWwgYXR0ZW5kZWVzIG9mIGEgbWVldGluZy58T2Zm\naWNlLmNvbnRleHQubWFpbGJveC5pdGVtLm9wdGlvbmFsQXR0ZW5kZWVzLmdl\ndEFzeW5jKGZ1bmN0aW9uKHJlc3VsdCkge3xpZiAocmVzdWx0LmVycm9yKSB7\nfHNob3dNZXNzYWdlKHJlc3VsdC5lcnJvcik7fH0gZWxzZSB7fHZhciBtc2cg\nPSAiIjt8cmVzdWx0LnZhbHVlLmZvckVhY2goZnVuY3Rpb24ocmVjaXAsIGlu\nZGV4KSB7fG1zZyA9IG1zZyArIHJlY2lwLmRpc3BsYXlOYW1lICsgIiAoIiAr\nIHJlY2lwLmVtYWlsQWRkcmVzcyArICIpOyI7fH0pO3xzaG93TWVzc2FnZSht\nc2cpO3x9fH0pO3xgYGAK\n",
+      "parameters": [
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "When the call completes, the `asyncResult.value` property will contain an array of [EmailAddressDetails]{@linkcode EmailAddressDetails} objects.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "setAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Sets a recipient list for an appointment or message.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "VGhlIGBzZXRBc3luY2AgbWV0aG9kIG92ZXJ3cml0ZXMgdGhlIGN1cnJlbnQg\ncmVjaXBpZW50IGxpc3Qu\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfApgYGBqc3xUaGUgZm9sbG93aW5nIGV4YW1wbGUg\nY3JlYXRlcyBhbiBhcnJheSBvZiBgRW1haWxVc2VyYCBvYmplY3RzIGFuZCBy\nZXBsYWNlcyB0aGUgQ0MgcmVjaXBpZW50cyBvZiB0aGUgbWVzc2FnZSB3aXRo\nIHRoZSBhcnJheS58dmFyIG5ld1JlY2lwaWVudHMgPSBbfHt8ImRpc3BsYXlO\nYW1lIjogIkFsbGllIEJlbGxldyIsfCJlbWFpbEFkZHJlc3MiOiAiYWxsaWVi\nQGNvbnRvc28uY29tInx9LHx7fCJkaXNwbGF5TmFtZSI6ICJBbGV4IERhcnJv\ndyIsfCJlbWFpbEFkZHJlc3MiOiAiYWxleGRAY29udG9zby5jb20ifH18XTt8\nfE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbS5jYy5zZXRBc3luYyhuZXdS\nZWNpcGllbnRzLCBmdW5jdGlvbihyZXN1bHQpIHt8aWYgKHJlc3VsdC5lcnJv\ncikge3xzaG93TWVzc2FnZShyZXN1bHQuZXJyb3IpO3x9IGVsc2Uge3xzaG93\nTWVzc2FnZSgiUmVjaXBpZW50cyBvdmVyd3JpdHRlbiIpO3x9fH0pO3xgYGAK\n",
+      "parameters": [
+        {
+          "name": "recipients",
+          "dataType": "Array.<(String|EmailUser|EmailAddressDetails)>",
+          "isCollection": false,
+          "description": "The recipients to add to the recipients list.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "If setting the recipients fails the `asyncResult.error` property will contain a code that indicates any error that occurred while adding the data.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    }
+  ],
+  "enums": [
+
+  ]
+}

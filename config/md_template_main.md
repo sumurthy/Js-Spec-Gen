@@ -1,18 +1,14 @@
 <resource>
 # %resourcename% resource type
 
-*Namespace: %resourcenamespace%*
-
-*Minimum requirement set/version: %minreqset%*
-
-*Minimum permission level: %minpermission%*
-
-*Modes supported: %modes%*
-
-
 %resourcedescription%
 
 %longobjectdescription%
+
+*	Namespace: *%resourcenamespace%*
+*	Minimum requirement set/version: *%minreqset%*
+*	Minimum permission level: *%minpermission%*
+*	Modes supported: *%modes%*
 
 </resource>
 
@@ -23,30 +19,16 @@
 |:-------------|:-------|:-----------|:------------|
 >|%name%      | %type% | %description% | %req% |
 
-%propertygetset%
-%propertynotes%
 </properties>
 
 <enums>
 ### Enumerations
 
-| Option	   | Type	| Description| Requirements|
+| Option	   | Returns	| Description| Requirements|
 |:-------------|:-------|:-----------|:------------|
 >|%name%      | %type% | %description% | %enumreq% |
 
-%propertygetset%
-%propertynotes%
-
 </enums>
-
-<relationships>
-### Relationships
-| Relationship | Type	| Description| Requirements|
-|:-------------|:-------|:-----------|:------------|
->|%name%      | [%type%](%link%) | %description% | %req% |
-
-%relationshipnotes%
-</relationships>
 
 <methods>
 
@@ -56,5 +38,4 @@
 |:-------------|:---------------|:------------|:----|
 >| [%name%](%link%)     | %dtype% | %description% | %req%|
 
-%methodnotes%
-
+</methods>

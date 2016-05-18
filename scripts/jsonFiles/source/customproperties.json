@@ -1,0 +1,174 @@
+{
+  "name": "CustomProperties",
+  "namespace": "CustomProperties",
+  "description": "Provides methods for accessing item-specific custom properties in an Outlook add-in.",
+  "longDesc": "VGhlIGBDdXN0b21Qcm9wZXJ0aWVzYCBvYmplY3QgcmVwcmVzZW50cyBjdXN0\nb20gcHJvcGVydGllcyB0aGF0IGFyZSBzcGVjaWZpYyB0byBhIHBhcnRpY3Vs\nYXIgaXRlbSBhbmQgc3BlY2lmaWMgdG8gYSBtYWlsIGFkZC1pbiBmb3IgT3V0\nbG9vay4gRm9yIGV4YW1wbGUsIHRoZXJlIG1pZ2h0IGJlIGEgbmVlZCBmb3Ig\nYSBtYWlsIGFkZC1pbiB0byBzYXZlIHNvbWUgZGF0YSB0aGF0IGlzIHNwZWNp\nZmljIHRvIHRoZSBjdXJyZW50IGVtYWlsIG1lc3NhZ2UgdGhhdCBhY3RpdmF0\nZWQgdGhlIGFkZC1pbi4gSWYgdGhlIHVzZXIgcmV2aXNpdHMgdGhlIHNhbWUg\nbWVzc2FnZSBpbiB0aGUgZnV0dXJlIGFuZCBhY3RpdmF0ZXMgdGhlIG1haWwg\nYWRkLWluIGFnYWluLCB0aGUgYWRkLWluIHdpbGwgYmUgYWJsZSB0byByZXRy\naWV2ZSB0aGUgZGF0YSB0aGF0IGhhZCBiZWVuIHNhdmVkIGFzIGN1c3RvbSBw\ncm9wZXJ0aWVzLnx8QmVjYXVzZSBPdXRsb29rIGZvciBNYWMgZG9lc27igJl0\nIGNhY2hlIGN1c3RvbSBwcm9wZXJ0aWVzLCBpZiB0aGUgdXNlcuKAmXMgbmV0\nd29yayBnb2VzIGRvd24sIG1haWwgYWRkLWlucyBjYW5ub3QgYWNjZXNzIHRo\nZWlyIGN1c3RvbSBwcm9wZXJ0aWVzLnxPZmZpY2UuaW5pdGlhbGl6ZSA9IGZ1\nbmN0aW9uICgpIHt8Ly8gQ2hlY2tzIGZvciB0aGUgRE9NIHRvIGxvYWQgdXNp\nbmcgdGhlIGpRdWVyeSByZWFkeSBmdW5jdGlvbi58JChkb2N1bWVudCkucmVh\nZHkoZnVuY3Rpb24gKCkge3wvLyBBZnRlciB0aGUgRE9NIGlzIGxvYWRlZCwg\nYWRkLWluLXNwZWNpZmljIGNvZGUgY2FuIHJ1bi58dmFyIG1haWxib3ggPSBP\nZmZpY2UuY29udGV4dC5tYWlsYm94O3xtYWlsYm94Lml0ZW0ubG9hZEN1c3Rv\nbVByb3BlcnRpZXNBc3luYyhjdXN0b21Qcm9wc0NhbGxiYWNrKTt8fSk7fH18\nZnVuY3Rpb24gY3VzdG9tUHJvcHNDYWxsYmFjayhhc3luY1Jlc3VsdCkge3x2\nYXIgY3VzdG9tUHJvcHMgPSBhc3luY1Jlc3VsdC52YWx1ZTt8dmFyIG15UHJv\ncCA9IGN1c3RvbVByb3BzLmdldCgibXlQcm9wIik7fHxjdXN0b21Qcm9wcy5z\nZXQoIm90aGVyUHJvcCIsICJ2YWx1ZSIpO3xjdXN0b21Qcm9wcy5zYXZlQXN5\nbmMoc2F2ZUNhbGxiYWNrKTt8fXx8ZnVuY3Rpb24gc2F2ZUNhbGxiYWNrKGFz\neW5jUmVzdWx0KSB7fH18IyMjIyMgRXhhbXBsZSAKfApgYGBqc3xUaGUgZm9s\nbG93aW5nIGV4YW1wbGUgc2hvd3MgaG93IHRvIHVzZSB0aGUgW2Bsb2FkQ3Vz\ndG9tUHJvcGVydGllc0FzeW5jYF17QGxpbmsgT2ZmaWNlLmNvbnRleHQubWFp\nbGJveC5JdGVtI2xvYWRDdXN0b21Qcm9wZXJ0aWVzQXN5bmN9IG1ldGhvZCB0\nbyBhc3luY2hyb25vdXNseSBsb2FkIGN1c3RvbSBwcm9wZXJ0aWVzIHRoYXQg\nYXJlIHNwZWNpZmljIHRvIHRoZSBjdXJyZW50IGl0ZW0uIFRoZSBleGFtcGxl\nIGFsc28gc2hvd3MgaG93IHRvIHVzZSB0aGUgW2BzYXZlQXN5bmNgXXtAbGlu\nayBDdXN0b21Qcm9wZXJ0aWVzI3NhdmVBc3luY30gbWV0aG9kIHRvIHNhdmUg\ndGhlc2UgcHJvcGVydGllcyBiYWNrIHRvIHRoZSBzZXJ2ZXIuIEFmdGVyIGxv\nYWRpbmcgdGhlIGN1c3RvbSBwcm9wZXJ0aWVzLCB0aGUgZXhhbXBsZSB1c2Vz\nIHRoZSBbYGdldGBde0BsaW5rIEN1c3RvbVByb3BlcnRpZXMjZ2V0fSBtZXRo\nb2QgdG8gcmVhZCB0aGUgY3VzdG9tIHByb3BlcnR5IGBteVByb3BgLCB0aGUg\nW2BzZXRgXXtAbGluayBDdXN0b21Qcm9wZXJ0aWVzI3NldH0gbWV0aG9kIHRv\nIHdyaXRlIHRoZSBjdXN0b20gcHJvcGVydHkgYG90aGVyUHJvcGAsIGFuZCB0\naGVuIGZpbmFsbHkgY2FsbHMgdGhlIGBzYXZlQXN5bmNgIG1ldGhvZCB0byBz\nYXZlIHRoZSBjdXN0b20gcHJvcGVydGllcy58T2ZmaWNlLmluaXRpYWxpemUg\nPSBmdW5jdGlvbiAoKSB7fC8vIENoZWNrcyBmb3IgdGhlIERPTSB0byBsb2Fk\nIHVzaW5nIHRoZSBqUXVlcnkgcmVhZHkgZnVuY3Rpb24ufCQoZG9jdW1lbnQp\nLnJlYWR5KGZ1bmN0aW9uICgpIHt8Ly8gQWZ0ZXIgdGhlIERPTSBpcyBsb2Fk\nZWQsIGFkZC1pbi1zcGVjaWZpYyBjb2RlIGNhbiBydW4ufHZhciBtYWlsYm94\nID0gT2ZmaWNlLmNvbnRleHQubWFpbGJveDt8bWFpbGJveC5pdGVtLmxvYWRD\ndXN0b21Qcm9wZXJ0aWVzQXN5bmMoY3VzdG9tUHJvcHNDYWxsYmFjayk7fH0p\nO3x9fGZ1bmN0aW9uIGN1c3RvbVByb3BzQ2FsbGJhY2soYXN5bmNSZXN1bHQp\nIHt8dmFyIGN1c3RvbVByb3BzID0gYXN5bmNSZXN1bHQudmFsdWU7fHZhciBt\neVByb3AgPSBjdXN0b21Qcm9wcy5nZXQoIm15UHJvcCIpO3x8Y3VzdG9tUHJv\ncHMuc2V0KCJvdGhlclByb3AiLCAidmFsdWUiKTt8Y3VzdG9tUHJvcHMuc2F2\nZUFzeW5jKHNhdmVDYWxsYmFjayk7fH18fGZ1bmN0aW9uIHNhdmVDYWxsYmFj\nayhhc3luY1Jlc3VsdCkge3x9fGBgYAo=\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "get",
+      "returnType": "String",
+      "returnNullable": false,
+      "description": "Returns the value of the specified custom property.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The name of the custom property to be returned.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "remove",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Removes the specified property from the custom property collection.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "VG8gbWFrZSB0aGUgcmVtb3ZhbCBvZiB0aGUgcHJvcGVydHkgcGVybWFuZW50\nLCB5b3UgbXVzdCBjYWxsIHRoZSBbYHNhdmVBc3luY2Bde0BsaW5rIEN1c3Rv\nbVByb3BlcnRpZXMjc2F2ZUFzeW5jfSBtZXRob2Qgb2YgdGhlIGBDdXN0b21Q\ncm9wZXJ0aWVzYCBvYmplY3Qu\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The name of the property to be removed.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "saveAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Saves item-specific custom properties to the server.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "WW91IG11c3QgY2FsbCB0aGUgYHNhdmVBc3luY2AgbWV0aG9kIHRvIHBlcnNp\nc3QgYW55IGNoYW5nZXMgbWFkZSB3aXRoIHRoZSBbYHNldGBde0BsaW5rIEN1\nc3RvbVByb3BlcnRpZXMjc2V0fSBtZXRob2Qgb3IgdGhlIFtgcmVtb3ZlYF17\nQGxpbmsgQ3VzdG9tUHJvcGVydGllcyNyZW1vdmV9IG1ldGhvZCBvZiB0aGUg\nYEN1c3RvbVByb3BlcnRpZXNgIG9iamVjdC4gVGhlIHNhdmluZyBhY3Rpb24g\naXMgYXN5bmNocm9ub3VzLg==\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfApgYGBqc3xUaGUgZm9sbG93aW5nIEphdmFTY3Jp\ncHQgY29kZSBzYW1wbGUgc2hvd3MgaG93IHRvIGFzeW5jaHJvbm91c2x5IHVz\nZSB0aGUgW2Bsb2FkQ3VzdG9tUHJvcGVydGllc0FzeW5jYF17QGxpbmsgT2Zm\naWNlLmNvbnRleHQubWFpbGJveC5JdGVtI2xvYWRDdXN0b21Qcm9wZXJ0aWVz\nQXN5bmN9IG1ldGhvZCB0byBsb2FkIGN1c3RvbSBwcm9wZXJ0aWVzIHRoYXQg\nYXJlIHNwZWNpZmljIHRvIHRoZSBjdXJyZW50IGl0ZW0sIGFuZCB0aGUgW2Bz\nYXZlQXN5bmNgXXtAbGluayBDdXN0b21Qcm9wZXJ0aWVzI3NhdmVBc3luY30g\nbWV0aG9kIHRvIHNhdmUgdGhlc2UgcHJvcGVydGllcyBiYWNrIHRvIHRoZSBz\nZXJ2ZXIuIEFmdGVyIGxvYWRpbmcgdGhlIGN1c3RvbSBwcm9wZXJ0aWVzLCB0\naGUgY29kZSBzYW1wbGUgdXNlcyB0aGUgW2BnZXRgXXtAbGluayBDdXN0b21Q\ncm9wZXJ0aWVzI2dldH0gbWV0aG9kIHRvIHJlYWQgdGhlIGN1c3RvbSBwcm9w\nZXJ0eSBgbXlQcm9wYCwgdGhlIFtgc2V0YF17QGxpbmsgQ3VzdG9tUHJvcGVy\ndGllcyNzZXR9IG1ldGhvZCB0byB3cml0ZSB0aGUgY3VzdG9tIHByb3BlcnR5\nIGBvdGhlclByb3BgLCBhbmQgdGhlbiBmaW5hbGx5IGNhbGxzIHRoZSBgc2F2\nZUFzeW5jYCBtZXRob2QgdG8gc2F2ZSB0aGUgY3VzdG9tIHByb3BlcnRpZXMu\nfC8vIFRoZSBpbml0aWFsaXplIGZ1bmN0aW9uIGlzIHJlcXVpcmVkIGZvciBh\nbGwgYWRkLWlucy58T2ZmaWNlLmluaXRpYWxpemUgPSBmdW5jdGlvbiAoKSB7\nfC8vIENoZWNrcyBmb3IgdGhlIERPTSB0byBsb2FkIHVzaW5nIHRoZSBqUXVl\ncnkgcmVhZHkgZnVuY3Rpb24ufCQoZG9jdW1lbnQpLnJlYWR5KGZ1bmN0aW9u\nICgpIHt8Ly8gQWZ0ZXIgdGhlIERPTSBpcyBsb2FkZWQsIGFkZC1pbi1zcGVj\naWZpYyBjb2RlIGNhbiBydW4ufHZhciBpdGVtID0gT2ZmaWNlLmNvbnRleHQu\nbWFpbGJveC5pdGVtO3xpdGVtLmxvYWRDdXN0b21Qcm9wZXJ0aWVzQXN5bmMo\nY3VzdG9tUHJvcHNDYWxsYmFjayk7fH0pO3x9fGZ1bmN0aW9uIGN1c3RvbVBy\nb3BzQ2FsbGJhY2soYXN5bmNSZXN1bHQpIHt8dmFyIGN1c3RvbVByb3BzID0g\nYXN5bmNSZXN1bHQudmFsdWU7fHZhciBteVByb3AgPSBjdXN0b21Qcm9wcy5n\nZXQoIm15UHJvcCIpO3x8Y3VzdG9tUHJvcHMuc2V0KCJvdGhlclByb3AiLCAi\ndmFsdWUiKTt8Y3VzdG9tUHJvcHMuc2F2ZUFzeW5jKHNhdmVDYWxsYmFjayk7\nfH18fGZ1bmN0aW9uIHNhdmVDYWxsYmFjayhhc3luY1Jlc3VsdCkge3xpZiAo\nYXN5bmNSZXN1bHQuc3RhdHVzID09IE9mZmljZS5Bc3luY1Jlc3VsdFN0YXR1\ncy5GYWlsZWQpe3x3cml0ZShhc3luY1Jlc3VsdC5lcnJvci5tZXNzYWdlKTt8\nfXxlbHNlIHt8Ly8gQXN5bmMgY2FsbCB0byBzYXZlIGN1c3RvbSBwcm9wZXJ0\naWVzIGNvbXBsZXRlZC58Ly8gUHJvY2VlZCB0byBkbyB0aGUgYXBwcm9wcmlh\ndGUgZm9yIHlvdXIgYWRkLWluLnx9fH18fC8vIFdyaXRlcyB0byBhIGRpdiB3\naXRoIGlkPSdtZXNzYWdlJyBvbiB0aGUgcGFnZS58ZnVuY3Rpb24gd3JpdGUo\nbWVzc2FnZSl7fGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtZXNzYWdlJyku\naW5uZXJUZXh0ICs9IG1lc3NhZ2U7fH18YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Any state data that is passed to the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "set",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Sets the specified property to the specified value.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "VGhlIGBzZXRgIG1ldGhvZCBzZXRzIHRoZSBzcGVjaWZpZWQgcHJvcGVydHkg\ndG8gdGhlIHNwZWNpZmllZCB2YWx1ZS4gWW91IG11c3QgdXNlIHRoZSBbYHNh\ndmVBc3luY2Bde0BsaW5rIEN1c3RvbVByb3BlcnRpZXMjc2F2ZUFzeW5jfSBt\nZXRob2QgdG8gc2F2ZSB0aGUgcHJvcGVydHkgdG8gdGhlIHNlcnZlci4=\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The name of the property to be set.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "value",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "The value of the property to be set.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    }
+  ],
+  "enums": [
+
+  ]
+}

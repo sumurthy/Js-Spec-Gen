@@ -1,0 +1,24 @@
+{
+  "name": "Contact",
+  "namespace": "Contact",
+  "description": "Represents a contact stored on the server.",
+  "longDesc": "VGhlIGxpc3Qgb2YgY29udGFjdHMgYXNzb2NpYXRlZCB3aXRoIGFuIGVtYWls\nIG1lc3NhZ2Ugb3IgYXBwb2ludG1lbnQgaXMgcmV0dXJuZWQgaW4gdGhlIGBj\nb250YWN0c2AgcHJvcGVydHkgb2YgdGhlIFtgRW50aXRpZXNgXXtAbGlua2Nv\nZGUgRW50aXRpZXN9IG9iamVjdCB0aGF0IGlzIHJldHVybmVkIGJ5IHRoZSBg\nZ2V0RW50aXRpZXNgIG9yIGBnZXRFbnRpdGllc0J5VHlwZWAgbWV0aG9kIG9m\nIHRoZSBhY3RpdmUgaXRlbS4=\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "Restricted",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

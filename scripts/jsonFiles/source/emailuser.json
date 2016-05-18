@@ -1,0 +1,24 @@
+{
+  "name": "EmailUser",
+  "namespace": "EmailUser",
+  "description": "",
+  "longDesc": "UmVwcmVzZW50cyBhbiBlbWFpbCBhY2NvdW50IG9uIGFuIEV4Y2hhbmdlIFNl\ncnZlci4=\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

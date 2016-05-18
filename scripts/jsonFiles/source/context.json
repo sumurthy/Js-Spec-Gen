@@ -1,0 +1,96 @@
+{
+  "name": "context",
+  "namespace": "Office.context",
+  "description": "Provides shared interfaces from the Office add-ins API's context namespace for use in the Outlook add-in API.",
+  "longDesc": "VGhlIE9mZmljZS5jb250ZXh0IG5hbWVzcGFjZSBwcm92aWRlcyBzaGFyZWQg\naW50ZXJmYWNlcyB0aGF0IGFyZSB1c2VkIGJ5IGFkZC1pbnMgaW4gYWxsIG9m\nIHRoZSBPZmZpY2UgYXBwcy4gVGhpcyBsaXN0aW5nIGRvY3VtZW50cyBvbmx5\nIHRob3NlIGludGVyZmFjZXMgdGhhdCBhcmUgdXNlZCBieSBPdXRsb29rIGFk\nZC1pbnMuIEZvciBhIGZ1bGwgbGlzdGluZyBvZiB0aGUgT2ZmaWNlLmNvbnRl\neHQgbmFtZXNwYWNlLCBzZWUgdGhlIFtkb2N1bWVudGF0aW9uIG9uIE1TRE5d\nKGh0dHBzOi8vbXNkbi5taWNyb3NvZnQuY29tL0VOLVVTL2xpYnJhcnkvb2Zm\naWNlL2ZwMTYxMTA0LmFzcHgpLg==\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "",
+  "properties": [
+    {
+      "name": "displayLanguage",
+      "description": "Gets the locale (language) in RFC 1766 Language tag format specified by the user for the UI of the Office host application.",
+      "isKey": false,
+      "dataType": [
+        "String"
+      ],
+      "isReadOnly": false,
+      "isNullable:": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "isNullable": false,
+      "longDesc": "VGhlIGBkaXNwbGF5TGFuZ3VhZ2VgIHZhbHVlIHJlZmxlY3RzIHRoZSBjdXJy\nZW50ICoqRGlzcGxheSBMYW5ndWFnZSoqIHNldHRpbmcgc3BlY2lmaWVkIHdp\ndGggKipGaWxlID4gT3B0aW9ucyA+IExhbmd1YWdlKiogaW4gdGhlIE9mZmlj\nZSBob3N0IGFwcGxpY2F0aW9uLg==\n",
+      "minPermission": ""
+    },
+    {
+      "name": "officeTheme",
+      "description": "Provides access to the properties for Office theme colors.",
+      "isKey": false,
+      "dataType": [
+        "Object"
+      ],
+      "isReadOnly": false,
+      "isNullable:": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.3"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "isNullable": false,
+      "longDesc": "VXNpbmcgT2ZmaWNlIHRoZW1lIGNvbG9ycyBsZXQncyB5b3UgY29vcmRpbmF0\nZSB0aGUgY29sb3Igc2NoZW1lIG9mIHlvdXIgYWRkLWluIHdpdGggdGhlIGN1\ncnJlbnQgT2ZmaWNlIHRoZW1lIHNlbGVjdGVkIGJ5IHRoZSB1c2VyIHdpdGgg\nKipGaWxlID4gT2ZmaWNlIEFjY291bnQgPiBPZmZpY2UgVGhlbWUgVUkqKiwg\nd2hpY2ggaXMgYXBwbGllZCBhY3Jvc3MgYWxsIE9mZmljZSBob3N0IGFwcGxp\nY2F0aW9ucy4gVXNpbmcgT2ZmaWNlIHRoZW1lIGNvbG9ycyBpcyBhcHByb3By\naWF0ZSBmb3IgbWFpbCBhbmQgdGFzayBwYW5lIGFkZC1pbnMu\n",
+      "minPermission": ""
+    },
+    {
+      "name": "roamingSettings",
+      "description": "Gets an object that represents the custom settings or state of a mail add-in saved to a user's mailbox.",
+      "isKey": false,
+      "dataType": [
+        "RoamingSettings"
+      ],
+      "isReadOnly": false,
+      "isNullable:": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "isNullable": false,
+      "longDesc": "VGhlIGBSb2FtaW5nU2V0dGluZ3NgIG9iamVjdCBsZXRzIHlvdSBzdG9yZSBh\nbmQgYWNjZXNzIGRhdGEgZm9yIGEgbWFpbCBhZGQtaW4gdGhhdCBpcyBzdG9y\nZWQgaW4gYSB1c2VyJ3MgbWFpbGJveCwgc28gdGhhdCBpcyBhdmFpbGFibGUg\ndG8gdGhhdCBhZGQtaW4gd2hlbiBpdCBpcyBydW5uaW5nIGZyb20gYW55IGhv\nc3QgY2xpZW50IGFwcGxpY2F0aW9uIHVzZWQgdG8gYWNjZXNzIHRoYXQgbWFp\nbGJveC4=\n",
+      "minPermission": "Restricted"
+    }
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

@@ -1,0 +1,383 @@
+{
+  "name": "NotificationMessages",
+  "namespace": "NotificationMessages",
+  "description": "Provides methods for accessing notification messages in an Outlook add-in.",
+  "longDesc": "VGhlIGBOb3RpZmljYXRpb25NZXNzYWdlc2Agb2JqZWN0IGlzIHJldHVybmVk\nIGFzIHRoZSBbbm90aWZpY2F0aW9uTWVzc2FnZXNde0BsaW5rY29kZSBPZmZp\nY2UuY29udGV4dC5tYWlsYm94Lml0ZW0jbm90aWZpY2F0aW9uTWVzc2FnZXN9\nIHByb3BlcnR5IG9mIGFuIGl0ZW0u\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.3"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "addAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Adds a notification to an item.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.3"
+      ],
+      "longDesc": "VGhlcmUgYXJlIGEgbWF4aW11bSBvZiA1IG5vdGlmaWNhdGlvbnMgcGVyIG1l\nc3NhZ2UuIFNldHRpbmcgbW9yZSB3aWxsIHJldHVybiBhIGBOdW1iZXJPZk5v\ndGlmaWNhdGlvbk1lc3NhZ2VzRXhjZWVkZWRgIGVycm9yLg==\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfC8vIENyZWF0ZSB0aHJlZSBub3RpZmljYXRpb25z\nLCBlYWNoIHdpdGggYSBkaWZmZXJlbnQga2V5fApgYGBqc3xPZmZpY2UuY29u\ndGV4dC5tYWlsYm94Lml0ZW0ubm90aWZpY2F0aW9uTWVzc2FnZXMuYWRkQXN5\nbmMoInByb2dyZXNzIiwge3x0eXBlOiAicHJvZ3Jlc3NJbmRpY2F0b3IiLHxt\nZXNzYWdlIDogIkFuIGFkZC1pbiBpcyBwcm9jZXNzaW5nIHRoaXMgbWVzc2Fn\nZS4ifH0pO3xPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0ubm90aWZpY2F0\naW9uTWVzc2FnZXMuYWRkQXN5bmMoImluZm9ybWF0aW9uIiwge3x0eXBlOiAi\naW5mb3JtYXRpb25hbE1lc3NhZ2UiLHxtZXNzYWdlIDogIlRoZSBhZGQtaW4g\ncHJvY2Vzc2VkIHRoaXMgbWVzc2FnZS4iLHxpY29uIDogImljb25pZCIsfHBl\ncnNpc3RlbnQ6IGZhbHNlfH0pO3xPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0\nZW0ubm90aWZpY2F0aW9uTWVzc2FnZXMuYWRkQXN5bmMoImVycm9yIiwge3x0\neXBlOiAiZXJyb3JNZXNzYWdlIix8bWVzc2FnZSA6ICJUaGUgYWRkLWluIGZh\naWxlZCB0byBwcm9jZXNzIHRoaXMgbWVzc2FnZS4ifH0pO3xgYGAK\n",
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "A developer-specified key used to reference this notification message. Developers can use it to modify this message later. It can't be longer than 32 characters.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "JSONmessage",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "A JSON object that contains the notification message to be added to the item. It consists of the following properties.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "JSONmessage.type",
+          "dataType": "Office.MailboxEnums.ItemNotificationMessageType",
+          "isCollection": false,
+          "description": "Specifies the type of message. If type is `ProgressIndicator` or `ErrorMessage`, an icon is automatically supplied and the message is not persistent. Therefore the icon and persistent properties are not valid for these types of messages. Including them will result in an `ArgumentException`. If type is `ProgressIndicator`, the developer should remove or replace the progress indicator when the action is complete.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "JSONmessage.icon",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "A reference to an icon that is defined in the manifest in the `Resource` section. It appears in the infobar area. It is only applicable if the type is `InformationalMessage`. Specifying this parameter for an unsupported type results in an exception.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "JSONmessage.message",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The text of the notification message. Maximum length is 150 characters. If the developer passes in a longer string, an `ArgumentOutOfRange` exception is thrown.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "JSONmessage.persistent",
+          "dataType": "Boolean",
+          "isCollection": false,
+          "description": "Only applicable when type is `InformationalMessage`. If `true`, the message remains until removed by this add-in or dismissed by the user. If `false`, it is removed when the user navigates to a different item. For error notifications, the message persists until the user sees it once. Specifying this parameter for an unsupported type throws an exception.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "getAllAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Returns all keys and messages for an item.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.3"
+      ],
+      "longDesc": "",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfC8vIEdldCBhbGwgbm90aWZpY2F0aW9uc3wKYGBg\nanN8T2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLm5vdGlmaWNhdGlvbk1l\nc3NhZ2VzLmdldEFsbEFzeW5jKGZ1bmN0aW9uIChhc3luY1Jlc3VsdCkge3xp\nZiAoYXN5bmNSZXN1bHQuc3RhdHVzICE9ICJmYWlsZWQiKSB7fE9mZmljZS5j\nb250ZXh0Lm1haWxib3guaXRlbS5ub3RpZmljYXRpb25NZXNzYWdlcy5yZXBs\nYWNlQXN5bmMoICJub3RpZmljYXRpb25zIiwge3x0eXBlOiAiaW5mb3JtYXRp\nb25hbE1lc3NhZ2UiLHxtZXNzYWdlIDogIkZvdW5kICIgKyBhc3luY1Jlc3Vs\ndC52YWx1ZS5sZW5ndGggKyAiIG5vdGlmaWNhdGlvbnMuIix8aWNvbiA6ICJp\nY29uaWQiLHxwZXJzaXN0ZW50OiBmYWxzZXx9KTt8fXxgYGAK\n",
+      "parameters": [
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "On successful completion, the `asyncResult.value` property will contain an array of [NotificationMessageDetails]{@linkcode NotificationMessageDetails} objects.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "removeAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Removes a notification message for an item.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.3"
+      ],
+      "longDesc": "",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfC8vIFJlbW92ZSBhIG5vdGlmaWNhdGlvbnwKYGBg\nanN8T2ZmaWNlLmNvbnRleHQubWFpbGJveC5pdGVtLm5vdGlmaWNhdGlvbk1l\nc3NhZ2VzLnJlbW92ZUFzeW5jKCJwcm9ncmVzcyIpO3xgYGAK\n",
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The key for the notification message to remove.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "If the key is not found, a `KeyNotFound` error is returned in the `asyncResult.error` property.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "replaceAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Replaces a notification message that has a given key with another message.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.3"
+      ],
+      "longDesc": "SWYgYSBub3RpZmljYXRpb24gbWVzc2FnZSB3aXRoIHRoZSBzcGVjaWZpZWQg\na2V5IGRvZXNuJ3QgZXhpc3QsIGByZXBsYWNlQXN5bmNgIHdpbGwgYWRkIHRo\nZSBub3RpZmljYXRpb24u\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfC8vIFJlcGxhY2UgYSBub3RpZmljYXRpb24gd2l0\naCBhbiBpbmZvcm1hdGlvbmFsIG5vdGlmaWNhdGlvbnwKYGBganN8T2ZmaWNl\nLmNvbnRleHQubWFpbGJveC5pdGVtLm5vdGlmaWNhdGlvbk1lc3NhZ2VzLnJl\ncGxhY2VBc3luYygicHJvZ3Jlc3MiLCB7fHR5cGU6ICJpbmZvcm1hdGlvbmFs\nTWVzc2FnZSIsfG1lc3NhZ2UgOiAiVGhlIG1lc3NhZ2Ugd2FzIHByb2Nlc3Nl\nZCBzdWNjZXNzZnVsbHkuIix8aWNvbiA6ICJpY29uaWQiLHxwZXJzaXN0ZW50\nOiBmYWxzZXx9KTt8YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The key for the notification message to replace. It can't be longer than 32 characters.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "JSONmessage",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "A JSON object that contains the new notification message to replace the existing message. It consists of the following properties.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "JSONmessage.type",
+          "dataType": "Office.MailboxEnums.ItemNotificationMessageType",
+          "isCollection": false,
+          "description": "Specifies the type of message. If type is `ProgressIndicator` or `ErrorMessage`, an icon is automatically supplied and the message is not persistent. Therefore the icon and persistent properties are not valid for these types of messages. Including them will result in an `ArgumentException`. If type is `ProgressIndicator`, the developer should remove or replace the progress indicator when the action is complete.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "JSONmessage.icon",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "A reference to an icon that is defined in the manifest in the `Resource` section. It appears in the infobar area. It is only applicable if the type is `InformationalMessage`. Specifying this parameter for an unsupported type results in an exception.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "JSONmessage.message",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The text of the notification message. Maximum length is 150 characters. If the developer passes in a longer string, an `ArgumentOutOfRange` exception is thrown.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "JSONmessage.persistent",
+          "dataType": "Boolean",
+          "isCollection": false,
+          "description": "Only applicable when type is `InformationalMessage`. If `true`, the message remains until removed by this add-in or dismissed by the user. If `false`, it is removed when the user navigates to a different item. For error notifications, the message persists until the user sees it once. Specifying this parameter for an unsupported type throws an exception.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    }
+  ],
+  "enums": [
+
+  ]
+}

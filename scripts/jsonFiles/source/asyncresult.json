@@ -1,0 +1,25 @@
+{
+  "name": "AsyncResult",
+  "namespace": "AsyncResult",
+  "description": "",
+  "longDesc": "QW4gb2JqZWN0IHdoaWNoIGVuY2Fwc3VsYXRlcyB0aGUgcmVzdWx0IG9mIGFu\nIGFzeW5jaHJvbm91cyByZXF1ZXN0LCBpbmNsdWRpbmcgc3RhdHVzIGFuZCBl\ncnJvciBpbmZvcm1hdGlvbiBpZiB0aGUgcmVxdWVzdCBmYWlsZWQu\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

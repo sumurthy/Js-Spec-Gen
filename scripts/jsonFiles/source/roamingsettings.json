@@ -1,0 +1,164 @@
+{
+  "name": "RoamingSettings",
+  "namespace": "RoamingSettings",
+  "description": "Provides methods for accessing custom settings for an Outlook add-in.",
+  "longDesc": "VGhlIHNldHRpbmdzIGNyZWF0ZWQgYnkgdXNpbmcgdGhlIG1ldGhvZHMgb2Yg\ndGhlIGBSb2FtaW5nU2V0dGluZ3NgIG9iamVjdCBhcmUgc2F2ZWQgcGVyIGFk\nZC1pbiBhbmQgcGVyIHVzZXIuIFRoYXQgaXMsIHRoZXkgYXJlIGF2YWlsYWJs\nZSBvbmx5IHRvIHRoZSBhZGQtaW4gdGhhdCBjcmVhdGVkIHRoZW0sIGFuZCBv\nbmx5IGZyb20gdGhlIHVzZXIncyBtYWlsIGJveCBpbiB3aGljaCB0aGV5IGFy\nZSBzYXZlZC58fD4gV2hpbGUgdGhlIE91dGxvb2sgQWRkLWluIEFQSSBsaW1p\ndHMgYWNjZXNzIHRvIHRoZXNlIHNldHRpbmdzIHRvIG9ubHkgdGhlIGFkZC1p\nbiB0aGF0IGNyZWF0ZWQgdGhlbSwgdGhlc2Ugc2V0dGluZ3Mgc2hvdWxkIG5v\ndCBiZSBjb25zaWRlcmVkIHNlY3VyZSBzdG9yYWdlLiBUaGV5IGNhbiBiZSBh\nY2Nlc3NlZCBieSBFeGNoYW5nZSBXZWIgU2VydmljZXMgb3IgRXh0ZW5kZWQg\nTUFQSS4gVGhleSBzaG91bGQgbm90IGJlIHVzZWQgdG8gc3RvcmUgc2Vuc2l0\naXZlIGluZm9ybWF0aW9uIHN1Y2ggYXMgdXNlciBjcmVkZW50aWFscyBvciBz\nZWN1cml0eSB0b2tlbnMufHxUaGUgbmFtZSBvZiBhIHNldHRpbmcgaXMgYSBT\ndHJpbmcsIHdoaWxlIHRoZSB2YWx1ZSBjYW4gYmUgYSBTdHJpbmcsIE51bWJl\nciwgQm9vbGVhbiwgbnVsbCwgT2JqZWN0LCBvciBBcnJheS58fFRoZSBgUm9h\nbWluZ1NldHRpbmdzYCBvYmplY3QgaXMgYWNjZXNzaWJsZSB2aWEgdGhlIFty\nb2FtaW5nU2V0dGluZ3Nde0BsaW5rY29kZSBPZmZpY2UuY29udGV4dCNyb2Ft\naW5nU2V0dGluZ3N9IHByb3BlcnR5IGluIHRoZSBgT2ZmaWNlLmNvbnRleHRg\nIG5hbWVzcGFjZS58dmFyIHZhbHVlID0gT2ZmaWNlLmNvbnRleHQucm9hbWlu\nZ1NldHRpbmdzLmdldCgnbXlLZXknKTt8Ly8gVXBkYXRlIHRoZSB2YWx1ZSBv\nZiB0aGUgJ215S2V5JyBzZXR0aW5nfE9mZmljZS5jb250ZXh0LnJvYW1pbmdT\nZXR0aW5ncy5zZXQoJ215S2V5JywgJ0hlbGxvIFdvcmxkIScpO3wvLyBQZXJz\naXN0IHRoZSBjaGFuZ2V8T2ZmaWNlLmNvbnRleHQucm9hbWluZ1NldHRpbmdz\nLnNhdmVBc3luYygpO3wjIyMjIyBFeGFtcGxlIAp8Ly8gR2V0IHRoZSBjdXJy\nZW50IHZhbHVlIG9mIHRoZSAnbXlLZXknIHNldHRpbmd8CmBgYGpzfHZhciB2\nYWx1ZSA9IE9mZmljZS5jb250ZXh0LnJvYW1pbmdTZXR0aW5ncy5nZXQoJ215\nS2V5Jyk7fC8vIFVwZGF0ZSB0aGUgdmFsdWUgb2YgdGhlICdteUtleScgc2V0\ndGluZ3xPZmZpY2UuY29udGV4dC5yb2FtaW5nU2V0dGluZ3Muc2V0KCdteUtl\neScsICdIZWxsbyBXb3JsZCEnKTt8Ly8gUGVyc2lzdCB0aGUgY2hhbmdlfE9m\nZmljZS5jb250ZXh0LnJvYW1pbmdTZXR0aW5ncy5zYXZlQXN5bmMoKTt8YGBg\nCg==\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "Restricted",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "get",
+      "returnType": "(String|Number|Boolean|Object|Array)",
+      "returnNullable": true,
+      "description": "Retrieves the specified setting.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The case-sensitive name of the setting to retrieve.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "Restricted",
+      "isCollection": true
+    },
+    {
+      "name": "remove",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Removes the specified setting.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The case-sensitive name of the setting to remove.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "Restricted"
+    },
+    {
+      "name": "saveAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Saves the settings.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "QW55IHNldHRpbmdzIHByZXZpb3VzbHkgc2F2ZWQgYnkgYW4gYWRkLWluIGFy\nZSBsb2FkZWQgd2hlbiBpdCBpcyBpbml0aWFsaXplZCwgc28gZHVyaW5nIHRo\nZSBsaWZldGltZSBvZiB0aGUgc2Vzc2lvbiB5b3UgY2FuIGp1c3QgdXNlIHRo\nZSBbc2V0XXtAbGlua2NvZGUgUm9hbWluZ1NldHRpbmdzI3NldH0gYW5kIFtn\nZXRde0BsaW5rY29kZSBSb2FtaW5nU2V0dGluZ3MjZ2V0fSBtZXRob2RzIHRv\nIHdvcmsgd2l0aCB0aGUgaW4tbWVtb3J5IGNvcHkgb2YgdGhlIHNldHRpbmdz\nIHByb3BlcnR5IGJhZy4gV2hlbiB5b3Ugd2FudCB0byBwZXJzaXN0IHRoZSBz\nZXR0aW5ncyBzbyB0aGF0IHRoZXkgYXJlIGF2YWlsYWJsZSB0aGUgbmV4dCB0\naW1lIHRoZSBhZGQtaW4gaXMgdXNlZCwgdXNlIHRoZSBgc2F2ZUFzeW5jYCBt\nZXRob2Qu\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "Restricted"
+    },
+    {
+      "name": "set",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Sets or creates the specified setting.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "VGhlIHNldCBtZXRob2QgY3JlYXRlcyBhIG5ldyBzZXR0aW5nIG9mIHRoZSBz\ncGVjaWZpZWQgbmFtZSBpZiBpdCBkb2VzIG5vdCBhbHJlYWR5IGV4aXN0LCBv\nciBzZXRzIGFuIGV4aXN0aW5nIHNldHRpbmcgb2YgdGhlIHNwZWNpZmllZCBu\nYW1lLiBUaGUgdmFsdWUgaXMgc3RvcmVkIGluIHRoZSBkb2N1bWVudCBhcyB0\naGUgc2VyaWFsaXplZCBKU09OIHJlcHJlc2VudGF0aW9uIG9mIGl0cyBkYXRh\nIHR5cGUu\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The case-sensitive name of the setting to set or create.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "value",
+          "dataType": "String|Number|Boolean|Object|Array",
+          "isCollection": false,
+          "description": "The value to be stored.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "Restricted"
+    }
+  ],
+  "enums": [
+
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "app" : "Excel",
+  "app" : "Outlook",
   "customResourceNote" : "",
   "isGa": true,
   "openSpecRun": false,  
@@ -7,7 +7,7 @@
   "enumFilePath": null, 
   "logFile": "../logs",
   "platforms":"",
-  "supportedRequirementSets" : ["1.1", "1.2"],
+  "supportedRequirementSets" : ["1.1", "1.2", "1.3"],
   "jsonStructure": "../config/json_structure.json",
   "mdTemplateMain": "../config/md_template_main.md",
   "mdTemplateMethod": "../config/md_template_method.md"

@@ -1,0 +1,216 @@
+{
+  "name": "MailboxEnums",
+  "namespace": "Office.MailboxEnums",
+  "description": "Includes the ItemType, EntityType, AttachmentType, RecipientType, ResponseType, and ItemNotificationMessageType enumerations.",
+  "longDesc": "",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+
+  ],
+  "minPermission": "",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+    {
+      "name": "Office.MailboxEnums.ItemType",
+      "description": "Specifies an item's type.",
+      "dataType": "string",
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+
+      ],
+      "items": [
+        {
+          "name": "Message",
+          "value": "message",
+          "description": "An email meeting request meeting response or meeting cancellation."
+        },
+        {
+          "name": "Appoinment",
+          "value": "appointment",
+          "description": "An appointment item."
+        }
+      ]
+    },
+    {
+      "name": "Office.MailboxEnums.EntityType",
+      "description": "Specifies an entity's type.",
+      "dataType": "string",
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+
+      ],
+      "items": [
+        {
+          "name": "Address",
+          "value": "address",
+          "description": "Specifies that the entity is a postal address."
+        },
+        {
+          "name": "Contact",
+          "value": "contact",
+          "description": "Specifies that the entity is a contact."
+        },
+        {
+          "name": "EmailAddress",
+          "value": "emailAddress",
+          "description": "Specifies that the entity is SMTP email address."
+        },
+        {
+          "name": "MeetingSuggestion",
+          "value": "meetingSuggestion",
+          "description": "Specifies that the entity is a meeting suggestion."
+        },
+        {
+          "name": "PhoneNumber",
+          "value": "phoneNumber",
+          "description": "Specifies that the entity is US phone number."
+        },
+        {
+          "name": "TaskSuggestion",
+          "value": "taskSuggestion",
+          "description": "Specifies that the entity is a task suggestion."
+        },
+        {
+          "name": "URL",
+          "value": "url",
+          "description": "Specifies that the entity is an Internet URL."
+        }
+      ]
+    },
+    {
+      "name": "Office.MailboxEnums.AttachmentType",
+      "description": "Specifies an attachment's type.",
+      "dataType": "string",
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+
+      ],
+      "items": [
+        {
+          "name": "File",
+          "value": "file",
+          "description": "The attachment is a file."
+        },
+        {
+          "name": "Item",
+          "value": "item",
+          "description": "The attachment is an Exchange item."
+        }
+      ]
+    },
+    {
+      "name": "Office.MailboxEnums.RecipientType",
+      "description": "Specifies the type of recipient for an appointment.",
+      "dataType": "string",
+      "reqSet": [
+        "1.1"
+      ],
+      "modes": [
+
+      ],
+      "items": [
+        {
+          "name": "Other",
+          "value": "other",
+          "description": "The recipient is not one of the other recipient types."
+        },
+        {
+          "name": "DistributionList",
+          "value": "distributionList",
+          "description": "The recipient is a distribution list containing a list of email addresses."
+        },
+        {
+          "name": "User",
+          "value": "user",
+          "description": "The recipient is an SMTP email address that is on the Exchange server."
+        },
+        {
+          "name": "ExternalUser",
+          "value": "externalUser",
+          "description": "The recipient is an SMTP email address that is not on the Exchange server."
+        }
+      ]
+    },
+    {
+      "name": "Office.MailboxEnums.ResponseType",
+      "description": "Specifies the type of response to a meeting invitation.",
+      "dataType": "string",
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+
+      ],
+      "items": [
+        {
+          "name": "None",
+          "value": "none",
+          "description": "There has been no response from the attendee."
+        },
+        {
+          "name": "Organizer",
+          "value": "organizer",
+          "description": "The attendee is the meeting organizer."
+        },
+        {
+          "name": "Tentative",
+          "value": "tentative",
+          "description": "The meeting request was tentatively accepted by the attendee."
+        },
+        {
+          "name": "Accepted",
+          "value": "accepted",
+          "description": "The meeting request was accepted by the attendee."
+        },
+        {
+          "name": "Declined",
+          "value": "declined",
+          "description": "The meeting request was declined by the attendee."
+        }
+      ]
+    },
+    {
+      "name": "Office.MailboxEnums.ItemNotificationMessageType",
+      "description": "Specifies the notification message type for an appointment or message.",
+      "dataType": "string",
+      "reqSet": [
+        "1.3"
+      ],
+      "modes": [
+
+      ],
+      "items": [
+        {
+          "name": "ProgressIndicator",
+          "value": "progressIndicator",
+          "description": "The notificationMessage is a progress indicator."
+        },
+        {
+          "name": "InformationalMessage",
+          "value": "informationalMessage",
+          "description": "The notificationMessage is an informational message."
+        },
+        {
+          "name": "ErrorMessage",
+          "value": "errorMessage",
+          "description": "The notificationMessage is an error message."
+        }
+      ]
+    }
+  ]
+}

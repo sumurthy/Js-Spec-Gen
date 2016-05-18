@@ -1,0 +1,96 @@
+{
+  "name": "userProfile",
+  "namespace": "Office.context.mailbox",
+  "description": "Provides information about the user in an Outlook add-in.",
+  "longDesc": "",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+    {
+      "name": "displayName",
+      "description": "Gets the user's display name.",
+      "isKey": false,
+      "dataType": [
+        "String"
+      ],
+      "isReadOnly": false,
+      "isNullable:": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "isNullable": false,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "emailAddress",
+      "description": "Gets the user's SMTP email address.",
+      "isKey": false,
+      "dataType": [
+        "String"
+      ],
+      "isReadOnly": false,
+      "isNullable:": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "isNullable": false,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "timeZone",
+      "description": "Gets the user's default time zone.",
+      "isKey": false,
+      "dataType": [
+        "String"
+      ],
+      "isReadOnly": false,
+      "isNullable:": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "isNullable": false,
+      "longDesc": "",
+      "minPermission": "ReadItem"
+    }
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

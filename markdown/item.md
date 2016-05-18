@@ -1,17 +1,9 @@
 # item resource type
 
-*Namespace: Office.context.mailbox*
-
-*Minimum requirement set/version: 1.0*
-
-*Minimum permission level: Restricted*
-
-*Modes supported: Read, Compose*
-
-
 Provides methods and properties for accessing a message or appointment in an Outlook add-in.
 
 The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType]{@link Office.context.mailbox.item#itemType} property. 	 
+```js 	 
 // The initialize function is required for all apps. 	 
 Office.initialize = function () { 	 
 // Checks for the DOM to load using the jQuery ready function. 	 
@@ -23,11 +15,13 @@ var subject = item.subject;
 // which can be a message or appointment. 	 
 }); 	 
 } 	 
+``` 	 
 ##### Example 
  	 
 
 ```js 	 
 The following JavaScript code example shows how to access the `subject` property of the current item in Outlook. 	 
+```js 	 
 // The initialize function is required for all apps. 	 
 Office.initialize = function () { 	 
 // Checks for the DOM to load using the jQuery ready function. 	 
@@ -39,8 +33,14 @@ var subject = item.subject;
 // which can be a message or appointment. 	 
 }); 	 
 } 	 
+``` 	 
 ```
 
+
+*	Namespace: *Office.context.mailbox*
+*	Minimum requirement set/version: *1.0*
+*	Minimum permission level: *Restricted*
+*	Modes supported: *Read, Compose*
 
 
 ### Properties
@@ -73,32 +73,26 @@ var subject = item.subject;
 |to      | EmailAddressDetails[], Recipients | Gets or sets the recipients of an email message. | 1.0 |  
 >|%name%      | %type% | %description% | %req% |
 
-%propertygetset%
-%propertynotes%
-
-### Enumerations
-
-| Option	   | Type	| Description| Requirements|
-|:-------------|:-------|:-----------|:------------|
->|%name%      | %type% | %description% | %enumreq% |
-
-%propertygetset%
-%propertynotes%
-
-
-### Relationships
-| Relationship | Type	| Description| Requirements|
-|:-------------|:-------|:-----------|:------------|
->|%name%      | [%type%](%link%) | %description% | %req% |
-
-%relationshipnotes%
 
 
 ## Methods
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
+| [addFileAttachmentAsync](addfileattachmentasync)     | %dtype% | Adds a file to a message or appointment as an attachment. | 1.1|  
+| [addItemAttachmentAsync](additemattachmentasync)     | %dtype% | Adds an Exchange item, such as a message, as an attachment to the message or appointment. | 1.1|  
+| [close](close)     | %dtype% | Closes the current item that is being composed. | 1.3|  
+| [displayReplyAllForm](displayreplyallform)     | %dtype% | Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment. | 1.0|  
+| [displayReplyForm](displayreplyform)     | %dtype% | Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment. | 1.0|  
+| [getEntities](getentities)     | %dtype% |  | 1.0|  
+| [getEntitiesByType](getentitiesbytype)     | %dtype% | Gets an array of all the entities of the specified entity type found in the selected item. | 1.0|  
+| [getFilteredEntitiesByName](getfilteredentitiesbyname)     | %dtype% | Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file. | 1.0|  
+| [getRegExMatches](getregexmatches)     | %dtype% | Returns string values in the selected item that match the regular expressions defined in the manifest XML file. | 1.0|  
+| [getRegExMatchesByName](getregexmatchesbyname)     | %dtype% | Returns string values in the selected item that match the named regular expression defined in the manifest XML file. | 1.0|  
+| [getSelectedDataAsync](getselecteddataasync)     | %dtype% | Asynchronously returns selected data from the subject or body of a message. | 1.0|  
+| [loadCustomPropertiesAsync](loadcustompropertiesasync)     | %dtype% | Asynchronously loads custom properties for this add-in on the selected item. | 1.0|  
+| [removeAttachmentAsync](removeattachmentasync)     | %dtype% | Removes an attachment from a message or appointment. | 1.1|  
+| [saveAsync](saveasync)     | %dtype% | Asynchronously saves an item. | 1.3|  
+| [setSelectedDataAsync](setselecteddataasync)     | %dtype% | Asynchronously inserts data into the body or subject of a message. | 1.2|  
 >| [%name%](%link%)     | %dtype% | %description% | %req%|
-
-%methodnotes%
 

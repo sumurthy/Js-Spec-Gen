@@ -1,0 +1,24 @@
+{
+  "name": "MeetingSuggestion",
+  "namespace": "MeetingSuggestion",
+  "description": "Represents a suggested meeting found in an item.",
+  "longDesc": "VGhlIGxpc3Qgb2YgbWVldGluZ3Mgc3VnZ2VzdGVkIGluIGFuIGVtYWlsIG1l\nc3NhZ2UgaXMgcmV0dXJuZWQgaW4gdGhlIGBtZWV0aW5nU3VnZ2VzdGlvbnNg\nIHByb3BlcnR5IG9mIHRoZSBbYEVudGl0aWVzYF17QGxpbmsgRW50aXRpZXN9\nIG9iamVjdCB0aGF0IGlzIHJldHVybmVkIHdoZW4gdGhlIFtnZXRFbnRpdGll\nc117QGxpbmtjb2RlIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbSNnZXRF\nbnRpdGllc30gb3IgW2dldEVudGl0aWVzQnlUeXBlXXtAbGlua2NvZGUgT2Zm\naWNlLmNvbnRleHQubWFpbGJveC5pdGVtI2dldEVudGl0aWVzQnlUeXBlfSBt\nZXRob2QgaXMgY2FsbGVkIG9uIHRoZSBhY3RpdmUgaXRlbS4=\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

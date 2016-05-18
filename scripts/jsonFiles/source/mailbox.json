@@ -1,0 +1,432 @@
+{
+  "name": "mailbox",
+  "namespace": "Office.context.mailbox",
+  "description": "Provides access to the Outlook Add-in object model for Microsoft Outlook and Microsoft Outlook on the web.",
+  "longDesc": "UHJvdmlkZXMgYWNjZXNzIHRvIHRoZSBPdXRsb29rIEFkZC1pbiBvYmplY3Qg\nbW9kZWwgZm9yIE1pY3Jvc29mdCBPdXRsb29rIGFuZCBNaWNyb3NvZnQgT3V0\nbG9vayBvbiB0aGUgd2ViLg==\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "Restricted",
+  "properties": [
+    {
+      "name": "ewsUrl",
+      "description": "Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.",
+      "isKey": false,
+      "dataType": [
+        "String"
+      ],
+      "isReadOnly": false,
+      "isNullable:": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read"
+      ],
+      "restfulName": null,
+      "isNullable": false,
+      "longDesc": "VGhlIGBld3NVcmxgIHZhbHVlIGNhbiBiZSB1c2VkIGJ5IGEgcmVtb3RlIHNl\ncnZpY2UgdG8gbWFrZSBFV1MgY2FsbHMgdG8gdGhlIHVzZXIncyBtYWlsYm94\nLiBGb3IgZXhhbXBsZSwgeW91IGNhbiBjcmVhdGUgYSByZW1vdGUgc2Vydmlj\nZSB0byBbZ2V0IGF0dGFjaG1lbnRzIGZyb20gdGhlIHNlbGVjdGVkIGl0ZW1d\ne0BsaW5rIGh0dHBzOi8vbXNkbi5taWNyb3NvZnQuY29tL0VOLVVTL2xpYnJh\ncnkvb2ZmaWNlL2RuMTQ4MDA4LmFzcHh9Lg==\n",
+      "minPermission": "ReadItem"
+    }
+  ],
+  "methods": [
+    {
+      "name": "convertToLocalClientTime",
+      "returnType": "LocalClientTime",
+      "returnNullable": false,
+      "description": "Gets a dictionary containing time information in local client time.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "VGhlIGRhdGVzIGFuZCB0aW1lcyB1c2VkIGJ5IGEgbWFpbCBhcHAgZm9yIE91\ndGxvb2sgb3IgT3V0bG9vayBXZWIgQXBwIGNhbiB1c2UgZGlmZmVyZW50IHRp\nbWUgem9uZXMuIE91dGxvb2sgdXNlcyB0aGUgY2xpZW50IGNvbXB1dGVyIHRp\nbWUgem9uZTsgT3V0bG9vayBXZWIgQXBwIHVzZXMgdGhlIHRpbWUgem9uZSBz\nZXQgb24gdGhlIEV4Y2hhbmdlIEFkbWluIENlbnRlciAoRUFDKS4gWW91IHNo\nb3VsZCBoYW5kbGUgZGF0ZSBhbmQgdGltZSB2YWx1ZXMgc28gdGhhdCB0aGUg\ndmFsdWVzIHlvdSBkaXNwbGF5IG9uIHRoZSB1c2VyIGludGVyZmFjZSBhcmUg\nYWx3YXlzIGNvbnNpc3RlbnQgd2l0aCB0aGUgdGltZSB6b25lIHRoYXQgdGhl\nIHVzZXIgZXhwZWN0cy4=\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "timeValue",
+          "dataType": "Date",
+          "isCollection": false,
+          "description": "A Date object",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "convertToUtcClientTime",
+      "returnType": "Date",
+      "returnNullable": false,
+      "description": "Gets a Date object from a dictionary containing time information.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "VGhlIGBjb252ZXJ0VG9VdGNDbGllbnRUaW1lYCBtZXRob2QgY29udmVydHMg\nYSBkaWN0aW9uYXJ5IGNvbnRhaW5pbmcgYSBsb2NhbCBkYXRlIGFuZCB0aW1l\nIHRvIGEgRGF0ZSBvYmplY3Qgd2l0aCB0aGUgY29ycmVjdCB2YWx1ZXMgZm9y\nIHRoZSBsb2NhbCBkYXRlIGFuZCB0aW1lLg==\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "input",
+          "dataType": "LocalClientTime",
+          "isCollection": false,
+          "description": "The local time value to convert.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "displayAppointmentForm",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Displays an existing calendar appointment.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "VGhlIGBkaXNwbGF5QXBwb2ludG1lbnRGb3JtYCBtZXRob2Qgb3BlbnMgYW4g\nZXhpc3RpbmcgY2FsZW5kYXIgYXBwb2ludG1lbnQgaW4gYSBuZXcgd2luZG93\nIG9uIHRoZSBkZXNrdG9wIG9yIGluIGEgZGlhbG9nIGJveCBvbiBtb2JpbGUg\nZGV2aWNlcy4=\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfE9mZmljZS5jb250ZXh0Lm1haWxib3guZGlzcGxh\neUFwcG9pbnRtZW50Rm9ybShhcHBvaW50bWVudElkKTt8CmBgYGpzfGBgYAo=\n",
+      "parameters": [
+        {
+          "name": "itemId",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The Exchange Web Services (EWS) identifier for an existing calendar appointment.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "displayMessageForm",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Displays an existing message.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "VGhlIGBkaXNwbGF5TWVzc2FnZUZvcm1gIG1ldGhvZCBvcGVucyBhbiBleGlz\ndGluZyBtZXNzYWdlIGluIGEgbmV3IHdpbmRvdyBvbiB0aGUgZGVza3RvcCBv\nciBpbiBhIGRpYWxvZyBib3ggb24gbW9iaWxlIGRldmljZXMu\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfE9mZmljZS5jb250ZXh0Lm1haWxib3guZGlzcGxh\neU1lc3NhZ2VGb3JtKG1lc3NhZ2VJZCk7fApgYGBqc3xgYGAK\n",
+      "parameters": [
+        {
+          "name": "itemId",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The Exchange Web Services (EWS) identifier for an existing message.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "displayNewAppointmentForm",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Displays a form for creating a new calendar appointment.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "VGhlIGBkaXNwbGF5TmV3QXBwb2ludG1lbnRGb3JtYCBtZXRob2Qgb3BlbnMg\nYSBmb3JtIHRoYXQgZW5hYmxlcyB0aGUgdXNlciB0byBjcmVhdGUgYSBuZXcg\nYXBwb2ludG1lbnQgb3IgbWVldGluZy4gSWYgcGFyYW1ldGVycyBhcmUgc3Bl\nY2lmaWVkLCB0aGUgYXBwb2ludG1lbnQgZm9ybSBmaWVsZHMgYXJlIGF1dG9t\nYXRpY2FsbHkgcG9wdWxhdGVkIHdpdGggdGhlIGNvbnRlbnRzIG9mIHRoZSBw\nYXJhbWV0ZXJzLg==\n",
+      "modes": [
+        "Read"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfHZhciBzdGFydCA9IG5ldyBEYXRlKCk7fApgYGBq\nc3x2YXIgZW5kID0gbmV3IERhdGUoKTt8ZW5kLnNldEhvdXJzKHN0YXJ0Lmdl\ndEhvdXJzKCkgKyAxKTt8fE9mZmljZS5jb250ZXh0Lm1haWxib3guZGlzcGxh\neU5ld0FwcG9pbnRtZW50Rm9ybSh8e3xyZXF1aXJlZEF0dGVuZGVlczogWydi\nb2JAY29udG9zby5jb20nXSx8b3B0aW9uYWxBdHRlbmRlZXM6IFsnc2FtQGNv\nbnRvc28uY29tJ10sfHN0YXJ0OiBzdGFydCx8ZW5kOiBlbmQsfGxvY2F0aW9u\nOiAnSG9tZScsfHJlc291cmNlczogWydwcm9qZWN0b3JAY29udG9zby5jb20n\nXSx8c3ViamVjdDogJ21lZXRpbmcnLHxib2R5OiAnSGVsbG8gV29ybGQhJ3x9\nKTt8YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "parameters",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "A dictionary of parameters describing the new appointment.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "parameters.requiredAttendees",
+          "dataType": "String[] | EmailAddressDetails[]",
+          "isCollection": false,
+          "description": "| EmailAddressDetails[]} An array of strings containing the email addresses or an array containing an `EmailAddressDetails` object for each of the required attendees for the appointment. The array is limited to a maximum of 100 entries.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "parameters.optionalAttendees",
+          "dataType": "String[] | EmailAddressDetails[]",
+          "isCollection": false,
+          "description": "| EmailAddressDetails[]} An array of strings containing the email addresses or an array containing an EmailAddressDetails object for each of the optional attendees for the appointment. The array is limited to a maximum of 100 entries.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "parameters.start",
+          "dataType": "Date",
+          "isCollection": false,
+          "description": "A Date object specifying the start date and time of the appointment.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "parameters.end",
+          "dataType": "Date",
+          "isCollection": false,
+          "description": "A Date object specifying the end date and time of the appointment.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "parameters.location",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "A string containing the location of the appointment. The string is limited to a maximum of 255 characters.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "parameters.resources",
+          "dataType": "String[]",
+          "isCollection": false,
+          "description": "An array of strings containing the resources required for the appointment. The array is limited to a maximum of 100 entries.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "parameters.subject",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "A string containing the subject of the appointment. The string is limited to a maximum of 255 characters.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "parameters.body",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The body of the appointment message. The body content is limited to a maximum size of 32 KB.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "getCallbackTokenAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Gets a string that contains a token used to get an attachment or item from an Exchange Server.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "VGhlIGBnZXRDYWxsYmFja1Rva2VuQXN5bmNgIG1ldGhvZCBtYWtlcyBhbiBh\nc3luY2hyb25vdXMgY2FsbCB0byBnZXQgYW4gb3BhcXVlIHRva2VuIGZyb20g\ndGhlIEV4Y2hhbmdlIFNlcnZlciB0aGF0IGhvc3RzIHRoZSB1c2VyJ3MgbWFp\nbGJveC4gVGhlIGxpZmV0aW1lIG9mIHRoZSBjYWxsYmFjayB0b2tlbiBpcyA1\nIG1pbnV0ZXMu\n",
+      "modes": [
+        "Read"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfGZ1bmN0aW9uIGdldENhbGxiYWNrVG9rZW4oKSB7\nfApgYGBqc3xPZmZpY2UuY29udGV4dC5tYWlsYm94LmdldENhbGxiYWNrVG9r\nZW5Bc3luYyhjYik7fH18fGZ1bmN0aW9uIGNiKGFzeW5jUmVzdWx0KSB7fHZh\nciB0b2tlbiA9IGFzeW5jUmVzdWx0LnZhbHVlO3x9fGBgYAo=\n",
+      "parameters": [
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "The token is provided as a string in the `asyncResult.value` property.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "userContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Any state data that is passed to the asynchronous method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "getUserIdentityTokenAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Gets a token identifying the user and the Office Add-in.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "VGhlIGBnZXRVc2VySWRlbnRpdHlUb2tlbkFzeW5jYCBtZXRob2QgcmV0dXJu\ncyBhIHRva2VuIHRoYXQgeW91IGNhbiB1c2UgdG8gaWRlbnRpZnkgYW5kIFth\ndXRoZW50aWNhdGUgdGhlIGFkZC1pbiBhbmQgdXNlciB3aXRoIGEgdGhpcmQt\ncGFydHkgc3lzdGVtXXtAbGluayBodHRwczovL21zZG4ubWljcm9zb2Z0LmNv\nbS9FTi1VUy9saWJyYXJ5L29mZmljZS9mcDE3OTgyOC5hc3B4fS4=\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfGZ1bmN0aW9uIGdldElkZW50aXR5VG9rZW4oKSB7\nfApgYGBqc3xPZmZpY2UuY29udGV4dC5tYWlsYm94LmdldFVzZXJJZGVudGl0\neVRva2VuQXN5bmMoY2IpO3x9fHxmdW5jdGlvbiBjYihhc3luY1Jlc3VsdCkg\ne3x2YXIgdG9rZW4gPSBhc3luY1Jlc3VsdC52YWx1ZTt8fXxgYGAK\n",
+      "parameters": [
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "The token is provided as a string in the `asyncResult.value` property.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "userContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Any state data that is passed to the asynchronous method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "makeEwsRequestAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Makes an asynchronous request to an Exchange Web Services (EWS) service on the Exchange server that hosts the user’s mailbox.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.0"
+      ],
+      "longDesc": "VGhlIGBtYWtlRXdzUmVxdWVzdEFzeW5jYCBtZXRob2Qgc2VuZHMgYW4gRVdT\nIHJlcXVlc3Qgb24gYmVoYWxmIG9mIHRoZSBhZGQtaW4gdG8gRXhjaGFuZ2Uu\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfApgYGBqc3xUaGUgZm9sbG93aW5nIGV4YW1wbGUg\nY2FsbHMgYG1ha2VFd3NSZXF1ZXN0QXN5bmNgIHRvIHVzZSB0aGUgYEdldEl0\nZW1gIG9wZXJhdGlvbiB0byBnZXQgdGhlIHN1YmplY3Qgb2YgYW4gaXRlbS58\nZnVuY3Rpb24gZ2V0U3ViamVjdFJlcXVlc3QoaWQpIHt8Ly8gUmV0dXJuIGEg\nR2V0SXRlbSBvcGVyYXRpb24gcmVxdWVzdCBmb3IgdGhlIHN1YmplY3Qgb2Yg\ndGhlIHNwZWNpZmllZCBpdGVtLnx2YXIgcmVxdWVzdCA9fCc8P3htbCB2ZXJz\naW9uPSIxLjAiIGVuY29kaW5nPSJ1dGYtOCI/PicgK3wnPHNvYXA6RW52ZWxv\ncGUgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVt\nYS1pbnN0YW5jZSInICt8JyB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3Jn\nLzIwMDEvWE1MU2NoZW1hIicgK3wnIHhtbG5zOnNvYXA9Imh0dHA6Ly9zY2hl\nbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIicgK3wnIHhtbG5zOnQ9\nImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vZXhjaGFuZ2Uvc2Vydmlj\nZXMvMjAwNi90eXBlcyI+JyArfCcgPHNvYXA6SGVhZGVyPicgK3wnIDxSZXF1\nZXN0U2VydmVyVmVyc2lvbiBWZXJzaW9uPSJFeGNoYW5nZTIwMTMiIHhtbG5z\nPSJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL2V4Y2hhbmdlL3NlcnZp\nY2VzLzIwMDYvdHlwZXMiIHNvYXA6bXVzdFVuZGVyc3RhbmQ9IjAiIC8+JyAr\nfCcgPC9zb2FwOkhlYWRlcj4nICt8JyA8c29hcDpCb2R5PicgK3wnIDxHZXRJ\ndGVtIHhtbG5zPSJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL2V4Y2hh\nbmdlL3NlcnZpY2VzLzIwMDYvbWVzc2FnZXMiPicgK3wnIDxJdGVtU2hhcGU+\nJyArfCcgPHQ6QmFzZVNoYXBlPklkT25seTwvdDpCYXNlU2hhcGU+JyArfCcg\nPHQ6QWRkaXRpb25hbFByb3BlcnRpZXM+JyArfCcgPHQ6RmllbGRVUkkgRmll\nbGRVUkk9Iml0ZW06U3ViamVjdCIvPicgK3wnIDwvdDpBZGRpdGlvbmFsUHJv\ncGVydGllcz4nICt8JyA8L0l0ZW1TaGFwZT4nICt8JyA8SXRlbUlkcz48dDpJ\ndGVtSWQgSWQ9IicgKyBpZCArICciLz48L0l0ZW1JZHM+JyArfCcgPC9HZXRJ\ndGVtPicgK3wnIDwvc29hcDpCb2R5PicgK3wnPC9zb2FwOkVudmVsb3BlPic7\nfHxyZXR1cm4gcmVxdWVzdDt8fXx8ZnVuY3Rpb24gc2VuZFJlcXVlc3QoKSB7\nfC8vIENyZWF0ZSBhIGxvY2FsIHZhcmlhYmxlIHRoYXQgY29udGFpbnMgdGhl\nIG1haWxib3gufE9mZmljZS5jb250ZXh0Lm1haWxib3gubWFrZUV3c1JlcXVl\nc3RBc3luYyh8Z2V0U3ViamVjdFJlcXVlc3QobWFpbGJveC5pdGVtLml0ZW1J\nZCksIGNhbGxiYWNrKTt8fXx8ZnVuY3Rpb24gY2FsbGJhY2soYXN5bmNSZXN1\nbHQpIHt8dmFyIHJlc3VsdCA9IGFzeW5jUmVzdWx0LnZhbHVlO3x2YXIgY29u\ndGV4dCA9IGFzeW5jUmVzdWx0LmFzeW5jQ29udGV4dDt8fC8vIFByb2Nlc3Mg\ndGhlIHJldHVybmVkIHJlc3BvbnNlIGhlcmUufH18YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "data",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The EWS request.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "The XML result of the EWS call is provided as a string in the `asyncResult.value` property. If the result exceeds 1 MB in size, an error message is returned instead.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "userContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Any state data that is passed to the asynchronous method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadWriteMailbox"
+    }
+  ],
+  "enums": [
+
+  ]
+}

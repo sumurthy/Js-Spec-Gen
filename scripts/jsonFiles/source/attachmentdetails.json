@@ -1,0 +1,24 @@
+{
+  "name": "AttachmentDetails",
+  "namespace": "AttachmentDetails",
+  "description": "Represents an attachment on an item from the server.",
+  "longDesc": "QW4gYXJyYXkgb2YgYEF0dGFjaG1lbnREZXRhaWxgIG9iamVjdHMgaXMgcmV0\ndXJuZWQgYXMgdGhlIGBhdHRhY2htZW50c2AgcHJvcGVydHkgb2YgYW4gW2BB\ncHBvaW50bWVudGBde0BsaW5rIE9mZmljZS5jb250ZXh0Lm1haWxib3guQXBw\nb2ludG1lbnR9IG9yIFtgTWVzc2FnZWBde0BsaW5rIE9mZmljZS5jb250ZXh0\nLm1haWxib3guTWVzc2FnZX0gb2JqZWN0Lg==\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "name": "Office",
+  "namespace": "Office",
+  "description": "Provides shared interfaces from the Office add-ins API for use in the Outlook add-in API.",
+  "longDesc": "VGhlIE9mZmljZSBuYW1lc3BhY2UgcHJvdmlkZXMgc2hhcmVkIGludGVyZmFj\nZXMgdGhhdCBhcmUgdXNlZCBieSBhZGQtaW5zIGluIGFsbCBvZiB0aGUgT2Zm\naWNlIGFwcHMuIFRoaXMgbGlzdGluZyBkb2N1bWVudHMgb25seSB0aG9zZSBp\nbnRlcmZhY2VzIHRoYXQgYXJlIHVzZWQgYnkgT3V0bG9vayBhZGQtaW5zLiBG\nb3IgYSBmdWxsIGxpc3Rpbmcgb2YgdGhlIE9mZmljZSBuYW1lc3BhY2UsIHNl\nZSB0aGUgW2RvY3VtZW50YXRpb24gb24gTVNETl0oaHR0cHM6Ly9tc2RuLm1p\nY3Jvc29mdC5jb20vRU4tVVMvbGlicmFyeS9vZmZpY2UvZG43MDU4NzUuYXNw\neCku\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+    {
+      "name": "Office.CoercionType",
+      "description": "",
+      "dataType": "string",
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "items": [
+        {
+          "name": "Html",
+          "value": "html",
+          "description": "Requests the data be returned in HTML format."
+        },
+        {
+          "name": "Text",
+          "value": "text",
+          "description": "Requests the data be returned in text format."
+        }
+      ]
+    },
+    {
+      "name": "Office.AsyncResultStatus",
+      "description": "",
+      "dataType": "string",
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "items": [
+        {
+          "name": "Succeeded",
+          "value": "succeeded",
+          "description": "The call succeeded."
+        },
+        {
+          "name": "Failed",
+          "value": "failed",
+          "description": "The call failed."
+        }
+      ]
+    },
+    {
+      "name": "Office.SourceProperty",
+      "description": "",
+      "dataType": "string",
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "items": [
+        {
+          "name": "Body",
+          "value": "mailBody",
+          "description": "The source of the data is from the body of a message."
+        },
+        {
+          "name": "Subject",
+          "value": "mailSubject",
+          "description": "The source of the data is from the subject of a message."
+        }
+      ]
+    }
+  ]
+}

@@ -37,6 +37,7 @@ module SpecMaker
 	@mdo = []
 	@jsonHash = {}
 	@region = 'object'
+	@skip = false
 
 	begin
 		@md_main = File.readlines(@config[:mdTemplateMain])
@@ -76,7 +77,8 @@ module SpecMaker
 	def self.hyperlink
 	end
 
-	def self.substitute(line="")		
+	def self.substitute(line="")	
+
 		(line.sub! '%resourcename%', @jsonHash[:name]) if line.include?('%resourcename%')
 		(line.sub! '%resourcedescription%', @jsonHash[:description]) if line.include?('%resourcedescription%')
 		(line.sub! '%longobjectdescription%', (decode @jsonHash[:longDesc])) if line.include?('%longobjectdescription%')
@@ -84,7 +86,6 @@ module SpecMaker
 		(line.sub! '%minreqset%', @jsonHash[:reqSet].join(', ')) if line.include?('%minreqset%')
 		(line.sub! '%minpermission%', @jsonHash[:minPermission]) if line.include?('%minpermission%')
 		(line.sub! '%modes%', @jsonHash[:modes].join(', ')) if line.include?('%modes%')
-						
 		return line
 	end
 
@@ -114,6 +115,23 @@ module SpecMaker
 	end
 
 	def self.process_methods(val='')
+
+		val = val[1..-1]
+
+		if @jsonHash[:methods]
+			methods = @jsonHash[:methods].sort_by { |v| v[:name] }
+		end
+
+		methods.each do |method|
+			line = deep_copy(val)			
+			line.sub! '%name%', method[:name]
+			line.sub! '%type%', method[:returnType]
+			line.sub! '%description%', method[:description]
+			line.sub! '%req%', method[:reqSet].join
+			line.sub! '%link%', method[:name].downcase
+
+			@mdo.push line + '  ' + NEWLINE
+		end		
 
 	end
 
@@ -147,16 +165,24 @@ module SpecMaker
 		if val.include?('</')
 			@region = 'none'
 			return
+		else
+			#remove characters < / and >
+			@region = val.tr('</>', '')
 		end
-		#remove characters < / and >
-		@region = val.tr('</>', '')
+
+		if @jsonHash[@region.to_sym] && @jsonHash[@region.to_sym].length > 0 
+			@skip = false
+		else
+			@skip = true
+		end
+		@skip = false if @region == 'resource'
+
 		return 
 	end
 
 	# Conversion to specification 
 	def self.convert_to_spec (item=nil)
 		@jsonHash = JSON.parse(item, {:symbolize_names => true})
-		@region = 'object'
 
 		# Obtain the resource name. Read the examples file, if it exists. 
 		@resource = @jsonHash[:name]
@@ -173,10 +199,16 @@ module SpecMaker
 		# end
 
 		@md_main.each_with_index do |tline, i|
+
+
 			key = tline.to_s[0]
 			key2 = tline.to_s[0..1]
 			key = '*' if key.strip.length == 0
 			val = tline.strip
+
+			set_region val if MARK_REGION.include? key	
+						
+			next if @skip
 
 			hasVar = val.include?('%') ? true  : false
 
@@ -188,8 +220,7 @@ module SpecMaker
 			when *TAKE_ACTION
 				@mdo.push (direct(key, key2, val) + NEWLINE)
 				next
-			when *MARK_REGION 
-				set_region val
+
 			when *IGNORE
 				next
 			else
@@ -197,6 +228,7 @@ module SpecMaker
 			end
 
 		end
+
 	end
 
 	# Main loop. 
@@ -207,6 +239,7 @@ module SpecMaker
 		fullpath = JSON_SOURCE_FOLDER + '/' + item.downcase
 
 		if File.file?(fullpath)
+			puts "** Processing #{item}"
 			convert_to_spec File.read(fullpath)
 		end
 
@@ -216,6 +249,7 @@ module SpecMaker
 		@mdo.each do |line|
 			file.write line
 		end
+		@mdo = []
 		processed_files = processed_files + 1
 
 	end

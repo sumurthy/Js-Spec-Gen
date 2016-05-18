@@ -1,0 +1,24 @@
+{
+  "name": "TaskSuggestion",
+  "namespace": "TaskSuggestion",
+  "description": "Represents a suggested task identified in an item.",
+  "longDesc": "VGhlIGxpc3Qgb2YgdGFza3Mgc3VnZ2VzdGVkIGluIGFuIGVtYWlsIG1lc3Nh\nZ2UgaXMgcmV0dXJuZWQgaW4gdGhlIGB0YXNrU3VnZ2VzdGlvbnNgIHByb3Bl\ncnR5IG9mIHRoZSBbYEVudGl0aWVzYF17QGxpbmsgRW50aXRpZXN9IG9iamVj\ndCB0aGF0IGlzIHJldHVybmVkIHdoZW4gdGhlIFtnZXRFbnRpdGllc117QGxp\nbmtjb2RlIE9mZmljZS5jb250ZXh0Lm1haWxib3guaXRlbSNnZXRFbnRpdGll\nc30gb3IgW2dldEVudGl0aWVzQnlUeXBlXXtAbGlua2NvZGUgT2ZmaWNlLmNv\nbnRleHQubWFpbGJveC5pdGVtI2dldEVudGl0aWVzQnlUeXBlfSBtZXRob2Qg\naXMgY2FsbGVkIG9uIHRoZSBhY3RpdmUgaXRlbS4=\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

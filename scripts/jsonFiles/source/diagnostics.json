@@ -1,0 +1,96 @@
+{
+  "name": "diagnostics",
+  "namespace": "Office.context.mailbox",
+  "description": "Provides diagnostic information to an Outlook add-in.",
+  "longDesc": "UHJvdmlkZXMgZGlhZ25vc3RpYyBpbmZvcm1hdGlvbiB0byBhbiBPdXRsb29r\nIGFkZC1pbi4=\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+    {
+      "name": "hostName",
+      "description": "Gets a string that represents the name of the host application.",
+      "isKey": false,
+      "dataType": [
+        "String"
+      ],
+      "isReadOnly": false,
+      "isNullable:": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "isNullable": false,
+      "longDesc": "QSBzdHJpbmcgdGhhdCBjYW4gYmUgb25lIG9mIHRoZSBmb2xsb3dpbmcgdmFs\ndWVzOiBgT3V0bG9va2AsIGBNYWMgT3V0bG9va2Agb3IgYE91dGxvb2tXZWJB\ncHBgLg==\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "hostVersion",
+      "description": "Gets a string that represents the version of either the host application or the Exchange Server.",
+      "isKey": false,
+      "dataType": [
+        "String"
+      ],
+      "isReadOnly": false,
+      "isNullable:": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "isNullable": false,
+      "longDesc": "SWYgdGhlIG1haWwgYWRkLWluIGlzIHJ1bm5pbmcgb24gdGhlIE91dGxvb2sg\nZGVza3RvcCBjbGllbnQsIHRoZSBgaG9zdFZlcnNpb25gIHByb3BlcnR5IHJl\ndHVybnMgdGhlIHZlcnNpb24gb2YgdGhlIGhvc3QgYXBwbGljYXRpb24sIE91\ndGxvb2suIEluIE91dGxvb2sgV2ViIEFwcCwgdGhlIHByb3BlcnR5IHJldHVy\nbnMgdGhlIHZlcnNpb24gb2YgdGhlIEV4Y2hhbmdlIFNlcnZlci4gQW4gZXhh\nbXBsZSBpcyB0aGUgc3RyaW5nIGAxNS4wLjQ2OC4wYC4=\n",
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "OWAView",
+      "description": "Gets a string that represents the current view of Outlook Web App.",
+      "isKey": false,
+      "dataType": [
+        "String"
+      ],
+      "isReadOnly": false,
+      "isNullable:": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.0"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "isNullable": false,
+      "longDesc": "VGhlIHJldHVybmVkIHN0cmluZyBjYW4gYmUgb25lIG9mIHRoZSBmb2xsb3dp\nbmcgdmFsdWVzOiBgT25lQ29sdW1uYCwgYFR3b0NvbHVtbnNgLCBvciBgVGhy\nZWVDb2x1bW5zYC4=\n",
+      "minPermission": "ReadItem"
+    }
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

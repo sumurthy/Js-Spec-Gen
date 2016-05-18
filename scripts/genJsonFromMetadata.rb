@@ -431,7 +431,7 @@ module SpecMaker
 		# Skip types
 		next if ITEM_TYPES.include? item
 
-		next if item != 'item.js'
+		#next if item != 'item.js' && item != 'body.js'
 
 		puts "** Processing #{item}"
 		fullpath = JS_SOURCE_FILES + '/' + item.downcase

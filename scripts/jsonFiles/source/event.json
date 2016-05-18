@@ -1,0 +1,69 @@
+{
+  "name": "Event",
+  "namespace": "Event",
+  "description": "Passed as a parameter to UI-less command functions in an Outlook add-in. Used to signal completion of processing.",
+  "longDesc": "VGhlIGBldmVudGAgb2JqZWN0IGlzIHBhc3NlZCBhcyBhIHBhcmFtZXRlciB0\nbyBhZGQtaW4gZnVuY3Rpb25zIGludm9rZWQgYnkgVUktbGVzcyBjb21tYW5k\nIGJ1dHRvbnMuIFRoZSBvYmplY3QgYWxsb3dzIHRoZSBhZGQtaW4gdG8gaWRl\nbnRpZnkgd2hpY2ggYnV0dG9uIHdhcyBjbGlja2VkIGFuZCB0byBzaWduYWwg\ndGhlIGhvc3QgdGhhdCBpdCBoYXMgY29tcGxldGVkIGl0cyBwcm9jZXNzaW5n\nLnx8Rm9yIGV4YW1wbGUsIGNvbnNpZGVyIGEgYnV0dG9uIGRlZmluZWQgaW4g\nYW4gYWRkLWluIG1hbmlmZXN0IGFzIGZvbGxvd3M6fHw8Q29udHJvbCB4c2k6\ndHlwZT0iQnV0dG9uIiBpZD0iZXZlbnRUZXN0QnV0dG9uIj58PExhYmVsIHJl\nc2lkPSJldmVudEJ1dHRvbkxhYmVsIiAvPnw8VG9vbHRpcCByZXNpZD0iZXZl\nbnRCdXR0b25Ub29sdGlwIiAvPnw8U3VwZXJ0aXA+fDxUaXRsZSByZXNpZD0i\nZXZlbnRTdXBlclRpcFRpdGxlIiAvPnw8RGVzY3JpcHRpb24gcmVzaWQ9ImV2\nZW50U3VwZXJUaXBEZXNjcmlwdGlvbiIgLz58PC9TdXBlcnRpcD58PEljb24+\nfDxidDpJbWFnZSBzaXplPSIxNiIgcmVzaWQ9ImJsdWUtaWNvbi0xNiIgLz58\nPGJ0OkltYWdlIHNpemU9IjMyIiByZXNpZD0iYmx1ZS1pY29uLTMyIiAvPnw8\nYnQ6SW1hZ2Ugc2l6ZT0iODAiIHJlc2lkPSJibHVlLWljb24tODAiIC8+fDwv\nSWNvbj58PEFjdGlvbiB4c2k6dHlwZT0iRXhlY3V0ZUZ1bmN0aW9uIj58PEZ1\nbmN0aW9uTmFtZT50ZXN0RXZlbnRPYmplY3Q8L0Z1bmN0aW9uTmFtZT58PC9B\nY3Rpb24+fDwvQ29udHJvbD58fFRoZSBidXR0b24gaGFzIGFuIGBpZGAgYXR0\ncmlidXRlIHNldCB0byBgZXZlbnRUZXN0QnV0dG9uYCwgYW5kIHdpbGwgaW52\nb2tlIHRoZSBgdGVzdEV2ZW50T2JqZWN0YCBmdW5jdGlvbiBkZWZpbmVkIGlu\nIHRoZSBhZGQtaW4uIFRoYXQgZnVuY3Rpb24gbG9va3MgbGlrZSB0aGlzOnx8\nZnVuY3Rpb24gdGVzdEV2ZW50T2JqZWN0KGV2ZW50KSB7fC8vIFRoZSBldmVu\ndCBvYmplY3QgaW1wbGVtZW50cyB0aGUgRXZlbnQgaW50ZXJmYWNlfHwvLyBU\naGlzIHZhbHVlIHdpbGwgYmUgImV2ZW50VGVzdEJ1dHRvbiJ8dmFyIGJ1dHRv\nbklkID0gZXZlbnQuc291cmNlLmlkO3x8Ly8gU2lnbmFsIHRvIHRoZSBob3N0\nIGFwcCB0aGF0IHByb2Nlc3NpbmcgaXMgY29tcGxldGUufGV2ZW50LmNvbXBs\nZXRlZCgpO3x9\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.3"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "Restricted",
+  "properties": [
+    {
+      "name": "source",
+      "description": "Gets the identifier of the add-in command button that invoked the method.",
+      "isKey": false,
+      "dataType": [
+        "Object"
+      ],
+      "isReadOnly": false,
+      "isNullable:": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": [
+        "1.3"
+      ],
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "restfulName": null,
+      "isNullable": false,
+      "longDesc": "VGhlIGBzb3VyY2VgIHByb3BlcnR5IHJldHVybnMgYW4gb2JqZWN0IHdpdGgg\ndGhlIGZvbGxvd2luZyBwcm9wZXJ0aWVzLg==\n",
+      "minPermission": "Restricted"
+    }
+  ],
+  "methods": [
+    {
+      "name": "completed",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Indicates that the add-in has completed processing that was triggered by an add-in command button.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.3"
+      ],
+      "longDesc": "VGhpcyBtZXRob2QgbXVzdCBiZSBjYWxsZWQgYXQgdGhlIGVuZCBvZiBhIGZ1\nbmN0aW9uIHdoaWNoIHdhcyBpbnZva2VkIGJ5IGFuIGFkZC1pbiBjb21tYW5k\nIGRlZmluZWQgd2l0aCBhbiBgQWN0aW9uYCBlbGVtZW50IHdpdGggYW4gYHhz\naTp0eXBlYCBhdHRyaWJ1dGUgc2V0IHRvIGBFeGVjdXRlRnVuY3Rpb25gLiBD\nYWxsaW5nIHRoaXMgbWV0aG9kIHNpZ25hbHMgdGhlIGhvc3QgY2xpZW50IHRo\nYXQgdGhlIGZ1bmN0aW9uIGlzIGNvbXBsZXRlIGFuZCB0aGF0IGl0IGNhbiBj\nbGVhbiB1cCBhbnkgc3RhdGUgaW52b2x2ZWQgd2l0aCBpbnZva2luZyB0aGUg\nZnVuY3Rpb24uIEZvciBleGFtcGxlLCBpZiB0aGUgdXNlciBjbG9zZXMgT3V0\nbG9vayBiZWZvcmUgdGhpcyBtZXRob2QgaXMgY2FsbGVkLCBPdXRsb29rIHdp\nbGwgd2FybiB0aGF0IGEgZnVuY3Rpb24gaXMgc3RpbGwgZXhlY3V0aW5nLg==\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfGZ1bmN0aW9uIHByb2Nlc3NJdGVtIChldmVudCkg\ne3wKYGBganN8Ly8gRG8gc29tZSBwcm9jZXNzaW5nfHxldmVudC5jb21wbGV0\nZWQoKTt8fXxgYGAK\n",
+      "parameters": [
+
+      ],
+      "minPermission": "Restricted"
+    }
+  ],
+  "enums": [
+
+  ]
+}

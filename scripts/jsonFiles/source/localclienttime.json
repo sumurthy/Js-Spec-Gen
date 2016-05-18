@@ -1,0 +1,24 @@
+{
+  "name": "LocalClientTime",
+  "namespace": "LocalClientTime",
+  "description": "Represents a date and time in the local client's time zone.",
+  "longDesc": "",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

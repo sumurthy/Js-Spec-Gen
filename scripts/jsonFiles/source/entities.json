@@ -1,0 +1,24 @@
+{
+  "name": "Entities",
+  "namespace": "Entities",
+  "description": "Represents a collection of entities found in an email message or appointment.",
+  "longDesc": "VGhlIGBFbnRpdGllc2Agb2JqZWN0IGlzIGEgY29udGFpbmVyIGZvciB0aGUg\nZW50aXR5IGFycmF5cyByZXR1cm5lZCBieSB0aGUgYGdldEVudGl0aWVzYCBh\nbmQgYGdldEVudGl0aWVzQnlUeXBlYCBtZXRob2RzIHdoZW4gdGhlIGl0ZW0g\nKGVpdGhlciBhbiBlbWFpbCBtZXNzYWdlIG9yIGFuIGFwcG9pbnRtZW50KSBj\nb250YWlucyBvbmUgb3IgbW9yZSBlbnRpdGllcyB0aGF0IGhhdmUgYmVlbiBm\nb3VuZCBieSB0aGUgc2VydmVyLiBZb3UgY2FuIHVzZSB0aGVzZSBlbnRpdGll\ncyBpbiB5b3VyIGNvZGUgdG8gcHJvdmlkZSBhZGRpdGlvbmFsIGNvbnRleHQg\naW5mb3JtYXRpb24gdG8gdGhlIHZpZXdlciwgc3VjaCBhcyBhIG1hcCB0byBh\nbiBhZGRyZXNzIGZvdW5kIGluIHRoZSBpdGVtLCBvciB0byBvcGVuIGEgZGlh\nbGVyIGZvciBhIHBob25lIG51bWJlciBmb3VuZCBpbiB0aGUgaXRlbS4=\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}

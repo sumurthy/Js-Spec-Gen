@@ -1,0 +1,367 @@
+{
+  "name": "Body",
+  "namespace": "Body",
+  "description": "Provides methods for adding and updating the content of an item in an Outlook add-in.",
+  "longDesc": "VGhlIGBib2R5YCBvYmplY3QgcHJvdmlkZXMgbWV0aG9kcyBmb3IgYWRkaW5n\nIGFuZCB1cGRhdGluZyB0aGUgY29udGVudCBvZiB0aGUgbWVzc2FnZSBvciBh\ncHBvaW50bWVudC4gSXQgaXMgcmV0dXJuZWQgaW4gdGhlIGBib2R5YCBwcm9w\nZXJ0eSBvZiB0aGUgc2VsZWN0ZWQgaXRlbS4=\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.1"
+  ],
+  "modes": [
+    "Read",
+    "Compose"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "getAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Returns the current body in a specified format.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.3"
+      ],
+      "longDesc": "VGhpcyBtZXRob2QgcmV0dXJucyB0aGUgZW50aXJlIGN1cnJlbnQgYm9keSBp\nbiB0aGUgZm9ybWF0IHNwZWNpZmllZCBieSBgY29lcmNpb25UeXBlYC4=\n",
+      "modes": [
+        "Read",
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfApgYGBqc3xUaGUgZm9sbG93aW5nIGlzIGFuIGV4\nYW1wbGUgb2YgdGhlIGByZXN1bHRgIHBhcmFtZXRlciBwYXNzZWQgdG8gdGhl\nIGNhbGxiYWNrIGZ1bmN0aW9uLnx7fCJ2YWx1ZSI6ICJURVhUIG9mIHdob2xl\nIGJvZHkgKGluY2x1ZGluZyB0aHJlYWRzIGJlbG93KSIsfCJzdGF0dXMiOiAi\nc3VjY2VlZGVkIix8ImFzeW5jQ29udGV4dCI6ICJUaGlzIGlzIHBhc3NlZCB0\nbyB0aGUgY2FsbGJhY2sifH18YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "coercionType",
+          "dataType": "Office.CoercionType",
+          "isCollection": false,
+          "description": "The format for the returned body.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "The body is provided in the requested format in the `asyncResult.value` property.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "getTypeAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Gets a value that indicates whether the content is in HTML or text format.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "The content type is returned as one of the [CoercionType]{@link Office.CoercionType} values in the `asyncResult.value` property.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadItem"
+    },
+    {
+      "name": "prependAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Adds the specified content to the beginning of the item body.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "VGhlIGBwcmVwZW5kQXN5bmNgIG1ldGhvZCBpbnNlcnRzIHRoZSBzcGVjaWZp\nZWQgc3RyaW5nIGF0IHRoZSBiZWdpbm5pbmcgb2YgdGhlIGl0ZW0gYm9keS4g\nQ2FsbGluZyB0aGUgYHByZXBlbmRBc3luY2AgbWV0aG9kIGlzIHRoZSBzYW1l\nIGFzIGNhbGxpbmcgdGhlIFtgc2V0U2VsZWN0ZWREYXRhQXN5bmNgXXtAbGlu\nayBCb2R5I3NldFNlbGVjdGVkRGF0YUFzeW5jfSBtZXRob2Qgd2l0aCB0aGUg\naW5zZXJ0aW9uIHBvaW50IGF0IHRoZSBiZWdpbm5pbmcgb2YgdGhlIGJvZHkg\nY29udGVudC4=\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "data",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The string to be inserted at the beginning of the body. The string is limited to 1,000,000 characters.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.coercionType",
+          "dataType": "Office.CoercionType",
+          "isCollection": false,
+          "description": "The desired format for the body. The string in the `data` parameter will be converted to this format.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "Any errors encountered will be provided in the `asyncResult.error` property.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    },
+    {
+      "name": "setAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Replaces the entire body with the specified text.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.3"
+      ],
+      "longDesc": "VGhlIGBzZXRBc3luY2AgbWV0aG9kIHJlcGxhY2VzIHRoZSBleGlzdGluZyBi\nb2R5IG9mIHRoZSBpdGVtIHdpdGggdGhlIHNwZWNpZmllZCBzdHJpbmcgb3Is\nIGlmIHRleHQgaXMgc2VsZWN0ZWQgaW4gdGhlIGVkaXRvciwgaXQgcmVwbGFj\nZXMgdGhlIHNlbGVjdGVkIHRleHQu\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "IyMjIyMgRXhhbXBsZSAKfApgYGBqc3xUaGUgZm9sbG93aW5nIGlzIGFuIGV4\nYW1wbGUgb2YgdGhlIGByZXN1bHRgIHBhcmFtZXRlciBwYXNzZWQgdG8gdGhl\nIGNhbGxiYWNrIGZ1bmN0aW9uLnx7fCJ2YWx1ZSI6bnVsbCx8InN0YXR1cyI6\nInN1Y2NlZWRlZCIsfCJhc3luY0NvbnRleHQiOiJUaGlzIGlzIHBhc3NlZCB0\nbyB0aGUgY2FsbGJhY2sifH18YGBgCg==\n",
+      "parameters": [
+        {
+          "name": "data",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The string that will replace the existing body. The string is limited to 1,000,000 characters.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.coercionType",
+          "dataType": "Office.CoercionType",
+          "isCollection": false,
+          "description": "The desired format for the body. The string in the `data` parameter will be converted to this format.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "Any errors encountered will be provided in the `asyncResult.error` property.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    },
+    {
+      "name": "setSelectedDataAsync",
+      "returnType": "",
+      "returnNullable": false,
+      "description": "Replaces the selection in the body with the specified text.",
+      "syntax": "",
+      "signature": "",
+      "restfulName": "",
+      "reqSet": [
+        "1.1"
+      ],
+      "longDesc": "VGhlIGBzZXRTZWxlY3RlZERhdGFBc3luY2AgbWV0aG9kIGluc2VydHMgdGhl\nIHNwZWNpZmllZCBzdHJpbmcgYXQgdGhlIGN1cnNvciBsb2NhdGlvbiBpbiB0\naGUgYm9keSBvZiB0aGUgaXRlbSwgb3IsIGlmIHRleHQgaXMgc2VsZWN0ZWQg\naW4gdGhlIGVkaXRvciwgaXQgcmVwbGFjZXMgdGhlIHNlbGVjdGVkIHRleHQu\nIElmIHRoZSBjdXJzb3Igd2FzIG5ldmVyIGluIHRoZSBib2R5IG9mIHRoZSBp\ndGVtLCBvciBpZiB0aGUgYm9keSBvZiB0aGUgaXRlbSBsb3N0IGZvY3VzIGlu\nIHRoZSBVSSwgdGhlIHN0cmluZyB3aWxsIGJlIGluc2VydGVkIGF0IHRoZSB0\nb3Agb2YgdGhlIGJvZHkgY29udGVudC4=\n",
+      "modes": [
+        "Compose"
+      ],
+      "codeSnippet": "",
+      "parameters": [
+        {
+          "name": "data",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "The string to be inserted in the body. The string is limited to 1,000,000 characters.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "An object literal that contains one or more of the following properties. For more information on defining and using the `options` parameter, see {@tutorial options}.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.coercionType",
+          "dataType": "Office.CoercionType",
+          "isCollection": false,
+          "description": "The desired format for the body. The string in the `data` parameter will be converted to this format.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "options.asyncContext",
+          "dataType": "Object",
+          "isCollection": false,
+          "description": "Developers can provide any object they wish to access in the callback method.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        },
+        {
+          "name": "callback",
+          "dataType": "function",
+          "isCollection": false,
+          "description": "Any errors encountered will be provided in the `asyncResult.error` property.",
+          "isRequired": true,
+          "enumName": null,
+          "subParms": [
+
+          ]
+        }
+      ],
+      "minPermission": "ReadWriteItem"
+    }
+  ],
+  "enums": [
+
+  ]
+}

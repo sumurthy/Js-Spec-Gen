@@ -1,0 +1,24 @@
+{
+  "name": "PhoneNumber",
+  "namespace": "PhoneNumber",
+  "description": "Represents a phone number identified in an item.",
+  "longDesc": "QW4gYXJyYXkgb2YgYFBob25lTnVtYmVyYCBvYmplY3RzIGNvbnRhaW5pbmcg\ndGhlIHBob25lIG51bWJlcnMgZm91bmQgaW4gYW4gZW1haWwgbWVzc2FnZSBp\ncyByZXR1cm5lZCBpbiB0aGUgYHBob25lTnVtYmVyc2AgcHJvcGVydHkgb2Yg\ndGhlIFtFbnRpdGllc117QGxpbmtjb2RlIEVudGl0aWVzfSBvYmplY3QgdGhh\ndCBpcyByZXR1cm5lZCB3aGVuIHlvdSBjYWxsIHRoZSBbZ2V0RW50aXRpZXNd\ne0BsaW5rY29kZSBPZmZpY2UuY29udGV4dC5tYWlsYm94Lml0ZW0jZ2V0RW50\naXRpZXN9IG1ldGhvZCBvbiB0aGUgc2VsZWN0ZWQgaXRlbS4=\n",
+  "collectionOf": null,
+  "isCollection": false,
+  "reqSet": [
+    "1.0"
+  ],
+  "modes": [
+    "Read"
+  ],
+  "minPermission": "ReadItem",
+  "properties": [
+
+  ],
+  "methods": [
+
+  ],
+  "enums": [
+
+  ]
+}
