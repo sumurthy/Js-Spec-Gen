@@ -13,7 +13,6 @@ module SpecMaker
 
 	# Initialize 
 	NEWLINE = "\n"
-	JS_SOURCE_FILES = "../../data/outlook"		
 	JSON_OUTPUT_FOLDER = "jsonFiles/source/"
 	SEGMENT_END = '*/'
 	FIRST_LINE = 0
@@ -47,10 +46,8 @@ module SpecMaker
 
 	CONFIG = "../config/config.json"
 	@config = JSON.parse(File.read(CONFIG, :encoding => 'UTF-8'), {:symbolize_names => true})
-
-	JSTRUCT = "../config/json_structure.json"
-	@jstruct = JSON.parse(File.read(JSTRUCT, :encoding => 'UTF-8'), {:symbolize_names => true})
-
+	@jstruct = JSON.parse(File.read(@config[:jsonStructure], :encoding => 'UTF-8'), {:symbolize_names => true})
+	JS_SOURCE_FILES = @config[:metadataFilePath]
 	puts "....Starting run for the app #{@config[:app]}"
 	puts
 
@@ -155,8 +152,6 @@ module SpecMaker
 				if in_object
 					@json_object[:description] =  summary
 					@json_object[:longDesc] = encode (desc_arr + xmode_arr + eg_arr)
-
-					puts desc_arr
 					@json_object[:reqSet].push req_ver
 					(@json_object[:modes].push "Read") if read_mode
 					(@json_object[:modes].push "Compose") if compose_mode
