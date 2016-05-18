@@ -1,0 +1,2 @@
+# Chart Legend Format
+none

@@ -1,4 +1,4 @@
-### Getter 
+### Getter and Setter 
 ```js
 Excel.run(function (ctx) { 
 	var application = ctx.workbook.application;
@@ -14,7 +14,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getNotebookById(id: string)
+### calculate(calculationType: string)
 ```js
 Excel.run(function (ctx) { 
 	ctx.workbook.application.calculate('Full');
@@ -25,6 +25,13 @@ Excel.run(function (ctx) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
-//
 ```
+
+ex2
+
+ex3
+
+ex3
+
+
 
