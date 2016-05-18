@@ -23,56 +23,9 @@ This is an internal metadata defintion file that describes the API structure. Th
 This file is not part of the repository since it contains some internal data. 
 The location of this file is defined in `genJsonFromMetadata.rb` script file. The path is relative to this script file. If you wish to change the location, do update the line below prior to running the script. 
 
-`METADATA_FILE_SOURCE = '../../data/OneNote.cs'`
+`METADATA_FILE_SOURCE = '../../data/WdJscomApi.cs'`
 
 **Please do not make this part of the repository as it doesn't belong here**
-
-### Enum file 
-
-This single Json file contains the enumerations used throughout the APIs. The enumeration values are expanded where ever they are used in the APIs. For each of the new enumerations you add, include an entry with supported values. Optionally, you can include a short description of the allowed value. 
-
-Example: 
-
-```json
-	"OneNote.PageContentType": {
-		"Outline": "Outline content",
-		"Image": "Image content",
-		"Ink": "",
-		"InsertedFile": "",
-		"MediaFile": "",
-		"Other": ""
-	}
-
-```
-
-##### File Location
-
-The location of this file is at `Js-Spec-Gen/scripts/jsonFiles/settings/enums.json`
-
-
-### loadMethod file 
-
-This is a constant file used to auto generate load() method in each of the resource. No additional effort is needed other than keeping this file in the below location.
-
-
-##### File Location
-
-The location of this file is at `Js-Spec-Gen/scripts/jsonFiles/settings/loadMethod.json`
-
-
-### objectkeys file 
-
-This file is used to define the primary key of collection objects. That is, the key value used to fetch individual item using getItem method. Since the key value cannot be inferred from the metadata file, this additional config setup is required.
-
-Define each of the collection as an entry and include any keys that are supported. 
-
-```json
-	"tables": ["id", "name"],
-```
-
-##### File Location
-
-The location of this file is at `Js-Spec-Gen/scripts/jsonFiles/settings/objectkeys.json`
 
 ### Code snippet (example) files
 
@@ -84,6 +37,7 @@ For each of the resources in your object model, create a new file in the specifi
 * For each method, begin with three `#` symbols and include method signature. Example `### getNotebookById(id: string)` 
 * Under this line, define the example you wish to include. 
 * For getter and setter: begin with three `#` symbols and follow with the text `getter` and `setter` or `getter or setter` depending on what the object supports.
+* Between code blocks or within a code snippets - DO NOT INCLUDE # symbol for formatting purpose. This will throw off the script.
 
 When the final markdown spec file is created for the resource, these code snippets get included underneath method definition. Getter and setter code snippets are added at the end of the spec file. 
 
