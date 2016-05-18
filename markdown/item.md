@@ -3,7 +3,7 @@
 Provides methods and properties for accessing a message or appointment in an Outlook add-in.
 
 The `item` namespace is used to access the currently selected message, meeting request, or appointment. You can determine the type of the `item` by using the [itemType]{@link Office.context.mailbox.item#itemType} property. 	 
-```js 	 
+ 	 
 // The initialize function is required for all apps. 	 
 Office.initialize = function () { 	 
 // Checks for the DOM to load using the jQuery ready function. 	 
@@ -15,13 +15,13 @@ var subject = item.subject;
 // which can be a message or appointment. 	 
 }); 	 
 } 	 
-``` 	 
+ 	 
 ##### Example 
  	 
 
 ```js 	 
 The following JavaScript code example shows how to access the `subject` property of the current item in Outlook. 	 
-```js 	 
+ 	 
 // The initialize function is required for all apps. 	 
 Office.initialize = function () { 	 
 // Checks for the DOM to load using the jQuery ready function. 	 
@@ -33,7 +33,7 @@ var subject = item.subject;
 // which can be a message or appointment. 	 
 }); 	 
 } 	 
-``` 	 
+ 	 
 ```
 
 
