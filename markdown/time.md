@@ -15,7 +15,7 @@ The `Time` object is returned as the [start]{@linkcode Office.context.mailbox.it
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [getAsync](getasync)     | %dtype% | Gets the start or end time of an appointment. | 1.1|  
-| [setAsync](setasync)     | %dtype% | Sets the start or end time of an appointment. | 1.1|  
->| [%name%](%link%)     | %dtype% | %description% | %req%|
+| [getAsync](getasync)     |  | Gets the start or end time of an appointment. | 1.1|  
+| [setAsync](setasync)     |  | Sets the start or end time of an appointment. | 1.1|  
+>| [%name%](%link%)     | %type% | %description% | %req%|
 

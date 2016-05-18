@@ -15,8 +15,8 @@ Provides methods to get and set the recipients of an appointment or message in a
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [addAsync](addasync)     | %dtype% | Adds a recipient list to the existing recipients for an appointment or message. | 1.1|  
-| [getAsync](getasync)     | %dtype% | Gets a recipient list for an appointment or message. | 1.1|  
-| [setAsync](setasync)     | %dtype% | Sets a recipient list for an appointment or message. | 1.1|  
->| [%name%](%link%)     | %dtype% | %description% | %req%|
+| [addAsync](addasync)     |  | Adds a recipient list to the existing recipients for an appointment or message. | 1.1|  
+| [getAsync](getasync)     |  | Gets a recipient list for an appointment or message. | 1.1|  
+| [setAsync](setasync)     |  | Sets a recipient list for an appointment or message. | 1.1|  
+>| [%name%](%link%)     | %type% | %description% | %req%|
 

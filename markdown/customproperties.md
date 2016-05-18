@@ -60,9 +60,9 @@ function saveCallback(asyncResult) {
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [get](get)     | %dtype% | Returns the value of the specified custom property. | 1.0|  
-| [remove](remove)     | %dtype% | Removes the specified property from the custom property collection. | 1.0|  
-| [saveAsync](saveasync)     | %dtype% | Saves item-specific custom properties to the server. | 1.0|  
-| [set](set)     | %dtype% | Sets the specified property to the specified value. | 1.0|  
->| [%name%](%link%)     | %dtype% | %description% | %req%|
+| [get](get)     | String | Returns the value of the specified custom property. | 1.0|  
+| [remove](remove)     |  | Removes the specified property from the custom property collection. | 1.0|  
+| [saveAsync](saveasync)     |  | Saves item-specific custom properties to the server. | 1.0|  
+| [set](set)     |  | Sets the specified property to the specified value. | 1.0|  
+>| [%name%](%link%)     | %type% | %description% | %req%|
 

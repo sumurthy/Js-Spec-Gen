@@ -15,10 +15,10 @@ The `body` object provides methods for adding and updating the content of the me
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [getAsync](getasync)     | %dtype% | Returns the current body in a specified format. | 1.3|  
-| [getTypeAsync](gettypeasync)     | %dtype% | Gets a value that indicates whether the content is in HTML or text format. | 1.1|  
-| [prependAsync](prependasync)     | %dtype% | Adds the specified content to the beginning of the item body. | 1.1|  
-| [setAsync](setasync)     | %dtype% | Replaces the entire body with the specified text. | 1.3|  
-| [setSelectedDataAsync](setselecteddataasync)     | %dtype% | Replaces the selection in the body with the specified text. | 1.1|  
->| [%name%](%link%)     | %dtype% | %description% | %req%|
+| [getAsync](getasync)     |  | Returns the current body in a specified format. | 1.3|  
+| [getTypeAsync](gettypeasync)     |  | Gets a value that indicates whether the content is in HTML or text format. | 1.1|  
+| [prependAsync](prependasync)     |  | Adds the specified content to the beginning of the item body. | 1.1|  
+| [setAsync](setasync)     |  | Replaces the entire body with the specified text. | 1.3|  
+| [setSelectedDataAsync](setselecteddataasync)     |  | Replaces the selection in the body with the specified text. | 1.1|  
+>| [%name%](%link%)     | %type% | %description% | %req%|
 

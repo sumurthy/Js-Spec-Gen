@@ -15,7 +15,7 @@ Provides methods to get and set the subject of an appointment or message in an O
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [getAsync](getasync)     | %dtype% | Gets the subject of an appointment or message. | 1.1|  
-| [setAsync](setasync)     | %dtype% | Sets the subject of an appointment or message. | 1.1|  
->| [%name%](%link%)     | %dtype% | %description% | %req%|
+| [getAsync](getasync)     |  | Gets the subject of an appointment or message. | 1.1|  
+| [setAsync](setasync)     |  | Sets the subject of an appointment or message. | 1.1|  
+>| [%name%](%link%)     | %type% | %description% | %req%|
 

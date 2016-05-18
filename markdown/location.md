@@ -15,7 +15,7 @@ Provides methods to get and set the location of a meeting in an Outlook add-in.
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [getAsync](getasync)     | %dtype% | Gets the location of an appointment. | 1.1|  
-| [setAsync](setasync)     | %dtype% | Sets the location of an appointment. | 1.1|  
->| [%name%](%link%)     | %dtype% | %description% | %req%|
+| [getAsync](getasync)     |  | Gets the location of an appointment. | 1.1|  
+| [setAsync](setasync)     |  | Sets the location of an appointment. | 1.1|  
+>| [%name%](%link%)     | %type% | %description% | %req%|
 

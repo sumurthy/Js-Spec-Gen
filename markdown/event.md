@@ -54,6 +54,6 @@ event.completed();
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [completed](completed)     | %dtype% | Indicates that the add-in has completed processing that was triggered by an add-in command button. | 1.3|  
->| [%name%](%link%)     | %dtype% | %description% | %req%|
+| [completed](completed)     |  | Indicates that the add-in has completed processing that was triggered by an add-in command button. | 1.3|  
+>| [%name%](%link%)     | %type% | %description% | %req%|
 

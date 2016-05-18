@@ -38,9 +38,9 @@ Office.context.roamingSettings.saveAsync();
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [get](get)     | %dtype% | Retrieves the specified setting. | 1.0|  
-| [remove](remove)     | %dtype% | Removes the specified setting. | 1.0|  
-| [saveAsync](saveasync)     | %dtype% | Saves the settings. | 1.0|  
-| [set](set)     | %dtype% | Sets or creates the specified setting. | 1.0|  
->| [%name%](%link%)     | %dtype% | %description% | %req%|
+| [get](get)     | (String|Number|Boolean|Object|Array) | Retrieves the specified setting. | 1.0|  
+| [remove](remove)     |  | Removes the specified setting. | 1.0|  
+| [saveAsync](saveasync)     |  | Saves the settings. | 1.0|  
+| [set](set)     |  | Sets or creates the specified setting. | 1.0|  
+>| [%name%](%link%)     | %type% | %description% | %req%|
 

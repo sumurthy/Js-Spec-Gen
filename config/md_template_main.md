@@ -36,6 +36,6 @@
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
->| [%name%](%link%)     | %dtype% | %description% | %req%|
+>| [%name%](%link%)     | %type% | %description% | %req%|
 
 </methods>

@@ -79,20 +79,20 @@ var subject = item.subject;
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [addFileAttachmentAsync](addfileattachmentasync)     | %dtype% | Adds a file to a message or appointment as an attachment. | 1.1|  
-| [addItemAttachmentAsync](additemattachmentasync)     | %dtype% | Adds an Exchange item, such as a message, as an attachment to the message or appointment. | 1.1|  
-| [close](close)     | %dtype% | Closes the current item that is being composed. | 1.3|  
-| [displayReplyAllForm](displayreplyallform)     | %dtype% | Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment. | 1.0|  
-| [displayReplyForm](displayreplyform)     | %dtype% | Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment. | 1.0|  
-| [getEntities](getentities)     | %dtype% |  | 1.0|  
-| [getEntitiesByType](getentitiesbytype)     | %dtype% | Gets an array of all the entities of the specified entity type found in the selected item. | 1.0|  
-| [getFilteredEntitiesByName](getfilteredentitiesbyname)     | %dtype% | Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file. | 1.0|  
-| [getRegExMatches](getregexmatches)     | %dtype% | Returns string values in the selected item that match the regular expressions defined in the manifest XML file. | 1.0|  
-| [getRegExMatchesByName](getregexmatchesbyname)     | %dtype% | Returns string values in the selected item that match the named regular expression defined in the manifest XML file. | 1.0|  
-| [getSelectedDataAsync](getselecteddataasync)     | %dtype% | Asynchronously returns selected data from the subject or body of a message. | 1.0|  
-| [loadCustomPropertiesAsync](loadcustompropertiesasync)     | %dtype% | Asynchronously loads custom properties for this add-in on the selected item. | 1.0|  
-| [removeAttachmentAsync](removeattachmentasync)     | %dtype% | Removes an attachment from a message or appointment. | 1.1|  
-| [saveAsync](saveasync)     | %dtype% | Asynchronously saves an item. | 1.3|  
-| [setSelectedDataAsync](setselecteddataasync)     | %dtype% | Asynchronously inserts data into the body or subject of a message. | 1.2|  
->| [%name%](%link%)     | %dtype% | %description% | %req%|
+| [addFileAttachmentAsync](addfileattachmentasync)     |  | Adds a file to a message or appointment as an attachment. | 1.1|  
+| [addItemAttachmentAsync](additemattachmentasync)     |  | Adds an Exchange item, such as a message, as an attachment to the message or appointment. | 1.1|  
+| [close](close)     |  | Closes the current item that is being composed. | 1.3|  
+| [displayReplyAllForm](displayreplyallform)     |  | Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment. | 1.0|  
+| [displayReplyForm](displayreplyform)     |  | Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment. | 1.0|  
+| [getEntities](getentities)     | Entities |  | 1.0|  
+| [getEntitiesByType](getentitiesbytype)     | Array<(String|Contact|MeetingSuggestion|PhoneNumber|TaskSuggestion)> | Gets an array of all the entities of the specified entity type found in the selected item. | 1.0|  
+| [getFilteredEntitiesByName](getfilteredentitiesbyname)     | Array<(String|Contact|MeetingSuggestion|PhoneNumber|TaskSuggestion)> | Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file. | 1.0|  
+| [getRegExMatches](getregexmatches)     | Object | Returns string values in the selected item that match the regular expressions defined in the manifest XML file. | 1.0|  
+| [getRegExMatchesByName](getregexmatchesbyname)     | String[] | Returns string values in the selected item that match the named regular expression defined in the manifest XML file. | 1.0|  
+| [getSelectedDataAsync](getselecteddataasync)     | String | Asynchronously returns selected data from the subject or body of a message. | 1.0|  
+| [loadCustomPropertiesAsync](loadcustompropertiesasync)     |  | Asynchronously loads custom properties for this add-in on the selected item. | 1.0|  
+| [removeAttachmentAsync](removeattachmentasync)     |  | Removes an attachment from a message or appointment. | 1.1|  
+| [saveAsync](saveasync)     |  | Asynchronously saves an item. | 1.3|  
+| [setSelectedDataAsync](setselecteddataasync)     |  | Asynchronously inserts data into the body or subject of a message. | 1.2|  
+>| [%name%](%link%)     | %type% | %description% | %req%|
 
