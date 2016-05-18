@@ -23,7 +23,7 @@ This is an internal metadata defintion file that describes the API structure. Th
 This file is not part of the repository since it contains some internal data. 
 The location of this file is defined in `genJsonFromMetadata.rb` script file. The path is relative to this script file. If you wish to change the location, do update the line below prior to running the script. 
 
-`METADATA_FILE_SOURCE = '../../data/OneNote.cs'`
+`METADATA_FILE_SOURCE = '../../data/WdJscomApi.cs'`
 
 **Please do not make this part of the repository as it doesn't belong here**
 
