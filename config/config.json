@@ -3,7 +3,7 @@
   "customResourceNote" : "",
   "isGa": true,
   "openSpecRun": false,  
-  "metadataFilePath": "../../data/outlook",
+  "metadataFilePath": "../../data/WdJscomApi.cs",
   "enumFilePath": null, 
   "logFile": "../logs",
   "platforms":"",
