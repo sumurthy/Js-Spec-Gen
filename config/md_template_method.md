@@ -3,14 +3,14 @@
 <api>
 ### %apisignature%
 %apidescription%
-<parameter>
+<parameters>
 #### Parameters
 %noparam%
 | Method	   | Type    | Description | 
 |:-------------|:---------------|:------------|
 >| %name%     | %dtype% | %description% | 
 
-</parameter>
+</parameters>
 #### Returns
 %returntype% 
 

@@ -14,8 +14,9 @@ module SpecMaker
 	JSON_SOURCE_FOLDER = "jsonFiles/source"		
 	ENUMS = 'jsonFiles/settings/enums.json'
 	MARKDOWN_OUTPUT_FOLDER = "../markdown/"
-	WRITE_BACK = %w[# | *]
+	WRITE_BACK = %w[# | * _ ]
 	TAKE_ACTION = %w[% >]
+	MARK_REGION = %w[<]
 	IGNORE = %w[/]
 
 	EXAMPLES_FOLDER = "../api-examples-to-merge/"
@@ -68,6 +69,10 @@ module SpecMaker
 		return Base64.decode64(desc).split('|').join(" 	 \n")
 	end	
 
+	def self.deep_copy(o)
+		Marshal.load(Marshal.dump(o))
+	end
+
 	def self.hyperlink
 	end
 
@@ -75,29 +80,77 @@ module SpecMaker
 		(line.sub! '%resourcename%', @jsonHash[:name]) if line.include?('%resourcename%')
 		(line.sub! '%resourcedescription%', @jsonHash[:description]) if line.include?('%resourcedescription%')
 		(line.sub! '%longobjectdescription%', (decode @jsonHash[:longDesc])) if line.include?('%longobjectdescription%')
+		(line.sub! '%resourcenamespace%', @jsonHash[:namespace]) if line.include?('%resourcenamespace%')		
+		(line.sub! '%minreqset%', @jsonHash[:reqSet].join(', ')) if line.include?('%minreqset%')
+		(line.sub! '%minpermission%', @jsonHash[:minPermission]) if line.include?('%minpermission%')
+		(line.sub! '%modes%', @jsonHash[:modes].join(', ')) if line.include?('%modes%')
+						
 		return line
 	end
 
-	def self.process_param
+	def self.process_params
 	end
 
-	def self.process_properties
+	def self.process_properties(val='')
+		val = val[1..-1]
+
+		if @jsonHash[:properties]
+			propreties = @jsonHash[:properties].sort_by { |v| v[:name] }
+		end
+
+		propreties.each do |prop|
+			line = deep_copy(val)			
+			line.sub! '%name%', prop[:name]
+			line.sub! '%type%', prop[:dataType].join(', ')
+			line.sub! '%description%', prop[:description]
+			line.sub! '%req%', prop[:reqSet].join
+
+			@mdo.push line + '  ' + NEWLINE
+		end
 	end
 
-	def self.process_enums
+	def self.process_enums(val='')
+
 	end
 
-	def self.process_method_details
+	def self.process_methods(val='')
+
 	end
 
-	def self.process_object
+	def self.process_method_details(val='')
+
 	end
 
 	def self.direct(key='', key2= '', val='')
-		if key == '%'
+
+		case key 
+		when '%'
 			val = substitute val
+		when '>'
+			case @region
+			when 'properties'
+				process_properties val
+			when 'methods'
+				process_methods val
+			when 'parameters'
+				process_params val
+			when 'enums'
+				process_enums val
+			end
 		end
+
 		return val
+	end
+
+	def self.set_region(val='')
+
+		if val.include?('</')
+			@region = 'none'
+			return
+		end
+		#remove characters < / and >
+		@region = val.tr('</>', '')
+		return 
 	end
 
 	# Conversion to specification 
@@ -135,6 +188,8 @@ module SpecMaker
 			when *TAKE_ACTION
 				@mdo.push (direct(key, key2, val) + NEWLINE)
 				next
+			when *MARK_REGION 
+				set_region val
 			when *IGNORE
 				next
 			else

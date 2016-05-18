@@ -1,29 +1,38 @@
-<header>
+<resource>
 # %resourcename% resource type
+
+*Namespace: %resourcenamespace%*
+
+*Minimum requirement set/version: %minreqset%*
+
+*Minimum permission level: %minpermission%*
+
+*Modes supported: %modes%*
+
 
 %resourcedescription%
 
 %longobjectdescription%
 
-</header>
+</resource>
 
 <properties>
 ### Properties
 
 | Property	   | Type	| Description| Requirements|
 |:-------------|:-------|:-----------|:------------|
->|%propname%      | %proptype% | %propdescription% | %propreq% |
+>|%name%      | %type% | %description% | %req% |
 
 %propertygetset%
 %propertynotes%
 </properties>
 
 <enums>
-### Properties
+### Enumerations
 
 | Option	   | Type	| Description| Requirements|
 |:-------------|:-------|:-----------|:------------|
->|%enumname%      | %enumtype% | %enumdescription% | %enumreq% |
+>|%name%      | %type% | %description% | %enumreq% |
 
 %propertygetset%
 %propertynotes%
