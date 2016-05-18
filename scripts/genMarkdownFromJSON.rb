@@ -65,7 +65,7 @@ module SpecMaker
 
 
 	def self.decode(desc="")
-		return Base64.decode64(desc).split('|').join(" \n")
+		return Base64.decode64(desc).split('|').join(" 	 \n")
 	end	
 
 	def self.hyperlink
