@@ -141,7 +141,7 @@
     {
       "name": "verticalAlignment",
       "dataType": "string",
-      "description": "Gets and sets the vertical alignment of the cells in the row. The value can be 'top', 'center' or 'bottom'.",
+      "description": "Gets and sets the vertical alignment of the cells in the row.",
       "isReadOnly": false,
       "enumNameJs": "Word.VerticalAlignment",
       "isCollection": false,

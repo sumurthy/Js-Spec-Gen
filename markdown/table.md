@@ -25,7 +25,7 @@ Represents a table in a Word document.
 |styleLastColumn|bool|Gets and sets whether the table has a last column with a special style.|1.3||
 |styleTotalRow|bool|Gets and sets whether the table has a total (last) row with a special style.|1.3||
 |values|string|Gets and sets the text values in the table, as a 2D Javascript array.|1.3||
-|verticalAlignment|string|Gets and sets the vertical alignment of every cell in the table. The value can be 'top', 'center' or 'bottom'. Possible values are: Mixed, Top, Center, Bottom.|1.3||
+|verticalAlignment|string|Gets and sets the vertical alignment of every cell in the table. Possible values are: Mixed, Top, Center, Bottom.|1.3||
 |width|float|Gets and sets the width of the table in points.|1.3||
 
 _See property access [examples.](#property-access-examples)_

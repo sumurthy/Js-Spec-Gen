@@ -11,9 +11,8 @@ Contains a collection of ContentControl objects. Content controls are bounded an
 |items|[ContentControl[]](contentcontrol.md)|A collection of contentControl objects. Read-only.|1.1||
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|first|[ContentControl](contentcontrol.md)|Gets the first content control in this collection. Read-only.|WordApiDesktop, 1.3||
+None
+
 
 ## Methods
 

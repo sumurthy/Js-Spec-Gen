@@ -159,7 +159,7 @@ end
 		@json_object[:name] = line.split.first(3).join(' ').split.last(1).join(' ').gsub(':','')
 		@json_object[:info][:reqSet] = req_set
 		object_req_set = req_set
-		puts "*-> #{@json_object[:name]}"
+		puts "*-> Processing #{@json_object[:name]}"
 		if @json_object[:name].include?('Collection')
 			@json_object[:isCollection] = true
 			# Define what it is a collection of. Extract object name between < >

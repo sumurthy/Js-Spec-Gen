@@ -18,7 +18,7 @@ Represents a row in a Word document.
 |rowIndex|int|Gets the index of the row in its parent table. Read-only.|1.3||
 |shadingColor|string|Gets and sets the shading color.|1.3||
 |values|string|Gets and sets the text values in the row, as a 1D Javascript array.|1.3||
-|verticalAlignment|string|Gets and sets the vertical alignment of the cells in the row. The value can be 'top', 'center' or 'bottom'. Possible values are: Mixed, Top, Center, Bottom.|1.3||
+|verticalAlignment|string|Gets and sets the vertical alignment of the cells in the row. Possible values are: Mixed, Top, Center, Bottom.|1.3||
 
 _See property access [examples.](#property-access-examples)_
 

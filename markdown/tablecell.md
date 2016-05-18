@@ -17,7 +17,7 @@ Represents a table cell in a Word document.
 |rowIndex|int|Gets the index of the cell's row in the table. Read-only.|1.3||
 |shadingColor|string|Gets or sets the shading color of the cell. Color is specified in "#RRGGBB" format or by using the color name.|1.3||
 |value|string|Gets and sets the text of the cell.|1.3||
-|verticalAlignment|string|Gets and sets the vertical alignment of the cell. The value can be 'top', 'center' or 'bottom'. Possible values are: Mixed, Top, Center, Bottom.|1.3||
+|verticalAlignment|string|Gets and sets the vertical alignment of the cell. Possible values are: Mixed, Top, Center, Bottom.|1.3||
 |width|float|Gets the width of the cell in points. Read-only.|1.3||
 
 _See property access [examples.](#property-access-examples)_

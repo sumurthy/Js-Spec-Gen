@@ -79,6 +79,8 @@ module SpecMaker
 	@resource = ''
 	@gsType = ''
 	@changes = []
+	@changes.push '|Object| What is new| Description|Feedback|' + NEWLINE
+	@changes.push '|:----|:----|:----|:----|' + NEWLINE
 
 	def self.uncapitalize (str="")
 		if str.length > 0
@@ -421,6 +423,7 @@ module SpecMaker
 		fullpath = JSON_SOURCE_FOLDER + '/' + item.downcase
 
 		if File.file?(fullpath)
+			puts "*-> Processing #{item}"
 			convert_to_spec File.read(fullpath)
 			processed_files = processed_files + 1
 		end

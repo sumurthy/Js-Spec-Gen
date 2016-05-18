@@ -19,18 +19,6 @@
   },
   "properties": [
     {
-      "name": "first",
-      "dataType": "ContentControl",
-      "description": "Gets the first content control in this collection.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "reqSet": "WordApiDesktop, 1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
       "name": "items",
       "dataType": "ContentControl[]",
       "description": "A collection of contentControl objects.",
