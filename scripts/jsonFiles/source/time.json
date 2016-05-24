@@ -18,7 +18,9 @@
   "methods": [
     {
       "name": "getAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Gets the start or end time of an appointment.",
       "syntax": "",
@@ -71,7 +73,9 @@
     },
     {
       "name": "setAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Sets the start or end time of an appointment.",
       "syntax": "",

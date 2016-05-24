@@ -1,14 +1,17 @@
 <resource>
 # %resourcename% resource type
 
+##### Namespace: *%resourcenamespace%*
+
 %resourcedescription%
 
 %longobjectdescription%
 
-*	Namespace: *%resourcenamespace%*
-*	Minimum requirement set/version: *%minreqset%*
-*	Minimum permission level: *%minpermission%*
-*	Modes supported: *%modes%*
+|Requirement| Value|
+|:----------|:-----|
+|Minimum requirement set/version: | *%minreqset%*| 
+|Minimum permission level |*%minpermission%* |
+|Modes supported | *%modes%*| 
 
 </resource>
 
@@ -17,7 +20,7 @@
 
 | Property	   | Type	| Description| Requirements|
 |:-------------|:-------|:-----------|:------------|
->|%name%      | %type% | %description% | %req% |
+>|%name%      | %type% | %description% | %req% %nullable% %readonly%|
 
 </properties>
 
@@ -36,6 +39,6 @@
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
->| [%name%](%link%)     | %type% | %description% | %req%|
+>| [%name%](%link%)     | %type% | %description% %nullable% | %req%|
 
 </methods>

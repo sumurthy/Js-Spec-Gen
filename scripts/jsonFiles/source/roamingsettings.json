@@ -19,7 +19,13 @@
   "methods": [
     {
       "name": "get",
-      "returnType": "(String|Number|Boolean|Object|Array)",
+      "returnType": [
+        "(String",
+        "Number",
+        "Boolean",
+        "Object",
+        "Array)"
+      ],
       "returnNullable": true,
       "description": "Retrieves the specified setting.",
       "syntax": "",
@@ -47,12 +53,13 @@
           ]
         }
       ],
-      "minPermission": "Restricted",
-      "isCollection": true
+      "minPermission": "Restricted"
     },
     {
       "name": "remove",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Removes the specified setting.",
       "syntax": "",
@@ -84,7 +91,9 @@
     },
     {
       "name": "saveAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Saves the settings.",
       "syntax": "",
@@ -116,7 +125,9 @@
     },
     {
       "name": "set",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Sets or creates the specified setting.",
       "syntax": "",

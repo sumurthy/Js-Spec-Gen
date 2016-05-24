@@ -1,5 +1,7 @@
 # RoamingSettings resource type
 
+##### Namespace: *RoamingSettings*
+
 Provides methods for accessing custom settings for an Outlook add-in.
 
 The settings created by using the methods of the `RoamingSettings` object are saved per add-in and per user. That is, they are available only to the add-in that created them, and only from the user's mail box in which they are saved. 	 
@@ -27,10 +29,11 @@ Office.context.roamingSettings.saveAsync();
 ```
 
 
-*	Namespace: *RoamingSettings*
-*	Minimum requirement set/version: *1.0*
-*	Minimum permission level: *Restricted*
-*	Modes supported: *Read, Compose*
+|Requirement| Value|
+|:----------|:-----|
+|Minimum requirement set/version: | *1.0*|
+|Minimum permission level |*Restricted* |
+|Modes supported | *Read, Compose*|
 
 
 
@@ -38,9 +41,8 @@ Office.context.roamingSettings.saveAsync();
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [get](get)     | (String|Number|Boolean|Object|Array) | Retrieves the specified setting. | 1.0|  
-| [remove](remove)     |  | Removes the specified setting. | 1.0|  
-| [saveAsync](saveasync)     |  | Saves the settings. | 1.0|  
-| [set](set)     |  | Sets or creates the specified setting. | 1.0|  
->| [%name%](%link%)     | %type% | %description% | %req%|
+| [get](get)     | (String or Number or Boolean or Object or Array) | Retrieves the specified setting.  This method can return null. | 1.0|  
+| [remove](remove)     |  | Removes the specified setting.  | 1.0|  
+| [saveAsync](saveasync)     |  | Saves the settings.  | 1.0|  
+| [set](set)     |  | Sets or creates the specified setting.  | 1.0|  
 

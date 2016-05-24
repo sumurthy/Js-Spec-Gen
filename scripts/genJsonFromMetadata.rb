@@ -21,7 +21,7 @@ module SpecMaker
 	OBJ_FLAGS = %w[@interface @namespace @typedef]
 	IGNORE_KEYS = %w[@alias]
 	COLLECTION_FLAGS = %w[Array array []]
-	ITEM_TYPES = %w[appointment.js message.js]
+	SKIP_ITEM_TYPES = %w[appointment.js message.js]
 	REQ_FLAG = '@since'
 	PERMISSION_FLAG = '@permission'
 	READMODE_FLAG = '@readmode'
@@ -73,9 +73,11 @@ module SpecMaker
     end 
 
 	def self.get_type(text="")
+	
 		if text.include?('{')
 		    text = text.scan(/{(.*?)}/)[0].join
             text[0] = '' if text[0] == '?'
+            
             return text
 		else
 			return nil
@@ -101,12 +103,13 @@ module SpecMaker
 	def self.convert_to_json (js_lines=[])
 		in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false, false
 		s_callback_tag, is_blank, in_xmode, return_nullable, in_enum  = false, false, false, false, false
-		key, comment, val, req_ver, permission, example_caption, after_comment_text, return_type = '', '', '', '', '', '', '', ''
+		key, comment, val, req_ver, permission, example_caption, after_comment_text = '', '', '', '', '', '', ''
 		summary = ""
 		member_of = nil
 		eg_arr = []
 		desc_arr = []				
 		xmode_arr = []				
+		return_type = []
 		prop_copy, method_copy, param_copy, enums_copy, enum_copy = nil, nil, nil, nil, nil
 		enum_string = ""
 
@@ -241,10 +244,11 @@ module SpecMaker
 				# End of segment resets
 				in_object, read_mode, compose_mode, in_desc, in_example, in_method, in_prop = false, false, false, false, false, false
                 s_callback_tag, is_blank, in_xmode, return_nullable, in_enum  = false, false, false, false, false
-                key, comment, val, req_ver, permission, example_caption, after_comment_text, return_type = '', '', '', '', '', '', '', ''
+                key, comment, val, req_ver, permission, example_caption, after_comment_text = '', '', '', '', '', '', ''
 				summary = ""
 				member_of = nil
 				eg_arr, desc_arr, xmode_arr = [], [], []
+				return_type = []
 				prop_copy, method_copy, param_copy, enums_copy, enum_copy = nil, nil, nil, nil, nil
 				enum_string = ""
 				
@@ -400,7 +404,8 @@ module SpecMaker
 			end
 
 			if key == RETURNTYPE_FLAG
-				return_type = get_type rest_text
+				return_type = (get_type rest_text).split('|').map {|s| s.strip}
+
 				if (rest_text.to_s.length > 2) &&  (rest_text[0] == '?' || rest_text[1] == '?')
 					return_nullable = true
 				end
@@ -429,7 +434,7 @@ module SpecMaker
 	Dir.foreach(JS_SOURCE_FILES) do |item|
 		next if item == '.' or item == '..' or item == '.DS_Store'
 		# Skip types
-		next if ITEM_TYPES.include? item
+		next if SKIP_ITEM_TYPES.include? item
 
 		#next if item != 'item.js' && item != 'body.js'
 
@@ -442,7 +447,7 @@ module SpecMaker
 
 			# Append sub-types of "item" at the end.
 			if item == 'item.js'
-				ITEM_TYPES.each do |subtype|
+				SKIP_ITEM_TYPES.each do |subtype|
 					fullpath = JS_SOURCE_FILES + '/' + subtype
 					lines = lines + File.readlines(fullpath)
 				end

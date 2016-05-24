@@ -15,13 +15,14 @@ module SpecMaker
 	ENUMS = 'jsonFiles/settings/enums.json'
 	MARKDOWN_OUTPUT_FOLDER = "../markdown/"
 	WRITE_BACK = %w[# | * _ ]
-	TAKE_ACTION = %w[% >]
+	TAKE_ACTION = %w[%]
+	TAKE_REPEAT_ACTION = %w[>]
 	MARK_REGION = %w[<]
 	IGNORE = %w[/]
 
 	EXAMPLES_FOLDER = "../api-examples-to-merge/"
 
-	SIMPLETYPES = %w[int string object object[][] double bool flaot number void object[]]
+	SIMPLETYPES = %w[int string date object object[][] double bool flaot number void object[]]
 
 	# Read config and json_struct files 
 
@@ -35,6 +36,7 @@ module SpecMaker
 	@md_main = []
 	@md_method = []
 	@mdo = []
+	@all_types = []
 	@jsonHash = {}
 	@region = 'object'
 	@skip = false
@@ -63,8 +65,7 @@ module SpecMaker
 
 	if !File.exists?(EXAMPLES_FOLDER)
 		puts "API examples folder does not exist"
-	end		
-
+	end	
 
 	def self.decode(desc="")
 		return Base64.decode64(desc).split('|').join(" 	 \n")
@@ -89,6 +90,29 @@ module SpecMaker
 		return line
 	end
 
+	def self.decorate_href (text='', addr='')
+
+	end
+	
+	def self.get_type_link (type='')
+		if @all_types.include? type.chomp('[]').downcase
+			return '[' + type + '](' + type.chomp('[]').downcase + '.md' + ')'
+		else
+			return type
+		end
+	end
+
+	def self.get_type_link_array (types=[])
+
+		puts types
+		text = ''
+		types.each  do |type|
+			text = text + (get_type_link type) + ' or '
+		end
+		puts ">> #{text}"
+		return text.chomp(' or ')
+	end
+
 	def self.process_params
 	end
 
@@ -102,12 +126,22 @@ module SpecMaker
 		propreties.each do |prop|
 			line = deep_copy(val)			
 			line.sub! '%name%', prop[:name]
-			line.sub! '%type%', prop[:dataType].join(', ')
+			line.sub! '%type%', (get_type_link_array prop[:dataType])
 			line.sub! '%description%', prop[:description]
+			if prop[:isReadonly]
+				line.sub! '%nullable%', ' This property is read-only.'
+			else
+				line.sub! '%nullable%', ''
+			end
+			if prop[:isNullable]
+				line.sub! '%nullable%', ' This property can contain null.'
+			else
+				line.sub! '%nullable%', ''
+			end			
 			line.sub! '%req%', prop[:reqSet].join
-
 			@mdo.push line + '  ' + NEWLINE
 		end
+
 	end
 
 	def self.process_enums(val='')
@@ -125,8 +159,13 @@ module SpecMaker
 		methods.each do |method|
 			line = deep_copy(val)			
 			line.sub! '%name%', method[:name]
-			line.sub! '%type%', method[:returnType]
+			line.sub! '%type%', (get_type_link_array method[:returnType])
 			line.sub! '%description%', method[:description]
+			if method[:returnNullable]
+				line.sub! '%nullable%', ' This method can return null.'
+			else
+				line.sub! '%nullable%', ''
+			end	
 			line.sub! '%req%', method[:reqSet].join
 			line.sub! '%link%', method[:name].downcase
 
@@ -144,6 +183,7 @@ module SpecMaker
 		case key 
 		when '%'
 			val = substitute val
+			return val
 		when '>'
 			case @region
 			when 'properties'
@@ -156,8 +196,7 @@ module SpecMaker
 				process_enums val
 			end
 		end
-
-		return val
+		return
 	end
 
 	def self.set_region(val='')
@@ -220,7 +259,9 @@ module SpecMaker
 			when *TAKE_ACTION
 				@mdo.push (direct(key, key2, val) + NEWLINE)
 				next
-
+			when *TAKE_REPEAT_ACTION
+				direct(key, key2, val)
+				next
 			when *IGNORE
 				next
 			else
@@ -233,6 +274,13 @@ module SpecMaker
 
 	# Main loop. 
 	processed_files = 0
+
+	Dir.foreach(JSON_SOURCE_FOLDER) do |item|
+		next if item == '.' or item == '..'
+		@all_types.push item.chomp('.json')
+	end
+
+	puts @all_types
 
 	Dir.foreach(JSON_SOURCE_FOLDER) do |item|
 		next if item == '.' or item == '..'

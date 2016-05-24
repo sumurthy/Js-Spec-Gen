@@ -41,7 +41,9 @@
   "methods": [
     {
       "name": "convertToLocalClientTime",
-      "returnType": "LocalClientTime",
+      "returnType": [
+        "LocalClientTime"
+      ],
       "returnNullable": false,
       "description": "Gets a dictionary containing time information in local client time.",
       "syntax": "",
@@ -73,7 +75,9 @@
     },
     {
       "name": "convertToUtcClientTime",
-      "returnType": "Date",
+      "returnType": [
+        "Date"
+      ],
       "returnNullable": false,
       "description": "Gets a Date object from a dictionary containing time information.",
       "syntax": "",
@@ -105,7 +109,9 @@
     },
     {
       "name": "displayAppointmentForm",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Displays an existing calendar appointment.",
       "syntax": "",
@@ -137,7 +143,9 @@
     },
     {
       "name": "displayMessageForm",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Displays an existing message.",
       "syntax": "",
@@ -169,7 +177,9 @@
     },
     {
       "name": "displayNewAppointmentForm",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Displays a form for creating a new calendar appointment.",
       "syntax": "",
@@ -288,7 +298,9 @@
     },
     {
       "name": "getCallbackTokenAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Gets a string that contains a token used to get an attachment or item from an Exchange Server.",
       "syntax": "",
@@ -330,7 +342,9 @@
     },
     {
       "name": "getUserIdentityTokenAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Gets a token identifying the user and the Office Add-in.",
       "syntax": "",
@@ -373,7 +387,9 @@
     },
     {
       "name": "makeEwsRequestAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Makes an asynchronous request to an Exchange Web Services (EWS) service on the Exchange server that hosts the user’s mailbox.",
       "syntax": "",

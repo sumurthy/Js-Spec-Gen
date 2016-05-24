@@ -590,7 +590,9 @@
   "methods": [
     {
       "name": "loadCustomPropertiesAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Asynchronously loads custom properties for this add-in on the selected item.",
       "syntax": "",
@@ -633,7 +635,9 @@
     },
     {
       "name": "getSelectedDataAsync",
-      "returnType": "String",
+      "returnType": [
+        "String"
+      ],
       "returnNullable": false,
       "description": "Asynchronously returns selected data from the subject or body of a message.",
       "syntax": "",
@@ -697,7 +701,9 @@
     },
     {
       "name": "setSelectedDataAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Asynchronously inserts data into the body or subject of a message.",
       "syntax": "",
@@ -772,7 +778,9 @@
     },
     {
       "name": "close",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Closes the current item that is being composed.",
       "syntax": "",
@@ -793,7 +801,9 @@
     },
     {
       "name": "saveAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Asynchronously saves an item.",
       "syntax": "",
@@ -846,7 +856,9 @@
     },
     {
       "name": "addFileAttachmentAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Adds a file to a message or appointment as an attachment.",
       "syntax": "",
@@ -921,7 +933,9 @@
     },
     {
       "name": "addItemAttachmentAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Adds an Exchange item, such as a message, as an attachment to the message or appointment.",
       "syntax": "",
@@ -996,7 +1010,9 @@
     },
     {
       "name": "displayReplyAllForm",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Displays a reply form that includes the sender and all recipients of the selected message or the organizer and all attendees of the selected appointment.",
       "syntax": "",
@@ -1104,7 +1120,9 @@
     },
     {
       "name": "displayReplyForm",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Displays a reply form that includes only the sender of the selected message or the organizer of the selected appointment.",
       "syntax": "",
@@ -1221,7 +1239,9 @@
     },
     {
       "name": "getEntities",
-      "returnType": "Entities",
+      "returnType": [
+        "Entities"
+      ],
       "returnNullable": false,
       "description": "",
       "syntax": "",
@@ -1242,7 +1262,13 @@
     },
     {
       "name": "getEntitiesByType",
-      "returnType": "Array<(String|Contact|MeetingSuggestion|PhoneNumber|TaskSuggestion)>",
+      "returnType": [
+        "String[]",
+        "Contact[]",
+        "MeetingSuggestion[]",
+        "PhoneNumber[]",
+        "TaskSuggestion[]"
+      ],
       "returnNullable": true,
       "description": "Gets an array of all the entities of the specified entity type found in the selected item.",
       "syntax": "",
@@ -1269,12 +1295,17 @@
           ]
         }
       ],
-      "minPermission": "Restricted",
-      "isCollection": true
+      "minPermission": "Restricted"
     },
     {
       "name": "getFilteredEntitiesByName",
-      "returnType": "Array<(String|Contact|MeetingSuggestion|PhoneNumber|TaskSuggestion)>",
+      "returnType": [
+        "String[]",
+        "Contact[]",
+        "MeetingSuggestion[]",
+        "PhoneNumber[]",
+        "TaskSuggestion[]"
+      ],
       "returnNullable": true,
       "description": "Returns well-known entities in the selected item that pass the named filter defined in the manifest XML file.",
       "syntax": "",
@@ -1301,12 +1332,13 @@
           ]
         }
       ],
-      "minPermission": "ReadItem",
-      "isCollection": true
+      "minPermission": "ReadItem"
     },
     {
       "name": "getRegExMatches",
-      "returnType": "Object",
+      "returnType": [
+        "Object"
+      ],
       "returnNullable": false,
       "description": "Returns string values in the selected item that match the regular expressions defined in the manifest XML file.",
       "syntax": "",
@@ -1327,7 +1359,9 @@
     },
     {
       "name": "getRegExMatchesByName",
-      "returnType": "String[]",
+      "returnType": [
+        "String[]"
+      ],
       "returnNullable": true,
       "description": "Returns string values in the selected item that match the named regular expression defined in the manifest XML file.",
       "syntax": "",
@@ -1354,12 +1388,13 @@
           ]
         }
       ],
-      "minPermission": "ReadItem",
-      "isCollection": true
+      "minPermission": "ReadItem"
     },
     {
       "name": "removeAttachmentAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Removes an attachment from a message or appointment.",
       "syntax": "",

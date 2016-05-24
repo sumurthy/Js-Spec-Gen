@@ -19,7 +19,9 @@
   "methods": [
     {
       "name": "addAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Adds a notification to an item.",
       "syntax": "",
@@ -139,7 +141,9 @@
     },
     {
       "name": "getAllAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Returns all keys and messages for an item.",
       "syntax": "",
@@ -193,7 +197,9 @@
     },
     {
       "name": "removeAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Removes a notification message for an item.",
       "syntax": "",
@@ -258,7 +264,9 @@
     },
     {
       "name": "replaceAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Replaces a notification message that has a given key with another message.",
       "syntax": "",

@@ -18,7 +18,9 @@
   "methods": [
     {
       "name": "addAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Adds a recipient list to the existing recipients for an appointment or message.",
       "syntax": "",
@@ -82,7 +84,9 @@
     },
     {
       "name": "getAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Gets a recipient list for an appointment or message.",
       "syntax": "",
@@ -135,7 +139,9 @@
     },
     {
       "name": "setAsync",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Sets a recipient list for an appointment or message.",
       "syntax": "",

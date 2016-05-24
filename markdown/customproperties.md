@@ -1,5 +1,7 @@
 # CustomProperties resource type
 
+##### Namespace: *CustomProperties*
+
 Provides methods for accessing item-specific custom properties in an Outlook add-in.
 
 The `CustomProperties` object represents custom properties that are specific to a particular item and specific to a mail add-in for Outlook. For example, there might be a need for a mail add-in to save some data that is specific to the current email message that activated the add-in. If the user revisits the same message in the future and activates the mail add-in again, the add-in will be able to retrieve the data that had been saved as custom properties. 	 
@@ -49,10 +51,11 @@ function saveCallback(asyncResult) {
 ```
 
 
-*	Namespace: *CustomProperties*
-*	Minimum requirement set/version: *1.0*
-*	Minimum permission level: *ReadItem*
-*	Modes supported: *Read, Compose*
+|Requirement| Value|
+|:----------|:-----|
+|Minimum requirement set/version: | *1.0*|
+|Minimum permission level |*ReadItem* |
+|Modes supported | *Read, Compose*|
 
 
 
@@ -60,9 +63,8 @@ function saveCallback(asyncResult) {
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [get](get)     | String | Returns the value of the specified custom property. | 1.0|  
-| [remove](remove)     |  | Removes the specified property from the custom property collection. | 1.0|  
-| [saveAsync](saveasync)     |  | Saves item-specific custom properties to the server. | 1.0|  
-| [set](set)     |  | Sets the specified property to the specified value. | 1.0|  
->| [%name%](%link%)     | %type% | %description% | %req%|
+| [get](get)     | String | Returns the value of the specified custom property.  | 1.0|  
+| [remove](remove)     |  | Removes the specified property from the custom property collection.  | 1.0|  
+| [saveAsync](saveasync)     |  | Saves item-specific custom properties to the server.  | 1.0|  
+| [set](set)     |  | Sets the specified property to the specified value.  | 1.0|  
 

@@ -1,5 +1,7 @@
 # Event resource type
 
+##### Namespace: *Event*
+
 Passed as a parameter to UI-less command functions in an Outlook add-in. Used to signal completion of processing.
 
 The `event` object is passed as a parameter to add-in functions invoked by UI-less command buttons. The object allows the add-in to identify which button was clicked and to signal the host that it has completed its processing. 	 
@@ -35,18 +37,18 @@ var buttonId = event.source.id;
 event.completed(); 	 
 }
 
-*	Namespace: *Event*
-*	Minimum requirement set/version: *1.3*
-*	Minimum permission level: *Restricted*
-*	Modes supported: *Read, Compose*
+|Requirement| Value|
+|:----------|:-----|
+|Minimum requirement set/version: | *1.3*|
+|Minimum permission level |*Restricted* |
+|Modes supported | *Read, Compose*|
 
 
 ### Properties
 
 | Property	   | Type	| Description| Requirements|
 |:-------------|:-------|:-----------|:------------|
-|source      | Object | Gets the identifier of the add-in command button that invoked the method. | 1.3 |  
->|%name%      | %type% | %description% | %req% |
+|source      | Object | Gets the identifier of the add-in command button that invoked the method. | 1.3  %readonly%|  
 
 
 
@@ -54,6 +56,5 @@ event.completed();
 
 | Method	   | Return Type    | Description | Requirements|
 |:-------------|:---------------|:------------|:----|
-| [completed](completed)     |  | Indicates that the add-in has completed processing that was triggered by an add-in command button. | 1.3|  
->| [%name%](%link%)     | %type% | %description% | %req%|
+| [completed](completed)     |  | Indicates that the add-in has completed processing that was triggered by an add-in command button.  | 1.3|  
 

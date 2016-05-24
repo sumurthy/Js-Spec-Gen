@@ -42,7 +42,9 @@
   "methods": [
     {
       "name": "completed",
-      "returnType": "",
+      "returnType": [
+
+      ],
       "returnNullable": false,
       "description": "Indicates that the add-in has completed processing that was triggered by an add-in command button.",
       "syntax": "",
