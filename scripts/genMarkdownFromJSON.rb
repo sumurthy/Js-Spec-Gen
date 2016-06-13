@@ -29,13 +29,13 @@ module SpecMaker
 	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
 	PIPE = '|'
 	TWONEWLINES = "\n\n"
-	PROPERTY_HEADER = "| Property	   | Type	|Description" + NEWLINE
+	PROPERTY_HEADER = "| Property	   | Type	|Description|Feedback|" + NEWLINE
 	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|" + NEWLINE
 	TABLE_2ND_LINE_NEW =  "|:---------------|:--------|:----------|:-------|" + NEWLINE	
 	PARAM_HEADER = "| Parameter	   | Type	|Description|" + NEWLINE
 	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|" + NEWLINE
 
-	RELATIONSHIP_HEADER = "| Relationship | Type	|Description|" + NEWLINE
+	RELATIONSHIP_HEADER = "| Relationship | Type	|Description| Feedback|" + NEWLINE
 	METHOD_HEADER = "| Method		   | Return Type	|Description| Feedback|" + NEWLINE
 	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
 
@@ -109,7 +109,7 @@ module SpecMaker
 			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].chomp('[]').downcase + ".md)"
 		end
 			
-		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-#{@resource}-#{prop[:name]})" + PIPE ) + NEWLINE
+		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE  + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-#{@resource}-#{prop[:name]})" + PIPE ) + NEWLINE
 	end
 
 	# Write methods to the final array.
@@ -384,5 +384,5 @@ module SpecMaker
 		end
 	end
 	puts ""
-	puts "*** OK. Processed #{processed_files} input files. Check #{File.expand_path(LOG_FOLDER)} folder for results. ***"
+	puts "*** OK. Processed #{processed_files} input files. ***"
 end

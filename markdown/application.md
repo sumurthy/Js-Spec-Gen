@@ -10,25 +10,39 @@ Represents the top-level object that contains all globally addressable OneNote o
 None
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|activeNotebook|[Notebook](notebook.md)|Gets the active notebook. Read-only.|
-|activeOutline|[Outline](outline.md)|Gets the active outline. Read-only.|
-|activePage|[Page](page.md)|Gets the active page. Read-only.|
-|activeSection|[Section](section.md)|Gets the active section. Read-only.|
-|notebooks|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks that are open in the OneNote application instance. Read-only.|
+| Relationship | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|activeNotebook|[Notebook](notebook.md)|Gets the active notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-activeNotebook)|
+|activePage|[Page](page.md)|Gets the active page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-activePage)|
+|activeSection|[Section](section.md)|Gets the active section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-activeSection)|
+|notebooks|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks that are open in the OneNote application instance. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-notebooks)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[navigateToPage(page: Page)](#navigatetopagepage-page)|void|Opens the specified page in the application instance.|
-|[navigateToPageWithClientUrl(url: string)](#navigatetopagewithclienturlurl-string)|void|Opens the specified page in the application instance.|
-|[navigateToPageWithPagePath(pagePath: string)](#navigatetopagewithpagepathpagepath-string)|void|Opens the specified page in the application instance.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[getNotebookById(id: string)](#getnotebookbyidid-string)|[Notebook](notebook.md)|Gets a notebook by ID.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getNotebookById)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-load)|
+|[navigateToPage(page: Page)](#navigatetopagepage-page)|void|Opens the specified page in the application instance.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPage)|
 
 ## Method Details
 
+
+### getNotebookById(id: string)
+Gets a notebook by ID.
+
+#### Syntax
+```js
+applicationObject.getNotebookById(id);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|id|string|The ID of the notebook.|
+
+#### Returns
+[Notebook](notebook.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -93,39 +107,7 @@ OneNote.run(function (context) {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
     });
-```
-### navigateToPageWithClientUrl(url: string)
-Opens the specified page in the application instance.
-
-#### Syntax
-```js
-applicationObject.navigateToPageWithClientUrl(url);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|url|string|The client url of the page to open|
-
-#### Returns
-void
-
-### navigateToPageWithPagePath(pagePath: string)
-Opens the specified page in the application instance.
-
-#### Syntax
-```js
-applicationObject.navigateToPageWithPagePath(pagePath);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|pagePath|string|The path of the page to open|
-
-#### Returns
-void
-### Property access examples
+```### Property access examples
 
 **activeNotebook**
 ```js

@@ -7,10 +7,9 @@ Represents a collection of pages.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|count|int|Returns the number of pages in the collection. Read-only.|
-|items|[Page[]](page.md)|A collection of page objects. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|items|[Page[]](page.md)|A collection of page objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,12 +19,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getByTitle(title: string)](#getbytitletitle-string)|[PageCollection](pagecollection.md)|Gets the collection of pages with the specified title.|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[Page](page.md)|Gets a page by ID or by its index in the collection. Read-only.|
-|[getItemAt(index: number)](#getitematindex-number)|[Page](page.md)|Gets a page on its position in the collection.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[getByTitle(title: string)](#getbytitletitle-string)|[PageCollection](pagecollection.md)|Gets the collection of pages with the specified title.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-getByTitle)|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Page](page.md)|Gets a page by ID or by its index in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-getItem)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-load)|
 
 ## Method Details
 
@@ -99,22 +97,6 @@ pageCollectionObject.getItem(index);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number or string|The ID of the page, or the index location of the page in the collection.|
-
-#### Returns
-[Page](page.md)
-
-### getItemAt(index: number)
-Gets a page on its position in the collection.
-
-#### Syntax
-```js
-pageCollectionObject.getItemAt(index);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [Page](page.md)

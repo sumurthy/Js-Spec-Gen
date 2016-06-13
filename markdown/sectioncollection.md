@@ -7,10 +7,9 @@ Represents a collection of sections.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|count|int|Returns the number of sections in the collection. Read-only.|
-|items|[Section[]](section.md)|A collection of section objects. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|items|[Section[]](section.md)|A collection of section objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,12 +19,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getByName(name: string)](#getbynamename-string)|[SectionCollection](sectioncollection.md)|Gets the collection of sections with the specified name.|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[Section](section.md)|Gets a section by ID or by its index in the collection. Read-only.|
-|[getItemAt(index: number)](#getitematindex-number)|[Section](section.md)|Gets a section on its position in the collection.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[getByName(name: string)](#getbynamename-string)|[SectionCollection](sectioncollection.md)|Gets the collection of sections with the specified name.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-getByName)|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Section](section.md)|Gets a section by ID or by its index in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-getItem)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionCollection-load)|
 
 ## Method Details
 
@@ -94,22 +92,6 @@ sectionCollectionObject.getItem(index);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number or string|The ID of the section, or the index location of the section in the collection.|
-
-#### Returns
-[Section](section.md)
-
-### getItemAt(index: number)
-Gets a section on its position in the collection.
-
-#### Syntax
-```js
-sectionCollectionObject.getItemAt(index);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [Section](section.md)

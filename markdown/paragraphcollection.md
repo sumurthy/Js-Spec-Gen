@@ -7,10 +7,9 @@ Represents a collection of Paragraph objects.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|count|int|Returns the number of paragraphs in the page. Read-only.|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,11 +19,10 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[Paragraph](paragraph.md)|Gets a Paragraph object by ID or by its index in the collection. Read-only.|
-|[getItemAt(index: number)](#getitematindex-number)|[Paragraph](paragraph.md)|Gets a paragraph on its position in the collection.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Paragraph](paragraph.md)|Gets a Paragraph object by ID or by its index in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-getItem)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraphCollection-load)|
 
 ## Method Details
 
@@ -41,22 +39,6 @@ paragraphCollectionObject.getItem(index);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number or string|The ID of the Paragraph object, or the index location of the Paragraph object in the collection.|
-
-#### Returns
-[Paragraph](paragraph.md)
-
-### getItemAt(index: number)
-Gets a paragraph on its position in the collection.
-
-#### Syntax
-```js
-paragraphCollectionObject.getItemAt(index);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [Paragraph](paragraph.md)

@@ -7,27 +7,27 @@ Represents a OneNote section group. Section groups can contain sections and othe
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|id|string|Gets the ID of the section group. Read-only.|
-|name|string|Gets the name of the section group. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|id|string|Gets the ID of the section group. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-id)|
+|name|string|Gets the name of the section group. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-name)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section group. This value is never null. Read-only.|
-|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Returns null if the section group is a direct child of the notebook. Read-only.|
+| Relationship | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section group. This value is never null. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-notebook)|
+|parentSectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section group. Returns null if the section group is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-parentSectionGroup)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[addSection(title: String)](#addsectiontitle-string)|[Section](section.md)|Adds a new section to the end of the section group.|
-|[getSectionGroups()](#getsectiongroups)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the collection of section groups in the section group.|
-|[getSections(recursive: bool)](#getsectionsrecursive-bool)|[SectionCollection](sectioncollection.md)|Gets the collection of sections in the section group.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[addSection(title: String)](#addsectiontitle-string)|[Section](section.md)|Adds a new section to the end of the section group.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-addSection)|
+|[getSectionGroups()](#getsectiongroups)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the collection of section groups in the section group.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-getSectionGroups)|
+|[getSections(recursive: bool)](#getsectionsrecursive-bool)|[SectionCollection](sectioncollection.md)|Gets the collection of sections in the section group.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-getSections)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-load)|
 
 ## Method Details
 

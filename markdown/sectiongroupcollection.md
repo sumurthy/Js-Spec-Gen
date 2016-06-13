@@ -7,10 +7,9 @@ Represents a collection of section groups.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|count|int|Returns the number of section groups in the collection. Read-only.|
-|items|[SectionGroup[]](sectiongroup.md)|A collection of sectionGroup objects. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|items|[SectionGroup[]](sectiongroup.md)|A collection of sectionGroup objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroupCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,12 +19,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getByName(name: string)](#getbynamename-string)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the collection of section groups with the specified name.|
-|[getItem(index: number or string)](#getitemindex-number-or-string)|[SectionGroup](sectiongroup.md)|Gets a section group by ID or by its index in the collection. Read-only.|
-|[getItemAt(index: number)](#getitematindex-number)|[SectionGroup](sectiongroup.md)|Gets a section group on its position in the collection.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[getByName(name: string)](#getbynamename-string)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the collection of section groups with the specified name.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroupCollection-getByName)|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[SectionGroup](sectiongroup.md)|Gets a section group by ID or by its index in the collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroupCollection-getItem)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroupCollection-load)|
 
 ## Method Details
 
@@ -95,22 +93,6 @@ sectionGroupCollectionObject.getItem(index);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number or string|The ID of the section group, or the index location of the section group in the collection.|
-
-#### Returns
-[SectionGroup](sectiongroup.md)
-
-### getItemAt(index: number)
-Gets a section group on its position in the collection.
-
-#### Syntax
-```js
-sectionGroupCollectionObject.getItemAt(index);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [SectionGroup](sectiongroup.md)

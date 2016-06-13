@@ -7,27 +7,27 @@ Represents a OneNote section. Sections can contain pages.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|id|string|Gets the ID of the section. Read-only.|
-|name|string|Gets the name of the section. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|id|string|Gets the ID of the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-id)|
+|name|string|Gets the name of the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-name)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.|
-|sectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|
+| Relationship | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|notebook|[Notebook](notebook.md)|Gets the notebook that contains the section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-notebook)|
+|sectionGroup|[SectionGroup](sectiongroup.md)|Gets the section group that contains the section. Returns null if the section is a direct child of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-sectionGroup)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|Adds a new page to the end of the section.|
-|[getPages()](#getpages)|[PageCollection](pagecollection.md)|Gets the collection of pages in the section.|
-|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Inserts a new section before or after the current section.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[addPage(title: string)](#addpagetitle-string)|[Page](page.md)|Adds a new page to the end of the section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-addPage)|
+|[getPages()](#getpages)|[PageCollection](pagecollection.md)|Gets the collection of pages in the section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-getPages)|
+|[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Inserts a new section before or after the current section.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-insertSectionAsSibling)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-load)|
 
 ## Method Details
 

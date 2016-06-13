@@ -61,20 +61,30 @@
       "isRelationship": true,
       "isKey": null,
       "notes": null
-    },
-    {
-      "name": "activeOutline",
-      "dataType": "Outline",
-      "description": "Gets the active outline.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "isKey": null,
-      "notes": null
     }
   ],
   "methods": [
+    {
+      "name": "getNotebookById",
+      "returnType": "Notebook",
+      "description": "Gets a notebook by ID.",
+      "syntax": "applicationObject.getNotebookById(id);",
+      "signature": "getNotebookById(id: string)",
+      "restfulName": "NotebookById",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "id",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The ID of the notebook.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
     {
       "name": "navigateToPage",
       "returnType": "void",
@@ -90,48 +100,6 @@
           "dataType": "Page",
           "isCollection": false,
           "description": "The page to open.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ]
-    },
-    {
-      "name": "navigateToPageWithClientUrl",
-      "returnType": "void",
-      "description": "Opens the specified page in the application instance.",
-      "syntax": "applicationObject.navigateToPageWithClientUrl(url);",
-      "signature": "navigateToPageWithClientUrl(url: string)",
-      "restfulName": "navigateToPageWithClientUrl",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "url",
-          "dataType": "string",
-          "isCollection": false,
-          "description": "The client url of the page to open",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ]
-    },
-    {
-      "name": "navigateToPageWithPagePath",
-      "returnType": "void",
-      "description": "Opens the specified page in the application instance.",
-      "syntax": "applicationObject.navigateToPageWithPagePath(pagePath);",
-      "signature": "navigateToPageWithPagePath(pagePath: string)",
-      "restfulName": "navigateToPageWithPagePath",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "pagePath",
-          "dataType": "string",
-          "isCollection": false,
-          "description": "The path of the page to open",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null

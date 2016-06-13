@@ -7,23 +7,23 @@ Represents a container for Paragraph objects.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|id|string|Gets the ID of the Outline object. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|id|string|Gets the ID of the Outline object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-id)|
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Outline. This object defines the position of the Outline on the page. Read-only.|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the Outline. Read-only.|
+| Relationship | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|pageContent|[PageContent](pagecontent.md)|Gets the PageContent object that contains the Outline. This object defines the position of the Outline on the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-pageContent)|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of Paragraph objects in the Outline. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-paragraphs)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[append(html: string)](#appendhtml-string)|void|Adds the specified HTML to the bottom of the Outline.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[prepend(html: string)](#prependhtml-string)|void|Adds the specified HTML to the top of the Outline.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[append(html: string)](#appendhtml-string)|void|Adds the specified HTML to the bottom of the Outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-append)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-load)|
+|[prepend(html: string)](#prependhtml-string)|void|Adds the specified HTML to the top of the Outline.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-prepend)|
 
 ## Method Details
 
@@ -39,7 +39,7 @@ outlineObject.append(html);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|html|string|The HTML string to insert.|
+|html|string|The HTML to append.|
 
 #### Returns
 void
@@ -109,7 +109,7 @@ outlineObject.prepend(html);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|html|string|The HTML string to insert.|
+|html|string|The HTML to insert.|
 
 #### Returns
 void

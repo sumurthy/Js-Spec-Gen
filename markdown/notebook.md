@@ -7,10 +7,10 @@ Represents a OneNote notebook. Notebooks contain section groups and sections.
 
 ## Properties
 
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|id|string|Gets the ID of the notebook. Read-only.|
-|name|string|Gets the name of the notebook. Read-only.|
+| Property	   | Type	|Description|Feedback|
+|:---------------|:--------|:----------|:-------|
+|id|string|Gets the ID of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-id)|
+|name|string|Gets the name of the notebook. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-name)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,28 +20,28 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[addSection(name: String)](#addsectionname-string)|[Section](section.md)|Adds a new section to the end of the notebook.|
-|[getSectionGroups()](#getsectiongroups)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the section groups in the notebook.|
-|[getSections(recursive: bool)](#getsectionsrecursive-bool)|[SectionCollection](sectioncollection.md)|Gets the sections in the notebook.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:-------|
+|[addSection(title: String)](#addsectiontitle-string)|[Section](section.md)|Adds a new section to the end of the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSection)|
+|[getSectionGroups()](#getsectiongroups)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the section groups in the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-getSectionGroups)|
+|[getSections(recursive: bool)](#getsectionsrecursive-bool)|[SectionCollection](sectioncollection.md)|Gets the sections in the notebook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-getSections)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-load)|
 
 ## Method Details
 
 
-### addSection(name: String)
+### addSection(title: String)
 Adds a new section to the end of the notebook.
 
 #### Syntax
 ```js
-notebookObject.addSection(name);
+notebookObject.addSection(title);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|String|The name of the new section.|
+|title|String|The name of the new section.|
 
 #### Returns
 [Section](section.md)
