@@ -1,7 +1,8 @@
 # Image Object (JavaScript API for OneNote)
 
-_Applies to: OneNote Online_
-_Note: This API is in preview_
+_Applies to: OneNote Online_  
+_Note: This API is in preview_  
+
 
 Represents an Image. An Image can be a direct child of a PageContent object or a Paragraph object.
 
