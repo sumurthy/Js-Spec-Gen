@@ -15,7 +15,7 @@ module SpecMaker
 	MARKDOWN_OUTPUT_FOLDER = "../markdown/"
 	EXAMPLES_FOLDER = "../api-examples-to-merge/"
 	HEADERQUALIFIER = " Object (JavaScript API for OneNote)"
-	APPLIESTO = "_Applies to: OneNote Online_" + NEWLINE + + NEWLINE + "_Note: This API is in preview_" + NEWLINE
+	APPLIESTO = "_Applies to: OneNote Online_  " + NEWLINE + "_Note: This API is in preview_  " + NEWLINE
 	HEADER1 = '# '
 	HEADER2 = '## '
 	HEADER3 = '### '
