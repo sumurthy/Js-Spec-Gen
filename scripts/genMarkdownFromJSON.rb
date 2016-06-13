@@ -31,11 +31,12 @@ module SpecMaker
 	TWONEWLINES = "\n\n"
 	PROPERTY_HEADER = "| Property	   | Type	|Description" + NEWLINE
 	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|" + NEWLINE
+	TABLE_2ND_LINE_NEW =  "|:---------------|:--------|:----------|:-------|" + NEWLINE	
 	PARAM_HEADER = "| Parameter	   | Type	|Description|" + NEWLINE
 	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|" + NEWLINE
 
 	RELATIONSHIP_HEADER = "| Relationship | Type	|Description|" + NEWLINE
-	METHOD_HEADER = "| Method		   | Return Type	|Description|" + NEWLINE
+	METHOD_HEADER = "| Method		   | Return Type	|Description| Feedback|" + NEWLINE
 	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
 
 	# Log file
@@ -108,7 +109,7 @@ module SpecMaker
 			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].chomp('[]').downcase + ".md)"
 		end
 			
-		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE) + NEWLINE
+		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-#{@resource}-#{prop[:name]})" + PIPE ) + NEWLINE
 	end
 
 	# Write methods to the final array.
@@ -125,7 +126,7 @@ module SpecMaker
 		replacements = [ [" ", "-"], ["[", ""], ["]", ""],["(", ""], [")", ""], [",", ""], [":", ""] ]				
 		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
 		methodPlusLink = "[" + method[:signature].strip + "](#" + str.downcase + ")"
-		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE) + NEWLINE
+		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-#{@resource}-#{method[:name]})" + PIPE ) + NEWLINE
 	end
 
 	# Write methods details and parameters to the final array.	
@@ -302,7 +303,7 @@ module SpecMaker
 		@mdlines.push HEADER2 + 'Properties' + TWONEWLINES
 		if isProperty
 			# add properties table
-			@mdlines.push PROPERTY_HEADER + TABLE_2ND_LINE 
+			@mdlines.push PROPERTY_HEADER + TABLE_2ND_LINE_NEW 
 			propreties.each do |prop|
 				if !prop[:isRelationship]
 					@logger.debug("....Processing property: #{prop[:name]} ..........")	
@@ -324,7 +325,7 @@ module SpecMaker
 
 
 		if isRelation
-			@mdlines.push RELATIONSHIP_HEADER + TABLE_2ND_LINE 
+			@mdlines.push RELATIONSHIP_HEADER + TABLE_2ND_LINE_NEW 
 			propreties.each do |prop|
 				if prop[:isRelationship]
 					@logger.debug("....Processing relationship: #{prop[:name]} ..........")		
@@ -339,7 +340,7 @@ module SpecMaker
 		@mdlines.push NEWLINE + HEADER2 + 'Methods' + NEWLINE
 
 		if isMethod
-			@mdlines.push NEWLINE + METHOD_HEADER + TABLE_2ND_LINE 
+			@mdlines.push NEWLINE + METHOD_HEADER + TABLE_2ND_LINE_NEW 
 			methods.each do |mtd|
 				@logger.debug("....Processing method: #{mtd[:name]} ..........")						
 				push_method mtd
