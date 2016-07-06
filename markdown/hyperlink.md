@@ -1,4 +1,4 @@
-# Section Object (JavaScript API for Visio)
+# Hyperlink Object (JavaScript API for Visio)
 
 _Visio 2016, Visio for iPad, Visio for Mac_
 
@@ -6,12 +6,17 @@ Dispatch Ids
 
 ## Properties
 
-None
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|address|string|Gets the address for a shape's Hyperlink object, the address to which the hyperlink navigates. Read-only.|1.1||
+|description|string|Gets the description of a hyperlink. Read-only.|1.1||
+|name|string|Hyperlinks's locale specific name. Read-only.|1.1||
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|rows|[Rows](rows.md)|Rows of the Section Read-only.|1.1||
+None
+
 
 ## Methods
 

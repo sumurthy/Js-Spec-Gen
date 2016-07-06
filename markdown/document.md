@@ -1,80 +1,48 @@
-# Document Object (JavaScript API for Word)
+# Document Object (JavaScript API for Visio)
 
-_Word 2016, Word for iPad, Word for Mac_
+_Visio 2016, Visio for iPad, Visio for Mac_
 
-The Document object is the top level object. A Document object contains one or more sections, content controls, and the body that contains the contents of the document.
+Dispatch Ids
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|saved|bool|Indicates whether the changes in the document have been saved. A value of true indicates that the document hasn't changed since it was saved. Read-only.|1.1||
+None
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|body|[Body](body.md)|Gets the body object of the document. The body is the text that excludes headers, footers, footnotes, textboxes, etc.. Read-only.|1.1||
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the current document. This includes content controls in the body of the document, headers, footers, textboxes, etc.. Read-only.|1.1||
-|sections|[SectionCollection](sectioncollection.md)|Gets the collection of section objects in the document. Read-only.|1.1||
+|activePage|[Page](page.md)|Represents the active Page in the Document. ReadWrite|1.1||
+|lastRefreshTime|[DateTime](datetime.md)|Last DateTime value of Diagram RefreshReloadOpen. Mohan: Put this in page level. Also what will be the time-zone ?. Potential misuse can happen. Read-only.|1.1||
+|pages|[Pages](pages.md)|Represents the Pages in the Document. Read-only.|1.1||
+|path|[String](string.md)|Represents the path of the document. Read-only.|1.1||
+|zoom|[Double](double.md)|GetSet Document's Zoom level. Readwrite Mohan: move this to page level|1.1||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getSelection()](#getselection)|[Range](range.md)|Gets the current selection of the document. Multiple selections are not supported.|1.1|
+|[clearHandlers()](#clearhandlers)|void|Removes the handlers of the document. Mohan: Remove for a single one too.|1.1|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
-|[open()](#open)|void|Open the document.|WordApiDesktop, 1.3|
-|[save()](#save)|void|Saves the document. This will use the Word default file naming convention if the document has not been saved before.|1.1|
+|[open(FileNameFullPath: string, PageIndex: number, FileMode: visFileMode)](#openfilenamefullpath-string-pageindex-number-filemode-visfilemode)|void|Open's a Document|1.1|
+|[refreshData()](#refreshdata)|void|Refresh's the Data for the Diagram in all pages. Mohan: Park, potential blocking perf impact|1.1|
+|[reload(ShouldDataRefresh: bool)](#reloadshoulddatarefresh-bool)|void|Reloads the Diagram with latest version and refreshed data. Mohan: provide an optional|1.1|
 
 ## Method Details
 
 
-### getSelection()
-Gets the current selection of the document. Multiple selections are not supported.
+### clearHandlers()
+Removes the handlers of the document. Mohan: Remove for a single one too.
 
 #### Syntax
 ```js
-documentObject.getSelection();
+documentObject.clearHandlers();
 ```
 
 #### Parameters
 None
 
 #### Returns
-[Range](range.md)
-
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-    
-    var textSample = 'This is an example of the insert text method. This is a method ' + 
-        'which allows users to insert text into a selection. It can insert text into a ' +
-        'relative location or it can overwrite the current selection. Since the ' +
-        'getSelection method returns a range object, look up the range object documentation ' +
-        'for everything you can do with a selection.';
-    
-    // Create a range proxy object for the current selection.
-    var range = context.document.getSelection();
-    
-    // Queue a commmand to insert text at the end of the selection.
-    range.insertText(textSample, Word.InsertLocation.end);
-    
-    // Synchronize the document state by executing the queued commands, 
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log('Inserted the text at the end of the selection.');
-    });  
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
+void
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -127,12 +95,30 @@ Word.run(function (context) {
 ```
 
 
-### open()
-Open the document.
+### open(FileNameFullPath: string, PageIndex: number, FileMode: visFileMode)
+Open's a Document
 
 #### Syntax
 ```js
-documentObject.open();
+documentObject.open(FileNameFullPath, PageIndex, FileMode);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|FileNameFullPath|string|File Name Full Path|
+|PageIndex|number|Optional. Page Index to open|
+|FileMode|visFileMode|Optional. File Mode. Default = Read|
+
+#### Returns
+void
+
+### refreshData()
+Refresh's the Data for the Diagram in all pages. Mohan: Park, potential blocking perf impact
+
+#### Syntax
+```js
+documentObject.refreshData();
 ```
 
 #### Parameters
@@ -141,54 +127,18 @@ None
 #### Returns
 void
 
-### save()
-Saves the document. This will use the Word default file naming convention if the document has not been saved before.
+### reload(ShouldDataRefresh: bool)
+Reloads the Diagram with latest version and refreshed data. Mohan: provide an optional
 
 #### Syntax
 ```js
-documentObject.save();
+documentObject.reload(ShouldDataRefresh);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|ShouldDataRefresh|bool|Optional. Should Data connected be refreshed. Default = false|
 
 #### Returns
 void
-
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-    
-    // Create a proxy object for the document.
-    var thisDocument = context.document;
-
-    // Queue a commmand to load the document save state (on the saved property).
-    context.load(thisDocument, 'saved');    
-    
-    // Synchronize the document state by executing the queued commands, 
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        
-        if (thisDocument.saved === false) {
-            // Queue a command to save this document.
-            thisDocument.save();
-            
-            // Synchronize the document state by executing the queued commands, 
-            // and return a promise to indicate task completion.
-            return context.sync().then(function () {
-                console.log('Saved the document');
-            });
-        } else {
-            console.log('The document has not changed since the last save.');
-        }
-    });  
-})
-.catch(function (error) {
-    console.log("Error: " + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
-});
-```

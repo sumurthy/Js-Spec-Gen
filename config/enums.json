@@ -1,46 +1,91 @@
 {
-	"OneNote.ParagraphType": {
-	"RichText": "",
-	"Image": "",
-	"Table":"",
-	"InkDrawing": "",
-	"InsertedFile": "",
-	"MediaFile": "",
-	"InkParagraph": "",
-	"Other": ""
+	"Visio.VisSelectArgs": {
+			"visDeselect": 1, //Cancels the selection of a shape but leaves the rest of the selection unchanged.
+			"visSelect": 2 //Selects a shape but leaves the rest of the selection unchanged.
+
 	},
 
-	"OneNote.PageContentType": {
-	"Outline": "",
-	"Image": "",
-	"Ink": "",
-	"InsertedFile": "",
-	"MediaFile": "",
-	"Other": ""
+	"Visio.VisUnitCodes": {
+			"visNumber": 32,
+			"visPercent": 33,
+			"visAcre": 36,
+			"visHectare": 37,
+			"visDate": 40,
+			"visDurationUnits": 42,
+			"visElapsedWeek": 43,
+			"visElapsedDay": 44,
+			"visElapsedHour": 45,
+			"visElapsedMin": 46,
+			"visElapsedSec": 47,
+			"visTypeUnits": 48,
+			"visPicasAndPoints": 49,
+			"visPoints": 50,
+			"visPicas": 51,
+			"visCicerosAndDidots": 52,
+			"visDidots": 53,
+			"visCiceros": 54,
+			"visPageUnits": 63,
+			"visDrawingUnits": 64,
+			"visInches": 65,
+			"visFeet": 66,
+			"visFeetAndInches": 67,
+			"visMiles": 68,
+			"visCentimeters": 69,
+			"visMillimeters": 70,
+			"visMeters": 71,
+			"visKilometers": 72,
+			"visInchFrac": 73,
+			"visMileFrac": 74,
+			"visYards": 75,
+			"visNautMiles": 76,
+			"visAngleUnits": 80,
+			"visDegrees": 81,
+			"visDegreeMinSec": 82,
+			"visRadians": 83,
+			"visMin": 84,
+			"visSec": 85,
+			"visUnitsGUID": 95,
+			"visCurrency": 111,
+			"visUnitsNURBS": 138,
+			"visUnitsPolyline": 139,
+			"visUnitsPoint": 225,
+			"visUnitsString": 231,
+			"visUnitsColor": 251,
+			"visNoCast": 252,
+			"visUnitsInval": 255
 	},
 
-	"OneNote.Selected": {
-	"NotSelected": "",
-	"PartialSelected": "",
-	"Selected": ""
-	},
+	"Visio.VisHorizontalAlignment": {
+			"left": 0,
+			"center": 1,
+			"right": 2
+},
 
-	"OneNote.Alignment": {
-	"Unknown": "",
-	"Left": "",
-	"Centered": "",
-	"Right": "",
-	"Justified": ""
-	},
+	"Visio.VisVerticalAlignment": {
+			"top": 0,
+			"middle": 1,
+			"bottom": 2
+},
 
-	"OneNote.AppendLocation": {
-	"Begin": "",
-	"End": ""
-	},
+	"Visio.VisOverlayType": {
+			"text": 0,
+			"image": 1
+},
 
-	"OneNote.InsertLocation": {
-	"Before": "",
-	"After": ""
-	}
+	"Visio.VisEvents": {
+
+			"diagramcomplete": "Diagramcomplete",
+			"diagramerror": "DiagramError",
+			"shapemouseenter": "ShapeMouseEnter",
+			"shapemouseleave": "ShapeMouseLeave",
+			"shapeselectionchanged": "ShapeSelectionChanged"
+},
+
+	"Visio.VisFileMode": {
+			"Read": "Read",
+			"Edit": "Edit"
+},
+
+
 	
 }

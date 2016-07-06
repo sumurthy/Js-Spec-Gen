@@ -23,7 +23,7 @@ require 'FileUtils'
 
 @processed_files = 0
 @json_files_created = 0
-METADATA_FILE_SOURCE = '../../data/WdJscomApi.cs'
+METADATA_FILE_SOURCE = '../../data/visio.cs'
 ENUMS = 'jsonFiles/settings/enums.json'
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
 JSONOUTPUT_FOLDER = 'jsonFiles/source/'
@@ -47,8 +47,8 @@ OBJECTKEYS = 'jsonFiles/settings/objectkeys.json'
 @json_object[:info] = {}
 @json_object[:info][:version] = '1.1'
 @json_object[:info][:reqSet] = '1.1'
-@json_object[:info][:addinTypes] = ["Word"]
-@json_object[:info][:nameSpace] = "Word"
+@json_object[:info][:addinTypes] = ["Visio"]
+@json_object[:info][:nameSpace] = "Visio"
 @json_object[:info][:addinHosts] = ["Task pane"]
 @json_object[:info][:title] = 'Office JavaScript Add-in API'
 @json_object[:info][:description] = 'Office JavaScript Add-in API'
@@ -69,11 +69,13 @@ def csarray_write (line=nil)
 end
 
 ### 
-# Load up all the known existing enums. Remove leading Word.
+# Load up all the known existing enums. Remove leading Visio.
 ##
 @enumHash = {}
 tempEnumHash = JSON.parse File.read(ENUMS)
-@enumHash = Hash[tempEnumHash.map {|k, v| [k.gsub('Word.',''), v] }]
+@enumHash = Hash[tempEnumHash.map {|k, v| [k.gsub('Visio.',''), v] }]
+
+puts @enumHash.keys
 
 ### 
 # Load the "load()" method to be added to all items that have at least one property. 
@@ -155,7 +157,7 @@ end
 
 	## For new object, load its resource and fill the description
 	if line.include?('public interface') || line.include?('public struct')
-		# Get the third word
+		# Get the third Visio
 		@json_object[:name] = line.split.first(3).join(' ').split.last(1).join(' ').gsub(':','')
 		@json_object[:info][:reqSet] = req_set
 		object_req_set = req_set
@@ -189,7 +191,6 @@ end
 
 	# This signals end of an object. Time to write stuff to file.
 	if in_region && line.start_with?("\t}")		
-
 		# If this is a collection, add the 'items' property as that is not listed in the .CS file for some reason! 
 		if 	@json_object[:isCollection] == true
 			prop_name = 'items'
@@ -246,7 +247,7 @@ end
 		@json_files_created = @json_files_created + 1
 		# Reset the variables.
 		in_region = false
-		# Bug fix. Caused issue with Word API. 
+		# Bug fix. Caused issue with Visio API. 
 		member_ahead = false
 		# End bug fix
 		parm_hash_array = []
@@ -262,13 +263,13 @@ end
 		else
 			member_summary = @csarray[i+1].delete!('///').strip
 
-			if member_summary.index('See Word.') != nil
-				enumName = member_summary[member_summary.index('See Word.')..-1].split[1]
-				member_summary = member_summary[0,member_summary.index('See Word.')-1]
+			if member_summary.index('See Visio.') != nil
+				enumName = member_summary[member_summary.index('See Visio.')..-1].split[1]
+				member_summary = member_summary[0,member_summary.index('See Visio.')-1]
 				enumName = enumName.chomp('.')
-			elsif member_summary.index('Refer to Word.') != nil
-				enumName = member_summary[member_summary.index('Refer to Word.')..-1].split[2]			
-				member_summary = member_summary[0,member_summary.index('Refer to Word.')-1]				
+			elsif member_summary.index('Refer to Visio.') != nil
+				enumName = member_summary[member_summary.index('Refer to Visio.')..-1].split[2]			
+				member_summary = member_summary[0,member_summary.index('Refer to Visio.')-1]				
 				enumName = enumName.chomp('.')				
 			else
 				enumName = nil
@@ -288,13 +289,13 @@ end
 	if line.include?('/// <param name=')
 		param_summary = line.split('>')[1].gsub('</param', '')
 
-		if param_summary.index('See Word.') != nil
-			enumName = param_summary[param_summary.index('See Word.')..-1].split[1]
-			param_summary = param_summary[0,param_summary.index('See Word.')-1]
+		if param_summary.index('See Visio.') != nil
+			enumName = param_summary[param_summary.index('See Visio.')..-1].split[1]
+			param_summary = param_summary[0,param_summary.index('See Visio.')-1]
 			enumName = enumName.chomp('.')
-		elsif param_summary.index('Refer to Word.') != nil
-			enumName = param_summary[param_summary.index('Refer to Word.')..-1].split[2]			
-			param_summary = param_summary[0,param_summary.index('Refer to Word.')-1]				
+		elsif param_summary.index('Refer to Visio.') != nil
+			enumName = param_summary[param_summary.index('Refer to Visio.')..-1].split[2]			
+			param_summary = param_summary[0,param_summary.index('Refer to Visio.')-1]				
 			enumName = enumName.chomp('.')
 		else
 			enumName = nil
@@ -346,7 +347,7 @@ end
 		end
 
 		if @enumHash.has_key? proDataType
-			enumName = 'Word.' + proDataType
+			enumName = 'Visio.' + proDataType
 			proDataType = 'string'
 		end
 
@@ -364,13 +365,16 @@ end
 		# Capture the first part of the parameter definition inside method definition to see if it has readonly flag and also note down its data type.
 		
 		# puts "#{line}"
+
 		parm_array_metadata = line[line.index('(')+1, line.index(');')].chomp(');').split(',')
 		opt_array = parm_array_metadata.map {|n| n.split[0]}
 		opt_array.each_with_index do |metadata, j|
 			if metadata.include?('Optional') 
 				parm_array[j][:isRequired] = false
 			else
-				parm_array[j][:isRequired] = true
+				if parm_array[j] != nil 
+					parm_array[j][:isRequired] = true
+				end
 			end
 		end
 	
@@ -401,11 +405,13 @@ end
 						typeScriptData = typeScriptData[typeScriptData.index('>')+2..-1]
 					end
 				end
-				typeScriptDataArray = typeScriptData.gsub('"','').gsub(')','').gsub('Word.','').split('|').join(' or ')
+				typeScriptDataArray = typeScriptData.gsub('"','').gsub(')','').gsub('Visio.','').split('|').join(' or ')
 				if suffix != ''
 					parm_array[j][:dataType] = "(" + typeScriptDataArray +")" + suffix
 				else
-					parm_array[j][:dataType] = typeScriptDataArray + suffix
+					if parm_array[j] != nil
+						parm_array[j][:dataType] = typeScriptDataArray + suffix
+					end
 				end
 			else				
 				parm_array[j][:dataType] = dataType.split[0] + suffix
@@ -422,7 +428,7 @@ end
 
 			# If the enum still slips through to the data type, then overwrite and set the enum correctly. 
 			if @enumHash.has_key? parm_array[j][:dataType] 
-				parm_array[j][:enumNameJs] = 'Word.' + parm_array[j][:dataType] 
+				parm_array[j][:enumNameJs] = 'Visio.' + parm_array[j][:dataType] 
 				parm_array[j][:dataType]  = 'string'
 			end
 

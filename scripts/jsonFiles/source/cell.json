@@ -1,0 +1,161 @@
+{
+  "name": "Cell",
+  "description": "Dispatch Ids",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "Cell's name (Column Name) in locale independent syntax.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "localName",
+      "dataType": "string",
+      "description": "Cell's name (Column Name) in locale specific syntax.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "column",
+      "dataType": "short",
+      "description": "Column index",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "formula",
+      "dataType": "string",
+      "description": "Cell's formula in locale specific syntax.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "formulaU",
+      "dataType": "string",
+      "description": "Cell's formula in locale independent syntax. Mohan: Good for editing scenario",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "units",
+      "dataType": "short",
+      "description": "Indicates the unit of measure associated with a Cell object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "result",
+      "returnType": "Double",
+      "description": "Gets the value of a ShapeSheet cell expressed as a double. Read-only.",
+      "syntax": "cellObject.result(UnitsNameOrCode);",
+      "signature": "result(UnitsNameOrCode: VisUnitCodes or string)",
+      "restfulName": "Result",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "UnitsNameOrCode",
+          "dataType": "VisUnitCodes or string",
+          "isCollection": false,
+          "description": "The units to use when retrieving the value.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "resultStr",
+      "returnType": "String",
+      "description": "Gets the value of a ShapeSheet cell expressed as a string. Read-only.",
+      "syntax": "cellObject.resultStr(UnitsNameOrCode);",
+      "signature": "resultStr(UnitsNameOrCode: VisUnitCodes or string)",
+      "restfulName": "ResultStr",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "UnitsNameOrCode",
+          "dataType": "VisUnitCodes or string",
+          "isCollection": false,
+          "description": "The units to use when retrieving the value.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

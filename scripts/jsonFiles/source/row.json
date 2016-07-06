@@ -1,5 +1,5 @@
 {
-  "name": "Section",
+  "name": "Row",
   "description": "Dispatch Ids",
   "isCollection": false,
   "collectionOf": null,
@@ -19,9 +19,45 @@
   },
   "properties": [
     {
-      "name": "rows",
-      "dataType": "Rows",
-      "description": "Rows of the Section",
+      "name": "cells",
+      "dataType": "Cells",
+      "description": "Cells of the Row",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "index",
+      "dataType": "int",
+      "description": "Index of the Row.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "name",
+      "dataType": "String",
+      "description": "Locale specific name of the Row.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "nameU",
+      "dataType": "String",
+      "description": "Locale independent name of the Row.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,

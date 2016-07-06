@@ -1,5 +1,5 @@
 {
-  "name": "Section",
+  "name": "Rows",
   "description": "Dispatch Ids",
   "isCollection": false,
   "collectionOf": null,
@@ -19,19 +19,41 @@
   },
   "properties": [
     {
-      "name": "rows",
-      "dataType": "Rows",
-      "description": "Rows of the Section",
+      "name": "count",
+      "dataType": "int",
+      "description": "Represents the no. of rows.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.1",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
+    {
+      "name": "getItem",
+      "returnType": "Row",
+      "description": "Gets a Row using its name or ID.",
+      "syntax": "rowsObject.getItem(NameOrIndex);",
+      "signature": "getItem(NameOrIndex: number or string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "NameOrIndex",
+          "dataType": "number or string",
+          "isCollection": false,
+          "description": "Name or Index of the Row to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
     {
       "name": "load",
       "returnType": "void",

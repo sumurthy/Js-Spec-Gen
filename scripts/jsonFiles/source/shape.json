@@ -1,0 +1,270 @@
+{
+  "name": "Shape",
+  "description": "Dispatch Ids",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "shapeData",
+      "dataType": "Section",
+      "description": "Returns the Shape Data Section.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "nameID",
+      "dataType": "string",
+      "description": "Returns synthetic name of shape (sheet.ID). Locale independent.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "Shape's locale specific name.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "iD",
+      "dataType": "long",
+      "description": "Returns shape's ID",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "text",
+      "dataType": "string",
+      "description": "Shape's Text.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "hyperlinks",
+      "dataType": "Hyperlinks",
+      "description": "Returns the Hyperlinks collection for a Shape object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "shapeRect",
+      "dataType": "BoundingBox",
+      "description": "Shape's BoundingBox (x,y coordinates) and width & Height",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "addOverlay",
+      "returnType": "void",
+      "description": "Adds an Overlay on top of the Shape",
+      "syntax": "shapeObject.addOverlay(OverlayID, OverlayType, Content, HorizontalPosition, VerticalPosition, OverlayWidth, OverlayHeight);",
+      "signature": "addOverlay(OverlayID: String, OverlayType: string, Content: String, HorizontalPosition: string, VerticalPosition: string, OverlayWidth: number, OverlayHeight: number)",
+      "restfulName": "AddOverlay",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "OverlayID",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "A string that represents the identifier (ID) of the overlay",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "OverlayType",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Text or Picture",
+          "isRequired": true,
+          "enumNameJs": "Visio.VisOverlayType",
+          "notes": null
+        },
+        {
+          "name": "Content",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "HTML or location of the Picture",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "HorizontalPosition",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Alignment - Left, Center, Right. Default = Left",
+          "isRequired": false,
+          "enumNameJs": "Visio.VisHorizontalAlignment",
+          "notes": null
+        },
+        {
+          "name": "VerticalPosition",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Alignment - Top, Middle, Bottom. Default = Top",
+          "isRequired": false,
+          "enumNameJs": "Visio.VisVerticalAlignment",
+          "notes": null
+        },
+        {
+          "name": "OverlayWidth",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "A positive integer that specifies the width of the overlay, in pixels. Default = Shape's width",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "OverlayHeight",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "A positive integer that specifies the height of the overlay, in pixels. Default = Shape's height",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "removeOverlay",
+      "returnType": "void",
+      "description": "Removes particular Overlay or all Overlays on the Shape",
+      "syntax": "shapeObject.removeOverlay(OverlayID);",
+      "signature": "removeOverlay(OverlayID: String)",
+      "restfulName": "RemoveOverlay",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "OverlayID",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "A string that represents the identifier (ID) of the overlay. Default: Removes all overlays on the shape",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "addHighlight",
+      "returnType": "void",
+      "description": "Draws a rectangular highlight around the bounding box of the shape.",
+      "syntax": "shapeObject.addHighlight(Width, Color);",
+      "signature": "addHighlight(Width: number, Color: String)",
+      "restfulName": "AddHighlight",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "Width",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "A positive integer that specifies the width of the highlight's stroke in pixels.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "Color",
+          "dataType": "String",
+          "isCollection": false,
+          "description": "A string that specifies the color of the highlight. It must have the form \"#RRGGBB\", where each letter represents a hexadecimal digit between 0 and F, and where RR is the red value between 0 and 0xFF (255), GG the green value between 0 and 0xFF (255), and BB is the blue value between 0 and 0xFF (255).",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "removeHighlight",
+      "returnType": "void",
+      "description": "Removes the highlight from the shape, if one exists.",
+      "syntax": "shapeObject.removeHighlight();",
+      "signature": "removeHighlight()",
+      "restfulName": "RemoveHighlight",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

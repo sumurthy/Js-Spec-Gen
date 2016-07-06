@@ -1,4 +1,4 @@
-# Section Object (JavaScript API for Visio)
+# Row Object (JavaScript API for Visio)
 
 _Visio 2016, Visio for iPad, Visio for Mac_
 
@@ -6,12 +6,18 @@ Dispatch Ids
 
 ## Properties
 
-None
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|index|int|Index of the Row. Read-only.|1.1||
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|rows|[Rows](rows.md)|Rows of the Section Read-only.|1.1||
+|cells|[Cells](cells.md)|Cells of the Row Read-only.|1.1||
+|name|[String](string.md)|Locale specific name of the Row. Read-only.|1.1||
+|nameU|[String](string.md)|Locale independent name of the Row. Read-only.|1.1||
 
 ## Methods
 

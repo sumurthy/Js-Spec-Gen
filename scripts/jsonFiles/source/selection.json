@@ -1,5 +1,5 @@
 {
-  "name": "Section",
+  "name": "Selection",
   "description": "Dispatch Ids",
   "isCollection": false,
   "collectionOf": null,
@@ -19,9 +19,9 @@
   },
   "properties": [
     {
-      "name": "rows",
-      "dataType": "Rows",
-      "description": "Rows of the Section",
+      "name": "shapes",
+      "dataType": "Shapes",
+      "description": "Gets the Shapes of the Selection",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -32,6 +32,37 @@
     }
   ],
   "methods": [
+    {
+      "name": "select",
+      "returnType": "void",
+      "description": "Selects or clears the selection of an object. Mohan: should this be Add.",
+      "syntax": "selectionObject.select(Shape, SelectAction);",
+      "signature": "select(Shape: Shape, SelectAction: string)",
+      "restfulName": "Select",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "Shape",
+          "dataType": "Shape",
+          "isCollection": false,
+          "description": "Shape",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "SelectAction",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Type of Selection",
+          "isRequired": true,
+          "enumNameJs": "Visio.VisSelectArgs",
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
     {
       "name": "load",
       "returnType": "void",

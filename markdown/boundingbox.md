@@ -1,4 +1,4 @@
-# Section Object (JavaScript API for Visio)
+# BoundingBox Object (JavaScript API for Visio)
 
 _Visio 2016, Visio for iPad, Visio for Mac_
 
@@ -6,12 +6,20 @@ Dispatch Ids
 
 ## Properties
 
-None
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|bottomY|double|Y-Coordinate of the Bottom Edge|1.1||
+|height|double|Height of the Bounding Box Read-only.|1.1||
+|leftX|double|X-Coordinate of the Left Edge|1.1||
+|rightX|double|X-Coordinate of the Right Edge|1.1||
+|topY|double|Y-Coordinate of the Top Edge|1.1||
+|width|double|Width of the Bounding Box Read-only.|1.1||
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|rows|[Rows](rows.md)|Rows of the Section Read-only.|1.1||
+None
+
 
 ## Methods
 

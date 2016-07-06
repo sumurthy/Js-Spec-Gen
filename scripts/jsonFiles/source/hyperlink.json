@@ -1,5 +1,5 @@
 {
-  "name": "Section",
+  "name": "Hyperlink",
   "description": "Dispatch Ids",
   "isCollection": false,
   "collectionOf": null,
@@ -19,13 +19,37 @@
   },
   "properties": [
     {
-      "name": "rows",
-      "dataType": "Rows",
-      "description": "Rows of the Section",
+      "name": "name",
+      "dataType": "string",
+      "description": "Hyperlinks's locale specific name.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "description",
+      "dataType": "string",
+      "description": "Gets the description of a hyperlink.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "address",
+      "dataType": "string",
+      "description": "Gets the address for a shape's Hyperlink object, the address to which the hyperlink navigates.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
       "reqSet": "1.1",
       "isKey": null,
       "notes": null

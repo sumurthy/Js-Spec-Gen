@@ -1,6 +1,6 @@
 {
   "name": "Document",
-  "description": "The Document object is the top level object. A Document object contains one or more sections, content controls, and the body that contains the contents of the document.",
+  "description": "Dispatch Ids",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.1",
     "addinTypes": [
-      "Word"
+      "Visio"
     ],
-    "nameSpace": "Word",
+    "nameSpace": "Visio",
     "addinHosts": [
       "Task pane"
     ],
@@ -19,33 +19,9 @@
   },
   "properties": [
     {
-      "name": "saved",
-      "dataType": "bool",
-      "description": "Indicates whether the changes in the document have been saved. A value of true indicates that the document hasn't changed since it was saved.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.1",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "sections",
-      "dataType": "SectionCollection",
-      "description": "Gets the collection of section objects in the document.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": true,
-      "isRelationship": true,
-      "reqSet": "1.1",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "body",
-      "dataType": "Body",
-      "description": "Gets the body object of the document. The body is the text that excludes headers, footers, footnotes, textboxes, etc..",
+      "name": "pages",
+      "dataType": "Pages",
+      "description": "Represents the Pages in the Document.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -55,12 +31,48 @@
       "notes": null
     },
     {
-      "name": "contentControls",
-      "dataType": "ContentControlCollection",
-      "description": "Gets the collection of content control objects in the current document. This includes content controls in the body of the document, headers, footers, textboxes, etc..",
+      "name": "path",
+      "dataType": "String",
+      "description": "Represents the path of the document.",
       "isReadOnly": true,
       "enumNameJs": null,
-      "isCollection": true,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "activePage",
+      "dataType": "Page",
+      "description": "Represents the active Page in the Document. ReadWrite",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "zoom",
+      "dataType": "Double",
+      "description": "GetSet Document's Zoom level. Readwrite Mohan: move this to page level",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "lastRefreshTime",
+      "dataType": "DateTime",
+      "description": "Last DateTime value of Diagram RefreshReloadOpen. Mohan: Put this in page level. Also what will be the time-zone ?. Potential misuse can happen.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
       "isRelationship": true,
       "reqSet": "1.1",
       "isKey": null,
@@ -69,40 +81,90 @@
   ],
   "methods": [
     {
-      "name": "save",
-      "returnType": "void",
-      "description": "Saves the document. This will use the Word default file naming convention if the document has not been saved before.",
-      "syntax": "documentObject.save();",
-      "signature": "save()",
-      "restfulName": "save",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.1"
-    },
-    {
-      "name": "getSelection",
-      "returnType": "Range",
-      "description": "Gets the current selection of the document. Multiple selections are not supported.",
-      "syntax": "documentObject.getSelection();",
-      "signature": "getSelection()",
-      "restfulName": "Selection",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.1"
-    },
-    {
       "name": "open",
       "returnType": "void",
-      "description": "Open the document.",
-      "syntax": "documentObject.open();",
-      "signature": "open()",
-      "restfulName": "open",
+      "description": "Open's a Document",
+      "syntax": "documentObject.open(FileNameFullPath, PageIndex, FileMode);",
+      "signature": "open(FileNameFullPath: string, PageIndex: number, FileMode: visFileMode)",
+      "restfulName": "Open",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "FileNameFullPath",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "File Name Full Path",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "PageIndex",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Page Index to open",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "FileMode",
+          "dataType": "visFileMode",
+          "isCollection": false,
+          "description": "File Mode. Default = Read",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "refreshData",
+      "returnType": "void",
+      "description": "Refresh's the Data for the Diagram in all pages. Mohan: Park, potential blocking perf impact",
+      "syntax": "documentObject.refreshData();",
+      "signature": "refreshData()",
+      "restfulName": "RefreshData",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
-      "reqSet": "WordApiDesktop, 1.3"
+      "reqSet": "1.1"
+    },
+    {
+      "name": "reload",
+      "returnType": "void",
+      "description": "Reloads the Diagram with latest version and refreshed data. Mohan: provide an optional",
+      "syntax": "documentObject.reload(ShouldDataRefresh);",
+      "signature": "reload(ShouldDataRefresh: bool)",
+      "restfulName": "Reload",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "ShouldDataRefresh",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Should Data connected be refreshed. Default = false",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "clearHandlers",
+      "returnType": "void",
+      "description": "Removes the handlers of the document. Mohan: Remove for a single one too.",
+      "syntax": "documentObject.clearHandlers();",
+      "signature": "clearHandlers()",
+      "restfulName": "AddHandler",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
     },
     {
       "name": "load",
