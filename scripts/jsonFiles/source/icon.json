@@ -1,12 +1,12 @@
 {
-  "name": "ConditionalFormatBetweenRule",
-  "description": "Represents a between or not between rule for numbers or cell references.",
+  "name": "Icon",
+  "description": "Represents a cell icon.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.3",
+    "reqSet": "1.2",
     "addinTypes": [
       "Excel"
     ],
@@ -19,38 +19,26 @@
   },
   "properties": [
     {
-      "name": "inclusive",
-      "dataType": "bool",
-      "description": "If true, includes the lower and upper bounds in the condition.",
+      "name": "set",
+      "dataType": "string",
+      "description": "Represents the set that the icon is part of.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Excel.IconSet",
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.2",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "lowerBound",
-      "dataType": "object",
-      "description": "Represents the lower bound of the between condition, either a number, formula or cell reference.",
+      "name": "index",
+      "dataType": "int",
+      "description": "Represents the index of the icon in the given set.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "upperBound",
-      "dataType": "object",
-      "description": "Represents the upper bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.2",
       "isKey": null,
       "notes": null
     }

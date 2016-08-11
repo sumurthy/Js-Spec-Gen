@@ -1,12 +1,12 @@
 {
-  "name": "ConditionalFormatBetweenRule",
-  "description": "Represents a between or not between rule for numbers or cell references.",
+  "name": "ChartLegendFormat",
+  "description": "Encapsulates the format properties of a chart legend.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.3",
+    "reqSet": "1.1",
     "addinTypes": [
       "Excel"
     ],
@@ -19,38 +19,26 @@
   },
   "properties": [
     {
-      "name": "inclusive",
-      "dataType": "bool",
-      "description": "If true, includes the lower and upper bounds in the condition.",
-      "isReadOnly": false,
+      "name": "font",
+      "dataType": "ChartFont",
+      "description": "Represents the font attributes such as font name, font size, color, etc. of a chart legend.",
+      "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
+      "isRelationship": true,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "lowerBound",
-      "dataType": "object",
-      "description": "Represents the lower bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
+      "name": "fill",
+      "dataType": "ChartFill",
+      "description": "Represents the fill format of an object, which includes background formating information.",
+      "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "upperBound",
-      "dataType": "object",
-      "description": "Represents the upper bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
+      "isRelationship": true,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     }

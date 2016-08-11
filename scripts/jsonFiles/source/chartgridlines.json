@@ -1,12 +1,12 @@
 {
-  "name": "ConditionalFormatBetweenRule",
-  "description": "Represents a between or not between rule for numbers or cell references.",
+  "name": "ChartGridlines",
+  "description": "Represents major or minor gridlines on a chart axis.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.3",
+    "reqSet": "1.1",
     "addinTypes": [
       "Excel"
     ],
@@ -19,38 +19,26 @@
   },
   "properties": [
     {
-      "name": "inclusive",
+      "name": "visible",
       "dataType": "bool",
-      "description": "If true, includes the lower and upper bounds in the condition.",
+      "description": "Boolean value representing if the axis gridlines are visible or not.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "lowerBound",
-      "dataType": "object",
-      "description": "Represents the lower bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
+      "name": "format",
+      "dataType": "ChartGridlinesFormat",
+      "description": "Represents the formatting of chart gridlines.",
+      "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "upperBound",
-      "dataType": "object",
-      "description": "Represents the upper bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
+      "isRelationship": true,
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     }

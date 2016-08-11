@@ -1,6 +1,6 @@
 {
-  "name": "ConditionalFormatBetweenRule",
-  "description": "Represents a between or not between rule for numbers or cell references.",
+  "name": "ConditionalFormatAverageRule",
+  "description": "Represents a average-based rule for a conditional format .",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
@@ -19,11 +19,11 @@
   },
   "properties": [
     {
-      "name": "inclusive",
-      "dataType": "bool",
-      "description": "If true, includes the lower and upper bounds in the condition.",
+      "name": "selection",
+      "dataType": "string",
+      "description": "Above or Below, depending on what relation to average this condition is.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Excel.ConditionalFormatAverageSelection",
       "isCollection": false,
       "isRelationship": false,
       "reqSet": "1.3",
@@ -31,21 +31,9 @@
       "notes": null
     },
     {
-      "name": "lowerBound",
-      "dataType": "object",
-      "description": "Represents the lower bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "upperBound",
-      "dataType": "object",
-      "description": "Represents the upper bound of the between condition, either a number, formula or cell reference.",
+      "name": "standardDeviation",
+      "dataType": "int",
+      "description": "The number of standard deviations in either direction, or null if just abovebelow average.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,

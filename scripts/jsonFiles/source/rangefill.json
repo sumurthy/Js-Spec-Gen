@@ -1,12 +1,12 @@
 {
-  "name": "ConditionalFormatBetweenRule",
-  "description": "Represents a between or not between rule for numbers or cell references.",
+  "name": "RangeFill",
+  "description": "Represents the background of a range object.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.3",
+    "reqSet": "1.1",
     "addinTypes": [
       "Excel"
     ],
@@ -19,43 +19,31 @@
   },
   "properties": [
     {
-      "name": "inclusive",
-      "dataType": "bool",
-      "description": "If true, includes the lower and upper bounds in the condition.",
+      "name": "color",
+      "dataType": "string",
+      "description": "HTML color code representing the color of the border line, of the form #RRGGBB (e.g. \"FFA500\") or as a named HTML color (e.g. \"orange\")",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "lowerBound",
-      "dataType": "object",
-      "description": "Represents the lower bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "upperBound",
-      "dataType": "object",
-      "description": "Represents the upper bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
+    {
+      "name": "clear",
+      "returnType": "void",
+      "description": "Resets the range background.",
+      "syntax": "rangeFillObject.clear();",
+      "signature": "clear()",
+      "restfulName": "clear",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
     {
       "name": "load",
       "returnType": "void",

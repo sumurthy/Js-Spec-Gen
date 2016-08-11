@@ -1,0 +1,166 @@
+{
+  "name": "TableColumnCollection",
+  "description": "Represents a collection of all the columns that are part of the table.",
+  "isCollection": true,
+  "collectionOf": "TableColumn",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "count",
+      "dataType": "int",
+      "description": "Returns the number of columns in the table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "items",
+      "dataType": "TableColumn[]",
+      "description": "A collection of tableColumn objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "TableColumn",
+      "description": "Gets a column object by Name or ID.",
+      "syntax": "tableColumnCollectionObject.getItem(key);",
+      "signature": "getItem(key: number or string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "number or string",
+          "isCollection": false,
+          "description": " Column Name or ID.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getItemOrNull",
+      "returnType": "TableColumn",
+      "description": "Gets a column object by Name or ID. If the column does not exist, the returned object's isNull property will be true.",
+      "syntax": "tableColumnCollectionObject.getItemOrNull(key);",
+      "signature": "getItemOrNull(key: number or string)",
+      "restfulName": "ItemOrNull",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "number or string",
+          "isCollection": false,
+          "description": " Column Name or ID.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getItemAt",
+      "returnType": "TableColumn",
+      "description": "Gets a column based on its position in the collection.",
+      "syntax": "tableColumnCollectionObject.getItemAt(index);",
+      "signature": "getItemAt(index: number)",
+      "restfulName": "ItemAt",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Index value of the object to be retrieved. Zero-indexed.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "add",
+      "returnType": "TableColumn",
+      "description": "Adds a new column to the table.",
+      "syntax": "tableColumnCollectionObject.add(index, values);",
+      "signature": "add(index: number, values: (boolean or string or number)[][])",
+      "restfulName": "add",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Specifies the relative position of the new column. The previous column at this position is shifted to the right. The index value should be equal to or less than the last column's index value, so it cannot be used to append a column at the end of the table. Zero-indexed.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "values",
+          "dataType": "(boolean or string or number)[][]",
+          "isCollection": true,
+          "description": "A 2-dimensional array of unformatted values of the table column.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

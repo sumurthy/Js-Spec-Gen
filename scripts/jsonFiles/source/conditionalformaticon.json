@@ -1,6 +1,6 @@
 {
-  "name": "ConditionalFormatBetweenRule",
-  "description": "Represents a between or not between rule for numbers or cell references.",
+  "name": "ConditionalFormatIcon",
+  "description": "Represents an IconSet criteria for conditional formatting.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
@@ -19,9 +19,9 @@
   },
   "properties": [
     {
-      "name": "inclusive",
+      "name": "reverseIconOrder",
       "dataType": "bool",
-      "description": "If true, includes the lower and upper bounds in the condition.",
+      "description": "If true, reverses the icon orders for the IconSet.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
@@ -31,9 +31,9 @@
       "notes": null
     },
     {
-      "name": "lowerBound",
-      "dataType": "object",
-      "description": "Represents the lower bound of the between condition, either a number, formula or cell reference.",
+      "name": "showIconOnly",
+      "dataType": "bool",
+      "description": "If true, hides the values and only shows icons.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
@@ -43,13 +43,25 @@
       "notes": null
     },
     {
-      "name": "upperBound",
-      "dataType": "object",
-      "description": "Represents the upper bound of the between condition, either a number, formula or cell reference.",
+      "name": "style",
+      "dataType": "string",
+      "description": "If set, displays the IconSet option for the conditional format.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.IconSet",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "criteria",
+      "dataType": "ConditionalFormatIconCriterion",
+      "description": "An array of Criteria and IconSets for the rules and potential custom icons for conditional icons.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": false,
+      "isRelationship": true,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null

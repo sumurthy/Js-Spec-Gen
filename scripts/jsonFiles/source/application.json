@@ -1,12 +1,12 @@
 {
-  "name": "ConditionalFormatBetweenRule",
-  "description": "Represents a between or not between rule for numbers or cell references.",
+  "name": "Application",
+  "description": "Represents the Excel application that manages the workbook.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.3",
+    "reqSet": "1.1",
     "addinTypes": [
       "Excel"
     ],
@@ -19,43 +19,41 @@
   },
   "properties": [
     {
-      "name": "inclusive",
-      "dataType": "bool",
-      "description": "If true, includes the lower and upper bounds in the condition.",
-      "isReadOnly": false,
-      "enumNameJs": null,
+      "name": "calculationMode",
+      "dataType": "string",
+      "description": "Returns the calculation mode used in the workbook.",
+      "isReadOnly": true,
+      "enumNameJs": "Excel.CalculationMode",
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "lowerBound",
-      "dataType": "object",
-      "description": "Represents the lower bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "upperBound",
-      "dataType": "object",
-      "description": "Represents the upper bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
+    {
+      "name": "calculate",
+      "returnType": "void",
+      "description": "Recalculate all currently opened workbooks in Excel.",
+      "syntax": "applicationObject.calculate(calculationType);",
+      "signature": "calculate(calculationType: string)",
+      "restfulName": "calculate",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "calculationType",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Specifies the calculation type to use.",
+          "isRequired": true,
+          "enumNameJs": "Excel.CalculationType",
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
     {
       "name": "load",
       "returnType": "void",

@@ -1,12 +1,12 @@
 {
-  "name": "ConditionalFormatBetweenRule",
-  "description": "Represents a between or not between rule for numbers or cell references.",
+  "name": "ChartTitle",
+  "description": "Represents a chart title object of a chart.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.3",
+    "reqSet": "1.1",
     "addinTypes": [
       "Excel"
     ],
@@ -19,38 +19,50 @@
   },
   "properties": [
     {
-      "name": "inclusive",
+      "name": "format",
+      "dataType": "ChartTitleFormat",
+      "description": "Represents the formatting of a chart title, which includes fill and font formatting.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "overlay",
       "dataType": "bool",
-      "description": "If true, includes the lower and upper bounds in the condition.",
+      "description": "Boolean value representing if the chart title will overlay the chart or not.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "lowerBound",
-      "dataType": "object",
-      "description": "Represents the lower bound of the between condition, either a number, formula or cell reference.",
+      "name": "text",
+      "dataType": "string",
+      "description": "Represents the title text of a chart.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "upperBound",
-      "dataType": "object",
-      "description": "Represents the upper bound of the between condition, either a number, formula or cell reference.",
+      "name": "visible",
+      "dataType": "bool",
+      "description": "A boolean value the represents the visibility of a chart title object.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     }

@@ -1,6 +1,6 @@
 {
-  "name": "ConditionalFormatBetweenRule",
-  "description": "Represents a between or not between rule for numbers or cell references.",
+  "name": "ConditionalFormatIconCriterion",
+  "description": "Represents an Icon Criterion which contains a type, value, an Operator, and an optional custom icon, if not using an iconset.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
@@ -19,9 +19,21 @@
   },
   "properties": [
     {
-      "name": "inclusive",
-      "dataType": "bool",
-      "description": "If true, includes the lower and upper bounds in the condition.",
+      "name": "type",
+      "dataType": "string",
+      "description": "What the icon conditional formula should be based on.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConditionalFormatRuleType",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "formula",
+      "dataType": "object",
+      "description": "A number, a formula, or null (if Type is LowestValue, HighestValue, or Automatic).",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
@@ -31,25 +43,25 @@
       "notes": null
     },
     {
-      "name": "lowerBound",
-      "dataType": "object",
-      "description": "Represents the lower bound of the between condition, either a number, formula or cell reference.",
+      "name": "operator",
+      "dataType": "IconCriterionOperator",
+      "description": "GreaterThan or GreaterThanOrEqual for each of the rule type for the Icon conditional format.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": false,
+      "isRelationship": true,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "upperBound",
-      "dataType": "object",
-      "description": "Represents the upper bound of the between condition, either a number, formula or cell reference.",
+      "name": "customIcon",
+      "dataType": "Icon",
+      "description": "An icon type, where one can select a specific icon for this criterion.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": false,
+      "isRelationship": true,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null

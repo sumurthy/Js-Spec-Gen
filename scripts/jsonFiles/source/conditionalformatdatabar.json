@@ -1,0 +1,129 @@
+{
+  "name": "ConditionalFormatDataBar",
+  "description": "Represents an Excel Conditional Data Bar Type.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.3",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "showDataBarOnly",
+      "dataType": "bool",
+      "description": "If true, hides the values from the cells where the data bar is applied.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "direction",
+      "dataType": "string",
+      "description": "Represents the direction that the data bar graphic should be based on.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConditionalFormatDataBarDirection",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "axisFormat",
+      "dataType": "string",
+      "description": "Representation of how the axis is determined for an Excel data bar.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConditionalFormatDataBarAxisFormat",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "positiveFormat",
+      "dataType": "ConditionalFormatDataBarFormat",
+      "description": "Representation of all values to the right of the axis in an Excel data bar.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "negativeFormat",
+      "dataType": "ConditionalFormatDataBarFormat",
+      "description": "Representation of all values to the left of the axis in an Excel data bar.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "lowerBoundRule",
+      "dataType": "ConditionalFormatDataBarRule",
+      "description": "The rule for what consistutes the lower bound (and how to calculate it, if applicable) for a data bar.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "upperBoundRule",
+      "dataType": "ConditionalFormatDataBarRule",
+      "description": "The rule for what constitutes the upper bound (and how to calculate it, if applicable) for a data bar.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

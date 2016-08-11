@@ -1,12 +1,12 @@
 {
-  "name": "ConditionalFormatBetweenRule",
-  "description": "Represents a between or not between rule for numbers or cell references.",
+  "name": "TableRow",
+  "description": "Represents a row in a table.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.3",
+    "reqSet": "1.1",
     "addinTypes": [
       "Excel"
     ],
@@ -19,43 +19,55 @@
   },
   "properties": [
     {
-      "name": "inclusive",
-      "dataType": "bool",
-      "description": "If true, includes the lower and upper bounds in the condition.",
-      "isReadOnly": false,
+      "name": "index",
+      "dataType": "int",
+      "description": "Returns the index number of the row within the rows collection of the table. Zero-indexed.",
+      "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "lowerBound",
-      "dataType": "object",
-      "description": "Represents the lower bound of the between condition, either a number, formula or cell reference.",
+      "name": "values",
+      "dataType": "object[][]",
+      "description": "Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "upperBound",
-      "dataType": "object",
-      "description": "Represents the upper bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
+    {
+      "name": "getRange",
+      "returnType": "Range",
+      "description": "Returns the range object associated with the entire row.",
+      "syntax": "tableRowObject.getRange();",
+      "signature": "getRange()",
+      "restfulName": "Range",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the row from the table.",
+      "syntax": "tableRowObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
     {
       "name": "load",
       "returnType": "void",

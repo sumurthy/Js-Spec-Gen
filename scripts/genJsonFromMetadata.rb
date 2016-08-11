@@ -309,6 +309,8 @@ end
 	# Presence of { would indicate that it is a property or a relation	
 	if member_ahead && !line.include?('_') && line.include?('{')  
 
+		
+
 		prop_name = line.split[1]
 		prop_name = uncapitalize prop_name
 		member_ahead = false		

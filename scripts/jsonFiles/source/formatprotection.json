@@ -1,12 +1,12 @@
 {
-  "name": "ConditionalFormatBetweenRule",
-  "description": "Represents a between or not between rule for numbers or cell references.",
+  "name": "FormatProtection",
+  "description": "Represents the format protection of a range object.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.3",
+    "reqSet": "1.2",
     "addinTypes": [
       "Excel"
     ],
@@ -19,38 +19,26 @@
   },
   "properties": [
     {
-      "name": "inclusive",
+      "name": "locked",
       "dataType": "bool",
-      "description": "If true, includes the lower and upper bounds in the condition.",
+      "description": "Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.2",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "lowerBound",
-      "dataType": "object",
-      "description": "Represents the lower bound of the between condition, either a number, formula or cell reference.",
+      "name": "formulaHidden",
+      "dataType": "bool",
+      "description": "Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "upperBound",
-      "dataType": "object",
-      "description": "Represents the upper bound of the between condition, either a number, formula or cell reference.",
-      "isReadOnly": false,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.2",
       "isKey": null,
       "notes": null
     }

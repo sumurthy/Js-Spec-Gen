@@ -1,0 +1,177 @@
+{
+  "name": "RangeFormat",
+  "description": "A format object encapsulating the range's font, fill, borders, alignment, and other properties.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "columnWidth",
+      "dataType": "double",
+      "description": "Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "fill",
+      "dataType": "RangeFill",
+      "description": "Returns the fill object defined on the overall range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "borders",
+      "dataType": "RangeBorderCollection",
+      "description": "Collection of border objects that apply to the overall range selected",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "font",
+      "dataType": "RangeFont",
+      "description": "Returns the font object defined on the overall range selected",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "horizontalAlignment",
+      "dataType": "string",
+      "description": "Represents the horizontal alignment for the specified object.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.HorizontalAlignment",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rowHeight",
+      "dataType": "double",
+      "description": "Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "verticalAlignment",
+      "dataType": "string",
+      "description": "Represents the vertical alignment for the specified object.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.VerticalAlignment",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "wrapText",
+      "dataType": "bool",
+      "description": "Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "protection",
+      "dataType": "FormatProtection",
+      "description": "Returns the format protection object for a range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "autofitColumns",
+      "returnType": "void",
+      "description": "Changes the width of the columns of the current range to achieve the best fit, based on the current data in the columns.",
+      "syntax": "rangeFormatObject.autofitColumns();",
+      "signature": "autofitColumns()",
+      "restfulName": "autofitColumns",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.2"
+    },
+    {
+      "name": "autofitRows",
+      "returnType": "void",
+      "description": "Changes the height of the rows of the current range to achieve the best fit, based on the current data in the columns.",
+      "syntax": "rangeFormatObject.autofitRows();",
+      "signature": "autofitRows()",
+      "restfulName": "autofitRows",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.2"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

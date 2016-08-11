@@ -278,7 +278,19 @@
                 "Percentile": "",
                 "Automatic": ""
         },
-
+        "Excel.ConditionalFormatCustomRuleType": {
+                "Formula": "",
+                "Between": "",
+                "NotBetween": "",
+                "Count": "",
+                "Percent": "",
+                "Average": "",
+                "Blank": "",
+                "Unique": "",
+                "Error": "",
+                "TextContains": "",
+                "DateOccurring": ""
+        },
         "Excel.ConditionalFormatDate": {
                 "Yesterday": "",
                 "Today": "",
@@ -309,5 +321,26 @@
                 "Less": "",
                 "LessEqual": "",
                 "NotEqual": ""
+        },
+        "Excel.PresetStyle": {
+                "Normal": "",
+                "Good": "",
+                "Bad": "",
+                "Neutral": "",
+                "Calculation": "",
+                "CheckCell": "",
+                "ExplanatoryText": "",
+                "Input": "",
+                "LinkedCell": "",
+                "Note": "",
+                "Output": "",
+                "WarningText": "",
+                "Heading1": "",
+                "Heading2": "",
+                "Heading3": "",
+                "Heading4": "",
+                "Title": "",
+                "Total": "",
+                "None": ""
         }
 }
