@@ -23,7 +23,7 @@ Excel.run(function (ctx) {
 
 ```js
 Excel.run(function (ctx) { 
-	var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItem(0);
+	var tablecolumn = ctx.workbook.tables.getItem('Table1').columns.getItem(0);
 	tablecolumn.load('name');
 	return ctx.sync().then(function() {
 			console.log(tablecolumn.name);
@@ -55,7 +55,7 @@ Excel.run(function (ctx) {
 
 ```js
 Excel.run(function (ctx) { 
-	var tablecolumns = ctx.workbook.tables.getItem['Table1'].columns;
+	var tablecolumns = ctx.workbook.tables.getItem('Table1').columns;
 	tablecolumns.load('items');
 	return ctx.sync().then(function() {
 		console.log("tablecolumns Count: " + tablecolumns.count);

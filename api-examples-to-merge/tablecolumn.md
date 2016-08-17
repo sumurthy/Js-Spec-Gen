@@ -4,7 +4,7 @@
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(2);
 	column.delete();
 	return ctx.sync(); 
 }).catch(function(error) {
@@ -20,7 +20,7 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var dataBodyRange = column.getDataBodyRange();
 	dataBodyRange.load('address');
 	return ctx.sync().then(function() {
@@ -38,7 +38,7 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var headerRowRange = columns.getHeaderRowRange();
 	headerRowRange.load('address');
 	return ctx.sync().then(function() {
@@ -56,7 +56,7 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var columnRange = columns.getRange();
 	columnRange.load('address');
 	return ctx.sync().then(function() {
@@ -75,7 +75,7 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var totalRowRange = columns.getTotalRowRange();
 	totalRowRange.load('address');
 	return ctx.sync().then(function() {
@@ -94,7 +94,7 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItem(0);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItem(0);
 	column.load('index');
 	return ctx.sync().then(function() {
 		console.log(column.index);
@@ -109,9 +109,10 @@ Excel.run(function (ctx) {
 
 ```js
 Excel.run(function (ctx) { 
+	var tableName = 'Table1';
 	var tables = ctx.workbook.tables;
 	var newValues = [["New"], ["Values"], ["For"], ["New"], ["Column"]];
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(2);
 	column.values = newValues;
 	column.load('values');
 	return ctx.sync().then(function() {

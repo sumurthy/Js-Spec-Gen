@@ -22,8 +22,9 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
 	var table = ctx.workbook.tables.getItem(tableName);
+	table.load('name');
 	return ctx.sync().then(function() {
-			console.log(table.index);
+			console.log(table.name);
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);
@@ -38,6 +39,7 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var table = ctx.workbook.tables.getItemAt(0);
+	table.load('name');
 	return ctx.sync().then(function() {
 			console.log(table.name);
 	});
@@ -54,7 +56,7 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var tables = ctx.workbook.tables;
-	tables.load('items');
+	tables.load();
 	return ctx.sync().then(function() {
 		console.log("tables Count: " + tables.count);
 		for (var i = 0; i < tables.items.length; i++)
