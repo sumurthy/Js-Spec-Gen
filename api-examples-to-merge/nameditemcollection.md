@@ -22,22 +22,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-Get the number of nameditems.
-
-```js
-Excel.run(function (ctx) { 
-	var nameditems = ctx.workbook.names;
-	nameditems.load('count');
-	return ctx.sync().then(function() {
-		console.log("nameditems: Count= " + nameditems.count);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
 
 ### getItem(name: string)
 
