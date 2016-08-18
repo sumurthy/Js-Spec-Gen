@@ -55,8 +55,10 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var sheetName = "Charts";
+	var rangeSelection = "A1:B4";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeSelection);
 	var sourceData = sheetName + "!" + "A1:B4";
-	var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("pie", sourceData, "auto");
+	var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("pie", range, "auto");
 	chart.width = 500;
 	chart.height = 300;
 	chart.setPosition("C2", null);
@@ -97,7 +99,7 @@ Excel.run(function (ctx) {
 	chart.top = 100;
 	chart.left = 100;
 	chart.height = 200;
-	chart.weight = 200;
+	chart.width = 200;
 	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);
