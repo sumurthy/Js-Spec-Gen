@@ -43,26 +43,11 @@ Excel.run(function (ctx) {
 
 ```js
 Excel.run(function (ctx) { 
-	var nameditem = ctx.workbook.names.getItem(wSheetName);
+	var sheetName = 'Sheet1';
+	var nameditem = ctx.workbook.names.getItem(sheetName);
 	nameditem.load('type');
 	return ctx.sync().then(function() {
 			console.log(nameditem.type);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
-### getItemAt(index: number)
-
-```js
-Excel.run(function (ctx) { 
-	var nameditem = ctx.workbook.names.getItemAt(0);
-	nameditem.load('name');
-	return ctx.sync().then(function() {
-			console.log(nameditem.name);
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);

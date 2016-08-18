@@ -29,7 +29,7 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	var border = ctx.workbook.borders.getItemAt(0);
+	var border = range.format.borders.getItemAt(0);
 	border.load('sideIndex');
 	return ctx.sync().then(function() {
 			console.log(border.sideIndex);
