@@ -41,7 +41,7 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
 	var text = binding.getText();
-	ctx.load('text');
+	binding.load('text');
 	return ctx.sync().then(function() {
 		console.log(text);
 	});

@@ -12,7 +12,7 @@ Excel.run(function (ctx) {
 	title.format.font.color = "#FF0000";
 	title.format.font.italic =  false;
 	title.format.font.bold = true;
-	title.format.font.underline = false;
+	title.format.font.underline = "None";
 	return ctx.sync();
 }).catch(function(error) {
 		console.log("Error: " + error);
@@ -32,7 +32,7 @@ Excel.run(function (ctx) {
 	title.format.font.color = "#FF0000";
 	title.format.font.italic =  false;
 	title.format.font.bold = true;
-	title.format.font.underline = false;
+	title.format.font.underline = "None";
 	return ctx.sync();
 }).catch(function(error) {
 		console.log("Error: " + error);

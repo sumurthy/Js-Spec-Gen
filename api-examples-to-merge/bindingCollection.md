@@ -70,7 +70,6 @@ Excel.run(function (ctx) {
 		for (var i = 0; i < bindings.items.length; i++)
 		{
 			console.log(bindings.items[i].id);
-			console.log(bindings.items[i].index);
 		}
 	});
 }).catch(function(error) {

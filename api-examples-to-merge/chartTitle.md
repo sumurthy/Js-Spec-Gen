@@ -18,6 +18,7 @@ return ctx.sync().then(function() {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
+});
 ```
 
 Set the `text` of Chart Title to "My Chart" and Make it show on top of the chart without overlaying.
@@ -37,5 +38,6 @@ return ctx.sync().then(function() {
 		if (error instanceof OfficeExtension.Error) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
+});
 });
 ```
