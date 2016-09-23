@@ -66,3 +66,12 @@ The location of final spec files are at `Js-Spec-Gen/markdown`. It includes one 
 ## Next version of this tool.
 
 This tool is being enhanced to combine all steps into one sript and provider better support for changing output format through settings. For the time being, please ignore the `v2` folder under scripts and also ignore the `config` folder. 
+
+{
+  "client_id": "dad4b481-a6b7-4cfd-9117-32eed770d4b1",
+  "redirect_uri": "http://localhost:4567/signon",
+  "secret": "AGCifRyMSOMNQr5n36Kb9Pzh0U4oR8cfKQwjXv39ip0=",
+  "persist_changes": true,
+  "auth_url": "login.windows.net/common/oauth2/",
+  "resource": "https://graph.microsoft.com"
+}
