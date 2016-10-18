@@ -1,44 +1,165 @@
-# TableCollection Object (JavaScript API for Word)
+# TableCollection Object (JavaScript API for Excel)
 
-_Word 2016, Word for iPad, Word for Mac_
+_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
 
-Contains the collection of the document's Table objects.
+Represents a collection of all the tables that are part of the workbook.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Table[]](table.md)|A collection of table objects. Read-only.|1.3||
+|count|int|Returns the number of tables in the workbook. Read-only.|1.1||
+|items|[Table[]](table.md)|A collection of table objects. Read-only.|1.1||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|first|[Table](table.md)|Gets the first table in this collection. Read-only.|1.3||
+None
+
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(index: number)](#getitemindex-number)|[Table](table.md)|Gets a table object by its index in the collection.|1.3|
+|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|1.1|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID.|1.1|
+|[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|1.1|
+|[getItemOrNull(key: number or string)](#getitemornullkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID. If the table does not exist, the return object's isNull property will be true.|1.3|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 
 ## Method Details
 
 
-### getItem(index: number)
-Gets a table object by its index in the collection.
+### add(address: string, hasHeaders: bool)
+Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.
 
 #### Syntax
 ```js
-tableCollectionObject.getItem(index);
+tableCollectionObject.add(address, hasHeaders);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|index|number|A number that identifies the index location of a table object.|
+|address|string|Address or name of the range object representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.|
+|hasHeaders|bool|Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e,. when this property set to false), Excel will automatically generate header shifting the data down by one row.|
+
+#### Returns
+[Table](table.md)
+
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.add('Sheet1!A1:E7', true);
+	table.load('name');
+	return ctx.sync().then(function() {
+		console.log(table.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+### getItem(key: number or string)
+Gets a table by Name or ID.
+
+#### Syntax
+```js
+tableCollectionObject.getItem(key);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|key|number or string|Name or ID of the table to be retrieved.|
+
+#### Returns
+[Table](table.md)
+
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	return ctx.sync().then(function() {
+			console.log(table.index);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.getItemAt(0);
+	return ctx.sync().then(function() {
+			console.log(table.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getItemAt(index: number)
+Gets a table based on its position in the collection.
+
+#### Syntax
+```js
+tableCollectionObject.getItemAt(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
+
+#### Returns
+[Table](table.md)
+
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.getItemAt(0);
+	return ctx.sync().then(function() {
+			console.log(table.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getItemOrNull(key: number or string)
+Gets a table by Name or ID. If the table does not exist, the return object's isNull property will be true.
+
+#### Syntax
+```js
+tableCollectionObject.getItemOrNull(key);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|key|number or string|Name or ID of the table to be retrieved.|
 
 #### Returns
 [Table](table.md)
@@ -58,3 +179,40 @@ object.load(param);
 
 #### Returns
 void
+### Property access examples
+
+```js
+Excel.run(function (ctx) { 
+	var tables = ctx.workbook.tables;
+	tables.load('items');
+	return ctx.sync().then(function() {
+		console.log("tables Count: " + tables.count);
+		for (var i = 0; i < tables.items.length; i++)
+		{
+			console.log(tables.items[i].name);
+		}
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+Get the number of tables
+
+```js
+Excel.run(function (ctx) { 
+	var tables = ctx.workbook.tables;
+	tables.load('count');
+	return ctx.sync().then(function() {
+		console.log(tables.count);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

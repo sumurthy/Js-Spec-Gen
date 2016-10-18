@@ -8,7 +8,6 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 	worksheet.activate();
 	return ctx.sync(); 
-	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -25,7 +24,6 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 	worksheet.delete();
 	return ctx.sync(); 
-	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -45,7 +43,6 @@ Excel.run(function (ctx) {
 	cell.load('address');
 	return ctx.sync().then(function() {
 		console.log(cell.address);
-	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -148,4 +145,3 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-

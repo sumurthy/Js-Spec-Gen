@@ -309,6 +309,11 @@ end
 	# Presence of { would indicate that it is a property or a relation	
 	if member_ahead && !line.include?('_') && line.include?('{')  
 
+<<<<<<< HEAD
+=======
+		
+
+>>>>>>> f5d65d2d69891f3db674327dbb885648ed66be8a
 		prop_name = line.split[1]
 		prop_name = uncapitalize prop_name
 		member_ahead = false		
@@ -363,7 +368,10 @@ end
 
 		# Capture the first part of the parameter definition inside method definition to see if it has readonly flag and also note down its data type.
 		
+<<<<<<< HEAD
 		# puts "#{line}"
+=======
+>>>>>>> f5d65d2d69891f3db674327dbb885648ed66be8a
 		parm_array_metadata = line[line.index('(')+1, line.index(');')].chomp(');').split(',')
 		opt_array = parm_array_metadata.map {|n| n.split[0]}
 		opt_array.each_with_index do |metadata, j|
@@ -454,6 +462,7 @@ end
 			syntax = "#{uncapitalize @json_object[:name]}Object.#{mthd_name}();"
 		else			
 			signature = mthd_name + '(' 
+<<<<<<< HEAD
 
 			syntax = "#{uncapitalize @json_object[:name]}Object.#{mthd_name}("
 			parm_hash_array.each_with_index do |parmhash, k|
@@ -461,6 +470,12 @@ end
 				puts signature
 				puts parmhash[:dataType] 
 				signature = signature + parmhash[:name] + ': ' + parmhash[:dataType] 
+=======
+			syntax = "#{uncapitalize @json_object[:name]}Object.#{mthd_name}("
+
+			parm_hash_array.each_with_index do |parmhash, k|
+				signature = signature + parmhash[:name] + ': ' + parmhash[:dataType].to_s 
+>>>>>>> f5d65d2d69891f3db674327dbb885648ed66be8a
 				syntax = syntax + parmhash[:name] 
 
 				if k < (parm_hash_array.length - 1)

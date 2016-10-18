@@ -344,7 +344,6 @@ Excel.run(function (ctx) {
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 	range.select();
 	return ctx.sync(); 
-	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -422,10 +421,13 @@ Excel.run(function (ctx) {
 Get the worksheet containing the range. 
 
 ```js
+/* This might be broken still - it was broken before because it 
+	it was missing 'var', but might still be wrong because of
+	getting information without loading properly. */
 Excel.run(function (ctx) { 
 	var names = ctx.workbook.names;
 	var namedItem = names.getItem('MyRange');
-	range = namedItem.range;
+	var range = namedItem.range;
 	var rangeWorksheet = range.worksheet;
 	rangeWorksheet.load('name');
 	return ctx.sync().then(function() {

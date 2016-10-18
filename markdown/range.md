@@ -1,385 +1,647 @@
-# Range Object (JavaScript API for Word)
+# Range Object (JavaScript API for Excel)
 
-_Word 2016, Word for iPad, Word for Mac_
+_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
 
-Represents a contiguous area in a document.
+Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|hyperlink|string|Gets the first hyperlink in the range, or sets a hyperlink on the range. Existing hyperlinks in this range are deleted when you set a new hyperlink.|1.3||
-|isEmpty|bool|Checks whether the range length is zero. Read-only.|1.3||
-|style|string|Gets or sets the style used for the range. This is the name of the pre-installed or custom style.|1.1||
-|text|string|Gets the text of the range. Read-only.|1.1||
+|address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.|1.1||
+|addressLocal|string|Represents range reference for the specified range in the language of the user. Read-only.|1.1||
+|cellCount|int|Number of cells in the range. Read-only.|1.1||
+|columnCount|int|Represents the total number of columns in the range. Read-only.|1.1||
+|columnHidden|bool|Represents if all columns of the current range are hidden.|1.2||
+|columnIndex|int|Represents the column number of the first cell in the range. Zero-indexed. Read-only.|1.1||
+|formulas|object[][]|Represents the formula in A1-style notation.|1.1||
+|formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|1.1||
+|formulasR1C1|object[][]|Represents the formula in R1C1-style notation.|1.2||
+|hidden|bool|Represents if all cells of the current range are hidden. Read-only.|1.2||
+|numberFormat|object[][]|Represents Excel's number format code for the given cell.|1.1||
+|rowCount|int|Returns the total number of rows in the range. Read-only.|1.1||
+|rowHidden|bool|Represents if all rows of the current range are hidden.|1.2||
+|rowIndex|int|Returns the row number of the first cell in the range. Zero-indexed. Read-only.|1.1||
+|text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|1.1||
+|valueTypes|string|Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|1.1||
+|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|1.1||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the range. Read-only.|1.1||
-|font|[Font](font.md)|Gets the text format of the range. Use this to get and set font name, size, color, and other properties. Read-only.|1.1||
-|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inline picture objects in the range. Read-only.|1.2||
-|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the range. Read-only.|1.3||
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of paragraph objects in the range. Read-only.|1.1||
-|parentBody|[Body](body.md)|Gets the parent body of the range. Read-only.|1.3||
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the range. Returns null if there isn't a parent content control. Read-only.|1.1||
-|parentTable|[Table](table.md)|Gets the table that contains the range. Returns null if it is not contained in a table. Read-only.|1.3||
-|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains the range. Returns null if it is not contained in a table cell. Read-only.|1.3||
-|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the range. Read-only.|1.3||
+|conditionalFormats|[ConditionalFormatCollection](conditionalformatcollection.md)|Returns a Collection of conditional formats that overlap this range Read-only.|1.3||
+|format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|1.1||
+|sort|[RangeSort](rangesort.md)|Represents the range sort of the current range. Read-only.|1.2||
+|worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.|1.1||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clears the contents of the range object. The user can perform the undo operation on the cleared content.|1.1|
-|[compareLocationWith(range: Range)](#comparelocationwithrange-range)|[LocationRelation](locationrelation.md)|Compares this range's location with another range's location.|1.3|
-|[delete()](#delete)|void|Deletes the range and its content from the document.|1.1|
-|[expandTo(range: Range)](#expandtorange-range)|void|Expands the range in either direction to cover another range.|1.3|
-|[getHtml()](#gethtml)|string|Gets the HTML representation of the range object.|1.1|
-|[getHyperlinkRanges()](#gethyperlinkranges)|[RangeCollection](rangecollection.md)|Gets hyperlink child ranges within the range.|1.3|
-|[getNextTextRange(punctuationMarks: string[], trimSpacing: bool)](#getnexttextrangepunctuationmarks-string-trimspacing-bool)|[Range](range.md)|Gets the next text range by using punctuation marks andor space character.|1.3|
-|[getOoxml()](#getooxml)|string|Gets the OOXML representation of the range object.|1.1|
-|[getRange(rangeLocation: RangeLocation)](#getrangerangelocation-rangelocation)|[Range](range.md)|Clones the range, or gets the starting or ending point of the range as a new range.|1.3|
-|[getTextRanges(punctuationMarks: string[], trimSpacing: bool)](#gettextrangespunctuationmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text child ranges in the range by using punctuation marks andor space character.|1.3|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Replace', 'Before' or 'After'.|1.1|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the range object with a rich text content control.|1.1|
-|[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|1.1|
-|[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|1.1|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts a picture at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|1.2|
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|1.1|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|1.1|
-|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|1.3|
-|[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|1.1|
-|[intersectWith(range: Range)](#intersectwithrange-range)|void|Shrinks the range to the intersection of the range with another range.|1.3|
+|[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|1.1|
+|[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|1.1|
+|[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|1.1|
+|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.|1.1|
+|[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Gets a column contained in the range.|1.1|
+|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range.|1.1|
+|[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range.|1.1|
+|[getIntersection(anotherRange: Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges.|1.1|
+|[getIntersectionOrNull(anotherRange: Range or string)](#getintersectionornullanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.|1.3|
+|[getLastCell()](#getlastcell)|[Range](range.md)|Gets the last cell within the range. For example, the last cell of "B2:D5" is "D5".|1.1|
+|[getLastColumn()](#getlastcolumn)|[Range](range.md)|Gets the last column within the range. For example, the last column of "B2:D5" is "D2:D5".|1.1|
+|[getLastRow()](#getlastrow)|[Range](range.md)|Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".|1.1|
+|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.|1.1|
+|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|1.1|
+|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|Returns the used range of the given range object.|1.1|
+|[getVisibleView()](#getvisibleview)|[RangeView](rangeview.md)|Represents the visible rows of the current range.|1.3|
+|[insert(shift: string)](#insertshift-string)|[Range](range.md)|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.|1.1|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.|1.1|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects and navigates the Word UI to the range.|1.1|
-|[split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)](#splitdelimiters-string-multiparagraphs-bool-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the range into child ranges by using delimiters.|1.3|
+|[merge(across: bool)](#mergeacross-bool)|void|Merge the range cells into one region in the worksheet.|1.2|
+|[select()](#select)|void|Selects the specified range in the Excel UI.|1.1|
+|[unmerge()](#unmerge)|void|Unmerge the range cells into separate cells.|1.2|
 
 ## Method Details
 
 
-### clear()
-Clears the contents of the range object. The user can perform the undo operation on the cleared content.
+### clear(applyTo: string)
+Clear range values, format, fill, border, etc.
 
 #### Syntax
 ```js
-rangeObject.clear();
+rangeObject.clear(applyTo);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|applyTo|string|Optional. Determines the type of clear action. Possible values are: `All` Default-option,`Formats` ,`Contents` |
 
 #### Returns
 void
 
-### compareLocationWith(range: Range)
-Compares this range's location with another range's location.
+#### Examples
+
+Below example clears format and contents of the range. 
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D:F";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.clear();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### delete(shift: string)
+Deletes the cells associated with the range.
 
 #### Syntax
 ```js
-rangeObject.compareLocationWith(range);
+rangeObject.delete(shift);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|range|Range|Required. The range to compare with this range.|
-
-#### Returns
-[LocationRelation](locationrelation.md)
-
-### delete()
-Deletes the range and its content from the document.
-
-#### Syntax
-```js
-rangeObject.delete();
-```
-
-#### Parameters
-None
+|shift|string|Specifies which way to shift the cells.  Possible values are: Up, Left|
 
 #### Returns
 void
 
-### expandTo(range: Range)
-Expands the range in either direction to cover another range.
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D:F";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.delete();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getBoundingRect(anotherRange: Range or string)
+Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".
 
 #### Syntax
 ```js
-rangeObject.expandTo(range);
+rangeObject.getBoundingRect(anotherRange);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|range|Range|Required. Another range.|
+|anotherRange|Range or string|The range object or address or range name.|
 
 #### Returns
-void
+[Range](range.md)
 
-### getHtml()
-Gets the HTML representation of the range object.
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D4:G6";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	var range = range.getBoundingRect("G4:H8");
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // Prints Sheet1!D4:H8
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getCell(row: number, column: number)
+Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.
 
 #### Syntax
 ```js
-rangeObject.getHtml();
+rangeObject.getCell(row, column);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|row|number|Row number of the cell to be retrieved. Zero-indexed.|
+|column|number|Column number of the cell to be retrieved. Zero-indexed.|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+	var range = worksheet.getRange(rangeAddress);
+	var cell = range.cell(0,0);
+	cell.load('address');
+	return ctx.sync().then(function() {
+		console.log(cell.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getColumn(column: number)
+Gets a column contained in the range.
+
+#### Syntax
+```js
+rangeObject.getColumn(column);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|column|number|Column number of the range to be retrieved. Zero-indexed.|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet19";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getColumn(1);
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!B1:B8
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getEntireColumn()
+Gets an object that represents the entire column of the range.
+
+#### Syntax
+```js
+rangeObject.getEntireColumn();
 ```
 
 #### Parameters
 None
 
 #### Returns
-string
+[Range](range.md)
 
-### getHyperlinkRanges()
-Gets hyperlink child ranges within the range.
+#### Examples
+
+Note: the grid properties of the Range (values, numberFormat, formulas) contains `null` since the Range in question is unbounded.
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D:F";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	var rangeEC = range.getEntireColumn();
+	rangeEC.load('address');
+	return ctx.sync().then(function() {
+		console.log(rangeEC.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+### getEntireRow()
+Gets an object that represents the entire row of the range.
 
 #### Syntax
 ```js
-rangeObject.getHyperlinkRanges();
+rangeObject.getEntireRow();
 ```
 
 #### Parameters
 None
 
 #### Returns
-[RangeCollection](rangecollection.md)
+[Range](range.md)
 
-### getNextTextRange(punctuationMarks: string[], trimSpacing: bool)
-Gets the next text range by using punctuation marks andor space character.
+#### Examples
+```js
+
+Excel.run(function (ctx) {
+	var sheetName = "Sheet1";
+	var rangeAddress = "D:F"; 
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	var rangeER = range.getEntireRow();
+	rangeER.load('address');
+	return ctx.sync().then(function() {
+		console.log(rangeER.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+The grid properties of the Range (values, numberFormat, formulas) contains `null` since the Range in question is unbounded.
+
+
+### getIntersection(anotherRange: Range or string)
+Gets the range object that represents the rectangular intersection of the given ranges.
 
 #### Syntax
 ```js
-rangeObject.getNextTextRange(punctuationMarks, trimSpacing);
+rangeObject.getIntersection(anotherRange);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|punctuationMarks|string[]|Required. The punctuation marks and/or space character as an array of strings.|
-|trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the returned range. Default is false which indicates that spacing characters at the start and end of the range are included.|
+|anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
 
 #### Returns
 [Range](range.md)
 
-### getOoxml()
-Gets the OOXML representation of the range object.
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getIntersection("D4:G6");
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!D4:F6
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getIntersectionOrNull(anotherRange: Range or string)
+Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.
 
 #### Syntax
 ```js
-rangeObject.getOoxml();
+rangeObject.getIntersectionOrNull(anotherRange);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
+
+#### Returns
+[Range](range.md)
+
+### getLastCell()
+Gets the last cell within the range. For example, the last cell of "B2:D5" is "D5".
+
+#### Syntax
+```js
+rangeObject.getLastCell();
 ```
 
 #### Parameters
 None
 
 #### Returns
-string
-
-### getRange(rangeLocation: RangeLocation)
-Clones the range, or gets the starting or ending point of the range as a new range.
-
-#### Syntax
-```js
-rangeObject.getRange(rangeLocation);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|rangeLocation|RangeLocation|Optional. Optional. The range location can be 'Whole', 'Start' or 'End'.|
-
-#### Returns
 [Range](range.md)
 
-### getTextRanges(punctuationMarks: string[], trimSpacing: bool)
-Gets the text child ranges in the range by using punctuation marks andor space character.
+#### Examples
 
-#### Syntax
 ```js
-rangeObject.getTextRanges(punctuationMarks, trimSpacing);
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastCell();
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!F8
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|punctuationMarks|string[]|Required. The punctuation marks and/or space character as an array of strings.|
-|trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.|
 
-#### Returns
-[RangeCollection](rangecollection.md)
-
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
-Inserts a break at the specified location in the main document. The insertLocation value can be 'Replace', 'Before' or 'After'.
+### getLastColumn()
+Gets the last column within the range. For example, the last column of "B2:D5" is "D2:D5".
 
 #### Syntax
 ```js
-rangeObject.insertBreak(breakType, insertLocation);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|breakType|BreakType|Required. The break type to add.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Before' or 'After'.|
-
-#### Returns
-void
-
-### insertContentControl()
-Wraps the range object with a rich text content control.
-
-#### Syntax
-```js
-rangeObject.insertContentControl();
+rangeObject.getLastColumn();
 ```
 
 #### Parameters
 None
 
 #### Returns
-[ContentControl](contentcontrol.md)
+[Range](range.md)
 
-### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
-Inserts a document at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastColumn();
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!F1:F8
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getLastRow()
+Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".
 
 #### Syntax
 ```js
-rangeObject.insertFileFromBase64(base64File, insertLocation);
+rangeObject.getLastRow();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|base64File|string|Required. The base64 encoded content of a .docx file.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|
+None
 
 #### Returns
 [Range](range.md)
 
-### insertHtml(html: string, insertLocation: InsertLocation)
-Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastRow();
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!A8:F8
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+
+### getOffsetRange(rowOffset: number, columnOffset: number)
+Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.
 
 #### Syntax
 ```js
-rangeObject.insertHtml(html, insertLocation);
+rangeObject.getOffsetRange(rowOffset, columnOffset);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|html|string|Required. The HTML to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|
+|rowOffset|number|The number of rows (positive, negative, or 0) by which the range is to be offset. Positive values are offset downward, and negative values are offset upward.|
+|columnOffset|number|The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.|
 
 #### Returns
 [Range](range.md)
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
-Inserts a picture at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D4:F6";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!H3:K5
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getRow(row: number)
+Gets a row contained in the range.
 
 #### Syntax
 ```js
-rangeObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);
+rangeObject.getRow(row);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|base64EncodedImage|string|Required. The base64 encoded image to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|
-
-#### Returns
-[InlinePicture](inlinepicture.md)
-
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
-Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
-
-#### Syntax
-```js
-rangeObject.insertOoxml(ooxml, insertLocation);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|ooxml|string|Required. The OOXML to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|
-
-#### Returns
-[Range](range.md)
-
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
-Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.
-
-#### Syntax
-```js
-rangeObject.insertParagraph(paragraphText, insertLocation);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|paragraphText|string|Required. The paragraph text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
-
-#### Returns
-[Paragraph](paragraph.md)
-
-### insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])
-Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.
-
-#### Syntax
-```js
-rangeObject.insertTable(rowCount, columnCount, insertLocation, values);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|rowCount|number|Required. The number of rows in the table.|
-|columnCount|number|Required. The number of columns in the table.|
-|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
-|values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
-
-#### Returns
-[Table](table.md)
-
-### insertText(text: string, insertLocation: InsertLocation)
-Inserts text at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.
-
-#### Syntax
-```js
-rangeObject.insertText(text, insertLocation);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|text|string|Required. Text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|
+|row|number|Row number of the range to be retrieved. Zero-indexed.|
 
 #### Returns
 [Range](range.md)
 
-### intersectWith(range: Range)
-Shrinks the range to the intersection of the range with another range.
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getRow(1);
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!A2:F2
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getUsedRange(valuesOnly: [ApiSet(Version)
+Returns the used range of the given range object.
 
 #### Syntax
 ```js
-rangeObject.intersectWith(range);
+rangeObject.getUsedRange(valuesOnly);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|range|Range|Required. Another range.|
+|valuesOnly|[ApiSet(Version|Considers only cells with values as used cells.|
 
 #### Returns
-void
+[Range](range.md)
+
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D:F";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	var rangeUR = range.getUsedRange();
+	rangeUR.load('address');
+	return ctx.sync().then(function() {
+		console.log(rangeUR.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getVisibleView()
+Represents the visible rows of the current range.
+
+#### Syntax
+```js
+rangeObject.getVisibleView();
+```
+
+#### Parameters
+None
+
+#### Returns
+[RangeView](rangeview.md)
+
+### insert(shift: string)
+Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.
+
+#### Syntax
+```js
+rangeObject.insert(shift);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|shift|string|Specifies which way to shift the cells.  Possible values are: Down, Right|
+
+#### Returns
+[Range](range.md)
+
+#### Examples
+
+```js
+	
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F5:F10";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.insert();
+	return ctx.sync(); 
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -397,54 +659,204 @@ object.load(param);
 #### Returns
 void
 
-### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
-Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.
+### merge(across: bool)
+Merge the range cells into one region in the worksheet.
 
 #### Syntax
 ```js
-rangeObject.search(searchText, searchOptions);
+rangeObject.merge(across);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|searchText|string|Required. The search text.|
-|searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
-
-#### Returns
-[SearchResultCollection](searchresultcollection.md)
-
-### select(selectionMode: SelectionMode)
-Selects and navigates the Word UI to the range.
-
-#### Syntax
-```js
-rangeObject.select(selectionMode);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|selectionMode|SelectionMode|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
+|across|bool|Optional. Set true to merge cells in each row of the specified range as separate merged cells. The default value is false.|
 
 #### Returns
 void
 
-### split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)
-Splits the range into child ranges by using delimiters.
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:C3";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.merge(true);
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:C3";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.unmerge();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### select()
+Selects the specified range in the Excel UI.
 
 #### Syntax
 ```js
-rangeObject.split(delimiters, multiParagraphs, trimDelimiters, trimSpacing);
+rangeObject.select();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|delimiters|string[]|Required. The delimiters as an array of strings.|
-|multiParagraphs|bool|Optional. Optional. Indicates whether a returned child range can cover multiple paragraphs. Default is false which indicates that the paragraph boundaries are also used as delimiters.|
-|trimDelimiters|bool|Optional. Optional. Indicates whether to trim delimiters from the ranges in the range collection. Default is false which indicates that the delimiters are included in the ranges returned in the range collection.|
-|trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.|
+None
 
 #### Returns
-[RangeCollection](rangecollection.md)
+void
+
+#### Examples
+
+```js
+
+Excel.run(function (ctx) {
+	var sheetName = "Sheet1";
+	var rangeAddress = "F5:F10"; 
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.select();
+	return ctx.sync(); 
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### unmerge()
+Unmerge the range cells into separate cells.
+
+#### Syntax
+```js
+rangeObject.unmerge();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:C3";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.unmerge();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+### Property access examples
+
+Below example uses range address to get the range object.
+
+```js
+
+Excel.run(function (ctx) {
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8"; 
+	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+	var range = worksheet.getRange(rangeAddress);
+	range.load('cellCount');
+	return ctx.sync().then(function() {
+		console.log(range.cellCount);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+Below example uses a named-range to get the range object.
+
+```js
+
+Excel.run(function (ctx) { 
+	var rangeName = 'MyRange';
+	var range = ctx.workbook.names.getItem(rangeName).range;
+	range.load('cellCount');
+	return ctx.sync().then(function() {
+		console.log(range.cellCount);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+The example below sets number-format, values and formulas on a grid that contains 2x3 grid.
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F5:G7";
+	var numberFormat = [[null, "d-mmm"], [null, "d-mmm"], [null, null]]
+	var values = [["Today", 42147], ["Tomorrow", "5/24"], ["Difference in days", null]];
+	var formulas = [[null,null], [null,null], [null,"=G6-G5"]];
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.numberFormat = numberFormat;
+	range.values = values;
+	range.formulas= formulas;
+	range.load('text');
+	return ctx.sync().then(function() {
+		console.log(range.text);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+Get the worksheet containing the range. 
+
+```js
+Excel.run(function (ctx) { 
+	var names = ctx.workbook.names;
+	var namedItem = names.getItem('MyRange');
+	range = namedItem.range;
+	var rangeWorksheet = range.worksheet;
+	rangeWorksheet.load('name');
+	return ctx.sync().then(function() {
+			console.log(rangeWorksheet.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
