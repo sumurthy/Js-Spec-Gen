@@ -1,16 +1,16 @@
-# ShapeDataItem Object (JavaScript API for Word)
+# ShapeDataItem Object (JavaScript API for Visio)
 
-_Word 2016, Word for iPad, Word for Mac_
+_Visio Online_
 
 Represents the ShapeDataItem.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|label|string|Label. Read-only.|1.1||
-|name|string|Name. Read-only.|1.1||
-|value|string|Value. Read-only.|1.1||
+| Property	   | Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|label|string|Label. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-label)|
+|name|string|Name. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-name)|
+|value|string|Value. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,9 +20,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+| Method		   | Return Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-load)|
 
 ## Method Details
 

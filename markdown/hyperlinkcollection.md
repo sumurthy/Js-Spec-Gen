@@ -1,14 +1,14 @@
-# HyperlinkCollection Object (JavaScript API for Word)
+# HyperlinkCollection Object (JavaScript API for Visio)
 
-_Word 2016, Word for iPad, Word for Mac_
+_Visio Online_
 
 Represents the Hyperlink Collection.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|items|[Hyperlink[]](hyperlink.md)|A collection of hyperlink objects. Read-only.|1.1||
+| Property	   | Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|items|[Hyperlink[]](hyperlink.md)|A collection of hyperlink objects. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,11 +18,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|[getCount()](#getcount)|int|Gets the number of hyperlinks.|1.1|
-|[getItem(Key: number or string)](#getitemkey-number-or-string)|[Hyperlink](hyperlink.md)|Gets a Hyperlink using its key (name or Id).|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+| Method		   | Return Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|[getCount()](#getcount)|int|Gets the number of hyperlinks.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-getCount)|
+|[getItem(Key: number or string)](#getitemkey-number-or-string)|[Hyperlink](hyperlink.md)|Gets a Hyperlink using its key (name or Id).|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-getItem)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-load)|
 
 ## Method Details
 

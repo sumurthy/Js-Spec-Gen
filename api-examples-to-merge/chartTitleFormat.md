@@ -1,2 +1,0 @@
-# Chart Title Format
-none

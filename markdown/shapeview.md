@@ -1,6 +1,6 @@
-# ShapeView Object (JavaScript API for Word)
+# ShapeView Object (JavaScript API for Visio)
 
-_Word 2016, Word for iPad, Word for Mac_
+_Visio Online_
 
 Represents the ShapeView class.
 
@@ -9,15 +9,15 @@ Represents the ShapeView class.
 None
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|highlight|[HighlightData](highlightdata.md)|Represents the highlight around the shape.|1.1||
+| Relationship | Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|highlight|[HighlightData](highlightdata.md)|Represents the highlight around the shape.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-highlight)|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+| Method		   | Return Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-load)|
 
 ## Method Details
 

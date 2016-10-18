@@ -1,3 +1,0 @@
-# Chart Point Format
-
-None.

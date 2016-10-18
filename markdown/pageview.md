@@ -1,6 +1,6 @@
-# PageView Object (JavaScript API for Word)
+# PageView Object (JavaScript API for Visio)
 
-_Word 2016, Word for iPad, Word for Mac_
+_Visio Online_
 
 Represents the PageView class.
 
@@ -9,17 +9,17 @@ Represents the PageView class.
 None
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|zoom|[Double](double.md)|GetSet Page's Zoom level.|1.1||
+| Relationship | Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|zoom|[Double](double.md)|GetSet Page's Zoom level.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|[centerViewportOnShape(ShapeId: number)](#centerviewportonshapeshapeid-number)|void|Pans the Visio drawing to place the specified shape in the center of the view.|1.1|
-|[isShapeInViewport(Shape: Shape)](#isshapeinviewportshape-shape)|bool|To check if the shape is in view of the page or not.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+| Method		   | Return Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|[centerViewportOnShape(ShapeId: number)](#centerviewportonshapeshapeid-number)|void|Pans the Visio drawing to place the specified shape in the center of the view.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-centerViewportOnShape)|
+|[isShapeInViewport(Shape: Shape)](#isshapeinviewportshape-shape)|bool|To check if the shape is in view of the page or not.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-isShapeInViewport)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-load)|
 
 ## Method Details
 

@@ -1,14 +1,14 @@
-# DocumentView Object (JavaScript API for Word)
+# DocumentView Object (JavaScript API for Visio)
 
-_Word 2016, Word for iPad, Word for Mac_
+_Visio Online_
 
 Represents the DocumentView class.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|disableHyperlinks|bool|Disable Hyperlinks.|1.1||
+| Property	   | Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|disableHyperlinks|bool|Disable Hyperlinks.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disableHyperlinks)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,9 +18,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+| Method		   | Return Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-load)|
 
 ## Method Details
 

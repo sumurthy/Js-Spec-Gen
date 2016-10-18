@@ -1,16 +1,16 @@
-# Hyperlink Object (JavaScript API for Word)
+# Hyperlink Object (JavaScript API for Visio)
 
-_Word 2016, Word for iPad, Word for Mac_
+_Visio Online_
 
 Represents the Hyperlink.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|address|string|Gets the address for a shape's Hyperlink object, the address to which the hyperlink navigates. Read-only.|1.1||
-|description|string|Gets the description of a hyperlink. Read-only.|1.1||
-|name|string|Hyperlink name. Read-only.|1.1||
+| Property	   | Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|address|string|Gets the address for a shape's Hyperlink object, the address to which the hyperlink navigates. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
+|description|string|Gets the description of a hyperlink. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-description)|
+|name|string|Hyperlink name. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-name)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,9 +20,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+| Method		   | Return Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-load)|
 
 ## Method Details
 

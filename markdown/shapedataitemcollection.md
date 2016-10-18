@@ -1,14 +1,14 @@
-# ShapeDataItemCollection Object (JavaScript API for Word)
+# ShapeDataItemCollection Object (JavaScript API for Visio)
 
-_Word 2016, Word for iPad, Word for Mac_
+_Visio Online_
 
 Represents the ShapeDataItemCollection for a given Shape.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|items|[ShapeDataItem[]](shapedataitem.md)|A collection of shapeDataItem objects. Read-only.|1.1||
+| Property	   | Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|items|[ShapeDataItem[]](shapedataitem.md)|A collection of shapeDataItem objects. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,11 +18,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|[getCount()](#getcount)|int|Gets the number of Shape Data Items.|1.1|
-|[getItem(key: string)](#getitemkey-string)|[ShapeDataItem](shapedataitem.md)|Gets the ShapeDataItem using its name.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+| Method		   | Return Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|[getCount()](#getcount)|int|Gets the number of Shape Data Items.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-getCount)|
+|[getItem(key: string)](#getitemkey-string)|[ShapeDataItem](shapedataitem.md)|Gets the ShapeDataItem using its name.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-getItem)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-load)|
 
 ## Method Details
 

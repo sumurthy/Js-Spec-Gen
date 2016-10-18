@@ -1,3 +1,0 @@
-# Chart Gridlines Format
-
-None.

@@ -1,3 +1,0 @@
-# Chart Series Format
-
-None.

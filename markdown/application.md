@@ -1,14 +1,14 @@
-# Application Object (JavaScript API for Word)
+# Application Object (JavaScript API for Visio)
 
-_Word 2016, Word for iPad, Word for Mac_
+_Visio Online_
 
 Represents the Application.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|showToolbars|bool|Show or Hide the standard toolbars.|1.1||
+| Property	   | Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|showToolbars|bool|Show or Hide the standard toolbars.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-showToolbars)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,9 +18,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+| Method		   | Return Type	|Description| Req. Set| Feedback|
+|:---------------|:--------|:----------|:----|:---|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-load)|
 
 ## Method Details
 
@@ -40,19 +40,3 @@ object.load(param);
 
 #### Returns
 void
-### Property access examples
-```js
-Excel.run(function (ctx) { 
-	var application = ctx.workbook.application;
-	application.load('calculationMode');
-	return ctx.sync().then(function() {
-		console.log(application.calculationMode);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
-
