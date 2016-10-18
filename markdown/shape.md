@@ -1,20 +1,24 @@
-# Application Object (JavaScript API for Word)
+# Shape Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
-Represents the Application.
+Represents the Shape class.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|showToolbars|bool|Show or Hide the standard toolbars.|1.1||
+|name|string|Shape's name. Read-only.|1.1||
+|text|string|Shape's Text. Read-only.|1.1||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|hyperlinks|[HyperlinkCollection](hyperlinkcollection.md)|Returns the Hyperlinks collection for a Shape object. Read-only.|1.1||
+|shapeDataItems|[ShapeDataItemCollection](shapedataitemcollection.md)|Returns the Shape's Data Section. Read-only.|1.1||
+|view|[ShapeView](shapeview.md)|Returns the view of the shape. Read-only.|1.1||
 
 ## Methods
 
@@ -40,19 +44,3 @@ object.load(param);
 
 #### Returns
 void
-### Property access examples
-```js
-Excel.run(function (ctx) { 
-	var application = ctx.workbook.application;
-	application.load('calculationMode');
-	return ctx.sync().then(function() {
-		console.log(application.calculationMode);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
-

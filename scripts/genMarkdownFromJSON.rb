@@ -15,8 +15,8 @@ module SpecMaker
 	ENUMS = 'jsonFiles/settings/enums.json'
 	MARKDOWN_OUTPUT_FOLDER = "../markdown/"
 	EXAMPLES_FOLDER = "../api-examples-to-merge/"
-	HEADERQUALIFIER = " Object (JavaScript API for Excel)"
-	APPLIESTO = "_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_" 
+	HEADERQUALIFIER = " Object (JavaScript API for Word)"
+	APPLIESTO = "_Word 2016, Word for iPad, Word for Mac_" 
 	HEADER1 = '# '
 	HEADER2 = '## '
 	HEADER3 = '### '

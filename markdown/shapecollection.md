@@ -1,14 +1,14 @@
-# Application Object (JavaScript API for Word)
+# ShapeCollection Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
-Represents the Application.
+Represents the Shape Collection.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|showToolbars|bool|Show or Hide the standard toolbars.|1.1||
+|items|[Shape[]](shape.md)|A collection of shape objects. Read-only.|1.1||
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,10 +20,42 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[getCount()](#getcount)|int|Gets the number of Shapes in the collection.|1.1|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[Shape](shape.md)|Gets a Shape using its key (name or Index).|1.1|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 
 ## Method Details
 
+
+### getCount()
+Gets the number of Shapes in the collection.
+
+#### Syntax
+```js
+shapeCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
+
+### getItem(key: number or string)
+Gets a Shape using its key (name or Index).
+
+#### Syntax
+```js
+shapeCollectionObject.getItem(key);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|key|number or string|Key is the Name or Index of the shape to be retrieved.|
+
+#### Returns
+[Shape](shape.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -40,19 +72,3 @@ object.load(param);
 
 #### Returns
 void
-### Property access examples
-```js
-Excel.run(function (ctx) { 
-	var application = ctx.workbook.application;
-	application.load('calculationMode');
-	return ctx.sync().then(function() {
-		console.log(application.calculationMode);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
-

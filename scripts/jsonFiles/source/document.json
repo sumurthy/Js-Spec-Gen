@@ -1,0 +1,127 @@
+{
+  "name": "Document",
+  "description": "Represents the Document class.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "view",
+      "dataType": "DocumentView",
+      "description": "Returns the DocumentView object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "application",
+      "dataType": "Application",
+      "description": "Represents a Visio application instance that contains this document.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "pages",
+      "dataType": "PageCollection",
+      "description": "Represents a collection of pages associated with the document.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "startDataRefresh",
+      "returnType": "void",
+      "description": "Triggers the refresh of the data in the Diagram, for all pages.",
+      "syntax": "documentObject.startDataRefresh();",
+      "signature": "startDataRefresh()",
+      "restfulName": "startDataRefresh",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getActivePage",
+      "returnType": "Page",
+      "description": "Returns the Active Page of the document.",
+      "syntax": "documentObject.getActivePage();",
+      "signature": "getActivePage()",
+      "restfulName": "ActivePage",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "setActivePage",
+      "returnType": "void",
+      "description": "Set the Active Page of the document.",
+      "syntax": "documentObject.setActivePage(PageName);",
+      "signature": "setActivePage(PageName: string)",
+      "restfulName": "setActivePage",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "PageName",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the page",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

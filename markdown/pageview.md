@@ -1,0 +1,73 @@
+# PageView Object (JavaScript API for Word)
+
+_Word 2016, Word for iPad, Word for Mac_
+
+Represents the PageView class.
+
+## Properties
+
+None
+
+## Relationships
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|zoom|[Double](double.md)|GetSet Page's Zoom level.|1.1||
+
+## Methods
+
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[centerViewportOnShape(ShapeId: number)](#centerviewportonshapeshapeid-number)|void|Pans the Visio drawing to place the specified shape in the center of the view.|1.1|
+|[isShapeInViewport(Shape: Shape)](#isshapeinviewportshape-shape)|bool|To check if the shape is in view of the page or not.|1.1|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+
+## Method Details
+
+
+### centerViewportOnShape(ShapeId: number)
+Pans the Visio drawing to place the specified shape in the center of the view.
+
+#### Syntax
+```js
+pageViewObject.centerViewportOnShape(ShapeId);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|ShapeId|number|ShapeId to be seen in the center.|
+
+#### Returns
+void
+
+### isShapeInViewport(Shape: Shape)
+To check if the shape is in view of the page or not.
+
+#### Syntax
+```js
+pageViewObject.isShapeInViewport(Shape);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|Shape|Shape|Shape to be checked.|
+
+#### Returns
+bool
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void

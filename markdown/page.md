@@ -1,29 +1,48 @@
-# Application Object (JavaScript API for Word)
+# Page Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
-Represents the Application.
+Represents the Page class.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|showToolbars|bool|Show or Hide the standard toolbars.|1.1||
+|index|int|Index of the Page. Read-only.|1.1||
+|isBackground|bool|Whether the page is a background page or not. Read-only.|1.1||
+|name|string|Page name. Read-only.|1.1||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|shapes|[ShapeCollection](shapecollection.md)|Shapes in the Page. Read-only.|1.1||
+|view|[PageView](pageview.md)|Returns the view of the page. Read-only.|1.1||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[activate()](#activate)|void|Set the page as Active Page of the document.|1.1|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 
 ## Method Details
 
+
+### activate()
+Set the page as Active Page of the document.
+
+#### Syntax
+```js
+pageObject.activate();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -40,19 +59,3 @@ object.load(param);
 
 #### Returns
 void
-### Property access examples
-```js
-Excel.run(function (ctx) { 
-	var application = ctx.workbook.application;
-	application.load('calculationMode');
-	return ctx.sync().then(function() {
-		console.log(application.calculationMode);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
-

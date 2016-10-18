@@ -1,20 +1,17 @@
-# Application Object (JavaScript API for Word)
+# ShapeView Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
-Represents the Application.
+Represents the ShapeView class.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|showToolbars|bool|Show or Hide the standard toolbars.|1.1||
-
-_See property access [examples.](#property-access-examples)_
-
-## Relationships
 None
 
+## Relationships
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|highlight|[HighlightData](highlightdata.md)|Represents the highlight around the shape.|1.1||
 
 ## Methods
 
@@ -40,19 +37,3 @@ object.load(param);
 
 #### Returns
 void
-### Property access examples
-```js
-Excel.run(function (ctx) { 
-	var application = ctx.workbook.application;
-	application.load('calculationMode');
-	return ctx.sync().then(function() {
-		console.log(application.calculationMode);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
-
