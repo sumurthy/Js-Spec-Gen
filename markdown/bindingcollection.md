@@ -1,6 +1,6 @@
-# BindingCollection Object (JavaScript API for Excel)
+# BindingCollection Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents the collection of all the binding objects that are part of the workbook.
 
@@ -240,7 +240,6 @@ Excel.run(function (ctx) {
 		for (var i = 0; i < bindings.items.length; i++)
 		{
 			console.log(bindings.items[i].id);
-			console.log(bindings.items[i].index);
 		}
 	});
 }).catch(function(error) {

@@ -1,6 +1,6 @@
-# WorksheetCollection Object (JavaScript API for Excel)
+# WorksheetCollection Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents a collection of worksheet objects that are part of the workbook.
 
@@ -40,7 +40,7 @@ worksheetCollectionObject.add(name);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|name|string|Optional. The name of the worksheet to be added. If specified, name should be unique. If not specified, Excel determines the name of the new worksheet.|
+|name|string|Optional. The name of the worksheet to be added. If specified, name should be unqiue. If not specified, Excel determines the name of the new worksheet.|
 
 #### Returns
 [Worksheet](worksheet.md)

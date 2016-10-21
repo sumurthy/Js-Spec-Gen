@@ -1,6 +1,6 @@
-# Table Object (JavaScript API for Excel)
+# Table Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents an Excel table.
 
@@ -201,6 +201,7 @@ None
 #### Examples
 ```js
 Excel.run(function (ctx) { 
+	var tableName = 'Table1';
 	var table = ctx.workbook.tables.getItem(tableName);
 	var tableRange = table.getRange();
 	tableRange.load('address');	
@@ -304,9 +305,9 @@ Get a table by index.
 Excel.run(function (ctx) { 
 	var index = 0;
 	var table = ctx.workbook.tables.getItemAt(0);
-	table.name('name')
+	table.load('id')
 	return ctx.sync().then(function() {
-			console.log(table.name);
+			console.log(table.id);
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);
@@ -324,10 +325,10 @@ Excel.run(function (ctx) {
 	var table = ctx.workbook.tables.getItem(tableName);
 	table.name = 'Table1-Renamed';
 	table.showTotals = false;
-	table.tableStyle = 'TableStyleMedium2';
+	table.style = 'TableStyleMedium2';
 	table.load('tableStyle');
 	return ctx.sync().then(function() {
-			console.log(table.tableStyle);
+			console.log(table.style);
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);

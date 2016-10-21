@@ -1,6 +1,6 @@
-# RangeFormat Object (JavaScript API for Excel)
+# RangeFormat Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 A format object encapsulating the range's font, fill, borders, alignment, and other properties.
 
@@ -128,12 +128,12 @@ Excel.run(function (ctx) {
 	var sheetName = "Sheet1";
 	var rangeAddress = "F:G";
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	range.format.borders('InsideHorizontal').lineStyle = 'Continuous';
-	range.format.borders('InsideVertical').lineStyle = 'Continuous';
-	range.format.borders('EdgeBottom').lineStyle = 'Continuous';
-	range.format.borders('EdgeLeft').lineStyle = 'Continuous';
-	range.format.borders('EdgeRight').lineStyle = 'Continuous';
-	range.format.borders('EdgeTop').lineStyle = 'Continuous';
+	range.format.borders.getItem('InsideHorizontal').style = 'Continuous';
+	range.format.borders.getItem('InsideVertical').style = 'Continuous';
+	range.format.borders.getItem('EdgeBottom').style = 'Continuous';
+	range.format.borders.getItem('EdgeLeft').style = 'Continuous';
+	range.format.borders.getItem('EdgeRight').style = 'Continuous';
+	range.format.borders.getItem('EdgeTop').style = 'Continuous';
 	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);

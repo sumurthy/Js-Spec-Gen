@@ -1,6 +1,6 @@
-# TableColumn Object (JavaScript API for Excel)
+# TableColumn Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents a column in a table.
 
@@ -53,7 +53,7 @@ void
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(2);
 	column.delete();
 	return ctx.sync(); 
 }).catch(function(error) {
@@ -84,7 +84,7 @@ None
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var dataBodyRange = column.getDataBodyRange();
 	dataBodyRange.load('address');
 	return ctx.sync().then(function() {
@@ -117,7 +117,7 @@ None
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var headerRowRange = columns.getHeaderRowRange();
 	headerRowRange.load('address');
 	return ctx.sync().then(function() {
@@ -150,7 +150,7 @@ None
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var columnRange = columns.getRange();
 	columnRange.load('address');
 	return ctx.sync().then(function() {
@@ -184,7 +184,7 @@ None
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var totalRowRange = columns.getTotalRowRange();
 	totalRowRange.load('address');
 	return ctx.sync().then(function() {
@@ -219,7 +219,7 @@ void
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItem(0);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItem(0);
 	column.load('index');
 	return ctx.sync().then(function() {
 		console.log(column.index);
@@ -234,9 +234,10 @@ Excel.run(function (ctx) {
 
 ```js
 Excel.run(function (ctx) { 
+	var tableName = 'Table1';
 	var tables = ctx.workbook.tables;
 	var newValues = [["New"], ["Values"], ["For"], ["New"], ["Column"]];
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(2);
 	column.values = newValues;
 	column.load('values');
 	return ctx.sync().then(function() {

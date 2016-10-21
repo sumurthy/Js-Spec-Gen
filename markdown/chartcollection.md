@@ -1,6 +1,6 @@
-# ChartCollection Object (JavaScript API for Excel)
+# ChartCollection Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 A collection of all the chart objects on a worksheet.
 
@@ -54,10 +54,11 @@ Add a chart of `chartType` "ColumnClustered" on worksheet "Charts" with `sourceD
 
 ```js
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var sourceData = sheetName + "!" + "A1:B4";
-	var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
-	return ctx.sync().then(function() {
+	var rangeSelection = "A1:B4";
+	var range = ctx.workbook.worksheets.getItem(sheetName)
+		.getRange(rangeSelection);
+	var chart = ctx.workbook.worksheets.getItem(sheetName)
+		.charts.add("ColumnClustered", range, "auto");	return ctx.sync().then(function() {
 			console.log("New Chart Added");
 	});
 }).catch(function(error) {
@@ -215,7 +216,6 @@ Excel.run(function (ctx) {
 		for (var i = 0; i < charts.items.length; i++)
 		{
 			console.log(charts.items[i].name);
-			console.log(charts.items[i].index);
 		}
 	});
 }).catch(function(error) {

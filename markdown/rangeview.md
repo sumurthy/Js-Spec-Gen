@@ -1,6 +1,6 @@
-# RangeView Object (JavaScript API for Excel)
+# RangeView Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 RangeView represents a set of visible cells of the parent range.
 
@@ -8,11 +8,13 @@ RangeView represents a set of visible cells of the parent range.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|cellAddresses|object[][]|Represents the cell addresses of the RangeView. Read-only.|1.3||
 |columnCount|int|Returns the number of visible columns. Read-only.|1.3||
 |formulas|object[][]|Represents the formula in A1-style notation.|1.3||
 |formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|1.3||
 |formulasR1C1|object[][]|Represents the formula in R1C1-style notation.|1.3||
-|numberFormat|object[][]|Represents Excel's number format code for the given cell. Read-only.|1.3||
+|index|int|Returns a value that represents the index of the RangeView. Read-only.|1.3||
+|numberFormat|object[][]|Represents Excel's number format code for the given cell.|1.3||
 |rowCount|int|Returns the number of visible rows. Read-only.|1.3||
 |text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|1.3||
 |valueTypes|string|Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|1.3||

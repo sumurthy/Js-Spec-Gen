@@ -1,0 +1,69 @@
+{
+  "name": "FilterDatetime",
+  "description": "Represents how to filter a date when filtering on values.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.2",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "date",
+      "dataType": "string",
+      "description": "The date in ISO8601 format used to filter data.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "specificity",
+      "dataType": "string",
+      "description": "How specific the date should be used to keep data. For example, if the date is 2005-04-02 and the specifity is set to \"month\", the filter operation will keep all rows with a date in the month of april 2009.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.FilterDatetimeSpecificity",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-# ChartGridlines Object (JavaScript API for Excel)
+# ChartGridlines Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents major or minor gridlines on a chart axis.
 
@@ -66,7 +66,7 @@ Set to show major gridlines on valueAxis of Chart1
 ```js
 Excel.run(function (ctx) { 
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
-	chart.axes.valueaxis.majorgridlines.visible = true;
+	chart.axes.valueAxis.majorGridlines.visible = true;
 	return ctx.sync().then(function() {
 			console.log("Axis Gridlines Added ");
 	});

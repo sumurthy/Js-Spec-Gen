@@ -1,6 +1,6 @@
-# RangeFill Object (JavaScript API for Excel)
+# RangeFill Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents the background of a range object.
 

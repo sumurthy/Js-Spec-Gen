@@ -1,6 +1,6 @@
-# Worksheet Object (JavaScript API for Excel)
+# Worksheet Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 
@@ -59,7 +59,6 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 	worksheet.activate();
 	return ctx.sync(); 
-	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -91,7 +90,6 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 	worksheet.delete();
 	return ctx.sync(); 
-	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -129,7 +127,6 @@ Excel.run(function (ctx) {
 	cell.load('address');
 	return ctx.sync().then(function() {
 		console.log(cell.address);
-	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -282,4 +279,3 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-

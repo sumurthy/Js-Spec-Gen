@@ -1,6 +1,6 @@
-# RangeBorderCollection Object (JavaScript API for Excel)
+# RangeBorderCollection Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents the border objects that make up range border.
 
@@ -74,7 +74,7 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	var border = ctx.workbook.borders.getItemAt(0);
+	var border = range.format.borders.getItemAt(0);
 	border.load('sideIndex');
 	return ctx.sync().then(function() {
 			console.log(border.sideIndex);
@@ -112,7 +112,7 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	var border = ctx.workbook.borders.getItemAt(0);
+	var border = range.format.borders.getItemAt(0);
 	border.load('sideIndex');
 	return ctx.sync().then(function() {
 			console.log(border.sideIndex);

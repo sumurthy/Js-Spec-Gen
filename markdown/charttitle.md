@@ -1,6 +1,6 @@
-# ChartTitle Object (JavaScript API for Excel)
+# ChartTitle Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents a chart title object of a chart.
 
@@ -61,6 +61,7 @@ return ctx.sync().then(function() {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
+});
 ```
 
 Set the `text` of Chart Title to "My Chart" and Make it show on top of the chart without overlaying.
@@ -80,5 +81,6 @@ return ctx.sync().then(function() {
 		if (error instanceof OfficeExtension.Error) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
+});
 });
 ```

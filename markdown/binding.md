@@ -1,6 +1,6 @@
-# Binding Object (JavaScript API for Excel)
+# Binding Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents an Office.js binding that is defined in the workbook.
 
@@ -21,6 +21,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|Deletes the binding.|1.3|
 |[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.|1.1|
 |[getTable()](#gettable)|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.|1.1|
 |[getText()](#gettext)|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.|1.1|
@@ -28,6 +29,20 @@ None
 
 ## Method Details
 
+
+### delete()
+Deletes the binding.
+
+#### Syntax
+```js
+bindingObject.delete();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
 
 ### getRange()
 Returns the range represented by the binding. Will throw an error if binding is not of the correct type.
@@ -115,7 +130,7 @@ string
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
 	var text = binding.getText();
-	ctx.load('text');
+	binding.load('text');
 	return ctx.sync().then(function() {
 		console.log(text);
 	});

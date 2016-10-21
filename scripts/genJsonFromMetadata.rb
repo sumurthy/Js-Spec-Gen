@@ -1,5 +1,5 @@
 ###
-# This program reads the .CS metadata file and generates the JSON representaiton as separate files for each resources. 
+# This program reads the .CS metadata file and generates the JSON representaiton as separate files for each resources.
 # Location: https://github.com/sumurthy/Js-Spec-Gen
 ####
 
@@ -23,7 +23,7 @@ require 'FileUtils'
 
 @processed_files = 0
 @json_files_created = 0
-METADATA_FILE_SOURCE = '../../data/ExcelApi.cs'
+METADATA_FILE_SOURCE = '../../data/ExcelApi_1.3.cs'
 ENUMS = 'jsonFiles/settings/enums.json'
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
 JSONOUTPUT_FOLDER = 'jsonFiles/source/'
@@ -64,35 +64,35 @@ ParamStr = Struct.new(:name, :dataType, :isCollection, :description, :isRequired
 
 SIMPLETYPES = %w[int string object object[][] object[] double bool float number void]
 
-def csarray_write (line=nil) 
+def csarray_write (line=nil)
 	@csarray_out.push line
 end
 
-### 
+###
 # Load up all the known existing enums. Remove leading Excel.
 ##
 @enumHash = {}
 tempEnumHash = JSON.parse File.read(ENUMS)
 @enumHash = Hash[tempEnumHash.map {|k, v| [k.gsub('Excel.',''), v] }]
 
-### 
-# Load the "load()" method to be added to all items that have at least one property. 
+###
+# Load the "load()" method to be added to all items that have at least one property.
 ##
 @loadMethodHash = {}
 @loadMethodHash = JSON.parse(File.read(LOADMETHOD), {:symbolize_names => true})
 
-### 
-# Load the keys of the collections. Righ now, there is no way to identify keys from the metadata file. 
+###
+# Load the keys of the collections. Righ now, there is no way to identify keys from the metadata file.
 ##
 
 @objectKeyHash = {}
 @objectKeyHash = JSON.parse(File.read(OBJECTKEYS))
 
 
-### 
+###
 # Read the file & create a transit file by removing existing comments from the .CS File.
 ##
-@csarray_pure = File.readlines(METADATA_FILE_SOURCE) 
+@csarray_pure = File.readlines(METADATA_FILE_SOURCE)
 handle_getItem = ''
 
 FileUtils.rm Dir.glob(JSONOUTPUT_FOLDER + '/*')
@@ -106,7 +106,7 @@ FileUtils.rm Dir.glob(JSONOUTPUT_FOLDER + '/*')
 		handle_getItem = handle_getItem.rpartition(']').first + ')' + ';'
 		line = handle_getItem + "\n"
 	end
-	@csarray.push line	
+	@csarray.push line
 end
 
 def self.uncapitalize (str="")
@@ -118,7 +118,7 @@ def self.uncapitalize (str="")
 end
 
 
-### 
+###
 # Forward Pass: Write to the output array
 ##
 
@@ -140,7 +140,7 @@ object_req_set = ''
 
 def self.parser input
 
-  input.split(',').each_with_object({}) do |s,output|  	
+  input.split(',').each_with_object({}) do |s,output|
           k,v = s.split('=')
           output[v.chomp(')').gsub('"','').strip]=k
   end
@@ -148,7 +148,7 @@ end
 
 @csarray.each_with_index do |line, i|
 
-	if line.strip.start_with?('[ApiSet(') 
+	if line.strip.start_with?('[ApiSet(')
 		#req_set = line.split('=')[1].gsub(']','').gsub(')','').strip
 		req_set = (parser line[/\(.*?\)/]).keys.join(', ')
 	end
@@ -172,8 +172,8 @@ end
 		in_region = true
 		@member_summary = ''
 	end
-	
-	if line.strip.start_with?('[ClientCallableComMember', '[ClientCallableOperation') 
+
+	if line.strip.start_with?('[ClientCallableComMember', '[ClientCallableOperation')
 		member_ahead = true
 		restfulName = nil
 		# Extract the Restfull name, which usually strips off get prefix from method names.
@@ -188,9 +188,9 @@ end
 
 
 	# This signals end of an object. Time to write stuff to file.
-	if in_region && line.start_with?("\t}")		
+	if in_region && line.start_with?("\t}")
 
-		# If this is a collection, add the 'items' property as that is not listed in the .CS file for some reason! 
+		# If this is a collection, add the 'items' property as that is not listed in the .CS file for some reason!
 		if 	@json_object[:isCollection] == true
 			prop_name = 'items'
 			isRel = false
@@ -202,15 +202,15 @@ end
 			isItCollection = true
 			itemReturnType = @json_object[:name][0,@json_object[:name].index('Collection')] + '[]'
 
-			#Because chartpoints is not named correctly, it needs an override. 
+			#Because chartpoints is not named correctly, it needs an override.
 			if itemReturnType == 'ChartPoints[]'
 				itemReturnType = 'ChartPoint[]'
 			end
 
-			property = Property.new(prop_name, itemReturnType, makeDesc, readOnly, enumName, isItCollection, isRel, object_req_set, nil )	
+			property = Property.new(prop_name, itemReturnType, makeDesc, readOnly, enumName, isItCollection, isRel, object_req_set, nil )
 			property_array.push property.to_h
-			property = nil		
-		end		
+			property = nil
+		end
 
 
 		# Write the buffer
@@ -220,20 +220,20 @@ end
 			@json_object[:properties] = property_array
 		end
 
-		# Add the .load method to the method array. 		
+		# Add the .load method to the method array.
 		if property_array.length == 0
 			if method_array.length == 0
 				@json_object[:methods] = nil
 			else
-				@json_object[:methods] = method_array				
+				@json_object[:methods] = method_array
 			end
 		else
-			method_array.push @loadMethodHash		
-			@json_object[:methods] = method_array				
-		end	
+			method_array.push @loadMethodHash
+			@json_object[:methods] = method_array
+		end
 
 		# Seed the restPath if its the parent object (workbook)
-		if @json_object[:name] == 'Workbook' 
+		if @json_object[:name] == 'Workbook'
 			@json_object[:restPath] = ['/workbook']
 		else
 			@json_object[:restPath] = nil
@@ -246,7 +246,7 @@ end
 		@json_files_created = @json_files_created + 1
 		# Reset the variables.
 		in_region = false
-		# Bug fix. Caused issue with Excel API. 
+		# Bug fix. Caused issue with Excel API.
 		member_ahead = false
 		# End bug fix
 		parm_hash_array = []
@@ -256,7 +256,7 @@ end
 	end
 
 	# Load up either the object or member summary.
-	if line.include?('/// <summary>') && 
+	if line.include?('/// <summary>') &&
 		if !in_region
 			@json_object[:description] = @csarray[i+1].delete!('///').strip
 		else
@@ -267,9 +267,9 @@ end
 				member_summary = member_summary[0,member_summary.index('See Excel.')-1]
 				enumName = enumName.chomp('.')
 			elsif member_summary.index('Refer to Excel.') != nil
-				enumName = member_summary[member_summary.index('Refer to Excel.')..-1].split[2]			
-				member_summary = member_summary[0,member_summary.index('Refer to Excel.')-1]				
-				enumName = enumName.chomp('.')				
+				enumName = member_summary[member_summary.index('Refer to Excel.')..-1].split[2]
+				member_summary = member_summary[0,member_summary.index('Refer to Excel.')-1]
+				enumName = enumName.chomp('.')
 			else
 				enumName = nil
 			end
@@ -293,30 +293,24 @@ end
 			param_summary = param_summary[0,param_summary.index('See Excel.')-1]
 			enumName = enumName.chomp('.')
 		elsif param_summary.index('Refer to Excel.') != nil
-			enumName = param_summary[param_summary.index('Refer to Excel.')..-1].split[2]			
-			param_summary = param_summary[0,param_summary.index('Refer to Excel.')-1]				
+			enumName = param_summary[param_summary.index('Refer to Excel.')..-1].split[2]
+			param_summary = param_summary[0,param_summary.index('Refer to Excel.')-1]
 			enumName = enumName.chomp('.')
 		else
 			enumName = nil
 		end
 
 		param_name = line.split('"')[1]
-		parameter = ParamStr.new(param_name, nil, false, param_summary, nil, enumName, nil)	
+		parameter = ParamStr.new(param_name, nil, false, param_summary, nil, enumName, nil)
 		parm_array.push parameter
 
 	end
 
-	# Presence of { would indicate that it is a property or a relation	
-	if member_ahead && !line.include?('_') && line.include?('{')  
-
-<<<<<<< HEAD
-=======
-		
-
->>>>>>> f5d65d2d69891f3db674327dbb885648ed66be8a
+	# Presence of { would indicate that it is a property or a relation
+	if member_ahead && !line.include?('_') && line.include?('{')
 		prop_name = line.split[1]
 		prop_name = uncapitalize prop_name
-		member_ahead = false		
+		member_ahead = false
 
 		if line.include?('Collection')
 			isItCollection = true
@@ -337,7 +331,7 @@ end
 
 		if (proDataType != 'object[]') && (proDataType != 'object[][]')
 			proDataType = proDataType.chomp('[][]')
-			proDataType = proDataType.chomp('[]')		
+			proDataType = proDataType.chomp('[]')
 		end
 
 		# If the return type is primitive or one of the enums, then it's a property. else a relation.
@@ -364,24 +358,18 @@ end
 
 	# If member is a method and has param, capture its optional param and data type.
 	line = line.chomp
-	if member_ahead && line.include?(');')  && !line.include?('();') && !line.include?('_') 
-
+	if member_ahead && line.include?(');')  && !line.include?('();') && !line.include?('_')
 		# Capture the first part of the parameter definition inside method definition to see if it has readonly flag and also note down its data type.
-		
-<<<<<<< HEAD
-		# puts "#{line}"
-=======
->>>>>>> f5d65d2d69891f3db674327dbb885648ed66be8a
 		parm_array_metadata = line[line.index('(')+1, line.index(');')].chomp(');').split(',')
 		opt_array = parm_array_metadata.map {|n| n.split[0]}
 		opt_array.each_with_index do |metadata, j|
-			if metadata.include?('Optional') 
+			if metadata.include?('Optional')
 				parm_array[j][:isRequired] = false
 			else
 				parm_array[j][:isRequired] = true
 			end
 		end
-	
+
 		# Now we can thrash the metadata array to figure out the actual data type
 		parm_array_metadata.map! {|n| n.gsub('[Optional]','')}
 		parm_array_metadata.map! {|n| n.gsub('?','')}
@@ -390,7 +378,7 @@ end
 
 		parm_array_metadata.each_with_index do |dataType, j|
 			suffix = ''
-			if dataType.include?('Array')  
+			if dataType.include?('Array')
 				if dataType.include?('Array<Array')
 					suffix = '[][]'
 				else
@@ -415,7 +403,7 @@ end
 				else
 					parm_array[j][:dataType] = typeScriptDataArray + suffix
 				end
-			else				
+			else
 				parm_array[j][:dataType] = dataType.split[0] + suffix
 			end
 
@@ -424,18 +412,18 @@ end
 			if parm_array[j][:dataType].include?('[]')
 				parm_array[j][:isCollection] = true
 			end
-			if parm_array[j][:dataType] == 'int'	
+			if parm_array[j][:dataType] == 'int'
 				parm_array[j][:dataType] = 'number'
 			end
 
-			# If the enum still slips through to the data type, then overwrite and set the enum correctly. 
-			if @enumHash.has_key? parm_array[j][:dataType] 
-				parm_array[j][:enumNameJs] = 'Excel.' + parm_array[j][:dataType] 
+			# If the enum still slips through to the data type, then overwrite and set the enum correctly.
+			if @enumHash.has_key? parm_array[j][:dataType]
+				parm_array[j][:enumNameJs] = 'Excel.' + parm_array[j][:dataType]
 				parm_array[j][:dataType]  = 'string'
 			end
 
-			# Enum data type should be documented as strings. 
-			#if enumName != nil  
+			# Enum data type should be documented as strings.
+			#if enumName != nil
 			if parm_array[j][:enumNameJs] != nil
 				parm_array[j][:dataType] = 'string'
 			end
@@ -443,41 +431,29 @@ end
 
 		end
 
-		parm_array.each do |parmStruct| 
-			parm_hash_array.push parmStruct.to_h 
+		parm_array.each do |parmStruct|
+			parm_hash_array.push parmStruct.to_h
 		end
 	end
 
-	# If it's a method, dump its informaiton 
-	if member_ahead && !line.include?('_') && line.include?(');')  
+	# If it's a method, dump its informaiton
+	if member_ahead && !line.include?('_') && line.include?(');')
 		#Method = Struct.new(:name, :returnType, :description, :parameters)
 		#@json_object[:methods] = []
 		member_ahead = false
 		temp = line.split[1]
 		mthd_name = temp[0,temp.index('(')]
-		mthd_name = uncapitalize mthd_name	
+		mthd_name = uncapitalize mthd_name
 		if parm_hash_array.length == 0
 			parm_hash_array = nil
 			signature = mthd_name + '()'
 			syntax = "#{uncapitalize @json_object[:name]}Object.#{mthd_name}();"
-		else			
-			signature = mthd_name + '(' 
-<<<<<<< HEAD
-
+		else
+			signature = mthd_name + '('
 			syntax = "#{uncapitalize @json_object[:name]}Object.#{mthd_name}("
 			parm_hash_array.each_with_index do |parmhash, k|
-
-				puts signature
-				puts parmhash[:dataType] 
-				signature = signature + parmhash[:name] + ': ' + parmhash[:dataType] 
-=======
-			syntax = "#{uncapitalize @json_object[:name]}Object.#{mthd_name}("
-
-			parm_hash_array.each_with_index do |parmhash, k|
-				signature = signature + parmhash[:name] + ': ' + parmhash[:dataType].to_s 
->>>>>>> f5d65d2d69891f3db674327dbb885648ed66be8a
-				syntax = syntax + parmhash[:name] 
-
+				signature = signature + parmhash[:name] + ': ' + parmhash[:dataType].to_s
+				syntax = syntax + parmhash[:name]
 				if k < (parm_hash_array.length - 1)
 					signature = signature + ', '
 					syntax = syntax + ', '
@@ -492,19 +468,19 @@ end
 
 		# Finally, hanlde the restful names
 		if restfulName.to_s.length == 0
-			restfulName = mthd_name			
+			restfulName = mthd_name
 			if restfulName.start_with?('get')
 				restfulName = restfulName[3..-1]
 			end
 		end
-		
+
 		restfulName.slice(0,1).capitalize + restfulName.slice(1..-1)
 
-		# Create method hash and push the values. 
+		# Create method hash and push the values.
 		method = Method.new(mthd_name, line.split[0], member_summary, syntax, signature, restfulName, nil, nil, parm_hash_array, req_set)
 		method_array.push method.to_h
 
-		# Reset the variables. 
+		# Reset the variables.
 		method = nil
 		req_set = '1.1'
 		parm_array = []
@@ -517,16 +493,16 @@ end
 def self.add_restpath (item=nil, restPath=[], pathToWriteBack)
 
 	@processed_files = @processed_files + 1
-	jsonHash = JSON.parse(item, {:symbolize_names => true})	
-	
-	@logger.debug("-----> Recursive called from, #{pathToWriteBack}, for #{jsonHash[:name]}")	
+	jsonHash = JSON.parse(item, {:symbolize_names => true})
 
-	# Max of 5 paths are enough for display. 
-	if jsonHash[:restPath] && jsonHash[:restPath].length > 5	
+	@logger.debug("-----> Recursive called from, #{pathToWriteBack}, for #{jsonHash[:name]}")
+
+	# Max of 5 paths are enough for display.
+	if jsonHash[:restPath] && jsonHash[:restPath].length > 5
 		return
 	end
 
-	# Assign path. If one already exists, merge and remove dups. 	
+	# Assign path. If one already exists, merge and remove dups.
 	jsonHash[:restPath] = jsonHash[:restPath] ? (restPath | jsonHash[:restPath]) : restPath
 	#@logger.debug(".... After restpath: #{jsonHash[:restPath]}")
 	#resource = uncapitalize(jsonHash[:name])
@@ -534,27 +510,27 @@ def self.add_restpath (item=nil, restPath=[], pathToWriteBack)
 	propreties = jsonHash[:properties]
 	methods = jsonHash[:methods]
 	printName = jsonHash[:name]
-	# Process if the resource has properties. 
+	# Process if the resource has properties.
 	if propreties
-		
-		propreties.each do |prop| 
-			# Process only if its a relation. 
+
+		propreties.each do |prop|
+			# Process only if its a relation.
 			# Avoid infinite loop by avoiding circular reference with worksheet > range > worksheet
 			if prop[:isRelationship] && !((prop[:name] == 'worksheet') && (jsonHash[:name] == 'Range')) &&  \
 					!((prop[:name] == 'worksheet') && (jsonHash[:name] == 'Table'))  && \
-					!((prop[:name] == 'worksheet') && (jsonHash[:name] == 'Chart'))  
+					!((prop[:name] == 'worksheet') && (jsonHash[:name] == 'Chart'))
 				relFilePath = JSONOUTPUT_FOLDER + prop[:dataType].downcase + '.json'
 				if File.file?(relFilePath)
-					@logger.debug(".... Relation: Going recursive with #{prop[:name]} for @>#{printName}|")	
-					
+					@logger.debug(".... Relation: Going recursive with #{prop[:name]} for @>#{printName}|")
+
 					pathToSendArray = jsonHash[:restPath].map {|d| d + '/' + prop[:name].downcase }
-					add_restpath File.read(relFilePath), pathToSendArray, relFilePath	
-					
+					add_restpath File.read(relFilePath), pathToSendArray, relFilePath
+
 				end
 				# If it's a collection, add the RESTful path to it's item. Ex: /table from /tables
 				if prop[:isCollection]
-					collectionItem = prop[:dataType].chomp('Collection').downcase 
-					# Special case chartpoint because it is not named correctly. 
+					collectionItem = prop[:dataType].chomp('Collection').downcase
+					# Special case chartpoint because it is not named correctly.
 					if collectionItem == 'chartpoints'
 						collectionItem = 'chartpoint'
 					end
@@ -563,36 +539,36 @@ def self.add_restpath (item=nil, restPath=[], pathToWriteBack)
 					lastSegment = (@objectKeyHash.has_key?(prop[:name].downcase)) ? ('({' + @objectKeyHash[prop[:name].downcase].join('|') + '})') : '/{undefined}'
 					collectionItemRestPath = jsonHash[:restPath].map { |d| d + '/' + prop[:name].downcase + lastSegment}
 					if File.file?(collectionItemFilePath)
-						@logger.debug(".... Collection Item: Going recursive with #{collectionItem}")	
-						add_restpath File.read(collectionItemFilePath), collectionItemRestPath, collectionItemFilePath	
-					
+						@logger.debug(".... Collection Item: Going recursive with #{collectionItem}")
+						add_restpath File.read(collectionItemFilePath), collectionItemRestPath, collectionItemFilePath
+
 					end
 				end
 			end
 		end
-	end		
-	# Now process methods to get things like range. 
-		# Process if the resource has properties. 
+	end
+	# Now process methods to get things like range.
+		# Process if the resource has properties.
 	if methods
 		methods.each do |method|
-			# Process only if its a relation. 		  
+			# Process only if its a relation.
 			methodFilePath = JSONOUTPUT_FOLDER + method[:restfulName].to_s.downcase + '.json'
 			if File.file?(methodFilePath)
-				@logger.debug(".... Method: Going recursive with #{method[:restfulName]}")	
+				@logger.debug(".... Method: Going recursive with #{method[:restfulName]}")
 				parmForMethod = method[:parameters] ? '({' + method[:parameters][0][:name] + '})' : ''
 				pathToSendArray = jsonHash[:restPath].map {|d| d + '/' + method[:restfulName].downcase + parmForMethod}
-				add_restpath File.read(methodFilePath), pathToSendArray, methodFilePath	
+				add_restpath File.read(methodFilePath), pathToSendArray, methodFilePath
 			end
 		end
-	end		
+	end
 
-	# Write the file back with the REST path. 
+	# Write the file back with the REST path.
 	File.open(pathToWriteBack, "w") do |f|
 		f.write(JSON.pretty_generate jsonHash)
 	end
 end
 
-# Add REST Path to the resources. 
+# Add REST Path to the resources.
 
 	fullpath = JSONOUTPUT_FOLDER + 'workbook.json'
 	if File.file?(fullpath)

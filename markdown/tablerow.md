@@ -1,6 +1,6 @@
-# TableRow Object (JavaScript API for Excel)
+# TableRow Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents a row in a table.
 
@@ -47,10 +47,9 @@ void
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+	var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(2);
 	row.delete();
 	return ctx.sync(); 
-	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -79,7 +78,7 @@ None
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
+	var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(0);
 	var rowRange = row.getRange();
 	rowRange.load('address');
 	return ctx.sync().then(function() {
@@ -114,7 +113,7 @@ void
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
+	var row = ctx.workbook.tables.getItem(tableName).rows.getItem(0);
 	row.load('index');
 	return ctx.sync().then(function() {
 		console.log(row.index);
@@ -131,7 +130,8 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	var tables = ctx.workbook.tables;
 	var newValues = [["New", "Values", "For", "New", "Row"]];
-	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+    var tableName = 'Table1';
+	var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(2);
 	row.values = newValues;
 	row.load('values');
 	return ctx.sync().then(function() {

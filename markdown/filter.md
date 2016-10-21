@@ -1,6 +1,6 @@
-# Filter Object (JavaScript API for Excel)
+# Filter Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Manages the filtering of a table's column.
 

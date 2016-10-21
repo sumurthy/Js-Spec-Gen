@@ -1,6 +1,6 @@
-# ChartFont Object (JavaScript API for Excel)
+# ChartFont Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 This object represents the font attributes (font name, font size, color, etc.) for a chart object.
 
@@ -57,7 +57,7 @@ Excel.run(function (ctx) {
 	title.format.font.color = "#FF0000";
 	title.format.font.italic =  false;
 	title.format.font.bold = true;
-	title.format.font.underline = false;
+	title.format.font.underline = "None";
 	return ctx.sync();
 }).catch(function(error) {
 		console.log("Error: " + error);
@@ -77,7 +77,7 @@ Excel.run(function (ctx) {
 	title.format.font.color = "#FF0000";
 	title.format.font.italic =  false;
 	title.format.font.bold = true;
-	title.format.font.underline = false;
+	title.format.font.underline = "None";
 	return ctx.sync();
 }).catch(function(error) {
 		console.log("Error: " + error);

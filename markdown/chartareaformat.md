@@ -1,6 +1,6 @@
-# ChartAreaFormat Object (JavaScript API for Excel)
+# ChartAreaFormat Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Encapsulates the format properties for the overall chart area.
 

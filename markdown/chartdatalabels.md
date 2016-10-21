@@ -1,6 +1,6 @@
-# ChartDataLabels Object (JavaScript API for Excel)
+# ChartDataLabels Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents a collection of all the data labels on a chart point.
 
@@ -55,9 +55,9 @@ Make Series Name shown in Datalabels and set the `position` of datalabels to be 
 ```js
 Excel.run(function (ctx) { 
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
-	chart.datalabels.visible = true;
+	chart.datalabels.showValue = true;
 	chart.datalabels.position = "top";
-	chart.datalabels.ShowSeriesName = true;
+	chart.datalabels.showSeriesName = true;
 	return ctx.sync().then(function() {
 			console.log("Datalabels Shown");
 	});

@@ -1,6 +1,6 @@
-# RangeReference Object (JavaScript API for Excel)
+# RangeReference Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents a string reference of the form SheetName!A1:B5, or a global or local named range
 
@@ -8,7 +8,7 @@ Represents a string reference of the form SheetName!A1:B5, or a global or local 
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|address|string|Returns a Collection of conditional formats that overlap this range|1.2||
+|address|string|Represents the visible rows of the current range.|1.2||
 
 _See property access [examples.](#property-access-examples)_
 

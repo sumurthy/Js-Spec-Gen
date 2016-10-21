@@ -1,6 +1,6 @@
-# Workbook Object (JavaScript API for Excel)
+# Workbook Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
 
@@ -16,6 +16,7 @@ None
 |functions|[Functions](functions.md)|Represents Excel application instance that contains this workbook. Read-only.|1.2||
 |names|[NamedItemCollection](nameditemcollection.md)|Represents a collection of workbook scoped named items (named ranges and constants). Read-only.|1.1||
 |pivotTables|[PivotTableCollection](pivottablecollection.md)|Represents a collection of PivotTables associated with the workbook. Read-only.|1.3||
+|settings|[SettingCollection](settingcollection.md)|Represents a collection of Settings associated with the workbook. Read-only.|1.3||
 |tables|[TableCollection](tablecollection.md)|Represents a collection of tables associated with the workbook. Read-only.|1.1||
 |worksheets|[WorksheetCollection](worksheetcollection.md)|Represents a collection of worksheets associated with the workbook. Read-only.|1.1||
 

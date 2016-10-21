@@ -1,6 +1,6 @@
-# ChartFill Object (JavaScript API for Excel)
+# ChartFill Object (JavaScript API for Word)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+_Word 2016, Word for iPad, Word for Mac_
 
 Represents the fill formatting for a chart element.
 
@@ -42,10 +42,10 @@ Clear the line format of the major Gridlines on value axis of the Chart named "C
 
 ```js
 Excel.run(function (ctx) { 
-	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;	
+	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;	
 	gridlines.format.line.clear();
 	return ctx.sync().then(function() {
-			console.log"Chart Major Gridlines Format Cleared");
+			console.log("Chart Major Gridlines Format Cleared");
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);
