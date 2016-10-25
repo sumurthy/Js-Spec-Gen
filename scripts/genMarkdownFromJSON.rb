@@ -79,6 +79,8 @@ module SpecMaker
 	@resource = ''
 	@gsType = ''
 	@changes = []
+	@changes.push '|Object| What is new| Description|Feedback|' + NEWLINE
+	@changes.push '|:----|:----|:----|:----|' + NEWLINE
 
 	def self.uncapitalize (str="")
 		if str.length > 0
@@ -122,7 +124,7 @@ module SpecMaker
 			if prop[:isRelationship]
 				whatType = 'Relationship'
 			end
-			@changes.push  (PIPE + "[#{@resource}](#{@resource.downcase}.md)"  + PIPE + "_#{whatType}_ > " + prop[:name] + PIPE + finalDesc + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=#{@resource}-#{prop[:name]})" + PIPE +  NEWLINE)
+			@changes.push  (PIPE + "[#{@resource}](resources/#{@resource.downcase}.md)"  + PIPE + "_#{whatType}_ > " + prop[:name] + PIPE + finalDesc + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=#{@resource}-#{prop[:name]})" + PIPE +  NEWLINE)
 
 			# @changes.push "**Resource name:** [#{@resource}](resources/#{@resource.downcase}.md) </br>" + NEWLINE
 			# @changes.push "**What's new:** #{whatType} **#{prop[:name]}** of type **#{dataTypePlusLinkFull}** </br>" + NEWLINE
@@ -157,7 +159,7 @@ module SpecMaker
 		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "#{method[:reqSet]}") + PIPE + NEWLINE
 
 		if !(PROD_REQUIREMENTS.include? method[:reqSet])
-			@changes.push (PIPE + "[#{@resource}](#{@resource.downcase}.md)" + PIPE + "_Method_ > " + methodPlusLinkFull  + PIPE + method[:description]  + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})" + PIPE + NEWLINE)
+			@changes.push (PIPE + "[#{@resource}](resources/#{@resource.downcase}.md)" + PIPE + "_Method_ > " + methodPlusLinkFull  + PIPE + method[:description]  + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})" + PIPE + NEWLINE)
 
 			# @changes.push "**Resource name:** [#{@resource}](resources/#{@resource.downcase}.md) </br>" + NEWLINE
 			# @changes.push "**What's new:** Method **#{methodPlusLinkFull}** returning **#{dataTypePlusLinkFull}** </br>" + NEWLINE
@@ -421,6 +423,7 @@ module SpecMaker
 		fullpath = JSON_SOURCE_FOLDER + '/' + item.downcase
 
 		if File.file?(fullpath)
+			puts "*-> Processing #{item}"
 			convert_to_spec File.read(fullpath)
 			processed_files = processed_files + 1
 		end
