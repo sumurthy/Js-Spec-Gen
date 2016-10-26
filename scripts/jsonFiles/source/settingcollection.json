@@ -1,0 +1,134 @@
+{
+  "name": "SettingCollection",
+  "description": "Contains the collection of [setting](setting.md) objects.",
+  "isCollection": true,
+  "collectionOf": "Setting",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.4",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "Setting[]",
+      "description": "A collection of setting objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "1.4",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "Setting",
+      "description": "Gets a setting object by its key, which is case-sensitive.",
+      "syntax": "settingCollectionObject.getItem(key);",
+      "signature": "getItem(key: string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The key that identifies the setting object.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
+    },
+    {
+      "name": "set",
+      "returnType": "Setting",
+      "description": "Creates or sets a setting.",
+      "syntax": "settingCollectionObject.set(key, value);",
+      "signature": "set(key: string, value: object)",
+      "restfulName": "set",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The setting's key, which is case-sensitive.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "value",
+          "dataType": "object",
+          "isCollection": false,
+          "description": "Required. The setting's value.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the count of settings.",
+      "syntax": "settingCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.4"
+    },
+    {
+      "name": "deleteAll",
+      "returnType": "void",
+      "description": "Deletes all settings in this add-in.",
+      "syntax": "settingCollectionObject.deleteAll();",
+      "signature": "deleteAll()",
+      "restfulName": "deleteAll",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.4"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

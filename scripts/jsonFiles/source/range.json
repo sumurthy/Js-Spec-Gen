@@ -1,0 +1,868 @@
+{
+  "name": "Range",
+  "description": "Represents a contiguous area in a document.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "font",
+      "dataType": "Font",
+      "description": "Gets the text format of the range. Use this to get and set font name, size, color, and other properties.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "style",
+      "dataType": "string",
+      "description": "Gets or sets the style name for the range. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the \"styleBuiltIn\" property.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "styleBuiltIn",
+      "dataType": "Style",
+      "description": "Gets or sets the built-in style name for the range. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the \"style\" property.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "paragraphs",
+      "dataType": "ParagraphCollection",
+      "description": "Gets the collection of paragraph objects in the range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "contentControls",
+      "dataType": "ContentControlCollection",
+      "description": "Gets the collection of content control objects in the range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentContentControl",
+      "dataType": "ContentControl",
+      "description": "Gets the content control that contains the range. Returns a null object if there isn't a parent content control.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "inlinePictures",
+      "dataType": "InlinePictureCollection",
+      "description": "Gets the collection of inline picture objects in the range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "text",
+      "dataType": "string",
+      "description": "Gets the text of the range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "isEmpty",
+      "dataType": "bool",
+      "description": "Checks whether the range length is zero.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "hyperlink",
+      "dataType": "string",
+      "description": "Gets the first hyperlink in the range, or sets a hyperlink on the range. All hyperlinks in the range are deleted when you set a new hyperlink on the range. Use a newline character ('\\n') to separate the address part from the optional location part.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentBody",
+      "dataType": "Body",
+      "description": "Gets the parent body of the range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "lists",
+      "dataType": "ListCollection",
+      "description": "Gets the collection of list objects in the range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "tables",
+      "dataType": "TableCollection",
+      "description": "Gets the collection of table objects in the range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentTableCell",
+      "dataType": "TableCell",
+      "description": "Gets the table cell that contains the range. Returns a null object if it is not contained in a table cell.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentTable",
+      "dataType": "Table",
+      "description": "Gets the table that contains the range. Returns null if it is not contained in a table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "clear",
+      "returnType": "void",
+      "description": "Clears the contents of the range object. The user can perform the undo operation on the cleared content.",
+      "syntax": "rangeObject.clear();",
+      "signature": "clear()",
+      "restfulName": "clear",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the range and its content from the document.",
+      "syntax": "rangeObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "insertContentControl",
+      "returnType": "ContentControl",
+      "description": "Wraps the range object with a rich text content control.",
+      "syntax": "rangeObject.insertContentControl();",
+      "signature": "insertContentControl()",
+      "restfulName": "insertContentControl",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "insertText",
+      "returnType": "Range",
+      "description": "Inserts text at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+      "syntax": "rangeObject.insertText(text, insertLocation);",
+      "signature": "insertText(text: string, insertLocation: InsertLocation)",
+      "restfulName": "insertText",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "text",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. Text to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "InsertLocation",
+          "isCollection": false,
+          "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "insertHtml",
+      "returnType": "Range",
+      "description": "Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+      "syntax": "rangeObject.insertHtml(html, insertLocation);",
+      "signature": "insertHtml(html: string, insertLocation: InsertLocation)",
+      "restfulName": "insertHtml",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "html",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The HTML to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "InsertLocation",
+          "isCollection": false,
+          "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "insertOoxml",
+      "returnType": "Range",
+      "description": "Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+      "syntax": "rangeObject.insertOoxml(ooxml, insertLocation);",
+      "signature": "insertOoxml(ooxml: string, insertLocation: InsertLocation)",
+      "restfulName": "insertOoxml",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "ooxml",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The OOXML to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "InsertLocation",
+          "isCollection": false,
+          "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "insertFileFromBase64",
+      "returnType": "Range",
+      "description": "Inserts a document at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+      "syntax": "rangeObject.insertFileFromBase64(base64File, insertLocation);",
+      "signature": "insertFileFromBase64(base64File: string, insertLocation: InsertLocation)",
+      "restfulName": "insertFileFromBase64",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "base64File",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The base64 encoded content of a .docx file.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "InsertLocation",
+          "isCollection": false,
+          "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "insertParagraph",
+      "returnType": "Paragraph",
+      "description": "Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.",
+      "syntax": "rangeObject.insertParagraph(paragraphText, insertLocation);",
+      "signature": "insertParagraph(paragraphText: string, insertLocation: InsertLocation)",
+      "restfulName": "insertParagraph",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "paragraphText",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The paragraph text to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "InsertLocation",
+          "isCollection": false,
+          "description": "Required. The value can be 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "insertBreak",
+      "returnType": "void",
+      "description": "Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.",
+      "syntax": "rangeObject.insertBreak(breakType, insertLocation);",
+      "signature": "insertBreak(breakType: BreakType, insertLocation: InsertLocation)",
+      "restfulName": "insertBreak",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "breakType",
+          "dataType": "BreakType",
+          "isCollection": false,
+          "description": "Required. The break type to add.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "InsertLocation",
+          "isCollection": false,
+          "description": "Required. The value can be 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "insertInlinePictureFromBase64",
+      "returnType": "InlinePicture",
+      "description": "Inserts a picture at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+      "syntax": "rangeObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);",
+      "signature": "insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)",
+      "restfulName": "insertInlinePictureFromBase64",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "base64EncodedImage",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The base64 encoded image to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "InsertLocation",
+          "isCollection": false,
+          "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.2"
+    },
+    {
+      "name": "select",
+      "returnType": "void",
+      "description": "Selects and navigates the Word UI to the range.",
+      "syntax": "rangeObject.select(selectionMode);",
+      "signature": "select(selectionMode: SelectionMode)",
+      "restfulName": "select",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "selectionMode",
+          "dataType": "SelectionMode",
+          "isCollection": false,
+          "description": "Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getHtml",
+      "returnType": "string",
+      "description": "Gets the HTML representation of the range object.",
+      "syntax": "rangeObject.getHtml();",
+      "signature": "getHtml()",
+      "restfulName": "Html",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getOoxml",
+      "returnType": "string",
+      "description": "Gets the OOXML representation of the range object.",
+      "syntax": "rangeObject.getOoxml();",
+      "signature": "getOoxml()",
+      "restfulName": "Ooxml",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "search",
+      "returnType": "RangeCollection",
+      "description": "Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.",
+      "syntax": "rangeObject.search(searchText, searchOptions);",
+      "signature": "search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)",
+      "restfulName": "search",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "searchText",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The search text.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "searchOptions",
+          "dataType": "ParamTypeStrings.SearchOptions",
+          "isCollection": false,
+          "description": "Optional. Options for the search.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getRange",
+      "returnType": "Range",
+      "description": "Clones the range, or gets the starting or ending point of the range as a new range.",
+      "syntax": "rangeObject.getRange(rangeLocation);",
+      "signature": "getRange(rangeLocation: RangeLocation)",
+      "restfulName": "Range",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "rangeLocation",
+          "dataType": "RangeLocation",
+          "isCollection": false,
+          "description": "Optional. The range location can be 'Whole', 'Start', 'End', 'After' or 'Content'.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "split",
+      "returnType": "RangeCollection",
+      "description": "Splits the range into child ranges by using delimiters.",
+      "syntax": "rangeObject.split(delimiters, multiParagraphs, trimDelimiters, trimSpacing);",
+      "signature": "split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)",
+      "restfulName": "split",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "delimiters",
+          "dataType": "string[]",
+          "isCollection": true,
+          "description": "Required. The delimiters as an array of strings.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "multiParagraphs",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Indicates whether a returned child range can cover multiple paragraphs. Default is false which indicates that the paragraph boundaries are also used as delimiters.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "trimDelimiters",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Indicates whether to trim delimiters from the ranges in the range collection. Default is false which indicates that the delimiters are included in the ranges returned in the range collection.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "trimSpacing",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "compareLocationWith",
+      "returnType": "LocationRelation",
+      "description": "Compares this range's location with another range's location.",
+      "syntax": "rangeObject.compareLocationWith(range);",
+      "signature": "compareLocationWith(range: Range)",
+      "restfulName": "compareLocationWith",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "range",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "Required. The range to compare with this range.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "expandTo",
+      "returnType": "Range",
+      "description": "Returns a new range that extends from this range in either direction to cover another range. This range is not changed.",
+      "syntax": "rangeObject.expandTo(range);",
+      "signature": "expandTo(range: Range)",
+      "restfulName": "expandTo",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "range",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "Required. Another range.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "intersectWith",
+      "returnType": "Range",
+      "description": "Returns a new range as the intersection of this range with another range. This range is not changed.",
+      "syntax": "rangeObject.intersectWith(range);",
+      "signature": "intersectWith(range: Range)",
+      "restfulName": "intersectWith",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "range",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "Required. Another range.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getNextTextRange",
+      "returnType": "Range",
+      "description": "Gets the next text range by using punctuation marks andor other ending marks.",
+      "syntax": "rangeObject.getNextTextRange(endingMarks, trimSpacing);",
+      "signature": "getNextTextRange(endingMarks: string[], trimSpacing: bool)",
+      "restfulName": "NextTextRange",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "endingMarks",
+          "dataType": "string[]",
+          "isCollection": true,
+          "description": "Required. The punctuation marks and/or other ending marks as an array of strings.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "trimSpacing",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the returned range. Default is false which indicates that spacing characters at the start and end of the range are included.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getHyperlinkRanges",
+      "returnType": "RangeCollection",
+      "description": "Gets hyperlink child ranges within the range.",
+      "syntax": "rangeObject.getHyperlinkRanges();",
+      "signature": "getHyperlinkRanges()",
+      "restfulName": "HyperlinkRanges",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "insertTable",
+      "returnType": "Table",
+      "description": "Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.",
+      "syntax": "rangeObject.insertTable(rowCount, columnCount, insertLocation, values);",
+      "signature": "insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])",
+      "restfulName": "insertTable",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "rowCount",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The number of rows in the table.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "columnCount",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The number of columns in the table.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "insertLocation",
+          "dataType": "InsertLocation",
+          "isCollection": false,
+          "description": "Required. The value can be 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "values",
+          "dataType": "string[][]",
+          "isCollection": true,
+          "description": "Optional 2D array. Cells are filled if the corresponding strings are specified in the array.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getTextRanges",
+      "returnType": "RangeCollection",
+      "description": "Gets the text child ranges in the range by using punctuation marks andor other ending marks.",
+      "syntax": "rangeObject.getTextRanges(endingMarks, trimSpacing);",
+      "signature": "getTextRanges(endingMarks: string[], trimSpacing: bool)",
+      "restfulName": "TextRanges",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "endingMarks",
+          "dataType": "string[]",
+          "isCollection": true,
+          "description": "Required. The punctuation marks and/or other ending marks as an array of strings.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "trimSpacing",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getBookmarks",
+      "returnType": "string[]",
+      "description": "Gets the names all bookmarks in or overlapping the range. A bookmark is hidden if its name starts with an underscore character.",
+      "syntax": "rangeObject.getBookmarks(includeHidden, includeAdjacent);",
+      "signature": "getBookmarks(includeHidden: bool, includeAdjacent: bool)",
+      "restfulName": "Bookmarks",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "includeHidden",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Indicates whether to include hidden bookmarks. Default is false which indicates that the hidden bookmarks are excluded.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "includeAdjacent",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Indicates whether to include bookmarks that are adjacent to the range. Default is false which indicates that the adjacent bookmarks are excluded.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
+    },
+    {
+      "name": "insertBookmark",
+      "returnType": "void",
+      "description": "Inserts a bookmark on the range. If a bookmark of the same name exists, it is replaced.",
+      "syntax": "rangeObject.insertBookmark(name);",
+      "signature": "insertBookmark(name: string)",
+      "restfulName": "insertBookmark",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The bookmark name, which is case-insensitive. If the name starts with an underscore character, the bookmark is an hidden one.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

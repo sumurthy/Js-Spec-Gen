@@ -1,0 +1,113 @@
+{
+  "name": "Section",
+  "description": "Represents a section in a Word document.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "body",
+      "dataType": "Body",
+      "description": "Gets the body object of the section. This does not include the headerfooter and other section metadata.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getHeader",
+      "returnType": "Body",
+      "description": "Gets one of the section's headers.",
+      "syntax": "sectionObject.getHeader(type);",
+      "signature": "getHeader(type: HeaderFooterType)",
+      "restfulName": "Header",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "type",
+          "dataType": "HeaderFooterType",
+          "isCollection": false,
+          "description": "Required. The type of header to return. This value can be: 'primary', 'firstPage' or 'evenPages'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getFooter",
+      "returnType": "Body",
+      "description": "Gets one of the section's footers.",
+      "syntax": "sectionObject.getFooter(type);",
+      "signature": "getFooter(type: HeaderFooterType)",
+      "restfulName": "Footer",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "type",
+          "dataType": "HeaderFooterType",
+          "isCollection": false,
+          "description": "Required. The type of footer to return. This value can be: 'primary', 'firstPage' or 'evenPages'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getNext",
+      "returnType": "Section",
+      "description": "Gets the next section.",
+      "syntax": "sectionObject.getNext();",
+      "signature": "getNext()",
+      "restfulName": "Next",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

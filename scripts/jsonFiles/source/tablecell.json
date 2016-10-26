@@ -1,0 +1,399 @@
+{
+  "name": "TableCell",
+  "description": "Represents a table cell in a Word document.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.3",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "parentTable",
+      "dataType": "Table",
+      "description": "Gets the parent table of the cell.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentRow",
+      "dataType": "TableRow",
+      "description": "Gets the parent row of the cell.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rowIndex",
+      "dataType": "int",
+      "description": "Gets the index of the cell's row in the table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "cellIndex",
+      "dataType": "int",
+      "description": "Gets the index of the cell in its row.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "value",
+      "dataType": "string",
+      "description": "Gets and sets the text of the cell.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "body",
+      "dataType": "Body",
+      "description": "Gets the body object of the cell.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "shadingColor",
+      "dataType": "string",
+      "description": "Gets or sets the shading color of the cell. Color is specified in \"#RRGGBB\" format or by using the color name.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "horizontalAlignment",
+      "dataType": "Alignment",
+      "description": "Gets and sets the horizontal alignment of the cell. The value can be 'left', 'centered', 'right', or 'justified'.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "verticalAlignment",
+      "dataType": "VerticalAlignment",
+      "description": "Gets and sets the vertical alignment of the cell. The value can be 'top', 'center' or 'bottom'.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "columnWidth",
+      "dataType": "float",
+      "description": "Gets and sets the width of the cell's column in points. This is applicable to uniform tables.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "width",
+      "dataType": "float",
+      "description": "Gets the width of the cell in points.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "insertRows",
+      "returnType": "TableRowCollection",
+      "description": "Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.",
+      "syntax": "tableCellObject.insertRows(insertLocation, rowCount, values);",
+      "signature": "insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])",
+      "restfulName": "insertRows",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "insertLocation",
+          "dataType": "InsertLocation",
+          "isCollection": false,
+          "description": "Required. It can be 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "rowCount",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. Number of rows to add.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "values",
+          "dataType": "string[][]",
+          "isCollection": true,
+          "description": "Optional 2D array. Cells are filled if the corresponding strings are specified in the array.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "insertColumns",
+      "returnType": "void",
+      "description": "Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.",
+      "syntax": "tableCellObject.insertColumns(insertLocation, columnCount, values);",
+      "signature": "insertColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])",
+      "restfulName": "insertColumns",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "insertLocation",
+          "dataType": "InsertLocation",
+          "isCollection": false,
+          "description": "Required. It can be 'Before' or 'After'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "columnCount",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. Number of columns to add",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "values",
+          "dataType": "string[][]",
+          "isCollection": true,
+          "description": "Optional 2D array. Cells are filled if the corresponding strings are specified in the array.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "split",
+      "returnType": "void",
+      "description": "Adds columns to the left or right of the cell, using the existing column as a template. The string values, if specified, are set in the newly inserted rows.",
+      "syntax": "tableCellObject.split(rowCount, columnCount);",
+      "signature": "split(rowCount: number, columnCount: number)",
+      "restfulName": "split",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "rowCount",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The number of rows to split into. Must be a divisor of the number of underlying rows.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "columnCount",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The number of columns to split into.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
+    },
+    {
+      "name": "deleteRow",
+      "returnType": "void",
+      "description": "Deletes the row containing this cell.",
+      "syntax": "tableCellObject.deleteRow();",
+      "signature": "deleteRow()",
+      "restfulName": "deleteRow",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "deleteColumn",
+      "returnType": "void",
+      "description": "Deletes the column containing this cell. This is applicable to uniform tables.",
+      "syntax": "tableCellObject.deleteColumn();",
+      "signature": "deleteColumn()",
+      "restfulName": "deleteColumn",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getBorder",
+      "returnType": "TableBorder",
+      "description": "Gets the border style for the specified border.",
+      "syntax": "tableCellObject.getBorder(borderLocation);",
+      "signature": "getBorder(borderLocation: BorderLocation)",
+      "restfulName": "Border",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "borderLocation",
+          "dataType": "BorderLocation",
+          "isCollection": false,
+          "description": "Required. The border location.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getCellPadding",
+      "returnType": "float?",
+      "description": "Gets cell padding in points.",
+      "syntax": "tableCellObject.getCellPadding(cellPaddingLocation);",
+      "signature": "getCellPadding(cellPaddingLocation: CellPaddingLocation)",
+      "restfulName": "CellPadding",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "cellPaddingLocation",
+          "dataType": "CellPaddingLocation",
+          "isCollection": false,
+          "description": "Required. The cell padding location can be 'Top', 'Left', 'Bottom' or 'Right'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "setCellPadding",
+      "returnType": "void",
+      "description": "Sets cell padding in points.",
+      "syntax": "tableCellObject.setCellPadding(cellPaddingLocation, cellPadding);",
+      "signature": "setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)",
+      "restfulName": "setCellPadding",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "cellPaddingLocation",
+          "dataType": "CellPaddingLocation",
+          "isCollection": false,
+          "description": "Required. The cell padding location can be 'Top', 'Left', 'Bottom' or 'Right'.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "cellPadding",
+          "dataType": "float",
+          "isCollection": false,
+          "description": "Required. The cell padding.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getNext",
+      "returnType": "TableCell",
+      "description": "Gets the next cell.",
+      "syntax": "tableCellObject.getNext();",
+      "signature": "getNext()",
+      "restfulName": "Next",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

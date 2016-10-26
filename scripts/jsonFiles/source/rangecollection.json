@@ -1,0 +1,91 @@
+{
+  "name": "RangeCollection",
+  "description": "Contains a collection of [range](range.md) objects.",
+  "isCollection": true,
+  "collectionOf": "Range",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.3",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "Range[]",
+      "description": "A collection of range objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "Range",
+      "description": "Gets a range object by its index in the collection.",
+      "syntax": "rangeCollectionObject.getItem(index);",
+      "signature": "getItem(index: number)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "A number that identifies the index location of a range object.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getFirst",
+      "returnType": "Range",
+      "description": "Gets the first range in this collection.",
+      "syntax": "rangeCollectionObject.getFirst();",
+      "signature": "getFirst()",
+      "restfulName": "First",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

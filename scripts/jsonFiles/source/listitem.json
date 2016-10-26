@@ -1,0 +1,125 @@
+{
+  "name": "ListItem",
+  "description": "Represents the paragraph list item format.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.3",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "siblingIndex",
+      "dataType": "int",
+      "description": "Gets the list item order number in relation to its siblings.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "listString",
+      "dataType": "string",
+      "description": "Gets the list item bullet, number or picture as a string.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "level",
+      "dataType": "int",
+      "description": "Gets or sets the level of the item in the list.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getAncestor",
+      "returnType": "Paragraph",
+      "description": "Gets the list item parent, or the closest ancestor if the parent does not exist.",
+      "syntax": "listItemObject.getAncestor(parentOnly);",
+      "signature": "getAncestor(parentOnly: bool)",
+      "restfulName": "Ancestor",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "parentOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Specified only the list item's parent will be returned. The default is false that specifies to get the lowest ancestor.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getDescendants",
+      "returnType": "ParagraphCollection",
+      "description": "Gets all descendant list items of the list item.",
+      "syntax": "listItemObject.getDescendants(directChildrenOnly);",
+      "signature": "getDescendants(directChildrenOnly: bool)",
+      "restfulName": "Descendants",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "directChildrenOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Specified only the list item's direct children will be returned. The default is false that indicates to get all descendant items.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

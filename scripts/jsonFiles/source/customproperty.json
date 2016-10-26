@@ -1,0 +1,93 @@
+{
+  "name": "CustomProperty",
+  "description": "Represents a custom property.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.3",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "key",
+      "dataType": "string",
+      "description": "Gets the key of the custom property. Read only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "value",
+      "dataType": "object",
+      "description": "Gets or sets the value of the custom property.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "type",
+      "dataType": "DocumentPropertyType",
+      "description": "Gets the value type of the custom property. Read only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the custom property.",
+      "syntax": "customPropertyObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

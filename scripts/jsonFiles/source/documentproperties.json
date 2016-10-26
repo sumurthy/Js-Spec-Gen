@@ -1,0 +1,261 @@
+{
+  "name": "DocumentProperties",
+  "description": "Represents document properties.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.3",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "customProperties",
+      "dataType": "CustomPropertyCollection",
+      "description": "Gets the collection of custom properties of the document. Read only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "title",
+      "dataType": "string",
+      "description": "Gets or sets the title of the document.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "subject",
+      "dataType": "string",
+      "description": "Gets or sets the subject of the document.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "author",
+      "dataType": "string",
+      "description": "Gets or sets the author of the document.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "keywords",
+      "dataType": "string",
+      "description": "Gets or sets the keywords of the document.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "comments",
+      "dataType": "string",
+      "description": "Gets or sets the comments of the document.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "template",
+      "dataType": "string",
+      "description": "Gets the template of the document. Read only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "lastAuthor",
+      "dataType": "string",
+      "description": "Gets or sets the last author of the document.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "revisionNumber",
+      "dataType": "string",
+      "description": "Gets the revision number of the document. Read only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "applicationName",
+      "dataType": "string",
+      "description": "Gets the application name of the document. Read only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "lastPrintDate",
+      "dataType": "DateTime",
+      "description": "Gets the last print date of the document. Read only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "creationDate",
+      "dataType": "DateTime",
+      "description": "Gets the creation date of the document. Read only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "lastSaveTime",
+      "dataType": "DateTime",
+      "description": "Gets the last save time of the document. Read only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "security",
+      "dataType": "int",
+      "description": "Gets the security of the document. Read only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "category",
+      "dataType": "string",
+      "description": "Gets or sets the category of the document.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "format",
+      "dataType": "string",
+      "description": "Gets or sets the format of the document.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "manager",
+      "dataType": "string",
+      "description": "Gets or sets the manager of the document.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "company",
+      "dataType": "string",
+      "description": "Gets or sets the company of the document.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}

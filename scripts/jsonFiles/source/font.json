@@ -1,0 +1,177 @@
+{
+  "name": "Font",
+  "description": "Represents a font.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Visio"
+    ],
+    "nameSpace": "Visio",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "Gets or sets a value that represents the name of the font.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "size",
+      "dataType": "float",
+      "description": "Gets or sets a value that represents the font size in points.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "bold",
+      "dataType": "bool",
+      "description": "Gets or sets a value that indicates whether the font is bold. True if the font is formatted as bold, otherwise, false.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "italic",
+      "dataType": "bool",
+      "description": "Gets or sets a value that indicates whether the font is italicized. True if the font is italicized, otherwise, false.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "color",
+      "dataType": "string",
+      "description": "Gets or sets the color for the specified font. You can provide the value in the '#RRGGBB' format or the color name.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "underline",
+      "dataType": "UnderlineType",
+      "description": "Gets or sets a value that indicates the font's underline type. 'None' if the font is not underlined.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "subscript",
+      "dataType": "bool",
+      "description": "Gets or sets a value that indicates whether the font is a subscript. True if the font is formatted as subscript, otherwise, false.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "superscript",
+      "dataType": "bool",
+      "description": "Gets or sets a value that indicates whether the font is a superscript. True if the font is formatted as superscript, otherwise, false.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "strikeThrough",
+      "dataType": "bool",
+      "description": "Gets or sets a value that indicates whether the font has a strike through. True if the font is formatted as strikethrough text, otherwise, false.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "doubleStrikeThrough",
+      "dataType": "bool",
+      "description": "Gets or sets a value that indicates whether the font has a double strike through. True if the font is formatted as double strikethrough text, otherwise, false.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "highlightColor",
+      "dataType": "string",
+      "description": "Gets or sets the highlight color. To set it, use a value either in the '#RRGGBB' format or the color name. To remove highlight color, set it to null. The returned highlight color can be in the '#RRGGBB' format, or an empty string for mixed highlight colors, or null for no highlight color.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    }
+  ]
+}
