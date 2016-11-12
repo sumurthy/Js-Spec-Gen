@@ -1,6 +1,4 @@
-# PivotTableCollection Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# PivotTableCollection Object (JavaScript API for Excel)
 
 Represents a collection of all the PivotTables that are part of the workbook or worksheet.
 
@@ -8,7 +6,7 @@ Represents a collection of all the PivotTables that are part of the workbook or 
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[PivotTable[]](pivottable.md)|A collection of pivotTable objects. Read-only.|1.3||
+|items|[PivotTable[]](pivottable.md)|A collection of pivotTable objects. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,10 +18,10 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(name: string)](#getitemname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name.|1.3|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name. If the PivotTable does not exist, the return object's isNull property will be true.|1.3|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
-|[refreshAll()](#refreshall)|void|Refreshes all the PivotTables in the collection.|1.3|
+|[getItem(name: string)](#getitemname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(name: string)](#getitemornullname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name. If the PivotTable does not exist, the return object's isNull property will be true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[refreshAll()](#refreshall)|void|Refreshes all the PivotTables in the collection.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

@@ -1,6 +1,4 @@
-# Table Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# Table Object (JavaScript API for Excel)
 
 Represents an Excel table.
 
@@ -8,40 +6,40 @@ Represents an Excel table.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|highlightFirstColumn|bool|Indicates whether the first column contains special formatting.|1.3||
-|highlightLastColumn|bool|Indicates whether the last column contains special formatting.|1.3||
-|id|int|Returns a value that uniquely identifies the table in a given workbook. The value of the identifier remains the same even when the table is renamed. Read-only.|1.1||
-|name|string|Name of the table.|1.1||
-|showBandedColumns|bool|Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.|1.3||
-|showBandedRows|bool|Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.|1.3||
-|showFilterButton|bool|Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.|1.3||
-|showHeaders|bool|Indicates whether the header row is visible or not. This value can be set to show or remove the header row.|1.1||
-|showTotals|bool|Indicates whether the total row is visible or not. This value can be set to show or remove the total row.|1.1||
-|style|string|Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.|1.1||
+|highlightFirstColumn|bool|Indicates whether the first column contains special formatting.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|highlightLastColumn|bool|Indicates whether the last column contains special formatting.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|id|int|Returns a value that uniquely identifies the table in a given workbook. The value of the identifier remains the same even when the table is renamed. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|Name of the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|showBandedColumns|bool|Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|showBandedRows|bool|Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|showFilterButton|bool|Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|showHeaders|bool|Indicates whether the header row is visible or not. This value can be set to show or remove the header row.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|showTotals|bool|Indicates whether the total row is visible or not. This value can be set to show or remove the total row.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|style|string|Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|columns|[TableColumnCollection](tablecolumncollection.md)|Represents a collection of all the columns in the table. Read-only.|1.1||
-|rows|[TableRowCollection](tablerowcollection.md)|Represents a collection of all the rows in the table. Read-only.|1.1||
-|sort|[TableSort](tablesort.md)|Represents the sorting for the table. Read-only.|1.2||
-|worksheet|[Worksheet](worksheet.md)|The worksheet containing the current table. Read-only.|1.2||
+|columns|[TableColumnCollection](tablecolumncollection.md)|Represents a collection of all the columns in the table. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|rows|[TableRowCollection](tablerowcollection.md)|Represents a collection of all the rows in the table. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|sort|[TableSort](tablesort.md)|Represents the sorting for the table. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheet|[Worksheet](worksheet.md)|The worksheet containing the current table. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clearFilters()](#clearfilters)|void|Clears all the filters currently applied on the table.|1.2|
-|[convertToRange()](#converttorange)|[Range](range.md)|Converts the table into a normal range of cells. All data is preserved.|1.2|
-|[delete()](#delete)|void|Deletes the table.|1.1|
-|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.|1.1|
-|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with header row of the table.|1.1|
-|[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire table.|1.1|
-|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with totals row of the table.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
-|[reapplyFilters()](#reapplyfilters)|void|Reapplies all the filters currently on the table.|1.2|
+|[clearFilters()](#clearfilters)|void|Clears all the filters currently applied on the table.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[convertToRange()](#converttorange)|[Range](range.md)|Converts the table into a normal range of cells. All data is preserved.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[delete()](#delete)|void|Deletes the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with header row of the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with totals row of the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[reapplyFilters()](#reapplyfilters)|void|Reapplies all the filters currently on the table.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

@@ -1,6 +1,4 @@
-# BindingCollection Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# BindingCollection Object (JavaScript API for Excel)
 
 Represents the collection of all the binding objects that are part of the workbook.
 
@@ -8,8 +6,8 @@ Represents the collection of all the binding objects that are part of the workbo
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of bindings in the collection. Read-only.|1.1||
-|items|[Binding[]](binding.md)|A collection of binding objects. Read-only.|1.1||
+|count|int|Returns the number of bindings in the collection. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Binding[]](binding.md)|A collection of binding objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,13 +19,13 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(range: Range or string, bindingType: string, id: string)](#addrange-range-or-string-bindingtype-string-id-string)|[Binding](binding.md)|Add a new binding to a particular Range.|1.3|
-|[addFromNamedItem(name: string, bindingType: string, id: string)](#addfromnameditemname-string-bindingtype-string-id-string)|[Binding](binding.md)|Add a new binding based on a named item in the workbook.|1.3|
-|[addFromSelection(bindingType: string, id: string)](#addfromselectionbindingtype-string-id-string)|[Binding](binding.md)|Add a new binding based on the current selection.|1.3|
-|[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Gets a binding object by ID.|1.1|
-|[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Gets a binding object based on its position in the items array.|1.1|
-|[getItemOrNull(id: string)](#getitemornullid-string)|[Binding](binding.md)|Gets a binding object by ID. If the binding object does not exist, the return object's isNull property will be true.|1.3|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[add(range: Range or string, bindingType: string, id: string)](#addrange-range-or-string-bindingtype-string-id-string)|[Binding](binding.md)|Add a new binding to a particular Range.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[addFromNamedItem(name: string, bindingType: string, id: string)](#addfromnameditemname-string-bindingtype-string-id-string)|[Binding](binding.md)|Add a new binding based on a named item in the workbook.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[addFromSelection(bindingType: string, id: string)](#addfromselectionbindingtype-string-id-string)|[Binding](binding.md)|Add a new binding based on the current selection.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Gets a binding object by ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Gets a binding object based on its position in the items array.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(id: string)](#getitemornullid-string)|[Binding](binding.md)|Gets a binding object by ID. If the binding object does not exist, the return object's isNull property will be true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

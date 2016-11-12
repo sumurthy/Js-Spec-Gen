@@ -1,6 +1,4 @@
-# TableColumnCollection Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# TableColumnCollection Object (JavaScript API for Excel)
 
 Represents a collection of all the columns that are part of the table.
 
@@ -8,8 +6,8 @@ Represents a collection of all the columns that are part of the table.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of columns in the table. Read-only.|1.1||
-|items|[TableColumn[]](tablecolumn.md)|A collection of tableColumn objects. Read-only.|1.1||
+|count|int|Returns the number of columns in the table. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[TableColumn[]](tablecolumn.md)|A collection of tableColumn objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,11 +19,11 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|1.1, 1.1 requires an index smaller than the total column count; 1.4 allows index to be optional (null or -1|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|1.1|
-|[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|1.1|
-|[getItemOrNull(key: number or string)](#getitemornullkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID. If the column does not exist, the returned object's isNull property will be true.|1.3|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|[1.1, 1.1 requires an index smaller than the total column count; 1.4 allows index to be optional (null or -1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(key: number or string)](#getitemornullkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID. If the column does not exist, the returned object's isNull property will be true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

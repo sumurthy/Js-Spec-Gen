@@ -1,6 +1,4 @@
-# Setting Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# Setting Object (JavaScript API for Excel)
 
 Setting represents a key-value pair of a setting persisted to the document.
 
@@ -8,7 +6,7 @@ Setting represents a key-value pair of a setting persisted to the document.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|key|string|Returns the key that represents the id of the Setting. Read-only.|1.3||
+|key|string|Returns the key that represents the id of the Setting. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,8 +18,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[delete()](#delete)|void|Deletes the setting.|1.3|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[delete()](#delete)|void|Deletes the setting.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

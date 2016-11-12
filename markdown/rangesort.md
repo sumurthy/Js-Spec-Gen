@@ -1,6 +1,4 @@
-# RangeSort Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# RangeSort Object (JavaScript API for Excel)
 
 Manages sorting operations on Range objects.
 
@@ -16,7 +14,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|Perform a sort operation.|1.2|
+|[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|Perform a sort operation.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

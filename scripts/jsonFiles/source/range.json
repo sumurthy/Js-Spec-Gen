@@ -79,6 +79,18 @@
       "notes": null
     },
     {
+      "name": "conditionalFormats",
+      "dataType": "ConditionalFormatCollection",
+      "description": "Collection of ConditionalFormats that intersect the range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.4",
+      "isKey": null,
+      "notes": null
+    },
+    {
       "name": "valueTypes",
       "dataType": "string",
       "description": "Represents the type of data of each cell.",

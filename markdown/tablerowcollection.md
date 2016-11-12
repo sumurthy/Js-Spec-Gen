@@ -1,6 +1,4 @@
-# TableRowCollection Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# TableRowCollection Object (JavaScript API for Excel)
 
 Represents a collection of all the rows that are part of the table.
 
@@ -8,8 +6,8 @@ Represents a collection of all the rows that are part of the table.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of rows in the table. Read-only.|1.1||
-|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|1.1||
+|count|int|Returns the number of rows in the table. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,9 +19,9 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Adds one or more rows to the table. The return object will be the top of the newly added row(s).|1.1, 1.1 for adding a single row; 1.4 allows adding of multiple rows.|
-|[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Adds one or more rows to the table. The return object will be the top of the newly added row(s).|[1.1, 1.1 for adding a single row; 1.4 allows adding of multiple rows.](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

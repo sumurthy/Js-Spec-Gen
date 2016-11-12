@@ -1,6 +1,4 @@
-# ChartFill Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# ChartFill Object (JavaScript API for Excel)
 
 Represents the fill formatting for a chart element.
 
@@ -16,8 +14,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clear the fill color of a chart element.|1.1|
-|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.|1.1|
+|[clear()](#clear)|void|Clear the fill color of a chart element.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

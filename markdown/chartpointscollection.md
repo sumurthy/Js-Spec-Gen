@@ -1,6 +1,4 @@
-# ChartPointsCollection Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# ChartPointsCollection Object (JavaScript API for Excel)
 
 A collection of all the chart points within a series inside a chart.
 
@@ -8,8 +6,8 @@ A collection of all the chart points within a series inside a chart.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of chart points in the collection. Read-only.|1.1||
-|items|[ChartPoint[]](chartpoint.md)|A collection of chartPoints objects. Read-only.|1.1||
+|count|int|Returns the number of chart points in the collection. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartPoint[]](chartpoint.md)|A collection of chartPoints objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,8 +19,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

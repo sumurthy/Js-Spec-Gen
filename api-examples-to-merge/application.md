@@ -1,6 +1,6 @@
-### Getter and Setter 
+### Getter and Setter
 ```js
-Excel.run(function (ctx) { 
+Excel.run(function (ctx) {
 	var application = ctx.workbook.application;
 	application.load('calculationMode');
 	return ctx.sync().then(function() {
@@ -16,9 +16,9 @@ Excel.run(function (ctx) {
 
 ### calculate(calculationType: string)
 ```js
-Excel.run(function (ctx) { 
+Excel.run(function (ctx) {
 	ctx.workbook.application.calculate('Full');
-	return ctx.sync(); 
+	return ctx.sync();
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -26,12 +26,3 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-
-ex2
-
-ex3
-
-ex3
-
-
-

@@ -1,6 +1,4 @@
-# Binding Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# Binding Object (JavaScript API for Excel)
 
 Represents an Office.js binding that is defined in the workbook.
 
@@ -8,8 +6,8 @@ Represents an Office.js binding that is defined in the workbook.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|id|string|Represents binding identifier. Read-only.|1.1||
-|type|string|Returns the type of the binding. Read-only. Possible values are: Range, Table, Text.|1.1||
+|id|string|Represents binding identifier. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Returns the type of the binding. Read-only. Possible values are: Range, Table, Text.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,11 +19,11 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[delete()](#delete)|void|Deletes the binding.|1.3|
-|[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.|1.1|
-|[getTable()](#gettable)|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.|1.1|
-|[getText()](#gettext)|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[delete()](#delete)|void|Deletes the binding.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getTable()](#gettable)|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getText()](#gettext)|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

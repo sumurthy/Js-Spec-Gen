@@ -1,6 +1,4 @@
-# TableRow Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# TableRow Object (JavaScript API for Excel)
 
 Represents a row in a table.
 
@@ -8,8 +6,8 @@ Represents a row in a table.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|index|int|Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.|1.1||
-|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|1.1||
+|index|int|Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,9 +19,9 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[delete()](#delete)|void|Deletes the row from the table.|1.1|
-|[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[delete()](#delete)|void|Deletes the row from the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

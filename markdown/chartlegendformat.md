@@ -1,6 +1,4 @@
-# ChartLegendFormat Object (JavaScript API for Word)
-
-_Word 2016, Word for iPad, Word for Mac_
+# ChartLegendFormat Object (JavaScript API for Excel)
 
 Encapsulates the format properties of a chart legend.
 
@@ -11,14 +9,14 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|fill|[ChartFill](chartfill.md)|Represents the fill format of an object, which includes background formating information. Read-only.|1.1||
-|font|[ChartFont](chartfont.md)|Represents the font attributes such as font name, font size, color, etc. of a chart legend. Read-only.|1.1||
+|fill|[ChartFill](chartfill.md)|Represents the fill format of an object, which includes background formating information. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|font|[ChartFont](chartfont.md)|Represents the font attributes such as font name, font size, color, etc. of a chart legend. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
