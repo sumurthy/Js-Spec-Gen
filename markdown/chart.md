@@ -55,10 +55,10 @@ void
 
 #### Examples
 ```js
-Excel.run(function (ctx) {
-	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	chart.delete();
-	return ctx.sync();
+	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -87,10 +87,10 @@ chartObject.getImage(height, width, fittingMode);
 
 #### Examples
 ```js
-Excel.run(function (ctx) {
-	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	var image = chart.getImage();
-	return ctx.sync();
+	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -141,11 +141,11 @@ void
 Set the `sourceData` to be "A1:B4" and `seriesBy` to be "Columns"
 
 ```js
-Excel.run(function (ctx) {
-	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	var sourceData = "A1:B4";
 	chart.setData(sourceData, "Columns");
-	return ctx.sync();
+	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -176,7 +176,7 @@ void
 
 
 ```js
-Excel.run(function (ctx) {
+Excel.run(function (ctx) { 
 	var sheetName = "Charts";
 	var rangeSelection = "A1:B4";
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeSelection);
@@ -185,7 +185,7 @@ Excel.run(function (ctx) {
 	chart.width = 500;
 	chart.height = 300;
 	chart.setPosition("C2", null);
-	return ctx.sync();
+	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -199,8 +199,8 @@ Excel.run(function (ctx) {
 Get a chart named "Chart1"
 
 ```js
-Excel.run(function (ctx) {
-	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	chart.load('name');
 	return ctx.sync().then(function() {
 			console.log(chart.name);
@@ -216,14 +216,14 @@ Excel.run(function (ctx) {
 Update a chart including renaming, positioning and resizing.
 
 ```js
-Excel.run(function (ctx) {
-	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	chart.name="New Name";
 	chart.top = 100;
 	chart.left = 100;
 	chart.height = 200;
 	chart.width = 200;
-	return ctx.sync();
+	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -232,17 +232,17 @@ Excel.run(function (ctx) {
 });
 ```
 
-Rename the chart to new name, resize the chart to 200 points in both height and weight. Move Chart1 to 100 points to the top and left.
+Rename the chart to new name, resize the chart to 200 points in both height and weight. Move Chart1 to 100 points to the top and left. 
 
 ```js
-Excel.run(function (ctx) {
+Excel.run(function (ctx) { 
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
-	chart.name="New Name";
+	chart.name="New Name";	
 	chart.top = 100;
 	chart.left = 100;
 	chart.height =200;
 	chart.width =200;
-	return ctx.sync();
+	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -250,3 +250,4 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+

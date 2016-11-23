@@ -5,45 +5,10 @@
 |[bindingCollection](resources/bindingcollection.md)|_Method_ > [addFromNamedItem(name: string, bindingType: string, id: string)](resources/bindingcollection.md#addfromnameditemname-string-bindingtype-string-id-string)|Add a new binding based on a named item in the workbook.|1.3|
 |[bindingCollection](resources/bindingcollection.md)|_Method_ > [addFromSelection(bindingType: string, id: string)](resources/bindingcollection.md#addfromselectionbindingtype-string-id-string)|Add a new binding based on the current selection.|1.3|
 |[bindingCollection](resources/bindingcollection.md)|_Method_ > [getItemOrNull(id: string)](resources/bindingcollection.md#getitemornullid-string)|Gets a binding object by ID. If the binding object does not exist, the return object's isNull property will be true.|1.3|
-|[bindingDataChangedEventArgs](resources/bindingdatachangedeventargs.md)|_Relationship_ > binding|Gets the Binding object that represents the binding that raised the DataChanged event.|1.2, 1.3|
-|[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Property_ > columnCount|Gets the number of columns selected.|1.2, 1.3|
-|[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Property_ > rowCount|Gets the number of rows selected.|1.2, 1.3|
-|[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Property_ > startColumn|Gets the index of the first column of the selection (zero-based).|1.2, 1.3|
-|[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Property_ > startRow|Gets the index of the first row of the selection (zero-based).|1.2, 1.3|
-|[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Relationship_ > binding|Gets the Binding object that represents the binding that raised the SelectionChanged event.|1.2, 1.3|
 |[chart](resources/chart.md)|_Property_ > id|Gets a chart based on its position in the collection. Read-only.|1.2|
 |[chart](resources/chart.md)|_Relationship_ > worksheet|The worksheet containing the current chart. Read-only.|1.2|
 |[chart](resources/chart.md)|_Method_ > [getImage(height: number, width: number, fittingMode: string)](resources/chart.md#getimageheight-number-width-number-fittingmode-string)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|1.2|
 |[chartCollection](resources/chartcollection.md)|_Method_ > [getItemOrNull(name: string)](resources/chartcollection.md#getitemornullname-string)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|1.3|
-|[conditionalFormat](resources/conditionalformat.md)|_Property_ > priority|The priority (or index) within the conditional format collection that this conditional format currently exists in. Changing this also|1.4|
-|[conditionalFormat](resources/conditionalformat.md)|_Property_ > stopIfTrue|If the conditions of this conditional format are met, no lower-priority formats shall take effect on that cell.|1.4|
-|[conditionalFormat](resources/conditionalformat.md)|_Property_ > type|A type of conditional format. Only one can be set at a time. Read-Only. Read-only. Possible values are: Custom, DataBar, ColorScale, IconSet.|1.4|
-|[conditionalFormat](resources/conditionalformat.md)|_Relationship_ > dataBarOrNull|Represents databars with customizable color, gradient, axis, and range format options. Read-only.|1.4|
-|[conditionalFormat](resources/conditionalformat.md)|_Method_ > [delete()](resources/conditionalformat.md#delete)|Deletes this conditional format.|1.4|
-|[conditionalFormat](resources/conditionalformat.md)|_Method_ > [getRangeOrNull()](resources/conditionalformat.md#getrangeornull)|Returns the range the conditonal format is applied to or null if the range is discontiguous. Read-only.|1.4|
-|[conditionalFormatCollection](resources/conditionalformatcollection.md)|_Property_ > items|A collection of conditionalFormat objects. Read-only.|1.4|
-|[conditionalFormatCollection](resources/conditionalformatcollection.md)|_Method_ > [clearAll()](resources/conditionalformatcollection.md#clearall)|Clears all conditional formats active on the current specified range.|1.4|
-|[conditionalFormatCollection](resources/conditionalformatcollection.md)|_Method_ > [getCount()](resources/conditionalformatcollection.md#getcount)|Returns the number of conditional formats in the workbook. Read-only.|1.4|
-|[conditionalFormatCollection](resources/conditionalformatcollection.md)|_Method_ > [getItemAt(index: number)](resources/conditionalformatcollection.md#getitematindex-number)|Returns a conditional format at the given index.|1.4|
-|[conditionalFormatDataBar](resources/conditionalformatdatabar.md)|_Property_ > axisColor|HTML color code representing the color of the Axis line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.4|
-|[conditionalFormatDataBar](resources/conditionalformatdatabar.md)|_Property_ > axisFormat|Representation of how the axis is determined for an Excel data bar. Possible values are: Automatic, None, CellMidPoint.|1.4|
-|[conditionalFormatDataBar](resources/conditionalformatdatabar.md)|_Property_ > barDirection|Represents the direction that the data bar graphic should be based on. Possible values are: LeftToRight, Context, RightToLeft.|1.4|
-|[conditionalFormatDataBar](resources/conditionalformatdatabar.md)|_Property_ > showDataBarOnly|If true, hides the values from the cells where the data bar is applied.|1.4|
-|[conditionalFormatDataBar](resources/conditionalformatdatabar.md)|_Relationship_ > lowerBoundRule|The rule for what consistutes the lower bound (and how to calculate it, if applicable) for a data bar. Read-only.|1.4|
-|[conditionalFormatDataBar](resources/conditionalformatdatabar.md)|_Relationship_ > negativeFormat|Representation of all values to the left of the axis in an Excel data bar. Read-only.|1.4|
-|[conditionalFormatDataBar](resources/conditionalformatdatabar.md)|_Relationship_ > positiveFormat|Representation of all values to the right of the axis in an Excel data bar. Read-only.|1.4|
-|[conditionalFormatDataBar](resources/conditionalformatdatabar.md)|_Relationship_ > upperBoundRule|The rule for what constitutes the upper bound (and how to calculate it, if applicable) for a data bar. Read-only.|1.4|
-|[conditionalFormatDataBarNegativeFormat](resources/conditionalformatdatabarnegativeformat.md)|_Property_ > borderColor|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.4|
-|[conditionalFormatDataBarNegativeFormat](resources/conditionalformatdatabarnegativeformat.md)|_Property_ > fillColor|HTML color code representing the fill color, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.4|
-|[conditionalFormatDataBarNegativeFormat](resources/conditionalformatdatabarnegativeformat.md)|_Property_ > matchPositiveBorderColor|Boolean representation of whether or not the negative DataBar has the same border color as the positive DataBar.|1.4|
-|[conditionalFormatDataBarNegativeFormat](resources/conditionalformatdatabarnegativeformat.md)|_Property_ > matchPositiveFillColor|Boolean representation of whether or not the negative DataBar has the same fill color as the positive DataBar.|1.4|
-|[conditionalFormatDataBarPositiveFormat](resources/conditionalformatdatabarpositiveformat.md)|_Property_ > borderColor|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.4|
-|[conditionalFormatDataBarPositiveFormat](resources/conditionalformatdatabarpositiveformat.md)|_Property_ > fillColor|HTML color code representing the fill color, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.4|
-|[conditionalFormatDataBarPositiveFormat](resources/conditionalformatdatabarpositiveformat.md)|_Property_ > gradientFill|Boolean representation of whether or not the DataBar has a gradient.|1.4|
-|[conditionalFormatDataBarRule](resources/conditionalformatdatabarrule.md)|_Property_ > formula|The formula, if required, to evaluate the databar rule on.|1.4|
-|[conditionalFormatDataBarRule](resources/conditionalformatdatabarrule.md)|_Property_ > formulaLocal|The formula, if required, to evaluate the databar rule on in the user's language.|1.4|
-|[conditionalFormatDataBarRule](resources/conditionalformatdatabarrule.md)|_Property_ > formulaR1C1|The formula, if required, to evaluate the databar rule on in R1C1-style notation.|1.4|
-|[conditionalFormatDataBarRule](resources/conditionalformatdatabarrule.md)|_Property_ > type|What the databar should be based on. Possible values are: LowestValue, HighestValue, Number, Percent, Formula, Percentile, Automatic.|1.4|
 |[filter](resources/filter.md)|_Relationship_ > criteria|The currently applied filter on the given column. Read-only.|1.2|
 |[filter](resources/filter.md)|_Method_ > [apply(criteria: FilterCriteria)](resources/filter.md#applycriteria-filtercriteria)|Apply the given filter criteria on the given column.|1.2|
 |[filter](resources/filter.md)|_Method_ > [applyBottomItemsFilter(count: number)](resources/filter.md#applybottomitemsfiltercount-number)|Apply a "Bottom Item" filter to the column for the given number of elements.|1.2|
@@ -83,7 +48,6 @@
 |[range](resources/range.md)|_Property_ > formulasR1C1|Represents the formula in R1C1-style notation.|1.2|
 |[range](resources/range.md)|_Property_ > hidden|Represents if all cells of the current range are hidden. Read-only.|1.2|
 |[range](resources/range.md)|_Property_ > rowHidden|Represents if all rows of the current range are hidden.|1.2|
-|[range](resources/range.md)|_Relationship_ > conditionalFormats|Collection of ConditionalFormats that intersect the range. Read-only.|1.4|
 |[range](resources/range.md)|_Relationship_ > sort|Represents the range sort of the current range. Read-only.|1.2|
 |[range](resources/range.md)|_Method_ > [getColumnsAfter(count: number)](resources/range.md#getcolumnsaftercount-number)|Gets a certain number of columns to the right of the current Range object.|1.2, 1.3|
 |[range](resources/range.md)|_Method_ > [getColumnsBefore(count: number)](resources/range.md#getcolumnsbeforecount-number)|Gets a certain number of columns to the left of the current Range object.|1.2, 1.3|
@@ -116,14 +80,12 @@
 |[rangeView](resources/rangeview.md)|_Method_ > [getRange()](resources/rangeview.md#getrange)|Gets the parent range associated with the current RangeView.|1.3|
 |[rangeViewCollection](resources/rangeviewcollection.md)|_Property_ > items|A collection of rangeView objects. Read-only.|1.3|
 |[rangeViewCollection](resources/rangeviewcollection.md)|_Method_ > [getItemAt(index: number)](resources/rangeviewcollection.md#getitematindex-number)|Gets a RangeView Row via it's index. Zero-Indexed.|1.3|
-|[selectionChangedEventArgs](resources/selectionchangedeventargs.md)|_Relationship_ > workbook|Gets the workbook object that raised the SelectionChanged event.|1.2, 1.3|
 |[setting](resources/setting.md)|_Property_ > key|Returns the key that represents the id of the Setting. Read-only.|1.3|
 |[setting](resources/setting.md)|_Method_ > [delete()](resources/setting.md#delete)|Deletes the setting.|1.3|
 |[settingCollection](resources/settingcollection.md)|_Property_ > items|A collection of setting objects. Read-only.|1.3|
 |[settingCollection](resources/settingcollection.md)|_Method_ > [getItem(key: string)](resources/settingcollection.md#getitemkey-string)|Gets a Setting entry via the key.|1.3|
 |[settingCollection](resources/settingcollection.md)|_Method_ > [getItemOrNull(key: string)](resources/settingcollection.md#getitemornullkey-string)|Gets a Setting entry via the key. If the Setting does not exist, the returned object's isNull property will be true.|1.3|
 |[settingCollection](resources/settingcollection.md)|_Method_ > [set(key: string, value: string)](resources/settingcollection.md#setkey-string-value-string)|Sets or adds the specified setting to the workbook.|1.3|
-|[settingsChangedEventArgs](resources/settingschangedeventargs.md)|_Relationship_ > settingCollection|Gets the Setting object that represents the binding that raised the SettingsChanged event|1.3|
 |[sortField](resources/sortfield.md)|_Property_ > ascending|Represents whether the sorting is done in an ascending fashion.|1.2|
 |[sortField](resources/sortfield.md)|_Property_ > color|Represents the color that is the target of the condition if the sorting is on font or cell color.|1.2|
 |[sortField](resources/sortfield.md)|_Property_ > dataOption|Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.|1.2|

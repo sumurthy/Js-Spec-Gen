@@ -321,26 +321,5 @@
                 "Less": "",
                 "LessEqual": "",
                 "NotEqual": ""
-        },
-        "Excel.PresetStyle": {
-                "Normal": "",
-                "Good": "",
-                "Bad": "",
-                "Neutral": "",
-                "Calculation": "",
-                "CheckCell": "",
-                "ExplanatoryText": "",
-                "Input": "",
-                "LinkedCell": "",
-                "Note": "",
-                "Output": "",
-                "WarningText": "",
-                "Heading1": "",
-                "Heading2": "",
-                "Heading3": "",
-                "Heading4": "",
-                "Title": "",
-                "Total": "",
-                "None": ""
         }
 }
