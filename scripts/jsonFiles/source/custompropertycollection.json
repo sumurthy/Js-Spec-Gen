@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.3",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -35,7 +35,8 @@
     {
       "name": "getItem",
       "returnType": "CustomProperty",
-      "description": "Gets a custom property object by its key, which is case-insensitive.",
+      "enumNameJs": null,
+      "description": "Gets a custom property object by its key, which is case-insensitive. Throws if the custom property does not exist.",
       "syntax": "customPropertyCollectionObject.getItem(key);",
       "signature": "getItem(key: string)",
       "restfulName": "Item",
@@ -55,8 +56,32 @@
       "reqSet": "1.3"
     },
     {
+      "name": "getItemOrNullObject",
+      "returnType": "CustomProperty",
+      "enumNameJs": null,
+      "description": "Gets a custom property object by its key, which is case-insensitive. Returns a null object if the custom property does not exist.",
+      "syntax": "customPropertyCollectionObject.getItemOrNullObject(key);",
+      "signature": "getItemOrNullObject(key: string)",
+      "restfulName": "ItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The key that identifies the custom property object.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
       "name": "set",
       "returnType": "CustomProperty",
+      "enumNameJs": null,
       "description": "Creates or sets a custom property.",
       "syntax": "customPropertyCollectionObject.set(key, value);",
       "signature": "set(key: string, value: object)",
@@ -88,6 +113,7 @@
     {
       "name": "getCount",
       "returnType": "int",
+      "enumNameJs": null,
       "description": "Gets the count of custom properties.",
       "syntax": "customPropertyCollectionObject.getCount();",
       "signature": "getCount()",
@@ -100,6 +126,7 @@
     {
       "name": "deleteAll",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Deletes all custom properties in this collection.",
       "syntax": "customPropertyCollectionObject.deleteAll();",
       "signature": "deleteAll()",

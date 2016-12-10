@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.1",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -44,12 +44,12 @@
     },
     {
       "name": "styleBuiltIn",
-      "dataType": "Style",
+      "dataType": "string",
       "description": "Gets or sets the built-in style name for the range. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the \"style\" property.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.Style",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -81,12 +81,24 @@
     {
       "name": "parentContentControl",
       "dataType": "ContentControl",
-      "description": "Gets the content control that contains the range. Returns a null object if there isn't a parent content control.",
+      "description": "Gets the content control that contains the range. Throws if there isn't a parent content control.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
       "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentContentControlOrNullObject",
+      "dataType": "ContentControl",
+      "description": "Gets the content control that contains the range. Returns a null object if there isn't a parent content control.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -129,7 +141,7 @@
     {
       "name": "hyperlink",
       "dataType": "string",
-      "description": "Gets the first hyperlink in the range, or sets a hyperlink on the range. All hyperlinks in the range are deleted when you set a new hyperlink on the range. Use a newline character ('\\n') to separate the address part from the optional location part.",
+      "description": "Gets the first hyperlink in the range, or sets a hyperlink on the range. All hyperlinks in the range are deleted when you set a new hyperlink on the range. Use a '#' to separate the address part from the optional location part.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
@@ -177,6 +189,18 @@
     {
       "name": "parentTableCell",
       "dataType": "TableCell",
+      "description": "Gets the table cell that contains the range. Throws if it is not contained in a table cell.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentTableCellOrNullObject",
+      "dataType": "TableCell",
       "description": "Gets the table cell that contains the range. Returns a null object if it is not contained in a table cell.",
       "isReadOnly": true,
       "enumNameJs": null,
@@ -189,7 +213,19 @@
     {
       "name": "parentTable",
       "dataType": "Table",
-      "description": "Gets the table that contains the range. Returns null if it is not contained in a table.",
+      "description": "Gets the table that contains the range. Throws if it is not contained in a table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentTableOrNullObject",
+      "dataType": "Table",
+      "description": "Gets the table that contains the range. Returns a null object if it is not contained in a table.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -203,6 +239,7 @@
     {
       "name": "clear",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Clears the contents of the range object. The user can perform the undo operation on the cleared content.",
       "syntax": "rangeObject.clear();",
       "signature": "clear()",
@@ -215,6 +252,7 @@
     {
       "name": "delete",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Deletes the range and its content from the document.",
       "syntax": "rangeObject.delete();",
       "signature": "delete()",
@@ -227,6 +265,7 @@
     {
       "name": "insertContentControl",
       "returnType": "ContentControl",
+      "enumNameJs": null,
       "description": "Wraps the range object with a rich text content control.",
       "syntax": "rangeObject.insertContentControl();",
       "signature": "insertContentControl()",
@@ -239,9 +278,10 @@
     {
       "name": "insertText",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts text at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
       "syntax": "rangeObject.insertText(text, insertLocation);",
-      "signature": "insertText(text: string, insertLocation: InsertLocation)",
+      "signature": "insertText(text: string, insertLocation: string)",
       "restfulName": "insertText",
       "notes": null,
       "httpSuccessResponse": null,
@@ -257,11 +297,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -270,9 +310,10 @@
     {
       "name": "insertHtml",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
       "syntax": "rangeObject.insertHtml(html, insertLocation);",
-      "signature": "insertHtml(html: string, insertLocation: InsertLocation)",
+      "signature": "insertHtml(html: string, insertLocation: string)",
       "restfulName": "insertHtml",
       "notes": null,
       "httpSuccessResponse": null,
@@ -288,11 +329,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -301,9 +342,10 @@
     {
       "name": "insertOoxml",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
       "syntax": "rangeObject.insertOoxml(ooxml, insertLocation);",
-      "signature": "insertOoxml(ooxml: string, insertLocation: InsertLocation)",
+      "signature": "insertOoxml(ooxml: string, insertLocation: string)",
       "restfulName": "insertOoxml",
       "notes": null,
       "httpSuccessResponse": null,
@@ -319,11 +361,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -332,9 +374,10 @@
     {
       "name": "insertFileFromBase64",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts a document at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
       "syntax": "rangeObject.insertFileFromBase64(base64File, insertLocation);",
-      "signature": "insertFileFromBase64(base64File: string, insertLocation: InsertLocation)",
+      "signature": "insertFileFromBase64(base64File: string, insertLocation: string)",
       "restfulName": "insertFileFromBase64",
       "notes": null,
       "httpSuccessResponse": null,
@@ -350,11 +393,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -363,9 +406,10 @@
     {
       "name": "insertParagraph",
       "returnType": "Paragraph",
+      "enumNameJs": null,
       "description": "Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.",
       "syntax": "rangeObject.insertParagraph(paragraphText, insertLocation);",
-      "signature": "insertParagraph(paragraphText: string, insertLocation: InsertLocation)",
+      "signature": "insertParagraph(paragraphText: string, insertLocation: string)",
       "restfulName": "insertParagraph",
       "notes": null,
       "httpSuccessResponse": null,
@@ -381,11 +425,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -394,29 +438,30 @@
     {
       "name": "insertBreak",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.",
       "syntax": "rangeObject.insertBreak(breakType, insertLocation);",
-      "signature": "insertBreak(breakType: BreakType, insertLocation: InsertLocation)",
+      "signature": "insertBreak(breakType: string, insertLocation: string)",
       "restfulName": "insertBreak",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "breakType",
-          "dataType": "BreakType",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The break type to add.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.BreakType",
           "notes": null
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -425,9 +470,10 @@
     {
       "name": "insertInlinePictureFromBase64",
       "returnType": "InlinePicture",
+      "enumNameJs": null,
       "description": "Inserts a picture at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
       "syntax": "rangeObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);",
-      "signature": "insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)",
+      "signature": "insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)",
       "restfulName": "insertInlinePictureFromBase64",
       "notes": null,
       "httpSuccessResponse": null,
@@ -443,11 +489,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start', 'End', 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -456,20 +502,21 @@
     {
       "name": "select",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Selects and navigates the Word UI to the range.",
       "syntax": "rangeObject.select(selectionMode);",
-      "signature": "select(selectionMode: SelectionMode)",
+      "signature": "select(selectionMode: string)",
       "restfulName": "select",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "selectionMode",
-          "dataType": "SelectionMode",
+          "dataType": "string",
           "isCollection": false,
           "description": "Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.",
           "isRequired": false,
-          "enumNameJs": null,
+          "enumNameJs": "Word.SelectionMode",
           "notes": null
         }
       ],
@@ -478,6 +525,7 @@
     {
       "name": "getHtml",
       "returnType": "string",
+      "enumNameJs": null,
       "description": "Gets the HTML representation of the range object.",
       "syntax": "rangeObject.getHtml();",
       "signature": "getHtml()",
@@ -490,6 +538,7 @@
     {
       "name": "getOoxml",
       "returnType": "string",
+      "enumNameJs": null,
       "description": "Gets the OOXML representation of the range object.",
       "syntax": "rangeObject.getOoxml();",
       "signature": "getOoxml()",
@@ -502,6 +551,7 @@
     {
       "name": "search",
       "returnType": "RangeCollection",
+      "enumNameJs": null,
       "description": "Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.",
       "syntax": "rangeObject.search(searchText, searchOptions);",
       "signature": "search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)",
@@ -533,20 +583,21 @@
     {
       "name": "getRange",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Clones the range, or gets the starting or ending point of the range as a new range.",
       "syntax": "rangeObject.getRange(rangeLocation);",
-      "signature": "getRange(rangeLocation: RangeLocation)",
+      "signature": "getRange(rangeLocation: string)",
       "restfulName": "Range",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "rangeLocation",
-          "dataType": "RangeLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Optional. The range location can be 'Whole', 'Start', 'End', 'After' or 'Content'.",
           "isRequired": false,
-          "enumNameJs": null,
+          "enumNameJs": "Word.RangeLocation",
           "notes": null
         }
       ],
@@ -555,6 +606,7 @@
     {
       "name": "split",
       "returnType": "RangeCollection",
+      "enumNameJs": null,
       "description": "Splits the range into child ranges by using delimiters.",
       "syntax": "rangeObject.split(delimiters, multiParagraphs, trimDelimiters, trimSpacing);",
       "signature": "split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)",
@@ -604,6 +656,7 @@
     {
       "name": "compareLocationWith",
       "returnType": "LocationRelation",
+      "enumNameJs": "Word.LocationRelation",
       "description": "Compares this range's location with another range's location.",
       "syntax": "rangeObject.compareLocationWith(range);",
       "signature": "compareLocationWith(range: Range)",
@@ -626,7 +679,8 @@
     {
       "name": "expandTo",
       "returnType": "Range",
-      "description": "Returns a new range that extends from this range in either direction to cover another range. This range is not changed.",
+      "enumNameJs": null,
+      "description": "Returns a new range that extends from this range in either direction to cover another range. This range is not changed. Throws if the two ranges do not have a union.",
       "syntax": "rangeObject.expandTo(range);",
       "signature": "expandTo(range: Range)",
       "restfulName": "expandTo",
@@ -646,9 +700,33 @@
       "reqSet": "1.3"
     },
     {
+      "name": "expandToOrNullObject",
+      "returnType": "Range",
+      "enumNameJs": null,
+      "description": "Returns a new range that extends from this range in either direction to cover another range. This range is not changed. Returns a null object if the two ranges do not have a union.",
+      "syntax": "rangeObject.expandToOrNullObject(range);",
+      "signature": "expandToOrNullObject(range: Range)",
+      "restfulName": "expandToOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "range",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "Required. Another range.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
       "name": "intersectWith",
       "returnType": "Range",
-      "description": "Returns a new range as the intersection of this range with another range. This range is not changed.",
+      "enumNameJs": null,
+      "description": "Returns a new range as the intersection of this range with another range. This range is not changed. Throws if the two ranges are not overlapped or adjacent.",
       "syntax": "rangeObject.intersectWith(range);",
       "signature": "intersectWith(range: Range)",
       "restfulName": "intersectWith",
@@ -668,9 +746,33 @@
       "reqSet": "1.3"
     },
     {
+      "name": "intersectWithOrNullObject",
+      "returnType": "Range",
+      "enumNameJs": null,
+      "description": "Returns a new range as the intersection of this range with another range. This range is not changed. Returns a null object if the two ranges are not overlapped or adjacent.",
+      "syntax": "rangeObject.intersectWithOrNullObject(range);",
+      "signature": "intersectWithOrNullObject(range: Range)",
+      "restfulName": "intersectWithOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "range",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "Required. Another range.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
       "name": "getNextTextRange",
       "returnType": "Range",
-      "description": "Gets the next text range by using punctuation marks andor other ending marks.",
+      "enumNameJs": null,
+      "description": "Gets the next text range by using punctuation marks andor other ending marks. Throws if this text range is the last one.",
       "syntax": "rangeObject.getNextTextRange(endingMarks, trimSpacing);",
       "signature": "getNextTextRange(endingMarks: string[], trimSpacing: bool)",
       "restfulName": "NextTextRange",
@@ -699,8 +801,41 @@
       "reqSet": "1.3"
     },
     {
+      "name": "getNextTextRangeOrNullObject",
+      "returnType": "Range",
+      "enumNameJs": null,
+      "description": "Gets the next text range by using punctuation marks andor other ending marks. Returns a null object if this text range is the last one.",
+      "syntax": "rangeObject.getNextTextRangeOrNullObject(endingMarks, trimSpacing);",
+      "signature": "getNextTextRangeOrNullObject(endingMarks: string[], trimSpacing: bool)",
+      "restfulName": "NextTextRangeOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "endingMarks",
+          "dataType": "string[]",
+          "isCollection": true,
+          "description": "Required. The punctuation marks and/or other ending marks as an array of strings.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "trimSpacing",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the returned range. Default is false which indicates that spacing characters at the start and end of the range are included.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
       "name": "getHyperlinkRanges",
       "returnType": "RangeCollection",
+      "enumNameJs": null,
       "description": "Gets hyperlink child ranges within the range.",
       "syntax": "rangeObject.getHyperlinkRanges();",
       "signature": "getHyperlinkRanges()",
@@ -713,9 +848,10 @@
     {
       "name": "insertTable",
       "returnType": "Table",
+      "enumNameJs": null,
       "description": "Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.",
       "syntax": "rangeObject.insertTable(rowCount, columnCount, insertLocation, values);",
-      "signature": "insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])",
+      "signature": "insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])",
       "restfulName": "insertTable",
       "notes": null,
       "httpSuccessResponse": null,
@@ -740,11 +876,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         },
         {
@@ -762,6 +898,7 @@
     {
       "name": "getTextRanges",
       "returnType": "RangeCollection",
+      "enumNameJs": null,
       "description": "Gets the text child ranges in the range by using punctuation marks andor other ending marks.",
       "syntax": "rangeObject.getTextRanges(endingMarks, trimSpacing);",
       "signature": "getTextRanges(endingMarks: string[], trimSpacing: bool)",
@@ -793,7 +930,8 @@
     {
       "name": "getBookmarks",
       "returnType": "string[]",
-      "description": "Gets the names all bookmarks in or overlapping the range. A bookmark is hidden if its name starts with an underscore character.",
+      "enumNameJs": null,
+      "description": "Gets the names all bookmarks in or overlapping the range. A bookmark is hidden if its name starts with the underscore character.",
       "syntax": "rangeObject.getBookmarks(includeHidden, includeAdjacent);",
       "signature": "getBookmarks(includeHidden: bool, includeAdjacent: bool)",
       "restfulName": "Bookmarks",
@@ -824,7 +962,8 @@
     {
       "name": "insertBookmark",
       "returnType": "void",
-      "description": "Inserts a bookmark on the range. If a bookmark of the same name exists, it is replaced.",
+      "enumNameJs": null,
+      "description": "Inserts a bookmark on the range. If a bookmark of the same name exists somewhere, it is deleted first.",
       "syntax": "rangeObject.insertBookmark(name);",
       "signature": "insertBookmark(name: string)",
       "restfulName": "insertBookmark",

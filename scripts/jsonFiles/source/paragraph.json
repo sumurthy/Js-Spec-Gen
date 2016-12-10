@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.1",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -44,12 +44,12 @@
     },
     {
       "name": "styleBuiltIn",
-      "dataType": "Style",
+      "dataType": "string",
       "description": "Gets or sets the built-in style name for the paragraph. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the \"style\" property.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.Style",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -69,12 +69,24 @@
     {
       "name": "parentContentControl",
       "dataType": "ContentControl",
-      "description": "Gets the content control that contains the paragraph. Returns a null object if there isn't a parent content control.",
+      "description": "Gets the content control that contains the paragraph. Throws if there isn't a parent content control.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
       "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentContentControlOrNullObject",
+      "dataType": "ContentControl",
+      "description": "Gets the content control that contains the paragraph. Returns a null object if there isn't a parent content control.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -116,12 +128,12 @@
     },
     {
       "name": "alignment",
-      "dataType": "Alignment",
+      "dataType": "string",
       "description": "Gets or sets the alignment for a paragraph. The value can be 'left', 'centered', 'right', or 'justified'.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.Alignment",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.1",
       "isKey": null,
       "notes": null
@@ -261,6 +273,18 @@
     {
       "name": "list",
       "dataType": "List",
+      "description": "Gets the List to which this paragraph belongs. Throws if the paragraph is not in a list.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "listOrNullObject",
+      "dataType": "List",
       "description": "Gets the List to which this paragraph belongs. Returns a null object if the paragraph is not in a list.",
       "isReadOnly": true,
       "enumNameJs": null,
@@ -272,6 +296,18 @@
     },
     {
       "name": "parentTableCell",
+      "dataType": "TableCell",
+      "description": "Gets the table cell that contains the paragraph. Throws if it is not contained in a table cell.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentTableCellOrNullObject",
       "dataType": "TableCell",
       "description": "Gets the table cell that contains the paragraph. Returns a null object if it is not contained in a table cell.",
       "isReadOnly": true,
@@ -285,6 +321,18 @@
     {
       "name": "parentTable",
       "dataType": "Table",
+      "description": "Gets the table that contains the paragraph. Throws if it is not contained in a table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentTableOrNullObject",
+      "dataType": "Table",
       "description": "Gets the table that contains the paragraph. Returns a null object if it is not contained in a table.",
       "isReadOnly": true,
       "enumNameJs": null,
@@ -296,6 +344,18 @@
     },
     {
       "name": "listItem",
+      "dataType": "ListItem",
+      "description": "Gets the ListItem for the paragraph. Throws if the paragraph is not part of a list.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "listItemOrNullObject",
       "dataType": "ListItem",
       "description": "Gets the ListItem for the paragraph. Returns a null object if the paragraph is not part of a list.",
       "isReadOnly": true,
@@ -323,9 +383,10 @@
     {
       "name": "insertInlinePictureFromBase64",
       "returnType": "InlinePicture",
+      "enumNameJs": null,
       "description": "Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
       "syntax": "paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);",
-      "signature": "insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)",
+      "signature": "insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)",
       "restfulName": "insertInlinePictureFromBase64",
       "notes": null,
       "httpSuccessResponse": null,
@@ -341,11 +402,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -354,6 +415,7 @@
     {
       "name": "insertContentControl",
       "returnType": "ContentControl",
+      "enumNameJs": null,
       "description": "Wraps the paragraph object with a rich text content control.",
       "syntax": "paragraphObject.insertContentControl();",
       "signature": "insertContentControl()",
@@ -366,9 +428,10 @@
     {
       "name": "insertText",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
       "syntax": "paragraphObject.insertText(text, insertLocation);",
-      "signature": "insertText(text: string, insertLocation: InsertLocation)",
+      "signature": "insertText(text: string, insertLocation: string)",
       "restfulName": "insertText",
       "notes": null,
       "httpSuccessResponse": null,
@@ -384,11 +447,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -397,9 +460,10 @@
     {
       "name": "insertHtml",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
       "syntax": "paragraphObject.insertHtml(html, insertLocation);",
-      "signature": "insertHtml(html: string, insertLocation: InsertLocation)",
+      "signature": "insertHtml(html: string, insertLocation: string)",
       "restfulName": "insertHtml",
       "notes": null,
       "httpSuccessResponse": null,
@@ -415,11 +479,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -428,9 +492,10 @@
     {
       "name": "insertOoxml",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts OOXML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
       "syntax": "paragraphObject.insertOoxml(ooxml, insertLocation);",
-      "signature": "insertOoxml(ooxml: string, insertLocation: InsertLocation)",
+      "signature": "insertOoxml(ooxml: string, insertLocation: string)",
       "restfulName": "insertOoxml",
       "notes": null,
       "httpSuccessResponse": null,
@@ -446,11 +511,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -459,9 +524,10 @@
     {
       "name": "insertFileFromBase64",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts a document into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
       "syntax": "paragraphObject.insertFileFromBase64(base64File, insertLocation);",
-      "signature": "insertFileFromBase64(base64File: string, insertLocation: InsertLocation)",
+      "signature": "insertFileFromBase64(base64File: string, insertLocation: string)",
       "restfulName": "insertFileFromBase64",
       "notes": null,
       "httpSuccessResponse": null,
@@ -477,11 +543,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -490,9 +556,10 @@
     {
       "name": "insertParagraph",
       "returnType": "Paragraph",
+      "enumNameJs": null,
       "description": "Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.",
       "syntax": "paragraphObject.insertParagraph(paragraphText, insertLocation);",
-      "signature": "insertParagraph(paragraphText: string, insertLocation: InsertLocation)",
+      "signature": "insertParagraph(paragraphText: string, insertLocation: string)",
       "restfulName": "insertParagraph",
       "notes": null,
       "httpSuccessResponse": null,
@@ -508,11 +575,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -521,29 +588,30 @@
     {
       "name": "insertBreak",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.",
       "syntax": "paragraphObject.insertBreak(breakType, insertLocation);",
-      "signature": "insertBreak(breakType: BreakType, insertLocation: InsertLocation)",
+      "signature": "insertBreak(breakType: string, insertLocation: string)",
       "restfulName": "insertBreak",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "breakType",
-          "dataType": "BreakType",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The break type to add to the document.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.BreakType",
           "notes": null
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -552,6 +620,7 @@
     {
       "name": "clear",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.",
       "syntax": "paragraphObject.clear();",
       "signature": "clear()",
@@ -564,6 +633,7 @@
     {
       "name": "delete",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Deletes the paragraph and its content from the document.",
       "syntax": "paragraphObject.delete();",
       "signature": "delete()",
@@ -576,20 +646,21 @@
     {
       "name": "select",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Selects and navigates the Word UI to the paragraph.",
       "syntax": "paragraphObject.select(selectionMode);",
-      "signature": "select(selectionMode: SelectionMode)",
+      "signature": "select(selectionMode: string)",
       "restfulName": "select",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "selectionMode",
-          "dataType": "SelectionMode",
+          "dataType": "string",
           "isCollection": false,
           "description": "Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.",
           "isRequired": false,
-          "enumNameJs": null,
+          "enumNameJs": "Word.SelectionMode",
           "notes": null
         }
       ],
@@ -598,6 +669,7 @@
     {
       "name": "getHtml",
       "returnType": "string",
+      "enumNameJs": null,
       "description": "Gets the HTML representation of the paragraph object.",
       "syntax": "paragraphObject.getHtml();",
       "signature": "getHtml()",
@@ -610,6 +682,7 @@
     {
       "name": "getOoxml",
       "returnType": "string",
+      "enumNameJs": null,
       "description": "Gets the Office Open XML (OOXML) representation of the paragraph object.",
       "syntax": "paragraphObject.getOoxml();",
       "signature": "getOoxml()",
@@ -622,6 +695,7 @@
     {
       "name": "search",
       "returnType": "RangeCollection",
+      "enumNameJs": null,
       "description": "Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.",
       "syntax": "paragraphObject.search(searchText, searchOptions);",
       "signature": "search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)",
@@ -653,20 +727,21 @@
     {
       "name": "getRange",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Gets the whole paragraph, or the starting or ending point of the paragraph, as a range.",
       "syntax": "paragraphObject.getRange(rangeLocation);",
-      "signature": "getRange(rangeLocation: RangeLocation)",
+      "signature": "getRange(rangeLocation: string)",
       "restfulName": "Range",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "rangeLocation",
-          "dataType": "RangeLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Optional. The range location can be 'Whole', 'Start', 'End', 'After' or 'Content'.",
           "isRequired": false,
-          "enumNameJs": null,
+          "enumNameJs": "Word.RangeLocation",
           "notes": null
         }
       ],
@@ -675,6 +750,7 @@
     {
       "name": "split",
       "returnType": "RangeCollection",
+      "enumNameJs": null,
       "description": "Splits the paragraph into child ranges by using delimiters.",
       "syntax": "paragraphObject.split(delimiters, trimDelimiters, trimSpacing);",
       "signature": "split(delimiters: string[], trimDelimiters: bool, trimSpacing: bool)",
@@ -715,9 +791,10 @@
     {
       "name": "insertTable",
       "returnType": "Table",
+      "enumNameJs": null,
       "description": "Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.",
       "syntax": "paragraphObject.insertTable(rowCount, columnCount, insertLocation, values);",
-      "signature": "insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])",
+      "signature": "insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])",
       "restfulName": "insertTable",
       "notes": null,
       "httpSuccessResponse": null,
@@ -742,11 +819,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         },
         {
@@ -764,6 +841,7 @@
     {
       "name": "getTextRanges",
       "returnType": "RangeCollection",
+      "enumNameJs": null,
       "description": "Gets the text ranges in the paragraph by using punctuation marks andor other ending marks.",
       "syntax": "paragraphObject.getTextRanges(endingMarks, trimSpacing);",
       "signature": "getTextRanges(endingMarks: string[], trimSpacing: bool)",
@@ -795,6 +873,7 @@
     {
       "name": "startNewList",
       "returnType": "List",
+      "enumNameJs": null,
       "description": "Starts a new list with this paragraph. Fails if the paragraph is already a list item.",
       "syntax": "paragraphObject.startNewList();",
       "signature": "startNewList()",
@@ -807,6 +886,7 @@
     {
       "name": "attachToList",
       "returnType": "List",
+      "enumNameJs": null,
       "description": "Lets the paragraph join an existing list at the specified level. Fails if the paragraph cannot join the list or if the paragraph is already a list item.",
       "syntax": "paragraphObject.attachToList(listId, level);",
       "signature": "attachToList(listId: number, level: number)",
@@ -838,6 +918,7 @@
     {
       "name": "detachFromList",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Moves this paragraph out of its list, if the paragraph is a list item.",
       "syntax": "paragraphObject.detachFromList();",
       "signature": "detachFromList()",
@@ -850,7 +931,8 @@
     {
       "name": "getNext",
       "returnType": "Paragraph",
-      "description": "Gets the next paragraph.",
+      "enumNameJs": null,
+      "description": "Gets the next paragraph. Throws if the paragraph is the last one.",
       "syntax": "paragraphObject.getNext();",
       "signature": "getNext()",
       "restfulName": "Next",
@@ -860,12 +942,39 @@
       "reqSet": "1.3"
     },
     {
+      "name": "getNextOrNullObject",
+      "returnType": "Paragraph",
+      "enumNameJs": null,
+      "description": "Gets the next paragraph. Returns a null object if the paragraph is the last one.",
+      "syntax": "paragraphObject.getNextOrNullObject();",
+      "signature": "getNextOrNullObject()",
+      "restfulName": "NextOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
       "name": "getPrevious",
       "returnType": "Paragraph",
-      "description": "Gets the previous paragraph.",
+      "enumNameJs": null,
+      "description": "Gets the previous paragraph. Throws if the paragraph is the first one.",
       "syntax": "paragraphObject.getPrevious();",
       "signature": "getPrevious()",
       "restfulName": "Previous",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getPreviousOrNullObject",
+      "returnType": "Paragraph",
+      "enumNameJs": null,
+      "description": "Gets the previous paragraph. Returns a null object if the paragraph is the first one.",
+      "syntax": "paragraphObject.getPreviousOrNullObject();",
+      "signature": "getPreviousOrNullObject()",
+      "restfulName": "PreviousOrNullObject",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,

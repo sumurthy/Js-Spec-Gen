@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.4",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -35,7 +35,8 @@
     {
       "name": "getItem",
       "returnType": "Setting",
-      "description": "Gets a setting object by its key, which is case-sensitive.",
+      "enumNameJs": null,
+      "description": "Gets a setting object by its key, which is case-sensitive. Throws if the setting does not exist.",
       "syntax": "settingCollectionObject.getItem(key);",
       "signature": "getItem(key: string)",
       "restfulName": "Item",
@@ -57,6 +58,7 @@
     {
       "name": "set",
       "returnType": "Setting",
+      "enumNameJs": null,
       "description": "Creates or sets a setting.",
       "syntax": "settingCollectionObject.set(key, value);",
       "signature": "set(key: string, value: object)",
@@ -88,6 +90,7 @@
     {
       "name": "getCount",
       "returnType": "int",
+      "enumNameJs": null,
       "description": "Gets the count of settings.",
       "syntax": "settingCollectionObject.getCount();",
       "signature": "getCount()",
@@ -100,6 +103,7 @@
     {
       "name": "deleteAll",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Deletes all settings in this add-in.",
       "syntax": "settingCollectionObject.deleteAll();",
       "signature": "deleteAll()",
@@ -107,6 +111,29 @@
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
+      "reqSet": "1.4"
+    },
+    {
+      "name": "getItemOrNullObject",
+      "returnType": "Setting",
+      "enumNameJs": null,
+      "description": "Gets a setting object by its key, which is case-sensitive. Returns a null object if the setting does not exist.",
+      "syntax": "settingCollectionObject.getItemOrNullObject(key);",
+      "signature": "getItemOrNullObject(key: string)",
+      "restfulName": "ItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The key that identifies the setting object.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
       "reqSet": "1.4"
     },
     {

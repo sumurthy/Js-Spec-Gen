@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.1",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -35,6 +35,7 @@
     {
       "name": "getItem",
       "returnType": "Paragraph",
+      "enumNameJs": null,
       "description": "Gets a paragraph object by its index in the collection.",
       "syntax": "paragraphCollectionObject.getItem(index);",
       "signature": "getItem(index: number)",
@@ -57,7 +58,8 @@
     {
       "name": "getFirst",
       "returnType": "Paragraph",
-      "description": "Gets the first paragraph in this collection.",
+      "enumNameJs": null,
+      "description": "Gets the first paragraph in this collection. Throws if the collection is empty.",
       "syntax": "paragraphCollectionObject.getFirst();",
       "signature": "getFirst()",
       "restfulName": "First",
@@ -67,12 +69,39 @@
       "reqSet": "1.3"
     },
     {
+      "name": "getFirstOrNullObject",
+      "returnType": "Paragraph",
+      "enumNameJs": null,
+      "description": "Gets the first paragraph in this collection. Returns a null object if the collection is empty.",
+      "syntax": "paragraphCollectionObject.getFirstOrNullObject();",
+      "signature": "getFirstOrNullObject()",
+      "restfulName": "FirstOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
       "name": "getLast",
       "returnType": "Paragraph",
-      "description": "Gets the last paragraph in this collection.",
+      "enumNameJs": null,
+      "description": "Gets the last paragraph in this collection. Throws if the collection is empty.",
       "syntax": "paragraphCollectionObject.getLast();",
       "signature": "getLast()",
       "restfulName": "Last",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getLastOrNullObject",
+      "returnType": "Paragraph",
+      "enumNameJs": null,
+      "description": "Gets the last paragraph in this collection. Returns a null object if the collection is empty.",
+      "syntax": "paragraphCollectionObject.getLastOrNullObject();",
+      "signature": "getLastOrNullObject()",
+      "restfulName": "LastOrNullObject",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,

@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.1",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -45,12 +45,24 @@
     {
       "name": "parentContentControl",
       "dataType": "ContentControl",
-      "description": "Gets the content control that contains the body. Returns a null object if there isn't a parent content control.",
+      "description": "Gets the content control that contains the body. Throws if there isn't a parent content control.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": true,
       "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentContentControlOrNullObject",
+      "dataType": "ContentControl",
+      "description": "Gets the content control that contains the body. Returns a null object if there isn't a parent content control.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
@@ -80,12 +92,12 @@
     },
     {
       "name": "styleBuiltIn",
-      "dataType": "Style",
+      "dataType": "string",
       "description": "Gets or sets the built-in style name for the body. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the \"style\" property.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.Style",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -116,8 +128,20 @@
     },
     {
       "name": "type",
-      "dataType": "BodyType",
+      "dataType": "string",
       "description": "Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'.",
+      "isReadOnly": true,
+      "enumNameJs": "Word.BodyType",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentBody",
+      "dataType": "Body",
+      "description": "Gets the parent body of the body. For example, a table cell body's parent body could be a header. Throws if there isn't a parent body.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -127,9 +151,9 @@
       "notes": null
     },
     {
-      "name": "parentBody",
+      "name": "parentBodyOrNullObject",
       "dataType": "Body",
-      "description": "Gets the parent body of the body. For example, a table cell body's parent body could be a header.",
+      "description": "Gets the parent body of the body. For example, a table cell body's parent body could be a header. Returns a null object if there isn't a parent body.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -165,7 +189,19 @@
     {
       "name": "parentSection",
       "dataType": "Section",
-      "description": "Gets the parent section of the body.",
+      "description": "Gets the parent section of the body. Throws if there isn't a parent section.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentSectionOrNullObject",
+      "dataType": "Section",
+      "description": "Gets the parent section of the body. Returns a null object if there isn't a parent section.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -179,9 +215,10 @@
     {
       "name": "insertText",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
       "syntax": "bodyObject.insertText(text, insertLocation);",
-      "signature": "insertText(text: string, insertLocation: InsertLocation)",
+      "signature": "insertText(text: string, insertLocation: string)",
       "restfulName": "insertText",
       "notes": null,
       "httpSuccessResponse": null,
@@ -197,11 +234,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -210,9 +247,10 @@
     {
       "name": "insertHtml",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
       "syntax": "bodyObject.insertHtml(html, insertLocation);",
-      "signature": "insertHtml(html: string, insertLocation: InsertLocation)",
+      "signature": "insertHtml(html: string, insertLocation: string)",
       "restfulName": "insertHtml",
       "notes": null,
       "httpSuccessResponse": null,
@@ -228,11 +266,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -241,9 +279,10 @@
     {
       "name": "insertOoxml",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.",
       "syntax": "bodyObject.insertOoxml(ooxml, insertLocation);",
-      "signature": "insertOoxml(ooxml: string, insertLocation: InsertLocation)",
+      "signature": "insertOoxml(ooxml: string, insertLocation: string)",
       "restfulName": "insertOoxml",
       "notes": null,
       "httpSuccessResponse": null,
@@ -259,11 +298,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -272,9 +311,10 @@
     {
       "name": "insertParagraph",
       "returnType": "Paragraph",
+      "enumNameJs": null,
       "description": "Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.",
       "syntax": "bodyObject.insertParagraph(paragraphText, insertLocation);",
-      "signature": "insertParagraph(paragraphText: string, insertLocation: InsertLocation)",
+      "signature": "insertParagraph(paragraphText: string, insertLocation: string)",
       "restfulName": "insertParagraph",
       "notes": null,
       "httpSuccessResponse": null,
@@ -290,11 +330,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -303,9 +343,10 @@
     {
       "name": "insertFileFromBase64",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.",
       "syntax": "bodyObject.insertFileFromBase64(base64File, insertLocation);",
-      "signature": "insertFileFromBase64(base64File: string, insertLocation: InsertLocation)",
+      "signature": "insertFileFromBase64(base64File: string, insertLocation: string)",
       "restfulName": "insertFileFromBase64",
       "notes": null,
       "httpSuccessResponse": null,
@@ -321,11 +362,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Replace', 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -334,29 +375,30 @@
     {
       "name": "insertBreak",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Inserts a break at the specified location in the main document. The insertLocation value can be 'Start' or 'End'.",
       "syntax": "bodyObject.insertBreak(breakType, insertLocation);",
-      "signature": "insertBreak(breakType: BreakType, insertLocation: InsertLocation)",
+      "signature": "insertBreak(breakType: string, insertLocation: string)",
       "restfulName": "insertBreak",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "breakType",
-          "dataType": "BreakType",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The break type to add to the body.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.BreakType",
           "notes": null
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -365,6 +407,7 @@
     {
       "name": "insertContentControl",
       "returnType": "ContentControl",
+      "enumNameJs": null,
       "description": "Wraps the body object with a Rich Text content control.",
       "syntax": "bodyObject.insertContentControl();",
       "signature": "insertContentControl()",
@@ -377,9 +420,10 @@
     {
       "name": "insertInlinePictureFromBase64",
       "returnType": "InlinePicture",
+      "enumNameJs": null,
       "description": "Inserts a picture into the body at the specified location. The insertLocation value can be 'Start' or 'End'.",
       "syntax": "bodyObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);",
-      "signature": "insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)",
+      "signature": "insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)",
       "restfulName": "insertInlinePictureFromBase64",
       "notes": null,
       "httpSuccessResponse": null,
@@ -395,11 +439,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -408,6 +452,7 @@
     {
       "name": "clear",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Clears the contents of the body object. The user can perform the undo operation on the cleared content.",
       "syntax": "bodyObject.clear();",
       "signature": "clear()",
@@ -420,20 +465,21 @@
     {
       "name": "select",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Selects the body and navigates the Word UI to it.",
       "syntax": "bodyObject.select(selectionMode);",
-      "signature": "select(selectionMode: SelectionMode)",
+      "signature": "select(selectionMode: string)",
       "restfulName": "select",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "selectionMode",
-          "dataType": "SelectionMode",
+          "dataType": "string",
           "isCollection": false,
           "description": "Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.",
           "isRequired": false,
-          "enumNameJs": null,
+          "enumNameJs": "Word.SelectionMode",
           "notes": null
         }
       ],
@@ -442,6 +488,7 @@
     {
       "name": "search",
       "returnType": "RangeCollection",
+      "enumNameJs": null,
       "description": "Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.",
       "syntax": "bodyObject.search(searchText, searchOptions);",
       "signature": "search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)",
@@ -473,6 +520,7 @@
     {
       "name": "getHtml",
       "returnType": "string",
+      "enumNameJs": null,
       "description": "Gets the HTML representation of the body object.",
       "syntax": "bodyObject.getHtml();",
       "signature": "getHtml()",
@@ -485,6 +533,7 @@
     {
       "name": "getOoxml",
       "returnType": "string",
+      "enumNameJs": null,
       "description": "Gets the OOXML (Office Open XML) representation of the body object.",
       "syntax": "bodyObject.getOoxml();",
       "signature": "getOoxml()",
@@ -497,20 +546,21 @@
     {
       "name": "getRange",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Gets the whole body, or the starting or ending point of the body, as a range.",
       "syntax": "bodyObject.getRange(rangeLocation);",
-      "signature": "getRange(rangeLocation: RangeLocation)",
+      "signature": "getRange(rangeLocation: string)",
       "restfulName": "Range",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "rangeLocation",
-          "dataType": "RangeLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Optional. The range location can be 'Whole', 'Start', 'End', 'After' or 'Content'.",
           "isRequired": false,
-          "enumNameJs": null,
+          "enumNameJs": "Word.RangeLocation",
           "notes": null
         }
       ],
@@ -519,9 +569,10 @@
     {
       "name": "insertTable",
       "returnType": "Table",
+      "enumNameJs": null,
       "description": "Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.",
       "syntax": "bodyObject.insertTable(rowCount, columnCount, insertLocation, values);",
-      "signature": "insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])",
+      "signature": "insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])",
       "restfulName": "insertTable",
       "notes": null,
       "httpSuccessResponse": null,
@@ -546,11 +597,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         },
         {

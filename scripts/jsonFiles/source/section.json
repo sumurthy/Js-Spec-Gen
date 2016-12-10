@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.1",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -29,26 +29,51 @@
       "reqSet": "1.1",
       "isKey": null,
       "notes": null
+    },
+    {
+      "name": "headerFooterFirstPageDifferent",
+      "dataType": "bool",
+      "description": "Gets or sets a value that indicates whether the first page has a different header and footer from the other pages in the section.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.4",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "headerFooterEvenPageDifferent",
+      "dataType": "bool",
+      "description": "Gets or sets a value that indicates whether even-numbered pages have a different header and footer from odd-numbered pages in the section.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.4",
+      "isKey": null,
+      "notes": null
     }
   ],
   "methods": [
     {
       "name": "getHeader",
       "returnType": "Body",
+      "enumNameJs": null,
       "description": "Gets one of the section's headers.",
       "syntax": "sectionObject.getHeader(type);",
-      "signature": "getHeader(type: HeaderFooterType)",
+      "signature": "getHeader(type: string)",
       "restfulName": "Header",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "type",
-          "dataType": "HeaderFooterType",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The type of header to return. This value can be: 'primary', 'firstPage' or 'evenPages'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.HeaderFooterType",
           "notes": null
         }
       ],
@@ -57,20 +82,21 @@
     {
       "name": "getFooter",
       "returnType": "Body",
+      "enumNameJs": null,
       "description": "Gets one of the section's footers.",
       "syntax": "sectionObject.getFooter(type);",
-      "signature": "getFooter(type: HeaderFooterType)",
+      "signature": "getFooter(type: string)",
       "restfulName": "Footer",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "type",
-          "dataType": "HeaderFooterType",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The type of footer to return. This value can be: 'primary', 'firstPage' or 'evenPages'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.HeaderFooterType",
           "notes": null
         }
       ],
@@ -79,10 +105,24 @@
     {
       "name": "getNext",
       "returnType": "Section",
-      "description": "Gets the next section.",
+      "enumNameJs": null,
+      "description": "Gets the next section. Throws if this section is the last one.",
       "syntax": "sectionObject.getNext();",
       "signature": "getNext()",
       "restfulName": "Next",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getNextOrNullObject",
+      "returnType": "Section",
+      "enumNameJs": null,
+      "description": "Gets the next section. Returns a null object if this section is the last one.",
+      "syntax": "sectionObject.getNextOrNullObject();",
+      "signature": "getNextOrNullObject()",
+      "restfulName": "NextOrNullObject",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,

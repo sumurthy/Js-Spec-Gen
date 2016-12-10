@@ -23,7 +23,7 @@ require 'FileUtils'
 
 @processed_files = 0
 @json_files_created = 0
-METADATA_FILE_SOURCE = '../../data/WdJscomApi_1.3.cs'
+METADATA_FILE_SOURCE = '../../data/WdJscomApi_1.4.cs'
 ENUMS = 'jsonFiles/settings/enums.json'
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
 JSONOUTPUT_FOLDER = 'jsonFiles/source/'
@@ -47,8 +47,8 @@ OBJECTKEYS = 'jsonFiles/settings/objectkeys.json'
 @json_object[:info] = {}
 @json_object[:info][:version] = '1.1'
 @json_object[:info][:reqSet] = '1.1'
-@json_object[:info][:addinTypes] = ["Visio"]
-@json_object[:info][:nameSpace] = "Visio"
+@json_object[:info][:addinTypes] = ["Word"]
+@json_object[:info][:nameSpace] = "Word"
 @json_object[:info][:addinHosts] = ["Task pane"]
 @json_object[:info][:title] = 'Office JavaScript Add-in API'
 @json_object[:info][:description] = 'Office JavaScript Add-in API'
@@ -58,7 +58,7 @@ OBJECTKEYS = 'jsonFiles/settings/objectkeys.json'
 # Sub json containers
 # Method = Struct.new(:name, :returnType, :description, :parameters, :syntax, :vbaInfo, :signature)
 # Property = Struct.new(:name, :dataType, :description, :isReadOnly, :enumNameJs, :isCollection, :vbaInfo, :possibleValues, :isRelationship)
-Method = Struct.new(:name, :returnType, :description, :syntax, :signature, :restfulName, :notes, :httpSuccessResponse, :parameters, :reqSet)
+Method = Struct.new(:name, :returnType, :enumNameJs, :description, :syntax, :signature, :restfulName, :notes, :httpSuccessResponse, :parameters, :reqSet)
 Property = Struct.new(:name, :dataType, :description, :isReadOnly, :enumNameJs, :isCollection, :isRelationship, :reqSet, :isKey, :notes)
 ParamStr = Struct.new(:name, :dataType, :isCollection, :description, :isRequired, :enumNameJs, :notes)
 
@@ -69,11 +69,11 @@ def csarray_write (line=nil)
 end
 
 ###
-# Load up all the known existing enums. Remove leading Visio.
+# Load up all the known existing enums. Remove leading Word.
 ##
 @enumHash = {}
 tempEnumHash = JSON.parse File.read(ENUMS)
-@enumHash = Hash[tempEnumHash.map {|k, v| [k.gsub('Visio.',''), v] }]
+@enumHash = Hash[tempEnumHash.map {|k, v| [k.gsub('Word.',''), v] }]
 
 puts @enumHash.keys
 
@@ -157,7 +157,7 @@ end
 
 	## For new object, load its resource and fill the description
 	if line.include?('public interface') || line.include?('public struct')
-		# Get the third Visio
+		# Get the third Word
 		@json_object[:name] = line.split.first(3).join(' ').split.last(1).join(' ').gsub(':','')
 		@json_object[:info][:reqSet] = req_set
 		object_req_set = req_set
@@ -247,7 +247,7 @@ end
 		@json_files_created = @json_files_created + 1
 		# Reset the variables.
 		in_region = false
-		# Bug fix. Caused issue with Visio API.
+		# Bug fix. Caused issue with Word API.
 		member_ahead = false
 		# End bug fix
 		parm_hash_array = []
@@ -263,13 +263,13 @@ end
 		else
 			member_summary = @csarray[i+1].delete!('///').strip
 
-			if member_summary.index('See Visio.') != nil
-				enumName = member_summary[member_summary.index('See Visio.')..-1].split[1]
-				member_summary = member_summary[0,member_summary.index('See Visio.')-1]
+			if member_summary.index('See Word.') != nil
+				enumName = member_summary[member_summary.index('See Word.')..-1].split[1]
+				member_summary = member_summary[0,member_summary.index('See Word.')-1]
 				enumName = enumName.chomp('.')
-			elsif member_summary.index('Refer to Visio.') != nil
-				enumName = member_summary[member_summary.index('Refer to Visio.')..-1].split[2]
-				member_summary = member_summary[0,member_summary.index('Refer to Visio.')-1]
+			elsif member_summary.index('Refer to Word.') != nil
+				enumName = member_summary[member_summary.index('Refer to Word.')..-1].split[2]
+				member_summary = member_summary[0,member_summary.index('Refer to Word.')-1]
 				enumName = enumName.chomp('.')
 			else
 				enumName = nil
@@ -289,13 +289,13 @@ end
 	if line.include?('/// <param name=')
 		param_summary = line.split('>')[1].gsub('</param', '')
 
-		if param_summary.index('See Visio.') != nil
-			enumName = param_summary[param_summary.index('See Visio.')..-1].split[1]
-			param_summary = param_summary[0,param_summary.index('See Visio.')-1]
+		if param_summary.index('See Word.') != nil
+			enumName = param_summary[param_summary.index('See Word.')..-1].split[1]
+			param_summary = param_summary[0,param_summary.index('See Word.')-1]
 			enumName = enumName.chomp('.')
-		elsif param_summary.index('Refer to Visio.') != nil
-			enumName = param_summary[param_summary.index('Refer to Visio.')..-1].split[2]
-			param_summary = param_summary[0,param_summary.index('Refer to Visio.')-1]
+		elsif param_summary.index('Refer to Word.') != nil
+			enumName = param_summary[param_summary.index('Refer to Word.')..-1].split[2]
+			param_summary = param_summary[0,param_summary.index('Refer to Word.')-1]
 			enumName = enumName.chomp('.')
 		else
 			enumName = nil
@@ -347,7 +347,7 @@ end
 		end
 
 		if @enumHash.has_key? proDataType
-			enumName = 'Visio.' + proDataType
+			enumName = 'Word.' + proDataType
 			proDataType = 'string'
 		end
 
@@ -407,7 +407,7 @@ end
 						typeScriptData = typeScriptData[typeScriptData.index('>')+2..-1]
 					end
 				end
-				typeScriptDataArray = typeScriptData.gsub('"','').gsub(')','').gsub('Visio.','').split('|').join(' or ')
+				typeScriptDataArray = typeScriptData.gsub('"','').gsub(')','').gsub('Word.','').split('|').join(' or ')
 				if suffix != ''
 					parm_array[j][:dataType] = "(" + typeScriptDataArray +")" + suffix
 				else
@@ -430,7 +430,7 @@ end
 
 			# If the enum still slips through to the data type, then overwrite and set the enum correctly.
 			if @enumHash.has_key? parm_array[j][:dataType]
-				parm_array[j][:enumNameJs] = 'Visio.' + parm_array[j][:dataType]
+				parm_array[j][:enumNameJs] = 'Word.' + parm_array[j][:dataType]
 				parm_array[j][:dataType]  = 'string'
 			end
 
@@ -490,8 +490,16 @@ end
 
 		restfulName.slice(0,1).capitalize + restfulName.slice(1..-1)
 
+		enumname = nil
+		returnType =  line.split[0]
+		if @enumHash.has_key? line.split[0]
+			enumname = 'Word.' + returnType
+
+		end
+
 		# Create method hash and push the values.
-		method = Method.new(mthd_name, line.split[0], member_summary, syntax, signature, restfulName, nil, nil, parm_hash_array, req_set)
+
+		method = Method.new(mthd_name, line.split[0], enumname, member_summary, syntax, signature, restfulName, nil, nil, parm_hash_array, req_set)
 		method_array.push method.to_h
 
 		# Reset the variables.

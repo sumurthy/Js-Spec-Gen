@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.3",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -104,24 +104,24 @@
     },
     {
       "name": "horizontalAlignment",
-      "dataType": "Alignment",
+      "dataType": "string",
       "description": "Gets and sets the horizontal alignment of the cell. The value can be 'left', 'centered', 'right', or 'justified'.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.Alignment",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
     {
       "name": "verticalAlignment",
-      "dataType": "VerticalAlignment",
+      "dataType": "string",
       "description": "Gets and sets the vertical alignment of the cell. The value can be 'top', 'center' or 'bottom'.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.VerticalAlignment",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -155,20 +155,21 @@
     {
       "name": "insertRows",
       "returnType": "TableRowCollection",
+      "enumNameJs": null,
       "description": "Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.",
       "syntax": "tableCellObject.insertRows(insertLocation, rowCount, values);",
-      "signature": "insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])",
+      "signature": "insertRows(insertLocation: string, rowCount: number, values: string[][])",
       "restfulName": "insertRows",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. It can be 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         },
         {
@@ -195,20 +196,21 @@
     {
       "name": "insertColumns",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.",
       "syntax": "tableCellObject.insertColumns(insertLocation, columnCount, values);",
-      "signature": "insertColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])",
+      "signature": "insertColumns(insertLocation: string, columnCount: number, values: string[][])",
       "restfulName": "insertColumns",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. It can be 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         },
         {
@@ -235,6 +237,7 @@
     {
       "name": "split",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Adds columns to the left or right of the cell, using the existing column as a template. The string values, if specified, are set in the newly inserted rows.",
       "syntax": "tableCellObject.split(rowCount, columnCount);",
       "signature": "split(rowCount: number, columnCount: number)",
@@ -266,6 +269,7 @@
     {
       "name": "deleteRow",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Deletes the row containing this cell.",
       "syntax": "tableCellObject.deleteRow();",
       "signature": "deleteRow()",
@@ -278,6 +282,7 @@
     {
       "name": "deleteColumn",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Deletes the column containing this cell. This is applicable to uniform tables.",
       "syntax": "tableCellObject.deleteColumn();",
       "signature": "deleteColumn()",
@@ -290,20 +295,21 @@
     {
       "name": "getBorder",
       "returnType": "TableBorder",
+      "enumNameJs": null,
       "description": "Gets the border style for the specified border.",
       "syntax": "tableCellObject.getBorder(borderLocation);",
-      "signature": "getBorder(borderLocation: BorderLocation)",
+      "signature": "getBorder(borderLocation: string)",
       "restfulName": "Border",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "borderLocation",
-          "dataType": "BorderLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The border location.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.BorderLocation",
           "notes": null
         }
       ],
@@ -312,6 +318,7 @@
     {
       "name": "getCellPadding",
       "returnType": "float?",
+      "enumNameJs": null,
       "description": "Gets cell padding in points.",
       "syntax": "tableCellObject.getCellPadding(cellPaddingLocation);",
       "signature": "getCellPadding(cellPaddingLocation: CellPaddingLocation)",
@@ -334,6 +341,7 @@
     {
       "name": "setCellPadding",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Sets cell padding in points.",
       "syntax": "tableCellObject.setCellPadding(cellPaddingLocation, cellPadding);",
       "signature": "setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)",
@@ -365,10 +373,24 @@
     {
       "name": "getNext",
       "returnType": "TableCell",
-      "description": "Gets the next cell.",
+      "enumNameJs": null,
+      "description": "Gets the next cell. Throws if this cell is the last one.",
       "syntax": "tableCellObject.getNext();",
       "signature": "getNext()",
       "restfulName": "Next",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getNextOrNullObject",
+      "returnType": "TableCell",
+      "enumNameJs": null,
+      "description": "Gets the next cell. Returns a null object if this cell is the last one.",
+      "syntax": "tableCellObject.getNextOrNullObject();",
+      "signature": "getNextOrNullObject()",
+      "restfulName": "NextOrNullObject",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,

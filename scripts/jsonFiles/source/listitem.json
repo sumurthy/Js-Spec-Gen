@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.3",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -59,7 +59,8 @@
     {
       "name": "getAncestor",
       "returnType": "Paragraph",
-      "description": "Gets the list item parent, or the closest ancestor if the parent does not exist.",
+      "enumNameJs": null,
+      "description": "Gets the list item parent, or the closest ancestor if the parent does not exist. Throws if the list item has no ancester.",
       "syntax": "listItemObject.getAncestor(parentOnly);",
       "signature": "getAncestor(parentOnly: bool)",
       "restfulName": "Ancestor",
@@ -79,8 +80,32 @@
       "reqSet": "1.3"
     },
     {
+      "name": "getAncestorOrNullObject",
+      "returnType": "Paragraph",
+      "enumNameJs": null,
+      "description": "Gets the list item parent, or the closest ancestor if the parent does not exist. Returns a null object if the list item has no ancester.",
+      "syntax": "listItemObject.getAncestorOrNullObject(parentOnly);",
+      "signature": "getAncestorOrNullObject(parentOnly: bool)",
+      "restfulName": "AncestorOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "parentOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Specified only the list item's parent will be returned. The default is false that specifies to get the lowest ancestor.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
       "name": "getDescendants",
       "returnType": "ParagraphCollection",
+      "enumNameJs": null,
       "description": "Gets all descendant list items of the list item.",
       "syntax": "listItemObject.getDescendants(directChildrenOnly);",
       "signature": "getDescendants(directChildrenOnly: bool)",

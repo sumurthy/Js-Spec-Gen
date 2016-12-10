@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.1",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -80,12 +80,12 @@
     },
     {
       "name": "underline",
-      "dataType": "UnderlineType",
+      "dataType": "string",
       "description": "Gets or sets a value that indicates the font's underline type. 'None' if the font is not underlined.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.UnderlineType",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.1",
       "isKey": null,
       "notes": null

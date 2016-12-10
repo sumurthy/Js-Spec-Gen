@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.3",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -35,6 +35,7 @@
     {
       "name": "getItem",
       "returnType": "List",
+      "enumNameJs": null,
       "description": "Gets a list object by its index in the collection.",
       "syntax": "listCollectionObject.getItem(index);",
       "signature": "getItem(index: number)",
@@ -57,7 +58,8 @@
     {
       "name": "getById",
       "returnType": "List",
-      "description": "Gets a list by its identifier.",
+      "enumNameJs": null,
+      "description": "Gets a list by its identifier. Throws if there isn't a list with the identifier in this collection.",
       "syntax": "listCollectionObject.getById(id);",
       "signature": "getById(id: number)",
       "restfulName": "ById",
@@ -77,12 +79,49 @@
       "reqSet": "1.3"
     },
     {
+      "name": "getByIdOrNullObject",
+      "returnType": "List",
+      "enumNameJs": null,
+      "description": "Gets a list by its identifier. Returns a null object if there isn't a list with the identifier in this collection.",
+      "syntax": "listCollectionObject.getByIdOrNullObject(id);",
+      "signature": "getByIdOrNullObject(id: number)",
+      "restfulName": "ByIdOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "id",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. A list identifier.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
       "name": "getFirst",
       "returnType": "List",
-      "description": "Gets the first list in this collection.",
+      "enumNameJs": null,
+      "description": "Gets the first list in this collection. Throws if this collection is empty.",
       "syntax": "listCollectionObject.getFirst();",
       "signature": "getFirst()",
       "restfulName": "First",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getFirstOrNullObject",
+      "returnType": "List",
+      "enumNameJs": null,
+      "description": "Gets the first list in this collection. Returns a null object if this collection is empty.",
+      "syntax": "listCollectionObject.getFirstOrNullObject();",
+      "signature": "getFirstOrNullObject()",
+      "restfulName": "FirstOrNullObject",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,

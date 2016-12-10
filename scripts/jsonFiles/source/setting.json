@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.4",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -47,6 +47,7 @@
     {
       "name": "delete",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Deletes the setting.",
       "syntax": "settingObject.delete();",
       "signature": "delete()",

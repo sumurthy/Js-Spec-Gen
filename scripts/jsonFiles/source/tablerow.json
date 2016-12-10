@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.3",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -69,7 +69,7 @@
     {
       "name": "values",
       "dataType": "string",
-      "description": "Gets and sets the text values in the row, as a 1D Javascript array.",
+      "description": "Gets and sets the text values in the row, as a 2D Javascript array.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
@@ -92,24 +92,24 @@
     },
     {
       "name": "horizontalAlignment",
-      "dataType": "Alignment",
+      "dataType": "string",
       "description": "Gets and sets the horizontal alignment of every cell in the row. The value can be 'left', 'centered', 'right', or 'justified'.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.Alignment",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
     {
       "name": "verticalAlignment",
-      "dataType": "VerticalAlignment",
+      "dataType": "string",
       "description": "Gets and sets the vertical alignment of the cells in the row. The value can be 'top', 'center' or 'bottom'.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.VerticalAlignment",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -155,20 +155,21 @@
     {
       "name": "insertRows",
       "returnType": "TableRowCollection",
+      "enumNameJs": null,
       "description": "Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.",
       "syntax": "tableRowObject.insertRows(insertLocation, rowCount, values);",
-      "signature": "insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])",
+      "signature": "insertRows(insertLocation: string, rowCount: number, values: string[][])",
       "restfulName": "insertRows",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. Where the new rows should be inserted, relative to the current row. It can be 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         },
         {
@@ -195,6 +196,7 @@
     {
       "name": "merge",
       "returnType": "TableCell",
+      "enumNameJs": null,
       "description": "Merges the row into one cell.",
       "syntax": "tableRowObject.merge();",
       "signature": "merge()",
@@ -207,6 +209,7 @@
     {
       "name": "delete",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Deletes the entire row.",
       "syntax": "tableRowObject.delete();",
       "signature": "delete()",
@@ -219,6 +222,7 @@
     {
       "name": "clear",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Clears the contents of the row.",
       "syntax": "tableRowObject.clear();",
       "signature": "clear()",
@@ -231,20 +235,21 @@
     {
       "name": "getBorder",
       "returnType": "TableBorder",
+      "enumNameJs": null,
       "description": "Gets the border style of the cells in the row.",
       "syntax": "tableRowObject.getBorder(borderLocation);",
-      "signature": "getBorder(borderLocation: BorderLocation)",
+      "signature": "getBorder(borderLocation: string)",
       "restfulName": "Border",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "borderLocation",
-          "dataType": "BorderLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The border location.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.BorderLocation",
           "notes": null
         }
       ],
@@ -253,20 +258,21 @@
     {
       "name": "select",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Selects the row and navigates the Word UI to it.",
       "syntax": "tableRowObject.select(selectionMode);",
-      "signature": "select(selectionMode: SelectionMode)",
+      "signature": "select(selectionMode: string)",
       "restfulName": "select",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "selectionMode",
-          "dataType": "SelectionMode",
+          "dataType": "string",
           "isCollection": false,
           "description": "Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.",
           "isRequired": false,
-          "enumNameJs": null,
+          "enumNameJs": "Word.SelectionMode",
           "notes": null
         }
       ],
@@ -275,6 +281,7 @@
     {
       "name": "search",
       "returnType": "RangeCollection",
+      "enumNameJs": null,
       "description": "Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects.",
       "syntax": "tableRowObject.search(searchText, searchOptions);",
       "signature": "search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)",
@@ -306,6 +313,7 @@
     {
       "name": "getCellPadding",
       "returnType": "float?",
+      "enumNameJs": null,
       "description": "Gets cell padding in points.",
       "syntax": "tableRowObject.getCellPadding(cellPaddingLocation);",
       "signature": "getCellPadding(cellPaddingLocation: CellPaddingLocation)",
@@ -328,6 +336,7 @@
     {
       "name": "setCellPadding",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Sets cell padding in points.",
       "syntax": "tableRowObject.setCellPadding(cellPaddingLocation, cellPadding);",
       "signature": "setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)",
@@ -359,10 +368,24 @@
     {
       "name": "getNext",
       "returnType": "TableRow",
-      "description": "Gets the next row.",
+      "enumNameJs": null,
+      "description": "Gets the next row. Throws if this row is the last one.",
       "syntax": "tableRowObject.getNext();",
       "signature": "getNext()",
       "restfulName": "Next",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getNextOrNullObject",
+      "returnType": "TableRow",
+      "enumNameJs": null,
+      "description": "Gets the next row. Returns a null object if this row is the last one.",
+      "syntax": "tableRowObject.getNextOrNullObject();",
+      "signature": "getNextOrNullObject()",
+      "restfulName": "NextOrNullObject",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,

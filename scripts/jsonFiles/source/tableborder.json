@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.3",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -32,12 +32,12 @@
     },
     {
       "name": "type",
-      "dataType": "BorderType",
+      "dataType": "string",
       "description": "Gets or sets the type of the table border.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.BorderType",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null

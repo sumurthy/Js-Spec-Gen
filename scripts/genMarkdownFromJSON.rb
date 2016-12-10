@@ -25,7 +25,7 @@ module SpecMaker
 	HEADER5 = '##### '
 	GETTERSETTERLINK = '_See property access [examples.](#property-access-examples)_'
 	GETTERSETTER = 'Property access examples'
-	PROD_REQUIREMENTS = ['1.1','1.2','1.4']
+	PROD_REQUIREMENTS = ['1.1','1.2','1.3']
 	BACKTOMETHOD = '[Back](#methods)'
 
 	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
@@ -112,30 +112,23 @@ module SpecMaker
 			dataTypePlusLinkFull = prop[:dataType]
 		else
 			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].downcase + ".md)"
-			dataTypePlusLinkFull = "[" + prop[:dataType] + "](resources/" + prop[:dataType].downcase + ".md)"
+			dataTypePlusLinkFull = "[" + prop[:dataType] + "](" + prop[:dataType].downcase + ".md)"
 		end
 
 		if prop[:isCollection]
 			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].chomp('[]').downcase + ".md)"
 		end
 
-		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + "[#{prop[:reqSet]}](../reqset/#{HOST}-requirement.md)" + PIPE +  NEWLINE)
+		printName = prop[:name]
+		if (prop[:enumNameJs] != nil) && (@enumHash.has_key? prop[:enumNameJs])
+			printName = "[" + prop[:name] + "](enums.md)"
+		end
+
+		@mdlines.push (PIPE + printName + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + "[#{prop[:reqSet]}](../requirement-sets/#{HOST}-api-requirement-sets.md)" + PIPE +  NEWLINE)
+
 		if !(PROD_REQUIREMENTS.include? prop[:reqSet])
 			whatType = 'Property'
-			if prop[:isRelationship]
-				whatType = 'Relationship'
-			end
-			# @changes.push  (PIPE + "[#{@resource}](resources/#{@resource.downcase}.md)"  + PIPE + "_#{whatType}_ > " + prop[:name] + PIPE + finalDesc + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=#{@resource}-#{prop[:name]})" + PIPE +  NEWLINE)
-			@changes.push  (PIPE + "[#{@resource}](resources/#{@resource.downcase}.md)"  + PIPE + "_#{whatType}_ > " + prop[:name] + PIPE + finalDesc + PIPE + prop[:reqSet] + PIPE +  NEWLINE)
-
-			# @changes.push "**Resource name:** [#{@resource}](resources/#{@resource.downcase}.md) </br>" + NEWLINE
-			# @changes.push "**What's new:** #{whatType} **#{prop[:name]}** of type **#{dataTypePlusLinkFull}** </br>" + NEWLINE
-			# @changes.push "**Description:** #{finalDesc} </br>" + NEWLINE
-			# @changes.push "**Available in requirement set:** #{prop[:reqSet]} </br>" + NEWLINE
-			# @changes.push "_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{prop[:name]})_ </br>" + NEWLINE
-			# @changes.push NEWLINE
-
-
+			@changes.push  (PIPE + "[#{@resource}](reference/word/#{@resource.downcase}.md)"  + PIPE + "_#{whatType}_ > " + prop[:name] + PIPE + finalDesc + PIPE + prop[:reqSet] + PIPE +  NEWLINE)
 		end
 	end
 
@@ -148,7 +141,7 @@ module SpecMaker
 			dataTypePlusLinkFull = method[:returnType]
 		else
 			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
-			dataTypePlusLinkFull = "[" + method[:returnType] + "](resources/" + method[:returnType].downcase + ".md)"
+			dataTypePlusLinkFull = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
 		end
 		# Add anchor links to method.
 		str = method[:signature].strip
@@ -156,21 +149,17 @@ module SpecMaker
 		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
 		methodPlusLink = "[" + method[:signature].strip + "](#" + str.downcase + ")"
 
-		methodPlusLinkFull = "[" + method[:signature].strip + "](" + "resources/#{@resource.downcase}.md#" + str.downcase + ")"
+		methodPlusLinkFull = "[" + method[:signature].strip + "](" + "#{@resource.downcase}.md#" + str.downcase + ")"
 
-		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "[#{method[:reqSet]}](../reqset/#{HOST}-requirement.md)" + PIPE + NEWLINE)
+		if (method[:enumNameJs] != nil) && (@enumHash.has_key? method[:enumNameJs])
+			dataTypePlusLink = 'Enum string: ' + "[" + method[:returnType] + "](enums.md)"
+		end
+
+
+		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "[#{method[:reqSet]}](../requirement-sets/#{HOST}-api-requirement-sets.md)" + PIPE + NEWLINE)
 
 		if !(PROD_REQUIREMENTS.include? method[:reqSet])
-			#@changes.push (PIPE + "[#{@resource}](resources/#{@resource.downcase}.md)" + PIPE + "_Method_ > " + methodPlusLinkFull  + PIPE + method[:description]  + PIPE + "[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})" + PIPE + NEWLINE)
-			@changes.push (PIPE + "[#{@resource}](resources/#{@resource.downcase}.md)" + PIPE + "_Method_ > " + methodPlusLinkFull  + PIPE + method[:description]  + PIPE + method[:reqSet]  + PIPE + NEWLINE)
-
-			# @changes.push "**Resource name:** [#{@resource}](resources/#{@resource.downcase}.md) </br>" + NEWLINE
-			# @changes.push "**What's new:** Method **#{methodPlusLinkFull}** returning **#{dataTypePlusLinkFull}** </br>" + NEWLINE
-			# @changes.push "**Description:** #{method[:description]} </br>" + NEWLINE
-			# @changes.push "**Available in requirement set:** #{method[:reqSet]} </br>" + NEWLINE
-			# @changes.push "_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-#{@resource}-#{method[:name]})_ </br>" + NEWLINE
-			# @changes.push NEWLINE
-
+			@changes.push (PIPE + "[#{@resource}](reference/word/#{@resource.downcase}.md)" + PIPE + "_Method_ > " + methodPlusLinkFull  + PIPE + method[:description]  + PIPE + method[:reqSet]  + PIPE + NEWLINE)
 		end
 	end
 
@@ -212,6 +201,11 @@ module SpecMaker
 		else
 			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
 		end
+
+		if (method[:enumNameJs] != nil) && (@enumHash.has_key? method[:enumNameJs])
+			dataTypePlusLink = 'Enum string: ' + "[" + method[:returnType] + "](enums.md)"
+		end
+
 		@mdlines.push dataTypePlusLink + NEWLINE
 
 

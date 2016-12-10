@@ -8,9 +8,9 @@
     "version": "1.1",
     "reqSet": "1.3",
     "addinTypes": [
-      "Visio"
+      "Word"
     ],
-    "nameSpace": "Visio",
+    "nameSpace": "Word",
     "addinHosts": [
       "Task pane"
     ],
@@ -69,6 +69,18 @@
     {
       "name": "parentTableCell",
       "dataType": "TableCell",
+      "description": "Gets the table cell that contains this table. Throws if it is not contained in a table cell.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentTableCellOrNullObject",
+      "dataType": "TableCell",
       "description": "Gets the table cell that contains this table. Returns a null object if it is not contained in a table cell.",
       "isReadOnly": true,
       "enumNameJs": null,
@@ -80,6 +92,18 @@
     },
     {
       "name": "parentTable",
+      "dataType": "Table",
+      "description": "Gets the table that contains this table. Throws if it is not contained in a table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "parentTableOrNullObject",
       "dataType": "Table",
       "description": "Gets the table that contains this table. Returns a null object if it is not contained in a table.",
       "isReadOnly": true,
@@ -116,12 +140,12 @@
     },
     {
       "name": "styleBuiltIn",
-      "dataType": "Style",
+      "dataType": "string",
       "description": "Gets or sets the built-in style name for the table. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the \"style\" property.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.Style",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -224,24 +248,24 @@
     },
     {
       "name": "horizontalAlignment",
-      "dataType": "Alignment",
+      "dataType": "string",
       "description": "Gets and sets the horizontal alignment of every cell in the table. The value can be 'left', 'centered', 'right', or 'justified'.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.Alignment",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
     },
     {
       "name": "verticalAlignment",
-      "dataType": "VerticalAlignment",
+      "dataType": "string",
       "description": "Gets and sets the vertical alignment of every cell in the table. The value can be 'top', 'center' or 'bottom'.",
       "isReadOnly": false,
-      "enumNameJs": null,
+      "enumNameJs": "Word.VerticalAlignment",
       "isCollection": false,
-      "isRelationship": true,
+      "isRelationship": false,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -261,7 +285,7 @@
     {
       "name": "parentContentControl",
       "dataType": "ContentControl",
-      "description": "Gets the content control that contains the table.",
+      "description": "Gets the content control that contains the table. Throws if there isn't a parent content control.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
@@ -271,13 +295,13 @@
       "notes": null
     },
     {
-      "name": "height",
-      "dataType": "float",
-      "description": "Gets the height of the table in points.",
+      "name": "parentContentControlOrNullObject",
+      "dataType": "ContentControl",
+      "description": "Gets the content control that contains the table. Returns a null object if there isn't a parent content control.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": false,
+      "isRelationship": true,
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
@@ -295,30 +319,6 @@
       "notes": null
     },
     {
-      "name": "paragraphBefore",
-      "dataType": "Paragraph",
-      "description": "Gets the paragraph before the table.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "paragraphAfter",
-      "dataType": "Paragraph",
-      "description": "Gets the paragraph after the table.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": true,
-      "reqSet": "1.3",
-      "isKey": null,
-      "notes": null
-    },
-    {
       "name": "parentBody",
       "dataType": "Body",
       "description": "Gets the parent body of the table.",
@@ -329,26 +329,39 @@
       "reqSet": "1.3",
       "isKey": null,
       "notes": null
+    },
+    {
+      "name": "alignment",
+      "dataType": "string",
+      "description": "Gets or sets the alignment of the table against the page column. The value can be 'left', 'centered' or 'right'.",
+      "isReadOnly": false,
+      "enumNameJs": "Word.Alignment",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
     }
   ],
   "methods": [
     {
       "name": "addRows",
       "returnType": "TableRowCollection",
+      "enumNameJs": null,
       "description": "Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.",
       "syntax": "tableObject.addRows(insertLocation, rowCount, values);",
-      "signature": "addRows(insertLocation: InsertLocation, rowCount: number, values: string[][])",
+      "signature": "addRows(insertLocation: string, rowCount: number, values: string[][])",
       "restfulName": "addRows",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. It can be 'Start' or 'End'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         },
         {
@@ -375,20 +388,21 @@
     {
       "name": "addColumns",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.",
       "syntax": "tableObject.addColumns(insertLocation, columnCount, values);",
-      "signature": "addColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])",
+      "signature": "addColumns(insertLocation: string, columnCount: number, values: string[][])",
       "restfulName": "addColumns",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. It can be 'Start' or 'End', corresponding to the appropriate side of the table.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         },
         {
@@ -415,7 +429,8 @@
     {
       "name": "getCell",
       "returnType": "TableCell",
-      "description": "Gets the table cell at a specified row and column.",
+      "enumNameJs": null,
+      "description": "Gets the table cell at a specified row and column. Throws if the specified table cell does not exist.",
       "syntax": "tableObject.getCell(rowIndex, cellIndex);",
       "signature": "getCell(rowIndex: number, cellIndex: number)",
       "restfulName": "Cell",
@@ -444,8 +459,41 @@
       "reqSet": "1.3"
     },
     {
+      "name": "getCellOrNullObject",
+      "returnType": "TableCell",
+      "enumNameJs": null,
+      "description": "Gets the table cell at a specified row and column. Returns a null object if the specified table cell does not exist.",
+      "syntax": "tableObject.getCellOrNullObject(rowIndex, cellIndex);",
+      "signature": "getCellOrNullObject(rowIndex: number, cellIndex: number)",
+      "restfulName": "CellOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "rowIndex",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The index of the row.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "cellIndex",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Required. The index of the cell in the row.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
       "name": "mergeCells",
       "returnType": "TableCell",
+      "enumNameJs": null,
       "description": "Merges the cells bounded inclusively by a first and last cell.",
       "syntax": "tableObject.mergeCells(topRow, firstCell, bottomRow, lastCell);",
       "signature": "mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)",
@@ -495,6 +543,7 @@
     {
       "name": "delete",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Deletes the entire table.",
       "syntax": "tableObject.delete();",
       "signature": "delete()",
@@ -507,6 +556,7 @@
     {
       "name": "clear",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Clears the contents of the table.",
       "syntax": "tableObject.clear();",
       "signature": "clear()",
@@ -519,6 +569,7 @@
     {
       "name": "deleteRows",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Deletes specific rows.",
       "syntax": "tableObject.deleteRows(rowIndex, rowCount);",
       "signature": "deleteRows(rowIndex: number, rowCount: number)",
@@ -550,6 +601,7 @@
     {
       "name": "deleteColumns",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Deletes specific columns. This is applicable to uniform tables.",
       "syntax": "tableObject.deleteColumns(columnIndex, columnCount);",
       "signature": "deleteColumns(columnIndex: number, columnCount: number)",
@@ -579,20 +631,9 @@
       "reqSet": "1.3"
     },
     {
-      "name": "autoFitContents",
-      "returnType": "void",
-      "description": "Autofits the table columns to the width of their contents.",
-      "syntax": "tableObject.autoFitContents();",
-      "signature": "autoFitContents()",
-      "restfulName": "autoFitContents",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.3"
-    },
-    {
       "name": "autoFitWindow",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Autofits the table columns to the width of the window.",
       "syntax": "tableObject.autoFitWindow();",
       "signature": "autoFitWindow()",
@@ -603,21 +644,10 @@
       "reqSet": "1.3"
     },
     {
-      "name": "distributeRows",
-      "returnType": "void",
-      "description": "Distributes the row heights evenly.",
-      "syntax": "tableObject.distributeRows();",
-      "signature": "distributeRows()",
-      "restfulName": "distributeRows",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.3"
-    },
-    {
       "name": "distributeColumns",
       "returnType": "void",
-      "description": "Distributes the column widths evenly.",
+      "enumNameJs": null,
+      "description": "Distributes the column widths evenly. This is applicable to uniform tables.",
       "syntax": "tableObject.distributeColumns();",
       "signature": "distributeColumns()",
       "restfulName": "distributeColumns",
@@ -629,20 +659,21 @@
     {
       "name": "getBorder",
       "returnType": "TableBorder",
+      "enumNameJs": null,
       "description": "Gets the border style for the specified border.",
       "syntax": "tableObject.getBorder(borderLocation);",
-      "signature": "getBorder(borderLocation: BorderLocation)",
+      "signature": "getBorder(borderLocation: string)",
       "restfulName": "Border",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "borderLocation",
-          "dataType": "BorderLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The border location.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.BorderLocation",
           "notes": null
         }
       ],
@@ -651,20 +682,21 @@
     {
       "name": "select",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.",
       "syntax": "tableObject.select(selectionMode);",
-      "signature": "select(selectionMode: SelectionMode)",
+      "signature": "select(selectionMode: string)",
       "restfulName": "select",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "selectionMode",
-          "dataType": "SelectionMode",
+          "dataType": "string",
           "isCollection": false,
           "description": "Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.",
           "isRequired": false,
-          "enumNameJs": null,
+          "enumNameJs": "Word.SelectionMode",
           "notes": null
         }
       ],
@@ -673,6 +705,7 @@
     {
       "name": "search",
       "returnType": "RangeCollection",
+      "enumNameJs": null,
       "description": "Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.",
       "syntax": "tableObject.search(searchText, searchOptions);",
       "signature": "search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)",
@@ -704,20 +737,21 @@
     {
       "name": "getRange",
       "returnType": "Range",
+      "enumNameJs": null,
       "description": "Gets the range that contains this table, or the range at the start or end of the table.",
       "syntax": "tableObject.getRange(rangeLocation);",
-      "signature": "getRange(rangeLocation: RangeLocation)",
+      "signature": "getRange(rangeLocation: string)",
       "restfulName": "Range",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "rangeLocation",
-          "dataType": "RangeLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Optional. The range location can be 'Whole', 'Start', 'End' or 'After'.",
           "isRequired": false,
-          "enumNameJs": null,
+          "enumNameJs": "Word.RangeLocation",
           "notes": null
         }
       ],
@@ -726,6 +760,7 @@
     {
       "name": "insertContentControl",
       "returnType": "ContentControl",
+      "enumNameJs": null,
       "description": "Inserts a content control on the table.",
       "syntax": "tableObject.insertContentControl();",
       "signature": "insertContentControl()",
@@ -738,9 +773,10 @@
     {
       "name": "insertTable",
       "returnType": "Table",
+      "enumNameJs": null,
       "description": "Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.",
       "syntax": "tableObject.insertTable(rowCount, columnCount, insertLocation, values);",
-      "signature": "insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])",
+      "signature": "insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])",
       "restfulName": "insertTable",
       "notes": null,
       "httpSuccessResponse": null,
@@ -765,11 +801,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         },
         {
@@ -787,9 +823,10 @@
     {
       "name": "insertParagraph",
       "returnType": "Paragraph",
+      "enumNameJs": null,
       "description": "Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.",
       "syntax": "tableObject.insertParagraph(paragraphText, insertLocation);",
-      "signature": "insertParagraph(paragraphText: string, insertLocation: InsertLocation)",
+      "signature": "insertParagraph(paragraphText: string, insertLocation: string)",
       "restfulName": "insertParagraph",
       "notes": null,
       "httpSuccessResponse": null,
@@ -805,11 +842,11 @@
         },
         {
           "name": "insertLocation",
-          "dataType": "InsertLocation",
+          "dataType": "string",
           "isCollection": false,
           "description": "Required. The value can be 'Before' or 'After'.",
           "isRequired": true,
-          "enumNameJs": null,
+          "enumNameJs": "Word.InsertLocation",
           "notes": null
         }
       ],
@@ -818,6 +855,7 @@
     {
       "name": "getCellPadding",
       "returnType": "float?",
+      "enumNameJs": null,
       "description": "Gets cell padding in points.",
       "syntax": "tableObject.getCellPadding(cellPaddingLocation);",
       "signature": "getCellPadding(cellPaddingLocation: CellPaddingLocation)",
@@ -840,6 +878,7 @@
     {
       "name": "setCellPadding",
       "returnType": "void",
+      "enumNameJs": null,
       "description": "Sets cell padding in points.",
       "syntax": "tableObject.setCellPadding(cellPaddingLocation, cellPadding);",
       "signature": "setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)",
@@ -871,10 +910,76 @@
     {
       "name": "getNext",
       "returnType": "Table",
-      "description": "Gets the next table.",
+      "enumNameJs": null,
+      "description": "Gets the next table. Throws if this table is the last one.",
       "syntax": "tableObject.getNext();",
       "signature": "getNext()",
       "restfulName": "Next",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getNextOrNullObject",
+      "returnType": "Table",
+      "enumNameJs": null,
+      "description": "Gets the next table. Returns a null object if this table is the last one.",
+      "syntax": "tableObject.getNextOrNullObject();",
+      "signature": "getNextOrNullObject()",
+      "restfulName": "NextOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getParagraphBefore",
+      "returnType": "Paragraph",
+      "enumNameJs": null,
+      "description": "Gets the paragraph before the table. Throws if there isn't a paragraph before the table.",
+      "syntax": "tableObject.getParagraphBefore();",
+      "signature": "getParagraphBefore()",
+      "restfulName": "ParagraphBefore",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getParagraphBeforeOrNullObject",
+      "returnType": "Paragraph",
+      "enumNameJs": null,
+      "description": "Gets the paragraph before the table. Returns a null object if there isn't a paragraph before the table.",
+      "syntax": "tableObject.getParagraphBeforeOrNullObject();",
+      "signature": "getParagraphBeforeOrNullObject()",
+      "restfulName": "ParagraphBeforeOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getParagraphAfter",
+      "returnType": "Paragraph",
+      "enumNameJs": null,
+      "description": "Gets the paragraph after the table. Throws if there isn't a paragraph after the table.",
+      "syntax": "tableObject.getParagraphAfter();",
+      "signature": "getParagraphAfter()",
+      "restfulName": "ParagraphAfter",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getParagraphAfterOrNullObject",
+      "returnType": "Paragraph",
+      "enumNameJs": null,
+      "description": "Gets the paragraph after the table. Returns a null object if there isn't a paragraph after the table.",
+      "syntax": "tableObject.getParagraphAfterOrNullObject();",
+      "signature": "getParagraphAfterOrNullObject()",
+      "restfulName": "ParagraphAfterOrNullObject",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
