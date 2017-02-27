@@ -45,7 +45,7 @@
     {
       "name": "borders",
       "dataType": "RangeBorderCollection",
-      "description": "Collection of border objects that apply to the overall range selected",
+      "description": "Collection of border objects that apply to the overall range.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": true,
@@ -57,7 +57,7 @@
     {
       "name": "font",
       "dataType": "RangeFont",
-      "description": "Returns the font object defined on the overall range selected",
+      "description": "Returns the font object defined on the overall range.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,

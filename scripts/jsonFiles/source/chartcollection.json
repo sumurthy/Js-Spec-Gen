@@ -67,12 +67,12 @@
       "reqSet": "1.1"
     },
     {
-      "name": "getItemOrNull",
+      "name": "getItemOrNullObject",
       "returnType": "Chart",
       "description": "Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.",
-      "syntax": "chartCollectionObject.getItemOrNull(name);",
-      "signature": "getItemOrNull(name: string)",
-      "restfulName": "ItemOrNull",
+      "syntax": "chartCollectionObject.getItemOrNullObject(name);",
+      "signature": "getItemOrNullObject(name: string)",
+      "restfulName": "ItemOrNullObject",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
@@ -86,7 +86,7 @@
           "notes": null
         }
       ],
-      "reqSet": "1.3"
+      "reqSet": "1.4"
     },
     {
       "name": "add",
@@ -127,6 +127,18 @@
         }
       ],
       "reqSet": "1.1"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Returns the number of charts in the worksheet.",
+      "syntax": "chartCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
     },
     {
       "name": "getItemAt",

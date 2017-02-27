@@ -67,12 +67,12 @@
       "reqSet": "1.1"
     },
     {
-      "name": "getItemOrNull",
+      "name": "getItemOrNullObject",
       "returnType": "TableColumn",
-      "description": "Gets a column object by Name or ID. If the column does not exist, the returned object's isNull property will be true.",
-      "syntax": "tableColumnCollectionObject.getItemOrNull(key);",
-      "signature": "getItemOrNull(key: number or string)",
-      "restfulName": "ItemOrNull",
+      "description": "Gets a column object by Name or ID. If the column does not exist, will return a null object.",
+      "syntax": "tableColumnCollectionObject.getItemOrNullObject(key);",
+      "signature": "getItemOrNullObject(key: number or string)",
+      "restfulName": "ItemOrNullObject",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
@@ -86,7 +86,19 @@
           "notes": null
         }
       ],
-      "reqSet": "1.3"
+      "reqSet": "1.4"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of columns in the table.",
+      "syntax": "tableColumnCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
     },
     {
       "name": "getItemAt",
@@ -111,11 +123,35 @@
       "reqSet": "1.1"
     },
     {
+      "name": "getFirst",
+      "returnType": "TableColumn",
+      "description": "Gets the first column in the table.",
+      "syntax": "tableColumnCollectionObject.getFirst();",
+      "signature": "getFirst()",
+      "restfulName": "First",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getLast",
+      "returnType": "TableColumn",
+      "description": "Gets the last column in the table.",
+      "syntax": "tableColumnCollectionObject.getLast();",
+      "signature": "getLast()",
+      "restfulName": "Last",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
       "name": "add",
       "returnType": "TableColumn",
       "description": "Adds a new column to the table.",
-      "syntax": "tableColumnCollectionObject.add(index, values);",
-      "signature": "add(index: number, values: (boolean or string or number)[][])",
+      "syntax": "tableColumnCollectionObject.add(index, values, name);",
+      "signature": "add(index: number, values: (boolean or string or number)[][], name: string)",
       "restfulName": "add",
       "notes": null,
       "httpSuccessResponse": null,
@@ -134,6 +170,15 @@
           "dataType": "(boolean or string or number)[][]",
           "isCollection": true,
           "description": "A 2-dimensional array of unformatted values of the table column.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Specifies the name of the new column. If null, the default name will be used.",
           "isRequired": false,
           "enumNameJs": null,
           "notes": null

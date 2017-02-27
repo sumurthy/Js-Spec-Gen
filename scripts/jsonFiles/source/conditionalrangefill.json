@@ -1,12 +1,12 @@
 {
-  "name": "Setting",
-  "description": "Setting represents a key-value pair of a setting persisted to the document.",
+  "name": "ConditionalRangeFill",
+  "description": "Represents the background of a conditional range object.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.4",
+    "reqSet": "1.5",
     "addinTypes": [
       "Excel"
     ],
@@ -19,42 +19,30 @@
   },
   "properties": [
     {
-      "name": "key",
+      "name": "color",
       "dataType": "string",
-      "description": "Returns the key that represents the id of the Setting.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.4",
-      "isKey": null,
-      "notes": null
-    },
-    {
-      "name": "value",
-      "dataType": "object",
-      "description": "Represents the value stored for this setting.",
+      "description": "HTML color code representing the color of the fill, of the form #RRGGBB (e.g. \"FFA500\") or as a named HTML color (e.g. \"orange\").",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.4",
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
     {
-      "name": "delete",
+      "name": "clear",
       "returnType": "void",
-      "description": "Deletes the setting.",
-      "syntax": "settingObject.delete();",
-      "signature": "delete()",
-      "restfulName": "delete",
+      "description": "Resets the fill.",
+      "syntax": "conditionalRangeFillObject.clear();",
+      "signature": "clear()",
+      "restfulName": "clear",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
-      "reqSet": "1.4"
+      "reqSet": "1.5"
     },
     {
       "name": "load",

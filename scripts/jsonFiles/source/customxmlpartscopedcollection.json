@@ -1,12 +1,12 @@
 {
-  "name": "PivotTableCollection",
-  "description": "Represents a collection of all the PivotTables that are part of the workbook or worksheet.",
+  "name": "CustomXmlPartScopedCollection",
+  "description": "A scoped collection of custom XML parts.",
   "isCollection": true,
-  "collectionOf": "PivotTable",
+  "collectionOf": "CustomXmlPart",
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.3",
+    "reqSet": "1.4",
     "addinTypes": [
       "Excel"
     ],
@@ -20,13 +20,13 @@
   "properties": [
     {
       "name": "items",
-      "dataType": "PivotTable[]",
-      "description": "A collection of pivotTable objects.",
+      "dataType": "CustomXmlPartScoped[]",
+      "description": "A collection of customXmlPartScoped objects.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": false,
-      "reqSet": "1.3",
+      "reqSet": "1.4",
       "isKey": null,
       "notes": null
     }
@@ -34,41 +34,19 @@
   "methods": [
     {
       "name": "getItem",
-      "returnType": "PivotTable",
-      "description": "Gets a PivotTable by name.",
-      "syntax": "pivotTableCollectionObject.getItem(name);",
-      "signature": "getItem(name: string)",
+      "returnType": "CustomXmlPart",
+      "description": "Gets a custom XML part based on its ID.",
+      "syntax": "customXmlPartScopedCollectionObject.getItem(id);",
+      "signature": "getItem(id: string)",
       "restfulName": "Item",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
-          "name": "name",
+          "name": "id",
           "dataType": "string",
           "isCollection": false,
-          "description": "Name of the PivotTable to be retrieved.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.3"
-    },
-    {
-      "name": "getItemOrNullObject",
-      "returnType": "PivotTable",
-      "description": "Gets a PivotTable by name. If the PivotTable does not exist, will return a null object.",
-      "syntax": "pivotTableCollectionObject.getItemOrNullObject(name);",
-      "signature": "getItemOrNullObject(name: string)",
-      "restfulName": "ItemOrNullObject",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "name",
-          "dataType": "string",
-          "isCollection": false,
-          "description": "Name of the PivotTable to be retrieved.",
+          "description": "ID of the object to be retrieved.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null
@@ -77,28 +55,62 @@
       "reqSet": "1.4"
     },
     {
-      "name": "refreshAll",
-      "returnType": "void",
-      "description": "Refreshes all the pivot tables in the collection.",
-      "syntax": "pivotTableCollectionObject.refreshAll();",
-      "signature": "refreshAll()",
-      "restfulName": "refreshAll",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.3"
-    },
-    {
       "name": "getCount",
       "returnType": "int",
-      "description": "Gets the number of pivot tables in the collection.",
-      "syntax": "pivotTableCollectionObject.getCount();",
+      "description": "Gets the number of CustomXML parts in this collection.",
+      "syntax": "customXmlPartScopedCollectionObject.getCount();",
       "signature": "getCount()",
       "restfulName": "Count",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
-      "reqSet": "1.5"
+      "reqSet": "1.4"
+    },
+    {
+      "name": "getItemOrNullObject",
+      "returnType": "CustomXmlPart",
+      "description": "Gets a custom XML part based on its ID.",
+      "syntax": "customXmlPartScopedCollectionObject.getItemOrNullObject(id);",
+      "signature": "getItemOrNullObject(id: string)",
+      "restfulName": "ItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "id",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "ID of the object to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
+    },
+    {
+      "name": "getOnlyItem",
+      "returnType": "CustomXmlPart",
+      "description": "If the collection contains exactly one item, this method returns it.",
+      "syntax": "customXmlPartScopedCollectionObject.getOnlyItem();",
+      "signature": "getOnlyItem()",
+      "restfulName": "OnlyItem",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.4"
+    },
+    {
+      "name": "getOnlyItemOrNullObject",
+      "returnType": "CustomXmlPart",
+      "description": "If the collection contains exactly one item, this method returns it.",
+      "syntax": "customXmlPartScopedCollectionObject.getOnlyItemOrNullObject();",
+      "signature": "getOnlyItemOrNullObject()",
+      "restfulName": "OnlyItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.4"
     },
     {
       "name": "load",

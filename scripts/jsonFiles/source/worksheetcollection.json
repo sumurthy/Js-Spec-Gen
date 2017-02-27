@@ -35,7 +35,7 @@
     {
       "name": "getActiveWorksheet",
       "returnType": "Worksheet",
-      "description": "Gets the currently active worksheet in the workbook.",
+      "description": "Gets the currently active worksheet in the workbook. This method is equivalent \"workbook.getActiveWorksheet()\".",
       "syntax": "worksheetCollectionObject.getActiveWorksheet();",
       "signature": "getActiveWorksheet()",
       "restfulName": "ActiveWorksheet",
@@ -67,12 +67,12 @@
       "reqSet": "1.1"
     },
     {
-      "name": "getItemOrNull",
+      "name": "getItemOrNullObject",
       "returnType": "Worksheet",
-      "description": "Gets a worksheet object using its Name or ID. If the worksheet does not exist, the returned object's isNull property will be true.",
-      "syntax": "worksheetCollectionObject.getItemOrNull(key);",
-      "signature": "getItemOrNull(key: string)",
-      "restfulName": "ItemOrNull",
+      "description": "Gets a worksheet object using its Name or ID. If the worksheet does not exist, will return a null object.",
+      "syntax": "worksheetCollectionObject.getItemOrNullObject(key);",
+      "signature": "getItemOrNullObject(key: string)",
+      "restfulName": "ItemOrNullObject",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
@@ -86,7 +86,7 @@
           "notes": null
         }
       ],
-      "reqSet": "1.3"
+      "reqSet": "1.4"
     },
     {
       "name": "add",
@@ -109,6 +109,62 @@
         }
       ],
       "reqSet": "1.1"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of worksheets in the collection.",
+      "syntax": "worksheetCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getFirst",
+      "returnType": "Worksheet",
+      "description": "Gets the first worksheet in the collection.",
+      "syntax": "worksheetCollectionObject.getFirst(visibleOnly);",
+      "signature": "getFirst(visibleOnly: bool)",
+      "restfulName": "First",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "visibleOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getLast",
+      "returnType": "Worksheet",
+      "description": "Gets the last worksheet in the collection.",
+      "syntax": "worksheetCollectionObject.getLast(visibleOnly);",
+      "signature": "getLast(visibleOnly: bool)",
+      "restfulName": "Last",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "visibleOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.5"
     },
     {
       "name": "load",

@@ -1,12 +1,12 @@
 {
-  "name": "Setting",
-  "description": "Setting represents a key-value pair of a setting persisted to the document.",
+  "name": "ConditionalIconCriterion",
+  "description": "Represents an Icon Criterion which contains a type, value, an Operator, and an optional custom icon, if not using an iconset.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.4",
+    "reqSet": "1.5",
     "addinTypes": [
       "Excel"
     ],
@@ -19,43 +19,55 @@
   },
   "properties": [
     {
-      "name": "key",
-      "dataType": "string",
-      "description": "Returns the key that represents the id of the Setting.",
-      "isReadOnly": true,
+      "name": "type",
+      "dataType": "ConditionalFormatIconRuleType",
+      "description": "What the icon conditional formula should be based on.",
+      "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.4",
+      "isRelationship": true,
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "value",
+      "name": "formula",
       "dataType": "object",
-      "description": "Represents the value stored for this setting.",
+      "description": "A number or a formula depending on the type.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.4",
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "operator",
+      "dataType": "ConditionalIconCriterionOperator",
+      "description": "GreaterThan or GreaterThanOrEqual for each of the rule type for the Icon conditional format.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "customIcon",
+      "dataType": "Icon",
+      "description": "The custom icon for the current criterion if different from the default IconSet, else null will be returned.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
-    {
-      "name": "delete",
-      "returnType": "void",
-      "description": "Deletes the setting.",
-      "syntax": "settingObject.delete();",
-      "signature": "delete()",
-      "restfulName": "delete",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.4"
-    },
     {
       "name": "load",
       "returnType": "void",

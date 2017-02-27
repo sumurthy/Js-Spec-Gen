@@ -45,6 +45,18 @@
   ],
   "methods": [
     {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of rows in the table.",
+      "syntax": "tableRowCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
       "name": "getItemAt",
       "returnType": "TableRow",
       "description": "Gets a row based on its position in the collection.",

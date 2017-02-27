@@ -1,6 +1,6 @@
 {
   "name": "RangeViewCollection",
-  "description": "Represents a collection of worksheet objects that are part of the workbook.",
+  "description": "Represents a collection of RangeView objects.",
   "isCollection": true,
   "collectionOf": "RangeView",
   "restPath": null,
@@ -53,6 +53,42 @@
         }
       ],
       "reqSet": "1.3"
+    },
+    {
+      "name": "getFirst",
+      "returnType": "RangeView",
+      "description": "Gets the first RangeView object in the collection.",
+      "syntax": "rangeViewCollectionObject.getFirst();",
+      "signature": "getFirst()",
+      "restfulName": "First",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getLast",
+      "returnType": "RangeView",
+      "description": "Gets the last RangeView object in the collection.",
+      "syntax": "rangeViewCollectionObject.getLast();",
+      "signature": "getLast()",
+      "restfulName": "Last",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of RangeView objects in the collection.",
+      "syntax": "rangeViewCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
     },
     {
       "name": "load",

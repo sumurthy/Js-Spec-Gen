@@ -321,5 +321,13 @@
                 "Less": "",
                 "LessEqual": "",
                 "NotEqual": ""
+        },
+        "Excel.NamedItemScope": {
+                "Equal": "",
+                "Greater": "",
+                "GreaterEqual": "",
+                "Less": "",
+                "LessEqual": "",
+                "NotEqual": ""
         }
 }

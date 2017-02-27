@@ -1,12 +1,12 @@
 {
-  "name": "Setting",
-  "description": "Setting represents a key-value pair of a setting persisted to the document.",
+  "name": "ConditionalColorScaleCriterion",
+  "description": "Represents a Color Scale Criterion which contains a type, value and a color.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.4",
+    "reqSet": "1.5",
     "addinTypes": [
       "Excel"
     ],
@@ -19,43 +19,43 @@
   },
   "properties": [
     {
-      "name": "key",
-      "dataType": "string",
-      "description": "Returns the key that represents the id of the Setting.",
-      "isReadOnly": true,
+      "name": "type",
+      "dataType": "ConditionalFormatColorCriterionType",
+      "description": "What the icon conditional formula should be based on.",
+      "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.4",
+      "isRelationship": true,
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "value",
+      "name": "formula",
       "dataType": "object",
-      "description": "Represents the value stored for this setting.",
+      "description": "A number, a formula, or null (if Type is LowestValue).",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.4",
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "color",
+      "dataType": "string",
+      "description": "HTML color code representation of the color scale color. E.g. #FF0000 represents Red.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
-    {
-      "name": "delete",
-      "returnType": "void",
-      "description": "Deletes the setting.",
-      "syntax": "settingObject.delete();",
-      "signature": "delete()",
-      "restfulName": "delete",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.4"
-    },
     {
       "name": "load",
       "returnType": "void",

@@ -33,7 +33,7 @@
     {
       "name": "options",
       "dataType": "WorksheetProtectionOptions",
-      "description": "Sheet protection options.",
+      "description": "Sheet protection options. Read-Only.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,

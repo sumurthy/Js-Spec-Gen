@@ -1,12 +1,12 @@
 {
-  "name": "RangeBorderCollection",
-  "description": "Represents the border objects that make up the range border.",
+  "name": "ConditionalRangeBorderCollection",
+  "description": "Represents the border objects that make up range border.",
   "isCollection": true,
-  "collectionOf": "RangeBorder",
+  "collectionOf": "ConditionalRangeBorder",
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.1",
+    "reqSet": "1.5",
     "addinTypes": [
       "Excel"
     ],
@@ -26,19 +26,67 @@
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.1",
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "top",
+      "dataType": "ConditionalRangeBorder",
+      "description": "Gets the top border",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "bottom",
+      "dataType": "ConditionalRangeBorder",
+      "description": "Gets the top border",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "left",
+      "dataType": "ConditionalRangeBorder",
+      "description": "Gets the top border",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "right",
+      "dataType": "ConditionalRangeBorder",
+      "description": "Gets the top border",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     },
     {
       "name": "items",
-      "dataType": "RangeBorder[]",
-      "description": "A collection of rangeBorder objects.",
+      "dataType": "ConditionalRangeBorder[]",
+      "description": "A collection of conditionalRangeBorder objects.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": false,
-      "reqSet": "1.1",
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     }
@@ -46,9 +94,9 @@
   "methods": [
     {
       "name": "getItem",
-      "returnType": "RangeBorder",
+      "returnType": "ConditionalRangeBorder",
       "description": "Gets a border object using its name",
-      "syntax": "rangeBorderCollectionObject.getItem(index);",
+      "syntax": "conditionalRangeBorderCollectionObject.getItem(index);",
       "signature": "getItem(index: string)",
       "restfulName": "Item",
       "notes": null,
@@ -60,17 +108,17 @@
           "isCollection": false,
           "description": "Index value of the border object to be retrieved.",
           "isRequired": true,
-          "enumNameJs": "Excel.BorderIndex",
+          "enumNameJs": "Excel.ConditionalRangeBorderIndex",
           "notes": null
         }
       ],
-      "reqSet": "1.1"
+      "reqSet": "1.5"
     },
     {
       "name": "getItemAt",
-      "returnType": "RangeBorder",
+      "returnType": "ConditionalRangeBorder",
       "description": "Gets a border object using its index",
-      "syntax": "rangeBorderCollectionObject.getItemAt(index);",
+      "syntax": "conditionalRangeBorderCollectionObject.getItemAt(index);",
       "signature": "getItemAt(index: number)",
       "restfulName": "ItemAt",
       "notes": null,
@@ -86,7 +134,7 @@
           "notes": null
         }
       ],
-      "reqSet": "1.1"
+      "reqSet": "1.5"
     },
     {
       "name": "load",

@@ -1,12 +1,12 @@
 {
-  "name": "ChartSeriesCollection",
-  "description": "Represents a collection of chart series.",
+  "name": "ConditionalFormatCollection",
+  "description": "Represents a collection of all the conditional formats that are overlap the range.",
   "isCollection": true,
-  "collectionOf": "ChartSeries",
+  "collectionOf": "ConditionalFormat",
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.1",
+    "reqSet": "1.5",
     "addinTypes": [
       "Excel"
     ],
@@ -19,48 +19,24 @@
   },
   "properties": [
     {
-      "name": "count",
-      "dataType": "int",
-      "description": "Returns the number of series in the collection.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.1",
-      "isKey": null,
-      "notes": null
-    },
-    {
       "name": "items",
-      "dataType": "ChartSeries[]",
-      "description": "A collection of chartSeries objects.",
+      "dataType": "ConditionalFormat[]",
+      "description": "A collection of conditionalFormat objects.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": false,
-      "reqSet": "1.1",
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
     {
-      "name": "getCount",
-      "returnType": "int",
-      "description": "Returns the number of series in the collection.",
-      "syntax": "chartSeriesCollectionObject.getCount();",
-      "signature": "getCount()",
-      "restfulName": "Count",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.5"
-    },
-    {
       "name": "getItemAt",
-      "returnType": "ChartSeries",
-      "description": "Retrieves a series based on its position in the collection",
-      "syntax": "chartSeriesCollectionObject.getItemAt(index);",
+      "returnType": "ConditionalFormat",
+      "description": "Returns a conditional format at the given index.",
+      "syntax": "conditionalFormatCollectionObject.getItemAt(index);",
       "signature": "getItemAt(index: number)",
       "restfulName": "ItemAt",
       "notes": null,
@@ -70,36 +46,58 @@
           "name": "index",
           "dataType": "number",
           "isCollection": false,
-          "description": "Index value of the object to be retrieved. Zero-indexed.",
+          "description": "Index of the conditional formats to be retrieved.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null
         }
       ],
-      "reqSet": "1.1"
+      "reqSet": "1.5"
     },
     {
-      "name": "getFirst",
-      "returnType": "ChartSeries",
-      "description": "Gets the first series in the collection.",
-      "syntax": "chartSeriesCollectionObject.getFirst();",
-      "signature": "getFirst()",
-      "restfulName": "First",
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Returns the number of conditional formats in the workbook. Read-only.",
+      "syntax": "conditionalFormatCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
       "reqSet": "1.5"
     },
     {
-      "name": "getLast",
-      "returnType": "ChartSeries",
-      "description": "Gets the last series in the collection.",
-      "syntax": "chartSeriesCollectionObject.getLast();",
-      "signature": "getLast()",
-      "restfulName": "Last",
+      "name": "clearAll",
+      "returnType": "void",
+      "description": "Clears all conditional formats active on the current specified range.",
+      "syntax": "conditionalFormatCollectionObject.clearAll();",
+      "signature": "clearAll()",
+      "restfulName": "clearAll",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "add",
+      "returnType": "ConditionalFormat",
+      "description": "Adds a new conditional format to the collection at the firsttop priority.",
+      "syntax": "conditionalFormatCollectionObject.add(type);",
+      "signature": "add(type: string)",
+      "restfulName": "add",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "type",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The type of conditional format being added.",
+          "isRequired": true,
+          "enumNameJs": "Excel.ConditionalFormatType",
+          "notes": null
+        }
+      ],
       "reqSet": "1.5"
     },
     {

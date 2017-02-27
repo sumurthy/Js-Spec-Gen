@@ -1,8 +1,8 @@
 {
-  "name": "SettingCollection",
-  "description": "Represents a collection of worksheet objects that are part of the workbook.",
+  "name": "CustomXmlPartCollection",
+  "description": "A collection of custom XML parts.",
   "isCollection": true,
-  "collectionOf": "Setting",
+  "collectionOf": "CustomXmlPart",
   "restPath": null,
   "info": {
     "version": "1.1",
@@ -20,8 +20,8 @@
   "properties": [
     {
       "name": "items",
-      "dataType": "Setting[]",
-      "description": "A collection of setting objects.",
+      "dataType": "CustomXmlPart[]",
+      "description": "A collection of customXmlPart objects.",
       "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": true,
@@ -34,19 +34,19 @@
   "methods": [
     {
       "name": "getItem",
-      "returnType": "Setting",
-      "description": "Gets a Setting entry via the key.",
-      "syntax": "settingCollectionObject.getItem(key);",
-      "signature": "getItem(key: string)",
+      "returnType": "CustomXmlPart",
+      "description": "Gets a custom XML part based on its ID.",
+      "syntax": "customXmlPartCollectionObject.getItem(id);",
+      "signature": "getItem(id: string)",
       "restfulName": "Item",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
-          "name": "key",
+          "name": "id",
           "dataType": "string",
           "isCollection": false,
-          "description": "Key of the setting.",
+          "description": "ID of the object to be retrieved.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null
@@ -56,28 +56,19 @@
     },
     {
       "name": "add",
-      "returnType": "Setting",
-      "description": "Sets or adds the specified setting to the workbook.",
-      "syntax": "settingCollectionObject.add(key, value);",
-      "signature": "add(key: string, value: (any)[])",
+      "returnType": "CustomXmlPart",
+      "description": "Adds a new custom XML part to the workbook.",
+      "syntax": "customXmlPartCollectionObject.add(xml);",
+      "signature": "add(xml: string)",
       "restfulName": "add",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
-          "name": "key",
+          "name": "xml",
           "dataType": "string",
           "isCollection": false,
-          "description": "The Key of the new setting.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        },
-        {
-          "name": "value",
-          "dataType": "(any)[]",
-          "isCollection": true,
-          "description": "The Value for the new setting.",
+          "description": "XML content. Must be a valid XML fragment.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null
@@ -86,20 +77,20 @@
       "reqSet": "1.4"
     },
     {
-      "name": "getItemOrNullObject",
-      "returnType": "Setting",
-      "description": "Gets a Setting entry via the key. If the Setting does not exist, will return a null object.",
-      "syntax": "settingCollectionObject.getItemOrNullObject(key);",
-      "signature": "getItemOrNullObject(key: string)",
-      "restfulName": "ItemOrNullObject",
+      "name": "getByNamespace",
+      "returnType": "CustomXmlPartScopedCollection",
+      "description": "Gets a new scoped collection of custom XML parts whose namespaces match the given namespace.",
+      "syntax": "customXmlPartCollectionObject.getByNamespace(namespaceUri);",
+      "signature": "getByNamespace(namespaceUri: string)",
+      "restfulName": "ByNamespace",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
-          "name": "key",
+          "name": "namespaceUri",
           "dataType": "string",
           "isCollection": false,
-          "description": "The key of the setting.",
+          "description": "",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null
@@ -110,14 +101,36 @@
     {
       "name": "getCount",
       "returnType": "int",
-      "description": "Gets the number of Settings in the collection.",
-      "syntax": "settingCollectionObject.getCount();",
+      "description": "Gets the number of CustomXml parts in the collection.",
+      "syntax": "customXmlPartCollectionObject.getCount();",
       "signature": "getCount()",
       "restfulName": "Count",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
-      "reqSet": "1.5"
+      "reqSet": "1.4"
+    },
+    {
+      "name": "getItemOrNullObject",
+      "returnType": "CustomXmlPart",
+      "description": "Gets a custom XML part based on its ID.",
+      "syntax": "customXmlPartCollectionObject.getItemOrNullObject(id);",
+      "signature": "getItemOrNullObject(id: string)",
+      "restfulName": "ItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "id",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "ID of the object to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
     },
     {
       "name": "load",

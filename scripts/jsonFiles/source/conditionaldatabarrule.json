@@ -1,12 +1,12 @@
 {
-  "name": "Setting",
-  "description": "Setting represents a key-value pair of a setting persisted to the document.",
+  "name": "ConditionalDataBarRule",
+  "description": "Represents a rule-type for a Data Bar.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.4",
+    "reqSet": "1.5",
     "addinTypes": [
       "Excel"
     ],
@@ -19,43 +19,31 @@
   },
   "properties": [
     {
-      "name": "key",
+      "name": "type",
       "dataType": "string",
-      "description": "Returns the key that represents the id of the Setting.",
-      "isReadOnly": true,
-      "enumNameJs": null,
+      "description": "The type of rule for the databar.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConditionalFormatRuleType",
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.4",
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "value",
+      "name": "formula",
       "dataType": "object",
-      "description": "Represents the value stored for this setting.",
+      "description": "The formula, if required, to evaluate the databar rule on.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.4",
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
-    {
-      "name": "delete",
-      "returnType": "void",
-      "description": "Deletes the setting.",
-      "syntax": "settingObject.delete();",
-      "signature": "delete()",
-      "restfulName": "delete",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.4"
-    },
     {
       "name": "load",
       "returnType": "void",

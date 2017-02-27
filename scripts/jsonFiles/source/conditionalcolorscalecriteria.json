@@ -1,12 +1,12 @@
 {
-  "name": "Setting",
-  "description": "Setting represents a key-value pair of a setting persisted to the document.",
+  "name": "ConditionalColorScaleCriteria",
+  "description": "Represents the criteria of the color scale.",
   "isCollection": false,
   "collectionOf": null,
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "1.4",
+    "reqSet": "1.5",
     "addinTypes": [
       "Excel"
     ],
@@ -19,43 +19,43 @@
   },
   "properties": [
     {
-      "name": "key",
-      "dataType": "string",
-      "description": "Returns the key that represents the id of the Setting.",
-      "isReadOnly": true,
+      "name": "minimum",
+      "dataType": "ConditionalColorScaleCriterion",
+      "description": "The minimum point Color Scale Criterion.",
+      "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.4",
+      "isRelationship": true,
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     },
     {
-      "name": "value",
-      "dataType": "object",
-      "description": "Represents the value stored for this setting.",
+      "name": "midpoint",
+      "dataType": "ConditionalColorScaleCriterion",
+      "description": "The midpoint Color Scale Criterion if the color scale is a 3-color scale.",
       "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
-      "isRelationship": false,
-      "reqSet": "1.4",
+      "isRelationship": true,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "maximum",
+      "dataType": "ConditionalColorScaleCriterion",
+      "description": "The maximum point Color Scale Criterion.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.5",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
-    {
-      "name": "delete",
-      "returnType": "void",
-      "description": "Deletes the setting.",
-      "syntax": "settingObject.delete();",
-      "signature": "delete()",
-      "restfulName": "delete",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.4"
-    },
     {
       "name": "load",
       "returnType": "void",

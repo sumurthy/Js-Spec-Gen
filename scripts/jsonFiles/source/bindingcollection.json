@@ -67,12 +67,12 @@
       "reqSet": "1.1"
     },
     {
-      "name": "getItemOrNull",
+      "name": "getItemOrNullObject",
       "returnType": "Binding",
-      "description": "Gets a binding object by ID. If the binding object does not exist, the return object's isNull property will be true.",
-      "syntax": "bindingCollectionObject.getItemOrNull(id);",
-      "signature": "getItemOrNull(id: string)",
-      "restfulName": "ItemOrNull",
+      "description": "Gets a binding object by ID. If the binding object does not exist, will return a null object.",
+      "syntax": "bindingCollectionObject.getItemOrNullObject(id);",
+      "signature": "getItemOrNullObject(id: string)",
+      "restfulName": "ItemOrNullObject",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
@@ -86,7 +86,19 @@
           "notes": null
         }
       ],
-      "reqSet": "1.3"
+      "reqSet": "1.4"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of bindings in the collection.",
+      "syntax": "bindingCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
     },
     {
       "name": "getItemAt",

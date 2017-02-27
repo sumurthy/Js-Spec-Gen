@@ -33,12 +33,12 @@
     {
       "name": "name",
       "dataType": "string",
-      "description": "Returns the name of the table column.",
-      "isReadOnly": true,
+      "description": "Represents the name of the table column.",
+      "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.1",
+      "reqSet": "1.1, 1.1 for getting the name; 1.4 for setting it.",
       "isKey": null,
       "notes": null
     },
@@ -127,6 +127,54 @@
       "httpSuccessResponse": null,
       "parameters": null,
       "reqSet": "1.1"
+    },
+    {
+      "name": "getPreviousColumn",
+      "returnType": "TableColumn",
+      "description": "Gets the table column that precedes this one. If there are no previous table columns, this method will throw an error.",
+      "syntax": "tableColumnObject.getPreviousColumn();",
+      "signature": "getPreviousColumn()",
+      "restfulName": "Previous",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getPreviousColumnOrNullObject",
+      "returnType": "TableColumn",
+      "description": "Gets the table column that precedes this one. If there are no previous table columns, this method will return a null objet.",
+      "syntax": "tableColumnObject.getPreviousColumnOrNullObject();",
+      "signature": "getPreviousColumnOrNullObject()",
+      "restfulName": "PreviousColumnOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getNextColumn",
+      "returnType": "TableColumn",
+      "description": "Gets the table column that follows this one. If there are no table columns following this one, this method will throw an error.",
+      "syntax": "tableColumnObject.getNextColumn();",
+      "signature": "getNextColumn()",
+      "restfulName": "Next",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getNextColumnOrNullObject",
+      "returnType": "TableColumn",
+      "description": "Gets the table column that follows this one. If there are no table columns following this one, this method will return a null object.",
+      "syntax": "tableColumnObject.getNextColumnOrNullObject();",
+      "signature": "getNextColumnOrNullObject()",
+      "restfulName": "NextColumnOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
     },
     {
       "name": "delete",

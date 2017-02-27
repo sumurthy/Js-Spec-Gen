@@ -23,7 +23,7 @@ require 'FileUtils'
 
 @processed_files = 0
 @json_files_created = 0
-METADATA_FILE_SOURCE = '../../data/ExcelApi_1.3.cs'
+METADATA_FILE_SOURCE = '../../data/ExcelApi_1.4.cs'
 ENUMS = 'jsonFiles/settings/enums.json'
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
 JSONOUTPUT_FOLDER = 'jsonFiles/source/'
@@ -151,6 +151,7 @@ end
 	if line.strip.start_with?('[ApiSet(')
 		#req_set = line.split('=')[1].gsub(']','').gsub(')','').strip
 		req_set = (parser line[/\(.*?\)/]).keys.join(', ')
+		req_set = '1.5' if req_set.include?('InProgressFeatures')
 	end
 
 	## For new object, load its resource and fill the description
@@ -359,6 +360,7 @@ end
 
 	# If member is a method and has param, capture its optional param and data type.
 	line = line.chomp
+
 	if member_ahead && line.include?(');')  && !line.include?('();') && !line.include?('_')
 		# Capture the first part of the parameter definition inside method definition to see if it has readonly flag and also note down its data type.
 		parm_array_metadata = line[line.index('(')+1, line.index(');')].chomp(');').split(',')
