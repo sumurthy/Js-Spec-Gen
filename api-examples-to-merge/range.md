@@ -65,6 +65,8 @@ Word.run(function (context) {
     selectedRange.insertBookmark("_MyHiddenBookmark");
     var bookmarkNames = selectedRange.getBookmarks(true);
 
+    // Synchronize the document state by executing the queued commands,
+    // and return a promise to indicate task completion.
     return context.sync().then(function () {
         for (var i = 0; i < bookmarkNames.value.length; i++) {
             console.log(bookmarkNames.value[i]);
