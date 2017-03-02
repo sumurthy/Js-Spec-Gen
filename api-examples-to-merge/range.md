@@ -52,6 +52,32 @@ Word.run(function (context) {
 });
 ```
 
+### getBookmarks(includeHidden: bool, includeAdjacent: bool)
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+
+    // Queue commands to get the current selection, add a hidden
+    // bookmark (by starting the name with the "_" character), and
+    // then get the names of the bookmarks in the selection.
+    var selectedRange = context.document.getSelection();
+    selectedRange.insertBookmark("_MyHiddenBookmark");
+    var bookmarkNames = selectedRange.getBookmarks(true);
+
+    return context.sync().then(function () {
+        for (var i = 0; i < bookmarkNames.value.length; i++) {
+            console.log(bookmarkNames.value[i]);
+        }
+    });
+}).catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
 ### getHtml()
 
 ```js
@@ -124,6 +150,35 @@ Word.run(function (context) {
     return context.sync().then(function () {
         console.log('Inserted a page break after the selected text.');
     });
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+### insertBookmark(name: string)
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+
+    // Queue a command to get the current selection and then
+    // create a proxy range object with the results.
+    var range = context.document.getSelection();
+
+    // Queue a commmand to insert a bookmark for the range.
+    range.insertBookmark('MyBookmark');
+
+    // Synchronize the document state by executing the queued commands,
+    // and return a promise to indicate task completion.
+    return context.sync();
+
+        // To see the new bookmark in Word, on the Insert tab
+        // click the Bookmark button.
+
 })
 .catch(function (error) {
     console.log('Error: ' + JSON.stringify(error));
