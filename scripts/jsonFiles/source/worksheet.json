@@ -86,7 +86,7 @@
       "enumNameJs": "Excel.SheetVisibility",
       "isCollection": false,
       "isRelationship": false,
-      "reqSet": "1.1, 1.1 for reading visibility; 1.2 for setting it.",
+      "reqSet": "1.1",
       "isKey": null,
       "notes": null
     },
@@ -184,28 +184,6 @@
       "reqSet": "1.1"
     },
     {
-      "name": "getBoundingRange",
-      "returnType": "Range",
-      "description": "Gets the smallest range object that encompasses the provided ranges. For example, the bounding range between \"B2:C5\" and \"D10:E15\" is \"B2:E16\".",
-      "syntax": "worksheetObject.getBoundingRange(ranges);",
-      "signature": "getBoundingRange(ranges: ()[])",
-      "restfulName": "BoundingRange",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "ranges",
-          "dataType": "()[]",
-          "isCollection": true,
-          "description": "An array of Range objects or addresses, which will be fully encompassed by the resulting range.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.5"
-    },
-    {
       "name": "getRange",
       "returnType": "Range",
       "description": "Gets the range object specified by the address or name.",
@@ -228,158 +206,21 @@
       "reqSet": "1.1"
     },
     {
-      "name": "getRangeR1C1",
-      "returnType": "Range",
-      "description": "Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.",
-      "syntax": "worksheetObject.getRangeR1C1(startRow, startColumn, rowCount, columnCount);",
-      "signature": "getRangeR1C1(startRow: number, startColumn: number, rowCount: number, columnCount: number)",
-      "restfulName": "RangeR1C1",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "startRow",
-          "dataType": "number",
-          "isCollection": false,
-          "description": "Start row (zero-indexed).",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        },
-        {
-          "name": "startColumn",
-          "dataType": "number",
-          "isCollection": false,
-          "description": "Start column (zero-indexed).",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        },
-        {
-          "name": "rowCount",
-          "dataType": "number",
-          "isCollection": false,
-          "description": "Number of rows to include in the range.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        },
-        {
-          "name": "columnCount",
-          "dataType": "number",
-          "isCollection": false,
-          "description": "Number of columns to include in the range.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.5"
-    },
-    {
-      "name": "getPreviousWorksheet",
-      "returnType": "Worksheet",
-      "description": "Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.",
-      "syntax": "worksheetObject.getPreviousWorksheet(visibleOnly);",
-      "signature": "getPreviousWorksheet(visibleOnly: bool)",
-      "restfulName": "Previous",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "visibleOnly",
-          "dataType": "bool",
-          "isCollection": false,
-          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
-          "isRequired": false,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.5"
-    },
-    {
-      "name": "getPreviousWorksheetOrNullObject",
-      "returnType": "Worksheet",
-      "description": "Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.",
-      "syntax": "worksheetObject.getPreviousWorksheetOrNullObject(visibleOnly);",
-      "signature": "getPreviousWorksheetOrNullObject(visibleOnly: bool)",
-      "restfulName": "PreviousWorksheetOrNullObject",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "visibleOnly",
-          "dataType": "bool",
-          "isCollection": false,
-          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
-          "isRequired": false,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.5"
-    },
-    {
-      "name": "getNextWorksheet",
-      "returnType": "Worksheet",
-      "description": "Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.",
-      "syntax": "worksheetObject.getNextWorksheet(visibleOnly);",
-      "signature": "getNextWorksheet(visibleOnly: bool)",
-      "restfulName": "Next",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "visibleOnly",
-          "dataType": "bool",
-          "isCollection": false,
-          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
-          "isRequired": false,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.5"
-    },
-    {
-      "name": "getNextWorksheetOrNullObject",
-      "returnType": "Worksheet",
-      "description": "Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.",
-      "syntax": "worksheetObject.getNextWorksheetOrNullObject(visibleOnly);",
-      "signature": "getNextWorksheetOrNullObject(visibleOnly: bool)",
-      "restfulName": "NextWorksheetOrNullObject",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "visibleOnly",
-          "dataType": "bool",
-          "isCollection": false,
-          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
-          "isRequired": false,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.5"
-    },
-    {
       "name": "getUsedRange",
       "returnType": "Range",
       "description": "The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).",
       "syntax": "worksheetObject.getUsedRange(valuesOnly);",
-      "signature": "getUsedRange(valuesOnly: bool)",
+      "signature": "getUsedRange(valuesOnly: [ApiSet(Version)",
       "restfulName": "UsedRange",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "valuesOnly",
-          "dataType": "bool",
+          "dataType": "[ApiSet(Version",
           "isCollection": false,
           "description": "Considers only cells with values as used cells (ignoring formatting).",
-          "isRequired": false,
+          "isRequired": true,
           "enumNameJs": null,
           "notes": null
         }
@@ -401,33 +242,12 @@
           "dataType": "bool",
           "isCollection": false,
           "description": "Considers only cells with values as used cells.",
-          "isRequired": true,
+          "isRequired": false,
           "enumNameJs": null,
           "notes": null
         }
       ],
       "reqSet": "1.4"
-    },
-    {
-      "name": "load",
-      "returnType": "void",
-      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
-      "syntax": "object.load(param);",
-      "signature": "load(param: object)",
-      "restfulName": null,
-      "notes": null,
-      "parameters": [
-        {
-          "name": "param",
-          "dataType": "object",
-          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
-          "isRequired": false,
-          "enumNameJs": null,
-          "possibleValues": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.1"
     }
   ]
 }

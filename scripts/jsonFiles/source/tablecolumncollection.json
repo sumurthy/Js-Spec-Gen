@@ -98,7 +98,7 @@
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
-      "reqSet": "1.5"
+      "reqSet": "1.4"
     },
     {
       "name": "getItemAt",
@@ -121,30 +121,6 @@
         }
       ],
       "reqSet": "1.1"
-    },
-    {
-      "name": "getFirst",
-      "returnType": "TableColumn",
-      "description": "Gets the first column in the table.",
-      "syntax": "tableColumnCollectionObject.getFirst();",
-      "signature": "getFirst()",
-      "restfulName": "First",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.5"
-    },
-    {
-      "name": "getLast",
-      "returnType": "TableColumn",
-      "description": "Gets the last column in the table.",
-      "syntax": "tableColumnCollectionObject.getLast();",
-      "signature": "getLast()",
-      "restfulName": "Last",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.5"
     },
     {
       "name": "add",
@@ -181,27 +157,6 @@
           "description": "Specifies the name of the new column. If null, the default name will be used.",
           "isRequired": false,
           "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.1, 1.1 requires an index smaller than the total column count; 1.4 allows index to be optional (null or -1"
-    },
-    {
-      "name": "load",
-      "returnType": "void",
-      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
-      "syntax": "object.load(param);",
-      "signature": "load(param: object)",
-      "restfulName": null,
-      "notes": null,
-      "parameters": [
-        {
-          "name": "param",
-          "dataType": "object",
-          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
-          "isRequired": false,
-          "enumNameJs": null,
-          "possibleValues": null,
           "notes": null
         }
       ],

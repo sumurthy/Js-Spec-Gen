@@ -55,25 +55,16 @@
       "reqSet": "1.1"
     },
     {
-      "name": "load",
+      "name": "suspendCalculationUntilNextSync",
       "returnType": "void",
-      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
-      "syntax": "object.load(param);",
-      "signature": "load(param: object)",
-      "restfulName": null,
+      "description": "Suspends calculation until the next \"context.sync()\" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.",
+      "syntax": "applicationObject.suspendCalculationUntilNextSync();",
+      "signature": "suspendCalculationUntilNextSync()",
+      "restfulName": "suspendCalculationUntilNextSync",
       "notes": null,
-      "parameters": [
-        {
-          "name": "param",
-          "dataType": "object",
-          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
-          "isRequired": false,
-          "enumNameJs": null,
-          "possibleValues": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.1"
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.4"
     }
   ]
 }

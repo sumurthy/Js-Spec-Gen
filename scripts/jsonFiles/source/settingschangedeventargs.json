@@ -17,6 +17,19 @@
     "title": "Office JavaScript Add-in API",
     "description": "Office JavaScript Add-in API"
   },
-  "properties": null,
+  "properties": [
+    {
+      "name": "settings",
+      "dataType": "SettingCollection",
+      "description": "Gets the Setting object that represents the binding that raised the SettingsChanged event",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.4",
+      "isKey": null,
+      "notes": null
+    }
+  ],
   "methods": null
 }

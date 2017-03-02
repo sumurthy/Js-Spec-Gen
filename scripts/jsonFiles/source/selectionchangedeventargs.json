@@ -6,7 +6,7 @@
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "ApiSet.PolyfillableDownTo1_1, 1.3",
+    "reqSet": "1.1",
     "addinTypes": [
       "Excel"
     ],
@@ -17,6 +17,19 @@
     "title": "Office JavaScript Add-in API",
     "description": "Office JavaScript Add-in API"
   },
-  "properties": null,
+  "properties": [
+    {
+      "name": "workbook",
+      "dataType": "Workbook",
+      "description": "Gets the workbook object that raised the SelectionChanged event.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
   "methods": null
 }

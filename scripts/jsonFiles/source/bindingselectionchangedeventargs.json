@@ -6,7 +6,7 @@
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "ApiSet.PolyfillableDownTo1_1, 1.3",
+    "reqSet": "1.1",
     "addinTypes": [
       "Excel"
     ],
@@ -17,6 +17,67 @@
     "title": "Office JavaScript Add-in API",
     "description": "Office JavaScript Add-in API"
   },
-  "properties": null,
+  "properties": [
+    {
+      "name": "binding",
+      "dataType": "Binding",
+      "description": "Gets the Binding object that represents the binding that raised the SelectionChanged event.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "startRow",
+      "dataType": "int",
+      "description": "Gets the index of the first row of the selection (zero-based).",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "startColumn",
+      "dataType": "int",
+      "description": "Gets the index of the first column of the selection (zero-based).",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rowCount",
+      "dataType": "int",
+      "description": "Gets the number of rows selected.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "columnCount",
+      "dataType": "int",
+      "description": "Gets the number of columns selected.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
   "methods": null
 }

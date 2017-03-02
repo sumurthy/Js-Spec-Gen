@@ -33,18 +33,6 @@
       "notes": null
     },
     {
-      "name": "customXmlParts",
-      "dataType": "CustomXmlPartCollection",
-      "description": "Represents the collection of custom XML parts contained by this workbook.",
-      "isReadOnly": true,
-      "enumNameJs": null,
-      "isCollection": true,
-      "isRelationship": true,
-      "reqSet": "1.4",
-      "isKey": null,
-      "notes": null
-    },
-    {
       "name": "functions",
       "dataType": "Functions",
       "description": "Represents Excel application instance that contains this workbook.",
@@ -131,18 +119,6 @@
   ],
   "methods": [
     {
-      "name": "getActiveWorksheet",
-      "returnType": "Worksheet",
-      "description": "Gets the currently active worksheet in the workbook. This method is equivalent to \"worksheets.getActiveWorksheet()\".",
-      "syntax": "workbookObject.getActiveWorksheet();",
-      "signature": "getActiveWorksheet()",
-      "restfulName": "ActiveWorksheet",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": null,
-      "reqSet": "1.5"
-    },
-    {
       "name": "getSelectedRange",
       "returnType": "Range",
       "description": "Gets the currently selected range from the workbook.",
@@ -152,49 +128,6 @@
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
-      "reqSet": "1.1"
-    },
-    {
-      "name": "getRange",
-      "returnType": "Range",
-      "description": "Gets the range object specified by the address or name.",
-      "syntax": "workbookObject.getRange(address);",
-      "signature": "getRange(address: string)",
-      "restfulName": "Range",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "address",
-          "dataType": "string",
-          "isCollection": false,
-          "description": "The address or the name of the range. If the sheet name is not specified, the currently-active worksheet is assumed.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "1.5"
-    },
-    {
-      "name": "load",
-      "returnType": "void",
-      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
-      "syntax": "object.load(param);",
-      "signature": "load(param: object)",
-      "restfulName": null,
-      "notes": null,
-      "parameters": [
-        {
-          "name": "param",
-          "dataType": "object",
-          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
-          "isRequired": false,
-          "enumNameJs": null,
-          "possibleValues": null,
-          "notes": null
-        }
-      ],
       "reqSet": "1.1"
     }
   ]

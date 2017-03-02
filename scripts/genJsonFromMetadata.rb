@@ -24,6 +24,7 @@ require 'FileUtils'
 @processed_files = 0
 @json_files_created = 0
 METADATA_FILE_SOURCE = '../../data/ExcelApi_1.4.cs'
+#METADATA_FILE_SOURCE = '../../data/1.5.cs'
 ENUMS = 'jsonFiles/settings/enums.json'
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
 JSONOUTPUT_FOLDER = 'jsonFiles/source/'
@@ -151,7 +152,7 @@ end
 	if line.strip.start_with?('[ApiSet(')
 		#req_set = line.split('=')[1].gsub(']','').gsub(')','').strip
 		req_set = (parser line[/\(.*?\)/]).keys.join(', ')
-		req_set = '1.5' if req_set.include?('InProgressFeatures')
+		req_set = req_set.split(',')[0]
 	end
 
 	## For new object, load its resource and fill the description
@@ -174,16 +175,16 @@ end
 		@member_summary = ''
 	end
 
-	if line.strip.start_with?('[ClientCallableComMember', '[ClientCallableOperation')
+	if line.strip.start_with?('[ClientCallableComMember', '[ClientCallableOperation', '[ApiSet(Version') && in_region
 		member_ahead = true
 		restfulName = nil
 		# Extract the Restfull name, which usually strips off get prefix from method names.
-		if line.include?('RESTfulName')
-			lineSplitArray = line.split(',')
-			restNameIndex = lineSplitArray.index {|w| w.include?('RESTfulName')}
-			restfulName = lineSplitArray[restNameIndex].split('=')[1].gsub('"','').gsub(')','').gsub(']','').strip
-
-		end
+		# if line.include?('RESTfulName')
+		# 	lineSplitArray = line.split(',')
+		# 	restNameIndex = lineSplitArray.index {|w| w.include?('RESTfulName')}
+		# 	restfulName = lineSplitArray[restNameIndex].split('=')[1].gsub('"','').gsub(')','').gsub(']','').strip
+		#
+		# end
 	end
 
 
@@ -222,16 +223,22 @@ end
 		end
 
 		# Add the .load method to the method array.
-		if property_array.length == 0
-			if method_array.length == 0
-				@json_object[:methods] = nil
-			else
-				@json_object[:methods] = method_array
-			end
+		if method_array.length == 0
+			@json_object[:methods] = nil
 		else
-			method_array.push @loadMethodHash
 			@json_object[:methods] = method_array
 		end
+
+		# if property_array.length == 0
+		# 	if method_array.length == 0
+		# 		@json_object[:methods] = nil
+		# 	else
+		# 		@json_object[:methods] = method_array
+		# 	end
+		# # else
+		# # 	method_array.push @loadMethodHash
+		# # 	@json_object[:methods] = method_array
+		# end
 
 		# Seed the restPath if its the parent object (workbook)
 		if @json_object[:name] == 'Workbook'
@@ -310,6 +317,7 @@ end
 
 	# Presence of { would indicate that it is a property or a relation
 	if member_ahead && !line.include?('_') && line.include?('{')
+		line = line.gsub('public ', '')
 		prop_name = line.split[1]
 		prop_name = uncapitalize prop_name
 		member_ahead = false
@@ -360,7 +368,6 @@ end
 
 	# If member is a method and has param, capture its optional param and data type.
 	line = line.chomp
-
 	if member_ahead && line.include?(');')  && !line.include?('();') && !line.include?('_')
 		# Capture the first part of the parameter definition inside method definition to see if it has readonly flag and also note down its data type.
 		parm_array_metadata = line[line.index('(')+1, line.index(');')].chomp(');').split(',')
@@ -441,11 +448,13 @@ end
 
 	# If it's a method, dump its informaiton
 	if member_ahead && !line.include?('_') && line.include?(');')
+
 		#Method = Struct.new(:name, :returnType, :description, :parameters)
 		#@json_object[:methods] = []
 		member_ahead = false
 		temp = line.split[1]
 		mthd_name = temp[0,temp.index('(')]
+
 		mthd_name = uncapitalize mthd_name
 		if parm_hash_array.length == 0
 			parm_hash_array = nil
