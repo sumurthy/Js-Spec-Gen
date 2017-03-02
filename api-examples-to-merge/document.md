@@ -1,3 +1,90 @@
+### deleteBookmark(name: string)
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Assume the document has a header "Chapter 1" which has been made into 
+    // a bookmark named "ch1".
+    
+    // Queue a command to delete the bookmark.
+    context.document.deleteBookmark("ch1");
+    
+    // Synchronize the document state by executing the queued commands, 
+    // and return a promise to indicate task completion.
+    return context.sync();
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+### getBookmarkRange(name: string)
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Assume the document has a header "Chapter 1" which has been made into 
+    // a bookmark named "ch1".
+    
+    // Create a range proxy object for the bookmark.
+    var bookmarkRange = context.document.getBookmarkRange("ch1");
+    
+    // Queue a command to load the range text property.
+    context.load(bookmarkRange, 'text');
+    
+    // Synchronize the document state by executing the queued commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+    
+        // Log "Chapter 1".
+        console.log(JSON.stringify(bookmarkRange.text));
+    });
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+### getBookmarkRangeOrNull(name: string)
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+    
+    // Create a range proxy object for the bookmark.
+    var bookmarkRange = context.document.getBookmarkRangeOrNullObject("ch2");
+    
+    // Queue a command to load the range text property.
+    context.load(bookmarkRange, 'text');
+    
+    // Synchronize the document state by executing the queued commands, 
+    // and return a promise to indicate task completion.
+    return context.sync()
+        .then(function () {
+            if (bookmarkRange.isNullObject) {
+                console.log("There is no such bookmark.");
+            }
+            else {
+                console.log(JSON.stringify(bookmarkRange.text));
+            }
+    });
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
 ### getSelection()
 
 ```js
