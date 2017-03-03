@@ -53,7 +53,7 @@ Word.run(function (context) {
 });
 ```
 
-### getBookmarkRangeOrNull(name: string)
+### getBookmarkRangeOrNullObject(name: string)
 
 ```js
 // Run a batch operation against the Word object model.
