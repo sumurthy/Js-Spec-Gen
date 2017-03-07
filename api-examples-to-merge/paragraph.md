@@ -101,6 +101,92 @@ Word.run(function (context) {
 });
 ```
 
+
+### getnextOrNullObject()
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+
+    // Queue a commmand to load the text property for all of the paragraphs.
+    context.load(paragraphs, 'text');
+
+    // Synchronize the document state by executing the queued commands,
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+
+        // Queue commands to create a proxy object for the second paragraph.
+        var nextParagraph = paragraphs.items[0].getNextOrNullObject();
+
+        // Queue a command to load the text of the next paragraph.
+        context.load(nextParagraph, 'text');
+
+        // Synchronize the document state by executing the queued commands,
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            if (nextParagraph.isNullObject) {
+                console.log('There are no more paragraphs in the document.');
+            } else {
+                console.log('The next paragraph is: ' + nextParagraph.text);
+            }                    
+        });
+    });
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+
+### getPreviousOrNullObject()
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+
+    // Create a proxy object for the paragraphs collection.
+    var paragraphs = context.document.body.paragraphs;
+
+    // Queue a commmand to load the text property for all of the paragraphs.
+    context.load(paragraphs, 'text');
+
+    // Synchronize the document state by executing the queued commands,
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+
+        // Queue commands to create a proxy object for the next-to-last paragraph.
+        var indexOfLastParagraph = paragraphs.items.length - 1;
+        var precedingParagraph = paragraphs.items[indexOfLastParagraph].getPreviousOrNullObject();
+
+        // Queue a command to load the text of the preceding paragraph.
+        context.load(precedingParagraph, 'text');
+
+        // Synchronize the document state by executing the queued commands,
+        // and return a promise to indicate task completion.
+        return context.sync().then(function () {
+            if (precedingParagraph.isNullObject) {
+                console.log('There are no paragraphs before the current one.');
+            } else {
+                console.log('The preceding paragraph is: ' + precedingParagraph.text);
+            }                    
+        });
+    });
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+
 ### getOoxml()
 
 ```js
