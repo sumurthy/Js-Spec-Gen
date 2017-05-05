@@ -25,6 +25,37 @@ Word.run(function (context) {
 });
 ```
 
+### getByIdOrNullObject(id: number)
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+
+	// Create a proxy object for the content control that contains a specific id.
+    var contentControl = context.document.contentControls.getByIdOrNullObject(30086310);
+
+    // Queue a command to load the text property for a content control.
+    context.load(contentControl, 'text');
+
+    // Synchronize the document state by executing the queued commands,
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        if (contentControl.isNullObject) {
+            console.log('There is no content control with that ID.')
+        } else {
+            console.log('The content control with that ID has been found in this document.');
+        }
+    });
+})
+.catch(function (error) {
+	console.log('Error: ' + JSON.stringify(error));
+	if (error instanceof OfficeExtension.Error) {
+		console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+	}
+});
+```
+
+
 ### getByTag(tag: string)
 
 ```js
@@ -94,6 +125,37 @@ Word.run(function (context) {
 *Additional information*
 
 The [Word-Add-in-DocumentAssembly][contentControls.getByTitle] sample has another example of using the getByTitle method.
+
+### getFirstOrnullObject()
+
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (context) {
+
+    // Create a proxy object for the first content control in the document.
+	var contentControl = context.document.contentControls.getFirstOrNullObject();
+
+    // Queue a command to load the text property for a content control.
+    context.load(contentControl, 'text');
+
+    // Synchronize the document state by executing the queued commands,
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+        if (contentControl.isNullObject) {
+            console.log('There are no content controls in this document.')
+        } else {
+            console.log('The first content control has been found in this document.');
+        }
+    });
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
 
 ### load(param: object)
 
