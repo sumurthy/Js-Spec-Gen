@@ -33,6 +33,18 @@
       "notes": null
     },
     {
+      "name": "customXmlParts",
+      "dataType": "CustomXmlPartCollection",
+      "description": "Represents the collection of custom XML parts contained by this workbook.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
       "name": "functions",
       "dataType": "Functions",
       "description": "Represents Excel application instance that contains this workbook.",
@@ -113,6 +125,18 @@
       "isCollection": true,
       "isRelationship": true,
       "reqSet": "1.4",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "test",
+      "dataType": "Test",
+      "description": "For internal use only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
       "isKey": null,
       "notes": null
     }

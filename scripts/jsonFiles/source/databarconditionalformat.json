@@ -1,0 +1,119 @@
+{
+  "name": "DataBarConditionalFormat",
+  "description": "Represents an Excel Conditional Data Bar Type.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.6",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "showDataBarOnly",
+      "dataType": "bool",
+      "description": "If true, hides the values from the cells where the data bar is applied.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "axisFormat",
+      "dataType": "string",
+      "description": "Representation of how the axis is determined for an Excel data bar.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConditionalDataBarAxisFormat",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "axisColor",
+      "dataType": "string",
+      "description": "HTML color code representing the color of the Axis line, of the form #RRGGBB (e.g. \"FFA500\") or as a named HTML color (e.g. \"orange\").",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "barDirection",
+      "dataType": "string",
+      "description": "Represents the direction that the data bar graphic should be based on.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConditionalDataBarDirection",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "positiveFormat",
+      "dataType": "ConditionalDataBarPositiveFormat",
+      "description": "Representation of all values to the right of the axis in an Excel data bar.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "negativeFormat",
+      "dataType": "ConditionalDataBarNegativeFormat",
+      "description": "Representation of all values to the left of the axis in an Excel data bar.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "lowerBoundRule",
+      "dataType": "ConditionalDataBarRule",
+      "description": "The rule for what consistutes the lower bound (and how to calculate it, if applicable) for a data bar.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "upperBoundRule",
+      "dataType": "ConditionalDataBarRule",
+      "description": "The rule for what constitutes the upper bound (and how to calculate it, if applicable) for a data bar.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

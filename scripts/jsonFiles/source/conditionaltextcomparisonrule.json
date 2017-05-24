@@ -1,0 +1,47 @@
+{
+  "name": "ConditionalTextComparisonRule",
+  "description": "Represents a Cell Value Conditional Format Rule",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.6",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "operator",
+      "dataType": "string",
+      "description": "The operator of the text conditional format.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConditionalTextOperator",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "text",
+      "dataType": "string",
+      "description": "The Text value of conditional format.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

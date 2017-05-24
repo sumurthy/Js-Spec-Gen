@@ -193,14 +193,14 @@
       "returnType": "void",
       "description": "Resets the source data for the chart.",
       "syntax": "chartObject.setData(sourceData, seriesBy);",
-      "signature": "setData(sourceData: Range, seriesBy: string)",
+      "signature": "setData(sourceData: object, seriesBy: string)",
       "restfulName": "setData",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "sourceData",
-          "dataType": "Range",
+          "dataType": "object",
           "isCollection": false,
           "description": "The Range object corresponding to the source data.",
           "isRequired": true,
@@ -224,14 +224,14 @@
       "returnType": "void",
       "description": "Positions the chart relative to cells on the worksheet.",
       "syntax": "chartObject.setPosition(startCell, endCell);",
-      "signature": "setPosition(startCell: Range or string, endCell: Range or string)",
+      "signature": "setPosition(startCell: object, endCell: object)",
       "restfulName": "setPosition",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "startCell",
-          "dataType": "Range or string",
+          "dataType": "object",
           "isCollection": false,
           "description": "The start cell. This is where the chart will be moved to. The start cell is the top-left or top-right cell, depending on the user's right-to-left display settings.",
           "isRequired": true,
@@ -240,7 +240,7 @@
         },
         {
           "name": "endCell",
-          "dataType": "Range or string",
+          "dataType": "object",
           "isCollection": false,
           "description": "(Optional) The end cell. If specified, the chart's width and height will be set to fully cover up this cell/range.",
           "isRequired": false,

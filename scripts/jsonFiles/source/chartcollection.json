@@ -93,7 +93,7 @@
       "returnType": "Chart",
       "description": "Creates a new chart.",
       "syntax": "chartCollectionObject.add(type, sourceData, seriesBy);",
-      "signature": "add(type: string, sourceData: Range, seriesBy: string)",
+      "signature": "add(type: string, sourceData: object, seriesBy: string)",
       "restfulName": "add",
       "notes": null,
       "httpSuccessResponse": null,
@@ -109,7 +109,7 @@
         },
         {
           "name": "sourceData",
-          "dataType": "Range",
+          "dataType": "object",
           "isCollection": false,
           "description": "The Range object corresponding to the source data.",
           "isRequired": true,

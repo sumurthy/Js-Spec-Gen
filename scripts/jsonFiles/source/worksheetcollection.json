@@ -124,13 +124,57 @@
           "name": "visibleOnly",
           "dataType": "bool",
           "isCollection": false,
-          "description": "Returns only visible worksheets if set to true. ",
+          "description": "Considers only the visible cells.",
           "isRequired": false,
           "enumNameJs": null,
           "notes": null
         }
       ],
       "reqSet": "1.4"
+    },
+    {
+      "name": "getFirst",
+      "returnType": "Worksheet",
+      "description": "Gets the first worksheet in the collection.",
+      "syntax": "worksheetCollectionObject.getFirst(visibleOnly);",
+      "signature": "getFirst(visibleOnly: bool)",
+      "restfulName": "First",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "visibleOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getLast",
+      "returnType": "Worksheet",
+      "description": "Gets the last worksheet in the collection.",
+      "syntax": "worksheetCollectionObject.getLast(visibleOnly);",
+      "signature": "getLast(visibleOnly: bool)",
+      "restfulName": "Last",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "visibleOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.5"
     }
   ]
 }

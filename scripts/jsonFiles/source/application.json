@@ -55,16 +55,16 @@
       "reqSet": "1.1"
     },
     {
-      "name": "suspendCalculationUntilNextSync",
+      "name": "suspendApiCalculationUntilNextSync",
       "returnType": "void",
       "description": "Suspends calculation until the next \"context.sync()\" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.",
-      "syntax": "applicationObject.suspendCalculationUntilNextSync();",
-      "signature": "suspendCalculationUntilNextSync()",
-      "restfulName": "suspendCalculationUntilNextSync",
+      "syntax": "applicationObject.suspendApiCalculationUntilNextSync();",
+      "signature": "suspendApiCalculationUntilNextSync()",
+      "restfulName": "suspendApiCalculationUntilNextSync",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
-      "reqSet": "1.4"
+      "reqSet": "1.6"
     }
   ]
 }

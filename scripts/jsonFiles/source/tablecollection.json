@@ -127,16 +127,16 @@
       "returnType": "Table",
       "description": "Create a new table. The range object or source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.",
       "syntax": "tableCollectionObject.add(address, hasHeaders);",
-      "signature": "add(address: [object, hasHeaders: bool)",
+      "signature": "add(address: object, hasHeaders: bool)",
       "restfulName": "add",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "address",
-          "dataType": "[object",
+          "dataType": "object",
           "isCollection": false,
-          "description": "A Range object, or a string address or name of the range representing the data source. If the address does not contain a sheet name, the currently-active sheet is used. For 1.1 use string parameter; for 1.3 can accept Range object as well.",
+          "description": "A Range object, or a string address or name of the range representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.",
           "isRequired": true,
           "enumNameJs": null,
           "notes": null

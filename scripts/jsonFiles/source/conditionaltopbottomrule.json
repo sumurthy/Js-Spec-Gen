@@ -1,0 +1,47 @@
+{
+  "name": "ConditionalTopBottomRule",
+  "description": "Represents the rule of the topbottom conditional format.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.6",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "type",
+      "dataType": "string",
+      "description": "Format values based on the top or bottom rank.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConditionalTopBottomCriterionType",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rank",
+      "dataType": "int",
+      "description": "The rank between 1 and 1000 for numeric ranks or 1 and 100 for percent ranks.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

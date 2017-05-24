@@ -1,0 +1,59 @@
+{
+  "name": "ConditionalCellValueRule",
+  "description": "Represents a Cell Value Conditional Format Rule",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.6",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "operator",
+      "dataType": "string",
+      "description": "The operator of the text conditional format.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConditionalCellValueOperator",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "formula1",
+      "dataType": "object",
+      "description": "The formula, if required, to evaluate the conditional format rule on.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "formula2",
+      "dataType": "object",
+      "description": "The formula, if required, to evaluate the conditional format rule on.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

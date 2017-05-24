@@ -25,7 +25,7 @@ module SpecMaker
 	HEADER5 = '##### '
 	GETTERSETTERLINK = '_See property access [examples.](#property-access-examples)_'
 	GETTERSETTER = 'Property access examples'
-	PROD_REQUIREMENTS = ['1.1', '1.2', '1.3']
+	PROD_REQUIREMENTS = ['1.1', '1.2', '1.3', '1.4', '1.5', '1.6']
 	BACKTOMETHOD = '[Back](#methods)'
 
 	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
@@ -34,7 +34,7 @@ module SpecMaker
 	PROPERTY_HEADER = "| Property	   | Type	|Description| Req. Set|" + NEWLINE
 	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|:----|" + NEWLINE
 	PARAM_HEADER = "| Parameter	   | Type	|Description|" + NEWLINE
-	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|:---|" + NEWLINE
+	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|" + NEWLINE
 
 	RELATIONSHIP_HEADER = "| Relationship | Type	|Description| Req. Set|" + NEWLINE
 	METHOD_HEADER = "| Method		   | Return Type	|Description| Req. Set|" + NEWLINE
@@ -198,6 +198,7 @@ module SpecMaker
 					end
 					finalPDesc = finalPDesc + appendEnum
 				end
+				puts param
 				@mdlines.push (PIPE + param[:name] + PIPE + param[:dataType] + PIPE + finalPDesc + PIPE + NEWLINE)
 			end
 		else
@@ -402,6 +403,10 @@ module SpecMaker
 
 		if isMethod
 			methods.each do |mtd|
+				puts '*****1'
+				puts mtd
+				puts '*****2'
+
 				push_method_details mtd, example_lines
 			end
 

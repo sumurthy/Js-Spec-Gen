@@ -169,14 +169,14 @@
       "returnType": "void",
       "description": "Apply a \"Values\" filter to the column for the given values.",
       "syntax": "filterObject.applyValuesFilter(values);",
-      "signature": "applyValuesFilter(values: ()[])",
+      "signature": "applyValuesFilter(values: object[])",
       "restfulName": "applyValuesFilter",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "values",
-          "dataType": "()[]",
+          "dataType": "object[]",
           "isCollection": true,
           "description": "The list of values to show.",
           "isRequired": true,

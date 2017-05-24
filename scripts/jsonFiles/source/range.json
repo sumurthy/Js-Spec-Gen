@@ -79,6 +79,18 @@
       "notes": null
     },
     {
+      "name": "conditionalFormats",
+      "dataType": "ConditionalFormatCollection",
+      "description": "Collection of ConditionalFormats that intersect the range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
       "name": "valueTypes",
       "dataType": "string",
       "description": "Represents the type of data of each cell.",
@@ -260,6 +272,18 @@
     }
   ],
   "methods": [
+    {
+      "name": "calculate",
+      "returnType": "void",
+      "description": "Calculates a range of cells on a worksheet.",
+      "syntax": "rangeObject.calculate();",
+      "signature": "calculate()",
+      "restfulName": "calculate",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.6"
+    },
     {
       "name": "clear",
       "returnType": "void",
@@ -728,17 +752,17 @@
       "returnType": "Range",
       "description": "Returns the used range of the given range object. If there are no used cells within the range, this function will throw an ItemNotFound error.",
       "syntax": "rangeObject.getUsedRange(valuesOnly);",
-      "signature": "getUsedRange(valuesOnly: [ApiSet(Version)",
+      "signature": "getUsedRange(valuesOnly: bool)",
       "restfulName": "UsedRange",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "valuesOnly",
-          "dataType": "[ApiSet(Version",
+          "dataType": "bool",
           "isCollection": false,
           "description": "Considers only cells with values as used cells.",
-          "isRequired": true,
+          "isRequired": false,
           "enumNameJs": null,
           "notes": null
         }

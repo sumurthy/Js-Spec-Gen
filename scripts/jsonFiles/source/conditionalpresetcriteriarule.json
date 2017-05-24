@@ -1,0 +1,35 @@
+{
+  "name": "ConditionalPresetCriteriaRule",
+  "description": "Represents the Preset Criteria Conditional Format Rule",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.6",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "criterion",
+      "dataType": "string",
+      "description": "The criterion of the conditional format.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConditionalFormatPresetCriterion",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

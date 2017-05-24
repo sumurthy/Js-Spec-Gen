@@ -141,6 +141,28 @@
       "reqSet": "1.1"
     },
     {
+      "name": "calculate",
+      "returnType": "void",
+      "description": "Calculates all cells on a worksheet.",
+      "syntax": "worksheetObject.calculate(markAllDirty);",
+      "signature": "calculate(markAllDirty: bool)",
+      "restfulName": "calculate",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "markAllDirty",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Boolean to mark as dirty.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.6"
+    },
+    {
       "name": "delete",
       "returnType": "void",
       "description": "Deletes the worksheet from the workbook.",
@@ -206,21 +228,109 @@
       "reqSet": "1.1"
     },
     {
+      "name": "getPrevious",
+      "returnType": "Worksheet",
+      "description": "Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.",
+      "syntax": "worksheetObject.getPrevious(visibleOnly);",
+      "signature": "getPrevious(visibleOnly: bool)",
+      "restfulName": "Previous",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "visibleOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getPreviousOrNullObject",
+      "returnType": "Worksheet",
+      "description": "Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.",
+      "syntax": "worksheetObject.getPreviousOrNullObject(visibleOnly);",
+      "signature": "getPreviousOrNullObject(visibleOnly: bool)",
+      "restfulName": "PreviousOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "visibleOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getNext",
+      "returnType": "Worksheet",
+      "description": "Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.",
+      "syntax": "worksheetObject.getNext(visibleOnly);",
+      "signature": "getNext(visibleOnly: bool)",
+      "restfulName": "Next",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "visibleOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getNextOrNullObject",
+      "returnType": "Worksheet",
+      "description": "Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.",
+      "syntax": "worksheetObject.getNextOrNullObject(visibleOnly);",
+      "signature": "getNextOrNullObject(visibleOnly: bool)",
+      "restfulName": "NextOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "visibleOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "If true, considers only visible worksheets, skipping over any hidden ones.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.5"
+    },
+    {
       "name": "getUsedRange",
       "returnType": "Range",
       "description": "The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).",
       "syntax": "worksheetObject.getUsedRange(valuesOnly);",
-      "signature": "getUsedRange(valuesOnly: [ApiSet(Version)",
+      "signature": "getUsedRange(valuesOnly: bool)",
       "restfulName": "UsedRange",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": [
         {
           "name": "valuesOnly",
-          "dataType": "[ApiSet(Version",
+          "dataType": "bool",
           "isCollection": false,
           "description": "Considers only cells with values as used cells (ignoring formatting).",
-          "isRequired": true,
+          "isRequired": false,
           "enumNameJs": null,
           "notes": null
         }

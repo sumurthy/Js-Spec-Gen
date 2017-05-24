@@ -1,0 +1,94 @@
+{
+  "name": "CustomXmlPart",
+  "description": "Represents a custom XML part object in a workbook.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.5",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "id",
+      "dataType": "string",
+      "description": "The custom XML part's ID.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "namespaceUri",
+      "dataType": "string",
+      "description": "The custom XML part's namespace URI.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the custom XML part.",
+      "syntax": "customXmlPartObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getXml",
+      "returnType": "string",
+      "description": "Gets the custom XML part's full XML content.",
+      "syntax": "customXmlPartObject.getXml();",
+      "signature": "getXml()",
+      "restfulName": "Xml",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "setXml",
+      "returnType": "void",
+      "description": "Sets the custom XML part's full XML content.",
+      "syntax": "customXmlPartObject.setXml(xml);",
+      "signature": "setXml(xml: string)",
+      "restfulName": "setXml",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "xml",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "XML content for the part.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.5"
+    }
+  ]
+}

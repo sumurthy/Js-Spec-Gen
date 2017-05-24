@@ -19,6 +19,18 @@
   },
   "properties": [
     {
+      "name": "id",
+      "dataType": "string",
+      "description": "Id of the PivotTable.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
       "name": "name",
       "dataType": "string",
       "description": "Name of the PivotTable.",
