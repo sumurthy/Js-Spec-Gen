@@ -45,6 +45,37 @@
   ],
   "methods": [
     {
+      "name": "add",
+      "returnType": "ChartSeries",
+      "description": "Add a new series to the collection.",
+      "syntax": "chartSeriesCollectionObject.add(name, index);",
+      "signature": "add(name: string, index: number)",
+      "restfulName": "add",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the series.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Index value of the series to be added. Zero-indexed.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.9"
+    },
+    {
       "name": "getCount",
       "returnType": "int",
       "description": "Returns the number of series in the collection.",
@@ -59,7 +90,7 @@
     {
       "name": "getItemAt",
       "returnType": "ChartSeries",
-      "description": "Retrieves a series based on its position in the collection",
+      "description": "Retrieves a series based on its position in the collection.c",
       "syntax": "chartSeriesCollectionObject.getItemAt(index);",
       "signature": "getItemAt(index: number)",
       "restfulName": "ItemAt",

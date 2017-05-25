@@ -1,0 +1,71 @@
+{
+  "name": "ChartTrendline",
+  "description": "This object represents the attributes for a chart trendline object.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.9",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "format",
+      "dataType": "ChartTrendlineFormat",
+      "description": "Represents the formatting of a chart trendline.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.9",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "type",
+      "dataType": "string",
+      "description": "Represents the Type of a chart trendline.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.TrendlineType",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.9",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "polynomialOrder",
+      "dataType": "int",
+      "description": "Represents the PolynomialOrder of a chart trendline, specific for trendline with Polynomial type.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.9",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "movingAveragePeriod",
+      "dataType": "int",
+      "description": "Represents the MovingAveragePeriod of a chart trendline, specific for trendline with MovingAverage type.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.9",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

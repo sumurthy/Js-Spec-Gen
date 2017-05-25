@@ -65,7 +65,51 @@
       "reqSet": "1.1",
       "isKey": null,
       "notes": null
+    },
+    {
+      "name": "horizontalAlignment",
+      "dataType": "string",
+      "description": "Represents the horizontal alignment for chart title.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ChartTextHorizontalAlignment",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.9",
+      "isKey": null,
+      "notes": null
     }
   ],
-  "methods": null
+  "methods": [
+    {
+      "name": "getSubstring",
+      "returnType": "ChartFormatString",
+      "description": "Get the characters of a chart title. Line break '\\n' also counts one charater.",
+      "syntax": "chartTitleObject.getSubstring(start, start);",
+      "signature": "getSubstring(start: number, start: number)",
+      "restfulName": "Substring",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "start",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "The start index of the sub string",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "start",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "The length of the sub string",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.9"
+    }
+  ]
 }

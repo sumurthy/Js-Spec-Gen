@@ -1,0 +1,70 @@
+{
+  "name": "ChartTrendlineCollection",
+  "description": "Represents a collection of Chart Trendlines.",
+  "isCollection": true,
+  "collectionOf": "ChartTrendline",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.9",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "ChartTrendline[]",
+      "description": "A collection of chartTrendline objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "1.9",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Returns the number of trendlines in the collection.",
+      "syntax": "chartTrendlineCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.9"
+    },
+    {
+      "name": "add",
+      "returnType": "ChartTrendline",
+      "description": "Adds a new trendline to trendline collection.",
+      "syntax": "chartTrendlineCollectionObject.add(type);",
+      "signature": "add(type: string)",
+      "restfulName": "add",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "type",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "TrendlineType.",
+          "isRequired": false,
+          "enumNameJs": "Excel.TrendlineType",
+          "notes": null
+        }
+      ],
+      "reqSet": "1.9"
+    }
+  ]
+}
