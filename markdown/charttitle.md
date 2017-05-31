@@ -22,7 +22,7 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getSubstring(start: number, start: number)](#getsubstringstart-number-start-number)|[ChartFormatString](chartformatstring.md)|Get the characters of a chart title. Line break '\n' also counts one charater.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|[getSubstring(start: number, length: number)](#getsubstringstart-number-start-number)|[ChartFormatString](chartformatstring.md)|Get the characters of a chart title. Line break '\n' also counts one charater.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -39,7 +39,7 @@ chartTitleObject.getSubstring(start, start);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |start|number|The start index of the sub string|
-|start|number|The length of the sub string|
+|length|number|The length of the sub string|
 
 #### Returns
 [ChartFormatString](chartformatstring.md)
