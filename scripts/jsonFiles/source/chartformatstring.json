@@ -1,0 +1,35 @@
+{
+  "name": "ChartFormatString",
+  "description": "Represents the characters in chart object like chart title, chart axis title, etc.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.9",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "font",
+      "dataType": "ChartFont",
+      "description": "Represents the font attributes, such as font name, font size, color, etc. of chart characters object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.9",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

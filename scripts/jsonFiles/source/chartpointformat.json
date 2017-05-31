@@ -29,6 +29,18 @@
       "reqSet": "1.1",
       "isKey": null,
       "notes": null
+    },
+    {
+      "name": "border",
+      "dataType": "ChartBorder",
+      "description": "Represents the border format of a chart point, which includes border formating information. Read-only",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.9",
+      "isKey": null,
+      "notes": null
     }
   ],
   "methods": null

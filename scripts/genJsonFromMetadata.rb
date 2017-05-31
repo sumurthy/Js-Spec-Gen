@@ -23,7 +23,7 @@ require 'FileUtils'
 
 @processed_files = 0
 @json_files_created = 0
-METADATA_FILE_SOURCE = '../../data/ExcelApi_1.7_build.cs'
+METADATA_FILE_SOURCE = '../data/ExcelApi_1.7_build.cs'
 #METADATA_FILE_SOURCE = '../../data/1.5.cs'
 ENUMS = 'jsonFiles/settings/enums.json'
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'

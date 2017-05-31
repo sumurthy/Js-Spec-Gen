@@ -53,7 +53,98 @@
       "reqSet": "1.1",
       "isKey": null,
       "notes": null
+    },
+    {
+      "name": "trendlines",
+      "dataType": "ChartTrendlineCollection",
+      "description": "Represents a collection of Trendlines in the series.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.9",
+      "isKey": null,
+      "notes": null
     }
   ],
-  "methods": null
+  "methods": [
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the chart series.",
+      "syntax": "chartSeriesObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.9"
+    },
+    {
+      "name": "setXAxisValues",
+      "returnType": "void",
+      "description": "Set values of X axis for a chart series. Only works for scatter charts.",
+      "syntax": "chartSeriesObject.setXAxisValues(sourceData);",
+      "signature": "setXAxisValues(sourceData: Range)",
+      "restfulName": "setXAxisValues",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "sourceData",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "The Range object corresponding to the source data.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.9"
+    },
+    {
+      "name": "setValues",
+      "returnType": "void",
+      "description": "Set values for a chart series. For scatter chart, it means Y axis values.",
+      "syntax": "chartSeriesObject.setValues(sourceData);",
+      "signature": "setValues(sourceData: Range)",
+      "restfulName": "setValues",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "sourceData",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "The Range object corresponding to the source data.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.9"
+    },
+    {
+      "name": "setBubbleSizes",
+      "returnType": "void",
+      "description": "Set bubble sizes for a chart series. Only works for bubble charts.",
+      "syntax": "chartSeriesObject.setBubbleSizes(sourceData);",
+      "signature": "setBubbleSizes(sourceData: Range)",
+      "restfulName": "setBubbleSizes",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "sourceData",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "The Range object corresponding to the source data.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.9"
+    }
+  ]
 }
