@@ -8,6 +8,15 @@ Running this tool involves 3 things:
 2. Run intermediary JSON file creation step (`genJsonFromMetadata.rb` script). 
 3. Run the markdown creation step (`genMarkdownFromJSON.rb` script), which produces the final API spec files. You can copy these files into final destination such as another repository. 
 
+## How to use this tool
+
+1. Select the correct branch you need, for example, Excel branch. Then download it.
+2. Open your terminal, go to `Js-Spec-Gen/scripts` folder.
+2. Change the location of your C# file at [this line](https://github.com/sumurthy/Js-Spec-Gen/blob/excel/scripts/genJsonFromMetadata.rb#L26) of the file **/scripts/genJsonFromMetadata.rb**
+2. Run `ruby genJsonFromMetadata.rb`
+3. Once the above step completes, run `ruby genMarkdownFromJSON.rb`
+4. Now you should get your markdown files at **/markdown** folder. 
+
 ## Pre-requisites
 
 Ruby interpreter. Version 2.1+ 
@@ -54,14 +63,6 @@ The final output files are generated in markdown format.
 ##### File Location
 
 The location of final spec files are at `Js-Spec-Gen/markdown`. It includes one file per object. 
-
-## Run steps
-
-1. Setup the input data 
-2. change directory to `Js-Spec-Gen/scripts` folder
-2. Run Json intermediary file creation step: `ruby genJsonFromMetadata.rb`
-3. Once the above step completes, run the markdown creation step. `ruby genMarkdownFromJSON.rb`
-4. Find your markdown files in the output folder. 
 
 ## Next version of this tool.
 
