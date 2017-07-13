@@ -12,10 +12,10 @@ Running this tool involves 3 things:
 
 1. Select the correct branch you need, for example, Excel branch. Then download it.
 2. Open your terminal, go to `Js-Spec-Gen/scripts` folder.
-2. Change the location of your C# file at [this line](https://github.com/sumurthy/Js-Spec-Gen/blob/excel/scripts/genJsonFromMetadata.rb#L26) of the file **/scripts/genJsonFromMetadata.rb**
-2. Run `ruby genJsonFromMetadata.rb`
-3. Once the above step completes, run `ruby genMarkdownFromJSON.rb`
-4. Now you should get your markdown files at **/markdown** folder. 
+3. Change the location of your C# file [METADATA_FILE_SOURCE](https://github.com/sumurthy/Js-Spec-Gen/blob/excel/scripts/genJsonFromMetadata.rb#L26) in the file **/scripts/genJsonFromMetadata.rb**
+4. Run `ruby genJsonFromMetadata.rb`
+5. Once the above step completes, run `ruby genMarkdownFromJSON.rb`
+6. Now you should get your markdown files at **/markdown** folder. 
 
 ## Pre-requisites
 
