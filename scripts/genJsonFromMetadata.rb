@@ -23,7 +23,7 @@ require 'FileUtils'
 
 @processed_files = 0
 @json_files_created = 0
-METADATA_FILE_SOURCE = '../../data/ExcelApi_1.7_build.cs'
+METADATA_FILE_SOURCE = '../../data/ExcelApi_pivot.cs'
 #METADATA_FILE_SOURCE = '../../data/1.5.cs'
 ENUMS = 'jsonFiles/settings/enums.json'
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
@@ -107,7 +107,12 @@ FileUtils.rm Dir.glob(JSONOUTPUT_FOLDER + '/*')
 		handle_getItem = handle_getItem.rpartition(']').first + ')' + ';'
 		line = handle_getItem + "\n"
 	end
-	@csarray.push line
+	# Skip regular comment lines 
+	if line.strip.start_with?('/* ') || line.strip.start_with?('// ') || line.strip.start_with?('///// ') || line.strip.start_with?('//[') 
+		#puts "*** Skipping #{line}  ***"
+	else
+		@csarray.push line
+	end
 end
 
 def self.uncapitalize (str="")
@@ -368,7 +373,6 @@ end
 
 	# If member is a method and has param, capture its optional param and data type.
 	line = line.chomp
-
 	if member_ahead && line.include?(');')  && !line.include?('();') && !line.include?('_')
 		# Capture the first part of the parameter definition inside method definition to see if it has readonly flag and also note down its data type.
 		parm_array_metadata = line[line.index('(')+1, line.index(');')].chomp(');').split(',')

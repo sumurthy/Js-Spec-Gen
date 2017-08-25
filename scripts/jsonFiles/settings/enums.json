@@ -436,5 +436,171 @@
 		"None": "",
 		"Single": "",
 		"Double": ""
-	}
+	},
+	"ConsolidationFunction": {
+
+		"VarP": "",
+		"Sum": "",
+		"StDevP": "",
+		"StDev": "",
+		"Product": "",
+		"Min": "",
+		"Max": "",
+		"CountNums": "",
+		"Count": "",
+		"Average": "",
+		"DistinctCount": "",
+		"Unknown": ""
+	},
+
+	"PivotFieldCalculation": {
+		"NoAdditionalCalculation": "",
+		"DifferenceFrom": "",
+		"PercentOf": "",
+		"PercentDifferenceFrom": "",
+		"RunningTotal": "",
+		"PercentOfRow": "",
+		"PercentOfColumn": "",
+		"PercentOfTotal": "",
+		"Index": "",
+		"PercentOfParentRow": "",
+		"PercentOfParentColumn": "",
+		"PercentOfParent": "",
+		"PercentRunningTotal": "",
+		"RankAscending": "",
+		"RankDecending": ""
+	},
+
+	"PivotFieldDataType": {
+		"Text": "",
+		"Number": "",
+		"Date": ""
+	},
+
+	"PivotFieldOrientation": {
+		"Hidden": "0",
+		"RowField": "",
+		"ColumnField": "",
+		"PageField": "",
+		"DataField": ""
+	},
+
+	"PivotTableSourceType": {
+		"Database": "",
+		"External": "",
+		"Consolidation": "",
+		"Scenario": ""
+	},
+
+	"PivotTableVersion": {
+		"PivotTableVersionCurrent": "-1",
+		"PivotTableVersion2000": "0",
+		"PivotTableVersion10": "",
+		"PivotTableVersion11": "",
+		"PivotTableVersion12": "",
+		"PivotTableVersion14": "",
+		"PivotTableVersion15": ""
+	},
+
+	"SortOrder": {
+		"Ascending": "",
+		"Descending": ""
+	},
+	"ReadingOrder": {
+		"Context": "",
+		"LeftToRight": "",
+		"RightToLeft": ""
+	},
+	"PaperType": {
+		"Letter": "",
+		"LetterSmall": "",
+		"Tabloid": "",
+		"Ledger": "",
+		"Legal": "",
+		"Statement": "",
+		"Executive": "",
+		"A3": "",
+		"A4": "",
+		"A4Small": "",
+		"A5": "",
+		"B4": "",
+		"B5": "",
+		"Folio": "",
+		"Quatro": "",
+		"Paper10x14": "",
+		"Paper11x17": "",
+		"Note": "",
+		"Envelope9": "",
+		"Envelope10": "",
+		"Envelope11": "",
+		"Envelope12": "",
+		"Envelope14": "",
+		"Csheet": "",
+		"Dsheet": "",
+		"Esheet": "",
+		"EnvelopeDL": "",
+		"EnvelopeC5": "",
+		"EnvelopeC3": "",
+		"EnvelopeC4": "",
+		"EnvelopeC6": "",
+		"EnvelopeC65": "",
+		"EnvelopeB4": "",
+		"EnvelopeB5": "",
+		"EnvelopeB6": "",
+		"EnvelopeItaly": "",
+		"EnvelopeMonarch": "",
+		"EnvelopePersonal": "",
+		"FanfoldUS": "",
+		"FanfoldStdGerman": "",
+		"FanfoldLegalGerman": ""
+	},
+	"PageOrientation": {
+		"Portrait": "",
+		"Landscape": ""
+	},	
+	"SelectionMode": {
+		"Normal": "",
+		"Unlocked": "",
+		"None": ""
+	},		
+	"CustomFunctionOperationType": {
+		"UpdateFilteredFunctionList": "",
+		"UpdateAllFunctionList": "",
+		"None": ""
+	},			
+	"LayoutRowType": {
+		"CompactRow": "",
+		"TabularRow": "",
+		"OutlineRow": ""
+	},			
+	"SubtotalLocationType": {
+		"AtTop": "",
+		"AtBottom": ""
+	},
+	"TrendlineType": {
+		"Linear": "",
+		"Linear": "",
+		"Logarithmic": "",
+		"MovingAverage": "",
+		"Polynomial": "",
+		"Power": ""
+	},			
+	"TrendlineType": {
+		"Title": "",
+		"Subject": "",
+		"Author": "",
+		"Keywords": "", 
+		"Comments": "",
+		"Template": "",
+		"LastAuth": "",
+		"Revision": "",
+		"AppName": "",
+		"LastPrint": "",
+		"Creation": "",
+		"LastSave": "",
+		"Category": "",
+		"Format": "",
+		"Manager": "",
+		"Company": ""
+	},		
 }

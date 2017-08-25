@@ -1,0 +1,355 @@
+{
+  "name": "PivotField",
+  "description": "Represents a field in a PivotTable report.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "Pivot1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "allItemsVisible",
+      "dataType": "bool",
+      "description": "Used to retrieve a Boolean value that indicates whether or not any manual filtering is applied to the PivotField.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "autoSortField",
+      "dataType": "string",
+      "description": "Returns the name of the data field used to sort the specified PivotTable field automatically.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "autoSortOrder",
+      "dataType": "string",
+      "description": "Returns the order used to sort the specified PivotTable field automatically.",
+      "isReadOnly": true,
+      "enumNameJs": "Excel.SortOrder",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "calculation",
+      "dataType": "string",
+      "description": "Returns or sets a┬áPivotFieldCalculation┬ávalue that represents the type of calculation performed by the specified field. This property is valid only for data fields.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.PivotFieldCalculation",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "caption",
+      "dataType": "string",
+      "description": "Returns a┬áString┬ávalue that represents the label text for the pivot field.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "currentPage",
+      "dataType": "PivotItem",
+      "description": "Returns or sets the current page showing for the page field (valid only for page fields).",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "dataType",
+      "dataType": "string",
+      "description": "Returns a┬áPivotFieldDataType┬ávalue that represents the type of data in the PivotTable field.",
+      "isReadOnly": true,
+      "enumNameJs": "Excel.PivotFieldDataType",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "drilledDown",
+      "dataType": "bool",
+      "description": "True┬áif the flag for the specified PivotTable field or PivotTable item is set to drilled (expanded, or visible).",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "enableMultiplePageItems",
+      "dataType": "bool",
+      "description": "Used for specifying whether or not check boxes are present in the filter drop-down list for fields in the page area.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "formula",
+      "dataType": "string",
+      "description": "Returns or sets a┬ástring┬ávalue that represents the object's formula in A1-style notation.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "aggregationFunction",
+      "dataType": "string",
+      "description": "Returns or sets the function used to summarize the PivotTable field (data fields only).",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConsolidationFunction",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "hiddenItems",
+      "dataType": "PivotItemCollection",
+      "description": "Returns an object that represents either a single hidden PivotTable item (a┬áPivotItemobject) or a collection of all the hidden items (a┬áPivotItems┬áobject) in the specified field.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "calculated",
+      "dataType": "bool",
+      "description": "True┬áif the PivotTable field is a calculated field or item.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "Returns or sets a┬áString┬ávalue representing the name of the object.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "numberFormat",
+      "dataType": "string",
+      "description": "Returns or sets a┬áString┬ávalue that represents the format code for the object.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "orientation",
+      "dataType": "string",
+      "description": "Returns or sets a┬ávalue that represents the location of the field in the specified PivotTable report.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.PivotFieldOrientation",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "position",
+      "dataType": "int",
+      "description": "Returns or sets a value that represents the position of the field (first, second, third, and so on) among all the fields in its orientation (Rows, Columns, Pages, Data).",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "showDetail",
+      "dataType": "bool",
+      "description": "Gets or sets whether the specified┬áPivotField┬áis showing detail.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "sourceName",
+      "dataType": "string",
+      "description": "Returns a┬ástring┬ávalue that represents the specified objectΓÇÖs name as it appears in the original source data for the specified PivotTable report.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "subtotals",
+      "dataType": "Subtotals",
+      "description": "Returns or sets subtotals displayed with the specified field. Valid only for nondata fields.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "visiblePivotItems",
+      "dataType": "PivotItemCollection",
+      "description": "Returns an object that represents either a single visible PivotTable item (a┬áPivotItemobject) or a collection of all the visible items (a┬áPivotItems┬áobject) in the specified field.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "pivotItems",
+      "dataType": "PivotItemCollection",
+      "description": "Returns an object that represents either a single PivotTable item (a┬áPivotItem┬áobject) or a collection of all the visible and hidden items (a┬áPivotItems┬áobject) in the specified field.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getDataRange",
+      "returnType": "Range",
+      "description": "Returns a┬áRange┬áobject that represents the range of the current PivotField.",
+      "syntax": "pivotFieldObject.getDataRange();",
+      "signature": "getDataRange()",
+      "restfulName": "DataRange",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "Pivot1.1"
+    },
+    {
+      "name": "autoGroup",
+      "returnType": "void",
+      "description": "Automatically groups the pivot fields in a pivot table.",
+      "syntax": "pivotFieldObject.autoGroup();",
+      "signature": "autoGroup()",
+      "restfulName": "autoGroup",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "Pivot1.1"
+    },
+    {
+      "name": "autoSort",
+      "returnType": "void",
+      "description": "Establishes automatic field-sorting rules for PivotTable reports.",
+      "syntax": "pivotFieldObject.autoSort(sortOrder, Field);",
+      "signature": "autoSort(sortOrder: string, Field: string)",
+      "restfulName": "autoSort",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "sortOrder",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Specifies the sort order.",
+          "isRequired": true,
+          "enumNameJs": "Excel.SortOrder",
+          "notes": null
+        },
+        {
+          "name": "Field",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The name of the sort key field. You must specify the unique name, and not the displayed name.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "Pivot1.1"
+    },
+    {
+      "name": "clearAllFilters",
+      "returnType": "void",
+      "description": "Calling this method deletes all filters currently applied to the PivotField. This includes deleting all filters from the┬áPivotFilters┬ácollection of the PivotField and removing any manual filtering applied to the PivotField as well. If the PivotField is in the Report Filter area, the item selected will be set to the default item.",
+      "syntax": "pivotFieldObject.clearAllFilters();",
+      "signature": "clearAllFilters()",
+      "restfulName": "clearAllFilters",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "Pivot1.1"
+    }
+  ]
+}

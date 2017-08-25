@@ -1,0 +1,76 @@
+{
+  "name": "PivotTableCollectionExt",
+  "description": "A collection of all the┬áPivotTable┬áobjects in the specified workbook.",
+  "isCollection": true,
+  "collectionOf": "PivotTable",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "Pivot1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "PivotTable[]",
+      "description": "A collection of pivotTable objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "add",
+      "returnType": "PivotTable",
+      "description": "Adds a new PivotTable report. Returns a┬áPivotTable┬áobject.",
+      "syntax": "pivotTableCollectionExtObject.add(name, address, pivotCache);",
+      "signature": "add(name: string, address: Range, pivotCache: PivotCache)",
+      "restfulName": "add",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The name of the new PivotTable report.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "address",
+          "dataType": "Range",
+          "isCollection": false,
+          "description": "The cell in the upper-left corner of the PivotTable report's destination range (the range on the worksheet where the resulting report will be placed). You must specify a destination range on the worksheet that contains the PivotTables object specified by expression.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "pivotCache",
+          "dataType": "PivotCache",
+          "isCollection": false,
+          "description": "The PivotTable cache on which the new PivotTable report is based. The cache provides data for the report.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "Pivot1.1"
+    }
+  ]
+}

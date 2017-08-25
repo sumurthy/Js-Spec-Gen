@@ -1,0 +1,167 @@
+{
+  "name": "Subtotals",
+  "description": "The invoke helper for Pivot APIs.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "Pivot1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "automatic",
+      "dataType": "bool",
+      "description": "If Automatic is set to true, then all other values will be ignored when setting the Subtotals.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "sum",
+      "dataType": "bool",
+      "description": "Sum",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "count",
+      "dataType": "bool",
+      "description": "Count",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "average",
+      "dataType": "bool",
+      "description": "Average",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "max",
+      "dataType": "bool",
+      "description": "Max",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "min",
+      "dataType": "bool",
+      "description": "Min",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "product",
+      "dataType": "bool",
+      "description": "Product",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "countNumbers",
+      "dataType": "bool",
+      "description": "CountNumbers",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "standardDeviation",
+      "dataType": "bool",
+      "description": "StandardDeviation",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "standardDeviationP",
+      "dataType": "bool",
+      "description": "StandardDeviationP",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "variation",
+      "dataType": "bool",
+      "description": "Variation",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "variationP",
+      "dataType": "bool",
+      "description": "VariationP",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "Pivot1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

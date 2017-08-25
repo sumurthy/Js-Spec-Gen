@@ -112,7 +112,7 @@ module SpecMaker
 			dataTypePlusLinkFull = prop[:dataType]
 		else
 			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].downcase + ".md)"
-			dataTypePlusLinkFull = "[" + prop[:dataType] + "](../excel/" + prop[:dataType].downcase + ".md)"
+			dataTypePlusLinkFull = "[" + prop[:dataType] + "](reference/excel/" + prop[:dataType].downcase + ".md)"
 		end
 
 		if prop[:isCollection]
@@ -126,9 +126,9 @@ module SpecMaker
 			if prop[:isRelationship]
 				whatType = 'Relationship'
 			end
-			@changes.push  (PIPE + "[#{@resource}](../excel/#{@resource.downcase}.md)"  + PIPE + "_#{whatType}_ > " + prop[:name] + PIPE + finalDesc + PIPE + prop[:reqSet] + PIPE +  NEWLINE)
+			@changes.push  (PIPE + "[#{@resource}](reference/excel/#{@resource.downcase}.md)"  + PIPE + "_#{whatType}_ > " + prop[:name] + PIPE + finalDesc + PIPE + prop[:reqSet] + PIPE +  NEWLINE)
 
-			# @changes.push "**Resource name:** [#{@resource}](../excel/#{@resource.downcase}.md) </br>" + NEWLINE
+			# @changes.push "**Resource name:** [#{@resource}](reference/excel/#{@resource.downcase}.md) </br>" + NEWLINE
 			# @changes.push "**What's new:** #{whatType} **#{prop[:name]}** of type **#{dataTypePlusLinkFull}** </br>" + NEWLINE
 			# @changes.push "**Description:** #{finalDesc} </br>" + NEWLINE
 			# @changes.push "**Available in requirement set:** #{prop[:reqSet]} </br>" + NEWLINE
@@ -148,7 +148,7 @@ module SpecMaker
 			dataTypePlusLinkFull = method[:returnType]
 		else
 			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
-			dataTypePlusLinkFull = "[" + method[:returnType] + "](../excel/" + method[:returnType].downcase + ".md)"
+			dataTypePlusLinkFull = "[" + method[:returnType] + "](reference/excel/" + method[:returnType].downcase + ".md)"
 		end
 		# Add anchor links to method.
 		str = method[:signature].strip
@@ -156,14 +156,14 @@ module SpecMaker
 		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
 		methodPlusLink = "[" + method[:signature].strip + "](#" + str.downcase + ")"
 
-		methodPlusLinkFull = "[" + method[:signature].strip + "](" + "../excel/#{@resource.downcase}.md#" + str.downcase + ")"
+		methodPlusLinkFull = "[" + method[:signature].strip + "](" + "(reference/excel/#{@resource.downcase}.md#" + str.downcase + ")"
 
 		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE + "[#{method[:reqSet]}](../requirement-sets/#{HOST}-api-requirement-sets.md)" + PIPE + NEWLINE)
 
 		if !(PROD_REQUIREMENTS.include? method[:reqSet])
-			@changes.push (PIPE + "[#{@resource}](../excel/#{@resource.downcase}.md)" + PIPE + "_Method_ > " + methodPlusLinkFull  + PIPE + method[:description]  + PIPE + method[:reqSet] + PIPE + NEWLINE)
+			@changes.push (PIPE + "[#{@resource}](reference/excel/#{@resource.downcase}.md)" + PIPE + "_Method_ > " + methodPlusLinkFull  + PIPE + method[:description]  + PIPE + method[:reqSet] + PIPE + NEWLINE)
 
-			# @changes.push "**Resource name:** [#{@resource}](../excel/#{@resource.downcase}.md) </br>" + NEWLINE
+			# @changes.push "**Resource name:** [#{@resource}](reference/excel/#{@resource.downcase}.md) </br>" + NEWLINE
 			# @changes.push "**What's new:** Method **#{methodPlusLinkFull}** returning **#{dataTypePlusLinkFull}** </br>" + NEWLINE
 			# @changes.push "**Description:** #{method[:description]} </br>" + NEWLINE
 			# @changes.push "**Available in requirement set:** #{method[:reqSet]} </br>" + NEWLINE
@@ -198,7 +198,6 @@ module SpecMaker
 					end
 					finalPDesc = finalPDesc + appendEnum
 				end
-				puts param
 				@mdlines.push (PIPE + param[:name] + PIPE + param[:dataType] + PIPE + finalPDesc + PIPE + NEWLINE)
 			end
 		else
@@ -403,10 +402,6 @@ module SpecMaker
 
 		if isMethod
 			methods.each do |mtd|
-				puts '*****1'
-				puts mtd
-				puts '*****2'
-
 				push_method_details mtd, example_lines
 			end
 
