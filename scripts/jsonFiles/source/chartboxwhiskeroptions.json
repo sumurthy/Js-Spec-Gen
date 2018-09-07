@@ -1,0 +1,83 @@
+{
+  "name": "ChartBoxwhiskerOptions",
+  "description": "Represents the properties for Box &amp; Whisker chart.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "showInnerPoints",
+      "dataType": "bool",
+      "description": "Returns or sets if inner points showed in a Box &amp; whisker chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "showOutlierPoints",
+      "dataType": "bool",
+      "description": "Returns or sets if outlier points showed in a Box &amp; whisker chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "showMeanMarker",
+      "dataType": "bool",
+      "description": "Returns or sets if mean marker showed in a Box &amp; whisker chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "showMeanLine",
+      "dataType": "bool",
+      "description": "Returns or sets if mean line showed in a Box &amp; whisker chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "quartileCalculation",
+      "dataType": "ChartBoxQuartileCalculation",
+      "description": "Returns or sets quartile calculation type of a Box &amp; whisker chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

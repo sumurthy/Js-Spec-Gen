@@ -1,0 +1,168 @@
+{
+  "name": "PivotTable",
+  "description": "Represents an Excel PivotTable.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.3",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "id",
+      "dataType": "string",
+      "description": "Id of the PivotTable.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "Name of the PivotTable.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "hierarchies",
+      "dataType": "PivotHierarchyCollection",
+      "description": "The Pivot Hierarchies of the PivotTable.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rowHierarchies",
+      "dataType": "RowColumnPivotHierarchyCollection",
+      "description": "The Row Pivot Hierarchies of the PivotTable.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "columnHierarchies",
+      "dataType": "RowColumnPivotHierarchyCollection",
+      "description": "The Column Pivot Hierarchies of the PivotTable.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "dataHierarchies",
+      "dataType": "DataPivotHierarchyCollection",
+      "description": "The Data Pivot Hierarchies of the PivotTable.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "filterHierarchies",
+      "dataType": "FilterPivotHierarchyCollection",
+      "description": "The Filter Pivot Hierarchies of the PivotTable.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "worksheet",
+      "dataType": "Worksheet",
+      "description": "The worksheet containing the current PivotTable.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "layout",
+      "dataType": "PivotLayout",
+      "description": "The PivotLayout describing the layout and visual structure of the PivotTable.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "useCustomSortLists",
+      "dataType": "bool",
+      "description": "True if the PivotTable should use custom lists when sorting.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the PivotTable.",
+      "syntax": "pivotTableObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.8"
+    },
+    {
+      "name": "refresh",
+      "returnType": "void",
+      "description": "Refreshes the PivotTable.",
+      "syntax": "pivotTableObject.refresh();",
+      "signature": "refresh()",
+      "restfulName": "refresh",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    }
+  ]
+}

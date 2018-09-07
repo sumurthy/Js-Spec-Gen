@@ -1,0 +1,131 @@
+{
+  "name": "FilterCriteria",
+  "description": "Represents the filtering criteria applied to a column.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.2",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "criterion1",
+      "dataType": "string",
+      "description": "The first criterion used to filter data. Used as an operator in the case of \"custom\" filtering.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "criterion2",
+      "dataType": "string",
+      "description": "The second criterion used to filter data. Only used as an operator in the case of \"custom\" filtering.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "color",
+      "dataType": "string",
+      "description": "The HTML color string used to filter cells. Used with \"cellColor\" and \"fontColor\" filtering.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "operator",
+      "dataType": "string",
+      "description": "The operator used to combine criterion 1 and 2 when using \"custom\" filtering.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.FilterOperator",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "icon",
+      "dataType": "Icon",
+      "description": "The icon used to filter cells. Used with \"icon\" filtering.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "dynamicCriteria",
+      "dataType": "string",
+      "description": "The dynamic criteria from the Excel.DynamicFilterCriteria set to apply on this column. Used with \"dynamic\" filtering.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.DynamicFilterCriteria",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "values",
+      "dataType": "object[]",
+      "description": "The set of values to be used as part of \"values\" filtering.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "filterOn",
+      "dataType": "string",
+      "description": "The property used by the filter to determine whether the values should stay visible.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.FilterOn",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "subField",
+      "dataType": "string",
+      "description": "The property used by the filter to do rich filter on richvalues.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

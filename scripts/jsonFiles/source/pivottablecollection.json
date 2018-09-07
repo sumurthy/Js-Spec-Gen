@@ -1,0 +1,144 @@
+{
+  "name": "PivotTableCollection",
+  "description": "Represents a collection of all the PivotTables that are part of the workbook or worksheet.",
+  "isCollection": true,
+  "collectionOf": "PivotTable",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.3",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "PivotTable[]",
+      "description": "A collection of pivotTable objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "1.3",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "PivotTable",
+      "description": "Gets a PivotTable by name.",
+      "syntax": "pivotTableCollectionObject.getItem(name);",
+      "signature": "getItem(name: string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the PivotTable to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getItemOrNullObject",
+      "returnType": "PivotTable",
+      "description": "Gets a PivotTable by name. If the PivotTable does not exist, will return a null object.",
+      "syntax": "pivotTableCollectionObject.getItemOrNullObject(name);",
+      "signature": "getItemOrNullObject(name: string)",
+      "restfulName": "ItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the PivotTable to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
+    },
+    {
+      "name": "refreshAll",
+      "returnType": "void",
+      "description": "Refreshes all the pivot tables in the collection.",
+      "syntax": "pivotTableCollectionObject.refreshAll();",
+      "signature": "refreshAll()",
+      "restfulName": "refreshAll",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.3"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of pivot tables in the collection.",
+      "syntax": "pivotTableCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.4"
+    },
+    {
+      "name": "add",
+      "returnType": "PivotTable",
+      "description": "Add a Pivottable based on the specified source data and insert it at the top left cell of the destination range.",
+      "syntax": "pivotTableCollectionObject.add(name, source, destination);",
+      "signature": "add(name: string, source: object, destination: object)",
+      "restfulName": "add",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The name of the new PivotTable.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "source",
+          "dataType": "object",
+          "isCollection": false,
+          "description": "The source data for the new PivotTable, this can either be a range (or string address including the worksheet name) or a table.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "destination",
+          "dataType": "object",
+          "isCollection": false,
+          "description": "The cell in the upper-left corner of the PivotTable report's destination range (the range on the worksheet where the resulting report will be placed).",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.8"
+    }
+  ]
+}

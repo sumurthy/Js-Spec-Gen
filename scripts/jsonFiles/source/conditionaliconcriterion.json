@@ -1,0 +1,71 @@
+{
+  "name": "ConditionalIconCriterion",
+  "description": "Represents an Icon Criterion which contains a type, value, an Operator, and an optional custom icon, if not using an iconset.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.6",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "type",
+      "dataType": "ConditionalFormatIconRuleType",
+      "description": "What the icon conditional formula should be based on.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "formula",
+      "dataType": "object",
+      "description": "A number or a formula depending on the type.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "operator",
+      "dataType": "string",
+      "description": "GreaterThan or GreaterThanOrEqual for each of the rule type for the Icon conditional format.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ConditionalIconCriterionOperator",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "customIcon",
+      "dataType": "Icon",
+      "description": "The custom icon for the current criterion if different from the default IconSet, else null will be returned.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

@@ -23,7 +23,7 @@ require 'FileUtils'
 
 @processed_files = 0
 @json_files_created = 0
-METADATA_FILE_SOURCE = '../../data/ExcelApi_pivot.cs'
+METADATA_FILE_SOURCE = '../../data/ExcelApi_1.9_Wenbo.cs'
 #METADATA_FILE_SOURCE = '../../data/1.5.cs'
 ENUMS = 'jsonFiles/settings/enums.json'
 LOADMETHOD = 'jsonFiles/settings/loadMethod.json'
@@ -159,6 +159,8 @@ end
 		req_set = (parser line[/\(.*?\)/]).keys.join(', ')
 		req_set = req_set.split(',')[0]
 	end
+
+	puts line
 
 	## For new object, load its resource and fill the description
 	if line.include?('public interface') || line.include?('public struct')

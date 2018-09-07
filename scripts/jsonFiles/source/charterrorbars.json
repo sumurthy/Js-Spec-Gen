@@ -1,0 +1,83 @@
+{
+  "name": "ChartErrorBars",
+  "description": "This object represents the attributes for chart error bars object.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "endStyleCap",
+      "dataType": "bool",
+      "description": "Represents whether have the end style cap for the error bars.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "format",
+      "dataType": "ChartErrorBarsFormat",
+      "description": "Represents the formatting of chart ErrorBars.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "include",
+      "dataType": "string",
+      "description": "Represents which error-bar parts to include.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ChartErrorBarsInclude",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "type",
+      "dataType": "string",
+      "description": "Represents the range marked by error bars.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ChartErrorBarsType",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "visible",
+      "dataType": "bool",
+      "description": "Represents whether shown error bars.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

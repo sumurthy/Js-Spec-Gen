@@ -1,0 +1,383 @@
+{
+  "name": "CustomXmlPart",
+  "description": "Represents a custom XML part object in a workbook.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.5",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "id",
+      "dataType": "string",
+      "description": "The custom XML part's ID.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "namespaceUri",
+      "dataType": "string",
+      "description": "The custom XML part's namespace URI.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.5",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the custom XML part.",
+      "syntax": "customXmlPartObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "getXml",
+      "returnType": "string",
+      "description": "Gets the custom XML part's full XML content.",
+      "syntax": "customXmlPartObject.getXml();",
+      "signature": "getXml()",
+      "restfulName": "Xml",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.5"
+    },
+    {
+      "name": "setXml",
+      "returnType": "void",
+      "description": "Sets the custom XML part's full XML content.",
+      "syntax": "customXmlPartObject.setXml(xml);",
+      "signature": "setXml(xml: string)",
+      "restfulName": "setXml",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "xml",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "XML content for the part.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.5"
+    },
+    {
+      "name": "insertElement",
+      "returnType": "void",
+      "description": "Inserts the given XML under the parent element identified by xpath at child position index.",
+      "syntax": "customXmlPartObject.insertElement(xpath, xml, namespaceMappings, index);",
+      "signature": "insertElement(xpath: string, xml: string, namespaceMappings: object, index: number)",
+      "restfulName": "insertElement",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "xpath",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Absolute path to the parent element in XPath notation.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "xml",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "XML content to be inserted.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "namespaceMappings",
+          "dataType": "object",
+          "isCollection": false,
+          "description": "An object whose properties represent namespace aliases and the values are the actual namespace URIs.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Zero-based position at which the new XML to be inserted. If omitted, the XML will be appended as the last child of this parent.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "ApiSetAttribute.Spec"
+    },
+    {
+      "name": "updateElement",
+      "returnType": "void",
+      "description": "Updates the XML of the element identified by xpath.",
+      "syntax": "customXmlPartObject.updateElement(xpath, xml, namespaceMappings);",
+      "signature": "updateElement(xpath: string, xml: string, namespaceMappings: object)",
+      "restfulName": "updateElement",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "xpath",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Absolute path to the element in XPath notation.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "xml",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "New XML content to be stored.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "namespaceMappings",
+          "dataType": "object",
+          "isCollection": false,
+          "description": "An object whose properties represent namespace aliases and the values are the actual namespace URIs.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "ApiSetAttribute.Spec"
+    },
+    {
+      "name": "deleteElement",
+      "returnType": "void",
+      "description": "Deletes the element identified by xpath.",
+      "syntax": "customXmlPartObject.deleteElement(xpath, namespaceMappings);",
+      "signature": "deleteElement(xpath: string, namespaceMappings: object)",
+      "restfulName": "deleteElement",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "xpath",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Absolute path to the element in XPath notation.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "namespaceMappings",
+          "dataType": "object",
+          "isCollection": false,
+          "description": "An object whose properties represent namespace aliases and the values are the actual namespace URIs.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "ApiSetAttribute.Spec"
+    },
+    {
+      "name": "query",
+      "returnType": "string[]",
+      "description": "Queries the XML content.",
+      "syntax": "customXmlPartObject.query(xpath, namespaceMappings);",
+      "signature": "query(xpath: string, namespaceMappings: object)",
+      "restfulName": "query",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "xpath",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "An XPath query.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "namespaceMappings",
+          "dataType": "object",
+          "isCollection": false,
+          "description": "An object whose properties represent namespace aliases and the values are the actual namespace URIs.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "ApiSetAttribute.Spec"
+    },
+    {
+      "name": "insertAttribute",
+      "returnType": "void",
+      "description": "Inserts an attribute with the given name and value to the element identified by xpath.",
+      "syntax": "customXmlPartObject.insertAttribute(xpath, namespaceMappings, name, value);",
+      "signature": "insertAttribute(xpath: string, namespaceMappings: object, name: string, value: string)",
+      "restfulName": "insertAttribute",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "xpath",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Absolute path to the element in XPath notation.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "namespaceMappings",
+          "dataType": "object",
+          "isCollection": false,
+          "description": "An object whose properties represent namespace aliases and the values are the actual namespace URIs.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the attribute.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "value",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Value of the attribute.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "ApiSetAttribute.Spec"
+    },
+    {
+      "name": "updateAttribute",
+      "returnType": "void",
+      "description": "Updates the value of an attribute with the given name of the element identified by xpath.",
+      "syntax": "customXmlPartObject.updateAttribute(xpath, namespaceMappings, name, value);",
+      "signature": "updateAttribute(xpath: string, namespaceMappings: object, name: string, value: string)",
+      "restfulName": "updateAttribute",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "xpath",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Absolute path to the element in XPath notation.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "namespaceMappings",
+          "dataType": "object",
+          "isCollection": false,
+          "description": "An object whose properties represent namespace aliases and the values are the actual namespace URIs.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the attribute.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "value",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "New value of the attribute.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "ApiSetAttribute.Spec"
+    },
+    {
+      "name": "deleteAttribute",
+      "returnType": "void",
+      "description": "Deletes an attribute with the given name from the element identified by xpath.",
+      "syntax": "customXmlPartObject.deleteAttribute(xpath, namespaceMappings, name);",
+      "signature": "deleteAttribute(xpath: string, namespaceMappings: object, name: string)",
+      "restfulName": "deleteAttribute",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "xpath",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Absolute path to the element in XPath notation.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "namespaceMappings",
+          "dataType": "object",
+          "isCollection": false,
+          "description": "An object whose properties represent namespace aliases and the values are the actual namespace URIs.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the attribute.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "ApiSetAttribute.Spec"
+    }
+  ]
+}

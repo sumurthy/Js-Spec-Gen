@@ -1,0 +1,192 @@
+{
+  "name": "TableColumn",
+  "description": "Represents a column in a table.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "id",
+      "dataType": "int",
+      "description": "Returns a unique key that identifies the column within the table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "Represents the name of the table column.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "index",
+      "dataType": "int",
+      "description": "Returns the index number of the column within the columns collection of the table. Zero-indexed.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "values",
+      "dataType": "object[][]",
+      "description": "Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cells that contain an error will return the error string.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "filter",
+      "dataType": "Filter",
+      "description": "Retrieve the filter applied to the column.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getRange",
+      "returnType": "Range",
+      "description": "Gets the range object associated with the entire column.",
+      "syntax": "tableColumnObject.getRange();",
+      "signature": "getRange()",
+      "restfulName": "Range",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getHeaderRowRange",
+      "returnType": "Range",
+      "description": "Gets the range object associated with the header row of the column.",
+      "syntax": "tableColumnObject.getHeaderRowRange();",
+      "signature": "getHeaderRowRange()",
+      "restfulName": "HeaderRowRange",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getDataBodyRange",
+      "returnType": "Range",
+      "description": "Gets the range object associated with the data body of the column.",
+      "syntax": "tableColumnObject.getDataBodyRange();",
+      "signature": "getDataBodyRange()",
+      "restfulName": "DataBodyRange",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getTotalRowRange",
+      "returnType": "Range",
+      "description": "Gets the range object associated with the totals row of the column.",
+      "syntax": "tableColumnObject.getTotalRowRange();",
+      "signature": "getTotalRowRange()",
+      "restfulName": "TotalRowRange",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getPreviousColumn",
+      "returnType": "TableColumn",
+      "description": "Gets the table column that precedes this one. If there are no previous table columns, this method will throw an error.",
+      "syntax": "tableColumnObject.getPreviousColumn();",
+      "signature": "getPreviousColumn()",
+      "restfulName": "PreviousColumn",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "ApiSetAttribute.Spec"
+    },
+    {
+      "name": "getPreviousColumnOrNullObject",
+      "returnType": "TableColumn",
+      "description": "Gets the table column that precedes this one. If there are no previous table columns, this method will return a null objet.",
+      "syntax": "tableColumnObject.getPreviousColumnOrNullObject();",
+      "signature": "getPreviousColumnOrNullObject()",
+      "restfulName": "PreviousColumnOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "ApiSetAttribute.Spec"
+    },
+    {
+      "name": "getNextColumn",
+      "returnType": "TableColumn",
+      "description": "Gets the table column that follows this one. If there are no table columns following this one, this method will throw an error.",
+      "syntax": "tableColumnObject.getNextColumn();",
+      "signature": "getNextColumn()",
+      "restfulName": "NextColumn",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "ApiSetAttribute.Spec"
+    },
+    {
+      "name": "getNextColumnOrNullObject",
+      "returnType": "TableColumn",
+      "description": "Gets the table column that follows this one. If there are no table columns following this one, this method will return a null object.",
+      "syntax": "tableColumnObject.getNextColumnOrNullObject();",
+      "signature": "getNextColumnOrNullObject()",
+      "restfulName": "NextColumnOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "ApiSetAttribute.Spec"
+    },
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the column from the table.",
+      "syntax": "tableColumnObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    }
+  ]
+}

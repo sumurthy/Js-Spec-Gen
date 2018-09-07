@@ -1,0 +1,237 @@
+{
+  "name": "BindingCollection",
+  "description": "Represents the collection of all the binding objects that are part of the workbook.",
+  "isCollection": true,
+  "collectionOf": "Binding",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "count",
+      "dataType": "int",
+      "description": "Returns the number of bindings in the collection.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "items",
+      "dataType": "Binding[]",
+      "description": "A collection of binding objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "Binding",
+      "description": "Gets a binding object by ID.",
+      "syntax": "bindingCollectionObject.getItem(id);",
+      "signature": "getItem(id: string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "id",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Id of the binding object to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getItemOrNullObject",
+      "returnType": "Binding",
+      "description": "Gets a binding object by ID. If the binding object does not exist, will return a null object.",
+      "syntax": "bindingCollectionObject.getItemOrNullObject(id);",
+      "signature": "getItemOrNullObject(id: string)",
+      "restfulName": "ItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "id",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Id of the binding object to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of bindings in the collection.",
+      "syntax": "bindingCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.4"
+    },
+    {
+      "name": "getItemAt",
+      "returnType": "Binding",
+      "description": "Gets a binding object based on its position in the items array.",
+      "syntax": "bindingCollectionObject.getItemAt(index);",
+      "signature": "getItemAt(index: number)",
+      "restfulName": "ItemAt",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Index value of the object to be retrieved. Zero-indexed.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "add",
+      "returnType": "Binding",
+      "description": "Add a new binding to a particular Range.",
+      "syntax": "bindingCollectionObject.add(range, bindingType, id);",
+      "signature": "add(range: Range or string, bindingType: string, id: string)",
+      "restfulName": "add",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "range",
+          "dataType": "Range or string",
+          "isCollection": false,
+          "description": "Range to bind the binding to. May be an Excel Range object, or a string. If string, must contain the full address, including the sheet name",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "bindingType",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Type of binding.",
+          "isRequired": true,
+          "enumNameJs": "Excel.BindingType",
+          "notes": null
+        },
+        {
+          "name": "id",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of binding.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "addFromNamedItem",
+      "returnType": "Binding",
+      "description": "Add a new binding based on a named item in the workbook.",
+      "syntax": "bindingCollectionObject.addFromNamedItem(name, bindingType, id);",
+      "signature": "addFromNamedItem(name: string, bindingType: string, id: string)",
+      "restfulName": "addFromNamedItem",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name from which to create binding.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "bindingType",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Type of binding.",
+          "isRequired": true,
+          "enumNameJs": "Excel.BindingType",
+          "notes": null
+        },
+        {
+          "name": "id",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of binding.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    },
+    {
+      "name": "addFromSelection",
+      "returnType": "Binding",
+      "description": "Add a new binding based on the current selection.",
+      "syntax": "bindingCollectionObject.addFromSelection(bindingType, id);",
+      "signature": "addFromSelection(bindingType: string, id: string)",
+      "restfulName": "addFromSelection",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "bindingType",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Type of binding.",
+          "isRequired": true,
+          "enumNameJs": "Excel.BindingType",
+          "notes": null
+        },
+        {
+          "name": "id",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of binding.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.3"
+    }
+  ]
+}

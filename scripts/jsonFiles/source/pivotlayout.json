@@ -1,0 +1,144 @@
+{
+  "name": "PivotLayout",
+  "description": "Represents the visual layout of the PivotTable.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.8",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "showColumnGrandTotals",
+      "dataType": "bool",
+      "description": "True if the PivotTable report shows grand totals for columns.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "showRowGrandTotals",
+      "dataType": "bool",
+      "description": "True if the PivotTable report shows grand totals for rows.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "enableFieldList",
+      "dataType": "bool",
+      "description": "True if the field list should be shown or hidden from the UI.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "layoutType",
+      "dataType": "PivotLayoutType",
+      "description": "This property indicates the PivotLayoutType of all fields on the PivotTable. If fields have different states, this will be null.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "subtotalLocation",
+      "dataType": "string",
+      "description": "This property indicates the SubtotalLocationType of all fields on the PivotTable. If fields have different states, this will be null.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.SubtotalLocationType",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getRange",
+      "returnType": "Range",
+      "description": "Returns the range the PivotTable exists on, excluding the filter area.",
+      "syntax": "pivotLayoutObject.getRange();",
+      "signature": "getRange()",
+      "restfulName": "Range",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.8"
+    },
+    {
+      "name": "getRowLabelRange",
+      "returnType": "Range",
+      "description": "Returns the range where the PivotTable's row labels reside.",
+      "syntax": "pivotLayoutObject.getRowLabelRange();",
+      "signature": "getRowLabelRange()",
+      "restfulName": "RowLabelRange",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.8"
+    },
+    {
+      "name": "getColumnLabelRange",
+      "returnType": "Range",
+      "description": "Returns the range where the PivotTable's column labels reside.",
+      "syntax": "pivotLayoutObject.getColumnLabelRange();",
+      "signature": "getColumnLabelRange()",
+      "restfulName": "ColumnLabelRange",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.8"
+    },
+    {
+      "name": "getFilterAxisRange",
+      "returnType": "Range",
+      "description": "Returns the range of the PivotTable's filter area.",
+      "syntax": "pivotLayoutObject.getFilterAxisRange();",
+      "signature": "getFilterAxisRange()",
+      "restfulName": "FilterAxisRange",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.8"
+    },
+    {
+      "name": "getDataBodyRange",
+      "returnType": "Range",
+      "description": "Returns the range where the PivotTable's data values reside.",
+      "syntax": "pivotLayoutObject.getDataBodyRange();",
+      "signature": "getDataBodyRange()",
+      "restfulName": "DataBodyRange",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.8"
+    }
+  ]
+}

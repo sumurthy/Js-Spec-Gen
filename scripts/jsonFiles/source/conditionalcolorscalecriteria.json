@@ -1,0 +1,59 @@
+{
+  "name": "ConditionalColorScaleCriteria",
+  "description": "Represents the criteria of the color scale.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.6",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "minimum",
+      "dataType": "ConditionalColorScaleCriterion",
+      "description": "The minimum point Color Scale Criterion.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "midpoint",
+      "dataType": "ConditionalColorScaleCriterion",
+      "description": "The midpoint Color Scale Criterion if the color scale is a 3-color scale.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "maximum",
+      "dataType": "ConditionalColorScaleCriterion",
+      "description": "The maximum point Color Scale Criterion.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

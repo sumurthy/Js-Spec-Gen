@@ -1,0 +1,59 @@
+{
+  "name": "ShowAsRule",
+  "description": "Represents the Excel DataPivotHierarchy.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.8",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "calculation",
+      "dataType": "string",
+      "description": "The ShowAs Calculation to use for the Data PivotField.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ShowAsCalculation",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "baseField",
+      "dataType": "PivotField",
+      "description": "The Base PivotField to base the ShowAs calculation, if applicable based on the ShowAsCalculation type, else null.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "baseItem",
+      "dataType": "PivotItem",
+      "description": "The Base Item to base the ShowAs calculation on, if applicable based on the ShowAsCalculation type, else null.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

@@ -1,0 +1,95 @@
+{
+  "name": "PageLayoutMarginOptions",
+  "description": "Represents the options in page layout margins.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "left",
+      "dataType": "double",
+      "description": "Represents the page layout left margin in the unit specified to use for printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "right",
+      "dataType": "double",
+      "description": "Represents the page layout right margin in the unit specified to use for printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "top",
+      "dataType": "double",
+      "description": "Represents the page layout top margin in the unit specified to use for printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "bottom",
+      "dataType": "double",
+      "description": "Represents the page layout bottom margin in the unit specified to use for printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "header",
+      "dataType": "double",
+      "description": "Represents the page layout header margin in the unit specified to use for printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "footer",
+      "dataType": "double",
+      "description": "Represents the page layout footer margin in the unit specified to use for printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

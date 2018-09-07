@@ -1,0 +1,191 @@
+{
+  "name": "WorksheetProtectionOptions",
+  "description": "Represents the options in sheet protection.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.2",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "allowFormatCells",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing formatting cells.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowFormatColumns",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing formatting columns.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowFormatRows",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing formatting rows.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowInsertColumns",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing inserting columns.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowInsertRows",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing inserting rows.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowInsertHyperlinks",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing inserting hyperlinks.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowDeleteColumns",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing deleting columns.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowDeleteRows",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing deleting rows.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowSort",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing using sort feature.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowAutoFilter",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing using auto filter feature.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowPivotTables",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing using PivotTable feature.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "selectionMode",
+      "dataType": "ProtectionSelectionMode",
+      "description": "Represents the worksheet protection option of selection mode.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowEditObjects",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing editing objects.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowEditScenarios",
+      "dataType": "bool",
+      "description": "Represents the worksheet protection option of allowing editing scenarios.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

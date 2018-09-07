@@ -1,0 +1,125 @@
+{
+  "name": "WorksheetFreezePanes",
+  "description": "Represents the options in sheet protection.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.7",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": null,
+  "methods": [
+    {
+      "name": "freezeColumns",
+      "returnType": "void",
+      "description": "Freeze the first column(s) of the worksheet in place.",
+      "syntax": "worksheetFreezePanesObject.freezeColumns(count);",
+      "signature": "freezeColumns(count: number)",
+      "restfulName": "freezeColumns",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "count",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Optional number of columns to freeze, or zero to unfreeze all columns",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.7"
+    },
+    {
+      "name": "freezeRows",
+      "returnType": "void",
+      "description": "Freeze the top row(s) of the worksheet in place.",
+      "syntax": "worksheetFreezePanesObject.freezeRows(count);",
+      "signature": "freezeRows(count: number)",
+      "restfulName": "freezeRows",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "count",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Optional number of rows to freeze, or zero to unfreeze all rows",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.7"
+    },
+    {
+      "name": "getLocation",
+      "returnType": "Range",
+      "description": "Gets a range that describes the frozen cells in the active worksheet view.",
+      "syntax": "worksheetFreezePanesObject.getLocation();",
+      "signature": "getLocation()",
+      "restfulName": "Location",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.7"
+    },
+    {
+      "name": "getLocationOrNullObject",
+      "returnType": "Range",
+      "description": "Gets a range that describes the frozen cells in the active worksheet view.",
+      "syntax": "worksheetFreezePanesObject.getLocationOrNullObject();",
+      "signature": "getLocationOrNullObject()",
+      "restfulName": "LocationOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.7"
+    },
+    {
+      "name": "freezeAt",
+      "returnType": "void",
+      "description": "Sets the frozen cells in the active worksheet view.",
+      "syntax": "worksheetFreezePanesObject.freezeAt(frozenRange);",
+      "signature": "freezeAt(frozenRange: Range or string)",
+      "restfulName": "freezeAt",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "frozenRange",
+          "dataType": "Range or string",
+          "isCollection": false,
+          "description": "A range that represents the cells to be frozen, or null to remove all frozen panes.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.7"
+    },
+    {
+      "name": "unfreeze",
+      "returnType": "void",
+      "description": "Removes all frozen panes in the worksheet.",
+      "syntax": "worksheetFreezePanesObject.unfreeze();",
+      "signature": "unfreeze()",
+      "restfulName": "unfreeze",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.7"
+    }
+  ]
+}

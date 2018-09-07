@@ -1,0 +1,92 @@
+{
+  "name": "PivotHierarchyCollection",
+  "description": "Represents a collection of all the PivotTables that are part of the workbook or worksheet.",
+  "isCollection": true,
+  "collectionOf": "PivotHierarchy",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.8",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "PivotHierarchy[]",
+      "description": "A collection of pivotHierarchy objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "PivotHierarchy",
+      "description": "Gets a PivotHierarchy by its name or id.",
+      "syntax": "pivotHierarchyCollectionObject.getItem(name);",
+      "signature": "getItem(name: string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the PivotTable to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.8"
+    },
+    {
+      "name": "getItemOrNullObject",
+      "returnType": "PivotHierarchy",
+      "description": "Gets a PivotHierarchy by name. If the PivotHierarchy does not exist, will return a null object.",
+      "syntax": "pivotHierarchyCollectionObject.getItemOrNullObject(name);",
+      "signature": "getItemOrNullObject(name: string)",
+      "restfulName": "ItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the PivotHierarchy to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.8"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of pivot hierarchies in the collection.",
+      "syntax": "pivotHierarchyCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.8"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "name": "CustomPropertyCollection",
+  "description": "Contains the collection of customProperty objects.",
+  "isCollection": true,
+  "collectionOf": "CustomProperty",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.7",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "CustomProperty[]",
+      "description": "A collection of customProperty objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItemOrNullObject",
+      "returnType": "CustomProperty",
+      "description": "Gets a custom property object by its key, which is case-insensitive. Returns a null object if the custom property does not exist.",
+      "syntax": "customPropertyCollectionObject.getItemOrNullObject(key);",
+      "signature": "getItemOrNullObject(key: string)",
+      "restfulName": "ItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The key that identifies the custom property object.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.7"
+    },
+    {
+      "name": "add",
+      "returnType": "CustomProperty",
+      "description": "Creates a new or sets an existing custom property.",
+      "syntax": "customPropertyCollectionObject.add(key, value);",
+      "signature": "add(key: string, value: object)",
+      "restfulName": "add",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Required. The custom property's key, which is case-insensitive.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "value",
+          "dataType": "object",
+          "isCollection": false,
+          "description": "Required. The custom property's value.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.7"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the count of custom properties.",
+      "syntax": "customPropertyCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.7"
+    },
+    {
+      "name": "deleteAll",
+      "returnType": "void",
+      "description": "Deletes all custom properties in this collection.",
+      "syntax": "customPropertyCollectionObject.deleteAll();",
+      "signature": "deleteAll()",
+      "restfulName": "deleteAll",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.7"
+    },
+    {
+      "name": "getItem",
+      "returnType": "CustomProperty",
+      "description": "Gets a custom property object by its key, which is case-insensitive. Throws if the custom property does not exist.",
+      "syntax": "customPropertyCollectionObject.getItem(key);",
+      "signature": "getItem(key: string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The key that identifies the custom property object.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.7"
+    }
+  ]
+}

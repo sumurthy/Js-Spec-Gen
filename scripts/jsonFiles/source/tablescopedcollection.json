@@ -1,0 +1,82 @@
+{
+  "name": "TableScopedCollection",
+  "description": "Represents a scoped collection of tables. For each table its top-left corner is considered its anchor location and the tables are sorted top to bottom and then left to right.",
+  "isCollection": true,
+  "collectionOf": "Table",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "TableScoped[]",
+      "description": "A collection of tableScoped objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of tables in the collection.",
+      "syntax": "tableScopedCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getFirst",
+      "returnType": "Table",
+      "description": "Gets the first table in the collection. The tables in the collection are sorted top to bottom and left to right, such that top left table is the first table in the collection.",
+      "syntax": "tableScopedCollectionObject.getFirst();",
+      "signature": "getFirst()",
+      "restfulName": "First",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getItem",
+      "returnType": "Table",
+      "description": "Gets a table by Name or ID.",
+      "syntax": "tableScopedCollectionObject.getItem(key);",
+      "signature": "getItem(key: string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name or ID of the table to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    }
+  ]
+}

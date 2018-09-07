@@ -1,0 +1,95 @@
+{
+  "name": "HeaderFooter",
+  "description": "Represents the options in page layout margins.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "leftHeader",
+      "dataType": "string",
+      "description": "Gets or sets the left header of the worksheet.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "centerHeader",
+      "dataType": "string",
+      "description": "Gets or sets the center header of the worksheet.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rightHeader",
+      "dataType": "string",
+      "description": "Gets or sets the right header of the worksheet.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "leftFooter",
+      "dataType": "string",
+      "description": "Gets or sets the left footer of the worksheet.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "centerFooter",
+      "dataType": "string",
+      "description": "Gets or sets the center footer of the worksheet.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rightFooter",
+      "dataType": "string",
+      "description": "Gets or sets the right footer of the worksheet.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

@@ -1,0 +1,136 @@
+{
+  "name": "FilterPivotHierarchyCollection",
+  "description": "Represents a collection of FilterPivotHierarchy items associated with the PivotTable.",
+  "isCollection": true,
+  "collectionOf": "FilterPivotHierarchy",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.8",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "FilterPivotHierarchy[]",
+      "description": "A collection of filterPivotHierarchy objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "FilterPivotHierarchy",
+      "description": "Gets a FilterPivotHierarchy by its name or id.",
+      "syntax": "filterPivotHierarchyCollectionObject.getItem(name);",
+      "signature": "getItem(name: string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the PivotTable to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.8"
+    },
+    {
+      "name": "getItemOrNullObject",
+      "returnType": "FilterPivotHierarchy",
+      "description": "Gets a FilterPivotHierarchy by name. If the FilterPivotHierarchy does not exist, will return a null object.",
+      "syntax": "filterPivotHierarchyCollectionObject.getItemOrNullObject(name);",
+      "signature": "getItemOrNullObject(name: string)",
+      "restfulName": "ItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the FilterPivotHierarchy to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.8"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of pivot hierarchies in the collection.",
+      "syntax": "filterPivotHierarchyCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.8"
+    },
+    {
+      "name": "add",
+      "returnType": "FilterPivotHierarchy",
+      "description": "Adds the PivotHierarchy to the current axis. If the hierarchy is present elsewhere on the row, column,",
+      "syntax": "filterPivotHierarchyCollectionObject.add(pivotHierarchy);",
+      "signature": "add(pivotHierarchy: PivotHierarchy)",
+      "restfulName": "add",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "pivotHierarchy",
+          "dataType": "PivotHierarchy",
+          "isCollection": false,
+          "description": "TODO",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.8"
+    },
+    {
+      "name": "remove",
+      "returnType": "void",
+      "description": "Removes the PivotHierarchy from the current axis.",
+      "syntax": "filterPivotHierarchyCollectionObject.remove(filterPivotHierarchy);",
+      "signature": "remove(filterPivotHierarchy: FilterPivotHierarchy)",
+      "restfulName": "remove",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "filterPivotHierarchy",
+          "dataType": "FilterPivotHierarchy",
+          "isCollection": false,
+          "description": "TODO",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.8"
+    }
+  ]
+}

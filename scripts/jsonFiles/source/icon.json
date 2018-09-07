@@ -1,0 +1,47 @@
+{
+  "name": "Icon",
+  "description": "Represents a cell icon.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.2",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "set",
+      "dataType": "string",
+      "description": "Represents the set that the icon is part of.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.IconSet",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "index",
+      "dataType": "int",
+      "description": "Represents the index of the icon in the given set.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

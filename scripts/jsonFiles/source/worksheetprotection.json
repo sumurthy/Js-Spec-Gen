@@ -1,0 +1,101 @@
+{
+  "name": "WorksheetProtection",
+  "description": "Represents the protection of a sheet object.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.2",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "protected",
+      "dataType": "bool",
+      "description": "Indicates if the worksheet is protected.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "options",
+      "dataType": "WorksheetProtectionOptions",
+      "description": "Sheet protection options.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.2",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "protect",
+      "returnType": "void",
+      "description": "Protects a worksheet. Fails if the worksheet has already been protected.",
+      "syntax": "worksheetProtectionObject.protect(options, password);",
+      "signature": "protect(options: WorksheetProtectionOptions, password: string)",
+      "restfulName": "protect",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "options",
+          "dataType": "WorksheetProtectionOptions",
+          "isCollection": false,
+          "description": "Optional. Sheet protection options.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "password",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Optional. Sheet protection password.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.2"
+    },
+    {
+      "name": "unprotect",
+      "returnType": "void",
+      "description": "Unprotects a worksheet.",
+      "syntax": "worksheetProtectionObject.unprotect(password);",
+      "signature": "unprotect(password: string)",
+      "restfulName": "unprotect",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "password",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "sheet protection password.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.2"
+    }
+  ]
+}

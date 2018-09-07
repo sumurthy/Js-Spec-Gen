@@ -1,0 +1,172 @@
+{
+  "name": "NamedItemCollection",
+  "description": "A collection of all the NamedItem objects that are part of the workbook or worksheet, depending on how it was reached.",
+  "isCollection": true,
+  "collectionOf": "NamedItem",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "NamedItem[]",
+      "description": "A collection of namedItem objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "NamedItem",
+      "description": "Gets a NamedItem object using its name.",
+      "syntax": "namedItemCollectionObject.getItem(name);",
+      "signature": "getItem(name: string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Nameditem name.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getItemOrNullObject",
+      "returnType": "NamedItem",
+      "description": "Gets a NamedItem object using its name. If the nameditem object does not exist, will return a null object.",
+      "syntax": "namedItemCollectionObject.getItemOrNullObject(name);",
+      "signature": "getItemOrNullObject(name: string)",
+      "restfulName": "ItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Nameditem name.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
+    },
+    {
+      "name": "add",
+      "returnType": "NamedItem",
+      "description": "Adds a new name to the collection of the given scope.",
+      "syntax": "namedItemCollectionObject.add(name, reference, comment);",
+      "signature": "add(name: string, reference: Range or string, comment: string)",
+      "restfulName": "add",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The name of the named item.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "reference",
+          "dataType": "Range or string",
+          "isCollection": false,
+          "description": "The formula or the range that the name will refer to.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "comment",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Optional. The comment associated with the named item.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
+    },
+    {
+      "name": "addFormulaLocal",
+      "returnType": "NamedItem",
+      "description": "Adds a new name to the collection of the given scope using the user's locale for the formula.",
+      "syntax": "namedItemCollectionObject.addFormulaLocal(name, formula, comment);",
+      "signature": "addFormulaLocal(name: string, formula: string, comment: string)",
+      "restfulName": "addFormulaLocal",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The \"name\" of the named item.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "formula",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "The formula in the user's locale that the name will refer to.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "comment",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Optional. The comment associated with the named item.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.4"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of named items in the collection.",
+      "syntax": "namedItemCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.4"
+    }
+  ]
+}

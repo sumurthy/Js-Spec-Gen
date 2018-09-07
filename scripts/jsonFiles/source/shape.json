@@ -1,0 +1,274 @@
+{
+  "name": "Shape",
+  "description": "Represents a generic shape object in the worksheet.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "id",
+      "dataType": "string",
+      "description": "Represents the shape identifier.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "Represents the name of the shape.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "left",
+      "dataType": "double",
+      "description": "The distance, in points, from the left side of the shape to the left of the worksheet.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "top",
+      "dataType": "double",
+      "description": "The distance, in points, from the top edge of the shape to the top of the worksheet.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "width",
+      "dataType": "double",
+      "description": "Represents the width, in points, of the shape.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "height",
+      "dataType": "double",
+      "description": "Represents the height, in points, of the shape.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rotation",
+      "dataType": "int",
+      "description": "Represents the rotation, in degrees, of the shape.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "geometricShape",
+      "dataType": "GeometricShape",
+      "description": "Returns the geometric shape for the shape object. Error will be thrown, if the shape object is other shape type (Like, Image, SmartArt, etc.) rather than GeometricShape.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "image",
+      "dataType": "Image",
+      "description": "Returns the image for the shape object. Error will be thrown, if the shape object is other shape type (Like, GeometricShape, SmartArt, etc.) rather than Image.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "zOrderPosition",
+      "dataType": "int",
+      "description": "Returns the position of the specified shape in the z-order, the very bottom shape's z-order value is 0.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "altTextTitle",
+      "dataType": "string",
+      "description": "Returns or sets the alternative title text string for a Shape object when the object is saved to a Web page.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "altTextDescription",
+      "dataType": "string",
+      "description": "Returns or sets the alternative descriptive text string for a Shape object when the object is saved to a Web page.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "type",
+      "dataType": "string",
+      "description": "Returns the type of the specified shape.",
+      "isReadOnly": true,
+      "enumNameJs": "Excel.ShapeType",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "lockAspectRatio",
+      "dataType": "bool",
+      "description": "Represents if the aspect ratio locked, in boolean, of the shape.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "placement",
+      "dataType": "Placement",
+      "description": "Represents the placment, value that represents the way the object is attached to the cells below it.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "geometricShapeType",
+      "dataType": "string",
+      "description": "Represents the geometric shape type of the specified shape.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.GeometricShapeType",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "textFrame",
+      "dataType": "TextFrame",
+      "description": "Returns the textFrame object of a shape. Read only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "fill",
+      "dataType": "ShapeFill",
+      "description": "Returns the fill formatting of the shape object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "setZOrder",
+      "returnType": "void",
+      "description": "Moves the specified shape in front of or behind other shapes in the collection (that is, changes the shape's position in the z-order).",
+      "syntax": "shapeObject.setZOrder(value);",
+      "signature": "setZOrder(value: string)",
+      "restfulName": "setZOrder",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "value",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "where to move the specified shape relative to the other shapes.",
+          "isRequired": true,
+          "enumNameJs": "Excel.ShapeZOrder",
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the Shape",
+      "syntax": "shapeObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "name": "ChartBinOptions",
+  "description": "Encapsulates the bon options only for histogram chart and pareto chart.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "type",
+      "dataType": "ChartBinType",
+      "description": "Returns or sets bin type of a histogram chart or pareto chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "count",
+      "dataType": "int",
+      "description": "Returns or sets count of bin of a histogram chart or pareto chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowOverflow",
+      "dataType": "bool",
+      "description": "Returns or sets if bin overflow enabled in a histogram chart or pareto chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "allowUnderflow",
+      "dataType": "bool",
+      "description": "Returns or sets if bin underflow enabled in a histogram chart or pareto chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "width",
+      "dataType": "double",
+      "description": "Returns or sets bin width value of a histogram chart or pareto chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "overflowValue",
+      "dataType": "double",
+      "description": "Returns or sets bin overflow value of a histogram chart or pareto chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "underflowValue",
+      "dataType": "double",
+      "description": "Returns or sets bin underflow value of a histogram chart or pareto chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

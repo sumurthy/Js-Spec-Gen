@@ -1,0 +1,132 @@
+{
+  "name": "DataValidation",
+  "description": "Represents the data validation applied to the current range.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.8",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "type",
+      "dataType": "DataValidationType",
+      "description": "Type of the data validation, see Excel.DataValidationType for details.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "valid",
+      "dataType": "bool",
+      "description": "Represents if all cell values are valid according to the data validation rules.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rule",
+      "dataType": "DataValidationRule",
+      "description": "Data Validation rule that contains different type of data validation criteria.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "prompt",
+      "dataType": "DataValidationPrompt",
+      "description": "Prompt when users select a cell.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "errorAlert",
+      "dataType": "DataValidationErrorAlert",
+      "description": "Error alert when user enters invalid data.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "ignoreBlanks",
+      "dataType": "bool",
+      "description": "Ignore blanks: no data validation will be performed on blank cells, it defaults to true.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getInvalidCells",
+      "returnType": "RangeAreas",
+      "description": "Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will throw an ItemNotFound error.",
+      "syntax": "dataValidationObject.getInvalidCells();",
+      "signature": "getInvalidCells()",
+      "restfulName": "InvalidCells",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getInvalidCellsOrNullObject",
+      "returnType": "RangeAreas",
+      "description": "Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will return null.",
+      "syntax": "dataValidationObject.getInvalidCellsOrNullObject();",
+      "signature": "getInvalidCellsOrNullObject()",
+      "restfulName": "InvalidCellsOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "clear",
+      "returnType": "void",
+      "description": "Clears the data validation from the current range.",
+      "syntax": "dataValidationObject.clear();",
+      "signature": "clear()",
+      "restfulName": "clear",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.8"
+    }
+  ]
+}

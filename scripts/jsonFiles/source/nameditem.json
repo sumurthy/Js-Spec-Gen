@@ -1,0 +1,180 @@
+{
+  "name": "NamedItem",
+  "description": "Represents a defined name for a range of cells or value. Names can be primitive named objects (as seen in the type below), range object, or a reference to a range. This object can be used to obtain range object associated with names.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "The name of the object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "type",
+      "dataType": "string",
+      "description": "Indicates the type of the value returned by the name's formula.",
+      "isReadOnly": true,
+      "enumNameJs": "Excel.NamedItemType",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "value",
+      "dataType": "object",
+      "description": "Represents the value computed by the name's formula. For a named range, will return the range address.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "visible",
+      "dataType": "bool",
+      "description": "Specifies whether the object is visible or not.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "comment",
+      "dataType": "string",
+      "description": "Represents the comment associated with this name.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.4",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "scope",
+      "dataType": "string",
+      "description": "Indicates whether the name is scoped to the workbook or to a specific worksheet. Possible values are: Worksheet, Workbook.",
+      "isReadOnly": true,
+      "enumNameJs": "Excel.NamedItemScope",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.4",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "worksheet",
+      "dataType": "Worksheet",
+      "description": "Returns the worksheet on which the named item is scoped to. Throws an error if the item is scoped to the workbook instead.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.4",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "worksheetOrNullObject",
+      "dataType": "Worksheet",
+      "description": "Returns the worksheet on which the named item is scoped to. Returns a null object if the item is scoped to the workbook instead.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.4",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "formula",
+      "dataType": "object",
+      "description": "Gets or sets the formula of the named item.  Formula always starts with a '=' sign.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "arrayValues",
+      "dataType": "NamedItemArrayValues",
+      "description": "Returns an object containing values and types of the named item.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getRange",
+      "returnType": "Range",
+      "description": "Returns the range object that is associated with the name. Throws an error if the named item's type is not a range.",
+      "syntax": "namedItemObject.getRange();",
+      "signature": "getRange()",
+      "restfulName": "Range",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.1"
+    },
+    {
+      "name": "getRangeOrNullObject",
+      "returnType": "Range",
+      "description": "Returns the range object that is associated with the name. Returns a null object if the named item's type is not a range.",
+      "syntax": "namedItemObject.getRangeOrNullObject();",
+      "signature": "getRangeOrNullObject()",
+      "restfulName": "RangeOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.4"
+    },
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the given name.",
+      "syntax": "namedItemObject.delete();",
+      "signature": "delete()",
+      "restfulName": "delete",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.4"
+    }
+  ]
+}

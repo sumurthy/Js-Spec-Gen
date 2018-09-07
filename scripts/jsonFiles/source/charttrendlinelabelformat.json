@@ -1,0 +1,59 @@
+{
+  "name": "ChartTrendlineLabelFormat",
+  "description": "Encapsulates the format properties for the chart trendline label.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.8",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "fill",
+      "dataType": "ChartFill",
+      "description": "Represents the fill format of the current chart trendline label.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "border",
+      "dataType": "ChartBorder",
+      "description": "Represents the border format, which includes color, linestyle, and weight.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "font",
+      "dataType": "ChartFont",
+      "description": "Represents the font attributes (font name, font size, color, etc.) for a chart trendline label.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

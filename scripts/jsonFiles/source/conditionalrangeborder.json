@@ -1,0 +1,71 @@
+{
+  "name": "ConditionalRangeBorder",
+  "description": "Represents the border of an object.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.6",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "id",
+      "dataType": "string",
+      "description": "Represents border identifier.",
+      "isReadOnly": true,
+      "enumNameJs": "Excel.ConditionalRangeBorderIndex",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "color",
+      "dataType": "string",
+      "description": "HTML color code representing the color of the border line, of the form #RRGGBB (e.g. \"FFA500\") or as a named HTML color (e.g. \"orange\").",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "style",
+      "dataType": "string",
+      "description": "One of the constants of line style specifying the line style for the border.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.BorderLineStyle",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "sideIndex",
+      "dataType": "string",
+      "description": "Constant value that indicates the specific side of the border.",
+      "isReadOnly": true,
+      "enumNameJs": "Excel.ConditionalRangeBorderIndex",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

@@ -1,0 +1,179 @@
+{
+  "name": "ChartTrendlineLabel",
+  "description": "This object represents the attributes for a chart trendline lable object.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.8",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "top",
+      "dataType": "double",
+      "description": "Represents the distance, in points, from the top edge of chart trendline label to the top of chart area. Null if chart trendline label is not visible.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "left",
+      "dataType": "double",
+      "description": "Represents the distance, in points, from the left edge of chart trendline label to the left edge of chart area. Null if chart trendline label is not visible.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "width",
+      "dataType": "double",
+      "description": "Returns the width, in points, of the chart trendline label. Read-only. Null if chart trendline label is not visible.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "height",
+      "dataType": "double",
+      "description": "Returns the height, in points, of the chart trendline label. Read-only. Null if chart trendline label is not visible.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "formula",
+      "dataType": "string",
+      "description": "String value that represents the formula of chart trendline label using A1-style notation.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "textOrientation",
+      "dataType": "int",
+      "description": "Represents the text orientation of chart trendline label. The value should be an integer either from -90 to 90, or 180 for vertically-oriented text.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "verticalAlignment",
+      "dataType": "string",
+      "description": "Represents the vertical alignment of chart trendline label.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ChartTextVerticalAlignment",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "horizontalAlignment",
+      "dataType": "string",
+      "description": "Represents the horizontal alignment for chart trendline label.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ChartTextHorizontalAlignment",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "text",
+      "dataType": "string",
+      "description": "String representing the text of the trendline label on a chart.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "autoText",
+      "dataType": "bool",
+      "description": "Boolean value representing if trendline label automatically generates appropriate text based on context.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "numberFormat",
+      "dataType": "string",
+      "description": "String value that represents the format code for trendline label.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "linkNumberFormat",
+      "dataType": "bool",
+      "description": "Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "format",
+      "dataType": "ChartTrendlineLabelFormat",
+      "description": "Represents the format of chart trendline label.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

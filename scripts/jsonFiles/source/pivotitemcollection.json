@@ -1,12 +1,12 @@
 {
   "name": "PivotItemCollection",
-  "description": "A collection of all the┬áPivotItem┬áobjects in a PivotTable field.",
+  "description": "Represents a collection of all the Pivot Items related to their parent PivotField.",
   "isCollection": true,
   "collectionOf": "PivotItem",
   "restPath": null,
   "info": {
     "version": "1.1",
-    "reqSet": "Pivot1.1",
+    "reqSet": "1.8",
     "addinTypes": [
       "Excel"
     ],
@@ -26,67 +26,67 @@
       "enumNameJs": null,
       "isCollection": true,
       "isRelationship": false,
-      "reqSet": "Pivot1.1",
+      "reqSet": "1.8",
       "isKey": null,
       "notes": null
     }
   ],
   "methods": [
     {
+      "name": "getItem",
+      "returnType": "PivotItem",
+      "description": "Gets a PivotHierarchy by its name or id.",
+      "syntax": "pivotItemCollectionObject.getItem(name);",
+      "signature": "getItem(name: string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the PivotTable to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.8"
+    },
+    {
+      "name": "getItemOrNullObject",
+      "returnType": "PivotItem",
+      "description": "Gets a PivotHierarchy by name. If the PivotHierarchy does not exist, will return a null object.",
+      "syntax": "pivotItemCollectionObject.getItemOrNullObject(name);",
+      "signature": "getItemOrNullObject(name: string)",
+      "restfulName": "ItemOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "name",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Name of the PivotHierarchy to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.8"
+    },
+    {
       "name": "getCount",
       "returnType": "int",
-      "description": "Returns a┬ávalue that represents the number of objects in the collection.",
+      "description": "Gets the number of pivot hierarchies in the collection.",
       "syntax": "pivotItemCollectionObject.getCount();",
       "signature": "getCount()",
       "restfulName": "Count",
       "notes": null,
       "httpSuccessResponse": null,
       "parameters": null,
-      "reqSet": "Pivot1.1"
-    },
-    {
-      "name": "getItemAt",
-      "returnType": "PivotItem",
-      "description": "Returns a single object from a collection based on the index.",
-      "syntax": "pivotItemCollectionObject.getItemAt(index);",
-      "signature": "getItemAt(index: number)",
-      "restfulName": "ItemAt",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "index",
-          "dataType": "number",
-          "isCollection": false,
-          "description": "Index of the item. Zero-indexed.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "Pivot1.1"
-    },
-    {
-      "name": "getItem",
-      "returnType": "PivotItem",
-      "description": "Returns a single object from a collection based on name or index.",
-      "syntax": "pivotItemCollectionObject.getItem(nameOrIndex);",
-      "signature": "getItem(nameOrIndex: object)",
-      "restfulName": "Item",
-      "notes": null,
-      "httpSuccessResponse": null,
-      "parameters": [
-        {
-          "name": "nameOrIndex",
-          "dataType": "object",
-          "isCollection": false,
-          "description": "Name or index of the item to be retrieved.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ],
-      "reqSet": "Pivot1.1"
+      "reqSet": "1.8"
     }
   ]
 }

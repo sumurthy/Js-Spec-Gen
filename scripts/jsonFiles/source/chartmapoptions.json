@@ -1,0 +1,59 @@
+{
+  "name": "ChartMapOptions",
+  "description": "Encapsulates the properties for Map chart.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "level",
+      "dataType": "ChartMapAreaLevel",
+      "description": "Returns or sets series map area of a region map chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "labelStrategy",
+      "dataType": "ChartMapLabelStrategy",
+      "description": "Returns or sets series map labels strategy of a region map chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "projectionType",
+      "dataType": "ChartMapProjectionType",
+      "description": "Returns or sets series projection type of a region map chart. ReadWrite.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

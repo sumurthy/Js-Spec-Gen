@@ -1,0 +1,433 @@
+{
+  "name": "PageLayout",
+  "description": "Represents a collection of all the styles.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "orientation",
+      "dataType": "string",
+      "description": "Gets or sets the worksheet's orientation of the page.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.PageOrientation",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "paperSize",
+      "dataType": "string",
+      "description": "Gets or sets the worksheet's paper size of the page.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.PaperType",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "blackAndWhite",
+      "dataType": "bool",
+      "description": "Gets or sets the worksheet's black and white print option.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "printErrors",
+      "dataType": "PrintErrorType",
+      "description": "Gets or sets the worksheet's print errors option.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "zoom",
+      "dataType": "PageLayoutZoomOptions",
+      "description": "Gets or sets the worksheet's print zoom options.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "centerHorizontally",
+      "dataType": "bool",
+      "description": "Gets or sets the worksheet's center horizontally flag. This flag determines whether the worksheet will be centered horizontally when it's printed.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "centerVertically",
+      "dataType": "bool",
+      "description": "Gets or sets the worksheet's center vertically flag. This flag determines whether the worksheet will be centered vertically when it's printed.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "printHeadings",
+      "dataType": "bool",
+      "description": "Gets or sets the worksheet's print headings flag. This flag determines whether headings will be printed or not.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "printGridlines",
+      "dataType": "bool",
+      "description": "Gets or sets the worksheet's print gridlines flag. This flag determines whether gridlines will be printed or not.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "leftMargin",
+      "dataType": "double",
+      "description": "Gets or sets the worksheet's left margin, in points, for use when printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rightMargin",
+      "dataType": "double",
+      "description": "Gets or sets the worksheet's right margin, in points, for use when printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "topMargin",
+      "dataType": "double",
+      "description": "Gets or sets the worksheet's top margin, in points, for use when printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "bottomMargin",
+      "dataType": "double",
+      "description": "Gets or sets the worksheet's bottom page margin to use for printing in points.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "headerMargin",
+      "dataType": "double",
+      "description": "Gets or sets the worksheet's header margin, in points, for use when printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "footerMargin",
+      "dataType": "double",
+      "description": "Gets or sets the worksheet's footer margin, in points, for use when printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "printComments",
+      "dataType": "PrintComments",
+      "description": "Gets or sets whether the worksheet's comments should be displayed when printing.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "draftMode",
+      "dataType": "bool",
+      "description": "Gets or sets the worksheet's draft mode option. If true the sheet will be printed without graphics.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "firstPageNumber",
+      "dataType": "object",
+      "description": "Gets or sets the worksheet's first page number to print. Null value represents \"auto\" page numbering.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "printOrder",
+      "dataType": "PrintOrder",
+      "description": "Gets or sets the worksheet's page print order option. This specifies the order to use for processing the page number printed.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "headersFooters",
+      "dataType": "HeaderFooterGroup",
+      "description": "Header and footer configuration for the worksheet.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "setPrintMargins",
+      "returnType": "void",
+      "description": "Sets the worksheet's page margins with units.",
+      "syntax": "pageLayoutObject.setPrintMargins(unit, marginOptions);",
+      "signature": "setPrintMargins(unit: PrintMarginUnit, marginOptions: PageLayoutMarginOptions)",
+      "restfulName": "setPrintMargins",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "unit",
+          "dataType": "PrintMarginUnit",
+          "isCollection": false,
+          "description": "Measurement unit for the margins provided.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "marginOptions",
+          "dataType": "PageLayoutMarginOptions",
+          "isCollection": false,
+          "description": "Margin values to set, margins not provided will remain unchanged.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "setPrintArea",
+      "returnType": "void",
+      "description": "Sets the worksheet's print area.",
+      "syntax": "pageLayoutObject.setPrintArea(printArea);",
+      "signature": "setPrintArea(printArea: Range or RangeAreas or string)",
+      "restfulName": "setPrintArea",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "printArea",
+          "dataType": "Range or RangeAreas or string",
+          "isCollection": false,
+          "description": "The range, or RangeAreas of the content to print.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "getPrintArea",
+      "returnType": "RangeAreas",
+      "description": "Gets the RangeAreas object, comprising one or more rectangular ranges, that represents the print area for the worksheet. If there is no print area, an ItemNotFound error will be thrown.",
+      "syntax": "pageLayoutObject.getPrintArea();",
+      "signature": "getPrintArea()",
+      "restfulName": "PrintArea",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getPrintAreaOrNullObject",
+      "returnType": "RangeAreas",
+      "description": "Gets the RangeAreas object, comprising one or more rectangular ranges, that represents the print area for the worksheet. If there is no print area, a null object will be returned.",
+      "syntax": "pageLayoutObject.getPrintAreaOrNullObject();",
+      "signature": "getPrintAreaOrNullObject()",
+      "restfulName": "PrintAreaOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "setPrintTitleRows",
+      "returnType": "void",
+      "description": "Sets the rows that contain the cells to be repeated at the top of each page of the worksheet for printing.",
+      "syntax": "pageLayoutObject.setPrintTitleRows(printTitleRows);",
+      "signature": "setPrintTitleRows(printTitleRows: Range or string)",
+      "restfulName": "setPrintTitleRows",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "printTitleRows",
+          "dataType": "Range or string",
+          "isCollection": false,
+          "description": "The rows to be repeated at the top of each page, range must span the entire row to be valid.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "setPrintTitleColumns",
+      "returnType": "void",
+      "description": "Sets the columns that contain the cells to be repeated at the left of each page of the worksheet for printing.",
+      "syntax": "pageLayoutObject.setPrintTitleColumns(printTitleColumns);",
+      "signature": "setPrintTitleColumns(printTitleColumns: Range or string)",
+      "restfulName": "setPrintTitleColumns",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "printTitleColumns",
+          "dataType": "Range or string",
+          "isCollection": false,
+          "description": "The columns to be repeated to the left of each page, range must span the entire column to be valid.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "getPrintTitleRows",
+      "returnType": "Range",
+      "description": "Gets the range object representing the title rows.",
+      "syntax": "pageLayoutObject.getPrintTitleRows();",
+      "signature": "getPrintTitleRows()",
+      "restfulName": "PrintTitleRows",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getPrintTitleRowsOrNullObject",
+      "returnType": "Range",
+      "description": "Gets the range object representing the title rows. If not set, this will return a null object.",
+      "syntax": "pageLayoutObject.getPrintTitleRowsOrNullObject();",
+      "signature": "getPrintTitleRowsOrNullObject()",
+      "restfulName": "PrintTitleRowsOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getPrintTitleColumns",
+      "returnType": "Range",
+      "description": "Gets the range object representing the title columns.",
+      "syntax": "pageLayoutObject.getPrintTitleColumns();",
+      "signature": "getPrintTitleColumns()",
+      "restfulName": "PrintTitleColumns",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getPrintTitleColumnsOrNullObject",
+      "returnType": "Range",
+      "description": "Gets the range object representing the title columns. If not set, this will return a null object.",
+      "syntax": "pageLayoutObject.getPrintTitleColumnsOrNullObject();",
+      "signature": "getPrintTitleColumnsOrNullObject()",
+      "restfulName": "PrintTitleColumnsOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    }
+  ]
+}

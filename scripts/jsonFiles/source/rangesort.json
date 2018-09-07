@@ -1,0 +1,81 @@
+{
+  "name": "RangeSort",
+  "description": "Manages sorting operations on Range objects.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.2",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": null,
+  "methods": [
+    {
+      "name": "apply",
+      "returnType": "void",
+      "description": "Perform a sort operation.",
+      "syntax": "rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);",
+      "signature": "apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)",
+      "restfulName": "apply",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "fields",
+          "dataType": "SortField[]",
+          "isCollection": true,
+          "description": "The list of conditions to sort on.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "matchCase",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Whether to have the casing impact string ordering.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "hasHeaders",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Optional. Whether the range has a header.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "orientation",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Optional. Whether the operation is sorting rows or columns.",
+          "isRequired": false,
+          "enumNameJs": "Excel.SortOrientation",
+          "notes": null
+        },
+        {
+          "name": "method",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Optional. The ordering method used for Chinese characters.",
+          "isRequired": false,
+          "enumNameJs": "Excel.SortMethod",
+          "notes": null
+        }
+      ],
+      "reqSet": "1.2"
+    }
+  ]
+}

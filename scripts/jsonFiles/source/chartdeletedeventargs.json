@@ -1,0 +1,71 @@
+{
+  "name": "ChartDeletedEventArgs",
+  "description": "Provides information about the chart that raised the Deleted event.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.8",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "type",
+      "dataType": "string",
+      "description": "Gets the type of the event.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.EventType",
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "source",
+      "dataType": "string",
+      "description": "Gets the source of the event.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.EventSource",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "worksheetId",
+      "dataType": "string",
+      "description": "Gets the id of the worksheet in which the chart is deleted.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "chartId",
+      "dataType": "string",
+      "description": "Gets the id of the chart that is deleted from the worksheet.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.8",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

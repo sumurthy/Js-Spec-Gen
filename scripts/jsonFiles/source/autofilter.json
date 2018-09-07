@@ -1,0 +1,160 @@
+{
+  "name": "AutoFilter",
+  "description": "Represents the AutoFilter object.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "enabled",
+      "dataType": "bool",
+      "description": "Indicates if the AutoFilter is enabled or not. Read-Only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "isDataFiltered",
+      "dataType": "bool",
+      "description": "Indicates if the AutoFilter has filter criteria. Read-Only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "criteria",
+      "dataType": "FilterCriteria",
+      "description": "Array that holds all filter criterias in an autofiltered range. Read-Only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "apply",
+      "returnType": "void",
+      "description": "Applies AutoFilter on a range and filters the column if column index and filter criteria are specified.",
+      "syntax": "autoFilterObject.apply(range, columnIndex, criteria);",
+      "signature": "apply(range: Range or string, columnIndex: number, criteria: FilterCriteria)",
+      "restfulName": "apply",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "range",
+          "dataType": "Range or string",
+          "isCollection": false,
+          "description": "The range where the AutoFilter will apply on.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "columnIndex",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "The column index which the AutoFilter will apply on, start from 0.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "criteria",
+          "dataType": "FilterCriteria",
+          "isCollection": false,
+          "description": "The filter criteria.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "reapply",
+      "returnType": "void",
+      "description": "Applies the specified Autofilter object currently on the range.",
+      "syntax": "autoFilterObject.reapply();",
+      "signature": "reapply()",
+      "restfulName": "reapply",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "remove",
+      "returnType": "void",
+      "description": "Removes the AutoFilter for the range.",
+      "syntax": "autoFilterObject.remove();",
+      "signature": "remove()",
+      "restfulName": "remove",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "clearCriteria",
+      "returnType": "void",
+      "description": "Clears the criteria if AutoFilter has filters",
+      "syntax": "autoFilterObject.clearCriteria();",
+      "signature": "clearCriteria()",
+      "restfulName": "clearCriteria",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getRange",
+      "returnType": "Range",
+      "description": "Returns the Range object that represents the range to which the AutoFilter applies.",
+      "syntax": "autoFilterObject.getRange();",
+      "signature": "getRange()",
+      "restfulName": "Range",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getRangeOrNullObject",
+      "returnType": "Range",
+      "description": "If there is Range object associated with the AutoFilter, this method returns it.",
+      "syntax": "autoFilterObject.getRangeOrNullObject();",
+      "signature": "getRangeOrNullObject()",
+      "restfulName": "RangeOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    }
+  ]
+}

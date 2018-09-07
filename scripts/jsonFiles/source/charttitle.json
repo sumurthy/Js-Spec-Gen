@@ -1,0 +1,233 @@
+{
+  "name": "ChartTitle",
+  "description": "Represents a chart title object of a chart.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "format",
+      "dataType": "ChartTitleFormat",
+      "description": "Represents the formatting of a chart title, which includes fill and font formatting.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "overlay",
+      "dataType": "bool",
+      "description": "Boolean value representing if the chart title will overlay the chart or not.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "text",
+      "dataType": "string",
+      "description": "Represents the title text of a chart.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "visible",
+      "dataType": "bool",
+      "description": "A boolean value the represents the visibility of a chart title object.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.1",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "horizontalAlignment",
+      "dataType": "ChartTextHorizontalAlignment",
+      "description": "Represents the horizontal alignment for chart title.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "top",
+      "dataType": "double",
+      "description": "Represents the distance, in points, from the top edge of chart title to the top of chart area. Null if chart title is not visible.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "left",
+      "dataType": "double",
+      "description": "Represents the distance, in points, from the left edge of chart title to the left edge of chart area. Null if chart title is not visible.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "width",
+      "dataType": "double",
+      "description": "Returns the width, in points, of the chart title. Null if chart title is not visible.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "height",
+      "dataType": "double",
+      "description": "Returns the height, in points, of the chart title. Null if chart title is not visible.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "verticalAlignment",
+      "dataType": "string",
+      "description": "Represents the vertical alignment of chart title.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ChartTextVerticalAlignment",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "textOrientation",
+      "dataType": "int",
+      "description": "Represents the text orientation of chart title. The value should be an integer either from -90 to 90, or 180 for vertically-oriented text.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "position",
+      "dataType": "string",
+      "description": "Represents the position of chart title.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ChartTitlePosition",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "showShadow",
+      "dataType": "bool",
+      "description": "Represents a boolean value that determines if the chart title has a shadow.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getSubstring",
+      "returnType": "ChartFormatString",
+      "description": "Get the substring of a chart title. Line break '\\n' also counts one character.",
+      "syntax": "chartTitleObject.getSubstring(start, length);",
+      "signature": "getSubstring(start: number, length: number)",
+      "restfulName": "Substring",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "start",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Start position of substring to be retrieved. Position start with 0.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "length",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Length of substring to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.7"
+    },
+    {
+      "name": "setFormula",
+      "returnType": "void",
+      "description": "Sets a string value that represents the formula of chart title using A1-style notation.",
+      "syntax": "chartTitleObject.setFormula(formula);",
+      "signature": "setFormula(formula: string)",
+      "restfulName": "setFormula",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "formula",
+          "dataType": "string",
+          "isCollection": false,
+          "description": " A string that represents the formula to set.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.7"
+    }
+  ]
+}

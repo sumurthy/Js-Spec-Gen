@@ -1,0 +1,533 @@
+{
+  "name": "RangeAreas",
+  "description": "RangeAreas represents a collection of one or more rectangular ranges in the same worksheet.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "address",
+      "dataType": "string",
+      "description": "Returns the RageAreas reference in A1-style. Address value will contain the worksheet name for each rectangular block of cells (e.g. \"Sheet1!A1:B4, Sheet1!D1:D4\").",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "addressLocal",
+      "dataType": "string",
+      "description": "Returns the RageAreas reference in the user locale.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "areaCount",
+      "dataType": "int",
+      "description": "Returns the number of rectangular ranges that comprise this RangeAreas object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "areas",
+      "dataType": "RangeCollection",
+      "description": "Returns a collection of rectangular ranges that comprise this RangeAreas object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "cellCount",
+      "dataType": "int",
+      "description": "Returns the number of cells in the RangeAreas object, summing up the cell counts of all of the individual rectangular ranges. Returns -1 if the cell count exceeds 2^31-1 (2,147,483,647).",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "conditionalFormats",
+      "dataType": "ConditionalFormatCollection",
+      "description": "Returns a collection of ConditionalFormats that intersect with any cells in this RangeAreas object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "format",
+      "dataType": "RangeFormat",
+      "description": "Returns a rangeFormat object, encapsulating the the font, fill, borders, alignment, and other properties for all ranges in the RangeAreas object.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "dataValidation",
+      "dataType": "DataValidation",
+      "description": "Returns a dataValidation object for all ranges in the RangeAreas.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "isEntireColumn",
+      "dataType": "bool",
+      "description": "Indicates whether all the ranges on this RangeAreas object represent entire columns (e.g., \"A:C, Q:Z\").",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "isEntireRow",
+      "dataType": "bool",
+      "description": "Indicates whether all the ranges on this RangeAreas object represent entire rows (e.g., \"1:3, 5:7\").",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "worksheet",
+      "dataType": "Worksheet",
+      "description": "Returns the worksheet for the current RangeAreas.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "style",
+      "dataType": "string",
+      "description": "Represents the style for all ranges in this RangeAreas object.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "calculate",
+      "returnType": "void",
+      "description": "Calculates all cells in the RangeAreas.",
+      "syntax": "rangeAreasObject.calculate();",
+      "signature": "calculate()",
+      "restfulName": "calculate",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "clear",
+      "returnType": "void",
+      "description": "Clears values, format, fill, border, etc on each of the areas that comprise this RangeAreas object.",
+      "syntax": "rangeAreasObject.clear(applyTo);",
+      "signature": "clear(applyTo: string)",
+      "restfulName": "clear",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "applyTo",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Optional. Determines the type of clear action.",
+          "isRequired": false,
+          "enumNameJs": "Excel.ClearApplyTo",
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "getEntireColumn",
+      "returnType": "RangeAreas",
+      "description": "Returns a RangeAreas object that represents the entire columns of the RangeAreas (for example, if the current RangeAreas represents cells \"B4:E11, H2\", it returns a RangeAreas that represents columns \"B:E, H:H\").",
+      "syntax": "rangeAreasObject.getEntireColumn();",
+      "signature": "getEntireColumn()",
+      "restfulName": "EntireColumn",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getEntireRow",
+      "returnType": "RangeAreas",
+      "description": "Returns a RangeAreas object that represents the entire rows of the RangeAreas (for example, if the current RangeAreas represents cells \"B4:E11\", it returns a RangeAreas that represents rows \"4:11\").",
+      "syntax": "rangeAreasObject.getEntireRow();",
+      "signature": "getEntireRow()",
+      "restfulName": "EntireRow",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getIntersection",
+      "returnType": "RangeAreas",
+      "description": "Returns the RangeAreas object that represents the intersection of the given ranges or RangeAreas. If no intersection is found, an ItemNotFound error will be thrown.",
+      "syntax": "rangeAreasObject.getIntersection(anotherRange);",
+      "signature": "getIntersection(anotherRange: Range or RangeAreas or string)",
+      "restfulName": "Intersection",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "anotherRange",
+          "dataType": "Range or RangeAreas or string",
+          "isCollection": false,
+          "description": "The range, RangeAreas object or range address that will be used to determine the intersection.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "getIntersectionOrNullObject",
+      "returnType": "RangeAreas",
+      "description": "Returns the RangeAreas object that represents the intersection of the given ranges or RangeAreas. If no intersection is found, a null object is returned.",
+      "syntax": "rangeAreasObject.getIntersectionOrNullObject(anotherRange);",
+      "signature": "getIntersectionOrNullObject(anotherRange: Range or RangeAreas or string)",
+      "restfulName": "IntersectionOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "anotherRange",
+          "dataType": "Range or RangeAreas or string",
+          "isCollection": false,
+          "description": "The range, RangeAreas, or address that will be used to determine the intersection.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "getOffsetRangeAreas",
+      "returnType": "RangeAreas",
+      "description": "Returns an RangeAreas object that is shifted by the specific row and column offset. The dimension of the returned RangeAreas will match the original object. If the resulting RangeAreas is forced outside the bounds of the worksheet grid, an error will be thrown.",
+      "syntax": "rangeAreasObject.getOffsetRangeAreas(rowOffset, columnOffset);",
+      "signature": "getOffsetRangeAreas(rowOffset: number, columnOffset: number)",
+      "restfulName": "OffsetRangeAreas",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "rowOffset",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "The number of rows (positive, negative, or 0) by which the RangeAreas is to be offset. Positive values are offset downward, and negative values are offset upward.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "columnOffset",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "The number of columns (positive, negative, or 0) by which the RangeAreas is to be offset. Positive values are offset to the right, and negative values are offset to the left.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "getUsedRangeAreas",
+      "returnType": "RangeAreas",
+      "description": "Returns the used RangeAreas that comprises all the used areas of individual rectangular ranges in the RangeAreas object.",
+      "syntax": "rangeAreasObject.getUsedRangeAreas(valuesOnly);",
+      "signature": "getUsedRangeAreas(valuesOnly: bool)",
+      "restfulName": "UsedRangeAreas",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "valuesOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Whether to only consider cells with values as used cells. Default is false.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "getUsedRangeAreasOrNullObject",
+      "returnType": "RangeAreas",
+      "description": "Returns the used RangeAreas that comprises all the used areas of individual rectangular ranges in the RangeAreas object.",
+      "syntax": "rangeAreasObject.getUsedRangeAreasOrNullObject(valuesOnly);",
+      "signature": "getUsedRangeAreasOrNullObject(valuesOnly: bool)",
+      "restfulName": "UsedRangeAreasOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "valuesOnly",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "Whether to only consider cells with values as used cells.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "getTables",
+      "returnType": "TableScopedCollection",
+      "description": "Returns a scoped collection of tables that overlap with any range in this RangeAreas object.",
+      "syntax": "rangeAreasObject.getTables(fullyContained);",
+      "signature": "getTables(fullyContained: bool)",
+      "restfulName": "Tables",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "fullyContained",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "If true, returns only tables that are fully contained within the range bounds. Default is false.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "setDirty",
+      "returnType": "void",
+      "description": "Sets the RangeAreas to be recalculated when the next recalculation occurs.",
+      "syntax": "rangeAreasObject.setDirty();",
+      "signature": "setDirty()",
+      "restfulName": "setDirty",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "copyFrom",
+      "returnType": "void",
+      "description": "Copies cell data or formatting from the source range or RangeAreas to the current RangeAreas.",
+      "syntax": "rangeAreasObject.copyFrom(sourceRange, copyType, skipBlanks, transpose);",
+      "signature": "copyFrom(sourceRange: Range or RangeAreas or string, copyType: RangeCopyType, skipBlanks: bool, transpose: bool)",
+      "restfulName": "copyFrom",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "sourceRange",
+          "dataType": "Range or RangeAreas or string",
+          "isCollection": false,
+          "description": "The source range or RangeAreas to copy from. When the source RangeAreas has multiple ranges, it must be in the outline form which can be created by removing full rows or columns from a rectangular range.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "copyType",
+          "dataType": "RangeCopyType",
+          "isCollection": false,
+          "description": "The type of cell data or formatting to copy over. Default is \"All\".",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "skipBlanks",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "True if to skip blank cells in the source range or RangeAreas. Default is false.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "transpose",
+          "dataType": "bool",
+          "isCollection": false,
+          "description": "True if to transpose the cells in the destination RangeAreas. Default is false.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "convertToLinkedDataType",
+      "returnType": "void",
+      "description": "Converts all cells in the RangeAreas into linked datatype.",
+      "syntax": "rangeAreasObject.convertToLinkedDataType(serviceID, languageCulture);",
+      "signature": "convertToLinkedDataType(serviceID: number, languageCulture: string)",
+      "restfulName": "convertToLinkedDataType",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "serviceID",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "The Service ID which will be used to query the data.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "languageCulture",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "Language Culture to query the service for.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "convertDataTypeToText",
+      "returnType": "void",
+      "description": "Converts all cells in the RangeAreas with datatypes into text.",
+      "syntax": "rangeAreasObject.convertDataTypeToText();",
+      "signature": "convertDataTypeToText()",
+      "restfulName": "convertDataTypeToText",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getSpecialCells",
+      "returnType": "RangeAreas",
+      "description": "Returns a RangeAreas object that represents all the cells that match the specified type and value. Throws an error if no special cells are found that match the criteria.",
+      "syntax": "rangeAreasObject.getSpecialCells(cellType, cellValueType);",
+      "signature": "getSpecialCells(cellType: SpecialCellType, cellValueType: SpecialCellValueType)",
+      "restfulName": "SpecialCells",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "cellType",
+          "dataType": "SpecialCellType",
+          "isCollection": false,
+          "description": "The type of cells to include.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "cellValueType",
+          "dataType": "SpecialCellValueType",
+          "isCollection": false,
+          "description": "If cellType is either Constants or Formulas, this argument is used to determine which types of cells to include in the result. These values can be combined together to return more than one type. The default is to select all constants or formulas, no matter what the type.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "getSpecialCellsOrNullObject",
+      "returnType": "RangeAreas",
+      "description": "Returns a RangeAreas object that represents all the cells that match the specified type and value. Returns a null object if no special cells are found that match the criteria.",
+      "syntax": "rangeAreasObject.getSpecialCellsOrNullObject(cellType, cellValueType);",
+      "signature": "getSpecialCellsOrNullObject(cellType: SpecialCellType, cellValueType: SpecialCellValueType)",
+      "restfulName": "SpecialCellsOrNullObject",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "cellType",
+          "dataType": "SpecialCellType",
+          "isCollection": false,
+          "description": "The type of cells to include.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "cellValueType",
+          "dataType": "SpecialCellValueType",
+          "isCollection": false,
+          "description": "If cellType is either Constants or Formulas, this argument is used to determine which types of cells to include in the result. These values can be combined together to return more than one type. The default is to select all constants or formulas, no matter what the type.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    }
+  ]
+}

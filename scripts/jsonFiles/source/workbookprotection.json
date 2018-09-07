@@ -1,0 +1,80 @@
+{
+  "name": "WorkbookProtection",
+  "description": "Represents the protection of a workbook object.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.7",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "protected",
+      "dataType": "bool",
+      "description": "Indicates if the workbook is protected. Read-Only.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "protect",
+      "returnType": "void",
+      "description": "Protects a workbook. Fails if the workbook has been protected.",
+      "syntax": "workbookProtectionObject.protect(password);",
+      "signature": "protect(password: string)",
+      "restfulName": "protect",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "password",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "workbook protection password.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.7"
+    },
+    {
+      "name": "unprotect",
+      "returnType": "void",
+      "description": "Unprotects a workbook.",
+      "syntax": "workbookProtectionObject.unprotect(password);",
+      "signature": "unprotect(password: string)",
+      "restfulName": "unprotect",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "password",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "workbook protection password.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.7"
+    }
+  ]
+}

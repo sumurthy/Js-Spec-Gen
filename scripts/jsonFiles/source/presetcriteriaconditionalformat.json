@@ -1,0 +1,47 @@
+{
+  "name": "PresetCriteriaConditionalFormat",
+  "description": "Represents the the preset criteria conditional format such as above average, below average, unique values, contains blank, nonblank, error, and noerror.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.6",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "rule",
+      "dataType": "ConditionalPresetCriteriaRule",
+      "description": "The rule of the conditional format.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "format",
+      "dataType": "ConditionalRangeFormat",
+      "description": "Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "1.6",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

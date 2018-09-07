@@ -1,0 +1,79 @@
+{
+  "name": "TextRange",
+  "description": "Represents the text frame for a shape object.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "text",
+      "dataType": "string",
+      "description": "Represents the plain text content of the text range.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "font",
+      "dataType": "ShapeFont",
+      "description": "Returns a ShapeFont object that represents the font attributes for the text range.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getCharacters",
+      "returnType": "TextRange",
+      "description": "Returns a TextRange object for characters in the given range.",
+      "syntax": "textRangeObject.getCharacters(start, length);",
+      "signature": "getCharacters(start: number, length: number)",
+      "restfulName": "Characters",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "start",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Position of the first character in the returned range.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "length",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Optional. The number of characters to be returned. If omitted, it represents the number of characters from \"start\" to the end of the last paragraph in TextRange.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    }
+  ]
+}

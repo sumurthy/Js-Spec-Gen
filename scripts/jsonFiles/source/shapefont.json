@@ -1,0 +1,95 @@
+{
+  "name": "ShapeFont",
+  "description": "This object represents the font attributes (font name, font size, color, etc.) for a TextRange in the Shape.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "bold",
+      "dataType": "bool",
+      "description": "Represents the bold status of font. Returns null the TextRange includes both bold and non-bold text fragments.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "color",
+      "dataType": "string",
+      "description": "HTML color code representation of the text color. E.g. #FF0000 represents Red. Returns null if the TextRange includes text fragments with different colors.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "italic",
+      "dataType": "bool",
+      "description": "Represents the italic status of font. Return null if the TextRange includes both italic and non-italic text fragments.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "Represents font name (e.g. \"Calibri\"). If the text is Complex Script or East Asian language, represents corresponding font name; otherwise represents Latin font name.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "size",
+      "dataType": "double",
+      "description": "Represents font size in points (e.g. 11). Return null if the TextRange includes text fragments with different font sizes.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "underline",
+      "dataType": "string",
+      "description": "Type of underline applied to the font. Return null if the TextRange includes text fragments with different underline styles.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.ShapeFontUnderlineStyle",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

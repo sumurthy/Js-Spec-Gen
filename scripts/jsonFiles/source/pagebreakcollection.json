@@ -1,0 +1,104 @@
+{
+  "name": "PageBreakCollection",
+  "description": "Represents the options in page layout margins.",
+  "isCollection": true,
+  "collectionOf": "PageBreak",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "PageBreak[]",
+      "description": "A collection of pageBreak objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "PageBreak",
+      "description": "Gets a page break object via the index.",
+      "syntax": "pageBreakCollectionObject.getItem(index);",
+      "signature": "getItem(index: number)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Index of the page break.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "add",
+      "returnType": "PageBreak",
+      "description": "Adds a page break before the top-left cell of the range specified.",
+      "syntax": "pageBreakCollectionObject.add(pageBreakRange);",
+      "signature": "add(pageBreakRange: Range or string)",
+      "restfulName": "add",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "pageBreakRange",
+          "dataType": "Range or string",
+          "isCollection": false,
+          "description": "The range immediately after the page break to be added.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    },
+    {
+      "name": "removePageBreaks",
+      "returnType": "void",
+      "description": "Resets all manual page breaks in the collection.",
+      "syntax": "pageBreakCollectionObject.removePageBreaks();",
+      "signature": "removePageBreaks()",
+      "restfulName": "removePageBreaks",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Gets the number of page breaks in the collection.",
+      "syntax": "pageBreakCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    }
+  ]
+}

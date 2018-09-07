@@ -1,0 +1,59 @@
+{
+  "name": "PageLayoutZoomOptions",
+  "description": "Represents page zoom properties.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "scale",
+      "dataType": "int",
+      "description": "Print page scale value can be between 10 and 400. This value can be null if fit to page tall or wide is specified.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "horizontalFitToPages",
+      "dataType": "int",
+      "description": "Number of pages to fit horizontally. This value can be null if percentage scale is used.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "verticalFitToPages",
+      "dataType": "int",
+      "description": "Number of pages to fit vertically. This value can be null if percentage scale is used.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

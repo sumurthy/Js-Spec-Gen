@@ -1,0 +1,71 @@
+{
+  "name": "ChartPivotOptions",
+  "description": "Encapsulates the options for the pivot chart.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "showAxisFieldButtons",
+      "dataType": "bool",
+      "description": "Represents whether to display axis field buttons on a PivotChart.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "showLegendFieldButtons",
+      "dataType": "bool",
+      "description": "Represents whether to display legend field buttons on a PivotChart.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "showReportFilterFieldButtons",
+      "dataType": "bool",
+      "description": "Represents whether to display report filter field buttons on a PivotChart.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "showValueFieldButtons",
+      "dataType": "bool",
+      "description": "Represents whether to display show value field buttons on a PivotChart.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": null
+}

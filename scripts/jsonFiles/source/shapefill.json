@@ -1,0 +1,94 @@
+{
+  "name": "ShapeFill",
+  "description": "Represents the fill formatting for a shape object.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "beta",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "foreColor",
+      "dataType": "string",
+      "description": "Represents the shape fill fore color in HTML color format, of the form #RRGGBB (e.g. \"FFA500\") or as a named HTML color (e.g. \"orange\")",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "type",
+      "dataType": "string",
+      "description": "Returns the fill type of the shape.",
+      "isReadOnly": true,
+      "enumNameJs": "Excel.ShapeFillType",
+      "isCollection": false,
+      "isRelationship": true,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "transparency",
+      "dataType": "double",
+      "description": "Returns or sets the degree of transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear). For API not supported shape types  or special fill type with inconsistent transparencies, return null. For example, gradient fill type could have inconsistent transparencies.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "reqSet": "beta",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "clear",
+      "returnType": "void",
+      "description": "Clears the fill formatting of a shape object.",
+      "syntax": "shapeFillObject.clear();",
+      "signature": "clear()",
+      "restfulName": "clear",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "beta"
+    },
+    {
+      "name": "setSolidColor",
+      "returnType": "void",
+      "description": "Sets the fill formatting of a shape object to a uniform color, fill type changeing to Solid Fill.",
+      "syntax": "shapeFillObject.setSolidColor(color);",
+      "signature": "setSolidColor(color: string)",
+      "restfulName": "setSolidColor",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "color",
+          "dataType": "string",
+          "isCollection": false,
+          "description": "A string that represents the fill color in HTML color format, of the form #RRGGBB (e.g. \"FFA500\") or as a named HTML color (e.g. \"orange\").",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "beta"
+    }
+  ]
+}

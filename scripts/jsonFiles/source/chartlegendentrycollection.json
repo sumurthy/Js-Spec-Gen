@@ -1,0 +1,70 @@
+{
+  "name": "ChartLegendEntryCollection",
+  "description": "Represents a collection of legendEntries.",
+  "isCollection": true,
+  "collectionOf": "ChartLegendEntry",
+  "restPath": null,
+  "info": {
+    "version": "1.1",
+    "reqSet": "1.7",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API"
+  },
+  "properties": [
+    {
+      "name": "items",
+      "dataType": "ChartLegendEntry[]",
+      "description": "A collection of chartLegendEntry objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "reqSet": "1.7",
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getCount",
+      "returnType": "int",
+      "description": "Returns the number of legendEntry in the collection.",
+      "syntax": "chartLegendEntryCollectionObject.getCount();",
+      "signature": "getCount()",
+      "restfulName": "Count",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": null,
+      "reqSet": "1.7"
+    },
+    {
+      "name": "getItemAt",
+      "returnType": "ChartLegendEntry",
+      "description": "Returns a legendEntry at the given index.",
+      "syntax": "chartLegendEntryCollectionObject.getItemAt(index);",
+      "signature": "getItemAt(index: number)",
+      "restfulName": "ItemAt",
+      "notes": null,
+      "httpSuccessResponse": null,
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number",
+          "isCollection": false,
+          "description": "Index of the legendEntry to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ],
+      "reqSet": "1.7"
+    }
+  ]
+}
